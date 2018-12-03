@@ -21,19 +21,19 @@ export const classes = {
 }
 
 const Label = (props) => {
-  if (isClickable(props)) return <ClickableLabel {...props} />;
-  return <NormalLabel {...props} />;
+  if (isClickable(props)) return clickableLabel(props);
+  return normalLabel(props);
 };
 
 const isClickable = ({ type }) => type === CLICKABLE;
 
-const ClickableLabel = (props) => (
+const clickableLabel = (props) => (
   <label className={className(props.type)}>
-    <a href={props.href}>{props.children}</a>
+    <a href={props.href} onClick={props.onClick}>{props.children}</a>
   </label>
 );
 
-const NormalLabel = (props) => (
+const normalLabel = (props) => (
   <label className={className(props.type)}>
     <span>{props.children}</span>
   </label>

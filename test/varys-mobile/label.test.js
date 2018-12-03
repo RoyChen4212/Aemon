@@ -1,15 +1,17 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
 
 import Label, {
-  BASE_CLASS,
+  classes,
+  types,
 } from '../../components/varys-mobile/label';
 
 describe('Label', () => {
   it('should render a label tag', () => {
     const wrapper = shallow(<Label />);
-    expect(wrapper.contains(<label />)).to.be.true
+    expect(wrapper.find('label')).to.have.lengthOf(1);
   });
 
   it('should render with text', () => {
@@ -18,9 +20,37 @@ describe('Label', () => {
     expect(wrapper.find('label > span').text()).to.equal(expected);
   });
 
-  it('should have correct class', () => {
-    const expected = BASE_CLASS;
+  it('should have base class when no type is given', () => {
     const wrapper = shallow(<Label>some text</Label>);
-    expect(wrapper.hasClass(BASE_CLASS)).to.be.true;
+    expect(wrapper.find('label').hasClass(classes.base)).to.be.true;
+  });
+
+  it('should have correct class when strong type', () => {
+    const wrapper = shallow(<Label type={types.STRONG}>some text</Label>);
+    expect(wrapper.find('label').hasClass(classes[types.STRONG])).to.be.true;
+  });
+
+  it('should have correct class when secondary type', () => {
+    const wrapper = shallow(<Label type={types.SECONDARY}>some text</Label>);
+    expect(wrapper.find('label').hasClass(classes[types.SECONDARY])).to.be.true;
+  });
+
+  it('should have correct class when input type', () => {
+    const wrapper = shallow(<Label type={types.INPUT}>some text</Label>);
+    expect(wrapper.find('label').hasClass(classes[types.INPUT])).to.be.true;
+  });
+
+  it('should have correct class when clickable type', () => {
+    const wrapper = shallow(<Label type={types.CLICKABLE}>some text</Label>);
+    expect(wrapper.find('label').hasClass(classes[types.CLICKABLE])).to.be.true;
+  });
+
+  it('should call onClick when when clickable type', () => {
+    const onClick = sinon.spy();
+    const wrapper = shallow(
+      <Label type={types.CLICKABLE} onClick={onClick}>some text</Label>
+    );
+    wrapper.find('label').find('a').simulate('click');
+    expect(onClick.calledOnce).to.be.true;
   });
 });
