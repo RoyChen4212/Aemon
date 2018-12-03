@@ -1,5 +1,29 @@
 @import "../scss/styleguide";
 
 label {
-  color: $cloudy-blue;
+  &.pbg-label {
+    color: $greyish-brown;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  &.pbg-label-strong {
+    font-weight: 500;
+  }
+
+  &.pbg-label-secondary {
+    color: $cool-grey;
+  }
+
+  &.pbg-label-input {
+    color: $black;
+  }
+
+  &.pbg-label-clickable {
+    color: $clear-blue;
+    cursor: pointer;
+  }
 }
