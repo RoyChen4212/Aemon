@@ -1,1 +1,1 @@
-storybook: npm run storybook
+storybook: npm run storybook-public
