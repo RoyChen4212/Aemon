@@ -4,7 +4,8 @@
   "description": "PBG UI Library with Storybook",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ignore-styles --require babel-core/register -r ./test/config/enzyme.js --recursive ./test",
+    "test": "mocha -r ignore-styles --require babel-core/register -r ./test/config/enzyme.js --recursive --ui bdd ./test",
+    "test:cover": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "repository": {
@@ -42,6 +43,7 @@
     "ignore-styles": "^5.0.1",
     "mocha": "^5.2.0",
     "node-sass": "^4.10.0",
+    "nyc": "^13.1.0",
     "sass-loader": "^7.1.0",
     "sinon": "^7.1.1",
     "storybook-addon-intl": "^2.3.1",

@@ -53,4 +53,12 @@ describe('Label', () => {
     wrapper.find('label').find('a').simulate('click');
     expect(onClick.calledOnce).to.be.true;
   });
+
+  it('should add href prop with correct value when provided to clickable type', () => {
+    const url = '/some/url';
+    const wrapper = shallow(
+      <Label type={types.CLICKABLE} href={url}>some text</Label>
+    );
+    expect(wrapper.find('label').find('a').prop('href')).to.equal(url);
+  });
 });
