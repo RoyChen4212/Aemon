@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha -r ignore-styles --require babel-core/register -r ./test/config/enzyme.js --recursive --ui bdd ./test",
     "test:cover": "nyc --reporter=lcov npm test",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-storybook": "build-storybook -c .storybook -o dist"
   },
   "repository": {
     "type": "git",
