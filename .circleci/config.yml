@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/aemon
+    docker:
+      - image: node:6.11.1
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ arch }}-{{ checksum "package.json" }}
+      - run: npm install
+      - save_cache:
+          key: dependency-cache-{{ arch }}-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run: npm test
+      - run: npm run test:cover
+      - run: node_modules/.bin/codeclimate-test-reporter < ./coverage/lcov.info
+
