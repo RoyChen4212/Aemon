@@ -14,6 +14,4 @@ jobs:
           paths:
             - node_modules
       - run: npm test
-      - run: npm run test:cover
-      - run: node_modules/.bin/codeclimate-test-reporter < ./coverage/lcov.info
 
