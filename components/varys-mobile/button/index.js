@@ -16,3 +16,11 @@ export const SmallButton = (props) => (
 export const LinkButton = (props) => (
   <Button {...props} className='pbg-button-link'>{props.children}</Button>
 );
+
+export const FacebookButton = (props) => (
+  <Button {...props} className='pbg-button-facebook'>{props.children}</Button>
+);
+
+export const SmallFacebookButton = (props) => (
+  <Button {...props} className='pbg-button-facebook-small'>{props.children}</Button>
+);

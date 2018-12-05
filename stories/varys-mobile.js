@@ -5,7 +5,7 @@ import Label, { types as labelTypes } from '../components/varys-mobile/label';
 import { H1, H2, H3 } from '../components/varys-mobile/heading';
 import Hint, { types as hintTypes } from '../components/varys-mobile/hint';
 import {
-  PrimaryButton, SecondaryButton, SmallButton, LinkButton
+  PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
 } from '../components/varys-mobile/button';
 
 import './style.scss';
@@ -71,6 +71,15 @@ storiesOf('Varys/Mobile/Atomic Components', module)
           <div className="story-wrapper">
             <SecondaryButton hint="With Hint" onClick={action('clicked')}>Secondary Button</SecondaryButton>
           </div>
+          <div className="story-wrapper">
+            <FacebookButton onClick={action('clicked')}>Facebook Button</FacebookButton>
+          </div>
+          <div className="story-wrapper">
+            <FacebookButton disabled onClick={action('clicked')}>Facebook Button Disabled</FacebookButton>
+          </div>
+          <div className="story-wrapper">
+            <FacebookButton hint="With Hint" onClick={action('clicked')}>Facebook Button</FacebookButton>
+          </div>
         </div>
         <div className="col-6">
           <div className="story-wrapper">
@@ -90,6 +99,15 @@ storiesOf('Varys/Mobile/Atomic Components', module)
           </div>
           <div className="story-wrapper">
             <LinkButton hint="With Hint" onClick={action('clicked')}>Link Button</LinkButton>
+          </div>
+          <div className="story-wrapper">
+            <SmallFacebookButton onClick={action('clicked')}>Small Facebook Button</SmallFacebookButton>
+          </div>
+          <div className="story-wrapper">
+            <SmallFacebookButton disabled onClick={action('clicked')}>Small Facebook Button Disabled</SmallFacebookButton>
+          </div>
+          <div className="story-wrapper">
+            <SmallFacebookButton hint="With Hint" onClick={action('clicked')}>Small Facebook Button</SmallFacebookButton>
           </div>
         </div>
       </div>

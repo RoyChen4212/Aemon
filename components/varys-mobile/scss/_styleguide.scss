@@ -24,3 +24,13 @@ $white-1: rgba(255, 255, 255, .1);
 $facebook-color: #3b5998;
 $blue-gradient: linear-gradient(267deg, $pbg-blue-light, $pbg-blue);
 $blue-linear: linear-gradient(90deg, $pbg-blue 0%, $pbg-blue-light 196.67%);
+
+
+// Font sizes
+$large-font: 17px;
+$large-line-height: 25px;
+$small-font: 12px;
+$small-line-height: 18px;
+
+// Icons
+$facebook-icon: url('../img/facebook-icon.svg');
