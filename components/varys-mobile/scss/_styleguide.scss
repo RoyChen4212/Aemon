@@ -1,8 +1,8 @@
 // Color palette
 
 $almost-white: #f3f3f3;
-$pbg-blue: #2e3aa1;
-$pbg-blue-light: rgba(46, 58, 161, .78);
+$pbg-blue: #2EAFFF;
+$pbg-blue-light: #2E3AA1;
 $cloudy-blue: #b4bfcc;
 $clear-blue: #2c81ff;
 $sapphire-blue: #384c9f;
@@ -23,3 +23,4 @@ $black-25: rgba(0, 0, 0, .25);
 $white-1: rgba(255, 255, 255, .1);
 $facebook-color: #3b5998;
 $blue-gradient: linear-gradient(267deg, $pbg-blue-light, $pbg-blue);
+$blue-linear: linear-gradient(90deg, $pbg-blue 0%, $pbg-blue-light 196.67%);
