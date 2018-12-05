@@ -5,7 +5,7 @@ import Label, { types as labelTypes } from '../components/varys-mobile/label';
 import { H1, H2, H3 } from '../components/varys-mobile/heading';
 import Hint, { types as hintTypes } from '../components/varys-mobile/hint';
 import {
-  PrimaryButton, SecondaryButton,
+  PrimaryButton, SecondaryButton, SmallButton, LinkButton
 } from '../components/varys-mobile/button';
 
 import './style.scss';
@@ -51,6 +51,24 @@ storiesOf('Varys/Mobile/Atomic Components', module)
       </div>
       <div className='story-wrapper'>
         <SecondaryButton hint="With Hint" onClick={action('clicked')}>Secondary Button</SecondaryButton>
+      </div>
+      <div className='story-wrapper'>
+        <SmallButton onClick={action('clicked')}>Small Button</SmallButton>
+      </div>
+      <div className='story-wrapper'>
+        <SmallButton disabled onClick={action('clicked')}>Small Button Disabled</SmallButton>
+      </div>
+      <div className='story-wrapper'>
+        <SmallButton hint="With Hint" onClick={action('clicked')}>Small Button</SmallButton>
+      </div>
+      <div className='story-wrapper'>
+        <LinkButton onClick={action('clicked')}>Link Button</LinkButton>
+      </div>
+      <div className='story-wrapper'>
+        <LinkButton disabled onClick={action('clicked')}>Link Button Disabled</LinkButton>
+      </div>
+      <div className='story-wrapper'>
+        <LinkButton hint="With Hint" onClick={action('clicked')}>Link Button</LinkButton>
       </div>
     </div>
   ));

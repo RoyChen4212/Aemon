@@ -9,3 +9,10 @@ export const SecondaryButton = (props) => (
   <Button {...props} className='pbg-button-secondary'>{props.children}</Button>
 );
 
+export const SmallButton = (props) => (
+  <Button {...props} className='pbg-button-small'>{props.children}</Button>
+);
+
+export const LinkButton = (props) => (
+  <Button {...props} className='pbg-button-link'>{props.children}</Button>
+);

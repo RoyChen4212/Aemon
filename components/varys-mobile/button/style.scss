@@ -29,6 +29,29 @@
     height: 47px;
   }
 
+  &.pbg-button-small {
+    background: $pale-grey;
+    border: 0;
+    border-radius: 31px;
+    color: $clear-blue;
+    font-size: 12px;
+    line-height: 18px;
+    height: 26px;
+  }
+
+  &.pbg-button-link {
+    background: none;
+    border: 0;
+    color: $clear-blue;
+    font-size: 14px;
+    line-height: 20px;
+
+    > span {
+      padding: 0;
+    }
+
+  }
+
   &.disabled {
       opacity: 0.65;
     }
