@@ -4,15 +4,19 @@ import { action } from '@storybook/addon-actions';
 import Label, { types as labelTypes } from '../components/varys-mobile/label';
 import { H1, H2, H3 } from '../components/varys-mobile/heading';
 import Hint, { types as hintTypes } from '../components/varys-mobile/hint';
-import { PrimaryButton } from '../components/varys-mobile/button';
+import {
+  PrimaryButton, SecondaryButton,
+} from '../components/varys-mobile/button';
+
+import './style.scss';
 
 storiesOf('Varys/Mobile/Atomic Components', module)
   .add('Label', () => (
     <React.Fragment>
-      <div><Label>Normal Label</Label></div>
-      <div><Label type={labelTypes.STRONG}>I am a strong label</Label></div>
-      <div><Label type={labelTypes.SECONDARY}>I am a secondary label</Label></div>
-      <div><Label type={labelTypes.CLICKABLE} onClick={action('clicked')}>Click me</Label></div>
+      <div className='story-wrapper'><Label>Normal Label</Label></div>
+      <div className='story-wrapper'><Label type={labelTypes.STRONG}>I am a strong label</Label></div>
+      <div className='story-wrapper'><Label type={labelTypes.SECONDARY}>I am a secondary label</Label></div>
+      <div className='story-wrapper'><Label type={labelTypes.CLICKABLE} onClick={action('clicked')}>Click me</Label></div>
     </React.Fragment>
   ))
   .add('Heading 1', () => (
@@ -24,14 +28,29 @@ storiesOf('Varys/Mobile/Atomic Components', module)
   ))
   .add('Hint', () => (
     <React.Fragment>
-      <div><Hint>Hint</Hint></div>
-      <div><Hint type={hintTypes.ERROR}>Error</Hint></div>
+      <div className='story-wrapper'><Hint>Hint</Hint></div>
+      <div className='story-wrapper'><Hint type={hintTypes.ERROR}>Error</Hint></div>
     </React.Fragment>
   ))
   .add('Button', () => (
-    <div style={{ width: '20%', minWidth: '200px', }}>
-      <div><PrimaryButton>Primary Button</PrimaryButton></div>
-      <div><PrimaryButton disabled>Primary Button</PrimaryButton></div>
-      <div><PrimaryButton hint="Hint">Primary Button</PrimaryButton></div>
+    <div style={{ width: '25%', minWidth: '250px', }}>
+      <div className='story-wrapper'>
+        <PrimaryButton onClick={action('clicked')}>Primary Button</PrimaryButton>
+      </div>
+      <div className='story-wrapper'>
+        <PrimaryButton disabled onClick={action('clicked')}>Primary Button Disabled</PrimaryButton>
+      </div>
+      <div className='story-wrapper'>
+        <PrimaryButton hint="With Hint" onClick={action('clicked')}>Primary Button</PrimaryButton>
+      </div>
+      <div className='story-wrapper'>
+        <SecondaryButton onClick={action('clicked')}>Secondary Button</SecondaryButton>
+      </div>
+      <div className='story-wrapper'>
+        <SecondaryButton disabled onClick={action('clicked')}>Secondary Button Disabled</SecondaryButton>
+      </div>
+      <div className='story-wrapper'>
+        <SecondaryButton hint="With Hint" onClick={action('clicked')}>Secondary Button</SecondaryButton>
+      </div>
     </div>
   ));

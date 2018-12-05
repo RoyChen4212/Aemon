@@ -1,32 +1,32 @@
 @import "../scss/styleguide";
 
 .pbg-button {
+  cursor: pointer;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 25px;
+  text-align: center;
+  width: 100%;
+
+  > span {
+    padding: 16px;
+  }
+
   &.pbg-button-primary {
     background: $blue-linear;
     border-radius: 31px;
-    height: 47px;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 25px;
-    font-size: 17px;
-    text-align: center;
     color: $white;
-    width: 100%;
-
-    span {
-      padding: 16px;
-    }
+    height: 47px;
   }
 
   &.pbg-button-secondary {
+    background: $pale-grey;
+    border: 0;
+    border-radius: 31px;
     color: $cool-grey;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 25px;
-    font-size: 17px;
-    text-align: center;
+    height: 47px;
   }
 
   &.disabled {

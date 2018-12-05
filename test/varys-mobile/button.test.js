@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import {
-  PrimaryButton, //SecondaryButton, SmallButton, LinkButton, FacebookButton,
+  PrimaryButton, SecondaryButton, //SmallButton, LinkButton, FacebookButton,
 } from '../../components/varys-mobile/button';
 import Button from '../../components/varys-mobile/button/button';
 import Hint from '../../components/varys-mobile/hint';
@@ -72,6 +72,13 @@ describe('Button', () => {
     it('should have correct class name', () => {
       const wrapper = shallow(<PrimaryButton />);
       expect(wrapper.find(Button).hasClass('pbg-button-primary')).to.be.true;
+    });
+  });
+
+  describe('Secondary button', () => {
+    it('should have correct class name', () => {
+      const wrapper = shallow(<SecondaryButton />);
+      expect(wrapper.find(Button).hasClass('pbg-button-secondary')).to.be.true;
     });
   });
 });
