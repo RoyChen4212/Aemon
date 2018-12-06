@@ -8,7 +8,7 @@ import {
   PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
 } from '../components/varys-mobile/button';
 import {
-  TextField,
+  TextField, PasswordField
 } from '../components/varys-mobile/form-fields';
 
 import './style.scss';
@@ -124,7 +124,7 @@ storiesOf('Varys/Mobile/Atomic Components', module)
   ));
 
 storiesOf('Varys/Mobile/Atomic Components/Form Fields', module)
-  .add('TextField', () => (
+  .add('Text Field', () => (
     <div className="container-fluid">
       <div className="row">
         <div className="col-12 story-wrapper">
@@ -150,3 +150,35 @@ storiesOf('Varys/Mobile/Atomic Components/Form Fields', module)
       </div>
     </div>
   ))
+  .add('Password Field', () => (
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-12 story-wrapper">
+          <PasswordField
+            name="pwd1"
+            label="Your password"
+            forgotPasswordText="Forgot?"
+            onForgotPassword={action('click')}
+          />
+        </div>
+        <div className="col-12 story-wrapper">
+          <PasswordField
+            name="pwd2"
+            label="Your password"
+            hint="is secret"
+            forgotPasswordText="Forgot?"
+            onForgotPassword={action('click')}
+          />
+        </div>
+        <div className="col-12 story-wrapper">
+          <PasswordField
+            name="pwd3"
+            label="Your password"
+            error="this field has error"
+            forgotPasswordText="Forgot?"
+            onForgotPassword={action('click')}
+          />
+        </div>
+      </div>
+    </div>
+  ));

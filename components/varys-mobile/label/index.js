@@ -31,7 +31,7 @@ const Label = (props) => {
   return normalLabel(props);
 };
 
-const isClickable = ({ type }) => type === CLICKABLE;
+const isClickable = ({ type, onClick }) => type === CLICKABLE || (type === ACTIVE && !!onClick);
 
 const clickableLabel = (props) => (
   <label className={className(props.type)}>

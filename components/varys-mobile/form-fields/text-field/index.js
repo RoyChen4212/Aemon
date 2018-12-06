@@ -1,6 +1,6 @@
 import React from 'react';
-import Label, { types as labelTypes } from '../label';
-import Hint, { types as hintTypes } from '../hint';
+import Label, { types as labelTypes } from '../../label';
+import Hint, { types as hintTypes } from '../../hint';
 import './style.scss';
 
 class TextField extends React.Component {
@@ -8,8 +8,10 @@ class TextField extends React.Component {
     focused: false,
   }
 
+  baseClassName = 'pbg-form-field pbg-text-field';
+
   get className() {
-    let resultingClassName = 'pbg-form-field pbg-text-field';
+    let resultingClassName = this.baseClassName;
 
     if (this.error) {
       resultingClassName += ' pbg-form-field-error';
@@ -44,6 +46,8 @@ class TextField extends React.Component {
     return null;
   }
 
+  get type() { return this.props.type || 'text' };
+
   onFocus = () => {
     this.setState({ focused: true });
   }
@@ -65,7 +69,7 @@ class TextField extends React.Component {
           name={props.name}
           value={props.value}
           placeholder={props.label}
-          type="text"
+          type={this.type}
         />
         {this.hintOrError}
       </div>

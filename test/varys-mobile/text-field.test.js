@@ -7,22 +7,34 @@ import { TextField } from '../../components/varys-mobile/form-fields';
 import Label, { types as labelTypes } from '../../components/varys-mobile/label';
 import Hint, { types as hintTypes } from '../../components/varys-mobile/hint';
 
-describe('TextField', () => {
+export const shouldBehaveLikeTextField = (wrapper) => {
   it('should have class pbg-form-field', () => {
-    const wrapper = shallow(<TextField />);
     expect(wrapper.hasClass('pbg-form-field')).to.be.true;
   });
 
   it('should have class pbg-text-field', () => {
-    const wrapper = shallow(<TextField />);
     expect(wrapper.hasClass('pbg-text-field')).to.be.true;
   });
 
   it('should contain one input type text element', () => {
-    const wrapper = shallow(<TextField />);
     expect(wrapper.find('input')).to.have.lengthOf(1);
     expect(wrapper.find('input').prop('type')).to.be.equal('text');
   });
+
+  it('should add pbg-input-focused class when clicked on input', () => {
+    wrapper.find('input').simulate('focus');
+    expect(wrapper.hasClass('pbg-input-focused')).to.be.true;
+  });
+
+  it('should remove pbg-input-focused class when clicked out of input', () => {
+    wrapper.find('input').simulate('focus');
+    wrapper.find('input').simulate('blur');
+    expect(wrapper.hasClass('pbg-input-focused')).to.be.false;
+  });
+};
+
+describe('TextField', () => {
+  shouldBehaveLikeTextField(shallow(<TextField />));
 
   it('should pass name prop to input element', () => {
     const expected = 'text-field-name';
@@ -43,6 +55,14 @@ describe('TextField', () => {
     expect(onChange.calledOnce).to.be.true;
   });
 
+  it('should execute onBlur when clicked out of input', () => {
+    const onBlur = sinon.spy();
+    const wrapper = shallow(<TextField onBlur={onBlur} />);
+    wrapper.find('input').simulate('focus');
+    wrapper.find('input').simulate('blur');
+    expect(onBlur.calledOnce).to.be.true;
+  });
+
   it('should pass label prop as placeholder to input element', () => {
     const expected = 'a placeholder';
     const wrapper = shallow(<TextField label={expected} />);
@@ -55,16 +75,16 @@ describe('TextField', () => {
     expect(wrapper.find(Label).prop('children')).to.equal(expected);
   });
 
-  it('should add pbg-input-focused class when clicked on input', () => {
-    const wrapper = shallow(<TextField />);
-    wrapper.find('input').simulate('focus');
-    expect(wrapper.hasClass('pbg-input-focused')).to.be.true;
-  });
-
   it('should show a hint when given', () => {
     const expected = 'a hint';
     const wrapper = shallow(<TextField hint={expected} />);
     expect(wrapper.contains(<Hint>{expected}</Hint>)).to.be.true;
+  });
+
+  it('should pass type prop to input', () => {
+    const expected = 'password';
+    const wrapper = shallow(<TextField type={expected} />);
+    expect(wrapper.find('input').prop('type')).to.equal(expected);
   });
 
   describe('With error', () => {

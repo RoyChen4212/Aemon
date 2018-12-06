@@ -19,6 +19,9 @@ label {
     color: $clear-blue;
     font-size: $small-font;
     line-height: $small-line-height;
+    > a {
+      cursor: pointer;
+    }
   }
 
   &.pbg-label-secondary {

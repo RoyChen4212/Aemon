@@ -1,4 +1,4 @@
-@import '../scss/styleguide';
+@import '../../scss/styleguide';
 
 .pbg-form-field {
   &.pbg-text-field {
@@ -14,6 +14,7 @@
       font-size: 14px;
       outline: 0;
       padding-bottom: 8px;
+      width: 100%;
 
       &::placeholder {
         color: $cool-grey;
