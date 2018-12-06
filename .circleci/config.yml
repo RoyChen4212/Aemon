@@ -13,6 +13,11 @@ jobs:
           key: dependency-cache-{{ arch }}-{{ checksum "package.json" }}
           paths:
             - node_modules
+      - run:
+        name: Setup Code Climate test-reporter
+        command: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
       - run: npm test
       - run: npm run test:cover
       - run: node_modules/.bin/codeclimate-test-reporter < ./coverage/lcov.info

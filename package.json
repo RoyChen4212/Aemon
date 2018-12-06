@@ -40,7 +40,6 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-1": "^6.24.1",
     "chai": "^4.2.0",
-    "codeclimate-test-reporter": "^0.5.1",
     "css-loader": "^1.0.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16.3": "^1.4.0",
