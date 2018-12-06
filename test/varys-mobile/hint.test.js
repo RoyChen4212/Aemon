@@ -26,4 +26,17 @@ describe('Hint', () => {
     const wrapper = shallow(<Hint type={types.ERROR}>some text</Hint>);
     expect(wrapper.find('span').hasClass(classes[types.ERROR])).to.be.true;
   });
+
+  it('should have correct class when clickable type', () => {
+    const wrapper = shallow(<Hint type={types.CLICKABLE}>some text</Hint>);
+    console.log(wrapper.find('span').html())
+    expect(wrapper.find('span').hasClass(classes[types.CLICKABLE])).to.be.true;
+  });
+
+  it('should call onClick event when given', () => {
+    const onClick = sinon.spy();
+    const wrapper = shallow(<Hint onClick={onClick}>some text</Hint>);
+    wrapper.find('span').find('a').simulate('click');
+    expect(onClick.calledOnce).to.be.true;
+  });
 });

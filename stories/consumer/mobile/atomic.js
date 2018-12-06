@@ -55,6 +55,9 @@ storiesOf('Atomic Components', module)
       <div className="row">
         <div className="col-12"><Hint>Hint</Hint></div>
         <div className="col-12"><Hint type={hintTypes.ERROR}>Error</Hint></div>
+        <div className="col-12">
+          <Hint type={hintTypes.CLICKABLE} onClick={action('click')}>Click me</Hint>
+        </div>
       </div>
     </div>
   ))

@@ -13,4 +13,8 @@ span {
   &.pbg-hint-error {
     color: $coral-error;
   }
+
+  &.pbg-hint-clickable {
+    color: $clear-blue;
+  }
 }
