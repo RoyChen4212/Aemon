@@ -1,7 +1,7 @@
 {
   "name": "aemon",
   "engines": {
-    "node": "~6.11.1"
+    "node": "~8.11.2"
   },
   "version": "1.0.0",
   "description": "PBG UI Library with Storybook",
