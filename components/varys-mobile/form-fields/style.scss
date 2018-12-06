@@ -1,0 +1,48 @@
+@import '../scss/styleguide';
+
+.pbg-form-field {
+  &.pbg-text-field {
+    .pbg-label {
+      visibility: hidden;
+    }
+
+    input {
+      border: 0;
+      border-bottom: 1px solid;
+      border-color: $cool-grey;
+      line-height: 20px;
+      font-size: 14px;
+      outline: 0;
+      padding-bottom: 8px;
+
+      &::placeholder {
+        color: $cool-grey;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 20px;
+        font-size: 14px;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &.pbg-input-focused {
+    .pbg-label {
+      visibility: visible;
+    }
+    input {
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  &.pbg-form-field-error {
+    input {
+      border-color: $coral-error;
+    }
+  }
+}

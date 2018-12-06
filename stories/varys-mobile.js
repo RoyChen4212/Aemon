@@ -7,6 +7,9 @@ import Hint, { types as hintTypes } from '../components/varys-mobile/hint';
 import {
   PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
 } from '../components/varys-mobile/button';
+import {
+  TextField,
+} from '../components/varys-mobile/form-fields';
 
 import './style.scss';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -19,6 +22,9 @@ storiesOf('Varys/Mobile/Atomic Components', module)
           <Label>Normal Label</Label>
         </div>
         <div className="col-12">
+          <Label type={labelTypes.ACTIVE}>Active Label</Label>
+        </div>
+        <div className="col-12">
           <Label type={labelTypes.STRONG}>I am a strong label</Label>
         </div>
         <div className="col-12">
@@ -26,6 +32,9 @@ storiesOf('Varys/Mobile/Atomic Components', module)
         </div>
         <div className="col-12">
           <Label type={labelTypes.CLICKABLE} onClick={action('clicked')}>Click me</Label>
+        </div>
+        <div className="col-12">
+          <Label type={labelTypes.ERROR}>Error label</Label>
         </div>
       </div>
     </div>
@@ -113,3 +122,31 @@ storiesOf('Varys/Mobile/Atomic Components', module)
       </div>
     </div>
   ));
+
+storiesOf('Varys/Mobile/Atomic Components/Form Fields', module)
+  .add('TextField', () => (
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-12 story-wrapper">
+          <TextField
+            name="field1"
+            label="A text field"
+          />
+        </div>
+        <div className="col-12 story-wrapper">
+          <TextField
+            name="field2"
+            label="A text field"
+            hint="with a hint"
+          />
+        </div>
+        <div className="col-12 story-wrapper">
+          <TextField
+            name="field3"
+            label="A text field"
+            error="this field has error"
+          />
+        </div>
+      </div>
+    </div>
+  ))

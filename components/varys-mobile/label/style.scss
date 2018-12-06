@@ -8,10 +8,17 @@ label {
     font-weight: normal;
     line-height: 20px;
     font-size: 14px;
+    margin: 0;
   }
 
   &.pbg-label-strong {
     font-weight: 500;
+  }
+
+  &.pbg-label-active {
+    color: $clear-blue;
+    font-size: $small-font;
+    line-height: $small-line-height;
   }
 
   &.pbg-label-secondary {
@@ -25,5 +32,11 @@ label {
   &.pbg-label-clickable {
     color: $clear-blue;
     cursor: pointer;
+  }
+
+  &.pbg-label-error {
+    color: $coral-error;
+    font-size: $small-font;
+    line-height: $small-line-height;
   }
 }

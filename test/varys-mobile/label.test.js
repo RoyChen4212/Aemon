@@ -61,4 +61,14 @@ describe('Label', () => {
     );
     expect(wrapper.find('label').find('a').prop('href')).to.equal(url);
   });
+
+  it('should have correct class when active type', () => {
+    const wrapper = shallow(<Label type={types.ACTIVE}>some text</Label>);
+    expect(wrapper.find('label').hasClass(classes[types.ACTIVE])).to.be.true;
+  });
+
+  it('should have correct class when active error', () => {
+    const wrapper = shallow(<Label type={types.ERROR}>some text</Label>);
+    expect(wrapper.find('label').hasClass(classes[types.ERROR])).to.be.true;
+  });
 });
