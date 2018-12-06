@@ -18,7 +18,7 @@ describe('PasswordField', () => {
 
   it('should have forgot password label', () => {
     const wrapper = shallow(<PasswordField />);
-    expect(wrapper.find('.pbg-forgot-password-container').find(Label)).to.have.lengthOf(1);
+    expect(wrapper.find('.pbg-forgot-password-container').find(Hint)).to.have.lengthOf(1);
   });
 
   it('should show a hint when given', () => {
@@ -30,7 +30,7 @@ describe('PasswordField', () => {
   it('should call onForgotPassword when forgot password is clicked', () => {
     const onForgotPassword = sinon.spy();
     const wrapper = shallow(<PasswordField onForgotPassword={onForgotPassword} />);
-    wrapper.find('.pbg-forgot-password-container').find(Label).simulate('click');
+    wrapper.find('.pbg-forgot-password-container').find(Hint).simulate('click');
     expect(onForgotPassword.calledOnce).to.be.true;
   });
 
