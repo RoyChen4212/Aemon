@@ -3,9 +3,9 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import { TextField } from '../../components/varys-mobile/form-fields';
-import Label, { types as labelTypes } from '../../components/varys-mobile/label';
-import Hint, { types as hintTypes } from '../../components/varys-mobile/hint';
+import { TextField } from '../../components/consumer/mobile/form-fields';
+import Label, { types as labelTypes } from '../../components/consumer/mobile/label';
+import Hint, { types as hintTypes } from '../../components/consumer/mobile/hint';
 
 export const shouldBehaveLikeTextField = (wrapper) => {
   it('should have class pbg-form-field', () => {

@@ -1,20 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Label, { types as labelTypes } from '../components/varys-mobile/label';
-import { H1, H2, H3 } from '../components/varys-mobile/heading';
-import Hint, { types as hintTypes } from '../components/varys-mobile/hint';
+import Label, { types as labelTypes } from '../../../components/consumer/mobile/label';
+import { H1, H2, H3 } from '../../../components/consumer/mobile/heading';
+import Hint, { types as hintTypes } from '../../../components/consumer/mobile/hint';
 import {
   PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
-} from '../components/varys-mobile/button';
+} from '../../../components/consumer/mobile/button';
 import {
   TextField, PasswordField
-} from '../components/varys-mobile/form-fields';
+} from '../../../components/consumer/mobile/form-fields';
 
-import './style.scss';
+import '../../style.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Varys/Mobile/Atomic Components', module)
+storiesOf('Atomic Components', module)
   .add('Label', () => (
     <div className="container-fluid">
       <div className="row">
@@ -118,66 +118,6 @@ storiesOf('Varys/Mobile/Atomic Components', module)
           <div className="story-wrapper">
             <SmallFacebookButton hint="With Hint" onClick={action('clicked')}>Small Facebook Button</SmallFacebookButton>
           </div>
-        </div>
-      </div>
-    </div>
-  ));
-
-storiesOf('Varys/Mobile/Atomic Components/Form Fields', module)
-  .add('Text Field', () => (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-12 story-wrapper">
-          <TextField
-            name="field1"
-            label="A text field"
-          />
-        </div>
-        <div className="col-12 story-wrapper">
-          <TextField
-            name="field2"
-            label="A text field"
-            hint="with a hint"
-          />
-        </div>
-        <div className="col-12 story-wrapper">
-          <TextField
-            name="field3"
-            label="A text field"
-            error="this field has error"
-          />
-        </div>
-      </div>
-    </div>
-  ))
-  .add('Password Field', () => (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-12 story-wrapper">
-          <PasswordField
-            name="pwd1"
-            label="Your password"
-            forgotPasswordText="Forgot?"
-            onForgotPassword={action('click')}
-          />
-        </div>
-        <div className="col-12 story-wrapper">
-          <PasswordField
-            name="pwd2"
-            label="Your password"
-            hint="is secret"
-            forgotPasswordText="Forgot?"
-            onForgotPassword={action('click')}
-          />
-        </div>
-        <div className="col-12 story-wrapper">
-          <PasswordField
-            name="pwd3"
-            label="Your password"
-            error="this field has error"
-            forgotPasswordText="Forgot?"
-            onForgotPassword={action('click')}
-          />
         </div>
       </div>
     </div>
