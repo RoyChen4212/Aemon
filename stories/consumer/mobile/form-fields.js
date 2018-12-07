@@ -65,6 +65,16 @@ storiesOf('Form Fields', module)
         </div>
         <div className="col-12 story-wrapper">
           <PasswordField
+            name="pwd2"
+            label="Your password"
+            hint="is secret"
+            forgotPasswordText="Forgot?"
+            onForgotPassword={action('click')}
+            required
+          />
+        </div>
+        <div className="col-12 story-wrapper">
+          <PasswordField
             name="pwd3"
             label="Your password"
             error="this field has error"
