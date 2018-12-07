@@ -1,22 +1,13 @@
 import React from 'react';
 
+import FormField from '../form-field';
 import Label, { types as labelTypes } from '../label';
 import Hint, { types as hintTypes } from '../hint';
 
 import './style.scss';
 
-class Picker extends React.Component {
+class Picker extends FormField {
   baseClassName = 'pbg-form-field pbg-picker';
-
-  get className() {
-    let resultingClassName = this.baseClassName;
-
-    if (this.error) {
-      resultingClassName += ' pbg-form-field-error';
-    }
-
-    return resultingClassName;
-  }
 
   get label() {
     return (
@@ -35,16 +26,6 @@ class Picker extends React.Component {
         }
       </select>
     );
-  }
-
-  get error() { return this.props.error; }
-
-  get hint() { return this.props.hint; }
-
-  get hintOrError() {
-    if (this.error) return <div><Hint type={hintTypes.ERROR}>{this.error}</Hint></div>;
-    if (this.hint) return <div><Hint>{this.hint}</Hint></div>;
-    return null;
   }
 
   render() {

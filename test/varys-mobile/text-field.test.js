@@ -3,6 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
+import { shouldBehaveLikeFormField } from './form-field.test';
 import { TextField } from '../../components/consumer/mobile/form-fields';
 import Label, { types as labelTypes } from '../../components/consumer/mobile/label';
 import Hint, { types as hintTypes } from '../../components/consumer/mobile/hint';
@@ -16,20 +17,21 @@ export const shouldBehaveLikeTextField = (wrapper) => {
     expect(wrapper.hasClass('pbg-text-field')).to.be.true;
   });
 
-  it('should add pbg-input-focused class when clicked on input', () => {
+  it('should add pbg-form-field-focused class when clicked on input', () => {
     wrapper.find('input').simulate('focus');
-    expect(wrapper.hasClass('pbg-input-focused')).to.be.true;
+    expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
   });
 
-  it('should remove pbg-input-focused class when clicked out of input', () => {
+  it('should remove pbg-form-field-focused class when clicked out of input', () => {
     wrapper.find('input').simulate('focus');
     wrapper.find('input').simulate('blur');
-    expect(wrapper.hasClass('pbg-input-focused')).to.be.false;
+    expect(wrapper.hasClass('pbg-form-field-focused')).to.be.false;
   });
 };
 
 describe('TextField', () => {
   shouldBehaveLikeTextField(shallow(<TextField />));
+  shouldBehaveLikeFormField(shallow(<TextField error="some error" />));
 
   it('should pass name prop to input element', () => {
     const expected = 'text-field-name';

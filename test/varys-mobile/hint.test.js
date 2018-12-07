@@ -29,7 +29,6 @@ describe('Hint', () => {
 
   it('should have correct class when clickable type', () => {
     const wrapper = shallow(<Hint type={types.CLICKABLE}>some text</Hint>);
-    console.log(wrapper.find('span').html())
     expect(wrapper.find('span').hasClass(classes[types.CLICKABLE])).to.be.true;
   });
 
