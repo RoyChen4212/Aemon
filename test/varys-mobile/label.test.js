@@ -71,4 +71,9 @@ describe('Label', () => {
     const wrapper = shallow(<Label type={types.ERROR}>some text</Label>);
     expect(wrapper.find('label').hasClass(classes[types.ERROR])).to.be.true;
   });
+
+  it('should have correct class when required prop is passed', () => {
+    const wrapper = shallow(<Label required>some text</Label>);
+    expect(wrapper.find('label').hasClass('required')).to.be.true;
+  });
 });
