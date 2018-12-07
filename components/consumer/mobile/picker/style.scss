@@ -1,4 +1,4 @@
-@import '../../scss/styleguide';
+@import '../scss/styleguide';
 
 .pbg-picker {
   width: 100%;
@@ -45,7 +45,7 @@
 
     }
     .pbg-picker-arrow {
-      background: url('../../img/pbg-picker-arrow.svg') no-repeat;
+      background: url('../img/pbg-picker-arrow.svg') no-repeat;
       position: absolute;
       right: 0px;
       width: 7px;

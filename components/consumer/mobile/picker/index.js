@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Label, { types as labelTypes } from '../../label';
-import Hint, { types as hintTypes } from '../../hint';
+import Label, { types as labelTypes } from '../label';
+import Hint, { types as hintTypes } from '../hint';
 
 import './style.scss';
 
