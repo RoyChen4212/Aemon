@@ -5,6 +5,7 @@ import './style.scss';
 
 class PasswordField extends TextField {
   baseClassName = 'pbg-form-field pbg-text-field pbg-password-field';
+  baseType = 'password';
 
   get hintOrError() {
     if (this.error) return this.errorFeedback;

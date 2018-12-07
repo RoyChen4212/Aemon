@@ -16,11 +16,6 @@ export const shouldBehaveLikeTextField = (wrapper) => {
     expect(wrapper.hasClass('pbg-text-field')).to.be.true;
   });
 
-  it('should contain one input type text element', () => {
-    expect(wrapper.find('input')).to.have.lengthOf(1);
-    expect(wrapper.find('input').prop('type')).to.be.equal('text');
-  });
-
   it('should add pbg-input-focused class when clicked on input', () => {
     wrapper.find('input').simulate('focus');
     expect(wrapper.hasClass('pbg-input-focused')).to.be.true;
@@ -40,6 +35,11 @@ describe('TextField', () => {
     const expected = 'text-field-name';
     const wrapper = shallow(<TextField name={expected} />);
     expect(wrapper.find('input').html()).to.include(`name="${expected}"`);
+  });
+
+  it('should contain one input type text element', () => {
+    const wrapper = shallow(<TextField />);
+    expect(wrapper.find('input').html()).to.include(`type="text"`);
   });
 
   it('should pass value prop to input element', () => {

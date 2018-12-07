@@ -9,6 +9,7 @@ class TextField extends React.Component {
   }
 
   baseClassName = 'pbg-form-field pbg-text-field';
+  baseType = 'text';
 
   get className() {
     let resultingClassName = this.baseClassName;
@@ -46,7 +47,9 @@ class TextField extends React.Component {
     return null;
   }
 
-  get type() { return this.props.type || 'text' };
+  get type() { return this.props.type || this.baseType };
+
+  get placeholder() { return !this.props.required ? this.props.label : this.props.label + '*'; }
 
   onFocus = () => {
     this.setState({ focused: true });
@@ -68,7 +71,7 @@ class TextField extends React.Component {
           onFocus={this.onFocus}
           name={props.name}
           value={props.value}
-          placeholder={props.label}
+          placeholder={this.placeholder}
           type={this.type}
         />
         {this.hintOrError}

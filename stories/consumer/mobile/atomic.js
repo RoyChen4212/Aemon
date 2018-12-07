@@ -22,6 +22,9 @@ storiesOf('Atomic Components', module)
           <Label>Normal Label</Label>
         </div>
         <div className="col-12">
+          <Label required>Required Label</Label>
+        </div>
+        <div className="col-12">
           <Label type={labelTypes.ACTIVE}>Active Label</Label>
         </div>
         <div className="col-12">

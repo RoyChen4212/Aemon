@@ -9,12 +9,12 @@ const SECONDARY = 'secondary';
 const STRONG = 'strong';
 
 const BASE_CLASS = 'pbg-label';
-const ACTIVE_CLASS = BASE_CLASS + ' pbg-label-active';
-const CLICKABLE_CLASS = BASE_CLASS + ' pbg-label-clickable';
-const ERROR_CLASS = BASE_CLASS + ' pbg-label-error';
-const INPUT_CLASS = BASE_CLASS + ' pbg-label-input';
-const SECONDARY_CLASS = BASE_CLASS + ' pbg-label-secondary';
-const STRONG_CLASS = BASE_CLASS + ' pbg-label-strong';
+const ACTIVE_CLASS = 'pbg-label-active';
+const CLICKABLE_CLASS = 'pbg-label-clickable';
+const ERROR_CLASS = 'pbg-label-error';
+const INPUT_CLASS = 'pbg-label-input';
+const SECONDARY_CLASS = 'pbg-label-secondary';
+const STRONG_CLASS = 'pbg-label-strong';
 
 export const classes = {
   base: BASE_CLASS,
@@ -34,18 +34,30 @@ const Label = (props) => {
 const isClickable = ({ type, onClick }) => type === CLICKABLE || (type === ACTIVE && !!onClick);
 
 const clickableLabel = (props) => (
-  <label className={className(props.type)}>
+  <label className={className(props)}>
     <a href={props.href} onClick={props.onClick}>{props.children}</a>
   </label>
 );
 
 const normalLabel = (props) => (
-  <label className={className(props.type)}>
+  <label className={className(props)}>
     <span>{props.children}</span>
   </label>
 );
 
-const className = type => classes[type] || BASE_CLASS;
+const className = ({ type, required }) => {
+  let resultingClassName = BASE_CLASS;
+
+  if (required) {
+    resultingClassName += ' required';
+  }
+
+  if (classes[type]) {
+    resultingClassName += ` ${classes[type]}`;
+  }
+
+  return resultingClassName;
+}
 
 export const types = {
   ACTIVE,

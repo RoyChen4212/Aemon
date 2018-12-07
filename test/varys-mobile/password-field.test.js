@@ -67,5 +67,10 @@ describe('PasswordField', () => {
       const wrapper = shallow(<PasswordField error='and error' label={expected}/>);
       expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
+
+    it('should have type password on input element', () => {
+      const wrapper = shallow(<PasswordField />);
+      expect(wrapper.find('input').html()).to.include(`type="password"`);
+    });
   });
 });

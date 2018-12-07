@@ -9,6 +9,12 @@ label {
     line-height: 20px;
     font-size: 14px;
     margin: 0;
+
+    &.required {
+      &:after {
+        content: '*';
+      }
+    }
   }
 
   &.pbg-label-strong {

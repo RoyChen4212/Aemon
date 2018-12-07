@@ -27,6 +27,14 @@ storiesOf('Form Fields', module)
         </div>
         <div className="col-12 story-wrapper">
           <TextField
+            name="field2"
+            label="A required text field"
+            hint="with a hint"
+            required
+          />
+        </div>
+        <div className="col-12 story-wrapper">
+          <TextField
             name="field3"
             label="A text field"
             error="this field has error"
