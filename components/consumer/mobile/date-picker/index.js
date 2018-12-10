@@ -27,6 +27,7 @@ class DatePicker extends FormField {
           </div>
           <input
             type="date"
+            value={this.props.value}
             onChange={this.onChange}
             onBlur={this.onBlur}
           />

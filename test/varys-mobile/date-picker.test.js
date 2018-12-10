@@ -51,6 +51,12 @@ describe('Date picker', () => {
     expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true;
   });
 
+  it('should pass value to input', () => {
+    const date = 'December 8, 2018';
+    const wrapper = shallow(<DatePicker value={date} />);
+    expect(wrapper.find('input').prop('value')).to.equal(date);
+  });
+
   it('should execute default formater if none provided for feedback with value', () => {
     const date = new Date('December 8, 2018');
     const wrapper = shallow(<DatePicker value={date} />);
