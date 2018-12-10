@@ -2,7 +2,7 @@ import React from 'react';
 import Label, { types as labelTypes } from './label';
 import Hint, { types as hintTypes } from './hint';
 
-class FormField extends React.Component {
+class FormField extends React.PureComponent {
   state = {
     focused: false,
   }
@@ -29,9 +29,17 @@ class FormField extends React.Component {
 
   get focused() { return this.state.focused || !!this.error; }
 
+  get labelType() {
+    if (this.props.error) return labelTypes.ERROR;
+    return labelTypes.base;
+  }
+
   get label() {
     const { label } = this.props;
-    return label ? <div><Label type={this.labelType}>{label}</Label></div> : null;
+    const labelElement = (
+      <div><Label type={this.labelType} required={this.props.required}>{label}</Label></div>
+    );
+    return label ? labelElement : null;
   }
 
   get hintOrError() {
@@ -42,6 +50,10 @@ class FormField extends React.Component {
 
   onFocus = () => {
     this.setState({ focused: true });
+  }
+
+  onChange = (ev) => {
+    if (this.props.onChange) this.props.onChange(ev);
   }
 
   onBlur = (ev) => {

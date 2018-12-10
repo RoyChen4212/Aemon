@@ -2,8 +2,10 @@ import { configure } from '@storybook/react';
 
 function loadStories() {
   require('../stories/consumer/mobile/atomic.js');
-  require('../stories/consumer/mobile/form-fields.js');
-  // You can require as many stories as you need.
+  require('../stories/consumer/mobile/text-field.story.js');
+  require('../stories/consumer/mobile/password-field.story.js');
+  require('../stories/consumer/mobile/picker.story.js');
+  require('../stories/consumer/mobile/date-picker.story.js');
 }
 
 configure(loadStories, module);

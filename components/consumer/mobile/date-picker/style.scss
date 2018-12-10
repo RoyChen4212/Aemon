@@ -1,0 +1,69 @@
+@import '../scss/styleguide';
+
+.pbg-form-field {
+  &.pbg-date-picker {
+    .pbg-label {
+      margin-bottom: 8px;
+    }
+
+    &.pbg-form-field-error {
+      .pbg-date-picker-container {
+        .pbg-date-picker-mask {
+          background: $coral-light;
+          border: 1px solid $coral-error;
+
+          .pbg-picker-arrow {
+            background: url('../img/pbg-picker-arrow-error.svg') no-repeat;
+          }
+        }
+      }
+    }
+
+    .pbg-date-picker-container {
+      position: relative;
+      width: 100%;
+      height: 36px;
+
+      .pbg-date-picker-mask {
+        background: $pale-grey;
+        border: 1px solid $pinkish-grey;
+        box-sizing: border-box;
+        border-radius: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+
+        .pbg-label {
+          padding: 7px;
+        }
+
+        .pbg-picker-arrow {
+          background: url('../img/pbg-picker-arrow.svg') no-repeat;
+          position: absolute;
+          right: 7px;
+          width: 7px;
+          height: 7px;
+          top: 13px;
+        }
+      }
+
+      input[type="date"] {
+        background: $pale-grey;
+        border: 1px solid $pinkish-grey;
+        box-sizing: border-box;
+        border-radius: 4px;
+        height: 100%;
+        outline: 0;
+        width: 100%;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+  }
+}
+
