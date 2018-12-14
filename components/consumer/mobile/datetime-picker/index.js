@@ -4,7 +4,13 @@ import FormField from '../form-field';
 import Label, { types as labelTypes } from '../label';
 import Hint, { types as hintTypes } from '../hint';
 import { DatePicker, TimePicker } from '../form-fields';
+import {
+  generateNewValue,
+  applyDateToValue,
+  applyTimeToValue,
+} from './value-generator';
 import makeEvent from '../../../lib/make-event';
+
 import './style.scss';
 
 class DatetimePicker extends FormField {
@@ -16,57 +22,37 @@ class DatetimePicker extends FormField {
   }
 
   static getDerivedStateFromProps(props) {
-    let date = props.value;
+    const date = props.value;
     if (!date) return {};
 
-    if (date.constructor.name !== Date) {
-      date = new Date(date)
-    }
-
-    const derivedState = {
+    return {
       dateValue: toDatePickerString(date),
       timeValue: toTimePickerString(`${date.getHours()}:${date.getMinutes()}`),
     };
-
-    return derivedState;
   }
 
   get timezone() {
     return this.props.timezone;
   }
 
-  onValueUpdated = () => {
-    const newDate = moment(this.state.dateValue + `T${this.state.timeValue}:00`)
-      .tz(this.timezone)
-      .format();
-
-    this.onBlur(makeEvent(new Date(newDate)));
-    this.onChange(makeEvent(new Date(newDate)));
-  }
-
-  updateValue({ date, time }) {
-    const updateState = (state, props) => {
-      const { dateValue, timeValue } = this.state;
-      const defaultDate = new Date(moment().tz(this.timezone).format());
-
-      const newState = {
-        dateValue: date.length ? date : toDatePickerString(defaultDate),
-        timeValue: time.length ? toTimePickerString(time) : '00:00',
-      };
-
-      return newState;
-    };
-
-    this.setState(updateState, this.onValueUpdated);
-  }
-
   onChangeDateValue = (ev) => {
-    console.log('onChangeDateValue', ev.target.value)
-    this.updateValue({ date: ev.target.value, time: this.state.timeValue });
+    const { value: currentValue } = this.props;
+    const newValue = currentValue ?
+      applyDateToValue(currentValue, ev.target.value, this.timezone) :
+      generateNewValue(ev.target.value, null, this.timezone);
+
+    this.onChange(makeEvent(newValue));
+    this.onBlur(makeEvent(newValue));
   }
 
   onChangeTimeValue = (ev) => {
-    this.updateValue({ date: this.state.dateValue, time: ev.target.value });
+    const { value: currentValue } = this.props;
+    const newValue = currentValue ?
+      applyTimeToValue(currentValue, ev.target.value, this.timezone) :
+      generateNewValue(null, ev.target.value, this.timezone);
+
+    this.onChange(makeEvent(newValue));
+    this.onBlur(makeEvent(newValue));
   }
 
   render() {
