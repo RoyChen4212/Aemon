@@ -43,7 +43,6 @@
   "devDependencies": {
     "@storybook/react": "^3.4.11",
     "babel-cli": "^6.26.0",
-    "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-1": "^6.24.1",
     "chai": "^4.2.0",
@@ -58,7 +57,6 @@
     "nyc": "^13.1.0",
     "sass-loader": "^7.1.0",
     "sinon": "^7.1.1",
-    "storybook-addon-intl": "^2.3.1",
     "style-loader": "^0.23.1"
   }
 }
