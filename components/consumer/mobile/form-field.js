@@ -52,13 +52,13 @@ class FormField extends React.PureComponent {
     this.setState({ focused: true });
   }
 
-  onChange = (ev) => {
-    if (this.props.onChange) this.props.onChange(ev);
+  onChange = (value) => {
+    if (this.props.onChange) this.props.onChange(value);
   }
 
-  onBlur = (ev) => {
+  onBlur = (value) => {
     this.setState({ focused: false });
-    if (this.props.onBlur) this.props.onBlur(ev);
+    if (this.props.onBlur) this.props.onBlur(value);
   }
 
   render() {

@@ -23,11 +23,21 @@ describe('Date picker', () => {
 
   it('should call onChange event when date input changes', () => {
     const onChange = sinon.spy();
-    const expected = { target: { value: 'expected value' } };
+    const event = { target: { value: 'expected value' } };
     const wrapper = shallow(<TimePicker onChange={onChange} />);
-    wrapper.find('input').simulate('change', expected);
+    wrapper.find('input').simulate('change', event);
     expect(onChange.calledOnce).to.be.true;
-    expect(onChange.calledWith(expected)).to.be.true;
+  });
+
+  it('should call onChange with correct value when date input changes', function(done) {
+    const expected = '12:22';
+    const event = { target: { value: expected } };
+    const onChange = ev => {
+      expect(ev.target.value).to.equal(expected);
+      done();
+    };
+    const wrapper = shallow(<TimePicker onChange={onChange} />);
+    wrapper.find('input').simulate('change', event);
   });
 
   it('should call onBlur event when date input loses focus', () => {
@@ -58,14 +68,14 @@ describe('Date picker', () => {
   });
 
   it('should execute default formater if none provided for feedback with value', () => {
-    const date = new Date('December 8, 2018 23:45');
+    const date = '23:45';
     const wrapper = shallow(<TimePicker value={date} />);
     const expected = <Label type={labelTypes.SECONDARY}>23:45</Label>
     expect(wrapper.find('.pbg-time-picker-mask').contains(expected)).to.be.true;
   });
 
   it('should provide correct feedback with small time numbers', () => {
-    const date = new Date('January 1, 2018 04:20');
+    const date = '04:20';
     const wrapper = shallow(<TimePicker value={date} />);
     const expected = <Label type={labelTypes.SECONDARY}>04:20</Label>
     expect(wrapper.find('.pbg-time-picker-mask').contains(expected)).to.be.true

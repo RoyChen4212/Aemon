@@ -3,3 +3,4 @@ export * from './password-field';
 export * from './picker';
 export * from './date-picker';
 export * from './time-picker';
+export * from './datetime-picker';

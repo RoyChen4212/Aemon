@@ -23,11 +23,21 @@ describe('Date picker', () => {
 
   it('should call onChange event when date input changes', () => {
     const onChange = sinon.spy();
-    const expected = { target: { value: 'expected value' } };
+    const event = { target: { value: '1984-10-19' } };
     const wrapper = shallow(<DatePicker onChange={onChange} />);
-    wrapper.find('input').simulate('change', expected);
+    wrapper.find('input').simulate('change', event);
     expect(onChange.calledOnce).to.be.true;
-    expect(onChange.calledWith(expected)).to.be.true;
+  });
+
+  it('should call onChange with correct value', function(done) {
+    const expected = '1984-10-19';
+    const onChange = (ev) => {
+      expect(ev.target.value).to.equal(expected);
+      done();
+    }
+    const event = { target: { value: expected } };
+    const wrapper = shallow(<DatePicker onChange={onChange} />);
+    wrapper.find('input').simulate('change', event);
   });
 
   it('should call onBlur event when date input loses focus', () => {
@@ -52,19 +62,26 @@ describe('Date picker', () => {
   });
 
   it('should pass value to input', () => {
-    const date = 'December 8, 2018';
+    const date = '2018-12-8';
     const wrapper = shallow(<DatePicker value={date} />);
     expect(wrapper.find('input').prop('value')).to.equal(date);
   });
 
   it('should execute default formater if none provided for feedback with value', () => {
-    const date = new Date('December 8, 2018');
+    const date = '2018-12-8';
     const wrapper = shallow(<DatePicker value={date} />);
     const expected = <Label type={labelTypes.SECONDARY}>12/08/2018</Label>
     expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true;
   });
 
   it('should provide correct feedback with small date numbers', () => {
+    const date = '2018-1-1';
+    const wrapper = shallow(<DatePicker value={date} />);
+    const expected = <Label type={labelTypes.SECONDARY}>01/01/2018</Label>
+    expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true
+  });
+
+  it('should provide correct feedback with date object value', () => {
     const date = new Date('January 1, 2018');
     const wrapper = shallow(<DatePicker value={date} />);
     const expected = <Label type={labelTypes.SECONDARY}>01/01/2018</Label>

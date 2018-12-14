@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FormField from '../form-field';
 import Label, { types as labelTypes } from '../label';
+import makeEvent from '../../../lib/make-event';
 import './style.scss';
 
 class TimePicker extends FormField {
@@ -27,7 +28,7 @@ class TimePicker extends FormField {
           </div>
           <input
             type="time"
-            value={this.props.value}
+            value={this.props.value || ''}
             onChange={this.onChange}
             onBlur={this.onBlur}
           />
@@ -39,10 +40,8 @@ class TimePicker extends FormField {
 }
 
 const defaultFormater = (time) => {
-  if (!time || time.constructor.name !== 'Date') return 'hh:mm';
-  const hour = time.getHours() < 10 ? `0${time.getHours()}` : time.getHours();
-  const minutes = time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes();
-  return `${hour}:${minutes}`;
-}
+  if (!time) return 'hh:mm';
+  return time;
+};
 
 export { TimePicker };
