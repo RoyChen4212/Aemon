@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 import {
   H1, H2, H3
-} from '../../components/consumer/mobile/heading';
+} from '../../../components/consumer/mobile/heading';
 
 describe('Heading', () => {
   it('should render an H1 tag when using H1', () => {

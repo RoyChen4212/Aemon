@@ -4,9 +4,9 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from './form-field.test';
-import { Picker } from '../../components/consumer/mobile/form-fields';
-import Label, { types as labelTypes } from '../../components/consumer/mobile/label';
-import Hint, { types as hintTypes } from '../../components/consumer/mobile/hint';
+import { Picker } from '../../../components/consumer/mobile/form-fields';
+import Label, { types as labelTypes } from '../../../components/consumer/mobile/label';
+import Hint, { types as hintTypes } from '../../../components/consumer/mobile/hint';
 
 describe('Picker', () => {
   shouldBehaveLikeFormField(shallow(<Picker error="some error" />));

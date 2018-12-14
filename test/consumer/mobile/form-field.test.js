@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import FormField from '../../components/consumer/mobile/form-field';
+import FormField from '../../../components/consumer/mobile/form-field';
 
 export const shouldBehaveLikeFormField = (wrapper) => {
   it('should have class pbg-form-field', () => {

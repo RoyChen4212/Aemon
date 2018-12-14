@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Hint, { classes, types } from '../../components/consumer/mobile/hint';
+import Hint, { classes, types } from '../../../components/consumer/mobile/hint';
 
 describe('Hint', () => {
   it('should render a span tag', () => {
