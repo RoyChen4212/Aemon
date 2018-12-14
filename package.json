@@ -2,7 +2,7 @@
   "name": "aemon",
   "version": "1.0.0",
   "engines": {
-    "noe": "8.11.x"
+    "node": "10.14.x"
   },
   "description": "PBG UI Library with Storybook",
   "main": "index.js",
