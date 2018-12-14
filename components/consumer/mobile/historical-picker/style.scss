@@ -1,0 +1,24 @@
+@import '../scss/styleguide';
+
+.pbg-historical-picker {
+
+  &.pbg-form-field-error {
+    .pbg-picker-select-container {
+      .pbg-picker-arrow {
+        background: url('../img/pbg-picker-arrow-error.svg') no-repeat;
+      }
+    }
+  }
+
+  .pbg-picker-select-container {
+    padding-bottom: 10px;
+    height: 30px;
+
+    select {
+      left: 0;
+      text-align: left;
+      text-align-last: left;
+      width: 100%;
+    }
+  }
+}

@@ -23,13 +23,13 @@
       display: inline-block;
       height: calc(2.25rem + 2px);
       line-height: $regular-line-height;
-      // float: right;
       font-size: $regular-font;
       max-width: 100%;
       padding: 0 0 8px;
       vertical-align: middle;
       -moz-appearance: none;
       -webkit-appearance: none;
+      outline: 0;
       position: absolute;
       right: 12px;
       text-align: right;
@@ -47,6 +47,7 @@
     .pbg-picker-arrow {
       background: url('../img/pbg-picker-arrow.svg') no-repeat;
       position: absolute;
+      pointer-events: none;
       right: 0px;
       width: 7px;
       height: 7px;
