@@ -8,6 +8,7 @@ function loadStories() {
   require('../stories/consumer/mobile/date-picker.story.js');
   require('../stories/consumer/mobile/time-picker.story.js');
   require('../stories/consumer/mobile/datetime-picker.story.js');
+  require('../stories/consumer/mobile/checkbox.story.js');
 }
 
 configure(loadStories, module);
