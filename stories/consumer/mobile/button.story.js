@@ -15,55 +15,6 @@ import '../../style.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 
 storiesOf('Atomic Components', module)
-  .add('Label', () => (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-12">
-          <Label>Normal Label</Label>
-        </div>
-        <div className="col-12">
-          <Label required>Required Label</Label>
-        </div>
-        <div className="col-12">
-          <Label type={labelTypes.ACTIVE}>Active Label</Label>
-        </div>
-        <div className="col-12">
-          <Label type={labelTypes.STRONG}>I am a strong label</Label>
-        </div>
-        <div className="col-12">
-          <Label type={labelTypes.SECONDARY}>I am a secondary label</Label>
-        </div>
-        <div className="col-12">
-          <Label type={labelTypes.CLICKABLE} onClick={action('clicked')}>Click me</Label>
-        </div>
-        <div className="col-12">
-          <Label type={labelTypes.ERROR}>Error label</Label>
-        </div>
-      </div>
-    </div>
-  ))
-  .add('Heading 1', () => (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col">
-          <H1>Heading 1</H1>
-          <H2>Heading 2</H2>
-          <H3>Heading 3</H3>
-        </div>
-      </div>
-    </div>
-  ))
-  .add('Hint', () => (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-12"><Hint>Hint</Hint></div>
-        <div className="col-12"><Hint type={hintTypes.ERROR}>Error</Hint></div>
-        <div className="col-12">
-          <Hint type={hintTypes.CLICKABLE} onClick={action('click')}>Click me</Hint>
-        </div>
-      </div>
-    </div>
-  ))
   .add('Button', () => (
     <div className="container-fluid">
       <div className="row">
