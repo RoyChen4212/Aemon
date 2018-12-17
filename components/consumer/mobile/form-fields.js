@@ -5,3 +5,4 @@ export * from './date-picker';
 export * from './time-picker';
 export * from './datetime-picker';
 export * from './historical-picker';
+export * from './checkbox';
