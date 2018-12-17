@@ -16,9 +16,34 @@ describe('Checkbox', () => {
   });
 
   it('render a label component when label prop is provided', () => {
-    const expected = 'A label';
-    const wrapper = shallow(<Checkbox label={expected} />);
-    expect(wrapper.find(Label)).to.have.lengthOf(1);
-    expect(wrapper.find('label').text()).to.equal(expected);
+    const text = 'A label';
+    const wrapper = shallow(<Checkbox label={text} />);
+    const expected = <Label>{text}</Label>;
+    expect(wrapper.contains(expected)).to.be.true;
+  });
+
+  it('checks the checkbox if true is passed as value', () => {
+    const wrapper = shallow(<Checkbox value={true} />)
+    expect(wrapper.find({ type: 'checkbox' }).props().checked).to.be.true;
+  });
+
+  it('checkbox not checked if false is passed as value', () => {
+    const wrapper = shallow(<Checkbox value={false} />)
+    expect(wrapper.find({ type: 'checkbox' }).props().checked).to.be.false;
+  });
+
+  it('checkbox not checked if no value is passed', () => {
+    const wrapper = shallow(<Checkbox />)
+    expect(wrapper.find({ type: 'checkbox' }).props().checked).to.be.false;
+  });
+
+  it('reports the value as true upon checking the checkbox', function(done) {
+    const onChange = (ev) => {
+      expect(ev.target.value).to.be.true;
+      done();
+    }
+    const wrapper = shallow(<Checkbox onChange={onChange} />);
+    const event =  { target: { checked: true } };
+    wrapper.find({ type: 'checkbox' }).simulate('change', event);
   });
 });
