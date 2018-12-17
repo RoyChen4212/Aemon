@@ -4,7 +4,12 @@ function loadStories() {
   require('../stories/consumer/mobile/label.story.js');
   require('../stories/consumer/mobile/heading.story.js');
   require('../stories/consumer/mobile/hint.story.js');
-  require('../stories/consumer/mobile/button.story.js');
+  require('../stories/consumer/mobile/primary-button.story.js');
+  require('../stories/consumer/mobile/secondary-button.story.js');
+  require('../stories/consumer/mobile/small-button.story.js');
+  require('../stories/consumer/mobile/link-button.story.js');
+  require('../stories/consumer/mobile/facebook-button.story.js');
+  require('../stories/consumer/mobile/small-facebook-button.story.js');
   require('../stories/consumer/mobile/text-field.story.js');
   require('../stories/consumer/mobile/password-field.story.js');
   require('../stories/consumer/mobile/picker.story.js');
