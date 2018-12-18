@@ -53,7 +53,7 @@ class FormField extends React.PureComponent {
   }
 
   onChange = (value) => {
-    if (this.props.onChange) this.props.onChange(value);
+    this.props.onChange(value);
   }
 
   onBlur = (value) => {

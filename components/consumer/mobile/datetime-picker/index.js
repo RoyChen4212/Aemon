@@ -55,18 +55,22 @@ class DatetimePicker extends FormField {
     this.onBlur(makeEvent(newValue));
   }
 
+  get pickers() {
+    const components = [
+      <DatePicker value={this.state.dateValue} onChange={this.onChangeDateValue} />,
+      <TimePicker value={this.state.timeValue} onChange={this.onChangeTimeValue} />,
+    ];
+
+    return components.map((comp, key) => (
+      <div className="pbg-datetime-picker-container" key={`comp-${key}`}>{comp}</div>
+    ));
+  }
+
   render() {
     return (
       <div className={this.className}>
         {this.label}
-        <div className="pbg-datetime-picker-pickers-wrapper">
-          <div className="pbg-datetime-picker-container">
-          <DatePicker value={this.state.dateValue} onChange={this.onChangeDateValue} />
-          </div>
-          <div className="pbg-datetime-picker-container">
-          <TimePicker value={this.state.timeValue} onChange={this.onChangeTimeValue} />
-          </div>
-        </div>
+        <div className="pbg-datetime-picker-pickers-wrapper">{this.pickers}</div>
         {this.hintOrError}
       </div>
     )

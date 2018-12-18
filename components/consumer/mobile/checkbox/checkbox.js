@@ -17,9 +17,7 @@ class Checkbox extends FormField {
     return label ? labelElement : null;
   }
 
-  onChange = (ev) => {
-    if (this.props.onChange) this.props.onChange(makeEvent(ev.target.checked));
-  }
+  onChange = ev => this.props.onChange(makeEvent(ev.target.checked));
 
   render() {
     return (
