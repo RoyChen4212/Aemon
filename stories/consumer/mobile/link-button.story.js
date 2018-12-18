@@ -2,23 +2,20 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { LinkButton } from '../../../components/consumer/mobile/button';
+import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Atomic Components', module)
-  .add('Link button', () => (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-12 story-wrapper">
-          <LinkButton onClick={action('clicked')}>Link Button</LinkButton>
-        </div>
-        <div className="col-12 story-wrapper">
-          <LinkButton disabled onClick={action('clicked')}>Link Button Disabled</LinkButton>
-        </div>
-        <div className="col-12 story-wrapper">
-          <LinkButton hint="With Hint" onClick={action('clicked')}>Link Button</LinkButton>
-        </div>
-      </div>
-    </div>
+storiesOf('Atomic Components/Link Button', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('Enabled/No Hint', () => (
+    <LinkButton onClick={action('clicked')}>Link Button</LinkButton>
+  ))
+  .add('Enabled/With Hint', () => (
+    <LinkButton hint="With Hint" onClick={action('clicked')}>Link Button</LinkButton>
+  ))
+  .add('Disabled', () => (
+    <LinkButton disabled onClick={action('clicked')}>Link Button Disabled</LinkButton>
   ));

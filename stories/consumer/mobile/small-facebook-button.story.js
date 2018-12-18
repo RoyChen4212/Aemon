@@ -2,10 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { SmallFacebookButton } from '../../../components/consumer/mobile/button';
+import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.scss';
 import 'bootstrap/dist/css/bootstrap.css';
-import { withContainer, wrapStory } from '../../util/decorators';
 
 storiesOf('Atomic Components/Small Facebook Button', module)
   .addDecorator(wrapStory)
