@@ -1,21 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FormField from '../form-field';
+import { DatePicker } from '../date-picker';
 import Label, { types as labelTypes } from '../label';
 import makeEvent from '../../../lib/make-event';
 import './style.scss';
 
-class TimePicker extends FormField {
-  static propTypes = {
-    formater: PropTypes.func,
-  };
-
+class TimePicker extends DatePicker {
   baseClassName = 'pbg-form-field pbg-time-picker';
 
-  get displayValue() {
-    const format = this.props.formater || defaultFormater;
-    return format(this.props.value);
-  }
+  get defaultFormater() { return defaultFormater; }
 
   render() {
     return (
@@ -23,8 +16,7 @@ class TimePicker extends FormField {
         {this.label}
         <div className="pbg-time-picker-container">
           <div className="pbg-time-picker-mask">
-            <Label type={labelTypes.SECONDARY}>{this.displayValue}</Label>
-            <span className="pbg-picker-arrow" />
+            {this.maskContents}
           </div>
           <input
             type="time"

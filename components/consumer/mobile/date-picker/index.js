@@ -11,9 +11,20 @@ class DatePicker extends FormField {
 
   baseClassName = 'pbg-form-field pbg-date-picker';
 
+  get defaultFormater() { return defaultFormater; }
+
   get displayValue() {
-    const format = this.props.formater || defaultFormater;
+    const format = this.props.formater || this.defaultFormater;
     return format(this.props.value);
+  }
+
+  get maskContents() {
+    return (
+      <React.Fragment>
+        <Label type={labelTypes.SECONDARY}>{this.displayValue}</Label>
+        <span className="pbg-picker-arrow" />
+      </React.Fragment>
+    )
   }
 
   render() {
@@ -21,10 +32,7 @@ class DatePicker extends FormField {
       <div className={this.className}>
         {this.label}
         <div className="pbg-date-picker-container">
-          <div className="pbg-date-picker-mask">
-            <Label type={labelTypes.SECONDARY}>{this.displayValue}</Label>
-            <span className="pbg-picker-arrow" />
-          </div>
+          <div className="pbg-date-picker-mask">{this.maskContents}</div>
           <input
             type="date"
             value={this.props.value}
