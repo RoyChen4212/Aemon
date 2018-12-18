@@ -171,6 +171,18 @@ describe('Datetime picker', () => {
       wrapper.find('input[type="date"]').simulate('change', event);
     });
 
+    it('should execute onChange with correct date value from DatePicker component with initial value', function(done) {
+      const event = { target: { value: '1984-10-19' }};
+      const inital = new Date(moment('2018-02-23T00:00').tz(timezone));
+      const expected = new Date(moment('1984-10-19T00:00').tz(timezone));
+      const onChange = (ev) => {
+        expect(ev.target.value.getTime()).to.equal(expected.getTime());
+        done();
+      }
+      const wrapper = mount(<DatetimePicker value={inital} timezone={timezone} onChange={onChange} />);
+      wrapper.find('input[type="date"]').simulate('change', event);
+    });
+
     it('should handle date values with single digit days', function(done) {
       const event = { target: { value: '1984-10-01' }};
       const expected = new Date(moment('1984-10-01T00:00').tz(timezone));
@@ -195,6 +207,16 @@ describe('Datetime picker', () => {
       );
       wrapper.find('input[type="time"]').simulate('change', event);
     });
+
+    it('should handle properly changes to double digit times', function(done) {
+      const value = new Date(moment('1984-10-19T12:22').tz(timezone));
+      const expected = '12:22';
+      const wrapper = mount(<DatetimePicker timezone={timezone} />);
+      wrapper.setProps({value: value}, () => {
+        expect(wrapper.find('.pbg-time-picker').text()).to.equal('12:22');
+        done();
+      });
+    })
 
     it('should handle date values with single digit hours and minutes', function(done) {
       const event = { target: { value: '02:01' }};

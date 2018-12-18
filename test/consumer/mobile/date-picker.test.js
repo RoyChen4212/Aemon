@@ -88,6 +88,13 @@ describe('Date picker', () => {
     expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true
   });
 
+  it('should provide correct feedback with date object value', () => {
+    const date = new Date('November 12, 2018');
+    const wrapper = shallow(<DatePicker value={date} />);
+    const expected = <Label type={labelTypes.SECONDARY}>11/12/2018</Label>
+    expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true
+  });
+
   it('should add a label with given text', () => {
     const wrapper = shallow(<DatePicker label="A label" />);
     const expected = <Label>A label</Label>
