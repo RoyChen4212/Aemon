@@ -22,8 +22,16 @@ const validate = (value) => {
   if (!value.city) {
     errors.city = 'is required';
   }
-  console.log('Returning errors', errors)
+
   return errors;
+};
+
+const labels = {
+  streetAddress: 'Street address',
+  city: 'City',
+  state: 'State',
+  postalCode: 'Postal code',
+  country: 'Country',
 };
 
 storiesOf('Form Fields/Address Field', module)
@@ -33,11 +41,7 @@ storiesOf('Form Fields/Address Field', module)
     <FieldStateProvider
       component={AddressField}
       name="address-field"
-      streetAddressLabel="Street address"
-      cityLabel="City"
-      stateLabel="State or province"
-      postalCodeLabel="Postal code"
-      countryLabel="Country"
+      labels={labels}
       countryOptions={countries}
       onChange={action('onChange')}
     />
@@ -47,11 +51,7 @@ storiesOf('Form Fields/Address Field', module)
       validate={validate}
       component={AddressField}
       name="address-field"
-      streetAddressLabel="Street address"
-      cityLabel="City"
-      stateLabel="State or province"
-      postalCodeLabel="Postal code"
-      countryLabel="Country"
+      labels={labels}
       countryOptions={countries}
       onChange={action('onChange')}
     />

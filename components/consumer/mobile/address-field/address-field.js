@@ -30,31 +30,15 @@ class AddressField extends FormField {
     }
   }
 
-  get className() {
-    let resultingClassName = this.baseClassName;
-
-    if (this.focused) {
-      resultingClassName += ' pbg-form-field-focused';
-    }
-
-    return resultingClassName;
-  }
-
-  get error() { return isEmpty(this.props.error) ? null : this.props.error; }
-
-  get streetAddressError() { return this.extractError(STREET_ADDRESS); }
-
-  get cityError() { return this.extractError(CITY); }
-
-  get stateError() { return this.extractError(STATE); }
-
-  get postalCodeError() { return this.extractError(POSTAL_CODE); }
-
-  get countryError() { return this.extractError(COUNTRY); }
+  get className() {return this.baseClassName; }
 
   get countryOptions() { return this.props.countryOptions || []; }
 
   get currentValue() { return this.props.value || {}; }
+
+  extractLabel(fieldName) {
+    return get(this.props, `labels.${fieldName}`, '');
+  }
 
   extractError(fieldName) {
     const { error } = this.props;
@@ -62,28 +46,10 @@ class AddressField extends FormField {
     return error[fieldName];
   }
 
-  onStreetAddressChange = (ev) => this.updateValue({ [STREET_ADDRESS]: ev.target.value })
-
-  onCityChange = ev => this.updateValue({ [CITY]: ev.target.value })
-
-  onStateChange = ev => this.updateValue({ [STATE]: ev.target.value })
-
-  onPostalCodeChange = ev => this.updateValue({ [POSTAL_CODE]: ev.target.value })
-
-  onCountryChange = ev => this.updateValue({ [COUNTRY]: ev.target.value })
-
   updateValue = (value) => {
     const newValue = { ...this.currentValue, ...value };
     this.onChange(makeEvent(newValue));
   }
-
-  touchStreetAddress = () => this.touchField(STREET_ADDRESS)
-
-  touchCity = () => this.touchField(CITY)
-
-  touchState = () => this.touchField(STATE)
-
-  touchPostalCode = () => this.touchField(POSTAL_CODE)
 
   touchField = (fieldName) => {
     const newState = { ...this.state };
@@ -93,43 +59,31 @@ class AddressField extends FormField {
     });
   }
 
+  textFieldFor(fieldName) {
+    return (
+      <TextField
+        name={fieldName}
+        label={this.extractLabel(fieldName)}
+        error={this.extractError(fieldName)}
+        onChange={ev => this.updateValue({ [fieldName]: ev.target.value })}
+        onBlur={() => this.touchField(fieldName)}
+      />
+    );
+  }
+
   render() {
     return (
       <div className={this.className}>
-        <TextField
-          name={STREET_ADDRESS}
-          label={this.props.streetAddressLabel}
-          error={this.streetAddressError}
-          onChange={this.onStreetAddressChange}
-          onBlur={this.touchStreetAddress}
-        />
-        <TextField
-          name={CITY}
-          label={this.props.cityLabel}
-          error={this.cityError}
-          onChange={this.onCityChange}
-          onBlur={this.touchCity}
-        />
-        <TextField
-          name={STATE}
-          label={this.props.stateLabel}
-          error={this.stateError}
-          onChange={this.onStateChange}
-          onBlur={this.touchState}
-        />
-        <TextField
-          name={POSTAL_CODE}
-          label={this.props.postalCodeLabel}
-          error={this.postalCodeError}
-          onChange={this.onPostalCodeChange}
-          onBlur={this.touchPostalCode}
-        />
+        {this.textFieldFor(STREET_ADDRESS)}
+        {this.textFieldFor(CITY)}
+        {this.textFieldFor(STATE)}
+        {this.textFieldFor(POSTAL_CODE)}
         <Picker
           name={COUNTRY}
           options={this.countryOptions}
-          label={this.props.countryLabel}
-          error={this.countryError}
-          onChange={this.onCountryChange}
+          label={this.extractLabel(COUNTRY)}
+          error={this.extractError(COUNTRY)}
+          onChange={ev => this.updateValue({ [COUNTRY]: ev.target.value })}
         />
       </div>
     )
