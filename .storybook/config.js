@@ -18,6 +18,7 @@ function loadStories() {
   require('../stories/consumer/mobile/datetime-picker.story.js');
   require('../stories/consumer/mobile/historical-picker.story.js');
   require('../stories/consumer/mobile/checkbox.story.js');
+  require('../stories/consumer/mobile/address-field.story.js');
 }
 
 configure(loadStories, module);

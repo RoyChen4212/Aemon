@@ -3,12 +3,25 @@ import React from 'react';
 class StateProvider extends React.Component {
   state = {
     value: this.props.value || null,
+    error: null,
   }
 
   onChange = (ev) => {
-    this.setState({ value: ev.target.value });
+    this.setState({ value: ev.target.value }, this.runValidations);
     return this.props.onChange(ev);
   }
+
+  runValidations = () => {
+    let error;
+    if (this.props.validate) {
+      error = this.props.validate(this.state.value);
+    }
+    if (error) {
+      this.setState({ error });
+    }
+  }
+
+  get error() { return this.state.error; }
 
   render() {
     const Field = this.props.component;
@@ -18,6 +31,8 @@ class StateProvider extends React.Component {
           {...this.props}
           value={this.state.value}
           onChange={this.onChange}
+          onBlur={this.onChange}
+          error={this.error}
         />
       </React.Fragment>
     )
