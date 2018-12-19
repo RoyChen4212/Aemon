@@ -64,20 +64,6 @@ describe('Datetime Picker Value Generator', () => {
       const expected = new Date(moment(`${date}T00:00`).tz(timezone).format());
       expect(generateNewValue(date, '', timezone).getTime()).to.equal(expected.getTime());
     });
-
-    it('should generate the correct date given just time', () => {
-      const time = '23:01';
-      const date = moment(new Date()).tz(timezone).format('YYYY-MM-DD');
-      const expected = new Date(moment(`${date}T${time}`).tz(timezone).format());
-      expect(generateNewValue(null, time, timezone).getTime()).to.equal(expected.getTime());
-    });
-
-    it('should generate the correct date given just time, emptu string as date', () => {
-      const time = '23:01';
-      const date = moment(new Date()).tz(timezone).format('YYYY-MM-DD');
-      const expected = new Date(moment(`${date}T${time}`).tz(timezone).format());
-      expect(generateNewValue('', time, timezone).getTime()).to.equal(expected.getTime());
-    });
   });
 
   describe('applyTimeToValue', () => {
