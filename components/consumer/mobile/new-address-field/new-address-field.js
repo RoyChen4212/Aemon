@@ -11,8 +11,8 @@ const STATE = 'state';
 const POSTAL_CODE = 'postalCode';
 const COUNTRY = 'country';
 
-class AddressField extends FormField {
-  baseClassName = 'pbg-form-field pbg-address-field';
+class NewAddressField extends FormField {
+  baseClassName = 'pbg-form-field pbg-new-address-field';
 
   state = {
     touched: {
@@ -98,4 +98,4 @@ const fieldNames = {
   COUNTRY,
 };
 
-export { AddressField, fieldNames };
+export { NewAddressField, fieldNames };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { AddressField } from '../../../components/consumer/mobile/form-fields';
+import { NewAddressField } from '../../../components/consumer/mobile/form-fields';
 import FieldStateProvider from '../../util/field-state-provider';
 import { withContainer, wrapStory } from '../../util/decorators';
 
@@ -34,13 +34,13 @@ const labels = {
   country: 'Country',
 };
 
-storiesOf('Form Fields/Address Field', module)
+storiesOf('Form Fields/New Address Field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('No validations', () => (
     <FieldStateProvider
-      component={AddressField}
-      name="address-field"
+      component={NewAddressField}
+      name="new-address-field"
       labels={labels}
       countryOptions={countries}
       onChange={action('onChange')}
@@ -49,8 +49,8 @@ storiesOf('Form Fields/Address Field', module)
   .add('With required street and city', () => (
     <FieldStateProvider
       validate={validate}
-      component={AddressField}
-      name="address-field"
+      component={NewAddressField}
+      name="new-address-field"
       labels={labels}
       countryOptions={countries}
       onChange={action('onChange')}
