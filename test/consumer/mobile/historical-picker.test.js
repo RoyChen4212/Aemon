@@ -27,7 +27,7 @@ describe('Historical Picker', () => {
     expect(wrapper.find('select').find('option')).to.have.lengthOf(2);
     opts.forEach(opt => {
       const expected = <option value={opt.value}>{opt.label}</option>;
-      expect(wrapper.find('select').contains(expected)).to.be.true;
+      expect(wrapper.find({ value: opt.value})).to.have.lengthOf(1);
     });
   });
 

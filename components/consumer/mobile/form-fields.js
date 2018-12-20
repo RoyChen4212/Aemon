@@ -1,3 +1,4 @@
+export * from './address-field';
 export * from './checkbox';
 export * from './date-picker';
 export * from './datetime-picker';

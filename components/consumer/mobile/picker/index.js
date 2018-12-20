@@ -21,7 +21,9 @@ class Picker extends FormField {
       <select onChange={this.props.onChange}>
         {
           options.map(({ label, value }, i) => (
-            <option value={value} key={`option-${i}`}>{label}</option>
+            <option value={value} key={`option-${i}`} selected={this.props.value === value}>
+              {label}
+            </option>
           ))
         }
       </select>

@@ -27,7 +27,7 @@ describe('Picker', () => {
     expect(wrapper.find('select').find('option')).to.have.lengthOf(2);
     opts.forEach(opt => {
       const expected = <option value={opt.value}>{opt.label}</option>;
-      expect(wrapper.find('select').contains(expected)).to.be.true;
+      expect(wrapper.find({ value: opt.value})).to.have.lengthOf(1);
     });
   });
 
@@ -87,5 +87,12 @@ describe('Picker', () => {
     wrapper.find('select').simulate('change', expected);
     expect(onChange.calledOnce).to.be.true;
     expect(onChange.calledWith(expected)).to.be.true;
+  });
+
+  it('should select correct option when value is given', () => {
+    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
+    const value = opts[1].value;
+    const wrapper = shallow(<Picker options={opts} value={value} />);
+    expect(wrapper.find({ value: opts[1].value }).prop('selected')).to.be.true;
   });
 });
