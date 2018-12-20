@@ -9,6 +9,8 @@ import makeEvent from '../../../lib/make-event';
 class AddressField extends FormField {
   baseClassName = 'pbg-form-field pbg-address-field';
 
+  get className() {return this.baseClassName; }
+
   get addingNew() {
     const selected = get(this.props, 'value.selected');
     return selected === 'new';

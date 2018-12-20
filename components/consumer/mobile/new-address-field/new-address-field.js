@@ -56,6 +56,7 @@ class NewAddressField extends FormField {
     newState.touched[fieldName] = true;
     this.setState(newState, () => {
       this.onBlur(makeEvent(this.props.value))
+      this.forceUpdate()
     });
   }
 
