@@ -4,7 +4,7 @@ import { HistoricalPicker, NewAddressField } from '../form-fields';
 import { SmallButton } from '../button';
 import FormField from '../form-field';
 import makeEvent from '../../../lib/make-event';
-
+import './style.scss';
 
 class AddressField extends FormField {
   baseClassName = 'pbg-form-field pbg-address-field';
