@@ -17,6 +17,7 @@
     "css:watch": "node-sass-chokidar ./components -o ./components --watch",
     "css:build": "node-sass-chokidar ./components -o ./dist",
     "heroku-postbuild": "npm-run-all -p storybook:build:all",
+    "build:all": "npm-run-all -p css:build build:release",
     "build:release": "babel components/ --out-dir dist"
   },
   "repository": {
