@@ -11,7 +11,7 @@ import {
 } from './value-generator';
 import makeEvent from '../../../lib/make-event';
 
-import './style.scss';
+import './style.css';
 
 class DatetimePicker extends FormField {
   baseClassName = 'pbg-form-field pbg-datetime-picker';

@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { PrimaryButton } from '../../../components/consumer/mobile/button';
 import { withContainer, wrapStory } from '../../util/decorators';
 
-import '../../style.scss';
+import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 storiesOf('Atomic Components/Primary Button', module)

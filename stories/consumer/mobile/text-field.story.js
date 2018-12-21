@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { TextField } from '../../../components/consumer/mobile/form-fields';
 import { withContainer, wrapStory } from '../../util/decorators';
 
-import '../../style.scss';
+import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 storiesOf('Form Fields/Text Field', module)

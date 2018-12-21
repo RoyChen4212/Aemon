@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { FacebookButton } from '../../../components/consumer/mobile/button';
 import { withContainer, wrapStory } from '../../util/decorators';
 
-import '../../style.scss';
+import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 storiesOf('Atomic Components/Facebook Button', module)

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { DatePicker } from '../date-picker';
 import Label, { types as labelTypes } from '../label';
 import makeEvent from '../../../lib/make-event';
-import './style.scss';
+import './style.css';
 
 class TimePicker extends DatePicker {
   baseClassName = 'pbg-form-field pbg-time-picker';

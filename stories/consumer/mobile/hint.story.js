@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import Hint, { types as hintTypes } from '../../../components/consumer/mobile/hint';
 import { withContainer, wrapStory } from '../../util/decorators';
 
-import '../../style.scss';
+import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const sampleText = 'Pay By Group Rules';

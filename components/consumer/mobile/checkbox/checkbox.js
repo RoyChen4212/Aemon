@@ -2,7 +2,7 @@ import React from 'react';
 import FormField from '../form-field';
 import Label from '../label';
 import makeEvent from '../../../lib/make-event';
-import './style.scss';
+import './style.css';
 
 class Checkbox extends FormField {
   baseClassName = 'pbg-form-field pbg-checkbox';

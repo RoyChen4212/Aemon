@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.scss'
+import './style.css'
 
 const ERROR = 'error';
 const CLICKABLE = 'clickable';

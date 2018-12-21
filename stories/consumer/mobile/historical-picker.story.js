@@ -7,7 +7,7 @@ import {
 import { withContainer, wrapStory } from '../../util/decorators';
 
 
-import '../../style.scss';
+import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const options = [

@@ -3,7 +3,7 @@ import { get, first, isEmpty } from 'lodash';
 import { TextField, Picker } from '../form-fields';
 import FormField from '../form-field';
 import makeEvent from '../../../lib/make-event';
-import './style.scss';
+import './style.css';
 
 const STREET_ADDRESS = 'streetAddress';
 const CITY = 'city';

@@ -1,6 +1,6 @@
 import React from 'react';
 import Hint from '../hint';
-import './style.scss'
+import './style.css'
 
 const CLASS_NAME = 'pbg-button';
 

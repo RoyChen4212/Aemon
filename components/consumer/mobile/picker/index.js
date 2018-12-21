@@ -4,7 +4,7 @@ import FormField from '../form-field';
 import Label, { types as labelTypes } from '../label';
 import Hint, { types as hintTypes } from '../hint';
 
-import './style.scss';
+import './style.css';
 
 class Picker extends FormField {
   baseClassName = 'pbg-form-field pbg-picker';

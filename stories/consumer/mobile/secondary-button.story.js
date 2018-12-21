@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { SecondaryButton } from '../../../components/consumer/mobile/button';
 
-import '../../style.scss';
+import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { withContainer, wrapStory } from '../../util/decorators';
 

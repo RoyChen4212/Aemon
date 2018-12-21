@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { H1, H2, H3 } from '../../../components/consumer/mobile/heading';
 import { withContainer, wrapStory } from '../../util/decorators';
 
-import '../../style.scss';
+import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const sampleText = 'Pay By Group Rules';
