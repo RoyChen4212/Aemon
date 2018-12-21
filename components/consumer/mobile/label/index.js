@@ -16,7 +16,7 @@ const INPUT_CLASS = 'pbg-label-input';
 const SECONDARY_CLASS = 'pbg-label-secondary';
 const STRONG_CLASS = 'pbg-label-strong';
 
-export const classes = {
+export const labelClassNames = {
   base: BASE_CLASS,
   [ACTIVE]: ACTIVE_CLASS,
   [CLICKABLE]: CLICKABLE_CLASS,
@@ -52,8 +52,8 @@ const className = ({ type, required }) => {
     resultingClassName += ' required';
   }
 
-  if (classes[type]) {
-    resultingClassName += ` ${classes[type]}`;
+  if (labelClassNames[type]) {
+    resultingClassName += ` ${labelClassNames[type]}`;
   }
 
   return resultingClassName;

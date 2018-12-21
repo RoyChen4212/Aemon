@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.types = exports.classes = void 0;
+exports.default = exports.types = exports.labelClassNames = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 require("./style.css");
 
-var _classes;
+var _labelClassNames;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,10 +28,10 @@ var ERROR_CLASS = 'pbg-label-error';
 var INPUT_CLASS = 'pbg-label-input';
 var SECONDARY_CLASS = 'pbg-label-secondary';
 var STRONG_CLASS = 'pbg-label-strong';
-var classes = (_classes = {
+var labelClassNames = (_labelClassNames = {
   base: BASE_CLASS
-}, _defineProperty(_classes, ACTIVE, ACTIVE_CLASS), _defineProperty(_classes, CLICKABLE, CLICKABLE_CLASS), _defineProperty(_classes, ERROR, ERROR_CLASS), _defineProperty(_classes, INPUT, INPUT_CLASS), _defineProperty(_classes, SECONDARY, SECONDARY_CLASS), _defineProperty(_classes, STRONG, STRONG_CLASS), _classes);
-exports.classes = classes;
+}, _defineProperty(_labelClassNames, ACTIVE, ACTIVE_CLASS), _defineProperty(_labelClassNames, CLICKABLE, CLICKABLE_CLASS), _defineProperty(_labelClassNames, ERROR, ERROR_CLASS), _defineProperty(_labelClassNames, INPUT, INPUT_CLASS), _defineProperty(_labelClassNames, SECONDARY, SECONDARY_CLASS), _defineProperty(_labelClassNames, STRONG, STRONG_CLASS), _labelClassNames);
+exports.labelClassNames = labelClassNames;
 
 var Label = function Label(props) {
   if (isClickable(props)) return clickableLabel(props);
@@ -68,8 +68,8 @@ var className = function className(_ref2) {
     resultingClassName += ' required';
   }
 
-  if (classes[type]) {
-    resultingClassName += " ".concat(classes[type]);
+  if (labelClassNames[type]) {
+    resultingClassName += " ".concat(labelClassNames[type]);
   }
 
   return resultingClassName;
