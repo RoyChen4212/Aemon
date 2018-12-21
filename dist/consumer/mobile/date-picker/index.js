@@ -93,7 +93,7 @@ function (_FormField) {
     key: "maskContents",
     get: function get() {
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_label.default, {
-        type: _label.types.SECONDARY
+        type: _label.labelTypes.SECONDARY
       }, this.displayValue), _react.default.createElement("span", {
         className: "pbg-picker-arrow"
       }));

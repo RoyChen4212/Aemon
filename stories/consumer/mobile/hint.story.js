@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Hint, { types as hintTypes } from '../../../components/consumer/mobile/hint';
+import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';

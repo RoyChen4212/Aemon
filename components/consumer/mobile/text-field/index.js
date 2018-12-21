@@ -1,6 +1,6 @@
 import React from 'react';
 import FormField from '../form-field';
-import { types as labelTypes } from '../label';
+import { labelTypes } from '../label';
 import './style.css';
 
 class TextField extends FormField {

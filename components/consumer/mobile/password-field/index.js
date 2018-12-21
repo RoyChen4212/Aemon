@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextField } from '../text-field';
-import Hint, { types as hintTypes } from '../hint';
+import Hint, { hintTypes } from '../hint';
 import './style.css';
 
 class PasswordField extends TextField {

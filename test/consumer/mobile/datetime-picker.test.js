@@ -15,8 +15,8 @@ import {
   DatePicker,
   TimePicker
 } from '../../../components/consumer/mobile/form-fields';
-import Label, { types as labelTypes } from '../../../components/consumer/mobile/label';
-import Hint, { types as hintTypes } from '../../../components/consumer/mobile/hint';
+import Label, { labelTypes } from '../../../components/consumer/mobile/label';
+import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
 describe('Datetime Picker Value Generator', () => {
   const timezone = 'America/Mexico_City';

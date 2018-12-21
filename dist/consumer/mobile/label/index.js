@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.types = exports.labelClassNames = void 0;
+exports.default = exports.labelTypes = exports.labelClassNames = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -75,7 +75,7 @@ var className = function className(_ref2) {
   return resultingClassName;
 };
 
-var types = {
+var labelTypes = {
   ACTIVE: ACTIVE,
   CLICKABLE: CLICKABLE,
   ERROR: ERROR,
@@ -83,6 +83,6 @@ var types = {
   SECONDARY: SECONDARY,
   STRONG: STRONG
 };
-exports.types = types;
+exports.labelTypes = labelTypes;
 var _default = Label;
 exports.default = _default;

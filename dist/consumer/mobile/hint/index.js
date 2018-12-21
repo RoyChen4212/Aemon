@@ -3,13 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.types = exports.classes = void 0;
+exports.default = exports.hintTypes = exports.hintClassNames = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 require("./style.css");
 
-var _classes;
+var _hintClassNames;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17,15 +17,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var ERROR = 'error';
 var CLICKABLE = 'clickable';
-var classes = (_classes = {
+var hintClassNames = (_hintClassNames = {
   base: 'pbg-hint'
-}, _defineProperty(_classes, ERROR, 'pbg-hint-error'), _defineProperty(_classes, CLICKABLE, 'pbg-hint-clickable'), _classes);
-exports.classes = classes;
-var types = {
+}, _defineProperty(_hintClassNames, ERROR, 'pbg-hint-error'), _defineProperty(_hintClassNames, CLICKABLE, 'pbg-hint-clickable'), _hintClassNames);
+exports.hintClassNames = hintClassNames;
+var hintTypes = {
   ERROR: ERROR,
   CLICKABLE: CLICKABLE
 };
-exports.types = types;
+exports.hintTypes = hintTypes;
 
 var _default = function _default(props) {
   if (props.onClick) {
@@ -45,5 +45,5 @@ exports.default = _default;
 
 var className = function className(_ref) {
   var type = _ref.type;
-  return !!type ? "".concat(classes.base, " ").concat(classes[type]) : classes.base;
+  return !!type ? "".concat(hintClassNames.base, " ").concat(hintClassNames[type]) : hintClassNames.base;
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment-timezone';
 import FormField from '../form-field';
-import Label, { types as labelTypes } from '../label';
-import Hint, { types as hintTypes } from '../hint';
+import Label, { labelTypes } from '../label';
+import Hint, { hintTypes } from '../hint';
 import { DatePicker, TimePicker } from '../form-fields';
 import {
   generateNewValue,

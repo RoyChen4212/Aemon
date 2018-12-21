@@ -77,7 +77,7 @@ function (_TextField) {
       return _react.default.createElement("div", {
         className: "pbg-forgot-password-container"
       }, _react.default.createElement(_hint.default, {
-        type: _hint.types.ERROR
+        type: _hint.hintTypes.ERROR
       }, this.error), this.forgotPassword);
     }
   }, {
@@ -91,7 +91,7 @@ function (_TextField) {
     key: "forgotPassword",
     get: function get() {
       return _react.default.createElement(_hint.default, {
-        type: _hint.types.CLICKABLE,
+        type: _hint.hintTypes.CLICKABLE,
         onClick: this.props.onForgotPassword
       }, this.props.forgotPasswordText || '[FORGOT PASSWROD]');
     }

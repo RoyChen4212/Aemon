@@ -1,8 +1,8 @@
 import React from 'react';
 
 import FormField from '../form-field';
-import Label, { types as labelTypes } from '../label';
-import Hint, { types as hintTypes } from '../hint';
+import Label, { labelTypes } from '../label';
+import Hint, { hintTypes } from '../hint';
 
 import './style.css';
 

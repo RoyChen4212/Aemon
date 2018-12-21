@@ -79,8 +79,8 @@ function (_FormField) {
   }, {
     key: "labelType",
     get: function get() {
-      if (this.props.error) return _label.types.ERROR;
-      return _label.types.ACTIVE;
+      if (this.props.error) return _label.labelTypes.ERROR;
+      return _label.labelTypes.ACTIVE;
     }
   }, {
     key: "type",

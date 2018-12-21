@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DatePicker } from '../date-picker';
-import Label, { types as labelTypes } from '../label';
+import Label, { labelTypes } from '../label';
 import makeEvent from '../../../lib/make-event';
 import './style.css';
 

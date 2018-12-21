@@ -4,13 +4,13 @@ import './style.css'
 const ERROR = 'error';
 const CLICKABLE = 'clickable';
 
-export const classes = {
+export const hintClassNames = {
   base: 'pbg-hint',
   [ERROR]: 'pbg-hint-error',
   [CLICKABLE]: 'pbg-hint-clickable',
 };
 
-export const types = {
+export const hintTypes = {
   ERROR,
   CLICKABLE,
 };
@@ -22,4 +22,4 @@ export default (props) => {
   return <span className={className(props)}>{props.children}</span>;
 };
 
-const className = ({ type }) => !!type ? `${classes.base} ${classes[type]}` : classes.base;
+const className = ({ type }) => !!type ? `${hintClassNames.base} ${hintClassNames[type]}` : hintClassNames.base;

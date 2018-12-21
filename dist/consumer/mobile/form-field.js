@@ -120,8 +120,8 @@ function (_React$PureComponent) {
   }, {
     key: "labelType",
     get: function get() {
-      if (this.props.error) return _label.types.ERROR;
-      return _label.types.base;
+      if (this.props.error) return _label.labelTypes.ERROR;
+      return _label.labelTypes.base;
     }
   }, {
     key: "label",
@@ -139,7 +139,7 @@ function (_React$PureComponent) {
     key: "hintOrError",
     get: function get() {
       if (this.error) return _react.default.createElement("div", null, _react.default.createElement(_hint.default, {
-        type: _hint.types.ERROR
+        type: _hint.hintTypes.ERROR
       }, this.error));
       if (this.hint) return _react.default.createElement("div", null, _react.default.createElement(_hint.default, null, this.hint));
       return null;

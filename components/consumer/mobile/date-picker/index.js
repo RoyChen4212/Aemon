@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FormField from '../form-field';
-import Label, { types as labelTypes } from '../label';
+import Label, { labelTypes } from '../label';
 import './style.css';
 
 class DatePicker extends FormField {

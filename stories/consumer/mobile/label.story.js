@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Label, { types as labelTypes } from '../../../components/consumer/mobile/label';
+import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';

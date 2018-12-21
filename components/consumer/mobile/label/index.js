@@ -59,7 +59,7 @@ const className = ({ type, required }) => {
   return resultingClassName;
 }
 
-export const types = {
+export const labelTypes = {
   ACTIVE,
   CLICKABLE,
   ERROR,

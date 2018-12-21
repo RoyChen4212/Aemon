@@ -6,7 +6,7 @@ import sinon from 'sinon';
 import { shouldBehaveLikeFormField } from './form-field.test';
 import { HistoricalPicker } from '../../../components/consumer/mobile/form-fields';
 import Label from '../../../components/consumer/mobile/label';
-import Hint, { types as hintTypes} from '../../../components/consumer/mobile/hint';
+import Hint, { hintTypes} from '../../../components/consumer/mobile/hint';
 
 describe('Historical Picker', () => {
   shouldBehaveLikeFormField(shallow(<HistoricalPicker error="some error" />));

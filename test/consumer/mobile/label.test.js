@@ -5,7 +5,7 @@ import sinon from 'sinon';
 
 import Label, {
   labelClassNames,
-  types,
+  labelTypes,
 } from '../../../components/consumer/mobile/label';
 
 describe('Label', () => {
@@ -26,29 +26,29 @@ describe('Label', () => {
   });
 
   it('should have correct class when strong type', () => {
-    const wrapper = shallow(<Label type={types.STRONG}>some text</Label>);
-    expect(wrapper.find('label').hasClass(labelClassNames[types.STRONG])).to.be.true;
+    const wrapper = shallow(<Label type={labelTypes.STRONG}>some text</Label>);
+    expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.STRONG])).to.be.true;
   });
 
   it('should have correct class when secondary type', () => {
-    const wrapper = shallow(<Label type={types.SECONDARY}>some text</Label>);
-    expect(wrapper.find('label').hasClass(labelClassNames[types.SECONDARY])).to.be.true;
+    const wrapper = shallow(<Label type={labelTypes.SECONDARY}>some text</Label>);
+    expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.SECONDARY])).to.be.true;
   });
 
   it('should have correct class when input type', () => {
-    const wrapper = shallow(<Label type={types.INPUT}>some text</Label>);
-    expect(wrapper.find('label').hasClass(labelClassNames[types.INPUT])).to.be.true;
+    const wrapper = shallow(<Label type={labelTypes.INPUT}>some text</Label>);
+    expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.INPUT])).to.be.true;
   });
 
   it('should have correct class when clickable type', () => {
-    const wrapper = shallow(<Label type={types.CLICKABLE}>some text</Label>);
-    expect(wrapper.find('label').hasClass(labelClassNames[types.CLICKABLE])).to.be.true;
+    const wrapper = shallow(<Label type={labelTypes.CLICKABLE}>some text</Label>);
+    expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.CLICKABLE])).to.be.true;
   });
 
   it('should call onClick when when clickable type', () => {
     const onClick = sinon.spy();
     const wrapper = shallow(
-      <Label type={types.CLICKABLE} onClick={onClick}>some text</Label>
+      <Label type={labelTypes.CLICKABLE} onClick={onClick}>some text</Label>
     );
     wrapper.find('label').find('a').simulate('click');
     expect(onClick.calledOnce).to.be.true;
@@ -57,19 +57,19 @@ describe('Label', () => {
   it('should add href prop with correct value when provided to clickable type', () => {
     const url = '/some/url';
     const wrapper = shallow(
-      <Label type={types.CLICKABLE} href={url}>some text</Label>
+      <Label type={labelTypes.CLICKABLE} href={url}>some text</Label>
     );
     expect(wrapper.find('label').find('a').prop('href')).to.equal(url);
   });
 
   it('should have correct class when active type', () => {
-    const wrapper = shallow(<Label type={types.ACTIVE}>some text</Label>);
-    expect(wrapper.find('label').hasClass(labelClassNames[types.ACTIVE])).to.be.true;
+    const wrapper = shallow(<Label type={labelTypes.ACTIVE}>some text</Label>);
+    expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.ACTIVE])).to.be.true;
   });
 
   it('should have correct class when active error', () => {
-    const wrapper = shallow(<Label type={types.ERROR}>some text</Label>);
-    expect(wrapper.find('label').hasClass(labelClassNames[types.ERROR])).to.be.true;
+    const wrapper = shallow(<Label type={labelTypes.ERROR}>some text</Label>);
+    expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.ERROR])).to.be.true;
   });
 
   it('should have correct class when required prop is passed', () => {
