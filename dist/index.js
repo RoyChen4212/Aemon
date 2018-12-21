@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.consumerMobile = void 0;
 
-var _mobile = _interopRequireDefault(require("./mobile"));
+var _mobile = _interopRequireDefault(require("./consumer/mobile"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

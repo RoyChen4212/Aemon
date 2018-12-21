@@ -1,4 +1,4 @@
-import mobile from './mobile';
+import mobile from './consumer/mobile';
 const consumerMobile = mobile;
 export {
   consumerMobile,
