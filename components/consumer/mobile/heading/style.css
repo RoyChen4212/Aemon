@@ -1,0 +1,18 @@
+.pbg-heading {
+  color: #000;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal; }
+
+h1.pbg-h1 {
+  line-height: normal;
+  font-size: 22px; }
+
+h2.pbg-h2 {
+  font-weight: 300;
+  line-height: 28px;
+  font-size: 19px; }
+
+h3.pbg-h3 {
+  line-height: 22px;
+  font-size: 15px; }
