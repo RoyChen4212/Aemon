@@ -6,7 +6,7 @@
     "npm": "6.x"
   },
   "description": "PBG UI Library with Storybook",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "mocha -r ignore-styles --compilers js:@babel/register -r ./test/config/index.js --recursive --ui bdd ./test",
     "test:cover": "nyc --reporter=lcov mocha -r ignore-styles --compilers js:@babel/register -r ./test/config/enzyme.js --recursive --ui bdd ./test",
@@ -17,7 +17,8 @@
     "css:watch": "node-sass-chokidar ./components -o ./components --watch",
     "css:build": "node-sass-chokidar ./components -o ./dist",
     "heroku-postbuild": "npm-run-all -p storybook:build:all",
-    "build:all": "npm-run-all -p css:build build:release",
+    "svg:build": "copyfiles -u 1 `find components -type f \\( -iname \"*.svg\" \\) | tr '\n' ' '` dist",
+    "build:all": "npm-run-all -p css:build svg:build build:release",
     "build:release": "babel components/ --out-dir dist"
   },
   "repository": {
@@ -51,6 +52,7 @@
     "@storybook/react": "^4.1.3",
     "babel-loader": "^8.0.4",
     "chai": "^4.2.0",
+    "copyfiles": "^2.1.0",
     "css-loader": "^1.0.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16.3": "^1.4.0",
