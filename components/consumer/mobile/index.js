@@ -1,5 +1,17 @@
-export * from './form-fields';
-export * from './button';
-export * from './heading';
-export * from './hint';
-export * from './label';
+import formFields from './form-fields';
+import buttons from './button';
+import headings from './heading';
+import Hint, { hintTypes } from './hint';
+import Label, { labelTypes } from './label';
+
+const mobile = {
+  ...formFields,
+  ...buttons,
+  ...headings,
+  Hint,
+  hintTypes,
+  Label,
+  labelTypes,
+};
+
+export default mobile;
