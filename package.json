@@ -6,7 +6,7 @@
     "npm": "6.x"
   },
   "description": "PBG UI Library with Storybook",
-  "main": "dist",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha -r ignore-styles --compilers js:@babel/register -r ./test/config/index.js --recursive --ui bdd ./test",
     "test:cover": "nyc --reporter=lcov mocha -r ignore-styles --compilers js:@babel/register -r ./test/config/enzyme.js --recursive --ui bdd ./test",
