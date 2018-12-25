@@ -20,6 +20,7 @@ function loadStories() {
   require('../stories/consumer/mobile/checkbox.story.js');
   require('../stories/consumer/mobile/new-address-field.story.js');
   require('../stories/consumer/mobile/address-field.story.js');
+  require('../stories/consumer/mobile/phone-field.story.js');
 }
 
 configure(loadStories, module);

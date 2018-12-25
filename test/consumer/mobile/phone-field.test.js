@@ -1,0 +1,111 @@
+import React from 'react';
+import { expect } from 'chai';
+import { shallow, mount } from 'enzyme';
+import sinon from 'sinon';
+
+import {
+  PhoneField,
+  HistoricalPicker,
+  TextField,
+} from '../../../components/consumer/mobile/form-fields';
+import { SmallButton } from '../../../components/consumer/mobile/button';
+
+describe('Phone Field', () => {
+  const phoneOptions = [
+    {label: '91-2222-1332', value: 'first'},
+    {label: '91-3333-1442, Suite 303C', value: 'second'},
+    {label: 'Add new phone', value: 'new'},
+  ];
+
+  it('should have correct class', () => {
+    const wrapper = shallow(<PhoneField />);
+    expect(wrapper.hasClass('pbg-phone-field')).to.be.true;
+  });
+
+  it('should render a HistoricalPicker', () => {
+    const wrapper = shallow(<PhoneField />);
+    expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(1);
+  });
+
+  it('should pass phone options to HistoricalPicker', () => {
+    const wrapper = mount(<PhoneField phoneOptions={phoneOptions} />);
+    expect(wrapper.find(HistoricalPicker).prop('options')).to.eql(phoneOptions);
+  });
+
+  it('should pass selected value to HistoricalPicker', () => {
+    const value = { selected: phoneOptions[0] };
+    const wrapper = mount(<PhoneField phoneOptions={phoneOptions} value={value} />);
+    expect(wrapper.find(HistoricalPicker).prop('value')).to.equal(value.selected)
+  });
+
+  it('should show add new button when value other than new is selected', () => {
+    const value = { selected: phoneOptions[0] };
+    const wrapper = mount(<PhoneField phoneOptions={phoneOptions} value={value} />);
+    expect(wrapper.find(SmallButton)).to.have.lengthOf(1);
+  });
+
+  it('should not show add new button when new value is selected', () => {
+    const value = { selected: 'new' };
+    const wrapper = mount(<PhoneField phoneOptions={phoneOptions} value={value} />);
+    expect(wrapper.find(SmallButton)).to.have.lengthOf(0);
+  });
+
+  it('should pass addNewButtonLabel to small button', () => {
+    const value = { selected: phoneOptions[0] };
+    const expected = 'add new label';
+    const wrapper = mount(<PhoneField phoneOptions={phoneOptions} value={value} addNewButtonLabel={expected} />);
+    expect(wrapper.find(SmallButton).text()).to.equal(expected);
+  });
+
+
+  it('should return correct value when clicking add new button', function(done) {
+    const value = { selected: phoneOptions[0].value };
+    const expected = { selected: 'new' };
+    const onChange = (ev) => {
+      expect(ev.target.value).to.eql(expected);
+      done();
+    };
+    const wrapper = mount(<PhoneField value={value} onChange={onChange} />);
+    wrapper.find('button').simulate('click');
+  });
+
+  it('should show TextField when new value is selected', () => {
+    const value = { selected: 'new' };
+    const wrapper = mount(<PhoneField value={value} />);
+    expect(wrapper.find(TextField)).to.have.lengthOf(1);
+  });
+
+  it('should report new phone value on TextField change', function(done) {
+    const value = { selected: 'new' };
+    const phone = '99-1234-1234';
+    const event = { target: { value: phone }}
+    const onChange = (ev) => {
+      expect(ev.target.value).to.eql({ ...value, phone });
+      done();
+    };
+    const wrapper = mount(<PhoneField value={value} onChange={onChange} />);
+    wrapper.find({ type: 'text' }).simulate('change', event);
+  });
+
+  it('should pass label to TextField change', () => {
+    const expected = 'A label';
+    const value = { selected: 'new' };
+    const wrapper = mount(<PhoneField addPhoneLabel={expected} value={value} />);
+    expect(wrapper.find(TextField).prop('label')).to.equal(expected);
+  });
+
+  it('should pass not error to the text field if not touched', () => {
+    const error = { phone: 'an error' };
+    const value = { selected: 'new' };
+    const wrapper = mount(<PhoneField error={error} value={value} />);
+    expect(wrapper.find(TextField).prop('error')).to.be.null;
+  });
+
+  it('should pass error to phone field only if touched', () => {
+    const expected = 'an error';
+    const value = { selected: 'new' };
+    const wrapper = mount(<PhoneField error={{ 'phone': expected }} value={value} onChange={() => {}}/>);
+    wrapper.find({ type: 'text' }).simulate('blur');
+    expect(wrapper.instance().phoneError).to.equal(expected);
+  });
+});
