@@ -22,14 +22,6 @@ class AddressField extends AddOrSelectField {
       />
     );
   }
-
-  updateValue = (value) => {
-    const newValue = {
-      ...this.props.value,
-      ...value,
-    };
-    this.onChange(makeEvent(newValue));
-  }
 }
 
 export { AddressField };
