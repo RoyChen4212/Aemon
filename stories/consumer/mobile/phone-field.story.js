@@ -17,7 +17,6 @@ const phoneOptions = [
 
 const validate = (value) => {
   const errors = {};
-  console.log(value)
   if (!value.phone) {
     errors.phone = 'Must type in your phone';
   }
