@@ -4,6 +4,7 @@ import { HistoricalPicker } from './form-fields';
 import { SmallButton } from './button';
 import FormField from './form-field';
 import makeEvent from '../../lib/make-event';
+import touchField from '../../lib/touch-field';
 
 class AddOrSelectField extends FormField {
   get className() {return this.baseClassName; }

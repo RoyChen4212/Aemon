@@ -3,6 +3,7 @@ import { get, first, isEmpty } from 'lodash';
 import { TextField, Picker } from '../form-fields';
 import FormField from '../form-field';
 import makeEvent from '../../../lib/make-event';
+import touchField from '../../../lib/touch-field';
 import './style.css';
 
 const STREET_ADDRESS = 'streetAddress';
@@ -21,6 +22,11 @@ class NewAddressField extends FormField {
       [STATE]: false,
       [POSTAL_CODE]: false,
     }
+  }
+
+  constructor(props) {
+    super(props);
+    this.touchField = touchField.bind(this);
   }
 
   componentDidMount() {
@@ -51,13 +57,13 @@ class NewAddressField extends FormField {
     this.onChange(makeEvent(newValue));
   }
 
-  touchField = (fieldName) => {
-    const newState = { ...this.state };
-    newState.touched[fieldName] = true;
-    this.setState(newState, () => {
-      this.onBlur(makeEvent(this.props.value))
-      this.forceUpdate()
-    });
+  touchNewAddressField = (fieldName) => {
+    const newState = {
+      ...this.state,
+      touched: { ...this.state.touched, [fieldName]: true },
+    };
+
+    this.touchField(newState);
   }
 
   textFieldFor(fieldName) {
@@ -67,7 +73,7 @@ class NewAddressField extends FormField {
         label={this.extractLabel(fieldName)}
         error={this.extractError(fieldName)}
         onChange={ev => this.updateValue({ [fieldName]: ev.target.value })}
-        onBlur={() => this.touchField(fieldName)}
+        onBlur={() => this.touchNewAddressField(fieldName)}
       />
     );
   }

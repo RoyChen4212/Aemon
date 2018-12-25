@@ -3,12 +3,18 @@ import get from 'lodash/get';
 import { TextField } from '../form-fields';
 import AddOrSelectField from '../add-or-select-field';
 import makeEvent from '../../../lib/make-event';
+import touchField from '../../../lib/touch-field';
 import './style.css';
 
 class PhoneField extends AddOrSelectField {
   baseClassName = 'pbg-form-field pbg-phone-field';
   state = {
     phoneTouched: false,
+  }
+
+  constructor(props) {
+    super(props);
+    this.touchField = touchField.bind(this);
   }
 
   get options() { return this.props.phoneOptions; }
@@ -30,10 +36,7 @@ class PhoneField extends AddOrSelectField {
 
   touchPhone = () => {
     const newState = { phoneTouched: true };
-    this.setState(newState, () => {
-      this.onBlur(makeEvent(this.props.value));
-      this.forceUpdate();
-    });
+    return this.touchField(newState);
   }
 }
 
