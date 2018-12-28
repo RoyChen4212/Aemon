@@ -9,6 +9,7 @@ import {
   TextField,
   TimePicker,
   NewAddressField,
+  MultiSelectField,
 } from './form-fields';
 import {
   PrimaryButton,
@@ -48,6 +49,7 @@ const mobile = {
   H3,
   Hint, hintTypes,
   Label, labelTypes,
+  MultiSelectField,
 };
 
 export default mobile;

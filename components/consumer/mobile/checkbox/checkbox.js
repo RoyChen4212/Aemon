@@ -22,7 +22,12 @@ class Checkbox extends FormField {
   render() {
     return (
       <div className={this.className}>
-        <input type="checkbox" checked={this.checked} onChange={this.onChange}/>
+        <input
+          type="checkbox"
+          checked={this.checked}
+          onChange={this.onChange}
+          name={this.props.name}
+        />
         {this.label}
       </div>
     );
