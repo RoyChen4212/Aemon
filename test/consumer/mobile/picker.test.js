@@ -93,6 +93,6 @@ describe('Picker', () => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
     const value = opts[1].value;
     const wrapper = shallow(<Picker options={opts} value={value} />);
-    expect(wrapper.find({ value: opts[1].value }).prop('selected')).to.be.true;
+    expect(wrapper.find('select').prop('value')).to.be.equal(value);
   });
 });

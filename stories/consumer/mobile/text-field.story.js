@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { TextField } from '../../../components/consumer/mobile/form-fields';
+import FieldStateProvider from '../../util/field-state-provider';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
@@ -17,8 +18,10 @@ storiesOf('Form Fields/Text Field', module)
     />
   ))
   .add('Valid/With value', () => (
-    <TextField
+    <FieldStateProvider
+      component={TextField}
       name="field1"
+      onChange={action('change')}
       value="You typed this"
       label="A text field"
     />
@@ -39,10 +42,12 @@ storiesOf('Form Fields/Text Field', module)
     />
   ))
   .add('Invalid', () => (
-    <TextField
+    <FieldStateProvider
+      component={TextField}
       name="field3"
       label="A text field"
+      onChange={action('change')}
       value="What you typed is wrong"
-      error="this field has error"
+      error="this is an error"
     />
   ));

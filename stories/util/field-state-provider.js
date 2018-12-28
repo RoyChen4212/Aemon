@@ -3,7 +3,7 @@ import React from 'react';
 class StateProvider extends React.Component {
   state = {
     value: this.props.value || null,
-    error: null,
+    error: this.props.error || null,
   }
 
   onChange = (ev) => {
