@@ -22,7 +22,7 @@ describe('Picker', () => {
   });
 
   it('should render given options', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
+    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const wrapper = shallow(<Picker options={opts}/>);
     expect(wrapper.find('select').find('option')).to.have.lengthOf(2);
     opts.forEach(opt => {
@@ -87,6 +87,17 @@ describe('Picker', () => {
     wrapper.find('select').simulate('change', expected);
     expect(onChange.calledOnce).to.be.true;
     expect(onChange.calledWith(expected)).to.be.true;
+  });
+
+  it('should call onChange with correct value if value is null', function(done) {
+    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: null }];
+    const onChange = (ev) => {
+      expect(ev.target.value).to.equal(null);
+      done();
+    };
+    const event = { target:{ value: null } };
+    const wrapper = shallow(<Picker onChange={onChange} options={opts} />);
+    wrapper.find('select').simulate('change', event);
   });
 
   it('should select correct option when value is given', () => {
