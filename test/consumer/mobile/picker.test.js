@@ -1,10 +1,10 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from './form-field.test';
-import { Picker } from '../../../components/consumer/mobile/form-fields';
+import { Picker, PICKER_EMPTY_VALUE } from '../../../components/consumer/mobile/form-fields';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
@@ -82,7 +82,7 @@ describe('Picker', () => {
 
   it('should call onChange after select is changed', () => {
     const onChange = sinon.spy();
-    const expected = { value: 'hi' };
+    const expected = { target: { value: 'hi' } };
     const wrapper = shallow(<Picker onChange={onChange} />);
     wrapper.find('select').simulate('change', expected);
     expect(onChange.calledOnce).to.be.true;
@@ -96,8 +96,27 @@ describe('Picker', () => {
       done();
     };
     const event = { target:{ value: null } };
-    const wrapper = shallow(<Picker onChange={onChange} options={opts} />);
+    const wrapper = mount(<Picker onChange={onChange} options={opts} />);
     wrapper.find('select').simulate('change', event);
+  });
+
+  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function(done) {
+    const opts = [
+      { label: 'option 1', value: 'opt1' },
+      { label: 'option 2', value: null }
+    ];
+    const onChange = (ev) => {
+      expect(ev.target.value).to.equal(null);
+      done();
+    };
+    const event = { target:{ value: PICKER_EMPTY_VALUE } };
+    const wrapper = mount(<Picker onChange={onChange} options={opts} />);
+    wrapper.find('select').simulate('change', event);
+  });
+
+  it('should return PICKER_EMPTY_VALUE when value is null', () => {
+    const wrapper = shallow(<Picker value={null} />);
+    expect(wrapper.instance().value).to.equal(PICKER_EMPTY_VALUE);
   });
 
   it('should select correct option when value is given', () => {
