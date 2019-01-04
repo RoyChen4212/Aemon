@@ -2,22 +2,16 @@ import React from 'react';
 import get from 'lodash/get';
 import { HistoricalPicker, NewAddressField } from '../form-fields';
 import { SmallButton } from '../button';
-import FormField from '../form-field';
+import AddOrSelectField from '../add-or-select-field';
 import makeEvent from '../../../lib/make-event';
 import './style.css';
 
-class AddressField extends FormField {
+class AddressField extends AddOrSelectField {
   baseClassName = 'pbg-form-field pbg-address-field';
 
-  get className() {return this.baseClassName; }
+  get options() { return this.props.addressOptions; }
 
-  get addingNew() {
-    const selected = get(this.props, 'value.selected');
-    return selected === 'new';
-  }
-
-  get newAddressField() {
-    if (!this.addingNew) return null;
+  get field() {
     return (
       <NewAddressField
         onChange={(ev) => this.updateValue(ev.target.value)}
@@ -27,38 +21,6 @@ class AddressField extends FormField {
         error={this.props.error}
       />
     );
-  }
-
-  get addNewButton() {
-    if (this.addingNew) return null;
-    return (
-      <SmallButton onClick={() => this.updateValue({ selected: 'new' })}>
-        {this.props.addNewButtonLabel}
-      </SmallButton>
-    );
-  }
-
-  updateValue = (value) => {
-    const newValue = {
-      ...this.props.value,
-      ...value,
-    };
-    this.onChange(makeEvent(newValue));
-  }
-
-  render() {
-    return (
-      <div className={this.className}>
-        <HistoricalPicker
-          name="selectedAddress"
-          options={this.props.addressOptions}
-          onChange={ev => this.updateValue({selected: ev.target.value })}
-          value={get(this.props, 'value.selected')}
-        />
-        { this.newAddressField }
-        { this.addNewButton }
-      </div>
-    )
   }
 }
 
