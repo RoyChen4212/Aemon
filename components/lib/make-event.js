@@ -1,3 +1,7 @@
 export default (value) => {
-  return { target: { value } };
+  return {
+    target: { value },
+    stopPropagation: () => {},
+    preventDefault: () => {},
+  };
 };
