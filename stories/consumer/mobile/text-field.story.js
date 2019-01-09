@@ -12,7 +12,8 @@ storiesOf('Form Fields/Text Field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid', () => (
-    <TextField
+    <FieldStateProvider
+      component={TextField}
       name="field1"
       label="A text field"
     />

@@ -17,16 +17,16 @@ class PhoneField extends AddOrSelectField {
     this.touchField = touchField.bind(this);
   }
 
-  get options() { return this.props.phoneOptions; }
+  get options() { return this.adaptedProps.phoneOptions; }
 
   get phoneError() {
-    return this.state.phoneTouched ? get(this.props, 'error.phone') : null;
+    return this.state.phoneTouched ? get(this.adaptedProps, 'error.phone') : null;
   }
 
   get field() {
     return (
       <TextField
-        label={this.props.addPhoneLabel}
+        label={this.adaptedProps.addPhoneLabel}
         onChange={(ev) => this.updateValue({ phone: ev.target.value})}
         onBlur={this.touchPhone}
         error={this.phoneError}

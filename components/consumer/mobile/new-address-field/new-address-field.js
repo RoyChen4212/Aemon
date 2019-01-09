@@ -38,16 +38,16 @@ class NewAddressField extends FormField {
 
   get className() {return this.baseClassName; }
 
-  get countryOptions() { return this.props.countryOptions || []; }
+  get countryOptions() { return this.adaptedProps.countryOptions || []; }
 
-  get currentValue() { return this.props.value || {}; }
+  get currentValue() { return this.adaptedProps.value || {}; }
 
   extractLabel(fieldName) {
-    return get(this.props, `labels.${fieldName}`, '');
+    return get(this.adaptedProps, `labels.${fieldName}`, '');
   }
 
   extractError(fieldName) {
-    const { error } = this.props;
+    const { error } = this.adaptedProps;
     if (!error || this.state.touched[fieldName] === false) return;
     return error[fieldName];
   }

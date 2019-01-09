@@ -9,7 +9,7 @@ class MultiSelectField extends FormField {
   baseClassName = 'pbg-form-field pbg-multi-select-field'
 
   get checkboxList() {
-    return get(this.props, 'options', []).map((opt, index) => {
+    return get(this.adaptedProps, 'options', []).map((opt, index) => {
       return (
         <Checkbox
           key={`checkbox_${index}`}
@@ -22,7 +22,7 @@ class MultiSelectField extends FormField {
     });
   }
 
-  get value() { return get(this, 'props.value', []); }
+  get value() { return get(this, 'adaptedProps.value', []); }
 
   valueForOption(opt) {
     return includes(this.value, opt.value);

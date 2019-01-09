@@ -7,17 +7,17 @@ import './style.css';
 class Checkbox extends FormField {
   baseClassName = 'pbg-form-field pbg-checkbox';
 
-  get checked() { return this.props.value || false; }
+  get checked() { return this.adaptedProps.value || false; }
 
   get label() {
-    const { label } = this.props;
+    const { label } = this.adaptedProps;
     const labelElement = (
-      <Label type={this.labelType} required={this.props.required}>{label}</Label>
+      <Label type={this.labelType} required={this.adaptedProps.required}>{label}</Label>
     );
     return label ? labelElement : null;
   }
 
-  onChange = ev => this.props.onChange(makeEvent(ev.target.checked));
+  onChange = ev => this.adaptedProps.onChange(makeEvent(ev.target.checked));
 
   render() {
     return (
@@ -26,7 +26,7 @@ class Checkbox extends FormField {
           type="checkbox"
           checked={this.checked}
           onChange={this.onChange}
-          name={this.props.name}
+          name={this.adaptedProps.name}
         />
         {this.label}
       </div>

@@ -2,11 +2,7 @@ import React from 'react';
 import Label, { labelTypes } from './label';
 import Hint, { hintTypes } from './hint';
 
-class FormField extends React.PureComponent {
-  state = {
-    focused: false,
-  }
-
+class FormField extends React.Component {
   baseClassName = 'pbg-form-field';
 
   get className() {
@@ -23,11 +19,16 @@ class FormField extends React.PureComponent {
     return resultingClassName;
   }
 
-  get error() { return this.props.error; }
+  get adaptedProps() {
+    if (this.props.adapter) return this.props.adapter(this.props);
+    return this.props;
+  }
 
-  get hint() { return this.props.hint; }
+  get error() { return this.adaptedProps.error; }
 
-  get focused() { return this.state.focused || !!this.error; }
+  get hint() { return this.adaptedProps.hint; }
+
+  get focused() { return this.adaptedProps.focused || !!this.error; }
 
   get labelType() {
     if (this.props.error) return labelTypes.ERROR;
@@ -48,17 +49,14 @@ class FormField extends React.PureComponent {
     return null;
   }
 
-  onFocus = () => {
-    this.setState({ focused: true });
+  onFocus = (ev) => {
+    if (this.adaptedProps.onFocus) return this.adaptedProps.onFocus(ev);
   }
 
-  onChange = (value) => {
-    this.props.onChange(value);
-  }
+  onChange = (value) => this.adaptedProps.onChange(value)
 
   onBlur = (value) => {
-    this.setState({ focused: false });
-    if (this.props.onBlur) this.props.onBlur(value);
+    if (this.adaptedProps.onBlur) return this.adaptedProps.onBlur(value);
   }
 
   render() {

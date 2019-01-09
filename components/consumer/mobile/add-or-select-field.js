@@ -10,7 +10,7 @@ class AddOrSelectField extends FormField {
   get className() {return this.baseClassName; }
 
   get addingNew() {
-    const selected = get(this.props, 'value.selected');
+    const selected = get(this.adaptedProps, 'value.selected');
     return selected === 'new';
   }
 
@@ -18,7 +18,7 @@ class AddOrSelectField extends FormField {
     if (this.addingNew) return null;
     return (
       <SmallButton onClick={() => this.updateValue({ selected: 'new' })}>
-        {this.props.addNewButtonLabel}
+        {this.adaptedProps.addNewButtonLabel}
       </SmallButton>
     );
   }
@@ -33,14 +33,14 @@ class AddOrSelectField extends FormField {
       <HistoricalPicker
         options={this.options}
         onChange={ev => this.updateValue({selected: ev.target.value })}
-        value={get(this.props, 'value.selected')}
+        value={get(this.adaptedProps, 'value.selected')}
       />
     );
   }
 
   updateValue = (value) => {
     const newValue = {
-      ...this.props.value,
+      ...this.adaptedProps.value,
       ...value,
     };
     this.onChange(makeEvent(newValue));

@@ -17,15 +17,20 @@ export const shouldBehaveLikeTextField = (wrapper) => {
     expect(wrapper.hasClass('pbg-text-field')).to.be.true;
   });
 
-  it('should add pbg-form-field-focused class when clicked on input', () => {
-    wrapper.find('input').simulate('focus');
-    expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
+  it('should add pbg-form-field-focused class when focused', function(done) {
+    wrapper.setProps({ focused: true }, () => {
+      expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
+      done();
+    });
   });
 
-  it('should remove pbg-form-field-focused class when clicked out of input', () => {
-    wrapper.find('input').simulate('focus');
-    wrapper.find('input').simulate('blur');
-    expect(wrapper.hasClass('pbg-form-field-focused')).to.be.false;
+  it('should remove pbg-form-field-focused class when not focused', function(done) {
+    wrapper.setProps({ focused: true }, () => {
+      wrapper.setProps({ focused: false }, () => {
+        expect(wrapper.hasClass('pbg-form-field-focused')).to.be.false;
+        done();
+      });
+    });
   });
 };
 
