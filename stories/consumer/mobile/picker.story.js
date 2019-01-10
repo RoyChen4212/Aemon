@@ -15,7 +15,7 @@ const options = [
   { label: 'Super long option text here', value: 'third' },
 ];
 
-storiesOf('Form Fields/Picker', module)
+storiesOf('Consumer/Mobile/Form Fields/Picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid', () => (

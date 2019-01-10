@@ -11,7 +11,7 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Form Fields/Checkbox', module)
+storiesOf('Consumer/Mobile/Form Fields/Checkbox', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('No label/Unhecked', () => (

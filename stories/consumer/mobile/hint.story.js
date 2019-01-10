@@ -8,7 +8,7 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const sampleText = 'Pay By Group Rules';
-storiesOf('Atomic Components/Hint', module)
+storiesOf('Consumer/Mobile/Atomic Components/Hint', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Standard', () => <Hint>{sampleText}</Hint>)

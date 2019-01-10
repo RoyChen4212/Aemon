@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const customFormater = () => 'Formated by custom formater';
 
-storiesOf('Form Fields/Time Picker', module)
+storiesOf('Consumer/Mobile/Form Fields/Time Picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid', () => (

@@ -34,7 +34,7 @@ const labels = {
   country: 'Country',
 };
 
-storiesOf('Form Fields/New Address Field', module)
+storiesOf('Consumer/Mobile/Form Fields/New Address Field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('No validations', () => (

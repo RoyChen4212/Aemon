@@ -22,6 +22,8 @@ function loadStories() {
   require('../stories/consumer/mobile/address-field.story.js');
   require('../stories/consumer/mobile/multi-select-field.story.js');
   require('../stories/consumer/mobile/phone-field.story.js');
+
+  require('../stories/consumer/desktop/banner.story.js');
 }
 
 configure(loadStories, module);

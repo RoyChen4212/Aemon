@@ -14,7 +14,7 @@ const customFormater = (dateStr) => {
   return date.toLocaleDateString('de-DE', options);
 };
 
-storiesOf('Form Fields/Date Picker', module)
+storiesOf('Consumer/Mobile/Form Fields/Date Picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid', () => (

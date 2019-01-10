@@ -16,7 +16,7 @@ const options = [
   { label: 'Super long option text here', value: 'third' }
 ];
 
-storiesOf('Form Fields/Historical Picker', module)
+storiesOf('Consumer/Mobile/Form Fields/Historical Picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid/No Hint', () => (

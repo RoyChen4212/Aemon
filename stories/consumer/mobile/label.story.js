@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const sampleText = 'Pay By Group Rules';
 
-storiesOf('Atomic Components/Label', module)
+storiesOf('Consumer/Mobile/Atomic Components/Label', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Standard Label', () => <Label>{sampleText}</Label>)
