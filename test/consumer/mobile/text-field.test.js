@@ -100,6 +100,13 @@ describe('TextField', () => {
     expect(wrapper.find('input').prop('type')).to.equal(expected);
   });
 
+  it('should execute onFocus if given', () => {
+    const onFocus = sinon.spy();
+    const wrapper = shallow(<TextField onFocus={onFocus} />);
+    wrapper.find('input').simulate('focus');
+    expect(onFocus.calledOnce).to.be.true;
+  });
+
   describe('With error', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';

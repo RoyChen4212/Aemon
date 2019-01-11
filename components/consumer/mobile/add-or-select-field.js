@@ -10,6 +10,7 @@ class AddOrSelectField extends FormField {
   get className() {return this.baseClassName; }
 
   get addingNew() {
+    if (!this.options || !this.options.length) return true;
     const selected = get(this.adaptedProps, 'value.selected');
     return selected === 'new';
   }
@@ -29,6 +30,7 @@ class AddOrSelectField extends FormField {
   }
 
   get picker() {
+    if (!this.options || !this.options.length) return null;
     return (
       <HistoricalPicker
         options={this.options}

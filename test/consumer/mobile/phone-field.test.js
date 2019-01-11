@@ -22,8 +22,13 @@ describe('Phone Field', () => {
     expect(wrapper.hasClass('pbg-phone-field')).to.be.true;
   });
 
-  it('should render a HistoricalPicker', () => {
+  it('should not show picker when no options are passed', () => {
     const wrapper = shallow(<PhoneField />);
+    expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(0);
+  });
+
+  it('should render a HistoricalPicker when options are pased', () => {
+    const wrapper = shallow(<PhoneField phoneOptions={phoneOptions} />);
     expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(1);
   });
 
@@ -42,6 +47,11 @@ describe('Phone Field', () => {
     const value = { selected: phoneOptions[0] };
     const wrapper = mount(<PhoneField phoneOptions={phoneOptions} value={value} />);
     expect(wrapper.find(SmallButton)).to.have.lengthOf(1);
+  });
+
+  it('should not show add new button when no options are passed', () => {
+    const wrapper = mount(<PhoneField />);
+    expect(wrapper.find(SmallButton)).to.have.lengthOf(0);
   });
 
   it('should not show add new button when new value is selected', () => {
@@ -65,13 +75,18 @@ describe('Phone Field', () => {
       expect(ev.target.value).to.eql(expected);
       done();
     };
-    const wrapper = mount(<PhoneField value={value} onChange={onChange} />);
+    const wrapper = mount(<PhoneField value={value} onChange={onChange} phoneOptions={phoneOptions}/>);
     wrapper.find('button').simulate('click');
   });
 
   it('should show TextField when new value is selected', () => {
     const value = { selected: 'new' };
     const wrapper = mount(<PhoneField value={value} />);
+    expect(wrapper.find(TextField)).to.have.lengthOf(1);
+  });
+
+  it('should show TextField when no options are passed', () => {
+    const wrapper = mount(<PhoneField />);
     expect(wrapper.find(TextField)).to.have.lengthOf(1);
   });
 

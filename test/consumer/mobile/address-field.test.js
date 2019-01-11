@@ -29,29 +29,39 @@ describe('Address Field', () => {
     expect(wrapper.hasClass('pbg-address-field')).to.be.true;
   });
 
-  it('has a HistoricalPicker component', () => {
+  it('should not show picker when no options are passed', () => {
     const wrapper = shallow(<AddressField />);
+    expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(0);
+  });
+
+  it('should show HistoricalPicker when options are passed', () => {
+    const wrapper = shallow(<AddressField addressOptions={addressOptions} />);
     expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(1);
   });
 
-  it('passess address options to HistoricalPicker', () => {
+  it('should pass address options to HistoricalPicker', () => {
     const wrapper = mount(<AddressField addressOptions={addressOptions} />);
     expect(wrapper.find(HistoricalPicker).prop('options')).to.eql(addressOptions)
   });
 
-  it('renders a NewAddressField when add new option is selected', () => {
+  it('should render NewAddressField when add new option is selected', () => {
     const value = {
       selected: 'new',
     };
-    const wrapper = mount(<AddressField value={value} />);
+    const wrapper = mount(<AddressField value={value} addressOptions={addressOptions} />);
     expect(wrapper.find(NewAddressField)).to.have.lengthOf(1);
   });
 
-  it('does not render a NewAddressField when an address is selected', () => {
+  it('should render NewAddressField when no options are passed', () => {
+    const wrapper = mount(<AddressField  />);
+    expect(wrapper.find(NewAddressField)).to.have.lengthOf(1);
+  });
+
+  it('should not render NewAddressField when an address is selected', () => {
     const value = {
       selected: addressOptions[0].value,
     };
-    const wrapper = mount(<AddressField value={value} />);
+    const wrapper = mount(<AddressField value={value} addressOptions={addressOptions}/>);
     expect(wrapper.find(NewAddressField)).to.have.lengthOf(0);
   });
 
@@ -68,7 +78,7 @@ describe('Address Field', () => {
 
   it('should pass its value to historical picker', () => {
     const value = { selected: 'new' };
-    const wrapper = mount(<AddressField value={value} />);
+    const wrapper = mount(<AddressField value={value} addressOptions={addressOptions} />);
     expect(wrapper.find(HistoricalPicker).prop('value')).to.eql(value.selected);
   });
 
@@ -88,14 +98,16 @@ describe('Address Field', () => {
 
   it('should render add new button when address is selected', () => {
     const value = { selected: addressOptions[0].value };
-    const wrapper = mount(<AddressField value={value} />);
+    const wrapper = mount(<AddressField value={value} addressOptions={addressOptions} />);
     expect(wrapper.find(SmallButton)).to.have.lengthOf(1);
   });
 
   it('should add correct lable to add new button', () => {
     const value = { selected: addressOptions[0].value };
     const label = 'Some label';
-    const wrapper = mount(<AddressField value={value} addNewButtonLabel={label} />);
+    const wrapper = mount(
+      <AddressField value={value} addNewButtonLabel={label} addressOptions={addressOptions}/>
+    );
     expect(wrapper.find(SmallButton).text()).to.equal(label);
   });
 
@@ -106,7 +118,9 @@ describe('Address Field', () => {
       expect(ev.target.value).to.eql(expected);
       done();
     };
-    const wrapper = mount(<AddressField value={value} onChange={onChange} />);
+    const wrapper = mount(
+      <AddressField value={value} onChange={onChange} addressOptions={addressOptions}/>
+    );
     wrapper.find('button').simulate('click');
   });
 
