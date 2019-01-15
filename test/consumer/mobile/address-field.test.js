@@ -76,6 +76,12 @@ describe('Address Field', () => {
     wrapper.find('select').simulate('change', event);
   });
 
+  it('should pass its value to new address field', () => {
+    const value = { streetAddress: '742 Evergreen Terrace' };
+    const wrapper = mount(<AddressField value={value} />);
+    expect(wrapper.find(NewAddressField).prop('value')).to.eql(value);
+  });
+
   it('should pass its value to historical picker', () => {
     const value = { selected: 'new' };
     const wrapper = mount(<AddressField value={value} addressOptions={addressOptions} />);

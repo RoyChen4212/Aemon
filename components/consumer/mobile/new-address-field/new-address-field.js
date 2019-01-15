@@ -70,6 +70,7 @@ class NewAddressField extends FormField {
     return (
       <TextField
         name={fieldName}
+        value={this.currentValue[fieldName]}
         label={this.extractLabel(fieldName)}
         error={this.extractError(fieldName)}
         onChange={ev => this.updateValue({ [fieldName]: ev.target.value })}
@@ -88,6 +89,7 @@ class NewAddressField extends FormField {
         <Picker
           name={COUNTRY}
           options={this.countryOptions}
+          value={this.currentValue[COUNTRY]}
           label={this.extractLabel(COUNTRY)}
           error={this.extractError(COUNTRY)}
           onChange={ev => this.updateValue({ [COUNTRY]: ev.target.value })}

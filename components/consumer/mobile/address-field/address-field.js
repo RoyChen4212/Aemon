@@ -16,6 +16,7 @@ class AddressField extends AddOrSelectField {
       <NewAddressField
         onChange={(ev) => this.updateValue(ev.target.value)}
         name="newAddressField"
+        value={this.adaptedProps.value}
         countryOptions={this.adaptedProps.countryOptions}
         labels={this.adaptedProps.newAddressLabels}
         error={this.adaptedProps.error}

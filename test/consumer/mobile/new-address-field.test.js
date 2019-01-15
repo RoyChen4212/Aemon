@@ -227,6 +227,15 @@ describe('NewAddressField', () => {
         wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS}).simulate('change', event);
       });
 
+      it('should pass streetAddress value to text input when given', () => {
+        const value = {
+          streetAddress: '742 Evergreen Terrace',
+        }
+        const wrapper = mount(<NewAddressField value={value} />);
+        expect(wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS}).prop('value'))
+          .to.equal(value.streetAddress);
+      });
+
       // City
       it('should execute onChange when city TextField changes', () => {
         const onChange = sinon.spy();
@@ -258,6 +267,15 @@ describe('NewAddressField', () => {
         wrapper.find({ type: 'text', name: fieldNames.CITY}).simulate('change', event);
       });
 
+      it('should pass city value to text input when given', () => {
+        const value = {
+          city: 'Springfield',
+        }
+        const wrapper = mount(<NewAddressField value={value} />);
+        expect(wrapper.find({ type: 'text', name: fieldNames.CITY}).prop('value'))
+          .to.equal(value.city);
+      });
+
       // State
       it('should execute onChange when state TextField changes', () => {
         const onChange = sinon.spy();
@@ -287,6 +305,15 @@ describe('NewAddressField', () => {
         };
         const wrapper = mount(<NewAddressField onChange={onChange} />);
         wrapper.find({ type: 'text', name: fieldNames.STATE}).simulate('change', event);
+      });
+
+      it('should pass state value to text input when given', () => {
+        const value = {
+          state: 'Ohio',
+        }
+        const wrapper = mount(<NewAddressField value={value} />);
+        expect(wrapper.find({ type: 'text', name: fieldNames.STATE}).prop('value'))
+          .to.equal(value.state);
       });
 
 
@@ -321,6 +348,15 @@ describe('NewAddressField', () => {
         wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE}).simulate('change', event);
       });
 
+      it('should pass postalCode value to text input when given', () => {
+        const value = {
+          postalCode: 'Springfield',
+        }
+        const wrapper = mount(<NewAddressField value={value} />);
+        expect(wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE}).prop('value'))
+          .to.equal(value.postalCode);
+      });
+
       // Country
       it('should execute onChange when country TextField changes', () => {
         const onChange = sinon.spy();
@@ -350,6 +386,16 @@ describe('NewAddressField', () => {
         };
         const wrapper = mount(<NewAddressField onChange={onChange} />);
         wrapper.find('select').simulate('change', event);
+      });
+
+      it('should pass country value to picker when given', () => {
+        const options = [{label: 'MX', value: 'mx'}, {label: 'US', value: 'us'}];
+        const value = {
+          country: 'us',
+        }
+        const wrapper = mount(<NewAddressField countryOptions={options} value={value} />);
+        expect(wrapper.find(Picker).prop('value'))
+          .to.equal(value.country);
       });
     });
   });
