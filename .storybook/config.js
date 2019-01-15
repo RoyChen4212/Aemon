@@ -24,6 +24,7 @@ function loadStories() {
   require('../stories/consumer/mobile/phone-field.story.js');
 
   require('../stories/consumer/desktop/banner.story.js');
+  require('../stories/consumer/desktop/subheader.story.js');
 }
 
 configure(loadStories, module);

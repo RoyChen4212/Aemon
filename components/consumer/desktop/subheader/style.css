@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.pbg-subheader-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%; }
+  .pbg-subheader-wrapper .pbg-subheader-text {
+    flex-grow: 0;
+    font-size: 18px;
+    line-height: 21px;
+    color: #4c4c4c;
+    margin-right: 16px; }
+  .pbg-subheader-wrapper .pbg-subheader-divider {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #cfcfcf; }
