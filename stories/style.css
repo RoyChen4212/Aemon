@@ -1,3 +1,24 @@
 .story-wrapper {
   margin: 10px 0;
 }
+
+.mr-1 {
+  margin-right: 8px;
+}
+
+.mr-2 {
+  margin-right: 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.between {
+  justify-content: space-between;
+}
+
+.flex.middle {
+  align-items: center;
+  justify-content: center;
+}
