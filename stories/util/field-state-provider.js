@@ -8,7 +8,12 @@ class StateProvider extends React.Component {
 
   onChange = (ev) => {
     this.setState({ value: ev.target.value }, this.runValidations);
-    return this.props.onChange(ev);
+    if (this.props.onChange) return this.props.onChange(ev);
+  }
+
+  onBlur = (ev) => {
+    this.setState({ value: ev.target.value }, this.runValidations);
+    if (this.props.onBlur) return this.props.onBlur(ev);
   }
 
   runValidations = () => {
@@ -31,7 +36,7 @@ class StateProvider extends React.Component {
           {...this.props}
           value={this.state.value}
           onChange={this.onChange}
-          onBlur={this.onChange}
+          onBlur={this.onBlur}
           error={this.error}
         />
       </React.Fragment>

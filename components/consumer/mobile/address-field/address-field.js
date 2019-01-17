@@ -20,6 +20,8 @@ class AddressField extends AddOrSelectField {
         countryOptions={this.adaptedProps.countryOptions}
         labels={this.adaptedProps.newAddressLabels}
         error={this.adaptedProps.error}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
       />
     );
   }

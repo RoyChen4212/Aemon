@@ -56,6 +56,9 @@ storiesOf('Form Fields/New Address Field', module)
       component={NewAddressField}
       name="new-address-field"
       labels={labels}
+      value={{
+        streetAddress: '',
+      }}
       countryOptions={countries}
       onChange={action('onChange')}
     />

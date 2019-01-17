@@ -26,22 +26,14 @@ describe('NewAddressField', () => {
       expect(streetAddress.prop('placeholder')).to.be.equal(expected);
     });
 
-    it('should not pass the error to streetAddress TextField if not touched', () => {
-      const expected = 'some error';
-      const wrapper = shallow(<NewAddressField error={{ [fieldNames.STREET_ADDRESS]: expected }} />);
-      expect(wrapper.instance().extractError(fieldNames.STREET_ADDRESS)).to.be.undefined;
-    });
-
-    it('should pass the error to streetAddress TextField if touched', () => {
+    it('should pass the error to streetAddress TextField', () => {
       const expected = 'some error';
       const wrapper = mount(<NewAddressField error={{ [fieldNames.STREET_ADDRESS]: expected }} />);
-      wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('blur');
       expect(wrapper.instance().extractError(fieldNames.STREET_ADDRESS)).to.be.equal(expected);
     });
 
     it('should not pass an error to streetAddress TextField if it has none', () => {
       const wrapper = mount(<NewAddressField error={{ notOne: 'error' }} />);
-      wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS });
       expect(wrapper.instance().extractError(fieldNames.STREET_ADDRESS)).to.be.undefined;
     });
   });
@@ -61,16 +53,9 @@ describe('NewAddressField', () => {
       expect(city.prop('placeholder')).to.be.equal(expected);
     });
 
-    it('should not pass the error to city TextField if not touched', () => {
-      const expected = 'some error';
-      const wrapper = shallow(<NewAddressField error={{ [fieldNames.CITY]: expected }} />);
-      expect(wrapper.instance().extractError(fieldNames.CITY)).to.be.undefined;
-    });
-
-    it('should pass the error to city TextField if touched', () => {
+    it('should pass the error to city TextField', () => {
       const expected = 'some error';
       const wrapper = mount(<NewAddressField error={{ [fieldNames.CITY]: expected }} />);
-      wrapper.find({ type: 'text', name: fieldNames.CITY }).simulate('blur');
       expect(wrapper.instance().extractError(fieldNames.CITY)).to.be.equal(expected);
     });
 
@@ -94,15 +79,9 @@ describe('NewAddressField', () => {
       expect(state.prop('placeholder')).to.be.equal(expected);
     });
 
-    it('should not pass the error to state TextField if not touched', () => {
-      const wrapper = shallow(<NewAddressField error={{ [fieldNames.STATE]: 'some error' }} />);
-      expect(wrapper.instance().extractError(fieldNames.STATE)).to.be.undefined;
-    });
-
-    it('should pass the error to state TextField if touched', () => {
+    it('should pass the error to state TextField', () => {
       const expected = 'some error';
       const wrapper = mount(<NewAddressField error={{ [fieldNames.STATE]: expected }} />);
-      wrapper.find({ type: 'text', name: fieldNames.STATE }).simulate('blur');
       expect(wrapper.instance().extractError(fieldNames.STATE)).to.be.equal(expected);
     });
 
@@ -126,15 +105,9 @@ describe('NewAddressField', () => {
       expect(postalCode.prop('placeholder')).to.be.equal(expected);
     });
 
-    it('should not pass the error to postal code TextField if not touched', () => {
-      const wrapper = shallow(<NewAddressField error={{ [fieldNames.POSTAL_CODE]: 'some error' }} />);
-      expect(wrapper.instance().extractError(fieldNames.POSTAL_CODE)).to.be.undefined;
-    });
-
-    it('should pass the error to postal code TextField if touched', () => {
+    it('should pass the error to postal code TextField', () => {
       const expected = 'some error';
       const wrapper = mount(<NewAddressField error={{ [fieldNames.POSTAL_CODE]: expected }} />);
-      wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).simulate('blur');
       expect(wrapper.instance().extractError(fieldNames.POSTAL_CODE)).to.be.equal(expected);
     });
 

@@ -3,7 +3,6 @@ import { get, first, isEmpty } from 'lodash';
 import { TextField, Picker } from '../form-fields';
 import FormField from '../form-field';
 import makeEvent from '../../../lib/make-event';
-import touchField from '../../../lib/touch-field';
 import './style.css';
 
 const STREET_ADDRESS = 'streetAddress';
@@ -14,20 +13,6 @@ const COUNTRY = 'country';
 
 class NewAddressField extends FormField {
   baseClassName = 'pbg-form-field pbg-new-address-field';
-
-  state = {
-    touched: {
-      [STREET_ADDRESS]: false,
-      [CITY]: false,
-      [STATE]: false,
-      [POSTAL_CODE]: false,
-    }
-  }
-
-  constructor(props) {
-    super(props);
-    this.touchField = touchField.bind(this);
-  }
 
   componentDidMount() {
     if (!this.currentValue.country && this.countryOptions.length) {
@@ -48,7 +33,7 @@ class NewAddressField extends FormField {
 
   extractError(fieldName) {
     const { error } = this.adaptedProps;
-    if (!error || this.state.touched[fieldName] === false) return;
+    if (!error) return;
     return error[fieldName];
   }
 
@@ -57,24 +42,16 @@ class NewAddressField extends FormField {
     this.onChange(makeEvent(newValue));
   }
 
-  touchNewAddressField = (fieldName) => {
-    const newState = {
-      ...this.state,
-      touched: { ...this.state.touched, [fieldName]: true },
-    };
-
-    this.touchField(newState);
-  }
-
   textFieldFor(fieldName) {
     return (
       <TextField
         name={fieldName}
-        value={this.currentValue[fieldName]}
+        value={this.currentValue[fieldName] || ''}
         label={this.extractLabel(fieldName)}
         error={this.extractError(fieldName)}
         onChange={ev => this.updateValue({ [fieldName]: ev.target.value })}
-        onBlur={() => this.touchNewAddressField(fieldName)}
+        onFocus={this.onFocus}
+        onBlur={() => this.onBlur(makeEvent(this.currentValue))}
       />
     );
   }
