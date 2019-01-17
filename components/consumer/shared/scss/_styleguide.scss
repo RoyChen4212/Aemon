@@ -1,5 +1,6 @@
-// Color palette
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
+// Color palette
 $almost-white: #f3f3f3;
 $pbg-blue: #2EAFFF;
 $pbg-blue-light: #2E3AA1;
@@ -25,6 +26,8 @@ $facebook-color: #3b5998;
 $blue-gradient: linear-gradient(267deg, $pbg-blue-light, $pbg-blue);
 $blue-linear: linear-gradient(90deg, $pbg-blue 0%, $pbg-blue-light 196.67%);
 
+// Font families
+$roboto: 'Roboto', serif;
 
 // Font sizes
 $large-font: 17px;

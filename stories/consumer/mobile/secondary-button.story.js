@@ -7,7 +7,7 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { withContainer, wrapStory } from '../../util/decorators';
 
-storiesOf('Atomic Components/Secondary Button', module)
+storiesOf('Consumer/Mobile/Atomic Components/Secondary Button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Enabled/No Hint', () => (

@@ -24,7 +24,7 @@ const validate = (value) => {
   return errors;
 };
 
-storiesOf('Form Fields/Phone Field', module)
+storiesOf('Consumer/Mobile/Form Fields/Phone Field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('No phone options', () => (

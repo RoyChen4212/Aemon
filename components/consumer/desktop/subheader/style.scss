@@ -1,0 +1,21 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-subheader-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .pbg-subheader-text {
+    flex-grow: 0;
+    font-size: 18px;
+    line-height: 21px;
+    color: $greyish-brown;
+    margin-right: 16px;
+  }
+
+  .pbg-subheader-divider {
+    flex-grow: 1;
+    height: 1px;
+    background-color: $pinkish-grey;
+  }
+}

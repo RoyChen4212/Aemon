@@ -8,7 +8,7 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Form Fields/Datetime Picker', module)
+storiesOf('Consumer/Mobile/Form Fields/Datetime Picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid', () => (

@@ -15,7 +15,7 @@ const options = [
   { label: 'European Goulash', value: 'goulash' },
 ]
 
-storiesOf('Form Fields/Multi Select Field', module)
+storiesOf('Consumer/Mobile/Form Fields/Multi Select Field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Default', () => (

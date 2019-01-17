@@ -1,0 +1,20 @@
+@import "../../shared/scss/styleguide";
+
+.pbg-banner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 41px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 21px;
+  font-size: 14px;
+  color: $white;
+
+  &.pbg-banner-dark-blue {
+    background: linear-gradient(183.91deg, rgba(39, 48, 153, 0.783628) 0%, #273099 100%);
+  }
+}
