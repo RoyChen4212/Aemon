@@ -209,6 +209,19 @@ describe('NewAddressField', () => {
           .to.equal(value.streetAddress);
       });
 
+      it('should execute onBlur with current value when streetAddress is blurred', function (done) {
+        const value = {
+          streetAddress: '742 Evergreen Terrace',
+          city: 'Springfield',
+        };
+        const onBlur = (ev) => {
+          expect(ev.target.value).to.eql(value);
+          done();
+        };
+        const wrapper = mount(<NewAddressField value={value} onBlur={onBlur} />);
+        wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('blur');
+      });
+
       // City
       it('should execute onChange when city TextField changes', () => {
         const onChange = sinon.spy();
@@ -247,6 +260,19 @@ describe('NewAddressField', () => {
         const wrapper = mount(<NewAddressField value={value} />);
         expect(wrapper.find({ type: 'text', name: fieldNames.CITY}).prop('value'))
           .to.equal(value.city);
+      });
+
+      it('should execute onBlur with current value when city is blurred', function (done) {
+        const value = {
+          streetAddress: '742 Evergreen Terrace',
+          city: 'Springfield',
+        };
+        const onBlur = (ev) => {
+          expect(ev.target.value).to.eql(value);
+          done();
+        };
+        const wrapper = mount(<NewAddressField value={value} onBlur={onBlur} />);
+        wrapper.find({ type: 'text', name: fieldNames.CITY }).simulate('blur');
       });
 
       // State
@@ -289,6 +315,19 @@ describe('NewAddressField', () => {
           .to.equal(value.state);
       });
 
+      it('should execute onBlur with current value when state is blurred', function (done) {
+        const value = {
+          streetAddress: '742 Evergreen Terrace',
+          city: 'Springfield',
+        };
+        const onBlur = (ev) => {
+          expect(ev.target.value).to.eql(value);
+          done();
+        };
+        const wrapper = mount(<NewAddressField value={value} onBlur={onBlur} />);
+        wrapper.find({ type: 'text', name: fieldNames.STATE }).simulate('blur');
+      });
+
 
       // Postal Code
       it('should execute onChange when postalCode TextField changes', () => {
@@ -328,6 +367,19 @@ describe('NewAddressField', () => {
         const wrapper = mount(<NewAddressField value={value} />);
         expect(wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE}).prop('value'))
           .to.equal(value.postalCode);
+      });
+
+      it('should execute onBlur with current value when postalCode is blurred', function (done) {
+        const value = {
+          streetAddress: '742 Evergreen Terrace',
+          city: 'Springfield',
+        };
+        const onBlur = (ev) => {
+          expect(ev.target.value).to.eql(value);
+          done();
+        };
+        const wrapper = mount(<NewAddressField value={value} onBlur={onBlur} />);
+        wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).simulate('blur');
       });
 
       // Country
