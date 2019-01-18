@@ -16,6 +16,7 @@ storiesOf('Consumer/Mobile/Form Fields/TextArea', module)
       component={TextArea}
       name="text1"
       label="Type some large text"
+      value=""
       hint="a poem maybe?"
     />
   ))
@@ -34,6 +35,7 @@ storiesOf('Consumer/Mobile/Form Fields/TextArea', module)
       component={TextArea}
       name="text3"
       label="Type some large text"
+      value=""
       hint="a poem maybe?"
       required
     />
@@ -43,6 +45,7 @@ storiesOf('Consumer/Mobile/Form Fields/TextArea', module)
       component={TextArea}
       name="text4"
       label="Type some large text"
+      value=""
       error="this field has error"
     />
   ));

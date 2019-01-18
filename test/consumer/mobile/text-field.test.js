@@ -55,6 +55,18 @@ describe('TextField', () => {
     expect(wrapper.find('input').prop('value')).to.equal(expected);
   });
 
+  it('should set value to empty string if undefined is given', () => {
+    const expected = '';
+    const wrapper = shallow(<TextField />);
+    expect(wrapper.find('input').prop('value')).to.equal(expected);
+  });
+
+  it('should set value to empty string if null is given', () => {
+    const expected = '';
+    const wrapper = shallow(<TextField  value={null} />);
+    expect(wrapper.find('input').prop('value')).to.equal(expected);
+  });
+
   it('should pass onChange prop to input element', () => {
     const onChange = sinon.spy();
     const wrapper = shallow(<TextField onChange={onChange} />);

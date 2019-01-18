@@ -20,6 +20,10 @@ class TextField extends FormField {
     return !required ? label : label + '*';
   }
 
+  get value() {
+    return this.adaptedProps.value || '';
+  }
+
   get input() {
     return (
       <input
@@ -27,7 +31,7 @@ class TextField extends FormField {
         onChange={this.onChange}
         onFocus={this.onFocus}
         name={this.adaptedProps.name}
-        value={this.adaptedProps.value}
+        value={this.value}
         placeholder={this.placeholder}
         type={this.type}
       />
