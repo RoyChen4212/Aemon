@@ -10,6 +10,7 @@ function loadStories() {
   require('../stories/consumer/mobile/link-button.story.js');
   require('../stories/consumer/mobile/facebook-button.story.js');
   require('../stories/consumer/mobile/small-facebook-button.story.js');
+  require('../stories/consumer/mobile/text-area.story.js');
   require('../stories/consumer/mobile/text-field.story.js');
   require('../stories/consumer/mobile/password-field.story.js');
   require('../stories/consumer/mobile/picker.story.js');

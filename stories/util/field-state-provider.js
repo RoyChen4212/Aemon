@@ -4,6 +4,7 @@ class StateProvider extends React.Component {
   state = {
     value: this.props.value || null,
     error: this.props.error || null,
+    focused: false,
   }
 
   onChange = (ev) => {
@@ -12,9 +13,11 @@ class StateProvider extends React.Component {
   }
 
   onBlur = (ev) => {
-    this.setState({ value: ev.target.value }, this.runValidations);
+    this.setState({ value: ev.target.value, focused: false }, this.runValidations);
     if (this.props.onBlur) return this.props.onBlur(ev);
   }
+
+  onFocus = () => this.setState({ focused: true })
 
   runValidations = () => {
     let error;
@@ -34,9 +37,11 @@ class StateProvider extends React.Component {
       <React.Fragment>
         <Field
           {...this.props}
+          focused={this.state.focused}
           value={this.state.value}
           onChange={this.onChange}
           onBlur={this.onBlur}
+          onFocus={this.onFocus}
           error={this.error}
         />
       </React.Fragment>

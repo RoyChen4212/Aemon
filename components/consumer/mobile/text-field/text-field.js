@@ -20,19 +20,25 @@ class TextField extends FormField {
     return !required ? label : label + '*';
   }
 
+  get input() {
+    return (
+      <input
+        onBlur={this.onBlur}
+        onChange={this.onChange}
+        onFocus={this.onFocus}
+        name={this.adaptedProps.name}
+        value={this.adaptedProps.value}
+        placeholder={this.placeholder}
+        type={this.type}
+      />
+    );
+  }
+
   render() {
     return (
       <div className={this.className}>
         {this.label}
-        <input
-          onBlur={this.onBlur}
-          onChange={this.onChange}
-          onFocus={this.onFocus}
-          name={this.adaptedProps.name}
-          value={this.adaptedProps.value}
-          placeholder={this.placeholder}
-          type={this.type}
-        />
+        {this.input}
         {this.hintOrError}
       </div>
     );

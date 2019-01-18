@@ -8,5 +8,6 @@ export * from './new-address-field';
 export * from './password-field';
 export * from './picker';
 export * from './phone-field';
+export * from './text-area';
 export * from './text-field';
 export * from './time-picker';
