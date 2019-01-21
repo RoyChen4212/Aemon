@@ -1,5 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
+import first from 'lodash/first';
+import isString from 'lodash/isString';
 import { HistoricalPicker } from './form-fields';
 import { SmallButton } from './button';
 import FormField from './form-field';
@@ -7,6 +9,17 @@ import makeEvent from '../../lib/make-event';
 import touchField from '../../lib/touch-field';
 
 class AddOrSelectField extends FormField {
+  componentDidMount() {
+    const selected = get(this.adaptedProps, 'value.selected');
+    if (selected !== 'new' && this.options.length) {
+      const newValue = {
+        ...this.adaptedProps.value,
+        selected: isString(selected) ? selected : get(first(this.options), 'value'),
+      };
+      this.onChange(makeEvent(newValue));
+    }
+  }
+
   get className() {return this.baseClassName; }
 
   get addingNew() {
