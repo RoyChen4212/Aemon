@@ -68,9 +68,13 @@ describe('Address Field', () => {
   it('should return correct value when address is selected', function(done) {
     const event = { target: { value: addressOptions[1] } };
     const expected = { selected: addressOptions[1] };
+    let runs = 0;
     const onChange = (ev) => {
-      expect(ev.target.value).to.eql(expected);
-      done();
+      if (runs === 1) {
+        expect(ev.target.value).to.eql(expected);
+        done();
+      }
+      runs++;
     };
     const wrapper = mount(<AddressField addressOptions={addressOptions} onChange={onChange} />);
     wrapper.find('select').simulate('change', event);
@@ -96,7 +100,7 @@ describe('Address Field', () => {
     const onChange = (ev) => {
       expect(ev.target.value).to.eql(expected);
       done();
-    }
+    };
     const wrapper = mount(<AddressField value={{ selected: 'new' }} onChange={onChange} />);
     wrapper.find({type: 'text', name: addressFields.STREET_ADDRESS})
       .simulate('change', { target: { value: expected[addressFields.STREET_ADDRESS]}});
@@ -120,9 +124,13 @@ describe('Address Field', () => {
   it('should return correct value when clicking add new button', function(done) {
     const value = { selected: addressOptions[0].value };
     const expected = { selected: 'new' };
+    let runs = 0;
     const onChange = (ev) => {
-      expect(ev.target.value).to.eql(expected);
-      done();
+      if (runs === 1) {
+        expect(ev.target.value).to.eql(expected);
+        done();
+      }
+      runs++;
     };
     const wrapper = mount(
       <AddressField value={value} onChange={onChange} addressOptions={addressOptions}/>

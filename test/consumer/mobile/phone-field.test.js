@@ -71,9 +71,13 @@ describe('Phone Field', () => {
   it('should return correct value when clicking add new button', function(done) {
     const value = { selected: phoneOptions[0].value };
     const expected = { selected: 'new' };
+    let runs = 0;
     const onChange = (ev) => {
-      expect(ev.target.value).to.eql(expected);
-      done();
+      if (runs === 1) {
+        expect(ev.target.value).to.eql(expected);
+        done();
+      }
+      runs++;
     };
     const wrapper = mount(<PhoneField value={value} onChange={onChange} phoneOptions={phoneOptions}/>);
     wrapper.find('button').simulate('click');

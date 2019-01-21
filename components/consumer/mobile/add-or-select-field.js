@@ -11,7 +11,7 @@ import touchField from '../../lib/touch-field';
 class AddOrSelectField extends FormField {
   componentDidMount() {
     const selected = get(this.adaptedProps, 'value.selected');
-    if (selected !== 'new' && this.options.length) {
+    if (selected !== 'new' && get(this, 'options.length')) {
       const newValue = {
         ...this.adaptedProps.value,
         selected: isString(selected) ? selected : get(first(this.options), 'value'),

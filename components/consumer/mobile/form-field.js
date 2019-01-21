@@ -53,7 +53,9 @@ class FormField extends React.Component {
     if (this.adaptedProps.onFocus) return this.adaptedProps.onFocus(ev);
   }
 
-  onChange = (value) => this.adaptedProps.onChange(value)
+  onChange = (value) => {
+    if (this.adaptedProps.onChange) return this.adaptedProps.onChange(value);
+  }
 
   onBlur = (value) => {
     if (this.adaptedProps.onBlur) return this.adaptedProps.onBlur(value);

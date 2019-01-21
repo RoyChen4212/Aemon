@@ -30,6 +30,17 @@ describe('TextArea', () => {
     expect(onBlur.calledOnce).to.be.true;
   });
 
+  it('should provide correct rows when empty', () => {
+    const wrapper = shallow(<TextArea />);
+    expect(wrapper.instance().rows).to.equal(1);
+  });
+
+  it('should provide correct rows when value is larger than 100', () => {
+    const value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare orci dolor, scelerisque posuere.';
+    const wrapper = shallow(<TextArea value={value}/>);
+    expect(wrapper.instance().rows).to.equal(3);
+  });
+
   describe('With error', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
