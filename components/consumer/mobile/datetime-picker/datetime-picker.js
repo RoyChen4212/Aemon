@@ -22,7 +22,8 @@ class DatetimePicker extends FormField {
   }
 
   static getDerivedStateFromProps(props) {
-    const date = props.value;
+    const { adapter } = props;
+    const date = adapter ? adapter(props).value : props.value;
     if (!date) return {};
 
     return {
