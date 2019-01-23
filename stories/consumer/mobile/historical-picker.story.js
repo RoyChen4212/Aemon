@@ -1,11 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { WithFigma } from 'storybook-addon-figma';
 import {
   HistoricalPicker
 } from '../../../components/consumer/mobile/form-fields';
 import { withContainer, wrapStory } from '../../util/decorators';
-
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -15,8 +15,10 @@ const options = [
   { label: 'Second option', value: 'second' },
   { label: 'Super long option text here', value: 'third' }
 ];
+const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 
 storiesOf('Consumer/Mobile/Form Fields/Historical Picker', module)
+  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid/No Hint', () => (
