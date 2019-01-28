@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Button from '../../../components/consumer/desktop/button';
+import Button, { PrimaryButton } from '../../../components/consumer/desktop/button';
 
 describe('Button', () => {
   describe('Base Button', () => {
@@ -50,6 +50,13 @@ describe('Button', () => {
     it('should have type submit if click handler is not given', () => {
       const wrapper = shallow(<Button />);
       expect(wrapper.find('button').html()).to.include('type="submit');
+    });
+  });
+
+  describe('Primary button', () => {
+    it('should have correct class name', () => {
+      const wrapper = shallow(<PrimaryButton />);
+      expect(wrapper.find(Button).hasClass('pbg-button-primary')).to.be.true;
     });
   });
 }); 
