@@ -58,5 +58,10 @@ describe('Button', () => {
       const wrapper = shallow(<PrimaryButton />);
       expect(wrapper.find(Button).hasClass('pbg-button-primary')).to.be.true;
     });
+
+    it('should have a correct desktop class name', () => {
+      const wrapper = shallow(<PrimaryButton />);
+      expect(wrapper.find(Button).hasClass('pbg-consumer-desktop')).to.be.true;
+    });
   });
 }); 
