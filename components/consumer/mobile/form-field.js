@@ -30,6 +30,8 @@ class FormField extends React.Component {
 
   get focused() { return this.adaptedProps.focused || !!this.error; }
 
+  get value() { return this.adaptedProps.value; }
+
   get labelType() {
     if (this.props.error) return labelTypes.ERROR;
     return labelTypes.base;
