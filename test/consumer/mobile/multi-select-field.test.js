@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import { Checkbox, MultiSelectField } from '../../../components/consumer/mobile/form-fields';
-import { shouldBehaveLikeFormField } from './form-field.test';
+import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import Label from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
@@ -55,17 +55,17 @@ describe('MultiSelectField', () => {
     expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
   });
 
-  it('should return value with a list of all selected values', function(done) {
+  it('should return value with a list of all selected values', function (done) {
     const onChange = (ev) => {
       expect(ev.target.value).to.eql(['opt1']);
       done();
     }
     const wrapper = mount(<MultiSelectField onChange={onChange} options={options} />);
-    const event =  { target: { checked: true } };
-    wrapper.find({type: 'checkbox', name: 'checkbox_0'}).simulate('change', event);
+    const event = { target: { checked: true } };
+    wrapper.find({ type: 'checkbox', name: 'checkbox_0' }).simulate('change', event);
   });
 
-  it('should return value with a list of all selected values', function(done) {
+  it('should return value with a list of all selected values', function (done) {
     const onChange = (ev) => {
       expect(ev.target.value).to.eql([options[1].value]);
       done();
@@ -74,12 +74,12 @@ describe('MultiSelectField', () => {
     const wrapper = mount(
       <MultiSelectField onChange={onChange} options={options} value={value} />
     );
-    const event =  { target: { checked: false } };
-    wrapper.find({type: 'checkbox', name: 'checkbox_0'}).simulate('change', event);
+    const event = { target: { checked: false } };
+    wrapper.find({ type: 'checkbox', name: 'checkbox_0' }).simulate('change', event);
   });
 
   it('should pass value to checkboxes', () => {
-    const wrapper = shallow(<MultiSelectField options={options} value={[options[1].value]}/>);
+    const wrapper = shallow(<MultiSelectField options={options} value={[options[1].value]} />);
     expect(wrapper.find(Checkbox).get(0).props.value).to.be.false
     expect(wrapper.find(Checkbox).get(1).props.value).to.equal(true);
   });

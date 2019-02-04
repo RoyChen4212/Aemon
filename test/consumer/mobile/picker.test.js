@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
-import { shouldBehaveLikeFormField } from './form-field.test';
+import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { Picker, PICKER_EMPTY_VALUE } from '../../../components/consumer/mobile/form-fields';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
@@ -23,11 +23,11 @@ describe('Picker', () => {
 
   it('should render given options', () => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
-    const wrapper = shallow(<Picker options={opts}/>);
+    const wrapper = shallow(<Picker options={opts} />);
     expect(wrapper.find('select').find('option')).to.have.lengthOf(2);
     opts.forEach(opt => {
       const expected = <option value={opt.value}>{opt.label}</option>;
-      expect(wrapper.find({ value: opt.value})).to.have.lengthOf(1);
+      expect(wrapper.find({ value: opt.value })).to.have.lengthOf(1);
     });
   });
 
@@ -44,7 +44,7 @@ describe('Picker', () => {
   });
 
   it('should have correct class when error is given', () => {
-    const wrapper = shallow(<Picker error="an error"/>);
+    const wrapper = shallow(<Picker error="an error" />);
     expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
   });
 
@@ -89,18 +89,18 @@ describe('Picker', () => {
     expect(onChange.calledWith(expected)).to.be.true;
   });
 
-  it('should call onChange with correct value if value is null', function(done) {
+  it('should call onChange with correct value if value is null', function (done) {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: null }];
     const onChange = (ev) => {
       expect(ev.target.value).to.equal(null);
       done();
     };
-    const event = { target:{ value: null } };
+    const event = { target: { value: null } };
     const wrapper = mount(<Picker onChange={onChange} options={opts} />);
     wrapper.find('select').simulate('change', event);
   });
 
-  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function(done) {
+  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function (done) {
     const opts = [
       { label: 'option 1', value: 'opt1' },
       { label: 'option 2', value: null }
@@ -109,7 +109,7 @@ describe('Picker', () => {
       expect(ev.target.value).to.equal(null);
       done();
     };
-    const event = { target:{ value: PICKER_EMPTY_VALUE } };
+    const event = { target: { value: PICKER_EMPTY_VALUE } };
     const wrapper = mount(<Picker onChange={onChange} options={opts} />);
     wrapper.find('select').simulate('change', event);
   });
