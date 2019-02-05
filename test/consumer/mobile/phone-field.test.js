@@ -106,6 +106,12 @@ describe('Phone Field', () => {
     wrapper.find({ type: 'text' }).simulate('change', event);
   });
 
+  it('should pass phone value to text field', () => {
+    const value = { selected: 'new', phone: '33133323' };
+    const wrapper = shallow(<PhoneField value={value} />);
+    expect(wrapper.find(TextField).prop('value')).to.equal(value.phone);
+  });
+
   it('should pass label to TextField change', () => {
     const expected = 'A label';
     const value = { selected: 'new' };

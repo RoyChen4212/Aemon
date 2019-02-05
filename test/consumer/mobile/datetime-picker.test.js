@@ -114,6 +114,13 @@ describe('Datetime picker', () => {
   const timezone = 'America/Mexico_City';
   shouldBehaveLikeFormField(shallow(<DatetimePicker error="some error" timezone={timezone} />));
 
+  it('should use prop adapter if provided', () => {
+    const adapter = sinon.spy((props) => props);
+    const value = new Date(moment('2018-02-23T00:00').tz(timezone));
+    const wrapper = shallow(<DatetimePicker adapter={adapter} timezone={timezone} value={value} />);
+    expect(adapter.called).to.be.true;
+  });
+
   it('should have class pbg-datetime-picker', () => {
     const wrapper = shallow(<DatetimePicker timezone={timezone} />);
     expect(wrapper.hasClass('pbg-datetime-picker')).to.be.true;

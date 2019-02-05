@@ -5,6 +5,35 @@ import Label, { labelTypes } from './label';
 import Hint, { hintTypes } from './hint';
 
 class FormField extends SuperFormField {
+  baseClassName = 'pbg-form-field';
+
+  get className() {
+    let resultingClassName = this.baseClassName;
+
+    if (this.error) {
+      resultingClassName += ' pbg-form-field-error';
+    }
+
+    if (this.focused) {
+      resultingClassName += ' pbg-form-field-focused';
+    }
+
+    return resultingClassName;
+  }
+
+  get adaptedProps() {
+    if (this.props.adapter) return this.props.adapter(this.props);
+    return this.props;
+  }
+
+  get error() { return this.adaptedProps.error; }
+
+  get hint() { return this.adaptedProps.hint; }
+
+  get focused() { return this.adaptedProps.focused || !!this.error; }
+
+  get value() { return this.adaptedProps.value; }
+
   get labelType() {
     if (this.props.error) return labelTypes.ERROR;
     return labelTypes.base;
