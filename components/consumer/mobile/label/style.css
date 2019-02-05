@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-label.pbg-label {
+.pbg-consumer-mobile label.pbg-label {
   color: #4c4c4c;
   font-family: Roboto;
   font-style: normal;
@@ -7,30 +7,30 @@ label.pbg-label {
   line-height: 20px;
   font-size: 14px;
   margin: 0; }
-  label.pbg-label.required:after {
+  .pbg-consumer-mobile label.pbg-label.required:after {
     content: '*'; }
 
-label.pbg-label-strong {
+.pbg-consumer-mobile label.pbg-label-strong {
   font-weight: 500; }
 
-label.pbg-label-active {
+.pbg-consumer-mobile label.pbg-label-active {
   color: #2c81ff;
   font-size: 12px;
   line-height: 18px; }
-  label.pbg-label-active > a {
+  .pbg-consumer-mobile label.pbg-label-active > a {
     cursor: pointer; }
 
-label.pbg-label-secondary {
+.pbg-consumer-mobile label.pbg-label-secondary {
   color: #8f98a3; }
 
-label.pbg-label-input {
+.pbg-consumer-mobile label.pbg-label-input {
   color: #000; }
 
-label.pbg-label-clickable {
+.pbg-consumer-mobile label.pbg-label-clickable {
   color: #2c81ff;
   cursor: pointer; }
 
-label.pbg-label-error {
+.pbg-consumer-mobile label.pbg-label-error {
   color: #f76143;
   font-size: 12px;
   line-height: 18px; }
