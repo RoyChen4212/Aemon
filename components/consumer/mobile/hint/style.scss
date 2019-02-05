@@ -1,21 +1,23 @@
 @import '../../shared/scss/styleguide';
 
-span {
-  &.pbg-hint {
-    color: $cool-grey;
-    font-family: Roboto;
-    font-style: italic;
-    font-weight: normal;
-    line-height: 15px;
-    font-size: 12px;
-  }
-
-  &.pbg-hint-error {
-    color: $coral-error;
-  }
-
-  &.pbg-hint-clickable {
-    color: $clear-blue;
-    cursor: pointer;
+.pbg-consumer-mobile {
+  span {
+    &.pbg-hint {
+      color: $cool-grey;
+      font-family: Roboto;
+      font-style: italic;
+      font-weight: normal;
+      line-height: 15px;
+      font-size: 12px;
+    }
+  
+    &.pbg-hint-error {
+      color: $coral-error;
+    }
+  
+    &.pbg-hint-clickable {
+      color: $clear-blue;
+      cursor: pointer;
+    }
   }
 }
