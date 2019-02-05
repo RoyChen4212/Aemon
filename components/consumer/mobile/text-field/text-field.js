@@ -33,6 +33,7 @@ class TextField extends FormField {
         name={this.adaptedProps.name}
         value={this.value}
         placeholder={this.placeholder}
+        pattern={this.adaptedProps.pattern}
         type={this.type}
       />
     );

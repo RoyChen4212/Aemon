@@ -32,6 +32,8 @@ class PhoneField extends AddOrSelectField {
         onChange={(ev) => this.updateValue({ phone: ev.target.value})}
         value={this.phoneValue}
         onBlur={this.touchPhone}
+        type="tel"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         error={this.phoneError}
       />
     )

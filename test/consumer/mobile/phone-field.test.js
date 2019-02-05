@@ -94,6 +94,11 @@ describe('Phone Field', () => {
     expect(wrapper.find(TextField)).to.have.lengthOf(1);
   });
 
+  it('should show TextField with type tel', () => {
+    const wrapper = mount(<PhoneField />);
+    expect(wrapper.find(TextField).prop('type')).to.equal('tel');
+  });
+
   it('should report new phone value on TextField change', function(done) {
     const value = { selected: 'new' };
     const phone = '99-1234-1234';
@@ -103,7 +108,7 @@ describe('Phone Field', () => {
       done();
     };
     const wrapper = mount(<PhoneField value={value} onChange={onChange} />);
-    wrapper.find({ type: 'text' }).simulate('change', event);
+    wrapper.find('input').simulate('change', event);
   });
 
   it('should pass phone value to text field', () => {
@@ -130,7 +135,7 @@ describe('Phone Field', () => {
     const expected = 'an error';
     const value = { selected: 'new' };
     const wrapper = mount(<PhoneField error={{ 'phone': expected }} value={value} onChange={() => {}}/>);
-    wrapper.find({ type: 'text' }).simulate('blur');
+    wrapper.find('input').simulate('blur');
     expect(wrapper.instance().phoneError).to.equal(expected);
   });
 });

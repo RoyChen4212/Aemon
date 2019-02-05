@@ -119,6 +119,12 @@ describe('TextField', () => {
     expect(onFocus.calledOnce).to.be.true;
   });
 
+  it('should pass pattern prop to input', () => {
+    const expected = '[0-9]*';
+    const wrapper = shallow(<TextField pattern={expected} />);
+    expect(wrapper.find('input').prop('pattern')).to.equal(expected);
+  });
+
   describe('With error', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
