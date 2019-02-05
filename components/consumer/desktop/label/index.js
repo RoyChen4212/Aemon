@@ -7,7 +7,7 @@ import './style.css';
 
 export default (props) => {
   return (
-    <div className="pbg-consumer-mobile">
+    <div className="pbg-consumer-desktop">
       <Label {...props} />
     </div>
   );

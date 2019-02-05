@@ -1,36 +1,38 @@
 @import '../../shared/scss/styleguide';
-.pbg-form-field {
-  &.pbg-text-field {
-    &.pbg-text-area {
-
-      textarea {
-        border: 0;
-        border-bottom: 1px solid;
-        border-color: $cool-grey;
-        line-height: 20px;
-        font-size: 14px;
-        margin-bottom: -6px;
-        outline: 0;
-        padding-bottom: 8px;
-        resize: none;
-        width: 100%;
-
-        &::placeholder {
-          color: $cool-grey;
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: normal;
+.pgb-consumer-mobile {
+  &.pbg-form-field {
+    &.pbg-text-field {
+      &.pbg-text-area {
+  
+        textarea {
+          border: 0;
+          border-bottom: 1px solid;
+          border-color: $cool-grey;
           line-height: 20px;
           font-size: 14px;
+          margin-bottom: -6px;
+          outline: 0;
+          padding-bottom: 8px;
+          resize: none;
+          width: 100%;
+  
+          &::placeholder {
+            color: $cool-grey;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 20px;
+            font-size: 14px;
+          }
+          &:focus {
+            outline: none;
+          }
         }
-        &:focus {
-          outline: none;
-        }
-      }
-
-      &.pbg-form-field-error {
-        textarea {
-          border-color: $coral-error;
+  
+        &.pbg-form-field-error {
+          textarea {
+            border-color: $coral-error;
+          }
         }
       }
     }

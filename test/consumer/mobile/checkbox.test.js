@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import { shouldBehaveLikeFormField } from './form-field.test';
+import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { Checkbox } from '../../../components/consumer/mobile/form-fields';
 import Label from '../../../components/consumer/mobile/label';
 
@@ -37,13 +37,13 @@ describe('Checkbox', () => {
     expect(wrapper.find({ type: 'checkbox' }).props().checked).to.be.false;
   });
 
-  it('reports the value as true upon checking the checkbox', function(done) {
+  it('reports the value as true upon checking the checkbox', function (done) {
     const onChange = (ev) => {
       expect(ev.target.value).to.be.true;
       done();
     }
     const wrapper = shallow(<Checkbox onChange={onChange} />);
-    const event =  { target: { checked: true } };
+    const event = { target: { checked: true } };
     wrapper.find({ type: 'checkbox' }).simulate('change', event);
   });
 });

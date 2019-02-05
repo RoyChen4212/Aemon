@@ -5,7 +5,7 @@ import './style.css'
 export * from '../../shared/hint';
 export default (props) => {
   return (
-    <div className="pbg-consumer-mobile">
+    <div className="pbg-consumer-desktop">
       <Hint {...props} />
     </div>
   );

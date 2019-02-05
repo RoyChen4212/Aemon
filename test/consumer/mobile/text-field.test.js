@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import { shouldBehaveLikeFormField } from './form-field.test';
+import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { TextField } from '../../../components/consumer/mobile/form-fields';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
@@ -17,14 +17,14 @@ export const shouldBehaveLikeTextField = (wrapper) => {
     expect(wrapper.hasClass('pbg-text-field')).to.be.true;
   });
 
-  it('should add pbg-form-field-focused class when focused', function(done) {
+  it('should add pbg-form-field-focused class when focused', function (done) {
     wrapper.setProps({ focused: true }, () => {
       expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
       done();
     });
   });
 
-  it('should remove pbg-form-field-focused class when not focused', function(done) {
+  it('should remove pbg-form-field-focused class when not focused', function (done) {
     wrapper.setProps({ focused: true }, () => {
       wrapper.setProps({ focused: false }, () => {
         expect(wrapper.hasClass('pbg-form-field-focused')).to.be.false;
@@ -63,7 +63,7 @@ describe('TextField', () => {
 
   it('should set value to empty string if null is given', () => {
     const expected = '';
-    const wrapper = shallow(<TextField  value={null} />);
+    const wrapper = shallow(<TextField value={null} />);
     expect(wrapper.find('input').prop('value')).to.equal(expected);
   });
 
@@ -127,7 +127,7 @@ describe('TextField', () => {
     });
 
     it('should have correct class when error is given', () => {
-      const wrapper = shallow(<TextField error="an error"/>);
+      const wrapper = shallow(<TextField error="an error" />);
       expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
     });
 
@@ -141,7 +141,7 @@ describe('TextField', () => {
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
-      const wrapper = shallow(<TextField error='and error' label={expected}/>);
+      const wrapper = shallow(<TextField error='and error' label={expected} />);
       expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
   });

@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
-.pbg-consumer-mobile label.pbg-label {
+.pbg-consumer-desktop label.pbg-label {
   color: #4c4c4c;
   font-family: Roboto;
   font-style: normal;
@@ -7,30 +7,30 @@
   line-height: 20px;
   font-size: 14px;
   margin: 0; }
-  .pbg-consumer-mobile label.pbg-label.required:after {
+  .pbg-consumer-desktop label.pbg-label.required:after {
     content: '*'; }
 
-.pbg-consumer-mobile label.pbg-label-strong {
+.pbg-consumer-desktop label.pbg-label-strong {
   font-weight: 500; }
 
-.pbg-consumer-mobile label.pbg-label-active {
+.pbg-consumer-desktop label.pbg-label-active {
   color: #2c81ff;
   font-size: 12px;
   line-height: 18px; }
-  .pbg-consumer-mobile label.pbg-label-active > a {
+  .pbg-consumer-desktop label.pbg-label-active > a {
     cursor: pointer; }
 
-.pbg-consumer-mobile label.pbg-label-secondary {
+.pbg-consumer-desktop label.pbg-label-secondary {
   color: #8f98a3; }
 
-.pbg-consumer-mobile label.pbg-label-input {
+.pbg-consumer-desktop label.pbg-label-input {
   color: #000; }
 
-.pbg-consumer-mobile label.pbg-label-clickable {
+.pbg-consumer-desktop label.pbg-label-clickable {
   color: #2c81ff;
   cursor: pointer; }
 
-.pbg-consumer-mobile label.pbg-label-error {
+.pbg-consumer-desktop label.pbg-label-error {
   color: #f76143;
   font-size: 12px;
   line-height: 18px; }
