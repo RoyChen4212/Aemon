@@ -1,4 +1,5 @@
 import React from 'react';
+import { hintTypes } from './hint';
 
 class BaseFormField extends React.Component {
   baseClassName = 'pbg-form-field';
@@ -38,6 +39,12 @@ class BaseFormField extends React.Component {
 
   get hintOrError() {
     throw new Error('Not implemented, Implement this method in a sub-class.');
+  }
+
+  renderHintOrError(Hint) {
+    if (this.error) return <div><Hint type={hintTypes.ERROR}>{this.error}</Hint></div>;
+    if (this.hint) return <div><Hint>{this.hint}</Hint></div>;
+    return null;
   }
 
   onFocus = (ev) => {

@@ -2,7 +2,7 @@ import React from 'react';
 
 import BaseFormField from '../shared/base-form-field';
 import Label, { labelTypes } from './label';
-import Hint, { hintTypes } from './hint';
+import Hint from './hint';
 
 class FormField extends BaseFormField {
   baseClassName = 'pbg-form-field';
@@ -48,9 +48,7 @@ class FormField extends BaseFormField {
   }
 
   get hintOrError() {
-    if (this.error) return <div><Hint type={hintTypes.ERROR}>{this.error}</Hint></div>;
-    if (this.hint) return <div><Hint>{this.hint}</Hint></div>;
-    return null;
+    return this.renderHintOrError(Hint);
   }
 };
 
