@@ -11,8 +11,6 @@ class TextArea extends FormField {
     return 3;
   }
 
-  get type() { return this.adaptedProps.type || this.baseType };
-
   get placeholder() {
     const { required, label } = this.adaptedProps;
     return !required ? label : label + '*';
@@ -30,7 +28,7 @@ class TextArea extends FormField {
         onChange={this.onChange}
         onFocus={this.onFocus}
         name={this.adaptedProps.name}
-        value={this.adaptedProps.value}
+        value={this.value}
         placeholder={this.placeholder}
       />
     );
