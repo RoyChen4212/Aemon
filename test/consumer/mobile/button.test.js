@@ -7,7 +7,7 @@ import {
   PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
 } from '../../../components/consumer/mobile/button';
 import Button from '../../../components/consumer/mobile/button/button';
-import Hint from '../../../components/consumer/mobile/hint';
+import Hint from '../../../components/consumer/shared/hint';
 
 describe('Button', () => {
   describe('Base Button', () => {
