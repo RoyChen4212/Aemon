@@ -7,20 +7,6 @@ import Hint from './hint';
 class FormField extends BaseFormField {
   baseClassName = 'pbg-form-field';
 
-  get className() {
-    let resultingClassName = this.baseClassName;
-
-    if (this.error) {
-      resultingClassName += ' pbg-form-field-error';
-    }
-
-    if (this.focused) {
-      resultingClassName += ' pbg-form-field-focused';
-    }
-
-    return resultingClassName;
-  }
-
   get adaptedProps() {
     if (this.props.adapter) return this.props.adapter(this.props);
     return this.props;
