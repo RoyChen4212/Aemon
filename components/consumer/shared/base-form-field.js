@@ -29,6 +29,8 @@ class BaseFormField extends React.Component {
 
   get focused() { return this.adaptedProps.focused || !!this.error; }
 
+  get value() { return this.adaptedProps.value; }
+
   get labelType() {
     throw new Error('Not implemented, Implement this method in a sub-class.');
   }
