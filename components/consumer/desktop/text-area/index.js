@@ -1,10 +1,9 @@
 import React from 'react';
-import FormField from '../../shared/form-field';
-import { labelTypes } from '../../shared/label';
+import FormField from '../form-field';
+import { labelTypes } from '../label';
 import './style.css';
 
 class TextArea extends FormField {
-
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-text-area';
   baseType = 'text';
 
@@ -55,4 +54,4 @@ class TextArea extends FormField {
   }
 }
 
-export { TextArea };
+export default TextArea;

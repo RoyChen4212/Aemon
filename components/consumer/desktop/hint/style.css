@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.pbg-consumer-desktop span.pbg-hint {
+  color: #8f98a3;
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 15px;
+  font-size: 12px; }
+
+.pbg-consumer-desktop span.pbg-hint-error {
+  color: #f76143; }
+
+.pbg-consumer-desktop span.pbg-hint-clickable {
+  color: #2c81ff;
+  cursor: pointer; }

@@ -28,6 +28,7 @@ function loadStories() {
   require('../stories/consumer/desktop/banner.story.js');
   require('../stories/consumer/desktop/subheader.story.js');
   require('../stories/consumer/desktop/divider.story.js');
+  require('../stories/consumer/desktop/text-area.story.js');
 }
 
 configure(loadStories, module);

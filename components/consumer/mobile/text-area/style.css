@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-.pbg-form-field.pbg-text-field.pbg-text-area textarea {
+.pgb-consumer-mobile.pbg-form-field.pbg-text-field.pbg-text-area textarea {
   border: 0;
   border-bottom: 1px solid;
   border-color: #8f98a3;
@@ -10,15 +10,15 @@
   padding-bottom: 8px;
   resize: none;
   width: 100%; }
-  .pbg-form-field.pbg-text-field.pbg-text-area textarea::placeholder {
+  .pgb-consumer-mobile.pbg-form-field.pbg-text-field.pbg-text-area textarea::placeholder {
     color: #8f98a3;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     line-height: 20px;
     font-size: 14px; }
-  .pbg-form-field.pbg-text-field.pbg-text-area textarea:focus {
+  .pgb-consumer-mobile.pbg-form-field.pbg-text-field.pbg-text-area textarea:focus {
     outline: none; }
 
-.pbg-form-field.pbg-text-field.pbg-text-area.pbg-form-field-error textarea {
+.pgb-consumer-mobile.pbg-form-field.pbg-text-field.pbg-text-area.pbg-form-field-error textarea {
   border-color: #f76143; }
