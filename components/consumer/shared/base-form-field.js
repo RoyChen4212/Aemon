@@ -37,6 +37,14 @@ class BaseFormField extends React.Component {
     throw new Error('Not implemented, Implement this method in a sub-class.');
   }
 
+  renderLabel(Label) {
+    const { label } = this.props;
+    const labelElement = (
+      <div><Label type={this.labelType} required={this.props.required}>{label}</Label></div>
+    );
+    return label ? labelElement : null;
+  }
+
   get hintOrError() {
     throw new Error('Not implemented, Implement this method in a sub-class.');
   }

@@ -11,11 +11,7 @@ class FormField extends BaseFormField {
   }
 
   get label() {
-    const { label } = this.props;
-    const labelElement = (
-      <div><Label type={this.labelType} required={this.props.required}>{label}</Label></div>
-    );
-    return label ? labelElement : null;
+    return this.renderLabel(Label);
   }
 
   get hintOrError() {
