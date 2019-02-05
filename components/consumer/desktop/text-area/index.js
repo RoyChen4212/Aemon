@@ -8,14 +8,7 @@ class TextArea extends FormField {
   baseType = 'text';
 
   get rows() {
-    const { value, focused } = this.adaptedProps;
-    if (value && value.length > 100) return 3;
-    return focused ? 3 : 1;
-  }
-
-  get labelType() {
-    if (this.adaptedProps.error) return labelTypes.ERROR;
-    return labelTypes.ACTIVE;
+    return 3;
   }
 
   get type() { return this.adaptedProps.type || this.baseType };
@@ -46,7 +39,6 @@ class TextArea extends FormField {
   render() {
     return (
       <div className={this.className}>
-        {this.label}
         {this.input}
         {this.hintOrError}
       </div>

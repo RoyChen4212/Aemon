@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import TextArea from '../../../components/consumer/desktop/text-area';
-import Label, { labelTypes } from '../../../components/consumer/desktop/label';
 import Hint, { hintTypes } from '../../../components/consumer/desktop/hint';
 
 describe('TextArea', () => {
@@ -57,7 +56,7 @@ describe('TextArea', () => {
 
   it('should provide correct rows when empty', () => {
     const wrapper = shallow(<TextArea />);
-    expect(wrapper.instance().rows).to.equal(1);
+    expect(wrapper.instance().rows).to.equal(3);
   });
 
   it('should provide correct rows when value is larger than 100', () => {
@@ -84,12 +83,6 @@ describe('TextArea', () => {
       const wrapper = shallow(<TextArea error={expected} hint={hint} />);
       expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
       expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
-    });
-
-    it('should show an error label when error is given', () => {
-      const expected = 'A label';
-      const wrapper = shallow(<TextArea error='and error' label={expected} />);
-      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
   });
 });
