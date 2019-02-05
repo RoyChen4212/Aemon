@@ -1,6 +1,6 @@
 import React from 'react';
 
-class FormField extends React.Component {
+class BaseFormField extends React.Component {
   baseClassName = 'pbg-form-field';
 
   get className() {
@@ -60,4 +60,4 @@ class FormField extends React.Component {
   }
 };
 
-export default FormField;
+export default BaseFormField;

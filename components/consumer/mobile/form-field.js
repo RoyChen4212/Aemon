@@ -1,10 +1,10 @@
 import React from 'react';
 
-import SuperFormField from '../shared/form-field';
+import BaseFormField from '../shared/base-form-field';
 import Label, { labelTypes } from './label';
 import Hint, { hintTypes } from './hint';
 
-class FormField extends SuperFormField {
+class FormField extends BaseFormField {
   baseClassName = 'pbg-form-field';
 
   get className() {

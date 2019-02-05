@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import FormField from '../../../components/consumer/shared/form-field';
+import BaseFormField from '../../../components/consumer/shared/base-form-field';
 
 export const shouldBehaveLikeFormField = (wrapper) => {
   it('should have class pbg-form-field', () => {
@@ -15,8 +15,8 @@ export const shouldBehaveLikeFormField = (wrapper) => {
   });
 };
 
-describe('FormField', () => {
-  shouldBehaveLikeFormField(shallow(<FormField error="this is an error" />));
+describe('BaseFormField', () => {
+  shouldBehaveLikeFormField(shallow(<BaseFormField error="this is an error" />));
 
   it('should use prop adapter when provided', () => {
     const onChange = sinon.spy();
@@ -24,14 +24,14 @@ describe('FormField', () => {
     const props = {
       toAdapt: { onChange },
     };
-    const wrapper = shallow(<FormField {...props} adapter={adapter} />)
+    const wrapper = shallow(<BaseFormField {...props} adapter={adapter} />)
     wrapper.instance().onChange();
     expect(adapter.called).to.be.true;
     expect(onChange.called).to.be.true;
   });
 
   it('should throw an error when calling .label directly from the super class', () => {
-    const wrapper = shallow(<FormField />);
+    const wrapper = shallow(<BaseFormField />);
     const instance = wrapper.instance();
     expect(() => {
       return instance.label;
@@ -39,7 +39,7 @@ describe('FormField', () => {
   });
 
   it('should throw an error when calling .hintOrError directly from the super class', () => {
-    const wrapper = shallow(<FormField />);
+    const wrapper = shallow(<BaseFormField />);
     const instance = wrapper.instance();
     expect(() => {
       return instance.hintOrError;
@@ -47,7 +47,7 @@ describe('FormField', () => {
   });
 
   it('should throw an error when calling .hintOrError directly from the super class', () => {
-    const wrapper = shallow(<FormField />);
+    const wrapper = shallow(<BaseFormField />);
     const instance = wrapper.instance();
     expect(() => {
       return instance.labelType;
