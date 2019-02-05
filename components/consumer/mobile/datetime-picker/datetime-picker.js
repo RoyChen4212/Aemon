@@ -16,20 +16,14 @@ import './style.css';
 class DatetimePicker extends FormField {
   baseClassName = 'pbg-form-field pbg-datetime-picker';
 
-  state = {
-    dateValue: '',
-    timeValue: '',
+  get dateValue() {
+    if (this.value) return toDatePickerString(this.value);
+    return '';
   }
 
-  static getDerivedStateFromProps(props) {
-    const { adapter } = props;
-    const date = adapter ? adapter(props).value : props.value;
-    if (!date) return {};
-
-    return {
-      dateValue: toDatePickerString(date),
-      timeValue: toTimePickerString(`${date.getHours()}:${date.getMinutes()}`),
-    };
+  get timeValue() {
+    if (this.value) return toTimePickerString(`${this.value.getHours()}:${this.value.getMinutes()}`);
+    return '';
   }
 
   get timezone() {
@@ -58,8 +52,8 @@ class DatetimePicker extends FormField {
 
   get pickers() {
     const components = [
-      <DatePicker value={this.state.dateValue} onChange={this.onChangeDateValue} />,
-      <TimePicker value={this.state.timeValue} onChange={this.onChangeTimeValue} />,
+      <DatePicker value={this.dateValue} onChange={this.onChangeDateValue} />,
+      <TimePicker value={this.timeValue} onChange={this.onChangeTimeValue} />,
     ];
 
     return components.map((comp, key) => (
