@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import { shouldBehaveLikeFormField } from './form-field.test';
+import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { TimePicker } from '../../../components/consumer/mobile/form-fields';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
@@ -29,7 +29,7 @@ describe('Date picker', () => {
     expect(onChange.calledOnce).to.be.true;
   });
 
-  it('should call onChange with correct value when date input changes', function(done) {
+  it('should call onChange with correct value when date input changes', function (done) {
     const expected = '12:22';
     const event = { target: { value: expected } };
     const onChange = ev => {
@@ -95,7 +95,7 @@ describe('Date picker', () => {
     });
 
     it('should have correct class when error is given', () => {
-      const wrapper = shallow(<TimePicker error="an error"/>);
+      const wrapper = shallow(<TimePicker error="an error" />);
       expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
     });
 
@@ -109,7 +109,7 @@ describe('Date picker', () => {
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
-      const wrapper = shallow(<TimePicker error='and error' label={expected}/>);
+      const wrapper = shallow(<TimePicker error='and error' label={expected} />);
       expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
   });

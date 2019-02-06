@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
+.pbg-consumer-desktop label.pbg-label {
+  color: #4c4c4c;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  margin: 0; }
+  .pbg-consumer-desktop label.pbg-label.required:after {
+    content: '*'; }
+
+.pbg-consumer-desktop label.pbg-label-strong {
+  font-weight: 500; }
+
+.pbg-consumer-desktop label.pbg-label-active {
+  color: #2c81ff;
+  font-size: 12px;
+  line-height: 18px; }
+  .pbg-consumer-desktop label.pbg-label-active > a {
+    cursor: pointer; }
+
+.pbg-consumer-desktop label.pbg-label-secondary {
+  color: #8f98a3; }
+
+.pbg-consumer-desktop label.pbg-label-input {
+  color: #000; }
+
+.pbg-consumer-desktop label.pbg-label-clickable {
+  color: #2c81ff;
+  cursor: pointer; }
+
+.pbg-consumer-desktop label.pbg-label-error {
+  color: #f76143;
+  font-size: 12px;
+  line-height: 18px; }

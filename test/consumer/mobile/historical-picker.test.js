@@ -3,10 +3,10 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import { shouldBehaveLikeFormField } from './form-field.test';
+import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { HistoricalPicker } from '../../../components/consumer/mobile/form-fields';
 import Label from '../../../components/consumer/mobile/label';
-import Hint, { hintTypes} from '../../../components/consumer/mobile/hint';
+import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
 describe('Historical Picker', () => {
   shouldBehaveLikeFormField(shallow(<HistoricalPicker error="some error" />));
@@ -23,11 +23,11 @@ describe('Historical Picker', () => {
 
   it('should render given options', () => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
-    const wrapper = shallow(<HistoricalPicker options={opts}/>);
+    const wrapper = shallow(<HistoricalPicker options={opts} />);
     expect(wrapper.find('select').find('option')).to.have.lengthOf(2);
     opts.forEach(opt => {
       const expected = <option value={opt.value}>{opt.label}</option>;
-      expect(wrapper.find({ value: opt.value})).to.have.lengthOf(1);
+      expect(wrapper.find({ value: opt.value })).to.have.lengthOf(1);
     });
   });
 
@@ -44,7 +44,7 @@ describe('Historical Picker', () => {
   });
 
   it('should have correct class when error is given', () => {
-    const wrapper = shallow(<HistoricalPicker error="an error"/>);
+    const wrapper = shallow(<HistoricalPicker error="an error" />);
     expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
   });
 

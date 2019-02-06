@@ -7,7 +7,7 @@ import {
   PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
 } from '../../../components/consumer/mobile/button';
 import Button from '../../../components/consumer/mobile/button/button';
-import Hint from '../../../components/consumer/mobile/hint';
+import Hint from '../../../components/consumer/shared/hint';
 
 describe('Button', () => {
   describe('Base Button', () => {
@@ -47,7 +47,7 @@ describe('Button', () => {
     });
 
     it('should have type button if click handler is given', () => {
-      const wrapper = shallow(<Button onClick={() => {}} />);
+      const wrapper = shallow(<Button onClick={() => { }} />);
       expect(wrapper.find('button').html()).to.include('type="button"');
     });
 
@@ -73,12 +73,22 @@ describe('Button', () => {
       const wrapper = shallow(<PrimaryButton />);
       expect(wrapper.find(Button).hasClass('pbg-button-primary')).to.be.true;
     });
+
+    it('should have correct class name for mobile', () => {
+      const wrapper = shallow(<PrimaryButton />);
+      expect(wrapper.find(Button).hasClass('pbg-consumer-mobile')).to.be.true;
+    });
   });
 
   describe('Secondary button', () => {
     it('should have correct class name', () => {
       const wrapper = shallow(<SecondaryButton />);
       expect(wrapper.find(Button).hasClass('pbg-button-secondary')).to.be.true;
+    });
+
+    it('should have correct class name for mobile', () => {
+      const wrapper = shallow(<PrimaryButton />);
+      expect(wrapper.find(Button).hasClass('pbg-consumer-mobile')).to.be.true;
     });
   });
 
@@ -87,12 +97,22 @@ describe('Button', () => {
       const wrapper = shallow(<SmallButton />);
       expect(wrapper.find(Button).hasClass('pbg-button-small')).to.be.true;
     });
+
+    it('should have correct class name for mobile', () => {
+      const wrapper = shallow(<PrimaryButton />);
+      expect(wrapper.find(Button).hasClass('pbg-consumer-mobile')).to.be.true;
+    });
   });
 
   describe('Link button', () => {
     it('should have correct class name', () => {
       const wrapper = shallow(<LinkButton />);
       expect(wrapper.find(Button).hasClass('pbg-button-link')).to.be.true;
+    });
+
+    it('should have correct class name for mobile', () => {
+      const wrapper = shallow(<PrimaryButton />);
+      expect(wrapper.find(Button).hasClass('pbg-consumer-mobile')).to.be.true;
     });
   });
 
@@ -101,12 +121,22 @@ describe('Button', () => {
       const wrapper = shallow(<FacebookButton />);
       expect(wrapper.find(Button).hasClass('pbg-button-facebook')).to.be.true;
     });
+
+    it('should have correct class name for mobile', () => {
+      const wrapper = shallow(<PrimaryButton />);
+      expect(wrapper.find(Button).hasClass('pbg-consumer-mobile')).to.be.true;
+    });
   });
 
   describe('Small Facebook button', () => {
     it('should have correct class name', () => {
       const wrapper = shallow(<SmallFacebookButton />);
       expect(wrapper.find(Button).hasClass('pbg-button-facebook-small')).to.be.true;
+    });
+
+    it('should have correct class name for mobile', () => {
+      const wrapper = shallow(<PrimaryButton />);
+      expect(wrapper.find(Button).hasClass('pbg-consumer-mobile')).to.be.true;
     });
   });
 });

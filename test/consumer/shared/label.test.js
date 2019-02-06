@@ -6,7 +6,7 @@ import sinon from 'sinon';
 import Label, {
   labelClassNames,
   labelTypes,
-} from '../../../components/consumer/mobile/label';
+} from '../../../components/consumer/shared/label';
 
 describe('Label', () => {
   it('should render a label tag', () => {

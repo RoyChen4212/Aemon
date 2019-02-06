@@ -1,0 +1,23 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  span {
+    &.pbg-hint {
+      color: $cool-grey;
+      font-family: "Roboto Condensed";
+      font-style: normal;
+      font-weight: normal;
+      line-height: 16px;
+      font-size: 12px;
+    }
+  
+    &.pbg-hint-error {
+      color: $coral-error;
+    }
+  
+    &.pbg-hint-clickable {
+      color: $clear-blue;
+      cursor: pointer;
+    }
+  }
+}

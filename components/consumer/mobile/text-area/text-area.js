@@ -4,7 +4,7 @@ import Hint, { hintTypes } from '../hint';
 import './style.css';
 
 class TextArea extends TextField {
-  baseClassName = 'pbg-form-field pbg-text-field pbg-text-area';
+  baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-text-field pbg-text-area';
 
   get rows() {
     const { value, focused } = this.adaptedProps;
