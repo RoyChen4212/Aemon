@@ -10,18 +10,18 @@
     line-height: $large-line-height;
     text-align: center;
     width: 100%;
-  
+
     > span {
       padding: 16px;
     }
-  
+
     &.pbg-button-primary {
       background: $blue-linear;
       border-radius: 31px;
       color: $white;
       height: 47px;
     }
-  
+
     &.pbg-button-secondary {
       background: $pale-grey;
       border: 0;
@@ -29,7 +29,7 @@
       color: $cool-grey;
       height: 47px;
     }
-  
+
     &.pbg-button-small {
       background: $pale-grey;
       border: 0;
@@ -39,30 +39,30 @@
       line-height: $small-line-height;
       height: 26px;
     }
-  
+
     &.pbg-button-link {
       background: none;
       border: 0;
       color: $clear-blue;
       font-size: 14px;
       line-height: 20px;
-  
+
       > span {
         padding: 0;
       }
     }
-  
+
     &.pbg-button-facebook {
       background: $facebook-color;
       border-radius: 31px;
       color: $white;
       height: 47px;
-  
+
       &:before {
         content: $facebook-icon;
       }
     }
-  
+
     &.pbg-button-facebook-small {
       background: $facebook-color;
       border-radius: 100px;
@@ -71,13 +71,13 @@
       line-height: $small-line-height;
       height: 26px;
     }
-  
+
     &.disabled {
         opacity: 0.65;
       }
   }
-  
-  .pbg-button-hint-container {
-    text-align: center;
-  }  
+}
+
+.pbg-button-hint-container {
+  text-align: center;
 }

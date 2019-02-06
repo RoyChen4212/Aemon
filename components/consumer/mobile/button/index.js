@@ -1,26 +1,36 @@
 import React from 'react';
-import Button from './button';
+import BaseButton, { CLASS_NAME } from '../../shared/button';
+import Hint from '../hint'
+import './style.css';
 
-export const PrimaryButton = (props) => (
-  <Button {...props} className='pbg-consumer-mobile pbg-button-primary'>{props.children}</Button>
-);
+class BaseMobileButton extends BaseButton {
+  get hint() { return this.renderHint(Hint); }
+}
 
-export const SecondaryButton = (props) => (
-  <Button {...props} className='pbg-consumer-mobile pbg-button-secondary'>{props.children}</Button>
-);
+class PrimaryButton extends BaseMobileButton {
+  baseClassName = `${CLASS_NAME} pbg-consumer-mobile pbg-button-primary`;
+}
 
-export const SmallButton = (props) => (
-  <Button {...props} className='pbg-consumer-mobile pbg-button-small'>{props.children}</Button>
-);
+class SecondaryButton extends BaseMobileButton {
+  baseClassName = `${CLASS_NAME} pbg-consumer-mobile pbg-button-secondary`;
+}
 
-export const LinkButton = (props) => (
-  <Button {...props} className='pbg-consumer-mobile pbg-button-link'>{props.children}</Button>
-);
+class SmallButton extends BaseMobileButton {
+  baseClassName = `${CLASS_NAME} pbg-consumer-mobile pbg-button-small`;
+}
 
-export const FacebookButton = (props) => (
-  <Button {...props} className='pbg-consumer-mobile pbg-button-facebook'>{props.children}</Button>
-);
+class LinkButton extends BaseMobileButton {
+  baseClassName = `${CLASS_NAME} pbg-consumer-mobile pbg-button-link`;
+}
 
-export const SmallFacebookButton = (props) => (
-  <Button {...props} className='pbg-consumer-mobile pbg-button-facebook-small'>{props.children}</Button>
-);
+class FacebookButton extends BaseMobileButton {
+  baseClassName = `${CLASS_NAME} pbg-consumer-mobile pbg-button-facebook`;
+}
+
+class SmallFacebookButton extends BaseMobileButton {
+  baseClassName = `${CLASS_NAME} pbg-consumer-mobile pbg-button-facebook-small`;
+}
+
+export {
+  PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
+};

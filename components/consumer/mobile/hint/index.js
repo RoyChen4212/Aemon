@@ -3,10 +3,4 @@ import Hint from '../../shared/hint';
 import './style.css'
 
 export * from '../../shared/hint';
-export default (props) => {
-  return (
-    <div className="pbg-consumer-mobile">
-      <Hint {...props} />
-    </div>
-  );
-}
+export default props => <Hint {...props} className="pbg-consumer-mobile" />;

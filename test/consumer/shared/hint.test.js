@@ -22,6 +22,13 @@ describe('Hint', () => {
     expect(wrapper.find('span').hasClass(hintClassNames.base)).to.be.true;
   });
 
+  it('should contain any extra css classes given', () => {
+    const expected = 'extra-class';
+    const wrapper = shallow(<Hint className={expected}>some text</Hint>);
+    expect(wrapper.find('span').hasClass(hintClassNames.base)).to.be.true;
+    expect(wrapper.find('span').hasClass(expected)).to.be.true;
+  });
+
   it('should have correct class when error type', () => {
     const wrapper = shallow(<Hint type={hintTypes.ERROR}>some text</Hint>);
     expect(wrapper.find('span').hasClass(hintClassNames[hintTypes.ERROR])).to.be.true;

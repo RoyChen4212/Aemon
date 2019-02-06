@@ -1,12 +1,17 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import Hint from '../../../components/consumer/desktop/hint';
 
-describe('Hint', () => {
+describe('Desktop Hint', () => {
   it('should render desktop hint', () => {
     const wrapper = shallow(<Hint />);
-    expect(wrapper.find('div').hasClass('pbg-consumer-desktop')).to.be.true;
+    expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
+  });
+
+  it('should render span tag as first element', () => {
+    const wrapper = mount(<Hint />);
+    expect(wrapper.html()).to.equal('<span class="pbg-hint pbg-consumer-desktop"></span>');
   });
 });

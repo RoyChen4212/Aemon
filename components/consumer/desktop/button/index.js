@@ -1,8 +1,13 @@
 import React from 'react';
-import Button from './button';
+import BaseButton, { CLASS_NAME } from '../../shared/button';
+import Hint from '../hint';
+import './style.css';
 
-export const PrimaryButton = (props) => (
-  <Button {...props} className="pbg-consumer-desktop pbg-button-primary">{props.children}</Button>
-);
+class PrimaryButton extends BaseButton {
+  baseClassName = `${CLASS_NAME} pbg-consumer-desktop pbg-button-primary`;
+  get hint() { return this.renderHint(Hint); }
+}
 
-export default Button;
+export {
+  PrimaryButton,
+};

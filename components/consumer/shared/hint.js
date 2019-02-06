@@ -1,4 +1,5 @@
 import React from 'react';
+import trim from 'lodash/trim';
 
 const ERROR = 'error';
 const CLICKABLE = 'clickable';
@@ -21,4 +22,16 @@ export default (props) => {
   return <span className={className(props)}>{props.children}</span>;
 };
 
-const className = ({ type }) => !!type ? `${hintClassNames.base} ${hintClassNames[type]}` : hintClassNames.base;
+const className = ({ type, className }) => {
+  let resultingClassName = hintClassNames.base;
+
+  if (className) {
+    resultingClassName += ` ${trim(className)}`;
+  }
+
+  if (hintClassNames[type]) {
+    resultingClassName += ` ${hintClassNames[type]}`;
+  }
+
+  return resultingClassName;
+};
