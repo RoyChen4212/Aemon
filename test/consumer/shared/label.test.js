@@ -25,6 +25,13 @@ describe('Label', () => {
     expect(wrapper.find('label').hasClass(labelClassNames.base)).to.be.true;
   });
 
+  it('should contain any extra css classes given', () => {
+    const expected = 'extra-class';
+    const wrapper = shallow(<Label className={expected}>some text</Label>);
+    expect(wrapper.find('label').hasClass(labelClassNames.base)).to.be.true;
+    expect(wrapper.find('label').hasClass(expected)).to.be.true;
+  });
+
   it('should have correct class when strong type', () => {
     const wrapper = shallow(<Label type={labelTypes.STRONG}>some text</Label>);
     expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.STRONG])).to.be.true;
@@ -43,6 +50,14 @@ describe('Label', () => {
   it('should have correct class when clickable type', () => {
     const wrapper = shallow(<Label type={labelTypes.CLICKABLE}>some text</Label>);
     expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.CLICKABLE])).to.be.true;
+  });
+
+  it('should contain all correct classes when given className and type', () => {
+    const className = 'extra-class';
+    const wrapper = shallow(<Label type={labelTypes.STRONG} className={className}>some text</Label>);
+    expect(wrapper.find('label').hasClass(labelClassNames.base)).to.be.true;
+    expect(wrapper.find('label').hasClass(className)).to.be.true;
+    expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.STRONG])).to.be.true;
   });
 
   it('should call onClick when when clickable type', () => {

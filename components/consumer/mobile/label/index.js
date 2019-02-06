@@ -5,10 +5,4 @@ export * from '../../shared/label';
 
 import './style.css';
 
-export default (props) => {
-  return (
-    <div className="pbg-consumer-mobile">
-      <Label {...props} />
-    </div>
-  );
-};
+export default props => <Label {...props} className="pbg-consumer-mobile" />;

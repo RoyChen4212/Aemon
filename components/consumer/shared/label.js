@@ -1,4 +1,5 @@
 import React from 'react';
+import trim from 'lodash/trim';
 
 const ACTIVE = 'active';
 const CLICKABLE = 'clickable';
@@ -44,8 +45,11 @@ const normalLabel = (props) => (
   </label>
 );
 
-const className = ({ type, required }) => {
+const className = ({ type, required, className }) => {
   let resultingClassName = BASE_CLASS;
+  if (className) {
+    resultingClassName += ` ${trim(className)}`;
+  }
 
   if (required) {
     resultingClassName += ' required';
