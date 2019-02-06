@@ -1,54 +1,52 @@
 @import "../../shared/scss/styleguide";
 
 .pbg-consumer-mobile {
-  label {
-    &.pbg-label {
-      color: $greyish-brown;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 20px;
-      font-size: 14px;
-      margin: 0;
-  
-      &.required {
-        &:after {
-          content: '*';
-        }
+  &.pbg-label {
+    color: $greyish-brown;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 14px;
+    margin: 0;
+
+    &.required {
+      &:after {
+        content: '*';
       }
     }
-  
-    &.pbg-label-strong {
-      font-weight: 500;
-    }
-  
-    &.pbg-label-active {
-      color: $clear-blue;
-      font-size: $small-font;
-      line-height: $small-line-height;
-      > a {
-        cursor: pointer;
-      }
-    }
-  
-    &.pbg-label-secondary {
-      color: $cool-grey;
-    }
-  
-    &.pbg-label-input {
-      color: $black;
-    }
-  
-    &.pbg-label-clickable {
-      color: $clear-blue;
+  }
+
+  &.pbg-label-strong {
+    font-weight: 500;
+  }
+
+  &.pbg-label-active {
+    color: $clear-blue;
+    font-size: $small-font;
+    line-height: $small-line-height;
+    > a {
       cursor: pointer;
     }
-  
-    &.pbg-label-error {
-      color: $coral-error;
-      font-size: $small-font;
-      line-height: $small-line-height;
-    }
+  }
+
+  &.pbg-label-secondary {
+    color: $cool-grey;
+  }
+
+  &.pbg-label-input {
+    color: $black;
+  }
+
+  &.pbg-label-clickable {
+    color: $clear-blue;
+    cursor: pointer;
+  }
+
+  &.pbg-label-error {
+    color: $coral-error;
+    font-size: $small-font;
+    line-height: $small-line-height;
   }
 }
 

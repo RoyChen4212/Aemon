@@ -1,9 +1,9 @@
 @import '../../shared/scss/styleguide';
-.pgb-consumer-mobile {
+.pbg-consumer-mobile {
   &.pbg-form-field {
     &.pbg-text-field {
       &.pbg-text-area {
-  
+
         textarea {
           border: 0;
           border-bottom: 1px solid;
@@ -15,7 +15,7 @@
           padding-bottom: 8px;
           resize: none;
           width: 100%;
-  
+
           &::placeholder {
             color: $cool-grey;
             font-family: Roboto;
@@ -28,7 +28,7 @@
             outline: none;
           }
         }
-  
+
         &.pbg-form-field-error {
           textarea {
             border-color: $coral-error;
