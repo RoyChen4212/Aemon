@@ -69,5 +69,12 @@ storiesOf('Consumer/Desktop/Atomic Components/Avatar', module)
         src='brokenlink.broken'
         userId='56789012'
       />
+
+      <Avatar
+        className='mr-2'
+        size={15}
+        src='brokenlink.broken'
+        userId='56789012'
+      />
     </div>
   ));

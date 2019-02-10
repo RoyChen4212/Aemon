@@ -56,7 +56,7 @@ describe('Avatar', () => {
       expect(svg.exists()).to.be.true;
       expect(svg.prop('width')).to.be.equal(Avatar.DEFAULT_SIZE);
       expect(svg.prop('height')).to.be.equal(Avatar.DEFAULT_SIZE);
-      expect(svg.prop('viewBox')).to.be.equal(`0 0 ${Avatar.DEFAULT_SIZE} ${Avatar.DEFAULT_SIZE}`)
+      expect(svg.prop('viewBox')).to.be.equal(`0 0 51 51`)
     });
 
     it('should consistently render the same fallback avatar and color for the same user’s id', () => {
