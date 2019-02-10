@@ -95,7 +95,7 @@ class ActivityThumbnail extends React.PureComponent {
 
     return (
       <div className="activity-thumbnail">
-        <img src={url} width={this.props.size} />
+        <img src={url} width={this.props.size} height={this.props.size} />
       </div>
     );
   }
