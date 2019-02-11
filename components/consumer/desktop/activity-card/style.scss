@@ -1,0 +1,35 @@
+@import '../../shared/scss/styleguide';
+
+.activity-card {
+  .activity-thumbnail {
+    display: block;
+    width: 35px;
+    height: 100%;
+    float: left;
+    margin-right: 15px;
+    padding-top: 5px;
+  }
+
+  .activity-card-text {
+    float: left;
+
+    p.activity-card-title {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 21px;
+      font-size: 14px;
+      color: $greyish-brown;
+      margin-bottom: 5px;
+    }
+
+    p.activity-card-description {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 21px;
+      font-size: 14px;
+      color: $cool-grey;
+    }
+  }
+}
