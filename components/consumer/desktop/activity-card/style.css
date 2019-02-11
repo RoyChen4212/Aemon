@@ -17,6 +17,16 @@
     font-size: 14px;
     color: #4c4c4c;
     margin-bottom: 5px; }
+  .activity-card .activity-card-text p.activity-card-time {
+    font-family: "Roboto Condensed";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: #8f98a3; }
   .activity-card .activity-card-text p.activity-card-description {
     font-family: Roboto;
     font-style: normal;
