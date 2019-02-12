@@ -1,0 +1,65 @@
+@import '../../shared/scss/styleguide';
+
+.activity-comment {
+  .activity-thumbnail {
+    display: block;
+    width: 35px;
+    height: 100%;
+    float: left;
+    margin-right: 15px;
+    padding-top: 30px;
+  }
+
+  .activity-comment-text {
+    float: left;
+    border: 1px solid $pinkish-grey;
+    padding: 14px 16px 14px 16px;
+    border-radius: 4px;
+    position: relative;
+    background-color: $white; 
+
+    div.activity-comment-bubbletip {
+      width: 14px;
+      height: 14px;
+      border: 1px solid $pinkish-grey;
+      position: absolute;
+      left: -8px;
+      top: 40px;
+      transform: rotate(45deg);
+      background-color: $white;
+      border-right: none;
+      border-top: none;
+    }
+
+    p.activity-comment-title {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 21px;
+      font-size: 14px;
+      color: $greyish-brown;
+      margin-bottom: 5px;
+    }
+
+    p.activity-comment-time {
+      font-family: "Roboto Condensed";
+      font-style: normal;
+      font-weight: normal;
+      line-height: 16px;
+      font-size: 12px;
+      position: absolute;
+      top: 8px;
+      right: 28px;
+      color: $cool-grey;
+    }
+
+    p.activity-comment-comment {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 21px;
+      font-size: 14px;
+      color: $cool-grey;
+    }
+  }
+}
