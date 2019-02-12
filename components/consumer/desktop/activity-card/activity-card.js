@@ -27,7 +27,7 @@ class ActivityCard extends React.PureComponent {
 
   render() {
     return (
-      <div className="activity-card">
+      <div className="activity-card d-flex">
         <ActivityThumbnail type={this.props.type} />
 
         <div className="activity-card-text">
