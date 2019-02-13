@@ -1,0 +1,21 @@
+@import "../../shared/scss/styleguide";
+
+.pbg-consumer-desktop {
+  &.pbg-add-comment {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .pbg-add-comment-avatar-placeholder {
+      margin-right: 15px
+    }
+
+    .pbg-add-comment-form-placeholder {
+      flex-grow: 99;
+      .pbg-button {
+        width: 124px;
+        float: right;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
+.pbg-consumer-desktop.pbg-add-comment {
+  display: flex;
+  flex-direction: row;
+  width: 100%; }
+  .pbg-consumer-desktop.pbg-add-comment .pbg-add-comment-avatar-placeholder {
+    margin-right: 15px; }
+  .pbg-consumer-desktop.pbg-add-comment .pbg-add-comment-form-placeholder {
+    flex-grow: 99; }
+    .pbg-consumer-desktop.pbg-add-comment .pbg-add-comment-form-placeholder .pbg-button {
+      width: 124px;
+      float: right; }
