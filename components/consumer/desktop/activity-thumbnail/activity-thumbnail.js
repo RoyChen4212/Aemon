@@ -66,18 +66,10 @@ class ActivityThumbnail extends React.PureComponent {
     );
   }
 
-  renderAvatarWithSource() {
+  renderAvatar() {
     return (
       <div className="activity-thumbnail">
-        <Avatar size={this.props.size} src={this.props.src} />
-      </div>
-    );
-  }
-
-  renderAvatarWithUserID() {
-    return (
-      <div className="activity-thumbnail">
-        <Avatar size={this.props.size} userId={this.props.userId} />
+        <Avatar {...this.props} />
       </div>
     );
   }
@@ -85,12 +77,8 @@ class ActivityThumbnail extends React.PureComponent {
   render() {
     let url = ActivityThumbnail.icons[this.props.type];
 
-    if (!url && this.props.src) {
-      return this.renderAvatarWithSource();
-    }
-
-    if (!url && this.props.userId) {
-      return this.renderAvatarWithUserID();
+    if (!url && (this.props.src || this.props.userId)) {
+      return this.renderAvatar();
     }
 
     return (
