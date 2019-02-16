@@ -4,6 +4,8 @@ import Divider from './divider';
 import Subheader from './subheader';
 import ActivityCard from './activity-card';
 import ActivityComment from './activity-comment';
+import AddComment from './add-comment';
+
 import ActivityThumbnail, {
   PURCHASE_UPDATED,
   PURCHASE_CLAIMED,
@@ -37,6 +39,7 @@ const desktop = {
   PAYMENT_CAPTURED,
   PURCHASE_COMPLETED,
   PURCHASE_COMMENT_CREATED,
+  AddComment,
 };
 
 export default desktop;
