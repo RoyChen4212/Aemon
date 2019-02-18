@@ -1,0 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
+.pbg-consumer-mobile.pbg-activity-card {
+  border-radius: 4px;
+  padding: 16px;
+  color: #4c4c4c; }
+  .pbg-consumer-mobile.pbg-activity-card.pbg-activity-card-white {
+    background: #fff; }
+  .pbg-consumer-mobile.pbg-activity-card .pbg-hint {
+    float: right; }

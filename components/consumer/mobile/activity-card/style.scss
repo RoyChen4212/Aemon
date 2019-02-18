@@ -1,0 +1,16 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-activity-card {
+    border-radius: 4px;
+    padding: 16px;
+    color: $greyish-brown;
+    &.pbg-activity-card-white {
+      background: $white;
+    }
+
+    .pbg-hint {
+      float: right;
+    }
+  }
+}

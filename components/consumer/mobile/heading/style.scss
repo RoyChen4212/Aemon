@@ -1,7 +1,7 @@
 @import "../../shared/scss/styleguide";
 
 .pbg-heading {
-  color: $black;
+  color: $greyish-brown;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -26,5 +26,6 @@ h3 {
   &.pbg-h3 {
     line-height: 22px;
     font-size: 15px;
+    font-weight: 500;
   }
 }
