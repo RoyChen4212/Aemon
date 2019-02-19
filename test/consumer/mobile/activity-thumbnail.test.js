@@ -4,15 +4,14 @@ import { shallow } from 'enzyme';
 import ActivityThumbnail, {
   PURCHASE_COMMENT_CREATED,
   PURCHASE_UPDATED,
-} from '../../../components/consumer/desktop/activity-thumbnail';
-import Avatar from '../../../components/consumer/desktop/avatar';
+} from '../../../components/consumer/mobile/activity-thumbnail';
+import Avatar from '../../../components/consumer/mobile/avatar';
 
 describe('Desktop ActivityThumbnail', () => {
-  it('should have the activity-thumbnail and pbg-consumer-desktop classNames', () => {
+  it('should have the activity-thumbnail and pbg-consumer-mobile classNames', () => {
     const wrapper = shallow(<ActivityThumbnail type={PURCHASE_UPDATED} />);
-
     expect(wrapper.hasClass('activity-thumbnail')).to.be.true;
-    expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
+    expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
   });
 
   it('should render a user avatar if type is purchase_comment_created and src are passed as props', () => {
