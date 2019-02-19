@@ -7,10 +7,10 @@ import ActivityThumbnail, {
 } from '../../../components/consumer/mobile/activity-thumbnail';
 import Avatar from '../../../components/consumer/mobile/avatar';
 
-describe('Desktop ActivityThumbnail', () => {
-  it('should have the activity-thumbnail and pbg-consumer-mobile classNames', () => {
+describe('Mobile ActivityThumbnail', () => {
+  it('should have the bg-activity-thumbnail and pbg-consumer-mobile classNames', () => {
     const wrapper = shallow(<ActivityThumbnail type={PURCHASE_UPDATED} />);
-    expect(wrapper.hasClass('activity-thumbnail')).to.be.true;
+    expect(wrapper.hasClass('pbg-activity-thumbnail')).to.be.true;
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
   });
 

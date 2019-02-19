@@ -33,7 +33,7 @@ const types = [
 ];
 
 class ActivityThumbnail extends React.PureComponent {
-  baseClassName = 'activity-thumbnail';
+  baseClassName = 'pbg-activity-thumbnail';
 
   static DEFAULT_SIZE = 35
 
@@ -77,11 +77,9 @@ class ActivityThumbnail extends React.PureComponent {
     return !hasUrl && (!!this.props.src || !!this.props.userId);
   }
 
-
   renderAvatar() {
     throw new Error('Not implemented, Implement this method in a sub-class.');
   }
-
 
   renderAvatarWithElement(Avatar) {
     return (

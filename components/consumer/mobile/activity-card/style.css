@@ -1,9 +1,35 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
+.pbg-consumer-mobile.pbg-group-activity-card .pbg-activity-thumbnail {
+  padding: 6px 12px 0 0; }
+  .pbg-consumer-mobile.pbg-group-activity-card .pbg-activity-thumbnail img {
+    padding: 5px; }
+
+.pbg-consumer-mobile.pbg-user-comment-card svg {
+  margin-right: 8px; }
+
+.pbg-consumer-mobile.pbg-user-comment-card h3.pbg-heading.pbg-h3 {
+  margin-top: 5px; }
+
+.pbg-consumer-mobile.pbg-user-comment-card p {
+  margin-top: 20px; }
+
 .pbg-consumer-mobile.pbg-activity-card {
   border-radius: 4px;
-  padding: 16px;
-  color: #4c4c4c; }
+  color: #8f98a3;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 16px; }
+  .pbg-consumer-mobile.pbg-activity-card h3.pbg-heading.pbg-h3 {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 14px;
+    color: #000; }
   .pbg-consumer-mobile.pbg-activity-card.pbg-activity-card-white {
-    background: #fff; }
+    background: #fff;
+    color: #4c4c4c; }
   .pbg-consumer-mobile.pbg-activity-card .pbg-hint {
     float: right; }

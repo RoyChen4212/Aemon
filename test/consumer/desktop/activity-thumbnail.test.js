@@ -8,10 +8,10 @@ import ActivityThumbnail, {
 import Avatar from '../../../components/consumer/desktop/avatar';
 
 describe('Desktop ActivityThumbnail', () => {
-  it('should have the activity-thumbnail and pbg-consumer-desktop classNames', () => {
+  it('should have the pbg-activity-thumbnail and pbg-consumer-desktop classNames', () => {
     const wrapper = shallow(<ActivityThumbnail type={PURCHASE_UPDATED} />);
 
-    expect(wrapper.hasClass('activity-thumbnail')).to.be.true;
+    expect(wrapper.hasClass('pbg-activity-thumbnail')).to.be.true;
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
   });
 

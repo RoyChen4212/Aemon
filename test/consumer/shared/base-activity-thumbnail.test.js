@@ -17,10 +17,10 @@ import ActivityThumbnail, {
 
 
 describe('BaseActivityThumbnail', () => {
-  it('should have the activity-thumbnail className', () => {
+  it('should have the pbg-activity-thumbnail className', () => {
     const wrapper = shallow(<ActivityThumbnail type={PURCHASE_UPDATED} />);
 
-    expect(wrapper.hasClass('activity-thumbnail')).to.equal(true);
+    expect(wrapper.hasClass('pbg-activity-thumbnail')).to.equal(true);
   });
 
   describe('Props', () => {

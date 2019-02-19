@@ -1,12 +1,58 @@
 @import '../../shared/scss/styleguide';
 
 .pbg-consumer-mobile {
+  &.pbg-group-activity-card {
+    .pbg-activity-thumbnail {
+      padding: 6px 12px 0 0;
+      img {
+        padding: 5px;
+      }
+    }
+  }
+
+  &.pbg-user-comment-card {
+    svg {
+      margin-right: 8px;
+    }
+
+    h3 {
+      &.pbg-heading {
+        &.pbg-h3 {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    p {
+      margin-top: 20px;
+    }
+  }
+
   &.pbg-activity-card {
     border-radius: 4px;
+    color: $cool-grey;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    font-size: 14px;
     padding: 16px;
-    color: $greyish-brown;
+
+    h3 {
+      &.pbg-heading {
+        &.pbg-h3 {
+          font-style: normal;
+          font-weight: 500;
+          line-height: $regular-line-height;
+          font-size: $regular-font;
+          color: $black;
+        }
+      }
+    }
+
     &.pbg-activity-card-white {
       background: $white;
+      color: $greyish-brown;
     }
 
     .pbg-hint {
