@@ -25,6 +25,10 @@ describe('ActivityThumbnail', () => {
   });
 
   describe('Props', () => {
+    it('should not throw if bad type is given', () => {
+      expect(() => shallow(<ActivityThumbnail type="some bad type" />)).not.to.throw();
+    });
+
     it('should set "size" prop as width and height', () => {
       const size = 40;
       const wrapper = shallow(<ActivityThumbnail size={size} type={PURCHASE_UPDATED} />);

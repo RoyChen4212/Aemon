@@ -20,6 +20,21 @@ export const DEFAULT_ICON_URL = `${URL_PREFIX}${MEMBER_WITHDREW}`;
 
 import './style.css';
 
+const types = [
+  PURCHASE_UPDATED,
+  PURCHASE_CLAIMED,
+  MEMBER_INVITED,
+  MEMBER_JOINED,
+  MEMBER_WITHDREW,
+  PURCHASE_TIPPED,
+  PURCHASE_UNTIPPED,
+  PAYMENT_AUTHORIZED,
+  PAYMENT_CAPTURED,
+  PURCHASE_COMPLETED,
+  PURCHASE_COMMENT_CREATED,
+  DEFAULT_ICON_URL,
+];
+
 class ActivityThumbnail extends React.PureComponent {
   static DEFAULT_SIZE = 35
 
@@ -28,7 +43,7 @@ class ActivityThumbnail extends React.PureComponent {
     userId: PropTypes.string,
     src: PropTypes.string,
     type(props, propName) {
-      if (!includes(Object.keys(ActivityThumbnail.types), props[propName])) {
+      if (!includes(types, props[propName])) {
         return new Error(
           'Invalid prop `' + propName + '` supplied to' +
           ' `' + componentName + '`. Validation failed.'
@@ -56,14 +71,6 @@ class ActivityThumbnail extends React.PureComponent {
     [PAYMENT_CAPTURED]: `${URL_PREFIX}${PAYMENT_CAPTURED}.svg`,
     [PURCHASE_COMPLETED]: `${URL_PREFIX}${PURCHASE_COMPLETED}.svg`,
     [PURCHASE_COMMENT_CREATED]: false,
-  }
-
-  renderDefaultIcon() {
-    return (
-      <div className="activity-thumbnail">
-        <img src={DEFAULT_ICON_URL} width={this.props.size} />
-      </div>
-    );
   }
 
   renderAvatar() {
