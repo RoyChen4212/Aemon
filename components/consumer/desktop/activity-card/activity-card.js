@@ -11,14 +11,12 @@ class ActivityCard extends React.PureComponent {
     type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
   }
 
   static defaultProps = {
     type: null,
     title: null,
     time: null,
-    description: null,
   }
 
   get time() {
@@ -33,7 +31,9 @@ class ActivityCard extends React.PureComponent {
         <div className="activity-card-text">
           <p className="activity-card-title">{this.props.title}</p>
           <p className="activity-card-time">{this.time}</p>
-          <p className="activity-card-description">{this.props.description}</p>
+          <div className="activity-card-description">
+            {this.props.children}
+          </div>
         </div>
       </div>
     );
