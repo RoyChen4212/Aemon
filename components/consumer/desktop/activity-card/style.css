@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
-.activity-card .activity-thumbnail {
+.activity-card .pbg-activity-thumbnail {
   display: block;
   width: 35px;
   height: 100%;
@@ -29,7 +29,7 @@
     top: 0;
     right: 15px;
     color: #8f98a3; }
-  .activity-card .activity-card-text p.activity-card-description {
+  .activity-card .activity-card-text div.activity-card-description {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;

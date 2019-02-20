@@ -14,6 +14,7 @@ storiesOf('Consumer/Desktop/Atomic Components/Activity Card', module)
       type="purchase_updated"
       title="Purchase Updated"
       time={new Date()}
-      description="User changed the price from $2,000 to $20,000."
-    />
+    >
+      <p>User changed the price from $2,000 to $20,000.</p>
+    </ActivityCard>
   ))
