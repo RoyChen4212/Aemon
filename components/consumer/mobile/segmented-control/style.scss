@@ -1,0 +1,63 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-segmented-control {
+    background: $pale-grey;
+    border-radius: 24px;
+    display: inline-flex;
+    height: 49px;
+    width: 100%;
+
+    .pbg-segmented-control-button {
+      flex-grow: 1;
+      font-family: Roboto;
+      font-size: $large-font;
+      font-style: normal;
+      font-weight: normal;
+      line-height: $large-line-height;
+      min-width: 144px;
+      padding: 12px;
+      text-align: center;
+      color: $cool-grey;
+
+      &.active {
+        background: $blue-linear;
+        border-radius: 24px;
+        color: $white;
+        flex-grow: 0;
+
+        svg {
+          fill: $white;
+        }
+      }
+
+      &.list {
+        &::before {
+          content: $list-icon-grey;
+          padding-right: 5px;
+        }
+
+        &.active {
+          &::before {
+            content: $list-icon-white;
+            padding-right: 5px;
+          }
+        }
+      }
+
+      &.pulse {
+        &::before {
+          content: $pulse-icon-grey;
+          padding-right: 5px;
+        }
+
+        &.active {
+          &::before {
+            content: $pulse-icon-white;
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
