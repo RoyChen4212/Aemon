@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
+.pbg-consumer-mobile.pbg-segmented-control {
+  background: #f5f8fb;
+  border-radius: 24px;
+  display: inline-flex;
+  height: 49px;
+  width: 100%; }
+  .pbg-consumer-mobile.pbg-segmented-control .pbg-segmented-control-button {
+    flex-grow: 1;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 25px;
+    min-width: 144px;
+    padding: 12px;
+    text-align: center;
+    color: #8f98a3; }
+    .pbg-consumer-mobile.pbg-segmented-control .pbg-segmented-control-button.active {
+      background: linear-gradient(90deg, #2EAFFF 0%, #2E3AA1 196.67%);
+      border-radius: 24px;
+      color: #fff;
+      flex-grow: 0; }
+      .pbg-consumer-mobile.pbg-segmented-control .pbg-segmented-control-button.active svg {
+        fill: #fff; }
+    .pbg-consumer-mobile.pbg-segmented-control .pbg-segmented-control-button.list::before {
+      content: url("../img/view-list-icon-grey.svg");
+      padding-right: 5px; }
+    .pbg-consumer-mobile.pbg-segmented-control .pbg-segmented-control-button.list.active::before {
+      content: url("../img/view-list-icon-white.svg");
+      padding-right: 5px; }
+    .pbg-consumer-mobile.pbg-segmented-control .pbg-segmented-control-button.pulse::before {
+      content: url("../img/pulse-icon-grey.svg");
+      padding-right: 5px; }
+    .pbg-consumer-mobile.pbg-segmented-control .pbg-segmented-control-button.pulse.active::before {
+      content: url("../img/pulse-icon-white.svg");
+      padding-right: 5px; }

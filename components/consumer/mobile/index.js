@@ -32,6 +32,7 @@ import {
   UserCommentCard,
   GroupActivityCard
 } from './activity-card';
+import SegmentedControl from './segmented-control';
 
 const mobile = {
   AddressField,
@@ -60,6 +61,7 @@ const mobile = {
   MultiSelectField,
   UserCommentCard,
   GroupActivityCard,
+  SegmentedControl,
 };
 
 export default mobile;
