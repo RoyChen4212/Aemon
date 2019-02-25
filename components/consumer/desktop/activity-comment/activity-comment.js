@@ -10,7 +10,7 @@ class ActivityComment extends React.PureComponent {
     src: PropTypes.string,
     title: PropTypes.string.isRequired,
     comment: PropTypes.string.isRequired,
-    time: PropTypes.object.isRequired,
+    time: PropTypes.string.isRequired,
   }
 
   static defaultProps = {

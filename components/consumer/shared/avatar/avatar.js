@@ -10,7 +10,7 @@ class Avatar extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
     size: PropTypes.number.isRequired,
-    src: PropTypes.string.isRequired
+    src: PropTypes.string,
   }
 
   static defaultProps = {

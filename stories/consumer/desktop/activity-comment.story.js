@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import ActivityComment from '../../../components/consumer/desktop/activity-comment';
+import ActivityCard from '../../../components/consumer/desktop/activity-card';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
@@ -24,4 +25,22 @@ storiesOf('Consumer/Desktop/Atomic Components/Activity Comment', module)
       time={new Date()}
       src="http://www.psdgraphics.com/wp-content/uploads/2010/04/web-user.jpg"
     />
+  ))
+  .add('Along with ActivityCard', () => (
+    <React.Fragment>
+      <ActivityComment
+        title="John Doe"
+        comment="This is a longer user comment to demonstrate how the comment bubble should behave when there are multiple lines of text. Lorerm ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque."
+        time={new Date()}
+        userId="01234567-abcd-abcd-abcd-0123456789ab"
+      />
+      <ActivityCard
+        type="purchase_updated"
+        title="Purchase Updated"
+        time={new Date()}
+      >
+        <p>User changed the price from $2,000 to $20,000.</p>
+      </ActivityCard>
+    </React.Fragment>
+
   ))

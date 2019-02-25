@@ -5,6 +5,7 @@ import Subheader from './subheader';
 import ActivityCard from './activity-card';
 import ActivityComment from './activity-comment';
 import AddComment from './add-comment';
+import { PrimaryButton } from './button';
 
 import ActivityThumbnail, {
   PURCHASE_UPDATED,
@@ -40,6 +41,7 @@ const desktop = {
   PURCHASE_COMPLETED,
   PURCHASE_COMMENT_CREATED,
   AddComment,
+  PrimaryButton,
 };
 
 export default desktop;
