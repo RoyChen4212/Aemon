@@ -28,7 +28,8 @@
     position: absolute;
     top: 0;
     right: 15px;
-    color: #8f98a3; }
+    color: #8f98a3;
+    text-transform: lowercase; }
   .activity-card .activity-card-text div.activity-card-description {
     font-family: Roboto;
     font-style: normal;

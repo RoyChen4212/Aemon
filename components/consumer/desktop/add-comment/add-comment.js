@@ -1,11 +1,12 @@
 import React from 'react';
+import FormField from '../form-field';
 import TextArea from '../text-area';
 import Avatar from '../avatar';
 import { PrimaryButton } from '../button';
 
 import './style.css'
 
-class AddComment extends React.PureComponent {
+class AddComment extends FormField {
   renderAvatar() {
     if (this.props.avatarSrc) return <Avatar src={this.props.avatarSrc} />;
     return <Avatar userId={this.props.userId} />;
@@ -19,12 +20,10 @@ class AddComment extends React.PureComponent {
         </div>
         <div className="pbg-add-comment-form-placeholder">
           <TextArea
-            hint={this.props.hint}
-            value={this.props.value}
-            error={this.props.error}
+            {...this.props}
             label={this.props.textLabel}
           />
-          <PrimaryButton>{this.props.ctaLabel}</PrimaryButton>
+          <PrimaryButton>{this.adaptedProps.ctaLabel}</PrimaryButton>
         </div>
       </div>
     );

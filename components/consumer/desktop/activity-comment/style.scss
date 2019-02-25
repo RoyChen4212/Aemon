@@ -1,7 +1,9 @@
 @import '../../shared/scss/styleguide';
 
 .activity-comment {
-  .activity-thumbnail {
+  width: 100%;
+  margin-bottom: 15px;
+  .pbg-activity-thumbnail {
     display: block;
     width: 35px;
     height: 100%;
@@ -17,6 +19,7 @@
     border-radius: 4px;
     position: relative;
     background-color: $white; 
+    width: 100%;
 
     div.activity-comment-bubbletip {
       width: 14px;
@@ -49,8 +52,9 @@
       font-size: 12px;
       position: absolute;
       top: 8px;
-      right: 28px;
+      right: 14px;
       color: $cool-grey;
+      text-transform: lowercase;
     }
 
     p.activity-comment-comment {
