@@ -1,6 +1,8 @@
 .pbg-form-field {
   &.pbg-datetime-picker {
     .pbg-datetime-picker-pickers-wrapper {
+      overflow: auto;
+
       .pbg-datetime-picker-container {
         &:first-child {
           padding-right: 10px;
