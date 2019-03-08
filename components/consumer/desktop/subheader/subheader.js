@@ -4,16 +4,17 @@ import './style.css';
 
 class Subheader extends React.PureComponent {
   static propTypes = {
-    text: PropTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    anchor: PropTypes.string.isRequired,
   };
 
   render() {
-    const {text} = this.props;
+    const { text, anchor } = this.props;
 
     return (
       <div className='pbg-subheader-wrapper'>
         <div className='pbg-subheader-text'>
-          {text}
+          <a id={anchor}>{text}</a>
         </div>
 
         <div className='pbg-subheader-divider' />
