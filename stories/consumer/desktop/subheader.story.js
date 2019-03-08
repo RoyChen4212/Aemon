@@ -11,4 +11,4 @@ const sampleText = 'Pay By Group Rules';
 storiesOf('Consumer/Desktop/Atomic Components/Heading', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Subheader', () => <Subheader text={sampleText} />);
+  .add('Subheader', () => <Subheader text={sampleText} anchor="hi" />);

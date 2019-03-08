@@ -25,6 +25,14 @@
       box-shadow: 0px 1px 0px $pbg-blue-light, inset 0px 1px 0px rgba(255, 255, 255, 0.18883);
       border-radius: 4px;
       height: 47px;
+
+      &:hover, &:focus {
+        background-color: $bluish;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
     }
 
     &.disabled {
