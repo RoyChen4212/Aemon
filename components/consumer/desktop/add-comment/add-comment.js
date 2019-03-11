@@ -21,6 +21,7 @@ class AddComment extends FormField {
         <div className="pbg-add-comment-form-placeholder">
           <TextArea
             {...this.props}
+            rows={1}
             label={this.props.textLabel}
           />
           <PrimaryButton>{this.adaptedProps.ctaLabel}</PrimaryButton>
