@@ -11,4 +11,4 @@
       width: 124px;
       float: right; }
   .pbg-consumer-desktop.pbg-add-comment textarea {
-    height: 56px; }
+    min-height: 56px; }

@@ -8,7 +8,7 @@ class TextArea extends FormField {
   baseType = 'text';
 
   get rows() {
-    return 3;
+    return this.props.rows || 3;
   }
 
   get placeholder() {

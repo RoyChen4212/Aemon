@@ -12,6 +12,9 @@ export const MEMBER_WITHDREW = 'member_withdrew';
 export const PURCHASE_TIPPED = 'purchase_tipped';
 export const PURCHASE_UNTIPPED = 'purchase_untipped';
 export const PAYMENT_AUTHORIZED = 'payment_authorized';
+export const PAYMENT_AUTHORIZED_DEPOSIT = 'payment_authorized_deposit';
+export const PAYMENT_AUTHORIZED_PAYMENT = 'payment_authorized_payment';
+export const PAYMENT_AUTHORIZED_PURCHASE = 'payment_authorized_purchase';
 export const PAYMENT_CAPTURED = 'payment_captured';
 export const PURCHASE_COMPLETED = 'purchase_completed';
 export const PURCHASE_COMMENT_CREATED = 'purchase_comment_created'
@@ -26,6 +29,9 @@ const types = [
   PURCHASE_TIPPED,
   PURCHASE_UNTIPPED,
   PAYMENT_AUTHORIZED,
+  PAYMENT_AUTHORIZED_DEPOSIT,
+  PAYMENT_AUTHORIZED_PAYMENT,
+  PAYMENT_AUTHORIZED_PURCHASE,
   PAYMENT_CAPTURED,
   PURCHASE_COMPLETED,
   PURCHASE_COMMENT_CREATED,
@@ -67,6 +73,9 @@ class ActivityThumbnail extends React.PureComponent {
     [PURCHASE_TIPPED]: `${URL_PREFIX}${PURCHASE_TIPPED}.svg`,
     [PURCHASE_UNTIPPED]: `${URL_PREFIX}${PURCHASE_UNTIPPED}.svg`,
     [PAYMENT_AUTHORIZED]: `${URL_PREFIX}${PAYMENT_AUTHORIZED}.svg`,
+    [PAYMENT_AUTHORIZED_DEPOSIT]: `${URL_PREFIX}${PAYMENT_AUTHORIZED_DEPOSIT}.svg`,
+    [PAYMENT_AUTHORIZED_PAYMENT]: `${URL_PREFIX}${PAYMENT_AUTHORIZED_PAYMENT}.svg`,
+    [PAYMENT_AUTHORIZED_PURCHASE]: `${URL_PREFIX}${PAYMENT_AUTHORIZED_PURCHASE}.svg`,
     [PAYMENT_CAPTURED]: `${URL_PREFIX}${PAYMENT_CAPTURED}.svg`,
     [PURCHASE_COMPLETED]: `${URL_PREFIX}${PURCHASE_COMPLETED}.svg`,
     [PURCHASE_COMMENT_CREATED]: false,
