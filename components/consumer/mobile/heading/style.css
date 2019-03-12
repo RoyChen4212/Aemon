@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Condensed);
 .pbg-heading {
   color: #4c4c4c;
   font-family: Roboto;
@@ -10,6 +10,8 @@ h1.pbg-h1 {
   font-size: 22px; }
 
 h2.pbg-h2 {
+  font-family: Roboto;
+  font-style: normal;
   font-weight: 300;
   line-height: 28px;
   font-size: 19px; }

@@ -45,4 +45,9 @@ describe('Hint', () => {
     wrapper.find('span').find('a').simulate('click');
     expect(onClick.calledOnce).to.be.true;
   });
+
+  it('should accept a multiline prop that turns it into p', () => {
+    const wrapper = shallow(<Hint multiline />);
+    expect(wrapper.html()).to.equal('<p class="pbg-hint"></p>');
+  });
 });

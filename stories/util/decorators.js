@@ -8,7 +8,13 @@ export const withContainer = story => (
   </div>
 );
 
- export const withGreyContainer = story => (
+export const withMobileSizing = story => (
+  <div className="mobile-size">
+    {story()}
+  </div>
+)
+
+export const withGreyContainer = story => (
   <div className="container-fluid grey">
     <div className="row">
       {story()}

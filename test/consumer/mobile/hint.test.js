@@ -14,4 +14,9 @@ describe('Mobile Hint', () => {
     const wrapper = mount(<Hint />);
     expect(wrapper.html()).to.equal('<span class="pbg-hint pbg-consumer-mobile"></span>');
   });
+
+  it('should accept a multiline prop that turns it into p', () => {
+    const wrapper = shallow(<Hint multiline />);
+    expect(wrapper.html()).to.equal('<p class="pbg-hint pbg-consumer-mobile"></p>');
+  });
 });

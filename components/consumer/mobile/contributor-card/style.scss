@@ -1,0 +1,50 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-contributor-card {
+    background: $white;
+    border-radius: 4px;
+    font-family: Roboto;
+
+    .pbg-contributor-card-heading {
+      background: $blue-linear;
+      color: $white;
+      border-radius: 4px 4px 0 0;
+      line-height: 15px;
+      text-align: center;
+      height: 30px;
+      padding: 6px;
+    }
+
+    .pbg-contributor-card-body {
+      padding: 15px;
+      h2 {
+        text-align: center;
+      }
+      .pbg-contributor-card-content {
+        text-align: center;
+      }
+    }
+
+    .pbg-contributor-card-ctas {
+      padding: 0 8px;
+      > div {
+        border-top: 1px solid $almost-white;
+        padding: 8px 0;
+        overflow: auto;
+      }
+
+      .cta-container {
+        width: 50%;
+        float: left;
+      }
+    }
+
+    &.pbg-contributor-card-type-error {
+      .pbg-contributor-card-heading {
+        background: $coral-error;
+        color: $white;
+      }
+    }
+  }
+}

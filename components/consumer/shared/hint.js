@@ -17,9 +17,16 @@ export const hintTypes = {
 
 export default (props) => {
   if (props.onClick) {
-    return <span className={className(props)}><a onClick={props.onClick}>{props.children}</a></span>;
+    return mainTag(props, <a onClick={props.onClick}>{props.children}</a>);
   }
-  return <span className={className(props)}>{props.children}</span>;
+  return mainTag(props, props.children);
+};
+
+const mainTag = (props, content) => {
+  if (props.multiline) {
+    return <p className={className(props)}>{content}</p>;
+  }
+  return <span className={className(props)}>{content}</span>;
 };
 
 const className = ({ type, className }) => {

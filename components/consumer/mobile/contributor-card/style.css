@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Condensed);
+.pbg-consumer-mobile.pbg-contributor-card {
+  background: #fff;
+  border-radius: 4px;
+  font-family: Roboto; }
+  .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-heading {
+    background: linear-gradient(90deg, #2EAFFF 0%, #2E3AA1 196.67%);
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+    line-height: 15px;
+    text-align: center;
+    height: 30px;
+    padding: 6px; }
+  .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-body {
+    padding: 15px; }
+    .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-body h2 {
+      text-align: center; }
+    .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-body .pbg-contributor-card-content {
+      text-align: center; }
+  .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas {
+    padding: 0 8px; }
+    .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas > div {
+      border-top: 1px solid #f3f3f3;
+      padding: 8px 0;
+      overflow: auto; }
+    .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas .cta-container {
+      width: 50%;
+      float: left; }
+  .pbg-consumer-mobile.pbg-contributor-card.pbg-contributor-card-type-error .pbg-contributor-card-heading {
+    background: #f76143;
+    color: #fff; }

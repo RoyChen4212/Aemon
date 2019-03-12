@@ -26,3 +26,7 @@
 .container-fluid.grey {
   background: #F3F3F3;
 }
+
+.mobile-size {
+  width: 290px;
+}
