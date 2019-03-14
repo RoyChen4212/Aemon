@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import times from 'lodash/times';
+import first from 'lodash/first';
 import Avatar from '../../../components/consumer/shared/avatar';
 import defaults from '../../../components/consumer/shared/avatar/defaults';
 
@@ -46,11 +47,25 @@ describe('Avatar', () => {
     });
   });
 
+  describe('Initials Strategy', () => {
+    it('should render a fallback avatar with 2 initial letters', () => {
+      const wrapper = mount(<Avatar fullName={"John Doe"} />);
+
+      expect(wrapper.find('div > div').html()).to.contain('JD');
+    });
+
+    it('should render a fallback avatar with 1 initial letter', () => {
+      const wrapper = mount(<Avatar fullName={"John"} />);
+
+      expect(wrapper.find('div > div').html()).to.contain('J');
+    });
+  });
+
   describe('Fallback strategy', () => {
     const getRenderedSVGPath = (userId) => {
-      const wrapper = mount(<Avatar src={src} userId={userId} />);
+      const wrapper = mount(<Avatar src={src} />);
       wrapper.find('img').simulate('error');
-      return wrapper.find('path');
+      return wrapper.find('svg > path:first-child');
     };
 
     it('should render a properly sized fallback avatar if image fails to load', () => {
@@ -63,7 +78,7 @@ describe('Avatar', () => {
       expect(svg.exists()).to.be.true;
       expect(svg.prop('width')).to.be.equal(Avatar.DEFAULT_SIZE);
       expect(svg.prop('height')).to.be.equal(Avatar.DEFAULT_SIZE);
-      expect(svg.prop('viewBox')).to.be.equal(`0 0 51 51`)
+      expect(svg.prop('viewBox')).to.be.equal(`0 0 32 32`)
     });
 
     it('should consistently render the same fallback avatar and color for the same user’s id', () => {
@@ -78,7 +93,6 @@ describe('Avatar', () => {
       ids.reduce((result, id) => {
         const path = getRenderedSVGPath(id);
         result[id] = {
-          image: path.prop('d'),
           color: path.prop('fill')
         };
         return result;
@@ -89,8 +103,6 @@ describe('Avatar', () => {
           const path = getRenderedSVGPath(id);
           const values = avatarPropsById[id];
 
-          expect(values.image).to.exist;
-          expect(values.image).to.be.equal(path.prop('d'));
           expect(values.color).to.exist;
           expect(values.color).to.be.equal(path.prop('fill'));
         });
@@ -99,10 +111,8 @@ describe('Avatar', () => {
 
     it('should render fallback avatar using the first shape and color from default values if no userId is passed', () => {
       const path = getRenderedSVGPath();
-      const expectedShape = defaults.shapes[0];
       const expectedColor = defaults.colors[0];
 
-      expect(path.prop('d')).to.be.equal(expectedShape);
       expect(path.prop('fill')).to.be.equal(expectedColor);
     });
   });
