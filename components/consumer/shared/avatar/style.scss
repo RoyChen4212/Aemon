@@ -1,7 +1,24 @@
-.pbg-avatar {
+svg.pbg-avatar {
   object-fit: cover;
 }
 
 img.pbg-avatar {
   border-radius: 50%;
+}
+
+div.pbg-avatar {
+  border-radius: 50%;
+
+  > div {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+    padding: 5px 6px;
+  }
+
+  &.single {
+    > div {
+      padding: 5px 12px;
+    }
+  }
 }
