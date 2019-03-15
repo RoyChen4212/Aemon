@@ -33,6 +33,8 @@ import {
   GroupActivityCard
 } from './activity-card';
 import SegmentedControl from './segmented-control';
+import Modal from './modal';
+import ContributorCard from './contributor-card';
 
 const mobile = {
   AddressField,
@@ -62,6 +64,8 @@ const mobile = {
   UserCommentCard,
   GroupActivityCard,
   SegmentedControl,
+  Modal,
+  ContributorCard,
 };
 
 export default mobile;

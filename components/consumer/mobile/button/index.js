@@ -31,6 +31,15 @@ class SmallFacebookButton extends BaseMobileButton {
   baseClassName = `${CLASS_NAME} pbg-consumer-mobile pbg-button-facebook-small`;
 }
 
+export const types = {
+  PRIMARY: 'primary',
+  SECONDARY: 'seconday',
+  SMALL: 'small',
+  LINK: 'link',
+  FACEBOOK: 'facebook',
+  FACEBOOK_SMALL: 'facebook-small',
+};
+
 export {
   PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
 };

@@ -44,3 +44,13 @@ $pulse-icon-white: url('../img/pulse-icon-white.svg');
 $list-icon-white: url('../img/view-list-icon-white.svg');
 $pulse-icon-grey: url('../img/pulse-icon-grey.svg');
 $list-icon-grey: url('../img/view-list-icon-grey.svg');
+
+
+.regular-text {
+  color: $greyish-brown;
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $regular-font;
+  line-height: $regular-line-height;
+}
