@@ -1,0 +1,68 @@
+@import "../../shared/scss/styleguide";
+
+.pbg-consumer-mobile {
+  &.pbg-modal {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    .pbg-modal-overlay {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $black;
+      opacity: 0.5;
+      z-index: 1040;
+    }
+
+    .pbg-modal-dialog {
+      background: $almost-white;
+      box-orient: vertical;
+      box-direction: normal;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1050;
+    }
+
+    .pbg-modal-heading {
+      background: $white;
+      display: flex;
+      height: 60px;
+      padding: 15px;
+      margin-bottom: 15px;
+
+      .pbg-button {
+        padding: 0;
+        text-align: left;
+      }
+
+      h2 {
+        flex-grow: 1;
+        text-align: center;
+      }
+    }
+
+    .pbg-modal-body {
+      @extend .regular-text;
+      background: $white;
+      padding: 17px 15px;
+    }
+
+    .pbg-modal-cta {
+      background: $white;
+      margin-top: 1px;
+      padding: 15px;
+
+      .pbg-button {
+        margin-bottom: 15px;
+
+        &.last {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

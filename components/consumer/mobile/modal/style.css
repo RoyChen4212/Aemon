@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Condensed);
+.regular-text, .pbg-consumer-mobile.pbg-modal .pbg-modal-body {
+  color: #4c4c4c;
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px; }
+
+.pbg-consumer-mobile.pbg-modal {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%; }
+  .pbg-consumer-mobile.pbg-modal .pbg-modal-overlay {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    z-index: 1040; }
+  .pbg-consumer-mobile.pbg-modal .pbg-modal-dialog {
+    background: #f3f3f3;
+    box-orient: vertical;
+    box-direction: normal;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1050; }
+  .pbg-consumer-mobile.pbg-modal .pbg-modal-heading {
+    background: #fff;
+    display: flex;
+    height: 60px;
+    padding: 15px;
+    margin-bottom: 15px; }
+    .pbg-consumer-mobile.pbg-modal .pbg-modal-heading .pbg-button {
+      padding: 0;
+      text-align: left; }
+    .pbg-consumer-mobile.pbg-modal .pbg-modal-heading h2 {
+      flex-grow: 1;
+      text-align: center; }
+  .pbg-consumer-mobile.pbg-modal .pbg-modal-body {
+    background: #fff;
+    padding: 17px 15px; }
+  .pbg-consumer-mobile.pbg-modal .pbg-modal-cta {
+    background: #fff;
+    margin-top: 1px;
+    padding: 15px; }
+    .pbg-consumer-mobile.pbg-modal .pbg-modal-cta .pbg-button {
+      margin-bottom: 15px; }
+      .pbg-consumer-mobile.pbg-modal .pbg-modal-cta .pbg-button.last {
+        margin-bottom: 0; }
