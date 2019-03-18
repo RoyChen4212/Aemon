@@ -23,7 +23,7 @@ storiesOf('Consumer/Desktop/Atomic Components/Activity Comment', module)
       title="John Doe"
       comment="This is a longer user comment to demonstrate how the comment bubble should behave when there are multiple lines of text. Lorerm ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque."
       time={new Date()}
-      src="http://www.psdgraphics.com/wp-content/uploads/2010/04/web-user.jpg"
+      src="http://i.pravatar.cc/300"
     />
   ))
   .add('Along with ActivityCard', () => (

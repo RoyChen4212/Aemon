@@ -41,7 +41,7 @@ const types = [
 class ActivityThumbnail extends React.PureComponent {
   baseClassName = 'pbg-activity-thumbnail';
 
-  static DEFAULT_SIZE = 35
+  static DEFAULT_SIZE = 32
 
   static propTypes = {
     size: PropTypes.number.isRequired,

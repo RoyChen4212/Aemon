@@ -5,7 +5,7 @@ import defaults from './defaults';
 import './style.css';
 
 class Avatar extends React.PureComponent {
-  static DEFAULT_SIZE = 35
+  static DEFAULT_SIZE = 32
 
   static propTypes = {
     className: PropTypes.string,
