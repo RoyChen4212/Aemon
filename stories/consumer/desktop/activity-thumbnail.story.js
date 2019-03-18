@@ -31,8 +31,14 @@ storiesOf('Consumer/Desktop/Atomic Components/ActivityThumbnail', module)
   .add('Purchase Untipped', () => (
     <ActivityThumbnail type="purchase_untipped" />
   ))
-  .add('Payment Authorized', () => (
-    <ActivityThumbnail type="payment_authorized" />
+  .add('Payment Authorized (Deposit)', () => (
+    <ActivityThumbnail type="payment_authorized_deposit" />
+  ))
+  .add('Payment Authorized (Payment)', () => (
+    <ActivityThumbnail type="payment_authorized_payment" />
+  ))
+  .add('Payment Authorized (Purchase)', () => (
+    <ActivityThumbnail type="payment_authorized_purchase" />
   ))
   .add('Payment Captured', () => (
     <ActivityThumbnail type="payment_captured" />
