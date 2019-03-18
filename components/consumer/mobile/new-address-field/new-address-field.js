@@ -14,13 +14,6 @@ const COUNTRY = 'country';
 class NewAddressField extends FormField {
   baseClassName = 'pbg-form-field pbg-new-address-field';
 
-  componentDidMount() {
-    if (!this.currentValue.country && this.countryOptions.length) {
-      const newValue = { ...this.currentValue, country: get(first(this.countryOptions), 'value') };
-      this.onChange(makeEvent(newValue));
-    }
-  }
-
   get className() {return this.baseClassName; }
 
   get countryOptions() { return this.adaptedProps.countryOptions || []; }
