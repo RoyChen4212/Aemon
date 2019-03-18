@@ -13,13 +13,18 @@
     .pbg-add-comment-form-placeholder {
       flex-grow: 99;
       .pbg-button {
-        width: 124px;
+        width: 140px;
         float: right;
       }
     }
 
     textarea {
       min-height: 56px;
+    }
+
+    .pbg-hint {
+      margin-top: 8px;
+      display: block;
     }
   }
 }

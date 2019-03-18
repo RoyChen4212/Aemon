@@ -16,7 +16,10 @@
   .pbg-consumer-desktop.pbg-add-comment .pbg-add-comment-form-placeholder {
     flex-grow: 99; }
     .pbg-consumer-desktop.pbg-add-comment .pbg-add-comment-form-placeholder .pbg-button {
-      width: 124px;
+      width: 140px;
       float: right; }
   .pbg-consumer-desktop.pbg-add-comment textarea {
     min-height: 56px; }
+  .pbg-consumer-desktop.pbg-add-comment .pbg-hint {
+    margin-top: 8px;
+    display: block; }
