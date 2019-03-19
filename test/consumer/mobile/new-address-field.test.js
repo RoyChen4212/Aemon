@@ -148,15 +148,6 @@ describe('NewAddressField', () => {
       const wrapper = shallow(<NewAddressField countryOptions={options} onChange={() => {}}/>);
       expect(wrapper.instance().countryOptions).to.be.equal(options);
     });
-
-    it('should trigger change with first value if no value was given', function(done) {
-      const options = [{label: 'MX', value: 'mx'}, {label: 'US', value: 'us'}];
-      const onChange = (ev) => {
-        expect(ev.target.value).to.eql({country: options[0].value});
-        done();
-      }
-      const wrapper = mount(<NewAddressField countryOptions={options} onChange={onChange}/>);
-    });
   });
 
   describe('Composed behaviour', () => {
