@@ -8,6 +8,8 @@ import './style.css';
 class ActivityComment extends React.PureComponent {
   static propTypes = {
     src: PropTypes.string,
+    fullName: PropTypes.string,
+    userId: PropTypes.string,
     title: PropTypes.string.isRequired,
     comment: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
@@ -30,6 +32,7 @@ class ActivityComment extends React.PureComponent {
           type={PURCHASE_COMMENT_CREATED}
           src={this.props.src}
           userId={this.props.userId}
+          fullName={this.props.fullName}
         />
         <div className="activity-comment-text">
           <div className="activity-comment-bubbletip"></div>

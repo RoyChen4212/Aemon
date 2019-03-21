@@ -20,6 +20,14 @@ storiesOf('Consumer/Desktop/Form Components/AddComment', module)
       avatarSrc='http://i.pravatar.cc/300'
     />
   ))
+  .add('With initials', () => (
+    <AddComment
+      hint="Only logged-in group members see comments."
+      ctaLabel="Post comment"
+      textLabel="Write a comment..."
+      fullName='John Doe'
+    />
+  ))
   .add('With Error', () => (
     <AddComment
       hint="Only logged-in group members see comments."
