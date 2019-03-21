@@ -32,7 +32,7 @@ class Modal extends React.PureComponent {
       <div className="pbg-consumer-mobile pbg-modal">
         <div className="pbg-modal-dialog">
           <div className="pbg-modal-heading">
-            <LinkButton onClick={this.props.onBackClick}>{this.props.backButtonCaption}</LinkButton>
+            <LinkButton onClick={this.onBackClick}>{this.props.backButtonCaption}</LinkButton>
             <H2>{this.props.title}</H2>
           </div>
           <div className="pbg-modal-body">

@@ -7,6 +7,7 @@ import ContributorCard from '../../../components/consumer/mobile/contributor-car
 import { H2 } from '../../../components/consumer/mobile/heading';
 import Hint from '../../../components/consumer/mobile/hint';
 import { LinkButton } from '../../../components/consumer/mobile/button';
+import { HistoricalPicker } from '../../../components/consumer/mobile/historical-picker';
 
 describe('ContributorCard Card', () => {
   it('should have correct class', () => {
@@ -43,11 +44,11 @@ describe('ContributorCard Card', () => {
   });
 
   it('should accept a content prop and render it', () => {
-    const expected = 'This is some text to be passed to the content portion';
+    const expected = <p>This is some text to be passed to the content portion</p>;
     const wrapper = mount(<ContributorCard content={expected} />);
     expect(
-      wrapper.find('.pbg-contributor-card-content').find(Hint).text()
-    ).to.be.equal(expected);
+      wrapper.find('.pbg-contributor-card-content').contains(expected)
+    ).to.be.true;
   });
 
   it('should render cta section', () => {
@@ -86,5 +87,40 @@ describe('ContributorCard Card', () => {
     expect(onClick2.calledOnce).to.be.false;
     wrapper.find(LinkButton).at(1).simulate('click');
     expect(onClick2.calledOnce).to.be.true;
+  });
+
+  it('should accept type picker as cta', () => {
+    const onClick = () => {};
+    const cta = [{label: 'CTA one', onClick }, {label: 'CTA 2', onChange: onClick, type: 'picker' }];
+    const wrapper = shallow(<ContributorCard cta={cta} />);
+    expect(wrapper.find(LinkButton)).to.have.lengthOf(1);
+    expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(1);
+  });
+
+  it('should render picker all options', () => {
+    const cta = [
+      {
+        label: 'Picker',
+        options: [{ label: 'one', value: '1' }, { label: 'two', value: '2'}],
+        type: 'picker'
+      },
+    ];
+    const wrapper = mount(<ContributorCard cta={cta} />);
+    expect(wrapper.find(HistoricalPicker).find('option')).to.have.lengthOf(2);
+  });
+
+  it('should execute onChange from picker', () => {
+    const onChange = sinon.spy();
+    const cta = [
+      {
+        label: 'Picker',
+        options: [{ label: 'one', value: '1' }, { label: 'two', value: '2'}],
+        onChange,
+        type: 'picker'
+      },
+    ];
+    const wrapper = mount(<ContributorCard cta={cta} />);
+    wrapper.find(HistoricalPicker).find('select').simulate('change');
+    expect(onChange.calledOnce).to.be.true;
   });
 });

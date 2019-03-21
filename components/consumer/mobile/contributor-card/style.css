@@ -34,6 +34,16 @@
     .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas .cta-container {
       width: 50%;
       float: left; }
+    .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas .pbg-picker .pbg-picker-select-container {
+      border: 0; }
+      .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas .pbg-picker .pbg-picker-select-container select {
+        text-align: center;
+        text-align-last: center; }
+      .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas .pbg-picker .pbg-picker-select-container .pbg-picker-arrow {
+        display: none; }
+    .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas .pbg-button.pbg-button-link {
+      height: calc(2.25rem + 2px);
+      padding-bottom: 8px; }
   .pbg-consumer-mobile.pbg-contributor-card.pbg-contributor-card-type-error .pbg-contributor-card-heading {
     background: #f76143;
     color: #fff; }
