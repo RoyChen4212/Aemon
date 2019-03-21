@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithFigma } from 'storybook-addon-figma';
 import ContributorCard from '../../../components/consumer/mobile/contributor-card';
+import Hint from '../../../components/consumer/mobile/hint';
 import { withGreyContainer, wrapStory, withMobileSizing } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -23,7 +24,7 @@ storiesOf('Consumer/Mobile/Atomic Components/ContributorCard', module)
     <ContributorCard
       heading="You are a contributor!"
       title="Your expected charge: USD $850.00"
-      content="Up to a max. of $900.00 on or before 08 Dic to your visa ending in 4432."
+      content={<Hint multiline="true">Up to a max. of $900.00 on or before 08 Dic to your visa ending in 4432.</Hint>}
       cta={[
         { label: 'Change', onClick: action('click') },
         { label: 'See Schedule', onClick: action('click') },
@@ -34,7 +35,7 @@ storiesOf('Consumer/Mobile/Atomic Components/ContributorCard', module)
     <ContributorCard
       heading="You are a contributor!"
       title="Your expected charge: USD $850.00"
-      content="Up to a max. of $900.00 on or before 08 Dic to your visa ending in 4432."
+      content={<Hint multiline="true">Up to a max. of $900.00 on or before 08 Dic to your visa ending in 4432.</Hint>}
       cta={[
         { label: 'Change', onChange: action('change'), type: 'picker', options },
         { label: 'See Schedule', onClick: action('click') },

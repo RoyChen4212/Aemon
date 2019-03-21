@@ -15,8 +15,8 @@ class ContributorCard extends React.PureComponent {
 
   static propTypes = {
     type: PropTypes.string,
-    title: PropTypes.string,
-    content: PropTypes.string,
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     cta: PropTypes.array,
   }
 
@@ -41,9 +41,9 @@ class ContributorCard extends React.PureComponent {
   }
 
   get cta() {
-    return this.props.cta.map((cta) => {
+    return this.props.cta.map((cta, index) => {
       return (
-        <div className={this.props.cta.length > 1 ? 'cta-container' : ''}>
+        <div className={this.props.cta.length > 1 ? 'cta-container' : ''} key={`cta-${index}`}>
           {
             cta.type === 'picker' ? (
               <HistoricalPicker options={cta.options} onChange={cta.onChange} />
@@ -63,7 +63,7 @@ class ContributorCard extends React.PureComponent {
         <div className="pbg-contributor-card-body">
           <H2>{this.props.title}</H2>
           <div className="pbg-contributor-card-content">
-            <Hint multiline="true" >{this.props.content}</Hint>
+            {this.props.content}
           </div>
         </div>
         <div className="pbg-contributor-card-ctas">

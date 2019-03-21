@@ -44,11 +44,11 @@ describe('ContributorCard Card', () => {
   });
 
   it('should accept a content prop and render it', () => {
-    const expected = 'This is some text to be passed to the content portion';
+    const expected = <p>This is some text to be passed to the content portion</p>;
     const wrapper = mount(<ContributorCard content={expected} />);
     expect(
-      wrapper.find('.pbg-contributor-card-content').find(Hint).text()
-    ).to.be.equal(expected);
+      wrapper.find('.pbg-contributor-card-content').contains(expected)
+    ).to.be.true;
   });
 
   it('should render cta section', () => {
