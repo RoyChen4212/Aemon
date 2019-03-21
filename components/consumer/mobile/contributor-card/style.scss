@@ -38,6 +38,28 @@
         width: 50%;
         float: left;
       }
+
+      .pbg-picker {
+        .pbg-picker-select-container {
+          border: 0;
+
+          select {
+            text-align: center;
+            text-align-last: center;
+          }
+
+          .pbg-picker-arrow {
+            display: none;
+          }
+        }
+      }
+
+      .pbg-button {
+        &.pbg-button-link {
+          height: calc(2.25rem + 2px);
+          padding-bottom: 8px;
+        }
+      }
     }
 
     &.pbg-contributor-card-type-error {

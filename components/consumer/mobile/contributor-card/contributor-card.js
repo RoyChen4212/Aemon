@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { H2 } from '../heading';
 import Hint from '../hint';
 import { LinkButton } from '../button';
+import { HistoricalPicker } from '../historical-picker';
 import './style.css';
 
 const TYPE_ERROR = 'error';
@@ -40,13 +41,16 @@ class ContributorCard extends React.PureComponent {
   }
 
   get cta() {
-    return this.props.cta.map((btn) => {
-      if (this.props.cta.length === 1) {
-        return <LinkButton onClick={btn.onClick}>{btn.label}</LinkButton>;
-      }
+    return this.props.cta.map((cta) => {
       return (
-        <div className="cta-container">
-          <LinkButton onClick={btn.onClick}>{btn.label}</LinkButton>
+        <div className={this.props.cta.length > 1 ? 'cta-container' : ''}>
+          {
+            cta.type === 'picker' ? (
+              <HistoricalPicker options={cta.options} onChange={cta.onChange} />
+            ) : (
+              <LinkButton onClick={cta.onClick}>{cta.label}</LinkButton>
+            )
+          }
         </div>);
       }
     );

@@ -29,8 +29,8 @@ describe('Modal', () => {
     });
 
     it('should have a back button', () => {;
-      const wrapper = shallow(<Modal  />);
-      expect(wrapper.find('.pbg-modal-heading').contains(<LinkButton />)).to.be.true;
+      const wrapper = mount(<Modal backButtonCaption="Back" onBackClick={() => {}} />);
+      expect(wrapper.find('.pbg-modal-heading').find(LinkButton)).to.have.lengthOf(1);
     });
 
     it('should accept a backButtonCaption prop and use it within the button', () => {
@@ -44,6 +44,13 @@ describe('Modal', () => {
       const wrapper = shallow(<Modal onBackClick={onBackClick} />);
       wrapper.find('.pbg-modal-heading').find(LinkButton).simulate('click');
       expect(onBackClick.calledOnce).to.be.true;
+    });
+
+    it('should not break when onBackClick is not present', () => {
+      const wrapper = shallow(<Modal />);
+      expect(() => {
+        wrapper.find('.pbg-modal-heading').find(LinkButton).simulate('click');
+      }).not.to.throw;
     });
   });
 
@@ -82,11 +89,15 @@ describe('Modal', () => {
     });
 
     it('should render two buttons with correct type if passed', () => {
-      const ctaConfig = [{ label: 'Yes', type: types.SECONDARY }, { label: 'No', type: types.LINK }];
+      const ctaConfig = [
+        { label: 'Yes', type: types.SECONDARY },
+        { label: 'No', type: types.LINK },
+        { label: 'Maybe', type: types.PRIMARY }
+      ];
       const wrapper = shallow(<Modal cta={ctaConfig} />);
-      expect(wrapper.find('.pbg-modal-cta').find(PrimaryButton)).to.have.lengthOf(0);
       expect(wrapper.find('.pbg-modal-cta').find(LinkButton)).to.have.lengthOf(1);
       expect(wrapper.find('.pbg-modal-cta').find(SecondaryButton)).to.have.lengthOf(1);
+      expect(wrapper.find('.pbg-modal-cta').find(PrimaryButton)).to.have.lengthOf(1);
     });
 
     it('should add a last className to last button to be rendered', () => {
