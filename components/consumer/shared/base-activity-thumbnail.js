@@ -47,6 +47,7 @@ class ActivityThumbnail extends React.PureComponent {
     size: PropTypes.number.isRequired,
     userId: PropTypes.string,
     src: PropTypes.string,
+    fullName: PropTypes.string,
     type(props, propName) {
       if (!includes(types, props[propName])) {
         return new Error(
@@ -62,6 +63,7 @@ class ActivityThumbnail extends React.PureComponent {
     type: null,
     userId: null,
     src: null,
+    fullName: null,
   }
 
   static icons = {
@@ -83,7 +85,7 @@ class ActivityThumbnail extends React.PureComponent {
 
   get shouldRenderAvatar() {
     const hasUrl = !!ActivityThumbnail.icons[this.props.type];
-    return !hasUrl && (!!this.props.src || !!this.props.userId);
+    return !hasUrl && (!!this.props.src || !!this.props.userId || !!this.props.fullName);
   }
 
   renderAvatar() {

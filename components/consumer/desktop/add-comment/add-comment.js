@@ -9,7 +9,7 @@ import './style.css'
 class AddComment extends FormField {
   renderAvatar() {
     if (this.props.avatarSrc) return <Avatar src={this.props.avatarSrc} />;
-    return <Avatar userId={this.props.userId} />;
+    return <Avatar userId={this.props.userId} fullName={this.props.fullName} />;
   }
 
   render() {

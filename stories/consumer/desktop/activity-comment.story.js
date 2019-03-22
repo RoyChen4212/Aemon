@@ -26,13 +26,21 @@ storiesOf('Consumer/Desktop/Atomic Components/Activity Comment', module)
       src="http://i.pravatar.cc/300"
     />
   ))
+  .add('With Initials', () => (
+    <ActivityComment
+      title="John Doe"
+      comment="This is a longer user comment to demonstrate how the comment bubble should behave when there are multiple lines of text. Lorerm ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque."
+      time={new Date()}
+      fullName="John Doe"
+    />
+  ))
   .add('Along with ActivityCard', () => (
     <React.Fragment>
       <ActivityComment
         title="John Doe"
         comment="This is a longer user comment to demonstrate how the comment bubble should behave when there are multiple lines of text. Lorerm ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque."
         time={new Date()}
-        userId="01234567-abcd-abcd-abcd-0123456789ab"
+        fullName="John Doe"
       />
       <ActivityCard
         type="purchase_updated"
