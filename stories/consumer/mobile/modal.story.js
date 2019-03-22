@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=0%3A11427';
 
-storiesOf('Consumer/Mobile/Atomic Components/Modal', module)
+storiesOf('Consumer/Mobile/Dashboard/Modal', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(storyFn => <div style={{minHeight: '600px'}}>{storyFn()}</div>)
   .addDecorator(wrapStory)
@@ -25,6 +25,26 @@ storiesOf('Consumer/Mobile/Atomic Components/Modal', module)
       cta={[
         { label: 'Cancel', onClick: action('click'), type: buttonTypes.SECONDARY },
         { label: 'Remove 3 contributors', onClick: action('click'), type: buttonTypes.PRIMARY },
+      ]}
+    >
+      <p>
+        Contributors being removed
+        <Label type={labelTypes.STRONG}>Dora Grant, Simon Pague, and Ronnie Johns</Label>
+      </p>
+      <p>
+        If you remove these contributors, they will no longer count towards your group's total,
+        and they will not receive any future updates about this purchase.
+      </p>
+    </Modal>
+  ))
+  .add('Disabled CTA', () => (
+    <Modal
+      backButtonCaption="Back"
+      onBackClick={action('click')}
+      title="Remove from group"
+      cta={[
+        { label: 'Cancel', onClick: action('click'), type: buttonTypes.SECONDARY, disabled: true },
+        { label: 'Remove 3 contributors', onClick: action('click'), type: buttonTypes.PRIMARY, disabled: true },
       ]}
     >
       <p>

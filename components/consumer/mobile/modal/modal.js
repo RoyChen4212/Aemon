@@ -46,10 +46,12 @@ class Modal extends React.PureComponent {
   }
 };
 
-const renderButton = ({ label, onClick, type }, isLast) => {
+const renderButton = ({ label, onClick, type, disabled }, isLast) => {
   const ButtonComponent = chooseComponent(type);
+  const className = isLast ? 'last' : '';
+  const props = { key: label, className, onClick, disabled };
   return (
-    <ButtonComponent onClick={onClick} key={label} className={isLast ? 'last' : ''}>
+    <ButtonComponent {...props}>
       {label}
     </ButtonComponent>
   );

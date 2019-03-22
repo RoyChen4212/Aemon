@@ -100,11 +100,28 @@ describe('Modal', () => {
       expect(wrapper.find('.pbg-modal-cta').find(PrimaryButton)).to.have.lengthOf(1);
     });
 
+    it('should run onClick of cta', () => {
+      const onClick = sinon.spy();
+      const ctaConfig = [{ label: 'Hi', onClick }];
+      const wrapper = mount(<Modal cta={ctaConfig} />);
+      wrapper.find('.pbg-modal-cta').find(PrimaryButton).find('button').simulate('click');
+      expect(onClick.calledOnce).to.be.true;
+    });
+
     it('should add a last className to last button to be rendered', () => {
       const ctaConfig = [{ label: 'Yes', type: types.SECONDARY }, { label: 'No', type: types.LINK }];
       const wrapper = shallow(<Modal cta={ctaConfig} />);
       expect(wrapper.find('.pbg-modal-cta').find(SecondaryButton).hasClass('last')).to.be.false;
       expect(wrapper.find('.pbg-modal-cta').find(LinkButton).hasClass('last')).to.be.true;
+    });
+
+    it('should accept disabled prop in cta config', () => {
+      const onClick = sinon.spy();
+      const ctaConfig = [{ label: 'Out', type: types.LINK, disabled: true, onClick }];
+      const wrapper = mount(<Modal cta={ctaConfig} />);
+      const button = wrapper.find('.pbg-modal-cta').find(LinkButton).find('button');
+      button.simulate('click');
+      expect(onClick.called).to.be.false;
     });
   });
 });
