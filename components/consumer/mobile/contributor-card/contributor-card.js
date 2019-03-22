@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { H2 } from '../heading';
 import Hint from '../hint';
+import Label, { labelTypes } from '../label';
 import { LinkButton } from '../button';
 import { HistoricalPicker } from '../historical-picker';
 import './style.css';

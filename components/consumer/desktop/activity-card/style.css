@@ -7,6 +7,9 @@
   font-size: 14px;
   line-height: 20px; }
 
+.label-strong {
+  font-weight: 500; }
+
 .activity-card .pbg-activity-thumbnail {
   display: block;
   width: 35px;

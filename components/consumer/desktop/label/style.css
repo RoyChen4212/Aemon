@@ -7,6 +7,9 @@
   font-size: 14px;
   line-height: 20px; }
 
+.label-strong {
+  font-weight: 500; }
+
 .pbg-consumer-desktop label.pbg-label {
   color: #4c4c4c;
   font-family: Roboto;

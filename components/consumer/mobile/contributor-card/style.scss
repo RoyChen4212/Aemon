@@ -7,13 +7,14 @@
     font-family: Roboto;
 
     .pbg-contributor-card-heading {
+      @extend .label-strong;
       background: $blue-linear;
       color: $white;
       border-radius: 4px 4px 0 0;
       line-height: 15px;
       text-align: center;
       height: 30px;
-      padding: 6px;
+      padding: 7px 6px 5px;
     }
 
     .pbg-contributor-card-body {
@@ -30,34 +31,34 @@
       padding: 0 8px;
       > div {
         border-top: 1px solid $almost-white;
-        padding: 8px 0;
+        padding: 9px 0;
         overflow: auto;
       }
 
       .cta-container {
         width: 50%;
         float: left;
+        > div {
+          line-height: normal;
+        }
       }
 
       .pbg-picker {
         .pbg-picker-select-container {
           border: 0;
+          height: 20px;
+          padding-bottom: 0;
 
           select {
+            height: 20px;
             text-align: center;
             text-align-last: center;
+            padding-bottom: 0;
           }
 
           .pbg-picker-arrow {
             display: none;
           }
-        }
-      }
-
-      .pbg-button {
-        &.pbg-button-link {
-          height: calc(2.25rem + 2px);
-          padding-bottom: 8px;
         }
       }
     }

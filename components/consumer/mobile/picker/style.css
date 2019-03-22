@@ -7,6 +7,9 @@
   font-size: 14px;
   line-height: 20px; }
 
+.label-strong {
+  font-weight: 500; }
+
 .pbg-picker {
   width: 100%; }
   .pbg-picker.pbg-form-field-error .pbg-picker-select-container {

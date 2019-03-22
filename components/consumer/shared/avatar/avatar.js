@@ -51,13 +51,7 @@ class Avatar extends React.PureComponent {
 
     const nameArray = fullName.split(' ');
     return nameArray
-      .filter((word, idx) => {
-        if (idx === 0 || idx === (nameArray.length - 1)) {
-          return true;
-        }
-
-        return false;
-      })
+      .filter((word, idx) => idx === 0 || idx === (nameArray.length - 1))
       .map(i => i.substr(0, 1).toUpperCase())
       .join('');
   }
@@ -68,14 +62,14 @@ class Avatar extends React.PureComponent {
     const initials = this.getInitials();
 
     let classNames = classnames('pbg-avatar', className);
-    
+
     if (initials.length === 1) {
       classNames = classnames(classNames, 'single');
     }
 
     return (
-      <div 
-        className={classNames} 
+      <div
+        className={classNames}
         style={{
           backgroundColor: color,
           width: `${size}px`,
@@ -113,7 +107,7 @@ class Avatar extends React.PureComponent {
           width={size}
           onError={this.handleError}
         />
-      );  
+      );
     }
 
     if (initials.length) {

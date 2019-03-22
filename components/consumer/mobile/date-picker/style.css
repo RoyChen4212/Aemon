@@ -7,6 +7,9 @@
   font-size: 14px;
   line-height: 20px; }
 
+.label-strong {
+  font-weight: 500; }
+
 .pbg-form-field.pbg-date-picker .pbg-label {
   margin-bottom: 8px; }
 

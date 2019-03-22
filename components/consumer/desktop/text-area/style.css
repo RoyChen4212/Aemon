@@ -7,6 +7,9 @@
   font-size: 14px;
   line-height: 20px; }
 
+.label-strong {
+  font-weight: 500; }
+
 .pbg-consumer-desktop.pbg-form-field.pbg-text-area textarea {
   background: #fff;
   border: 1px solid #cfcfcf;

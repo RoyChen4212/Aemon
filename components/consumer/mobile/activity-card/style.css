@@ -7,6 +7,9 @@
   font-size: 14px;
   line-height: 20px; }
 
+.label-strong {
+  font-weight: 500; }
+
 .pbg-consumer-mobile.pbg-group-activity-card .pbg-activity-thumbnail {
   padding: 6px 12px 0 0; }
   .pbg-consumer-mobile.pbg-group-activity-card .pbg-activity-thumbnail img {
