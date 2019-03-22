@@ -15,7 +15,7 @@ const options = [
   { label: 'Withdraw', value: 'withdraw' },
 ];
 
-storiesOf('Consumer/Mobile/Atomic Components/ContributorCard', module)
+storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withMobileSizing)
