@@ -15,14 +15,14 @@ div.pbg-avatar {
     font-size: 14px;
     font-weight: bold;
     color: #FFF;
-    padding-top: 7px;
+    padding-top: 6px;
     text-align: center;
-    font-family: monospace "Roboto Mono";
+    font-family: monospace, "Roboto Mono";
   }
 
   &.single {
     > div {
-      padding-top: 7px;
+      padding-top: 6px;
     }
   }
 }
