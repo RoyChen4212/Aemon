@@ -34,11 +34,11 @@ storiesOf('Consumer/Desktop/Atomic Components/ActivityThumbnail', module)
   .add('Payment Authorized (Deposit)', () => (
     <ActivityThumbnail type="payment_authorized_deposit" />
   ))
-  .add('Payment Authorized (Payment)', () => (
-    <ActivityThumbnail type="payment_authorized_payment" />
+  .add('Payment Authorized (Regular)', () => (
+    <ActivityThumbnail type="payment_authorized_regular" />
   ))
-  .add('Payment Authorized (Purchase)', () => (
-    <ActivityThumbnail type="payment_authorized_purchase" />
+  .add('Payment Authorized (Last)', () => (
+    <ActivityThumbnail type="payment_authorized_last" />
   ))
   .add('Payment Captured', () => (
     <ActivityThumbnail type="payment_captured" />
