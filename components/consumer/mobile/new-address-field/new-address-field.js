@@ -14,11 +14,27 @@ const COUNTRY = 'country';
 class NewAddressField extends FormField {
   baseClassName = 'pbg-form-field pbg-new-address-field';
 
+  state = {
+    [`${STREET_ADDRESS}Touched`]: false,
+    [`${CITY}Touched`]: false,
+    [`${STATE}Touched`]: false,
+    [`${POSTAL_CODE}Touched`]: false,
+    [`${COUNTRY}Touched`]: false,
+  }
+
   get className() {return this.baseClassName; }
 
   get countryOptions() { return this.adaptedProps.countryOptions || []; }
 
   get currentValue() { return this.adaptedProps.value || {}; }
+
+  onFocus = (fieldName) => {
+    this.setState({
+      [`${fieldName}Touched`]: true,
+    }, () => {
+      if (this.adaptedProps.onFocus) this.adaptedProps.onFocus();
+    });
+  }
 
   extractLabel(fieldName) {
     return get(this.adaptedProps, `labels.${fieldName}`, '');
@@ -26,7 +42,7 @@ class NewAddressField extends FormField {
 
   extractError(fieldName) {
     const { error } = this.adaptedProps;
-    if (!error) return;
+    if (!error || !this.state[`${fieldName}Touched`]) return;
     return error[fieldName];
   }
 
@@ -43,7 +59,7 @@ class NewAddressField extends FormField {
         label={this.extractLabel(fieldName)}
         error={this.extractError(fieldName)}
         onChange={ev => this.updateValue({ [fieldName]: ev.target.value })}
-        onFocus={this.onFocus}
+        onFocus={() => this.onFocus(fieldName) }
         onBlur={() => this.onBlur(makeEvent(this.currentValue))}
       />
     );
@@ -63,6 +79,7 @@ class NewAddressField extends FormField {
           label={this.extractLabel(COUNTRY)}
           error={this.extractError(COUNTRY)}
           onChange={ev => this.updateValue({ [COUNTRY]: ev.target.value })}
+          onFocus={() => this.onFocus(COUNTRY) }
         />
       </div>
     )

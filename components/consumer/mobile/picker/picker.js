@@ -30,7 +30,7 @@ class Picker extends FormField {
   get select() {
     const { options = [] } = this.adaptedProps;
     return (
-      <select onChange={this.onChange} onBlur={this.onBlur} value={this.value}>
+      <select onChange={this.onChange} onBlur={this.onBlur} onFocus={this.onFocus} value={this.value}>
         {
           options.map(({ label, value }, i) => (
             <option value={value === null ? PICKER_EMPTY_VALUE : value} key={`option-${i}`}>

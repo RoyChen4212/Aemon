@@ -114,6 +114,13 @@ describe('Picker', () => {
     wrapper.find('select').simulate('change', event);
   });
 
+  it('shuld call onFocus', () => {
+    const onFocus = sinon.spy();
+    const wrapper = mount(<Picker onFocus={onFocus} />);
+    wrapper.find('select').simulate('focus');
+    expect(onFocus.calledOnce).to.be.true;
+  });
+
   it('should return PICKER_EMPTY_VALUE when value is null', () => {
     const wrapper = shallow(<Picker value={null} />);
     expect(wrapper.instance().value).to.equal(PICKER_EMPTY_VALUE);
