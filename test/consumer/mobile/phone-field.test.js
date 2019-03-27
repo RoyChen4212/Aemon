@@ -124,10 +124,13 @@ describe('Phone Field', () => {
     expect(wrapper.find(TextField).prop('label')).to.equal(expected);
   });
 
-  it('should pass error to phone field only if present', () => {
+  it('should pass error to phone field only if present and touched', () => {
     const expected = 'an error';
     const value = { selected: 'new' };
     const wrapper = mount(<PhoneField error={{ 'phone': expected }} value={value} onChange={() => {}}/>);
-    expect(wrapper.instance().phoneError).to.equal(expected);
+    expect(wrapper.instance().phoneError).to.be.undefined;
+    wrapper.setState({touched: true}, () => {
+      expect(wrapper.instance().phoneError).to.equal(expected);
+    });
   });
 });
