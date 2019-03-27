@@ -151,6 +151,12 @@ describe('Address Field', () => {
     expect(wrapper.find(NewAddressField).prop('error')).to.eql(error);
   });
 
+  it('should pass forceErrorDisplay to new address field when present', () => {
+    const value = { selected: 'new' };
+    const wrapper = mount(<AddressField value={value} onChange={() => {}} forceErrorDisplay />);
+    expect(wrapper.find(NewAddressField).prop('forceErrorDisplay')).to.be.true;
+  });
+
   it('should pass labels to add new address', () => {
     const value = { selected: 'new', [addressFields.STREET_ADDRESS]: '472 Evergreen Terrace' };
     const labels = {[addressFields.STREET_ADDRESS]: 'Street address'}

@@ -17,10 +17,10 @@ const countries = [
 const validate = (value) => {
   const errors = {};
   if (!value.streetAddress) {
-    errors.streetAddress = 'Must type in your street address';
+    errors.streetAddress = { message: 'Must type in your street address' };
   }
   if (!value.city) {
-    errors.city = 'is required';
+    errors.city = { message: 'is required' };
   }
 
   return errors;

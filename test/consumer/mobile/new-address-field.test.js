@@ -28,10 +28,18 @@ describe('NewAddressField', () => {
 
     it('should pass the error to streetAddress TextField', () => {
       const expected = 'some error';
-      const wrapper = mount(<NewAddressField error={{ [fieldNames.STREET_ADDRESS]: expected }} />);
+      const error = { [fieldNames.STREET_ADDRESS]: expected };
+      const wrapper = mount(<NewAddressField error={error} />);
       wrapper.setState({[`${fieldNames.STREET_ADDRESS}Touched`]: true}, () => {
         expect(wrapper.instance().extractError(fieldNames.STREET_ADDRESS)).to.equal(expected);
       });
+    });
+
+    it('should pass the error to streetAddress TextField and display if forceErrorDisplay', () => {
+      const expected = 'some error';
+      const error = { [fieldNames.STREET_ADDRESS]: expected };
+      const wrapper = mount(<NewAddressField error={error} forceErrorDisplay />);
+      expect(wrapper.instance().extractError(fieldNames.STREET_ADDRESS)).to.equal(expected);
     });
 
     it('should not pass an error to streetAddress TextField if it has none', () => {
@@ -58,10 +66,18 @@ describe('NewAddressField', () => {
 
     it('should pass the error to city TextField', () => {
       const expected = 'some error';
-      const wrapper = mount(<NewAddressField error={{ [fieldNames.CITY]: expected }} />);
+      const error = { [fieldNames.CITY]: expected };
+      const wrapper = mount(<NewAddressField error={error} />);
       wrapper.setState({[`${fieldNames.CITY}Touched`]: true}, () => {
         expect(wrapper.instance().extractError(fieldNames.CITY)).to.be.equal(expected);
       });
+    });
+
+    it('should pass the error to city TextField and display if forceErrorDisplay', () => {
+      const expected = 'some error';
+      const error = { [fieldNames.CITY]: expected };
+      const wrapper = mount(<NewAddressField error={error} forceErrorDisplay />);
+      expect(wrapper.instance().extractError(fieldNames.CITY)).to.equal(expected);
     });
 
     it('should not pass an error to city TextField if it has none', () => {
@@ -88,10 +104,18 @@ describe('NewAddressField', () => {
 
     it('should pass the error to state TextField', () => {
       const expected = 'some error';
-      const wrapper = mount(<NewAddressField error={{ [fieldNames.STATE]: expected }} />);
+      const error = { [fieldNames.STATE]: expected };
+      const wrapper = mount(<NewAddressField error={error} />);
       wrapper.setState({[`${fieldNames.STATE}Touched`]: true}, () => {
         expect(wrapper.instance().extractError(fieldNames.STATE)).to.be.equal(expected);
       });
+    });
+
+    it('should pass the error to state TextField and display if forceErrorDisplay', () => {
+      const expected = 'some error';
+      const error = { [fieldNames.STATE]: expected };
+      const wrapper = mount(<NewAddressField error={error} forceErrorDisplay />);
+      expect(wrapper.instance().extractError(fieldNames.STATE)).to.equal(expected);
     });
 
     it('should not pass an error to state TextField if it has none', () => {
@@ -118,10 +142,18 @@ describe('NewAddressField', () => {
 
     it('should pass the error to postal code TextField', () => {
       const expected = 'some error';
-      const wrapper = mount(<NewAddressField error={{ [fieldNames.POSTAL_CODE]: expected }} />);
+      const error = { [fieldNames.POSTAL_CODE]: expected };
+      const wrapper = mount(<NewAddressField error={error} />);
       wrapper.setState({[`${fieldNames.POSTAL_CODE}Touched`]: true}, () => {
         expect(wrapper.instance().extractError(fieldNames.POSTAL_CODE)).to.be.equal(expected);
       });
+    });
+
+    it('should pass the error to state TextField and display if forceErrorDisplay', () => {
+      const expected = 'some error';
+      const error = { [fieldNames.POSTAL_CODE]: expected };
+      const wrapper = mount(<NewAddressField error={error} forceErrorDisplay />);
+      expect(wrapper.instance().extractError(fieldNames.POSTAL_CODE)).to.equal(expected);
     });
 
     it('should not pass an error to postal code TextField if it has none', () => {
@@ -149,10 +181,18 @@ describe('NewAddressField', () => {
 
     it('should pass the error to country Picker if it has one', () => {
       const expected = 'some error';
-      const wrapper = shallow(<NewAddressField error={{ [fieldNames.COUNTRY]: expected }} />);
+      const error = { [fieldNames.COUNTRY]: expected };
+      const wrapper = shallow(<NewAddressField error={error} />);
       wrapper.setState({[`${fieldNames.COUNTRY}Touched`]: true}, () => {
         expect(wrapper.instance().extractError(fieldNames.COUNTRY)).to.be.equal(expected);
       });
+    });
+
+    it('should pass the error to country Picker and display if forceErrorDisplay', () => {
+      const expected = 'some error';
+      const error = { [fieldNames.COUNTRY]: expected };
+      const wrapper = mount(<NewAddressField error={error} forceErrorDisplay />);
+      expect(wrapper.instance().extractError(fieldNames.COUNTRY)).to.equal(expected);
     });
 
     it('should not pass an error to country Picker if it has none', () => {
@@ -441,44 +481,44 @@ describe('NewAddressField', () => {
 
     describe('Touching', () => {
       describe('Street Address', () => {
-        it('should call onFocus', () => {
-          const onFocus = sinon.spy();
-          const wrapper = mount(<NewAddressField onFocus={onFocus} />);
-          wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('focus');
-          expect(onFocus.calledOnce).to.be.true;
+        it('should call onBlur', () => {
+          const onBlur = sinon.spy();
+          const wrapper = mount(<NewAddressField onBlur={onBlur} />);
+          wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('blur');
+          expect(onBlur.calledOnce).to.be.true;
         });
 
         it('should be touched when focused', () => {
           const touchState = `${fieldNames.STREET_ADDRESS}Touched`;
           const wrapper = mount(<NewAddressField onChange={() => {}}/>);
           expect(wrapper.state()[`${fieldNames.STREET_ADDRESS}Touched`]).to.be.false;
-          wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('focus');
+          wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('blur');
           expect(wrapper.state()[`${fieldNames.STREET_ADDRESS}Touched`]).to.be.true;
         });
 
         it('should only display error if it was touched', () => {
-          const error = { [fieldNames.STREET_ADDRESS]: 'Some error' };
+          const error = { [fieldNames.STREET_ADDRESS]: 'Some error'};
           const wrapper = mount(<NewAddressField onChange={() => {}} error={error}/>);
           expect(wrapper.instance().extractError(fieldNames.STREET_ADDRESS)).to.be.undefined;
-          wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('focus');
+          wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('blur');
           expect(wrapper.instance().extractError(fieldNames.STREET_ADDRESS))
             .to.equal(error[fieldNames.STREET_ADDRESS]);
         });
       });
 
       describe('City', () => {
-        it('should call onFocus', () => {
-          const onFocus = sinon.spy();
-          const wrapper = mount(<NewAddressField onFocus={onFocus} />);
-          wrapper.find({ type: 'text', name: fieldNames.CITY }).simulate('focus');
-          expect(onFocus.calledOnce).to.be.true;
+        it('should call onBlur', () => {
+          const onBlur = sinon.spy();
+          const wrapper = mount(<NewAddressField onBlur={onBlur} />);
+          wrapper.find({ type: 'text', name: fieldNames.CITY }).simulate('blur');
+          expect(onBlur.calledOnce).to.be.true;
         });
 
         it('should be touched when focused', () => {
           const touchState = `${fieldNames.CITY}Touched`;
           const wrapper = mount(<NewAddressField onChange={() => {}}/>);
           expect(wrapper.state()[touchState]).to.be.false;
-          wrapper.find({ type: 'text', name: fieldNames.CITY }).simulate('focus');
+          wrapper.find({ type: 'text', name: fieldNames.CITY }).simulate('blur');
           expect(wrapper.state()[touchState]).to.be.true;
         });
 
@@ -486,25 +526,25 @@ describe('NewAddressField', () => {
           const error = { [fieldNames.CITY]: 'Some error' };
           const wrapper = mount(<NewAddressField onChange={() => {}} error={error}/>);
           expect(wrapper.instance().extractError(fieldNames.CITY)).to.be.undefined;
-          wrapper.find({ type: 'text', name: fieldNames.CITY }).simulate('focus');
+          wrapper.find({ type: 'text', name: fieldNames.CITY }).simulate('blur');
           expect(wrapper.instance().extractError(fieldNames.CITY))
             .to.equal(error[fieldNames.CITY]);
         });
       });
 
       describe('State', () => {
-        it('should call onFocus', () => {
-          const onFocus = sinon.spy();
-          const wrapper = mount(<NewAddressField onFocus={onFocus} />);
-          wrapper.find({ type: 'text', name: fieldNames.STATE }).simulate('focus');
-          expect(onFocus.calledOnce).to.be.true;
+        it('should call onBlur', () => {
+          const onBlur = sinon.spy();
+          const wrapper = mount(<NewAddressField onBlur={onBlur} />);
+          wrapper.find({ type: 'text', name: fieldNames.STATE }).simulate('blur');
+          expect(onBlur.calledOnce).to.be.true;
         });
 
         it('should be touched when focused', () => {
           const touchState = `${fieldNames.STATE}Touched`;
           const wrapper = mount(<NewAddressField onChange={() => {}}/>);
           expect(wrapper.state()[touchState]).to.be.false;
-          wrapper.find({ type: 'text', name: fieldNames.STATE }).simulate('focus');
+          wrapper.find({ type: 'text', name: fieldNames.STATE }).simulate('blur');
           expect(wrapper.state()[touchState]).to.be.true;
         });
 
@@ -512,25 +552,25 @@ describe('NewAddressField', () => {
           const error = { [fieldNames.STATE]: 'Some error' };
           const wrapper = mount(<NewAddressField onChange={() => {}} error={error}/>);
           expect(wrapper.instance().extractError(fieldNames.STATE)).to.be.undefined;
-          wrapper.find({ type: 'text', name: fieldNames.STATE }).simulate('focus');
+          wrapper.find({ type: 'text', name: fieldNames.STATE }).simulate('blur');
           expect(wrapper.instance().extractError(fieldNames.STATE))
             .to.equal(error[fieldNames.STATE]);
         });
       });
 
       describe('Postal Code', () => {
-        it('should call onFocus', () => {
-          const onFocus = sinon.spy();
-          const wrapper = mount(<NewAddressField onFocus={onFocus} />);
-          wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).simulate('focus');
-          expect(onFocus.calledOnce).to.be.true;
+        it('should call onBlur', () => {
+          const onBlur = sinon.spy();
+          const wrapper = mount(<NewAddressField onBlur={onBlur} />);
+          wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).simulate('blur');
+          expect(onBlur.calledOnce).to.be.true;
         });
 
         it('should be touched when focused', () => {
           const touchState = `${fieldNames.POSTAL_CODE}Touched`;
           const wrapper = mount(<NewAddressField onChange={() => {}}/>);
           expect(wrapper.state()[touchState]).to.be.false;
-          wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).simulate('focus');
+          wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).simulate('blur');
           expect(wrapper.state()[touchState]).to.be.true;
         });
 
@@ -538,25 +578,25 @@ describe('NewAddressField', () => {
           const error = { [fieldNames.POSTAL_CODE]: 'Some error' };
           const wrapper = mount(<NewAddressField onChange={() => {}} error={error}/>);
           expect(wrapper.instance().extractError(fieldNames.POSTAL_CODE)).to.be.undefined;
-          wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).simulate('focus');
+          wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).simulate('blur');
           expect(wrapper.instance().extractError(fieldNames.POSTAL_CODE))
             .to.equal(error[fieldNames.POSTAL_CODE]);
         });
       });
 
       describe('Country', () => {
-        it('should call onFocus', () => {
-          const onFocus = sinon.spy();
-          const wrapper = mount(<NewAddressField onFocus={onFocus} />);
-          wrapper.find('select').simulate('focus');
-          expect(onFocus.calledOnce).to.be.true;
+        it('should call onBlur', () => {
+          const onBlur = sinon.spy();
+          const wrapper = mount(<NewAddressField onBlur={onBlur} />);
+          wrapper.find('select').simulate('blur');
+          expect(onBlur.calledOnce).to.be.true;
         });
 
         it('should be touched when focused', () => {
           const touchState = `${fieldNames.COUNTRY}Touched`;
           const wrapper = mount(<NewAddressField onChange={() => {}}/>);
           expect(wrapper.state()[touchState]).to.be.false;
-          wrapper.find('select').simulate('focus');
+          wrapper.find('select').simulate('blur');
           expect(wrapper.state()[touchState]).to.be.true;
         });
 
@@ -564,7 +604,7 @@ describe('NewAddressField', () => {
           const error = { [fieldNames.COUNTRY]: 'Some error' };
           const wrapper = mount(<NewAddressField onChange={() => {}} error={error}/>);
           expect(wrapper.instance().extractError(fieldNames.COUNTRY)).to.be.undefined;
-          wrapper.find('select').simulate('focus');
+          wrapper.find('select').simulate('blur');
           expect(wrapper.instance().extractError(fieldNames.COUNTRY))
             .to.equal(error[fieldNames.COUNTRY]);
         });

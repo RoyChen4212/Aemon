@@ -28,11 +28,11 @@ class NewAddressField extends FormField {
 
   get currentValue() { return this.adaptedProps.value || {}; }
 
-  onFocus = (fieldName) => {
+  onBlur = (ev, fieldName) => {
     this.setState({
       [`${fieldName}Touched`]: true,
     }, () => {
-      if (this.adaptedProps.onFocus) this.adaptedProps.onFocus();
+      if (this.adaptedProps.onBlur) this.adaptedProps.onBlur(ev);
     });
   }
 
@@ -41,9 +41,11 @@ class NewAddressField extends FormField {
   }
 
   extractError(fieldName) {
-    const { error } = this.adaptedProps;
-    if (!error || !this.state[`${fieldName}Touched`]) return;
-    return error[fieldName];
+    const forceDisplay = get(this.adaptedProps, 'forceErrorDisplay', false);
+    const errorMessage = get(this.adaptedProps, `error.${fieldName}`);
+    if (errorMessage && forceDisplay) return errorMessage;
+    if (!errorMessage || !this.state[`${fieldName}Touched`]) return;
+    return errorMessage;
   }
 
   updateValue = (value) => {
@@ -59,8 +61,7 @@ class NewAddressField extends FormField {
         label={this.extractLabel(fieldName)}
         error={this.extractError(fieldName)}
         onChange={ev => this.updateValue({ [fieldName]: ev.target.value })}
-        onFocus={() => this.onFocus(fieldName) }
-        onBlur={() => this.onBlur(makeEvent(this.currentValue))}
+        onBlur={() => this.onBlur(makeEvent(this.currentValue), fieldName)}
       />
     );
   }
@@ -79,7 +80,7 @@ class NewAddressField extends FormField {
           label={this.extractLabel(COUNTRY)}
           error={this.extractError(COUNTRY)}
           onChange={ev => this.updateValue({ [COUNTRY]: ev.target.value })}
-          onFocus={() => this.onFocus(COUNTRY) }
+          onBlur={() => this.onBlur(makeEvent(this.currentValue), COUNTRY) }
         />
       </div>
     )
