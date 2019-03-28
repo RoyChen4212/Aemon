@@ -5,6 +5,7 @@ import isString from 'lodash/isString';
 import { HistoricalPicker } from './form-fields';
 import { SmallButton } from './button';
 import Label, { labelTypes } from './label';
+import Hint from './hint';
 import FormField from './form-field';
 import makeEvent from '../../lib/make-event';
 
@@ -43,8 +44,14 @@ class AddOrSelectField extends FormField {
   }
 
   get label() {
-    if (this.props.label) {
-      return <Label type={labelTypes.STRONG} required={this.props.required}>{this.props.label}</Label>;
+    const { label, hint, required } = this.props;
+    if (label) {
+      return (
+        <div className="pbg-add-or-select-field-label">
+          <Label type={labelTypes.STRONG} required={required}>{label}</Label>
+          { hint ? <React.Fragment><br /><Hint>{hint}</Hint></React.Fragment> : null }
+        </div>
+      );
     }
   }
 

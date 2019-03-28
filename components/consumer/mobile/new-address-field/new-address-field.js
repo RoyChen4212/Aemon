@@ -2,6 +2,7 @@ import React from 'react';
 import { get, first, isEmpty } from 'lodash';
 import { TextField, Picker } from '../form-fields';
 import Label, { labelTypes } from '../label';
+import Hint from '../hint';
 import FormField from '../form-field';
 import makeEvent from '../../../lib/make-event';
 import './style.css';
@@ -32,7 +33,12 @@ class NewAddressField extends FormField {
   get label() {
     if (this.props.label) {
       return (
-        <Label type={labelTypes.STRONG} required={this.props.required}>{this.props.label}</Label>
+        <div className="pbg-new-address-field-label-and-hint">
+          <Label type={labelTypes.STRONG} required={this.props.required}>{this.props.label}</Label>
+          { this.props.hint ? (
+              <React.Fragment><br /><Hint>{this.props.hint}</Hint></React.Fragment>
+            ) : null }
+        </div>
       );
     }
   }

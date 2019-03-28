@@ -6,6 +6,7 @@ import sinon from 'sinon';
 import { fieldNames } from '../../../components/consumer/mobile/new-address-field/new-address-field';
 import { TextField, Picker, NewAddressField } from '../../../components/consumer/mobile/form-fields';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
+import Hint from '../../../components/consumer/mobile/hint';
 
 describe('NewAddressField', () => {
   it('should have correct class', () => {
@@ -17,6 +18,12 @@ describe('NewAddressField', () => {
     const label = 'a label';
     const wrapper = shallow(<NewAddressField label={label} />);
     expect(wrapper.contains(<Label type={labelTypes.STRONG}>{label}</Label>)).to.be.true;
+  });
+
+  it('should have a hint if given', () => {
+    const hint = 'some hint';
+    const wrapper = shallow(<NewAddressField hint={hint} label="some label" />);
+    expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.true;
   });
 
   describe('Street Address Text Field', () => {

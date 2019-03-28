@@ -56,6 +56,7 @@ storiesOf('Consumer/Mobile/Form Fields/New Address Field', module)
       component={NewAddressField}
       name="new-address-field"
       label="Address label"
+      hint="First two sub fields are required."
       required
       labels={labels}
       value={{

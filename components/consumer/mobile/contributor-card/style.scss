@@ -18,12 +18,15 @@
     }
 
     .pbg-contributor-card-body {
-      padding: 15px;
+      padding: 16px;
       h2 {
         text-align: center;
       }
       .pbg-contributor-card-content {
         text-align: center;
+        p:last-of-type {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -53,7 +56,7 @@
             height: 20px;
             text-align: center;
             text-align-last: center;
-            padding-bottom: 0;
+            padding: 1px 0 0;
           }
 
           .pbg-picker-arrow {

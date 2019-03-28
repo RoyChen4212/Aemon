@@ -11,6 +11,7 @@ import {
 } from '../../../components/consumer/mobile/form-fields';
 import { SmallButton } from '../../../components/consumer/mobile/button';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
+import Hint from '../../../components/consumer/mobile/hint';
 
 describe('Address Field', () => {
   const addressOptions = [
@@ -39,6 +40,12 @@ describe('Address Field', () => {
     const label = 'Some text';
     const wrapper = shallow(<AddressField label={label} />);
     expect(wrapper.contains(<Label type={labelTypes.STRONG}>{label}</Label>)).to.be.true;
+  });
+
+  it('should show a hint if given', () => {
+    const hint = 'Some text';
+    const wrapper = shallow(<AddressField hint={hint} label="some label" />);
+    expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.true;
   });
 
   it('should show HistoricalPicker when options are passed', () => {

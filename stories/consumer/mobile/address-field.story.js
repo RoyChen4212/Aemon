@@ -51,6 +51,8 @@ storiesOf('Consumer/Mobile/Form Fields/Address Field', module)
     <FieldStateProvider
       component={AddressField}
       name="new-address-field"
+      label="Address label"
+      hint="Select an address or add a new one"
       addressOptions={addressOptions}
       newAddressLabels={labels}
       addNewButtonLabel="Add new"
@@ -65,6 +67,7 @@ storiesOf('Consumer/Mobile/Form Fields/Address Field', module)
       name="new-address-field"
       addressOptions={addressOptions}
       label="Address label"
+      hint="Select an address or add a new one"
       required
       newAddressLabels={labels}
       addNewButtonLabel="Add new"

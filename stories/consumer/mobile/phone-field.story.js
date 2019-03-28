@@ -32,6 +32,8 @@ storiesOf('Consumer/Mobile/Form Fields/Phone Field', module)
       component={PhoneField}
       name="new-phone-field"
       addPhoneLabel="Phone Number"
+      label="Phone label"
+      hint="Select a phone number or add a new one"
       addNewButtonLabel="Add new"
       onChange={action('onChange')}
     />
@@ -41,6 +43,8 @@ storiesOf('Consumer/Mobile/Form Fields/Phone Field', module)
       component={PhoneField}
       name="new-phone-field"
       phoneOptions={phoneOptions}
+      label="Phone label"
+      hint="Select a phone number or add a new one"
       addPhoneLabel="Phone Number"
       addNewButtonLabel="Add new"
       onChange={action('onChange')}
@@ -55,6 +59,7 @@ storiesOf('Consumer/Mobile/Form Fields/Phone Field', module)
       addPhoneLabel="Phone Number"
       addNewButtonLabel="Add new"
       label="Phone label"
+      hint="Select a phone number or add a new one"
       required
       onChange={action('onChange')}
     />
