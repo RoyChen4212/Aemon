@@ -10,6 +10,7 @@ import {
   addressFields,
 } from '../../../components/consumer/mobile/form-fields';
 import { SmallButton } from '../../../components/consumer/mobile/button';
+import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 
 describe('Address Field', () => {
   const addressOptions = [
@@ -32,6 +33,12 @@ describe('Address Field', () => {
   it('should not show picker when no options are passed', () => {
     const wrapper = shallow(<AddressField />);
     expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(0);
+  });
+
+  it('should show a label if given', () => {
+    const label = 'Some text';
+    const wrapper = shallow(<AddressField label={label} />);
+    expect(wrapper.contains(<Label type={labelTypes.STRONG}>{label}</Label>)).to.be.true;
   });
 
   it('should show HistoricalPicker when options are passed', () => {

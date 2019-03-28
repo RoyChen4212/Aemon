@@ -64,6 +64,8 @@ storiesOf('Consumer/Mobile/Form Fields/Address Field', module)
       component={AddressField}
       name="new-address-field"
       addressOptions={addressOptions}
+      label="Address label"
+      required
       newAddressLabels={labels}
       addNewButtonLabel="Add new"
       countryOptions={countries}

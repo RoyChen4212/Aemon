@@ -54,6 +54,8 @@ storiesOf('Consumer/Mobile/Form Fields/Phone Field', module)
       phoneOptions={phoneOptions}
       addPhoneLabel="Phone Number"
       addNewButtonLabel="Add new"
+      label="Phone label"
+      required
       onChange={action('onChange')}
     />
   ));

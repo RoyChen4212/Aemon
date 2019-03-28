@@ -4,6 +4,7 @@ import first from 'lodash/first';
 import isString from 'lodash/isString';
 import { HistoricalPicker } from './form-fields';
 import { SmallButton } from './button';
+import Label, { labelTypes } from './label';
 import FormField from './form-field';
 import makeEvent from '../../lib/make-event';
 
@@ -41,6 +42,12 @@ class AddOrSelectField extends FormField {
     return this.field;
   }
 
+  get label() {
+    if (this.props.label) {
+      return <Label type={labelTypes.STRONG} required={this.props.required}>{this.props.label}</Label>;
+    }
+  }
+
   get picker() {
     if (!this.options || !this.options.length) return null;
     return (
@@ -63,6 +70,7 @@ class AddOrSelectField extends FormField {
   render() {
     return (
       <div className={this.className}>
+        { this.label }
         { this.picker }
         { this.addNewField }
         { this.addNewButton }
