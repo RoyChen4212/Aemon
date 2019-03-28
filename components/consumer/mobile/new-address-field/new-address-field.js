@@ -1,6 +1,7 @@
 import React from 'react';
 import { get, first, isEmpty } from 'lodash';
 import { TextField, Picker } from '../form-fields';
+import Label, { labelTypes } from '../label';
 import FormField from '../form-field';
 import makeEvent from '../../../lib/make-event';
 import './style.css';
@@ -27,6 +28,14 @@ class NewAddressField extends FormField {
   get countryOptions() { return this.adaptedProps.countryOptions || []; }
 
   get currentValue() { return this.adaptedProps.value || {}; }
+
+  get label() {
+    if (this.props.label) {
+      return (
+        <Label type={labelTypes.STRONG} required={this.props.required}>{this.props.label}</Label>
+      );
+    }
+  }
 
   onBlur = (ev, fieldName) => {
     this.setState({
@@ -69,6 +78,7 @@ class NewAddressField extends FormField {
   render() {
     return (
       <div className={this.className}>
+        {this.label}
         {this.textFieldFor(STREET_ADDRESS)}
         {this.textFieldFor(CITY)}
         {this.textFieldFor(STATE)}

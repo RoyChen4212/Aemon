@@ -8,9 +8,7 @@ import './style.css';
 
 class Modal extends React.PureComponent {
   onBackClick = () => {
-    if (this.props.onBackClick) {
-      return this.props.onBackClick();
-    }
+    if (this.props.onBackClick) return this.props.onBackClick();
   }
 
   get cta() {

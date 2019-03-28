@@ -47,10 +47,8 @@ describe('Modal', () => {
     });
 
     it('should not break when onBackClick is not present', () => {
-      const wrapper = shallow(<Modal />);
-      expect(() => {
-        wrapper.find('.pbg-modal-heading').find(LinkButton).simulate('click');
-      }).not.to.throw;
+      const wrapper = shallow(<Modal onBackClick={null}> Content </Modal>);
+      wrapper.find('.pbg-modal-heading').find(LinkButton).simulate('click');
     });
   });
 

@@ -5,11 +5,18 @@ import sinon from 'sinon';
 
 import { fieldNames } from '../../../components/consumer/mobile/new-address-field/new-address-field';
 import { TextField, Picker, NewAddressField } from '../../../components/consumer/mobile/form-fields';
+import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 
 describe('NewAddressField', () => {
   it('should have correct class', () => {
     const wrapper = shallow(<NewAddressField />);
     expect(wrapper.hasClass('pbg-new-address-field')).to.be.true;
+  });
+
+  it('should have label if given', () => {
+    const label = 'a label';
+    const wrapper = shallow(<NewAddressField label={label} />);
+    expect(wrapper.contains(<Label type={labelTypes.STRONG}>{label}</Label>)).to.be.true;
   });
 
   describe('Street Address Text Field', () => {
@@ -38,7 +45,7 @@ describe('NewAddressField', () => {
     it('should pass the error to streetAddress TextField and display if forceErrorDisplay', () => {
       const expected = 'some error';
       const error = { [fieldNames.STREET_ADDRESS]: expected };
-      const wrapper = mount(<NewAddressField error={error} forceErrorDisplay />);
+      const wrapper = mount(<NewAddressField error={error} forceErrorDisplay label="some label" />);
       expect(wrapper.instance().extractError(fieldNames.STREET_ADDRESS)).to.equal(expected);
     });
 

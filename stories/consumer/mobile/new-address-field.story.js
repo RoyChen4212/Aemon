@@ -17,10 +17,10 @@ const countries = [
 const validate = (value) => {
   const errors = {};
   if (!value.streetAddress) {
-    errors.streetAddress = { message: 'Must type in your street address' };
+    errors.streetAddress = 'Must type in your street address';
   }
   if (!value.city) {
-    errors.city = { message: 'is required' };
+    errors.city = 'is required';
   }
 
   return errors;
@@ -55,6 +55,8 @@ storiesOf('Consumer/Mobile/Form Fields/New Address Field', module)
       validate={validate}
       component={NewAddressField}
       name="new-address-field"
+      label="Address label"
+      required
       labels={labels}
       value={{
         streetAddress: '',
