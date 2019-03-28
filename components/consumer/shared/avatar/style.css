@@ -12,6 +12,6 @@ div.pbg-avatar {
     color: #FFF;
     padding-top: 6px;
     text-align: center;
-    font-family: "Roboto Mono Regular"; }
+    font-family: "roboto-mono", monospace; }
   div.pbg-avatar.single > div {
     padding-top: 6px; }
