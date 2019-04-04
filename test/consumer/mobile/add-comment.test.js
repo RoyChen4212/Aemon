@@ -1,17 +1,17 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import AddComment from '../../../components/consumer/desktop/add-comment';
-import Avatar from '../../../components/consumer/desktop/avatar';
-import TextArea from '../../../components/consumer/desktop/text-area';
-import Hint from '../../../components/consumer/desktop/hint';
-import { PrimaryButton } from '../../../components/consumer/desktop/button';
+import AddComment from '../../../components/consumer/mobile/add-comment';
+import Avatar from '../../../components/consumer/mobile/avatar';
+import { TextArea } from '../../../components/consumer/mobile/text-area';
+import Hint from '../../../components/consumer/mobile/hint';
+import { SmallButton } from '../../../components/consumer/mobile/button';
 
 describe('Add comment', () => {
 
   it('should have correct wrapper class', () => {
     const wrapper = shallow(<AddComment />);
     expect(wrapper.hasClass('pbg-add-comment')).to.be.true;
-    expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
+    expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
   });
 
   it('should have an avatar', () => {
@@ -50,12 +50,12 @@ describe('Add comment', () => {
 
   it('should render a primary button', () => {
     const wrapper = mount(<AddComment />);
-    expect(wrapper.find(PrimaryButton)).to.have.lengthOf(1);
+    expect(wrapper.find(SmallButton)).to.have.lengthOf(1);
   });
 
   it('should pass label to button', () => {
     const expected = "some label";
     const wrapper = mount(<AddComment ctaLabel={expected} />)
-    expect(wrapper.find(PrimaryButton).text()).to.equal(expected);
+    expect(wrapper.find(SmallButton).text()).to.equal(expected);
   });
 });
