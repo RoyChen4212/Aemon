@@ -60,7 +60,9 @@ class ContributorCard extends React.PureComponent {
   render() {
     return (
       <div className={this.className}>
-        <div className="pbg-contributor-card-heading">{this.props.heading}</div>
+        { this.props.heading && (
+          <div className="pbg-contributor-card-heading">{this.props.heading}</div>
+        )}
         <div className="pbg-contributor-card-body">
           <H2>{this.props.title}</H2>
           <div className="pbg-contributor-card-content">
