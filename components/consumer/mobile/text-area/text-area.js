@@ -19,8 +19,14 @@ class TextArea extends TextField {
     setTimeout(() => {
       this.setState({
         style: {
-          height: `${this.ref.current.scrollHeight}px`,
+          height: 'auto',
         }
+      }, () => {
+        this.setState({
+          style: {
+            height: `${this.ref.current.scrollHeight}px`,
+          }
+        })
       });
     },0);
   }
