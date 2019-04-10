@@ -11,7 +11,7 @@ describe('Mobile Avatar', () => {
 
   it('should have correct size', () => {
     const wrapper = shallow(<Avatar />);
-    expect(wrapper.props().size).to.equal(30);
+    expect(wrapper.props().size).to.equal(32);
   });
 
   it('should pass externally given size', () => {
