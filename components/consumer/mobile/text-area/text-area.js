@@ -6,7 +6,7 @@ import './style.css';
 class TextArea extends TextField {
   baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-text-field pbg-text-area';
 
-  ref = React.createRef();
+  el = React.createRef();
 
   state = {
     style: {
@@ -14,28 +14,30 @@ class TextArea extends TextField {
     },
   }
 
-  onTextChange = (value) => {
-    this.onChange(value);
-    setTimeout(() => {
+  resetHeight() {
+    this.setState({
+      style: {
+        height: 'auto',
+      }
+    }, () => {
       this.setState({
         style: {
-          height: 'auto',
+          height: `${this.el.current.scrollHeight}px`,
         }
-      }, () => {
-        this.setState({
-          style: {
-            height: `${this.ref.current.scrollHeight}px`,
-          }
-        })
       });
-    },0);
+    });
+  }
+
+  onTextChange = (value) => {
+    this.onChange(value);
+    this.resetHeight();
   }
 
   get input() {
     return (
       <textarea
         rows={1}
-        ref={this.ref}
+        ref={this.el}
         onBlur={this.onBlur}
         onChange={this.onTextChange}
         onFocus={this.onFocus}

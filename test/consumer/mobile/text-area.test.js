@@ -1,6 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import { TextArea } from '../../../components/consumer/mobile/form-fields';
@@ -28,6 +28,20 @@ describe('TextArea', () => {
     wrapper.find('textarea').simulate('focus');
     wrapper.find('textarea').simulate('blur');
     expect(onBlur.calledOnce).to.be.true;
+  });
+
+  it('should execute onTextChange when contents change', () => {
+    const wrapper = mount(<TextArea />);
+    const instance = wrapper.instance();
+    
+    instance.el = {
+      current: {
+        scrollHeight: 5,
+      },
+    };
+
+    wrapper.find('textarea').simulate('change');
+    expect(instance.state.style.height).to.equal('0px');
   });
 
   describe('With error', () => {
