@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Condensed);
+.regular-text {
+  color: #4c4c4c;
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px; }
+
+.label-strong {
+  font-weight: 500; }
+
+.pbg-consumer-mobile.pbg-add-comment {
+  width: 100%; }
+  .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-avatar-placeholder {
+    margin-right: 15px; }
+    .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-avatar-placeholder .pbg-add-comment-avatar-with-name .pbg-avatar {
+      float: left; }
+    .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-avatar-placeholder .pbg-label {
+      margin-left: 10px; }
+  .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-form-placeholder .pbg-button {
+    margin-top: 15px; }
+  .pbg-consumer-mobile.pbg-add-comment textarea {
+    min-height: 56px; }
+  .pbg-consumer-mobile.pbg-add-comment .pbg-hint {
+    margin-top: 8px;
+    display: block; }

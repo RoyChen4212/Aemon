@@ -1,0 +1,36 @@
+@import "../../shared/scss/styleguide";
+
+.pbg-consumer-mobile {
+  &.pbg-add-comment {
+    width: 100%;
+
+    .pbg-add-comment-avatar-placeholder {
+      margin-right: 15px;
+
+      .pbg-add-comment-avatar-with-name {
+        .pbg-avatar {
+          float: left;
+        }
+      }
+
+      .pbg-label {
+        margin-left: 10px;
+      }
+    }
+
+    .pbg-add-comment-form-placeholder {
+      .pbg-button {
+        margin-top: 15px;
+      }
+    }
+
+    textarea {
+      min-height: 56px;
+    }
+
+    .pbg-hint {
+      margin-top: 8px;
+      display: block;
+    }
+  }
+}

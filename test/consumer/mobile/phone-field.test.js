@@ -67,6 +67,10 @@ describe('Phone Field', () => {
     expect(wrapper.find(SmallButton).text()).to.equal(expected);
   });
 
+  it('return empty object value when no value is given', () => {
+    const wrapper = shallow(<PhoneField />);
+    expect(wrapper.instance().currentValue).to.eql({});
+  });
 
   it('should return correct value when clicking add new button', function(done) {
     const value = { selected: phoneOptions[0].value };
@@ -124,10 +128,36 @@ describe('Phone Field', () => {
     expect(wrapper.find(TextField).prop('label')).to.equal(expected);
   });
 
-  it('should pass error to phone field only if present', () => {
+  it('should pass error to phone field only if present and touched', () => {
     const expected = 'an error';
     const value = { selected: 'new' };
     const wrapper = mount(<PhoneField error={{ 'phone': expected }} value={value} onChange={() => {}}/>);
+    expect(wrapper.instance().phoneError).to.be.undefined;
+    wrapper.setState({touched: true}, () => {
+      expect(wrapper.instance().phoneError).to.equal(expected);
+    });
+  });
+
+  it('should pass error to phone field only if present and force display is passed', () => {
+    const expected = 'an error';
+    const value = { selected: 'new' };
+    const wrapper = mount(<PhoneField error={{ 'phone': expected }} value={value} forceErrorDisplay />);
     expect(wrapper.instance().phoneError).to.equal(expected);
+  });
+
+  it('should set state touched when blur event occurs on text field', () => {
+    const value = { selected: 'new' };
+    const wrapper = shallow(<PhoneField value={value} />);
+    expect(wrapper.state().touched).to.be.false;
+    wrapper.find(TextField).simulate('blur');
+    expect(wrapper.state().touched).to.be.true;
+  });
+
+  it('should set execute onBlur when blur event occurs on text field', () => {
+    const value = { selected: 'new' };
+    const onBlur = sinon.spy();
+    const wrapper = shallow(<PhoneField value={value} onBlur={onBlur}/>);
+    wrapper.find(TextField).simulate('blur');
+    expect(onBlur.calledOnce).to.be.true;
   });
 });

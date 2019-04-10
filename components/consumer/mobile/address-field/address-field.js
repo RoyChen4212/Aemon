@@ -22,6 +22,7 @@ class AddressField extends AddOrSelectField {
         error={this.adaptedProps.error}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
+        forceErrorDisplay={this.adaptedProps.forceErrorDisplay}
       />
     );
   }

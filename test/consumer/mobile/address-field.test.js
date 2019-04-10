@@ -10,6 +10,8 @@ import {
   addressFields,
 } from '../../../components/consumer/mobile/form-fields';
 import { SmallButton } from '../../../components/consumer/mobile/button';
+import Label, { labelTypes } from '../../../components/consumer/mobile/label';
+import Hint from '../../../components/consumer/mobile/hint';
 
 describe('Address Field', () => {
   const addressOptions = [
@@ -32,6 +34,18 @@ describe('Address Field', () => {
   it('should not show picker when no options are passed', () => {
     const wrapper = shallow(<AddressField />);
     expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(0);
+  });
+
+  it('should show a label if given', () => {
+    const label = 'Some text';
+    const wrapper = shallow(<AddressField label={label} />);
+    expect(wrapper.contains(<Label type={labelTypes.STRONG}>{label}</Label>)).to.be.true;
+  });
+
+  it('should show a hint if given', () => {
+    const hint = 'Some text';
+    const wrapper = shallow(<AddressField hint={hint} label="some label" />);
+    expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.true;
   });
 
   it('should show HistoricalPicker when options are passed', () => {
@@ -149,6 +163,12 @@ describe('Address Field', () => {
     const error = { [addressFields.CITY]: 'is required', [addressFields.STATE]: 'is required' };
     const wrapper = mount(<AddressField error={error} value={value} />);
     expect(wrapper.find(NewAddressField).prop('error')).to.eql(error);
+  });
+
+  it('should pass forceErrorDisplay to new address field when present', () => {
+    const value = { selected: 'new' };
+    const wrapper = mount(<AddressField value={value} onChange={() => {}} forceErrorDisplay />);
+    expect(wrapper.find(NewAddressField).prop('forceErrorDisplay')).to.be.true;
   });
 
   it('should pass labels to add new address', () => {

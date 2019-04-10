@@ -23,11 +23,13 @@
     height: 30px;
     padding: 7px 6px 5px; }
   .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-body {
-    padding: 15px; }
+    padding: 16px; }
     .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-body h2 {
       text-align: center; }
     .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-body .pbg-contributor-card-content {
       text-align: center; }
+      .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-body .pbg-contributor-card-content p:last-of-type {
+        margin-bottom: 0; }
   .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas {
     padding: 0 8px; }
     .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas > div {
@@ -47,7 +49,7 @@
         height: 20px;
         text-align: center;
         text-align-last: center;
-        padding-bottom: 0; }
+        padding: 1px 0 0; }
       .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-ctas .pbg-picker .pbg-picker-select-container .pbg-picker-arrow {
         display: none; }
   .pbg-consumer-mobile.pbg-contributor-card.pbg-contributor-card-type-error .pbg-contributor-card-heading {

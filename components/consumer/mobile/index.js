@@ -35,6 +35,7 @@ import {
 import SegmentedControl from './segmented-control';
 import Modal from './modal';
 import ContributorCard from './contributor-card';
+import AddComment from './add-comment';
 
 const mobile = {
   AddressField,
@@ -66,6 +67,7 @@ const mobile = {
   SegmentedControl,
   Modal,
   ContributorCard,
+  AddComment,
 };
 
 export default mobile;
