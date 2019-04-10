@@ -15,6 +15,8 @@
           padding-bottom: 8px;
           resize: none;
           width: 100%;
+          overflow: hidden;
+          height: auto;
 
           &::placeholder {
             color: $cool-grey;

@@ -6,22 +6,37 @@ import './style.css';
 class TextArea extends TextField {
   baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-text-field pbg-text-area';
 
-  get rows() {
-    const { value, focused } = this.adaptedProps;
-    if (value && value.length > 100) return 3;
-    return focused ? 3 : 1;
+  ref = React.createRef();
+
+  state = {
+    style: {
+      height: 'auto',
+    },
+  }
+
+  onTextChange = (value) => {
+    this.onChange(value);
+    setTimeout(() => {
+      this.setState({
+        style: {
+          height: `${this.ref.current.scrollHeight}px`,
+        }
+      });
+    },0);
   }
 
   get input() {
     return (
       <textarea
-        rows={this.rows}
+        rows={1}
+        ref={this.ref}
         onBlur={this.onBlur}
-        onChange={this.onChange}
+        onChange={this.onTextChange}
         onFocus={this.onFocus}
         name={this.adaptedProps.name}
         value={this.adaptedProps.value}
         placeholder={this.placeholder}
+        style={this.state.style}
       />
     );
   }

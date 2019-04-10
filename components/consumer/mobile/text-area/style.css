@@ -20,7 +20,9 @@
   outline: 0;
   padding-bottom: 8px;
   resize: none;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden;
+  height: auto; }
   .pbg-consumer-mobile.pbg-form-field.pbg-text-field.pbg-text-area textarea::placeholder {
     color: #8f98a3;
     font-family: Roboto;
