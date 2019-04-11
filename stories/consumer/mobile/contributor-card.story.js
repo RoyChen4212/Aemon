@@ -50,5 +50,12 @@ storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
       content={<Hint multiline>Body text providing supplementary information regarding the failure to the user.</Hint>}
       cta={[{ label: 'CTA', onClick: action('click') }]}
     />
+  ))
+  .add('No Heading', () => (
+    <ContributorCard
+      title="This is a Card with no heading."
+      content={<Hint multiline>Body text providing supplementary information regarding the failure to the user.</Hint>}
+      cta={[{ label: 'CTA', onClick: action('click') }]}
+    />
   ));
 
