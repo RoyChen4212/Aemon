@@ -26,9 +26,15 @@ describe('ContributorCard Card', () => {
     expect(wrapper.hasClass('pbg-contributor-card-type-notice')).to.be.true;
   });
 
+  it('should have no heading if prop not present', () => {
+    const expected = 'Oh no!';
+    const wrapper = shallow(<ContributorCard />);
+    expect(wrapper.find('.pbg-contributor-card-heading')).to.have.lengthOf(0);
+  });
+
   it('should accept a heading prop and render it', () => {
     const expected = 'Oh no!';
-    const wrapper = shallow(<ContributorCard  heading={expected} />);
+    const wrapper = shallow(<ContributorCard heading={expected} />);
     expect(wrapper.find('.pbg-contributor-card-heading').text()).to.equal(expected);
   });
 
