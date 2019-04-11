@@ -14,8 +14,10 @@
   width: 100%; }
   .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-avatar-placeholder {
     margin-right: 15px; }
-    .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-avatar-placeholder .pbg-add-comment-avatar-with-name .pbg-avatar {
-      float: left; }
+    .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-avatar-placeholder .pbg-add-comment-avatar-with-name {
+      display: flow-root; }
+      .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-avatar-placeholder .pbg-add-comment-avatar-with-name .pbg-avatar {
+        float: left; }
     .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-avatar-placeholder .pbg-label {
       margin-left: 10px; }
   .pbg-consumer-mobile.pbg-add-comment .pbg-add-comment-form-placeholder .pbg-button {

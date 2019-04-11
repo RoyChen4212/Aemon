@@ -33,7 +33,7 @@ describe('TextArea', () => {
   it('should execute onTextChange when contents change', () => {
     const wrapper = mount(<TextArea />);
     const instance = wrapper.instance();
-    
+
     instance.el = {
       current: {
         scrollHeight: 5,
@@ -42,6 +42,14 @@ describe('TextArea', () => {
 
     wrapper.find('textarea').simulate('change');
     expect(instance.state.style.height).to.equal('0px');
+  });
+
+  it('should return null on placeholder when focused', () => {
+    const labelText = 'some text';
+    const wrapper = shallow(<TextArea label={labelText} />);
+    expect(wrapper.instance().textAreaPlaceholder).to.equal(labelText);
+    wrapper.setProps({ focused: true });
+    expect(wrapper.instance().textAreaPlaceholder).to.equal(null);
   });
 
   describe('With error', () => {

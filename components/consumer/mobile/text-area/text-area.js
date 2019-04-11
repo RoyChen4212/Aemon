@@ -33,6 +33,11 @@ class TextArea extends TextField {
     this.resetHeight();
   }
 
+  get textAreaPlaceholder() {
+    if (this.focused) return null;
+    return this.placeholder;
+  }
+
   get input() {
     return (
       <textarea
@@ -43,7 +48,7 @@ class TextArea extends TextField {
         onFocus={this.onFocus}
         name={this.adaptedProps.name}
         value={this.adaptedProps.value}
-        placeholder={this.placeholder}
+        placeholder={this.textAreaPlaceholder}
         style={this.state.style}
       />
     );
