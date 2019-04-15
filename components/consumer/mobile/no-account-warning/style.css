@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500|Roboto+Condensed);
+.regular-text {
+  color: #4c4c4c;
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px; }
+
+.label-strong {
+  font-weight: 500; }
+
+.pbg-consumer-mobile.pbg-no-account-warning h3 {
+  margin: 10px; }
+
+.pbg-consumer-mobile.pbg-no-account-warning p {
+  color: #526679;
+  font-size: 14px;
+  line-height: 20px; }

@@ -36,6 +36,7 @@ import SegmentedControl from './segmented-control';
 import Modal from './modal';
 import ContributorCard from './contributor-card';
 import AddComment from './add-comment';
+import NoAccountWarning from './no-account-warning';
 
 const mobile = {
   AddressField,
@@ -68,6 +69,7 @@ const mobile = {
   Modal,
   ContributorCard,
   AddComment,
+  NoAccountWarning,
 };
 
 export default mobile;
