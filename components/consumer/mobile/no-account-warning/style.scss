@@ -1,0 +1,15 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-no-account-warning {
+    h3 {
+      margin: 10px;
+    }
+
+    p {
+      color: $grey-60;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

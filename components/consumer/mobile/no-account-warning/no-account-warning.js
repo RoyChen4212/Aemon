@@ -7,7 +7,7 @@ import './style.css';
 export const NoAccountWarning = (props) => (
   <div className={className(props)}>
     <div className="d-flex">
-      <img src="https://assets.paybygroup.com/images/warning.svg" />
+      <img src="https://assets.paybygroup.com/images/icons/warning.svg" />
       <div className="flex-grow-1">
         <H3>{props.title}</H3>
       </div>
