@@ -1,8 +1,9 @@
 svg.pbg-avatar {
   object-fit: cover; }
 
-img.pbg-avatar {
-  border-radius: 50%; }
+.pbg-avatar {
+  border-radius: 50%;
+  margin-right: 8px; }
 
 div.pbg-avatar {
   border-radius: 50%; }

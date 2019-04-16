@@ -40,11 +40,28 @@ storiesOf('Consumer/Mobile/Atomic Components/ActivityCard/UserCommentCard', modu
   .addDecorator(storyFn => <WithFigma url={figmaUserCommentUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withGreyContainer)
-  .add('Standard', () => (
+  .add('With userId', () => (
     <UserCommentCard
       date={new Date()}
       userId='22d9680a-9159-49cf-a923-a99d756b501f'
-      userName="Jamie Smith"
+      title="Jamie Smith"
+      comment="This is sample text used to demonstrate the body of this component."
+    />
+  ))
+  .add('With src', () => (
+    <UserCommentCard
+      date={new Date()}
+      src="http://i.pravatar.cc/300"
+      title="Jamie Smith"
+      comment="This is sample text used to demonstrate the body of this component."
+    />
+  ))
+  .add('With initials', () => (
+    <UserCommentCard
+      date={new Date()}
+      userId='22d9680a-9159-49cf-a923-a99d756b501f'
+      title="John Doe"
+      fullName="John Doe"
       comment="This is sample text used to demonstrate the body of this component."
     />
   ));
