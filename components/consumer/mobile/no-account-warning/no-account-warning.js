@@ -29,3 +29,5 @@ const className = (props) => {
 
   return base;
 }
+
+export default NoAccountWarning;

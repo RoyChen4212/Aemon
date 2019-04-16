@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithFigma } from 'storybook-addon-figma';
 
-import { NoAccountWarning } from '../../../components/consumer/mobile/no-account-warning';
+import NoAccountWarning from '../../../components/consumer/mobile/no-account-warning';
 import { wrapStory } from '../../util/decorators';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../style.css';
