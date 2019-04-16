@@ -1,1 +1,2 @@
-export * from './no-account-warning';
+import NoAccountWarning from './no-account-warning';
+export default NoAccountWarning; 

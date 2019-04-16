@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import { NoAccountWarning } from 
+import NoAccountWarning from 
   '../../../components/consumer/mobile/no-account-warning';
 import { SmallButton } from 
   '../../../components/consumer/mobile/button';
