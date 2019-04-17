@@ -45,12 +45,4 @@ describe('BaseFormField', () => {
       return instance.hintOrError;
     }).to.throw('Not implemented, Implement this method in a sub-class.');
   });
-
-  it('should throw an error when calling .hintOrError directly from the super class', () => {
-    const wrapper = shallow(<BaseFormField />);
-    const instance = wrapper.instance();
-    expect(() => {
-      return instance.labelType;
-    }).to.throw('Not implemented, Implement this method in a sub-class.');
-  });
 });

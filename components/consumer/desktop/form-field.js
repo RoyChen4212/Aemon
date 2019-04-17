@@ -5,11 +5,6 @@ import Label, { labelTypes } from './label';
 import Hint from './hint';
 
 class FormField extends BaseFormField {
-  get labelType() {
-    if (this.props.error) return labelTypes.ERROR;
-    return labelTypes.base;
-  }
-
   get label() {
     return this.renderLabel(Label);
   }

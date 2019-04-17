@@ -1,5 +1,6 @@
 import React from 'react';
 import { hintTypes } from './hint';
+import { labelTypes } from './label';
 
 class BaseFormField extends React.Component {
   baseClassName = 'pbg-form-field';
@@ -32,7 +33,8 @@ class BaseFormField extends React.Component {
   get value() { return this.adaptedProps.value; }
 
   get labelType() {
-    throw new Error('Not implemented, Implement this method in a sub-class.');
+    if (this.props.error) return labelTypes.ERROR;
+    return labelTypes.base;
   }
 
   get label() {

@@ -4,15 +4,16 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
-import { Checkbox } from '../../../components/consumer/mobile/form-fields';
+import BaseCheckbox from '../../../components/consumer/shared/base-checkbox';
+import MobileFormField from '../../../components/consumer/mobile/form-field';
 import Label from '../../../components/consumer/mobile/label';
+const Checkbox = BaseCheckbox(MobileFormField, Label);
 
-describe('Checkbox', () => {
+describe('BaseCheckbox', () => {
   shouldBehaveLikeFormField(shallow(<Checkbox error="some error" />));
 
-  it('should have correct class name', () => {
+  it('should have correct class', () => {
     const wrapper = shallow(<Checkbox />);
-    expect(wrapper.hasClass('pbg-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-checkbox')).to.be.true;
   });
 

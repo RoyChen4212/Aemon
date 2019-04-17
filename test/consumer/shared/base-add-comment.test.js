@@ -9,9 +9,7 @@ import {TextArea} from '../../../components/consumer/mobile/text-area';
 describe('BaseAddComment', () => {
   it('should throw an error when calling .avatar directly from the super class', () => {
     expect(() => {
-      const wrapper = shallow(<BaseAddComment />);
-      const instance = wrapper.instance();
-      return instance.avatar;
+      shallow(<BaseAddComment />);
     }).to.throw('Not implemented, Implement this method in a sub-class.');
   });
 
