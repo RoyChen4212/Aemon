@@ -17,9 +17,9 @@ const ActivityCard = (props) => (
 const UserCommentCard = (props) => (
   <ActivityCard type={ActivityCard.types.white} date={props.date} className="pbg-user-comment-card">
     <div className="d-flex">
-      <Avatar src={props.userAvatar} userId={props.userId} />
+      <Avatar {...props} />
       <div className="flex-grow-1">
-        <H3>{props.userName}</H3>
+        <H3>{props.title}</H3>
       </div>
     </div>
     <p>{props.comment}</p>

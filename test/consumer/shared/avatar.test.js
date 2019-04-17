@@ -55,7 +55,7 @@ describe('Avatar', () => {
     });
 
     it('should render a fallback avatar with 1 initial letter', () => {
-      const wrapper = mount(<Avatar fullName={"John"} />);
+      const wrapper = mount(<Avatar fullName={"John@example.com"} />);
 
       expect(wrapper.find('div > div').html()).to.contain('J');
     });

@@ -83,13 +83,13 @@ describe('Activity Card', () => {
 
     it('should pass userAvatar as src to Avatar', () => {
       const expected = 'some/url';
-      const wrapper = mount(<UserCommentCard userAvatar={expected} />);
+      const wrapper = mount(<UserCommentCard src={expected} />);
       expect(wrapper.find(Avatar).props().src).to.equal(expected);
     });
 
     it('should have a heading 3 with user name', () => {
       const userName = 'John Doe';
-      const wrapper = mount(<UserCommentCard userName={userName}/>);
+      const wrapper = mount(<UserCommentCard title={userName}/>);
       expect(wrapper.contains(<H3>{userName}</H3>)).to.be.true;
     });
 
