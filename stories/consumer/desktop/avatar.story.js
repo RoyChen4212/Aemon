@@ -49,6 +49,11 @@ storiesOf('Consumer/Desktop/Atomic Components/Avatar', module)
         userId='c892121b-d1fa-4305-9765-a46ec5543c30'
         fullName="Frank"
       />
+      <Avatar 
+        size={32}
+        userId='c892121b-d1fa-4305-9765-a46ec5543c30'
+        fullName="example@example.com"
+      />
 
     </div>
   ))
