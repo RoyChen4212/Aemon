@@ -1,0 +1,70 @@
+@import "../../shared/scss/styleguide";
+
+.pbg-consumer-desktop {
+  &.pbg-modal {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1050;
+
+    .pbg-modal-overlay {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $black;
+      opacity: 0.5;
+      z-index: 1040;
+    }
+
+    .pbg-modal-dialog {
+      background: $almost-white;
+      box-orient: vertical;
+      box-direction: normal;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1050;
+
+      .pbg-modal-close-button {
+        background: url('../img/pbg-modal-close-button.svg') no-repeat center;
+        background-color: transparent;
+        border: none;
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+      }
+    }
+  }
+
+  &.pbg-sidebar-modal {
+    .pbg-modal-dialog {
+      display: block;
+      height: 658px;
+      width: 848px;
+
+      .pbg-sidebar-modal-col {
+        float: left;
+        float: left;
+        height: 100%;
+        padding: 40px;
+      }
+
+      .pbg-sidebar-modal-main-content {
+        background: $white;
+        height: 658px;
+        width: 568px;
+      }
+
+      .pbg-sidebar-modal-sidebar-content {
+        background: $grey_10;
+        width: 280px;
+      }
+    }
+  }
+}
+
