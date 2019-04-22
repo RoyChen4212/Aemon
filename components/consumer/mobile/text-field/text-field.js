@@ -5,7 +5,7 @@ import './style.css';
 
 class TextField extends FormField {
 
-  baseClassName = 'pbg-form-field pbg-text-field';
+  baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-text-field';
   baseType = 'text';
 
   get labelType() {

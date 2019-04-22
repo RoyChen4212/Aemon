@@ -33,7 +33,8 @@
   border: 1px solid #8093A6;
   border-radius: 4px;
   padding: 10px;
-  color: #24313E; }
+  color: #24313E;
+  width: 100%; }
   .pbg-consumer-desktop.pbg-form-field.pbg-text-field input::placeholder {
     font-family: Roboto;
     font-style: normal;

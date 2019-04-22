@@ -10,10 +10,10 @@
 .label-strong {
   font-weight: 500; }
 
-.pbg-form-field.pbg-text-field .pbg-label {
+.pbg-consumer-mobile.pbg-form-field.pbg-text-field .pbg-label {
   visibility: hidden; }
 
-.pbg-form-field.pbg-text-field input {
+.pbg-consumer-mobile.pbg-form-field.pbg-text-field input {
   border: 0;
   border-bottom: 1px solid;
   border-color: #8f98a3;
@@ -22,21 +22,21 @@
   outline: 0;
   padding-bottom: 8px;
   width: 100%; }
-  .pbg-form-field.pbg-text-field input::placeholder {
+  .pbg-consumer-mobile.pbg-form-field.pbg-text-field input::placeholder {
     color: #8f98a3;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     line-height: 20px;
     font-size: 14px; }
-  .pbg-form-field.pbg-text-field input:focus {
+  .pbg-consumer-mobile.pbg-form-field.pbg-text-field input:focus {
     outline: none; }
 
-.pbg-form-field.pbg-form-field-focused .pbg-label {
+.pbg-consumer-mobile.pbg-form-field.pbg-form-field-focused .pbg-label {
   visibility: visible; }
 
-.pbg-form-field.pbg-form-field-focused input::placeholder {
+.pbg-consumer-mobile.pbg-form-field.pbg-form-field-focused input::placeholder {
   color: transparent; }
 
-.pbg-form-field.pbg-form-field-error input {
+.pbg-consumer-mobile.pbg-form-field.pbg-form-field-error input {
   border-color: #f76143; }
