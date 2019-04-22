@@ -6,6 +6,7 @@ import ActivityCard from './activity-card';
 import ActivityComment from './activity-comment';
 import AddComment from './add-comment';
 import { PrimaryButton } from './button';
+import { TextField } from './text-field';
 
 import ActivityThumbnail, {
   PURCHASE_UPDATED,
@@ -48,6 +49,7 @@ const desktop = {
   PURCHASE_COMMENT_CREATED,
   AddComment,
   PrimaryButton,
+  TextField,
 };
 
 export default desktop;
