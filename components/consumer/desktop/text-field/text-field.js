@@ -15,11 +15,6 @@ class TextField extends FormField {
 
   get type() { return this.adaptedProps.type || this.baseType };
 
-  get placeholder() {
-    const { required, label } = this.adaptedProps;
-    return !required ? label : label + '*';
-  }
-
   get value() {
     return this.adaptedProps.value || '';
   }

@@ -11,11 +11,6 @@ class TextArea extends FormField {
     return this.props.rows || 3;
   }
 
-  get placeholder() {
-    const { required, label } = this.adaptedProps;
-    return !required ? label : label + '*';
-  }
-
   get value() {
     return this.adaptedProps.value || '';
   }

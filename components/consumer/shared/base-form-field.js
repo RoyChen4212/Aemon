@@ -41,6 +41,11 @@ class BaseFormField extends React.Component {
     throw new Error('Not implemented, Implement this method in a sub-class.');
   }
 
+  get placeholder() {
+    const { required, label } = this.adaptedProps;
+    return !required ? label : label + '*';
+  }
+
   renderLabel(Label) {
     const { label } = this.props;
     const labelElement = (
