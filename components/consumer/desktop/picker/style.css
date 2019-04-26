@@ -1,0 +1,73 @@
+.shadow-level-two, .pbg-consumer-desktop.pbg-picker .pbg-picker-container .picker-menu {
+  box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06); }
+
+.normal-label, .strong-label, .clickable-label {
+  color: #24313E;
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px; }
+
+.strong-label {
+  font-weight: bold; }
+
+.clickable-label {
+  color: #006AFF; }
+
+.regular-text, .pbg-consumer-desktop.pbg-picker .pbg-picker-container button {
+  color: #4c4c4c;
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px; }
+
+.label-strong {
+  font-weight: 500; }
+
+.pbg-consumer-desktop.pbg-picker .pbg-picker-container {
+  position: relative; }
+  .pbg-consumer-desktop.pbg-picker .pbg-picker-container button {
+    background: #fff;
+    border: 1px solid #8093A6;
+    border-radius: 4px;
+    min-width: 80px;
+    max-width: 236px;
+    padding: 10px 26px 9px 8px;
+    position: relative; }
+    .pbg-consumer-desktop.pbg-picker .pbg-picker-container button:focus {
+      outline: 0; }
+    .pbg-consumer-desktop.pbg-picker .pbg-picker-container button .pbg-picker-arrow {
+      background: url("../img/pbg-picker-arrow.svg") no-repeat;
+      position: absolute;
+      pointer-events: none;
+      right: 8px;
+      width: 10px;
+      height: 10px;
+      top: 19px; }
+  .pbg-consumer-desktop.pbg-picker .pbg-picker-container .picker-menu {
+    background: #fff;
+    border: 1px solid #D5DDE9;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: none;
+    position: absolute; }
+    .pbg-consumer-desktop.pbg-picker .pbg-picker-container .picker-menu.active {
+      display: block; }
+    .pbg-consumer-desktop.pbg-picker .pbg-picker-container .picker-menu .picker-item {
+      padding: 8px 16px; }
+      .pbg-consumer-desktop.pbg-picker .pbg-picker-container .picker-menu .picker-item:hover {
+        background: #ECF4FF; }
+        .pbg-consumer-desktop.pbg-picker .pbg-picker-container .picker-menu .picker-item:hover .pbg-label {
+          color: #006AFF; }
+
+.pbg-consumer-desktop.pbg-picker.pbg-form-field-error button {
+  border: 1px solid #E02E2E; }
+
+.pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled button {
+  background: #F0F3F8;
+  border: 1px solid #8093A6;
+  color: #526679; }
+  .pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled button .pbg-picker-arrow {
+    background: url("../img/pbg-picker-disabled-arrow.svg") no-repeat; }

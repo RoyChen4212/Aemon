@@ -1,0 +1,75 @@
+@import "../../shared/scss/styleguide";
+
+.pbg-consumer-desktop {
+  &.pbg-picker {
+
+    .pbg-picker-container {
+      position: relative;
+      button {
+        @extend .regular-text;
+        background: $white;
+        border: 1px solid $grey-50;
+        border-radius: 4px;
+        min-width: 80px;
+        max-width: 236px;
+        padding: 10px 26px 9px 8px;
+        position: relative;
+
+        &:focus {
+          outline:0;
+        }
+
+        .pbg-picker-arrow {
+          background: url('../img/pbg-picker-arrow.svg') no-repeat;
+          position: absolute;
+          pointer-events: none;
+          right: 8px;
+          width: 10px;
+          height: 10px;
+          top: 19px;
+        }
+      }
+
+      .picker-menu {
+        @extend .shadow-level-two;
+        background: $white;
+        border: 1px solid $grey-30;
+        box-sizing: border-box;
+        border-radius: 4px;
+        display: none;
+        position: absolute;
+
+        &.active {
+          display: block;
+        }
+
+        .picker-item {
+          padding: 8px 16px;
+          &:hover {
+            .pbg-label {
+              color: $blue-60;
+            }
+            background: $blue-10;
+          }
+        }
+      }
+    }
+
+    &.pbg-form-field-error {
+      button {
+        border: 1px solid $red-60; 
+      }
+    }
+
+    &.pbg-form-field-disabled {
+      button {
+        background: $grey-10;
+        border: 1px solid $grey-50;
+        color: $grey-60;
+        .pbg-picker-arrow {
+          background: url('../img/pbg-picker-disabled-arrow.svg') no-repeat;
+        }
+      }
+    }
+  }
+}
