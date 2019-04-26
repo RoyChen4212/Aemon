@@ -60,4 +60,9 @@ describe('Checkbox', () => {
     const event = { target: { checked: true } };
     wrapper.find({ type: 'checkbox' }).simulate('change', event);
   });
+
+  it('should disable input if disabled prop is passed', () => {
+    const wrapper = shallow(<Checkbox disabled />);
+    expect(wrapper.find({ type: 'checkbox' }).prop('disabled')).to.be.true;
+  });
 });

@@ -25,6 +25,7 @@ const ComposeCheckbox = (FormField, Label, _baseClassName) => (
             checked={this.checked}
             onChange={this.onChange}
             name={this.adaptedProps.name}
+            disabled={this.adaptedProps.disabled}
           />
           {this.label}
         </div>
