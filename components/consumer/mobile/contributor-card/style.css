@@ -1,10 +1,27 @@
+.shadow-level-two {
+  box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06); }
+
+.normal-label, .strong-label, .clickable-label {
+  color: #24313E;
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px; }
+
+.strong-label {
+  font-weight: bold; }
+
+.clickable-label {
+  color: #006AFF; }
+
 .regular-text {
   color: #4c4c4c;
   font-family: "Roboto", serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 20px; }
+  line-height: 21px; }
 
 .label-strong, .pbg-consumer-mobile.pbg-contributor-card .pbg-contributor-card-heading {
   font-weight: 500; }

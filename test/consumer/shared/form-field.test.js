@@ -13,6 +13,11 @@ export const shouldBehaveLikeFormField = (wrapper) => {
   it('should have correct class when error', () => {
     expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
   });
+
+  it('should add class disabled if disabled prop is passed', () => {
+    wrapper.setProps({ disabled: true });
+    expect(wrapper.hasClass('pbg-form-field-disabled')).to.be.true;
+  });
 };
 
 describe('BaseFormField', () => {
@@ -45,4 +50,5 @@ describe('BaseFormField', () => {
       return instance.hintOrError;
     }).to.throw('Not implemented, Implement this method in a sub-class.');
   });
+
 });

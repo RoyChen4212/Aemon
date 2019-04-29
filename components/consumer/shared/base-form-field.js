@@ -16,6 +16,10 @@ class BaseFormField extends React.Component {
       resultingClassName += ' pbg-form-field-focused';
     }
 
+    if (this.disabled) {
+      resultingClassName += ' pbg-form-field-disabled'; 
+    }
+
     return resultingClassName;
   }
 
@@ -29,6 +33,8 @@ class BaseFormField extends React.Component {
   get hint() { return this.adaptedProps.hint; }
 
   get focused() { return this.adaptedProps.focused || !!this.error; }
+
+  get disabled() { return this.adaptedProps.disabled; }
 
   get value() { return this.adaptedProps.value; }
 

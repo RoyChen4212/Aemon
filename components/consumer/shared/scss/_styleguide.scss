@@ -26,12 +26,13 @@ $blue-gradient: linear-gradient(267deg, $pbg-blue-light, $pbg-blue);
 $blue-linear: linear-gradient(90deg, $pbg-blue 0%, $pbg-blue-light 196.67%);
 
 $grey-10: #F0F3F8;
+$grey-30: #D5DDE9;
 $grey-50: #8093A6;
 $grey-60: #526679;
 $grey-80: #24313E;
 
 $red-60: #E02E2E;
-
+$blue-10: #ECF4FF;
 $blue-60: #006AFF;
 
 // Font families
@@ -41,7 +42,7 @@ $roboto: 'Roboto', serif;
 $large-font: 17px;
 $large-line-height: 25px;
 $regular-font: 14px;
-$regular-line-height: 20px;
+$regular-line-height: 21px;
 $small-line-height: 16px;
 $small-font: 12px;
 $small-line-height: 18px;
@@ -52,6 +53,31 @@ $pulse-icon-white: url('../img/pulse-icon-white.svg');
 $list-icon-white: url('../img/view-list-icon-white.svg');
 $pulse-icon-grey: url('../img/pulse-icon-grey.svg');
 $list-icon-grey: url('../img/view-list-icon-grey.svg');
+
+// Shadows
+.shadow-level-two {
+  box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06);
+}
+
+//Labels
+.normal-label {
+  color: $grey-80;
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $regular-font;
+  line-height: $regular-line-height;
+}
+
+.strong-label {
+  @extend .normal-label;
+  font-weight: bold;
+}
+
+.clickable-label {
+  @extend .normal-label;
+  color: $blue-60;
+}
 
 
 .regular-text {
