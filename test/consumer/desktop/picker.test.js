@@ -28,6 +28,24 @@ describe('Picker', () => {
     expect(wrapper.find('.picker-menu').find('.picker-item')).to.have.lengthOf(2);
   });
 
+  it('should add picker-item-rounded-top class to first option', () => {
+    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
+    const wrapper = shallow(<Picker options={opts} />);
+    expect(
+      wrapper.find('.picker-menu').find('.picker-item').at(0)
+      .hasClass('picker-item-rounded-top')
+    ).to.be.true;
+  });
+
+    it('should add picker-item-rounded-bottom class to last option', () => {
+    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
+    const wrapper = shallow(<Picker options={opts} />);
+    expect(
+      wrapper.find('.picker-menu').find('.picker-item').at(1)
+      .hasClass('picker-item-rounded-bottom')
+    ).to.be.true;
+  });
+
   it('should render the correct label', () => {
     const labelText = 'Pick your posion';
     const wrapper = shallow(<Picker label={labelText} />);

@@ -23,11 +23,11 @@ describe('Desktop: FormField', () => {
     }).to.not.throw;
   });
 
-  it('should return labelType.ERROR when error', () => {
+  it('should return labelType.base even when error', () => {
     const wrapper = shallow(<FormField error='this is an error' />)
     const instance = wrapper.instance();
 
-    expect(instance.labelType).to.equal(labelTypes.ERROR);
+    expect(instance.labelType).to.equal(labelTypes.base);
   });
 
   it('should return labelType.BASE when NO error', () => {

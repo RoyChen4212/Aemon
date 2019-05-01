@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
+import { labelTypes } from '../../../components/consumer/mobile/label';
 import FormField from '../../../components/consumer/mobile/form-field';
 
 describe('Mobile: FormField', () => {
@@ -20,5 +21,12 @@ describe('Mobile: FormField', () => {
     expect(() => {
       return instance.labelType
     }).to.not.throw;
+  });
+
+  it('should return labelType.ERROR  when error', () => {
+    const wrapper = shallow(<FormField error='this is an error' />)
+    const instance = wrapper.instance();
+
+    expect(instance.labelType).to.equal(labelTypes.ERROR);
   });
 });

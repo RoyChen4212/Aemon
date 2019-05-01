@@ -38,11 +38,6 @@ class BaseFormField extends React.Component {
 
   get value() { return this.adaptedProps.value; }
 
-  get labelType() {
-    if (this.props.error) return labelTypes.ERROR;
-    return labelTypes.base;
-  }
-
   get label() {
     throw new Error('Not implemented, Implement this method in a sub-class.');
   }

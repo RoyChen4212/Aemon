@@ -60,10 +60,15 @@ class Picker extends FormField {
     )
   }
 
-  renderOption = ({ value, label }) => {
+  renderOption = ({ value, label }, i) => {
     const selected = value === this.value ? 'selected' : '';
+    const first = i === 0 ? 'picker-item-rounded-top' : '';
+    const last = i === this.options.length - 1 ? 'picker-item-rounded-bottom' : '';
     return (
-      <div className={`picker-item ${selected}`} key={value} onClick={this.onOptionClick(value)}>
+      <div
+        className={`picker-item ${selected} ${first} ${last}`}
+        key={value}
+        onClick={this.onOptionClick(value)}>
         <Label>{label}</Label>
       </div>
     );

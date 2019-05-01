@@ -17,7 +17,7 @@ const options = [
 ];
 const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 
-storiesOf('Consumer/Desktop/Atomic Cmponents/Picker', module)
+storiesOf('Consumer/Desktop/Atomic Components/Picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
