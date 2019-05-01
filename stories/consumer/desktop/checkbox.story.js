@@ -17,7 +17,7 @@ storiesOf('Consumer/Desktop/Atomic Components/Checkbox', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Checkbox/Unhecked', () => (
+  .add('Checkbox/Unchecked', () => (
     <FieldStateProvider
       component={Checkbox}
       name="field1"
