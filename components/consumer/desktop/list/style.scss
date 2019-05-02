@@ -1,0 +1,12 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-unordered-list {
+    @extend .pbg-desktop-label-normal;
+    list-style-image: url('../img/pbg-list-bullet.svg');
+  }
+
+  &.pbg-ordered-list {
+    @extend .pbg-desktop-label-normal;
+  }
+}

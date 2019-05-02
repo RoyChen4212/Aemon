@@ -1,53 +1,41 @@
 @import "../../shared/scss/styleguide";
 
 .pbg-consumer-desktop {
-  label {
-    &.pbg-label {
-      color: $greyish-brown;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 20px;
-      font-size: 14px;
-      margin: 0;
-  
-      &.required {
-        &:after {
-          content: '*';
-        }
+  .pbg-label, {
+    @extend .pbg-desktop-label-normal;
+
+    &.required {
+      &:after {
+        content: ' *';
       }
     }
-  
+
     &.pbg-label-strong {
-      font-weight: 500;
+      @extend .pbg-desktop-label-strong;
     }
-  
+
     &.pbg-label-active {
-      color: $clear-blue;
-      font-size: $small-font;
-      line-height: $small-line-height;
+      @extend .pbg-desktop-label-link;
       > a {
         cursor: pointer;
       }
     }
-  
+
     &.pbg-label-secondary {
       color: $cool-grey;
     }
-  
+
     &.pbg-label-input {
       color: $black;
     }
-  
+
     &.pbg-label-clickable {
-      color: $clear-blue;
+      @extend .pbg-desktop-label-link;
       cursor: pointer;
     }
-  
+
     &.pbg-label-error {
-      color: $red-60;
-      font-size: $regular-font;
-      line-height: $regular-line-height;
+      @extend .pbg-desktop-label-error;
     }
   }
 }

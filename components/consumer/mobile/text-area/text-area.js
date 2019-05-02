@@ -50,6 +50,7 @@ class TextArea extends TextField {
         value={this.adaptedProps.value}
         placeholder={this.textAreaPlaceholder}
         style={this.state.style}
+        disabled={this.adaptedProps.disabled}
       />
     );
   }

@@ -70,6 +70,12 @@ describe('TextArea', () => {
     expect(wrapper.instance().rows).to.equal(3);
   });
 
+  it('should not show hint when simple is given', () => {
+    const hint = 'nope';
+    const wrapper = shallow(<TextArea hint={hint} simple />);
+    expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
+  });
+
   describe('With error', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';

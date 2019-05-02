@@ -10,6 +10,50 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=86%3A0';
 
+storiesOf('Consumer/Desktop/Atomic Components/TextArea', module)
+  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('textarea/placeholder', () => (
+    <FieldStateProvider
+      component={TextArea}
+      name="text1"
+      label="Type some large text"
+      value=""
+      hint="a poem maybe?"
+      simple
+    />
+  ))
+  .add('textarea/default (focus for active)', () => (
+    <FieldStateProvider
+      component={TextArea}
+      name="text2"
+      value="this is user input"
+      onChange={action('change')}
+      simple
+    />
+  ))
+  .add('textarea/error', () => (
+    <FieldStateProvider
+      component={TextArea}
+      name="text4"
+      label="Type some large text"
+      value="this is erroneus input"
+      error="this field has error"
+      simple
+    />
+  ))
+  .add('textarea/disabled', () => (
+    <FieldStateProvider
+      component={TextArea}
+      name="text4"
+      label="Type some large text"
+      value="this is erroneus input"
+      simple
+      disabled
+    />
+  ));
+
 storiesOf('Consumer/Desktop/Form Fields/TextArea', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)

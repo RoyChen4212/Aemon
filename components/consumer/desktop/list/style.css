@@ -23,7 +23,7 @@
   font-size: 18px;
   line-height: 28px; }
 
-.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-form-field-disabled, .pbg-desktop-small-text {
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-form-field-disabled, .pbg-desktop-small-text, .pbg-consumer-desktop.pbg-unordered-list, .pbg-consumer-desktop.pbg-ordered-list {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -79,43 +79,5 @@
 .pbg-form-field-disabled {
   background: #F0F3F8; }
 
-.pbg-picker {
-  width: 100%; }
-  .pbg-picker.pbg-form-field-error .pbg-picker-select-container {
-    border-color: #f76143; }
-  .pbg-picker .pbg-picker-select-container {
-    border-bottom: 1px solid;
-    border-color: #cfcfcf;
-    padding-bottom: 8px;
-    position: relative;
-    width: 100%; }
-    .pbg-picker .pbg-picker-select-container select {
-      background: none;
-      border: 0;
-      color: #2c81ff;
-      display: inline-block;
-      height: calc(2.25rem + 2px);
-      line-height: 21px;
-      font-size: 14px;
-      max-width: 100%;
-      padding: 0 0 8px;
-      vertical-align: middle;
-      -moz-appearance: none;
-      -webkit-appearance: none;
-      outline: 0;
-      position: absolute;
-      right: 12px;
-      text-align: right;
-      text-align-last: right; }
-      .pbg-picker .pbg-picker-select-container select option {
-        text-align: center; }
-      .pbg-picker .pbg-picker-select-container select::-ms-expand {
-        display: none; }
-    .pbg-picker .pbg-picker-select-container .pbg-picker-arrow {
-      background: url("../img/pbg-picker-arrow.svg") no-repeat;
-      position: absolute;
-      pointer-events: none;
-      right: 0px;
-      width: 7px;
-      height: 7px;
-      top: 13px; }
+.pbg-consumer-desktop.pbg-unordered-list {
+  list-style-image: url("../img/pbg-list-bullet.svg"); }

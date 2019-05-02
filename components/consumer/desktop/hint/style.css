@@ -1,7 +1,29 @@
-.shadow-level-two {
-  box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06); }
+.pbg-desktop-h1 {
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: 300;
+  color: #24313E;
+  font-size: 38px;
+  line-height: 48px; }
 
-.normal-label, .strong-label, .clickable-label {
+.pbg-desktop-h2 {
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: 300;
+  color: #24313E;
+  font-size: 28px;
+  line-height: 38px; }
+
+.pbg-desktop-h3 {
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-weight: 300;
+  color: #24313E;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px; }
+
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-consumer-desktop.pbg-hint-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-consumer-desktop.pbg-hint-clickable, .pbg-consumer-desktop.pbg-hint-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-consumer-desktop.pbg-hint-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-form-field-disabled, .pbg-desktop-small-text, .pbg-consumer-desktop.pbg-hint {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -9,11 +31,33 @@
   font-size: 14px;
   line-height: 21px; }
 
-.strong-label {
+.pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-consumer-desktop.pbg-hint-strong {
   font-weight: bold; }
 
-.clickable-label {
+.pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-consumer-desktop.pbg-hint-clickable, .pbg-consumer-desktop.pbg-hint-link {
   color: #006AFF; }
+
+.pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-consumer-desktop.pbg-hint-error {
+  color: #E02E2E; }
+
+.pbg-desktop-secondary-text, .pbg-form-field-disabled {
+  color: #526679; }
+
+.pbg-desktop-small-text, .pbg-consumer-desktop.pbg-hint {
+  font-size: 12px;
+  line-height: 16px; }
+
+.pbg-desktop-small-link, .pbg-consumer-desktop.pbg-hint-clickable, .pbg-consumer-desktop.pbg-hint-link {
+  font-size: 12px;
+  line-height: 16px; }
+
+.pbg-desktop-small-error, .pbg-consumer-desktop.pbg-hint-error {
+  font-size: 12px;
+  line-height: 16px; }
+
+.pbg-desktop-small-strong, .pbg-consumer-desktop.pbg-hint-strong {
+  font-size: 12px;
+  line-height: 16px; }
 
 .regular-text {
   color: #4c4c4c;
@@ -26,17 +70,11 @@
 .label-strong {
   font-weight: 500; }
 
-.pbg-consumer-desktop span.pbg-hint {
-  color: #526679;
-  font-family: "Roboto Condensed";
-  font-style: normal;
-  font-weight: normal;
-  line-height: 16px;
-  font-size: 12px; }
+.pbg-desktop-shadow-level-one {
+  box-shadow: 0px 3px 5px rgba(17, 24, 30, 0.05); }
 
-.pbg-consumer-desktop span.pbg-hint-error {
-  color: #f76143; }
+.pbg-desktop-shadow-level-two {
+  box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06); }
 
-.pbg-consumer-desktop span.pbg-hint-clickable {
-  color: #2c81ff;
-  cursor: pointer; }
+.pbg-form-field-disabled {
+  background: #F0F3F8; }

@@ -1,0 +1,11 @@
+@import "../../shared/scss/styleguide";
+
+.pbg-consumer-desktop {
+  &.pbg-paragraph {
+    @extend .pbg-desktop-regular-text;
+
+    .pbg-paragraph-secondary {
+      @extend .pbg-desktop-secondary-text;
+    }
+  }
+}

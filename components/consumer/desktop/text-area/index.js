@@ -25,6 +25,7 @@ class TextArea extends FormField {
         name={this.adaptedProps.name}
         value={this.value}
         placeholder={this.placeholder}
+        disabled={this.adaptedProps.disabled}
       />
     );
   }
@@ -33,7 +34,7 @@ class TextArea extends FormField {
     return (
       <div className={this.className}>
         {this.input}
-        {this.hintOrError}
+        {!this.props.simple && this.hintOrError}
       </div>
     );
   }

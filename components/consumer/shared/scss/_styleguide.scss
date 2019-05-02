@@ -45,7 +45,6 @@ $regular-font: 14px;
 $regular-line-height: 21px;
 $small-line-height: 16px;
 $small-font: 12px;
-$small-line-height: 18px;
 
 // Icons
 $facebook-icon: url('../img/facebook-icon.svg');
@@ -54,13 +53,40 @@ $list-icon-white: url('../img/view-list-icon-white.svg');
 $pulse-icon-grey: url('../img/pulse-icon-grey.svg');
 $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
-// Shadows
-.shadow-level-two {
-  box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06);
+// Design System
+// Not all "components" are really components, some can be styles that get extended
+// or used to compose a new component.
+
+.pbg-desktop-h1 {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: 300;
+  color: $grey-80;
+  font-size: 38px;
+  line-height: 48px;
 }
 
+.pbg-desktop-h2 {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: 300;
+  color: $grey-80;
+  font-size: 28px;
+  line-height: 38px;
+}
+
+.pbg-desktop-h3 {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: 300;
+  color: $grey-80;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px; 
+}
 //Labels
-.normal-label {
+
+.pbg-desktop-label-normal {
   color: $grey-80;
   font-family: $roboto;
   font-style: normal;
@@ -69,16 +95,53 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   line-height: $regular-line-height;
 }
 
-.strong-label {
-  @extend .normal-label;
+.pbg-desktop-label-strong {
+  @extend .pbg-desktop-label-normal;
   font-weight: bold;
 }
 
-.clickable-label {
-  @extend .normal-label;
+.pbg-desktop-label-link {
+  @extend .pbg-desktop-label-normal;
   color: $blue-60;
 }
 
+.pbg-desktop-label-error {
+  @extend .pbg-desktop-label-normal;
+  color: $red-60;
+}
+
+.pbg-desktop-regular-text {
+  @extend .pbg-desktop-label-normal;
+}
+
+.pbg-desktop-secondary-text {
+  @extend .pbg-desktop-regular-text;
+  color: $grey-60;
+}
+
+.pbg-desktop-small-text {
+  @extend .pbg-desktop-regular-text;
+  font-size: $small-font;
+  line-height: $small-line-height;
+}
+
+.pbg-desktop-small-link {
+  @extend .pbg-desktop-label-link;
+  font-size: $small-font;
+  line-height: $small-line-height;
+}
+
+.pbg-desktop-small-error {
+  @extend .pbg-desktop-label-error;
+  font-size: $small-font;
+  line-height: $small-line-height;
+}
+
+.pbg-desktop-small-strong {
+  @extend .pbg-desktop-label-strong;
+  font-size: $small-font;
+  line-height: $small-line-height;
+}
 
 .regular-text {
   color: $greyish-brown;
@@ -91,4 +154,18 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
 .label-strong {
   font-weight: 500;
+}
+
+// Shadows
+.pbg-desktop-shadow-level-one {
+  box-shadow: 0px 3px 5px rgba(17, 24, 30, 0.05);
+}
+
+.pbg-desktop-shadow-level-two {
+  box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06);
+}
+
+.pbg-form-field-disabled {
+  @extend .pbg-desktop-secondary-text;
+  background: $grey-10;
 }

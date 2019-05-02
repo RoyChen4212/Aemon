@@ -27,11 +27,24 @@
         }
       }
 
+      &.pbg-form-field-focused {
+        textarea {
+          border-color: $blue-60;
+        } 
+      }
+
       &.pbg-form-field-error {
         textarea {
-          border-color: $coral-error;
+          border-color: $coral-error!important;
         }
       }
+
+      &.pbg-form-field-disabled {
+        textarea {
+          @extend .pbg-form-field-disabled;
+        }
+      }
+
     } 
   }
 }

@@ -31,7 +31,7 @@
       }
 
       .picker-menu {
-        @extend .shadow-level-two;
+        @extend .pbg-desktop-shadow-level-two;
         background: $white;
         border: 1px solid $grey-30;
         box-sizing: border-box;
