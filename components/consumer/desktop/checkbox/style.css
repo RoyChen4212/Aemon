@@ -1,11 +1,15 @@
-.pbg-consumer-desktop.pbg-checkbox input {
-  width: 16px;
-  height: 16px;
-  float: left;
-  margin-top: 5px; }
-
-.pbg-consumer-desktop.pbg-checkbox .pbg-checkbox-label-hint-placeholder {
-  float: left; }
-  .pbg-consumer-desktop.pbg-checkbox .pbg-checkbox-label-hint-placeholder .pbg-hint {
-    display: block;
-    margin-left: 8px; }
+.pbg-consumer-desktop.pbg-checkbox {
+  content: "";
+  clear: both;
+  display: table; }
+  .pbg-consumer-desktop.pbg-checkbox input {
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-top: 5px; }
+  .pbg-consumer-desktop.pbg-checkbox .pbg-checkbox-label-hint-placeholder {
+    float: left; }
+    .pbg-consumer-desktop.pbg-checkbox .pbg-checkbox-label-hint-placeholder .pbg-hint {
+      display: block;
+      margin-bottom: 0;
+      margin-left: 8px; }

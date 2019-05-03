@@ -165,7 +165,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06);
 }
 
-.pbg-form-field-disabled {
+.pbg-desktop-form-field-disabled {
   @extend .pbg-desktop-secondary-text;
   background: $grey-10;
 }

@@ -23,7 +23,7 @@
   font-size: 18px;
   line-height: 28px; }
 
-.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-form-field-disabled, .pbg-consumer-desktop.pbg-form-field.pbg-text-area.pbg-form-field-disabled textarea, .pbg-desktop-small-text {
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-consumer-desktop.pbg-form-field.pbg-text-area.pbg-form-field-disabled textarea, .pbg-desktop-small-text {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -40,7 +40,7 @@
 .pbg-desktop-label-error, .pbg-desktop-small-error {
   color: #E02E2E; }
 
-.pbg-desktop-secondary-text, .pbg-form-field-disabled, .pbg-consumer-desktop.pbg-form-field.pbg-text-area.pbg-form-field-disabled textarea {
+.pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-consumer-desktop.pbg-form-field.pbg-text-area.pbg-form-field-disabled textarea {
   color: #526679; }
 
 .pbg-desktop-small-text {
@@ -76,7 +76,7 @@
 .pbg-desktop-shadow-level-two {
   box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06); }
 
-.pbg-form-field-disabled, .pbg-consumer-desktop.pbg-form-field.pbg-text-area.pbg-form-field-disabled textarea {
+.pbg-desktop-form-field-disabled, .pbg-consumer-desktop.pbg-form-field.pbg-text-area.pbg-form-field-disabled textarea {
   background: #F0F3F8; }
 
 .pbg-consumer-desktop.pbg-form-field.pbg-text-area textarea {

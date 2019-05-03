@@ -1,5 +1,8 @@
 .pbg-consumer-desktop {
   &.pbg-checkbox {
+    content: "";
+    clear: both;
+    display: table;
     input {
       width: 16px;
       height: 16px;
@@ -12,6 +15,7 @@
 
       .pbg-hint {
         display: block;
+        margin-bottom: 0;
         margin-left: 8px;
       }
     }

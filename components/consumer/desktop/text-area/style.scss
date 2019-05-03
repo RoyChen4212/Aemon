@@ -41,7 +41,7 @@
 
       &.pbg-form-field-disabled {
         textarea {
-          @extend .pbg-form-field-disabled;
+          @extend .pbg-desktop-form-field-disabled;
         }
       }
 
