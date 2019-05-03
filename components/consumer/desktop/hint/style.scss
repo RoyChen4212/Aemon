@@ -2,6 +2,7 @@
 
 .pbg-consumer-desktop {
   &.pbg-hint {
+    @extend .pbg-desktop-secondary-text;
     @extend .pbg-desktop-small-text;
   }
 

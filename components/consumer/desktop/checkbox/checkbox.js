@@ -1,6 +1,6 @@
 import React from 'react';
 import FormField from '../form-field';
-import Label from '../label';
+import Label, { labelTypes } from '../label';
 import Hint from '../hint';
 import BaseCheckbox from '../../shared/base-checkbox';
 
@@ -10,6 +10,11 @@ const baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-checkbox';
 const ComposedCheckbox = BaseCheckbox(FormField, Label, baseClassName);
 
 class Checkbox extends ComposedCheckbox {
+  get labelType() {
+    if (this.props.error) return labelTypes.ERROR;
+    return labelTypes.base;
+  }
+
   get label() {
     const { label, hint } = this.adaptedProps;
     return (
