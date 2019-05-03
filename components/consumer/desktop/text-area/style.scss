@@ -4,10 +4,9 @@
   &.pbg-form-field {    
     &.pbg-text-area {
       textarea {
+        @extend .pbg-desktop-regular-text;
         background: $white;
         border: 1px solid $pinkish-grey;
-        line-height: 21px;
-        font-size: 14px;
         margin-bottom: -6px;
         outline: 0;
         padding: 8px;
