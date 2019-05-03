@@ -3,6 +3,7 @@ import './style.css';
 
 const Container = (props) => (
   <div className={className(props)}>
+    {props.children}
   </div>
 );
 

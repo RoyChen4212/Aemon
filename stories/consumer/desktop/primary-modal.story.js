@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithFigma } from 'storybook-addon-figma';
-import SidebarModal from '../../../components/consumer/desktop/sidebar-modal';
+import PrimaryModal from '../../../components/consumer/desktop/primary-modal';
 import { types as buttonTypes } from '../../../components/consumer/mobile/button';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import { withGreyContainer, wrapStory } from '../../util/decorators';
@@ -11,13 +11,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=877%3A10660';
 
-storiesOf('Consumer/Desktop/SidebarModal', module)
+storiesOf('Consumer/Desktop/PrimaryModal', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(storyFn => <div style={{minHeight: '600px'}}>{storyFn()}</div>)
   .addDecorator(wrapStory)
   .addDecorator(withGreyContainer)
   .add('Standard', () => (
-    <SidebarModal
+    <PrimaryModal
       onBackClick={action('click')}
       mainContent={(
         <div>
@@ -33,30 +33,30 @@ storiesOf('Consumer/Desktop/SidebarModal', module)
       )}
     />
   ))
-  .add('Fully functional', () => (<FullSidebarModal />));
+  .add('Fully functional', () => (<FullPrimaryModal />));
 
-class FullSidebarModal extends React.Component {
+class FullPrimaryModal extends React.Component {
   state = {
-    showingSidebarModal: false,
+    showingPrimaryModal: false,
   }
 
-  showSidebarModal = () => {
-    this.setState({ showingSidebarModal: true });
+  showPrimaryModal = () => {
+    this.setState({ showingPrimaryModal: true });
   }
 
-  hideSidebarModal = () => {
-    this.setState({ showingSidebarModal: false });
+  hidePrimaryModal = () => {
+    this.setState({ showingPrimaryModal: false });
   }
 
-  get showingSidebarModal() {
-    return this.state.showingSidebarModal;
+  get showingPrimaryModal() {
+    return this.state.showingPrimaryModal;
   }
 
   get modal() {
-    if (this.showingSidebarModal) {
+    if (this.showingPrimaryModal) {
       return (
-        <SidebarModal
-          onBackClick={this.hideSidebarModal}
+        <PrimaryModal
+          onBackClick={this.hidePrimaryModal}
           mainContent={(
             <div>
               <h2>Main content</h2>
@@ -78,7 +78,7 @@ class FullSidebarModal extends React.Component {
     return (
       <div>
         {this.modal}
-        <button onClick={this.showSidebarModal}>Show modal</button>
+        <button onClick={this.showPrimaryModal}>Show modal</button>
       </div>
     );
   }
