@@ -1,9 +1,10 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import PrimaryModal from '../../../components/consumer/desktop/primary-modal';
+import ModalAlert from '../../../components/consumer/desktop/modal-alert';
 
 describe('Sidebar Modal', () => {
   const contentClass = '.pbg-primary-modal-main-content';
@@ -81,5 +82,16 @@ describe('Sidebar Modal', () => {
     expect(
       wrapper.find(dialogClass).find(sidebarClass).contains(expected)
     ).to.be.true;
+  });
+
+  it('should render given alerts', () => {
+    const alerts = [
+      { type: 'error', title: 'error alert title', text: 'error alert text' },
+    ];
+    const wrapper = mount(<PrimaryModal alerts={alerts} />);
+    expect(wrapper.find('.pbg-modal-alerts').find(ModalAlert)).to.have.lengthOf(1);
+    expect(wrapper.find('.pbg-modal-alerts').find(ModalAlert).prop('title')).to.equal(alerts[0].title);
+    expect(wrapper.find('.pbg-modal-alerts').find(ModalAlert).prop('text')).to.equal(alerts[0].text);
+    expect(wrapper.find('.pbg-modal-alerts').find(ModalAlert).prop('error')).to.be.true;
   });
 });

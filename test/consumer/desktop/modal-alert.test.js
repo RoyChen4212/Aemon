@@ -53,4 +53,19 @@ describe('ModalAlert', () => {
     const wrapper = mount(<ModalAlert text={{ label: 'some text', action: () => {} }} />);
     expect(wrapper.find('.pbg-modal-alert-text').find('a').text()).to.equal('some text');
   });
+
+  it('should add pbg-scale-up-ver-bottom if animate is passed', () => {
+    const wrapper = shallow(<ModalAlert animate />);
+    expect(wrapper.hasClass('pbg-scale-up-ver-bottom')).to.be.true;
+  });
+
+  it('should remove pbg-scale-up-ver-bottom if animate is passed after 9 seconds of being displayed', function(done) {
+    const wrapper = shallow(<ModalAlert animate hideAfter={100}/>);
+    expect(wrapper.hasClass('pbg-scale-up-ver-bottom')).to.be.true;
+    setTimeout(() => {
+      expect(wrapper.hasClass('pbg-scale-down-ver-bottom')).to.be.true;
+      expect(wrapper.hasClass('pbg-scale-up-ver-bottom')).to.be.false;
+      done();
+    }, 500);
+  });
 });
