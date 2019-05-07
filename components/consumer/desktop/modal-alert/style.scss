@@ -1,0 +1,39 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-modal-alert {
+    padding: 9px 16px;
+    width: 500px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    &.pbg-modal-alert-error {
+      background: $red-10;
+      border-top: 4px solid #E02E2E;
+    }
+
+    &.pbg-modal-alert-error {
+      background: $red-10;
+      border-top: 4px solid $red-60;
+    }
+
+    &.pbg-modal-alert-warning {
+      background: $yellow-10;
+      border-top: 4px solid $yellow-60;
+    }
+
+    &.pbg-modal-alert-success {
+      background: $green-10;
+      border-top: 4px solid $green-60;
+    }
+
+    .pbg-modal-alert-title {
+      @extend .pbg-desktop-label-strong;
+    }
+
+    .pbg-modal-alert-text {
+      @extend .pbg-desktop-label-normal;
+      margin-left: 5px;
+    }
+  }
+}

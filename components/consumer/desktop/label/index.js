@@ -7,8 +7,8 @@ import './style.css';
 
 export default (props) => {
   return (
-    <div className="pbg-consumer-desktop">
+    <span className="pbg-consumer-desktop">
       <Label {...props} />
-    </div>
+    </span>
   );
 };
