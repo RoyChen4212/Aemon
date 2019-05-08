@@ -3,6 +3,7 @@
 .pbg-consumer-desktop {
   .pbg-label, {
     @extend .pbg-desktop-label-normal;
+    margin-bottom: 0;
 
     &.required {
       &:after {

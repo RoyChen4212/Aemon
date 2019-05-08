@@ -79,17 +79,15 @@
 .pbg-desktop-form-field-disabled {
   background: #F0F3F8; }
 
-.pbg-consumer-desktop .pbg-label.required:after {
-  content: ' *'; }
-
-.pbg-consumer-desktop .pbg-label.pbg-label-active > a {
-  cursor: pointer; }
-
-.pbg-consumer-desktop .pbg-label.pbg-label-secondary {
-  color: #8f98a3; }
-
-.pbg-consumer-desktop .pbg-label.pbg-label-input {
-  color: #000; }
-
-.pbg-consumer-desktop .pbg-label.pbg-label-clickable {
-  cursor: pointer; }
+.pbg-consumer-desktop .pbg-label {
+  margin-bottom: 0; }
+  .pbg-consumer-desktop .pbg-label.required:after {
+    content: ' *'; }
+  .pbg-consumer-desktop .pbg-label.pbg-label-active > a {
+    cursor: pointer; }
+  .pbg-consumer-desktop .pbg-label.pbg-label-secondary {
+    color: #8f98a3; }
+  .pbg-consumer-desktop .pbg-label.pbg-label-input {
+    color: #000; }
+  .pbg-consumer-desktop .pbg-label.pbg-label-clickable {
+    cursor: pointer; }
