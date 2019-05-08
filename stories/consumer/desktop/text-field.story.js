@@ -55,7 +55,7 @@ storiesOf('Consumer/Desktop/Atomic Components/Simple Text Input', module)
   ));
 
   storiesOf('Consumer/Desktop/Form Fields/Form field', module)
-  .addDecorator(storyFn => <WithFigma url='https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A7'>{storyFn()}</WithFigma>)
+  .addDecorator(storyFn => <WithFigma url='https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A9'>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('form-field/default', () => (
