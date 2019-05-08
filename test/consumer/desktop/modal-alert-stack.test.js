@@ -26,9 +26,9 @@ describe('ModalAlertStack', () => {
   });
 
   it('should render given alerts', () => {
-    const wrapper = shallow(<ModalAlertStack alerts={alerts}/>);
+    const wrapper = mount(<ModalAlertStack alerts={alerts}/>);
     expect(wrapper.find('.pbg-modal-alert-error')).to.have.lengthOf(1);
-    expect(wrapper.find('.pbg-modal-alert-wrarning')).to.have.lengthOf(1);
+    expect(wrapper.find('.pbg-modal-alert-warning')).to.have.lengthOf(1);
     expect(wrapper.find('.pbg-modal-alert-success')).to.have.lengthOf(1);
   });
 });

@@ -89,9 +89,6 @@ describe('Sidebar Modal', () => {
       { type: 'error', title: 'error alert title', text: 'error alert text' },
     ];
     const wrapper = mount(<PrimaryModal alerts={alerts} />);
-    expect(wrapper.find('.pbg-modal-alerts').find(ModalAlert)).to.have.lengthOf(1);
-    expect(wrapper.find('.pbg-modal-alerts').find(ModalAlert).prop('title')).to.equal(alerts[0].title);
-    expect(wrapper.find('.pbg-modal-alerts').find(ModalAlert).prop('text')).to.equal(alerts[0].text);
-    expect(wrapper.find('.pbg-modal-alerts').find(ModalAlert).prop('error')).to.be.true;
+    expect(wrapper.find('.pbg-modal-alert-stack').find(ModalAlert)).to.have.lengthOf(1);
   });
 });
