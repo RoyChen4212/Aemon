@@ -79,46 +79,53 @@
 .pbg-desktop-form-field-disabled {
   background: #F0F3F8; }
 
-.pbg-consumer-desktop.pbg-form-field.pbg-text-field .pbg-label {
-  visibility: visible;
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: normal;
-  color: #24313E;
-  line-height: 21px;
-  display: block;
-  margin: 0 0 4px 2px; }
-
-.pbg-consumer-desktop.pbg-form-field.pbg-text-field .pbg-hint {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-  color: #526679; }
-
-.pbg-consumer-desktop.pbg-form-field.pbg-text-field input {
-  background-color: #FFF;
-  border: 1px solid #8093A6;
-  border-radius: 4px;
-  padding: 10px;
-  color: #24313E;
-  width: 100%; }
-  .pbg-consumer-desktop.pbg-form-field.pbg-text-field input::placeholder {
+.pbg-consumer-desktop.pbg-form-field.pbg-text-field {
+  position: relative;
+  height: 40px; }
+  .pbg-consumer-desktop.pbg-form-field.pbg-text-field .pbg-label {
+    visibility: visible;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    color: #24313E;
+    line-height: 21px;
+    display: block;
+    margin: 0 0 4px 2px; }
+    .pbg-consumer-desktop.pbg-form-field.pbg-text-field .pbg-label.pbg-label-error span {
+      color: #E02E2E; }
+  .pbg-consumer-desktop.pbg-form-field.pbg-text-field .pbg-hint {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 16px;
     color: #526679; }
-  .pbg-consumer-desktop.pbg-form-field.pbg-text-field input:focus {
-    outline: none;
-    border-color: #006AFF; }
-  .pbg-consumer-desktop.pbg-form-field.pbg-text-field input:disabled {
-    background-color: #F0F3F8;
-    color: #8093A6; }
-
-.pbg-consumer-desktop.pbg-form-field.pbg-text-field.pbg-form-field-error .pbg-hint {
-  color: #E02E2E; }
-
-.pbg-consumer-desktop.pbg-form-field.pbg-text-field.pbg-form-field-error input {
-  border-color: #E02E2E; }
+  .pbg-consumer-desktop.pbg-form-field.pbg-text-field input {
+    background-color: #FFF;
+    border: 1px solid #8093A6;
+    border-radius: 4px;
+    padding: 10px;
+    color: #24313E;
+    width: 100%; }
+    .pbg-consumer-desktop.pbg-form-field.pbg-text-field input::placeholder {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      color: #526679; }
+    .pbg-consumer-desktop.pbg-form-field.pbg-text-field input:focus {
+      outline: none;
+      border-color: #006AFF; }
+    .pbg-consumer-desktop.pbg-form-field.pbg-text-field input:disabled {
+      background-color: #F0F3F8;
+      color: #8093A6; }
+  .pbg-consumer-desktop.pbg-form-field.pbg-text-field .pbg-text-field-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 16px;
+    height: 16px; }
+  .pbg-consumer-desktop.pbg-form-field.pbg-text-field.pbg-form-field-error .pbg-hint {
+    color: #E02E2E; }
+  .pbg-consumer-desktop.pbg-form-field.pbg-text-field.pbg-form-field-error input {
+    border-color: #E02E2E; }

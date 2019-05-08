@@ -51,11 +51,22 @@ class TextField extends FormField {
     return this.hintOrError;
   }
 
+  _renderIcon() {
+    if (!this.props.icon) return null;
+
+    return (
+      <div className="pbg-text-field-icon">
+        <img src={this.props.icon}  />
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className={this.className}>
         {this._renderLabel()}
         {this.input}
+        {this._renderIcon()}
         {this._renderHint()}
       </div>
     );
