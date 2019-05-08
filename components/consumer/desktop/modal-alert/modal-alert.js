@@ -3,26 +3,20 @@ import './style.css';
 
 export default class ModalAlert extends React.PureComponent {
   baseClass = 'pbg-consumer-desktop pbg-modal-alert';
-
   state = {
     hide: false,
+  }
+
+  componentDidMount() {
+    if (this.props.hideAfter) {
+      setTimeout(() => this.setState({ hide: true }), this.props.hideAfter);
+    }
   }
 
   get error() { return this.props.error || false; }
   get warning() { return this.props.warning || false; }
   get success() { return this.props.success || false; }
-  get animate() { return this.props.animate || false; }
-  get hideAfter() { return this.props.hideAfter || 9000; }
   get hide() { return this.state.hide; }
-  get show() { return this.animate && !this.hide; }
-
-  componentDidMount() {
-    if (this.animate) {
-      setTimeout(() => {
-        this.setState({ hide: true });
-      }, this.hideAfter);
-    }
-  }
 
   get text() {
     if (this.props.text && this.props.text.label) {
@@ -32,8 +26,7 @@ export default class ModalAlert extends React.PureComponent {
   }
 
   className() {
-    let base = this.show ? this.baseClass + ' pbg-scale-up-ver-bottom' : this.baseClass;
-    if (this.animate && this.hide) base += ' pbg-scale-down-ver-bottom';
+    const base = this.hide ? this.baseClass + ' pbg-fade-out' : this.baseClass;
     if (this.error) return base + ' pbg-modal-alert-error';
     if (this.warning) return base + ' pbg-modal-alert-warning';
     if (this.success) return base + ' pbg-modal-alert-success';

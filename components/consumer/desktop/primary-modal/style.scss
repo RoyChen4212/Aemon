@@ -25,6 +25,19 @@
       flex-direction: column;
       position: relative;
       z-index: 1050;
+      width: 848px;
+      height: 658px;
+      top: calc((100% - 658px + 46px) / 2);
+      left: calc((100% - 848px) / 2);
+
+      .pbg-modal-alert-stack {
+        position: absolute;
+        left: calc((100% - 500px) / 2);
+
+        &.pbg-modal-alert {
+          z-index: 1040;
+        }
+      }
 
       .pbg-modal-close-button {
         background: url('../img/pbg-modal-close-button.svg') no-repeat center;

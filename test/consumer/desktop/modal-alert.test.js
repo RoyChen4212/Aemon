@@ -54,18 +54,12 @@ describe('ModalAlert', () => {
     expect(wrapper.find('.pbg-modal-alert-text').find('a').text()).to.equal('some text');
   });
 
-  it('should add pbg-scale-up-ver-bottom if animate is passed', () => {
-    const wrapper = shallow(<ModalAlert animate />);
-    expect(wrapper.hasClass('pbg-scale-up-ver-bottom')).to.be.true;
-  });
-
-  it('should remove pbg-scale-up-ver-bottom if animate is passed after 9 seconds of being displayed', function(done) {
-    const wrapper = shallow(<ModalAlert animate hideAfter={100}/>);
-    expect(wrapper.hasClass('pbg-scale-up-ver-bottom')).to.be.true;
+  it('should add a pbg-fade-out class after the given timeout', function (done) {
+    const wrapper = shallow(<ModalAlert hideAfter="100" />);
+    expect(wrapper.hasClass('pbg-fade-out')).to.be.false;
     setTimeout(() => {
-      expect(wrapper.hasClass('pbg-scale-down-ver-bottom')).to.be.true;
-      expect(wrapper.hasClass('pbg-scale-up-ver-bottom')).to.be.false;
+      expect(wrapper.hasClass('pbg-fade-out')).to.be.true;
       done();
-    }, 500);
+    }, 100);
   });
 });
