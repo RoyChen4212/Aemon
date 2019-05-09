@@ -3,6 +3,9 @@
 .pbg-consumer-desktop {
   &.pbg-form-field {
     &.pbg-text-field {
+      position: relative;
+      height: 40px;
+
       .pbg-label {
         visibility: visible;
         font-family: Roboto;
@@ -12,6 +15,12 @@
         line-height: 21px;
         display:block;
         margin: 0 0 4px 2px;
+
+        &.pbg-label-error {
+          span {
+            color: $red-60;
+          }
+        }
       }
 
       .pbg-hint {
@@ -48,6 +57,14 @@
           background-color: $grey-10;
           color: $grey-50;
         }
+      }
+
+      .pbg-text-field-icon {
+        position: absolute;
+        top: 9px;
+        right: 12px;
+        width: 16px;
+        height: 16px;
       }
 
       

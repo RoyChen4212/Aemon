@@ -8,106 +8,83 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A7';
-storiesOf('Consumer/Desktop/Form Fields/Text Field', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
+storiesOf('Consumer/Desktop/Atomic Components/Simple Text Input', module)
+  .addDecorator(storyFn => <WithFigma url='https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A7'>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Full: Valid', () => (
-    <FieldStateProvider
-      component={TextField}
-      name="field1"
-      label="A text field"
-    />
-  ))
-  .add('Full: Valid/With value', () => (
-    <FieldStateProvider
-      component={TextField}
-      name="field1"
-      onChange={action('change')}
-      value="You typed this"
-      label="A text field"
-    />
-  ))
-  .add('Full: Valid/With Hint', () => (
+  .add('simple-text-input/default (focus for active)', () => (
     <TextField
+      simple
+      name="field2"
+    />
+  ))
+  .add('simple-text-input/placeholder', () => (
+    <TextField
+      simple
+      name="field2"
+      label="Placeholder"
+    />
+  ))
+  .add('simple-text-input/error', () => (
+    <TextField
+      simple
       name="field2"
       label="A text field"
-      hint="with a hint"
-    />
-  ))
-  .add('Full: Valid/Required', () => (
-    <TextField
-      name="field2"
-      label="A required text field"
-      hint="with a hint"
-      required
-    />
-  ))
-  .add('Full: Invalid', () => (
-    <FieldStateProvider
-      component={TextField}
-      name="field3"
-      label="A text field"
-      onChange={action('change')}
       value="What you typed is wrong"
       error="this is an error"
     />
   ))
-  .add('Full: Disabled', () => (
-    <FieldStateProvider
+  .add('simple-text-input/disabled', () => (
+    <TextField
+      simple
       disabled
-      component={TextField}
       name="field3"
       label="A text field"
-      onChange={action('change')}
-      value="What you typed is wrong"
+      value="Placeholder"
       hint="this is a hint"
     />
   ))
-  .add('Simple: Defult', () => (
+  .add('simple-text-input/facebook', () => (
     <TextField
       simple
-      name="field2"
-    />
-  ))
-  .add('Simple: With placeholder', () => (
-    <TextField
-      simple
-      name="field2"
-      label="Placeholder text"
-    />
-  ))
-  .add('Simple: Valid/With value', () => (
-    <FieldStateProvider
-      simple
-      component={TextField}
-      name="field1"
-      onChange={action('change')}
-      value="You typed this"
-      label="A text field"
-    />
-  ))
-  .add('Simple: Invalid', () => (
-    <FieldStateProvider
-      simple
-      component={TextField}
       name="field3"
       label="A text field"
-      onChange={action('change')}
-      value="What you typed is wrong"
-      error="this is an error"
-    />
-  ))
-  .add('Simple: Disabled', () => (
-    <FieldStateProvider
-      simple
-      disabled
-      component={TextField}
-      name="field3"
-      label="A text field"
-      onChange={action('change')}
-      value="What you typed is wrong"
-      hint="this is a hint"
+      value="Placeholder"
+      icon="https://assets.paybygroup.com/images/icons/facebook.svg"
     />
   ));
+
+  storiesOf('Consumer/Desktop/Form Fields/Form field', module)
+  .addDecorator(storyFn => <WithFigma url='https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A9'>{storyFn()}</WithFigma>)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('form-field/default', () => (
+    <FieldStateProvider
+      component={TextField}
+      name="field1"
+      label="A text field"
+      plaholder="Placeholder"
+      hint="hint"
+    />
+  ))
+  .add('form-field/error', () => (
+    <FieldStateProvider
+      component={TextField}
+      name="field3"
+      label="A text field"
+      onChange={action('change')}
+      value="What you typed is wrong"
+      error="this is an error"
+    />
+  ))
+  .add('form-field/required', () => (
+    <FieldStateProvider
+      required
+      component={TextField}
+      name="field3"
+      label="A text field"
+      onChange={action('change')}
+      value="What you typed is wrong"
+      hint="this is a hint"
+    />
+  ))
