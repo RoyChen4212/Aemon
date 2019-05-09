@@ -1,11 +1,18 @@
 import React from 'react';
 import Container from '../container';
+import ModalAlertStack from '../modal-alert-stack';
 
 import './style.css';
 
 class PrimaryModal extends React.PureComponent {
   onBackClick = () => {
     if (this.props.onBackClick) return this.props.onBackClick();
+  }
+
+  renderModalAlertStack() {
+    return (
+      <ModalAlertStack alerts={this.props.alerts} onHideAlert={this.props.onHideAlert} />
+    );
   }
 
   renderMainContent() {
@@ -28,6 +35,7 @@ class PrimaryModal extends React.PureComponent {
     return (
       <div className="pbg-consumer-desktop pbg-modal pbg-primary-modal">
         <div className="pbg-modal-dialog">
+          { this.renderModalAlertStack() }
           <Container solid shadow2>
             { this.renderMainContent() }
             { this.renderSidebarContent() }
