@@ -14,7 +14,7 @@
   font-size: 28px;
   line-height: 38px; }
 
-.pbg-desktop-h3 {
+.pbg-desktop-h3, .pbg-consumer-desktop.pbg-picker.pbg-picker-big .pbg-picker-container button {
   font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 300;
@@ -130,3 +130,6 @@
   color: #526679; }
   .pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled button .pbg-picker-arrow {
     background: url("../img/pbg-picker-disabled-arrow.svg") no-repeat; }
+
+.pbg-consumer-desktop.pbg-picker.pbg-picker-big .pbg-picker-container button {
+  padding: 5px 26px 5px 8px; }

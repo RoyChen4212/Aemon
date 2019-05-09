@@ -32,7 +32,9 @@
 
       .pbg-modal-alert-stack {
         position: absolute;
-        left: calc((100% - 500px) / 2);
+        width: 100%;
+        padding: 0 40px;
+        left: 0;
 
         &.pbg-modal-alert {
           z-index: 1040;

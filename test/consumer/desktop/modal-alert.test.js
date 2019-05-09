@@ -39,14 +39,14 @@ describe('ModalAlert', () => {
     expect(wrapper.hasClass('pbg-modal-alert')).to.be.true;
   });
 
-  it('should have add title in label strong', () => {
-    const wrapper = mount(<ModalAlert title="some title"/>);
-    expect(wrapper.find('.pbg-modal-alert-title').text()).to.equal('some title');
+  it('should add title in label strong', () => {
+    const wrapper = shallow(<ModalAlert title="some title"/>);
+    expect(wrapper.find('.pbg-modal-alert-title').at(0).prop('children')).to.equal('some title');
   });
 
-  it('should have add text in label normal', () => {
+  it('should add text in label normal', () => {
     const wrapper = mount(<ModalAlert text="some text"/>);
-    expect(wrapper.find('.pbg-modal-alert-text').text()).to.equal('some text');
+    expect(wrapper.find('.pbg-modal-alert-text').at(0).prop('children')).to.equal('some text');
   });
 
   it('should have add clickable text', () => {

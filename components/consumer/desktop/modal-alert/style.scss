@@ -2,10 +2,11 @@
 
 .pbg-consumer-desktop {
   &.pbg-modal-alert {
-    padding: 9px 16px;
-    width: 500px;
+    padding: 6px 16px;
+    width: 100%;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    box-sizing: border-box;
 
     &.pbg-fade-out {
       -webkit-animation: fade-out 0.5s ease-out both;
@@ -32,12 +33,7 @@
       border-top: 4px solid $green-60;
     }
 
-    .pbg-modal-alert-title {
-      @extend .pbg-desktop-label-strong;
-    }
-
     .pbg-modal-alert-text {
-      @extend .pbg-desktop-label-normal;
       margin-left: 5px;
     }
   }

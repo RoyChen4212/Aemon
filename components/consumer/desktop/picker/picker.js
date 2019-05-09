@@ -69,7 +69,7 @@ class Picker extends FormField {
         className={`picker-item ${selected} ${first} ${last}`}
         key={value}
         onClick={this.onOptionClick(value)}>
-        <Label>{label}</Label>
+        <Label type={selected ? labelTypes.CLICKABLE : ''}>{label}</Label>
       </div>
     );
   }

@@ -106,7 +106,9 @@
     left: calc((100% - 848px) / 2); }
     .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-modal-alert-stack {
       position: absolute;
-      left: calc((100% - 500px) / 2); }
+      width: 100%;
+      padding: 0 40px;
+      left: 0; }
       .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-modal-alert-stack.pbg-modal-alert {
         z-index: 1040; }
     .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-modal-close-button {

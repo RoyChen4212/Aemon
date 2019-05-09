@@ -12,6 +12,7 @@
 
     .pbg-checkbox-label-hint-placeholder {
       float: left;
+      width: calc(100% - 16px);
 
       .pbg-hint {
         display: block;

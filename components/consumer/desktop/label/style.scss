@@ -1,9 +1,15 @@
 @import "../../shared/scss/styleguide";
 
 .pbg-consumer-desktop {
-  .pbg-label, {
+  .pbg-label {
     @extend .pbg-desktop-label-normal;
     margin-bottom: 0;
+
+    * {
+      line-height: 21px;
+      display: inline-block;
+      height: 21px;
+    }
 
     &.required {
       &:after {

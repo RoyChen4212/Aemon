@@ -1,4 +1,5 @@
 import React from 'react';
+import Label, { labelTypes } from '../label';
 import './style.css';
 
 export default class ModalAlert extends React.PureComponent {
@@ -37,8 +38,8 @@ export default class ModalAlert extends React.PureComponent {
   render() {
     return (
       <div className={this.className()}>
-      <span className="pbg-modal-alert-title">{this.props.title}</span>
-      <span className="pbg-modal-alert-text">{this.text}</span>
+      <Label className="pbg-modal-alert-title" type={labelTypes.STRONG}>{this.props.title}</Label>
+      <Label className="pbg-modal-alert-text">{this.text}</Label>
     </div>
     )
   }

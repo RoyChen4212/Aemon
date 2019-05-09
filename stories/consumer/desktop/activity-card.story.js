@@ -6,10 +6,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Atomic Components/Activity Card', module)
+storiesOf('Consumer/Desktop/Atomic Components/activity-card', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('with type, title, time and description', () => (
+  .add('activity-card/default', () => (
     <ActivityCard
       type="purchase_updated"
       title="Purchase Updated"

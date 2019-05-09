@@ -81,6 +81,10 @@
 
 .pbg-consumer-desktop .pbg-label {
   margin-bottom: 0; }
+  .pbg-consumer-desktop .pbg-label * {
+    line-height: 21px;
+    display: inline-block;
+    height: 21px; }
   .pbg-consumer-desktop .pbg-label.required:after {
     content: ' *'; }
   .pbg-consumer-desktop .pbg-label.pbg-label-active > a {

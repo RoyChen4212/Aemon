@@ -17,11 +17,11 @@ const options = [
 ];
 const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 
-storiesOf('Consumer/Desktop/Atomic Components/Picker', module)
+storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Simple/Default', () => (
+  .add('simple-picker/default', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -33,7 +33,19 @@ storiesOf('Consumer/Desktop/Atomic Components/Picker', module)
       simple
     />
   ))
-  .add('Simple/Error', () => (
+  .add('simple-picker/open', () => (
+    <FieldStateProvider
+      component={Picker}
+      name="picker"
+      label="Label"
+      hint="Select one awesome value"
+      value={null}
+      onChange={action('onChange')}
+      options={options}
+      simple
+    />
+  ))
+  .add('simple-picker/error', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -46,7 +58,7 @@ storiesOf('Consumer/Desktop/Atomic Components/Picker', module)
       simple
     />
   ))
-  .add('Simple/Disabled', () => (
+  .add('simple-picker/disabled', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -60,7 +72,7 @@ storiesOf('Consumer/Desktop/Atomic Components/Picker', module)
       disabled
     />
   ))
-  .add('Simple/Big', () => (
+  .add('simple-picker/big', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -74,11 +86,11 @@ storiesOf('Consumer/Desktop/Atomic Components/Picker', module)
     />
   ));
 
-storiesOf('Consumer/Desktop/Form Fields/Picker', module)
+storiesOf('Consumer/Desktop/Form Fields/picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Picker/Default', () => (
+  .add('picker/default', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -89,7 +101,7 @@ storiesOf('Consumer/Desktop/Form Fields/Picker', module)
       options={options}
     />
   ))
-  .add('Picker/Error', () => (
+  .add('picker/error', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -101,7 +113,7 @@ storiesOf('Consumer/Desktop/Form Fields/Picker', module)
       options={options}
     />
   ))
-  .add('Picker/Disabled', () => (
+  .add('picker/disabled', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"

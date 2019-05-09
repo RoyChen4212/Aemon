@@ -81,5 +81,14 @@
         }
       }
     }
+
+    &.pbg-picker-big {
+      .pbg-picker-container {
+        button {
+          @extend .pbg-desktop-h3;
+          padding: 5px 26px 5px 8px;
+        }
+      }
+    }
   }
 }

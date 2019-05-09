@@ -8,7 +8,8 @@
     float: left;
     margin-top: 5px; }
   .pbg-consumer-desktop.pbg-checkbox .pbg-checkbox-label-hint-placeholder {
-    float: left; }
+    float: left;
+    width: calc(100% - 16px); }
     .pbg-consumer-desktop.pbg-checkbox .pbg-checkbox-label-hint-placeholder .pbg-hint {
       display: block;
       margin-bottom: 0;

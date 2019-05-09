@@ -103,6 +103,13 @@ describe('Picker', () => {
     expect(onChange.calledOnce).to.be.true;
   });
 
+  it('should call use clickable label for selected option', () => {
+    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
+    const wrapper = shallow(<Picker value={opts[0].value} options={opts}/>);
+    expect(wrapper.find('.picker-menu').find('.picker-item').at(0).find(Label).prop('type'))
+      .to.equal(labelTypes.CLICKABLE);
+  });
+
   it('should call onChange with correct value if value is null', function (done) {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: null }];
     const onChange = (ev) => {
