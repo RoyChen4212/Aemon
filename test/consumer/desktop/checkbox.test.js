@@ -5,7 +5,7 @@ import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { Checkbox } from '../../../components/consumer/desktop/checkbox';
-import Label from '../../../components/consumer/desktop/label';
+import Label, { labelTypes } from '../../../components/consumer/desktop/label';
 import Hint from '../../../components/consumer/desktop/hint';
 
 describe('Checkbox', () => {
@@ -33,6 +33,13 @@ describe('Checkbox', () => {
     const text = 'A hint';
     const wrapper = shallow(<Checkbox hint={text} />);
     const expected = <Hint>{text}</Hint>;
+    expect(wrapper.contains(expected)).to.be.true;
+  });
+
+  it('render an error label component when error prop is provided', () => {
+    const text = 'error';
+    const wrapper = shallow(<Checkbox label={text} error="some error" />);
+    const expected = <Label type={labelTypes.ERROR}>{text}</Label>;
     expect(wrapper.contains(expected)).to.be.true;
   });
 
