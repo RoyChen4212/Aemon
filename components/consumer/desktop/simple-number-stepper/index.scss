@@ -1,0 +1,68 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.simple-number-stepper {
+    border: 1px solid $pinkish-grey;
+    border-radius: 3px;
+    display:inline-block;
+  
+    button {
+      border: 0;
+      color: $clear-blue;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 1.2em;
+      line-height: 22px;
+      padding: 8px 10px;
+    }
+  
+    .decrement {
+      background-color: $pale-grey;
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+
+      &.disabled {
+        color: $grey-40;
+      }
+    }
+  
+    .increment {
+      background-color: $pale-grey;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+
+      &.disabled {
+        color: $grey-40;
+      }
+    }
+  
+    [type="number"]::-webkit-outer-spin-button,
+    [type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  
+    [type="number"] {
+      -moz-appearance: textfield;
+      width: 40px;
+  
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+  
+  input {
+    background-color: $white;
+    border: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .has-danger {
+    input {
+      background-color: $coral-light;
+      border-color: $coral;
+    }
+  }
+}

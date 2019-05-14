@@ -55,13 +55,38 @@ class SimpleNumberStepper extends Component {
     return false;
   }
 
+  renderDecrement() {
+    if (this.canDecrement()) {
+      return (
+        <button type="button" className="decrement" onClick={this.onDecrementClicked}>-</button>
+      );
+    } else {
+      return (
+        <button disabled type="button" className="decrement disabled">-</button>
+      )
+    }
+  }
+
+  renderIncrement() {
+    if (this.canIncrement()) {
+      return (
+        <button type="button" className="increment" onClick={this.onIncrementClicked}>+</button>
+      )
+    } else {
+      return (
+        <button disabled type="button" className="increment disabled">+</button>
+      )
+    }
+    
+  }
+
   render() {
     const { value } = this.state;
     return (
-      <div className="number-input">
-        <button type="button" className="decrement" onClick={this.onDecrementClicked}>-</button>
+      <div className="pbg-consumer-desktop simple-number-stepper">
+        {this.renderDecrement()}
         <input type="number" value={value} size="2" disabled />
-        <button type="button" className="increment" onClick={this.onIncrementClicked}>+</button>
+        {this.renderIncrement()}
       </div>
     );
   }
