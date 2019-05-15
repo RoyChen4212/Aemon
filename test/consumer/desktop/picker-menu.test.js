@@ -15,24 +15,24 @@ describe('PickerMenu', () => {
   it('should render given options', () => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const wrapper = shallow(<PickerMenu options={opts} />);
-    expect(wrapper.find('.picker-item')).to.have.lengthOf(2);
+    expect(wrapper.find('.picker-menu-item')).to.have.lengthOf(2);
   });
 
-  it('should add picker-item-rounded-top class to first option', () => {
+  it('should add picker-menu-item-rounded-top class to first option', () => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const wrapper = shallow(<PickerMenu options={opts} />);
     expect(
-      wrapper.find('.picker-item').at(0)
-      .hasClass('picker-item-rounded-top')
+      wrapper.find('.picker-menu-item').at(0)
+      .hasClass('picker-menu-item-rounded-top')
     ).to.be.true;
   });
 
-  it('should add picker-item-rounded-bottom class to last option', () => {
+  it('should add picker-menu-item-rounded-bottom class to last option', () => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const wrapper = shallow(<PickerMenu options={opts} />);
     expect(
-      wrapper.find('.picker-item').at(1)
-      .hasClass('picker-item-rounded-bottom')
+      wrapper.find('.picker-menu-item').at(1)
+      .hasClass('picker-menu-item-rounded-bottom')
     ).to.be.true;
   });
 
@@ -41,7 +41,7 @@ describe('PickerMenu', () => {
     const selected = opts[1].value;
     const wrapper = shallow(<PickerMenu options={opts} selected={selected} />);
     expect(
-      wrapper.find('.picker-item').at(1)
+      wrapper.find('.picker-menu-item').at(1)
       .hasClass('selected')
     ).to.be.true;
   });
@@ -62,7 +62,7 @@ describe('PickerMenu', () => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const onOptionClick = sinon.spy();
     const wrapper = shallow(<PickerMenu onOptionClick={sinon.fake.returns(onOptionClick)} options={opts}/>);
-    wrapper.find('.picker-item').at(0).simulate('click');
+    wrapper.find('.picker-menu-item').at(0).simulate('click');
     expect(onOptionClick.calledOnce).to.be.true;
   });
 });

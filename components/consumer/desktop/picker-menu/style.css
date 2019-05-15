@@ -84,15 +84,15 @@
   position: absolute; }
   .pbg-consumer-desktop.pbg-picker-menu.active {
     display: block; }
-  .pbg-consumer-desktop.pbg-picker-menu .picker-item {
+  .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item {
     padding: 8px 16px; }
-    .pbg-consumer-desktop.pbg-picker-menu .picker-item.picker-item-rounded-top {
+    .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item.picker-menu-item-rounded-top {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px; }
-    .pbg-consumer-desktop.pbg-picker-menu .picker-item.picker-item-rounded-bottom {
+    .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item.picker-menu-item-rounded-bottom {
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px; }
-    .pbg-consumer-desktop.pbg-picker-menu .picker-item:hover {
+    .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item:hover {
       background: #ECF4FF; }
-      .pbg-consumer-desktop.pbg-picker-menu .picker-item:hover .pbg-label {
+      .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item:hover .pbg-label {
         color: #006AFF; }
