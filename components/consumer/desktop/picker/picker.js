@@ -5,6 +5,7 @@ import get from 'lodash/get';
 import FormField from '../form-field';
 import Label, { labelTypes } from '../label';
 import Hint, { hintTypes } from '../hint';
+import PickerMenu from '../picker-menu';
 import makeEvent from '../../../lib/make-event';
 
 import './style.css';
@@ -21,7 +22,7 @@ class Picker extends FormField {
 
   get labelText() {
     const opt = find(this.options, opt => opt.value === this.value);
-    return opt ? opt.label : '';
+    return opt ? opt.label.term : null;
   }
 
   get options() {
@@ -60,29 +61,17 @@ class Picker extends FormField {
     )
   }
 
-  renderOption = ({ value, label }, i) => {
-    const selected = value === this.value ? 'selected' : '';
-    const first = i === 0 ? 'picker-item-rounded-top' : '';
-    const last = i === this.options.length - 1 ? 'picker-item-rounded-bottom' : '';
-    return (
-      <div
-        className={`picker-item ${selected} ${first} ${last}`}
-        key={value}
-        onClick={this.onOptionClick(value)}>
-        <Label type={selected ? labelTypes.CLICKABLE : ''}>{label}</Label>
-      </div>
-    );
-  }
-
   render() {
     return (
       <div className={this.className}>
         {!this.props.simple && this.label}
         <div className="pbg-picker-container">
           {this.renderPickerButton()}
-          <div className={`picker-menu ${this.state.active ? 'active' : ''}`}>
-            {this.options.map(this.renderOption)}
-          </div>
+          <PickerMenu
+            options={this.options}
+            active={this.state.active}
+            selected={this.value}
+            onOptionClick={this.onOptionClick} />
         </div>
         {!this.props.simple && this.hintOrError}
       </div>
