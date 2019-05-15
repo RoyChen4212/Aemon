@@ -7,6 +7,7 @@ import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import Picker, { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
 import Label, { labelTypes } from '../../../components/consumer/desktop/label';
 import Hint, { hintTypes } from '../../../components/consumer/desktop/hint';
+import PickerMenu from '../../../components/consumer/desktop/picker-menu';
 
 describe('Picker', () => {
   shouldBehaveLikeFormField(shallow(<Picker error="some error" />));
@@ -23,27 +24,9 @@ describe('Picker', () => {
   });
 
   it('should render given options', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
-    const wrapper = shallow(<Picker options={opts} />);
-    expect(wrapper.find('.picker-menu').find('.picker-item')).to.have.lengthOf(2);
-  });
-
-  it('should add picker-item-rounded-top class to first option', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
-    const wrapper = shallow(<Picker options={opts} />);
-    expect(
-      wrapper.find('.picker-menu').find('.picker-item').at(0)
-      .hasClass('picker-item-rounded-top')
-    ).to.be.true;
-  });
-
-    it('should add picker-item-rounded-bottom class to last option', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
-    const wrapper = shallow(<Picker options={opts} />);
-    expect(
-      wrapper.find('.picker-menu').find('.picker-item').at(1)
-      .hasClass('picker-item-rounded-bottom')
-    ).to.be.true;
+    const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }];
+    const wrapper = mount(<Picker options={opts} />);
+    expect(wrapper.find('.pbg-picker-menu').find('.picker-menu-item')).to.have.lengthOf(2);
   });
 
   it('should render the correct label', () => {
@@ -96,44 +79,37 @@ describe('Picker', () => {
   });
 
   it('should call onChange after select is changed', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
+    const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }];
     const onChange = sinon.spy();
-    const wrapper = shallow(<Picker onChange={onChange} options={opts}/>);
-    wrapper.find('.picker-menu').find('.picker-item').at(0).simulate('click');
+    const wrapper = mount(<Picker onChange={onChange} options={opts}/>);
+    wrapper.find('.pbg-picker-menu').find('.picker-menu-item').at(0).simulate('click');
     expect(onChange.calledOnce).to.be.true;
   });
 
-  it('should call use clickable label for selected option', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
-    const wrapper = shallow(<Picker value={opts[0].value} options={opts}/>);
-    expect(wrapper.find('.picker-menu').find('.picker-item').at(0).find(Label).prop('type'))
-      .to.equal(labelTypes.CLICKABLE);
-  });
-
   it('should call onChange with correct value if value is null', function (done) {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: null }];
+    const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: null }];
     const onChange = (ev) => {
       expect(ev.target.value).to.equal(null);
       done();
     };
     const wrapper = mount(<Picker onChange={onChange} options={opts} />);
-    wrapper.find('.picker-menu').find('.picker-item').at(1).simulate('click');
+    wrapper.find('.pbg-picker-menu').find('.picker-menu-item').at(1).simulate('click');
   });
 
   it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function (done) {
     const opts = [
-      { label: 'option 1', value: 'opt1' },
-      { label: 'option 2', value: PICKER_EMPTY_VALUE }
+      { label: { term: 'option 1' }, value: 'opt1' },
+      { label: { term: 'option 2' }, value: PICKER_EMPTY_VALUE }
     ];
     const onChange = (ev) => {
       expect(ev.target.value).to.equal(null);
       done();
     };
     const wrapper = mount(<Picker onChange={onChange} options={opts} />);
-    wrapper.find('.picker-menu').find('.picker-item').at(1).simulate('click');
+    wrapper.find('.pbg-picker-menu').find('.picker-menu-item').at(1).simulate('click');
   });
 
-  it('shuld call onFocus', () => {
+  it('should call onFocus', () => {
     const onFocus = sinon.spy();
     const wrapper = mount(<Picker onFocus={onFocus} />);
     wrapper.find('button').simulate('focus');
@@ -146,38 +122,37 @@ describe('Picker', () => {
   });
 
   it('should select correct option when value is given', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
+    const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }]
     const value = opts[1].value;
-    const wrapper = shallow(<Picker options={opts} value={value} />);
-    expect(wrapper.find('button').text()).to.be.equal(opts[1].label);
+    const wrapper = mount(<Picker options={opts} value={value} />);
+    expect(wrapper.find('button').text()).to.be.equal(opts[1].label.term);
   });
 
-  it('should add class active to picker-menu upon clicking button', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
+  it('should activate PickerMenu upon clicking button', () => {
+    const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }]
     const wrapper = shallow(<Picker options={opts} />);
-    expect(wrapper.find('.picker-menu').hasClass('active')).to.be.false;
     wrapper.find('button').simulate('click');
-    expect(wrapper.find('.picker-menu').hasClass('active')).to.be.true;
+    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(true); 
   });
 
-  it('should remove class active to picker-menu upon blurring button', function(done) {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
+  it('should deactivate PickerMenu upon blurring button', function(done) {
+    const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }]
     const onBlur = () => {
-      expect(wrapper.find('.picker-menu').hasClass('active')).to.be.false;
+      expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false); 
       done();
     }
     const wrapper = shallow(<Picker options={opts} onBlur={onBlur} />);
     wrapper.find('button').simulate('click');
-    expect(wrapper.find('.picker-menu').hasClass('active')).to.be.true;
+    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(true); 
     wrapper.find('button').simulate('blur');
   });
 
   it('should not be activable when disabled', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
+    const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }]
     const wrapper = shallow(<Picker options={opts} disabled />);
-    expect(wrapper.find('.picker-menu').hasClass('active')).to.be.false;
+    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false); 
     wrapper.find('button').simulate('click');
-    expect(wrapper.find('.picker-menu').hasClass('active')).to.be.false;
+    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false); 
   });
 
   it('should not execute deactivate code if disabled', () => {

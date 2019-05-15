@@ -9,11 +9,16 @@ import FieldStateProvider from '../../util/field-state-provider';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const options = [
-  { label: 'Choose one', value: PICKER_EMPTY_VALUE },
-  { label: 'First option', value: 'first' },
-  { label: 'Second option', value: 'second' },
-  { label: 'Super long option text here', value: 'third' },
+const simpleOptions = [
+  { label: { term: 'Choose one' }, value: PICKER_EMPTY_VALUE },
+  { label: { term: 'First option' }, value: 'first' },
+  { label: { term: 'Second option' }, value: 'second' },
+  { label: { term: 'Super long option text here' }, value: 'third' },
+];
+
+const splitOptions = [
+  { label: { term: 'evenly', desc: 'split total cost into even shares' }, value: 'evenly' },
+  { label: { term: 'custom', desc: 'vary share amounts per contributor' }, value: 'custom' },
 ];
 const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 
@@ -29,7 +34,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
       hint="Select one awesome value"
       value={null}
       onChange={action('onChange')}
-      options={options}
+      options={simpleOptions}
       simple
     />
   ))
@@ -41,7 +46,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
       hint="Select one awesome value"
       value={null}
       onChange={action('onChange')}
-      options={options}
+      options={simpleOptions}
       simple
     />
   ))
@@ -54,7 +59,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
       hint="Select one awesome value"
       value={null}
       onChange={action('onChange')}
-      options={options}
+      options={simpleOptions}
       simple
     />
   ))
@@ -67,7 +72,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
       hint="Select one awesome value"
       value={null}
       onChange={action('onChange')}
-      options={options}
+      options={simpleOptions}
       simple
       disabled
     />
@@ -80,7 +85,75 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
       hint="Select one awesome value"
       value={null}
       onChange={action('onChange')}
-      options={options}
+      options={simpleOptions}
+      simple
+      big
+    />
+  ));
+
+storiesOf('Consumer/Desktop/Atomic Components/split-picker', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('split-picker/default', () => (
+    <FieldStateProvider
+      component={Picker}
+      name="picker"
+      label="Label"
+      hint="Select one awesome value"
+      value="evenly"
+      onChange={action('onChange')}
+      options={splitOptions}
+      simple
+    />
+  ))
+  .add('split-picker/open', () => (
+    <FieldStateProvider
+      component={Picker}
+      name="picker"
+      label="Label"
+      hint="Select one awesome value"
+      value="evenly"
+      onChange={action('onChange')}
+      options={splitOptions}
+      simple
+    />
+  ))
+  .add('split-picker/error', () => (
+    <FieldStateProvider
+      component={Picker}
+      name="picker"
+      label="Label"
+      error="This field has an error"
+      hint="Select one awesome value"
+      value="evenly"
+      onChange={action('onChange')}
+      options={splitOptions}
+      simple
+    />
+  ))
+  .add('split-picker/disabled', () => (
+    <FieldStateProvider
+      component={Picker}
+      name="picker"
+      label="Label"
+      error="This field has an error"
+      hint="Select one awesome value"
+      value="evenly"
+      onChange={action('onChange')}
+      options={splitOptions}
+      simple
+      disabled
+    />
+  ))
+  .add('split-picker/big', () => (
+    <FieldStateProvider
+      component={Picker}
+      name="picker"
+      label="Label"
+      hint="Select one awesome value"
+      value="evenly"
+      onChange={action('onChange')}
+      options={splitOptions}
       simple
       big
     />
@@ -98,7 +171,7 @@ storiesOf('Consumer/Desktop/Form Fields/picker', module)
       hint="Select one awesome value"
       value={null}
       onChange={action('onChange')}
-      options={options}
+      options={simpleOptions}
     />
   ))
   .add('picker/error', () => (
@@ -110,7 +183,7 @@ storiesOf('Consumer/Desktop/Form Fields/picker', module)
       hint="Select one awesome value"
       value={null}
       onChange={action('onChange')}
-      options={options}
+      options={simpleOptions}
     />
   ))
   .add('picker/disabled', () => (
@@ -121,7 +194,7 @@ storiesOf('Consumer/Desktop/Form Fields/picker', module)
       hint="Select one awesome value"
       value={null}
       onChange={action('onChange')}
-      options={options}
+      options={simpleOptions}
       disabled
     />
   ));
