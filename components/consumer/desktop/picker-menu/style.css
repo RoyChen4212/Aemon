@@ -97,5 +97,10 @@
       .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item:hover .pbg-label {
         color: #006AFF; }
   .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item-term {
-    font-weight: bold;
-    min-width: 60px; }
+    min-width: 50px; }
+  .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item-term-strong {
+    font-weight: bold; }
+  .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item-desc {
+    margin-left: 10px;
+    font-size: 12px;
+    line-height: 16px; }

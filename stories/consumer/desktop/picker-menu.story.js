@@ -10,16 +10,16 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const simpleOptions = [
-  { label: { description: 'Choose one' }, value: PICKER_EMPTY_VALUE },
-  { label: { description: 'First option' }, value: 'first' },
-  { label: { description: 'Second option' }, value: 'second' },
-  { label: { description: 'Super long option text here' }, value: 'third' },
+  { label: { term: 'Choose one' }, value: PICKER_EMPTY_VALUE },
+  { label: { term: 'First option' }, value: 'first' },
+  { label: { term: 'Second option' }, value: 'second' },
+  { label: { term: 'Super long option text here' }, value: 'third' },
 ];
 
 const splitOptions = [
-  { label: { description: 'Choose one' }, value: PICKER_EMPTY_VALUE },
-  { label: { term: 'evenly', description: 'split total cost into even shares' }, value: 'evenly' },
-  { label: { term: 'custom', description: 'vary share amounts per contributor' }, value: 'custom' },
+  { label: { term: 'Choose one' }, value: PICKER_EMPTY_VALUE },
+  { label: { term: 'evenly', desc: 'split total cost into even shares' }, value: 'evenly' },
+  { label: { term: 'custom', desc: 'vary share amounts per contributor' }, value: 'custom' },
 ];
 
 storiesOf('Consumer/Desktop/Atomic Components/simple-picker-menu', module)

@@ -8,8 +8,8 @@ import Label, { labelTypes } from '../../../components/consumer/desktop/label';
 
 describe('PickerMenu', () => {
   const opts = [
-    { label: { description: 'option 1' }, value: 'opt1' },
-    { label: { term: 'opt2', description: 'option 2' }, value: 'opt2' },
+    { label: { term: 'option 1' }, value: 'opt1' },
+    { label: { term: 'option 2', desc: 'this is the option 2' }, value: 'opt2' },
   ];
 
   it('should have correct class name', () => {
@@ -23,18 +23,18 @@ describe('PickerMenu', () => {
     expect(wrapper.find('.picker-menu-item')).to.have.lengthOf(2);
   });
 
-  it('should add picker-menu-item-term class to given option with term', () => {
+  it('should add picker-menu-item-term class to given options', () => {
     const wrapper = shallow(<PickerMenu options={opts} />);
     expect(
       wrapper.find('.picker-menu-item .picker-menu-item-term')
-    ).to.have.lengthOf(1);
+    ).to.have.lengthOf(2);
   });
 
-  it('should add picker-menu-item-description class to given options', () => {
+  it('should add picker-menu-item-desc class to options with desc', () => {
     const wrapper = shallow(<PickerMenu options={opts} />);
     expect(
-      wrapper.find('.picker-menu-item .picker-menu-item-description')
-    ).to.have.lengthOf(2);
+      wrapper.find('.picker-menu-item .picker-menu-item-desc')
+    ).to.have.lengthOf(1);
   });
 
   it('should add picker-menu-item-rounded-top class to first option', () => {

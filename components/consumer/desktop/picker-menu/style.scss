@@ -30,8 +30,17 @@
     }
 
     .picker-menu-item-term {
+      min-width: 50px;
+    }
+
+    .picker-menu-item-term-strong {
       font-weight: bold;
-      min-width: 60px;
+    }
+
+    .picker-menu-item-desc{
+      margin-left: 10px;
+      font-size: 12px;
+      line-height: 16px;
     }
   }
 }
