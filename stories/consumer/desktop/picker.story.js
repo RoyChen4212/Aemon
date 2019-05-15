@@ -191,14 +191,14 @@ storiesOf('Consumer/Desktop/Form Fields/picker', module)
     />
   ))
   .add('picker/disabled', () => (
-      <FieldStateProvider
-        component={Picker}
-        name="picker"
-        label="Label"
-        hint="Select one awesome value"
-        value={null}
-        onChange={action('onChange')}
-        options={simpleOptions}
-        disabled
-      />
+    <FieldStateProvider
+      component={Picker}
+      name="picker"
+      label="Label"
+      hint="Select one awesome value"
+      value={null}
+      onChange={action('onChange')}
+      options={simpleOptions}
+      disabled
+    />
   ));
