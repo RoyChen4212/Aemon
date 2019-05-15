@@ -18,20 +18,21 @@ class Popover extends React.PureComponent {
     this.setState({ active: false });
   }
 
-  bindClickoutDeactivation = () => {
-    const elem = this.popoverElementRef.current;
+  bindDeactivationEvent = () => {
     const body = jQuery('body');
-    body.on('click', (ev) => {
-      const parents = jQuery(ev.target).parents('.pbg-popover')
-      const clickedOutside = elem !== ev.target && (parents && elem !== parents[0]);
-      if (clickedOutside) this.deactivate();
-    });
+    body.on('click', this.deactivateIfClickOutside);
+  }
+
+  deactivateIfClickOutside = (ev) => {
+    const elem = this.popoverElementRef.current;
+    const parents = jQuery(ev.target).parents('.pbg-popover')
+    const clickedOutside = elem !== ev.target && (parents && elem !== parents[0]);
+    if (clickedOutside) this.deactivate();
   }
 
   positionPopoverWithinWindow() {
     const elem = jQuery(this.popoverElementRef.current);
     const popoverRightBorderPosition = elem.offset().left + elem.outerWidth();
-    console.log('positioning', this.viewWidth, popoverRightBorderPosition);
     if (this.viewWidth < popoverRightBorderPosition) {
       elem.css({left: this.viewWidth - popoverRightBorderPosition - 16});
     }
@@ -44,7 +45,7 @@ class Popover extends React.PureComponent {
   componentDidUpdate(prevProps, prevState) {
     if (this.active && !prevState.active) {
       this.positionPopoverWithinWindow();
-      this.bindClickoutDeactivation();
+      this.bindDeactivationEvent();
     }
   }
 

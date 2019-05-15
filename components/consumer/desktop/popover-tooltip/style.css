@@ -23,7 +23,7 @@
   font-size: 18px;
   line-height: 28px; }
 
-.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text {
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text, .pbg-consumer-desktop .pbg-popover-tooltip {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -43,7 +43,7 @@
 .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled {
   color: #526679; }
 
-.pbg-desktop-small-text {
+.pbg-desktop-small-text, .pbg-consumer-desktop .pbg-popover-tooltip {
   font-size: 12px;
   line-height: 16px; }
 
@@ -83,10 +83,10 @@
   position: relative;
   display: inline-block; }
 
-.pbg-consumer-desktop .pbg-popover {
+.pbg-consumer-desktop .pbg-popover-tooltip {
   display: none;
-  padding: 24px;
-  min-width: 300px; }
+  padding: 16px;
+  width: 340px; }
 
 .pbg-consumer-desktop .pbg-popover-active {
   display: block;

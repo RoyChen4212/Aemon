@@ -30,4 +30,33 @@ describe('Popover', () => {
       done();
     });
   });
+
+  it('should deactivate when clicked outside', function(done) {
+    const trigger = (props) => <a onClick={props.onClick}>Click Me</a>;
+    const wrapper = mount(
+      <div className="wrapper">
+        <Popover trigger={trigger} content={<div>I am content</div>}/>
+      </div>
+    );
+    wrapper.find('a').simulate('click');
+    setTimeout(() => {
+      wrapper.find(Popover).instance().deactivateIfClickOutside({ target: <div></div> });
+      expect(wrapper.find(Popover).instance().active).to.be.false;
+      done();
+    });
+  });
+
+  it('should not deactivate when clicked inside', function(done) {
+    const trigger = (props) => <a onClick={props.onClick}>Click Me</a>;
+    const content = <div className="content">I am content</div>;
+    const wrapper = mount(
+      <Popover trigger={trigger} content={content}/>
+    );
+    wrapper.find('a').simulate('click');
+    setTimeout(() => {
+      wrapper.find('.content').simulate('click');
+      expect(wrapper.find(Popover).instance().active).to.be.true;
+      done();
+    });
+  });
 });
