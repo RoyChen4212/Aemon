@@ -96,3 +96,6 @@
       background: #ECF4FF; }
       .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item:hover .pbg-label {
         color: #006AFF; }
+  .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item-term {
+    font-weight: bold;
+    min-width: 60px; }

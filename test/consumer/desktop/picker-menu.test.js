@@ -4,8 +4,14 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import PickerMenu from '../../../components/consumer/desktop/picker-menu';
+import Label, { labelTypes } from '../../../components/consumer/desktop/label';
 
 describe('PickerMenu', () => {
+  const opts = [
+    { label: { description: 'option 1' }, value: 'opt1' },
+    { label: { term: 'opt2', description: 'option 2' }, value: 'opt2' },
+  ];
+
   it('should have correct class name', () => {
     const wrapper = shallow(<PickerMenu />);
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
@@ -13,13 +19,25 @@ describe('PickerMenu', () => {
   });
 
   it('should render given options', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const wrapper = shallow(<PickerMenu options={opts} />);
     expect(wrapper.find('.picker-menu-item')).to.have.lengthOf(2);
   });
 
+  it('should add picker-menu-item-term class to given option with term', () => {
+    const wrapper = shallow(<PickerMenu options={opts} />);
+    expect(
+      wrapper.find('.picker-menu-item .picker-menu-item-term')
+    ).to.have.lengthOf(1);
+  });
+
+  it('should add picker-menu-item-description class to given options', () => {
+    const wrapper = shallow(<PickerMenu options={opts} />);
+    expect(
+      wrapper.find('.picker-menu-item .picker-menu-item-description')
+    ).to.have.lengthOf(2);
+  });
+
   it('should add picker-menu-item-rounded-top class to first option', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const wrapper = shallow(<PickerMenu options={opts} />);
     expect(
       wrapper.find('.picker-menu-item').at(0)
@@ -28,7 +46,6 @@ describe('PickerMenu', () => {
   });
 
   it('should add picker-menu-item-rounded-bottom class to last option', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const wrapper = shallow(<PickerMenu options={opts} />);
     expect(
       wrapper.find('.picker-menu-item').at(1)
@@ -37,7 +54,6 @@ describe('PickerMenu', () => {
   });
 
   it('should select correct option when selected is given', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
     const selected = opts[1].value;
     const wrapper = shallow(<PickerMenu options={opts} selected={selected} />);
     expect(
@@ -46,20 +62,24 @@ describe('PickerMenu', () => {
     ).to.be.true;
   });
 
+  it('should use clickable label for selected option', () => {
+    const selected = opts[0].value;
+    const wrapper = shallow(<PickerMenu options={opts} selected={selected} />);
+    expect(wrapper.find('.picker-menu-item').at(0).find(Label).prop('type'))
+      .to.equal(labelTypes.CLICKABLE);
+  });
+
   it('should add class active when given active is true', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
     const wrapper = shallow(<PickerMenu options={opts} active={true} />);
     expect(wrapper.hasClass('active')).to.be.true;
   });
 
   it('should not add class active when given active is false', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
     const wrapper = shallow(<PickerMenu options={opts} active={false} />);
     expect(wrapper.hasClass('active')).to.be.false;
   });
 
   it('should call onOptionClick after an option is clicked', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const onOptionClick = sinon.spy();
     const wrapper = shallow(<PickerMenu onOptionClick={sinon.fake.returns(onOptionClick)} options={opts}/>);
     wrapper.find('.picker-menu-item').at(0).simulate('click');
