@@ -86,9 +86,14 @@
     border: 1px solid #8093A6;
     border-radius: 4px;
     min-width: 80px;
-    max-width: 236px;
     padding: 9px 26px 8px 8px;
-    position: relative; }
+    position: relative;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    max-width: 100%; }
     .pbg-consumer-desktop.pbg-picker .pbg-picker-container button:focus {
       outline: 0; }
     .pbg-consumer-desktop.pbg-picker .pbg-picker-container button .pbg-picker-arrow {
