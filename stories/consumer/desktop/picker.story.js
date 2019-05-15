@@ -13,7 +13,7 @@ const simpleOptions = [
   { label: { term: 'Choose one' }, value: PICKER_EMPTY_VALUE },
   { label: { term: 'First option' }, value: 'first' },
   { label: { term: 'Second option' }, value: 'second' },
-  { label: { term: 'Super long option text here' }, value: 'third' },
+  { label: { term: 'Extremely long text here, this should expand menu' }, value: 'third' },
 ];
 
 const splitOptions = [
@@ -78,17 +78,19 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
     />
   ))
   .add('simple-picker/big', () => (
-    <FieldStateProvider
-      component={Picker}
-      name="picker"
-      label="Label"
-      hint="Select one awesome value"
-      value={null}
-      onChange={action('onChange')}
-      options={simpleOptions}
-      simple
-      big
-    />
+    <div className="w-25">
+      <FieldStateProvider
+        component={Picker}
+        name="picker"
+        label="Label"
+        hint="Select one awesome value"
+        value={null}
+        onChange={action('onChange')}
+        options={simpleOptions}
+        simple
+        big
+      />
+    </div>
   ));
 
 storiesOf('Consumer/Desktop/Atomic Components/split-picker', module)
@@ -146,17 +148,19 @@ storiesOf('Consumer/Desktop/Atomic Components/split-picker', module)
     />
   ))
   .add('split-picker/big', () => (
-    <FieldStateProvider
-      component={Picker}
-      name="picker"
-      label="Label"
-      hint="Select one awesome value"
-      value="evenly"
-      onChange={action('onChange')}
-      options={splitOptions}
-      simple
-      big
-    />
+    <div className="w-25">
+      <FieldStateProvider
+        component={Picker}
+        name="picker"
+        label="Label"
+        hint="Select one awesome value"
+        value="evenly"
+        onChange={action('onChange')}
+        options={splitOptions}
+        simple
+        big
+      />
+    </div>
   ));
 
 storiesOf('Consumer/Desktop/Form Fields/picker', module)
@@ -187,14 +191,14 @@ storiesOf('Consumer/Desktop/Form Fields/picker', module)
     />
   ))
   .add('picker/disabled', () => (
-    <FieldStateProvider
-      component={Picker}
-      name="picker"
-      label="Label"
-      hint="Select one awesome value"
-      value={null}
-      onChange={action('onChange')}
-      options={simpleOptions}
-      disabled
-    />
+      <FieldStateProvider
+        component={Picker}
+        name="picker"
+        label="Label"
+        hint="Select one awesome value"
+        value={null}
+        onChange={action('onChange')}
+        options={simpleOptions}
+        disabled
+      />
   ));

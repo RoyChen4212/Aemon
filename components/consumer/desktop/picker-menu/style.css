@@ -85,7 +85,8 @@
   .pbg-consumer-desktop.pbg-picker-menu.active {
     display: block; }
   .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item {
-    padding: 8px 16px; }
+    padding: 8px 16px;
+    white-space: nowrap; }
     .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item.picker-menu-item-rounded-top {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px; }
