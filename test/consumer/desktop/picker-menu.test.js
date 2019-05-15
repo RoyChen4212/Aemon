@@ -61,7 +61,7 @@ describe('PickerMenu', () => {
   it('should call onOptionClick after an option is clicked', () => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const onOptionClick = sinon.spy();
-    const wrapper = shallow(<PickerMenu onOptionClick={onOptionClick} options={opts}/>);
+    const wrapper = shallow(<PickerMenu onOptionClick={sinon.fake.returns(onOptionClick)} options={opts}/>);
     wrapper.find('.picker-item').at(0).simulate('click');
     expect(onOptionClick.calledOnce).to.be.true;
   });
