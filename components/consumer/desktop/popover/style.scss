@@ -1,0 +1,19 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-popover-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .pbg-popover {
+    display: none;
+    padding: 24px;
+    min-width: 300px;
+  }
+
+  .pbg-popover-active {
+    display: block;
+    position: absolute;
+  }
+}

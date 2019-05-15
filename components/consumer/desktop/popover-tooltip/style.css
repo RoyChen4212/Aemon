@@ -23,7 +23,7 @@
   font-size: 18px;
   line-height: 28px; }
 
-.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text {
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text, .pbg-consumer-desktop .pbg-popover-tooltip {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -43,7 +43,7 @@
 .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled {
   color: #526679; }
 
-.pbg-desktop-small-text {
+.pbg-desktop-small-text, .pbg-consumer-desktop .pbg-popover-tooltip {
   font-size: 12px;
   line-height: 16px; }
 
@@ -70,18 +70,24 @@
 .label-strong {
   font-weight: 500; }
 
-.pbg-desktop-shadow-level-one, .pbg-consumer-desktop.pbg-container.pbg-container-shadow-1 {
+.pbg-desktop-shadow-level-one {
   box-shadow: 0px 3px 5px rgba(17, 24, 30, 0.05); }
 
-.pbg-desktop-shadow-level-two, .pbg-consumer-desktop.pbg-container.pbg-container-shadow-2 {
+.pbg-desktop-shadow-level-two {
   box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06); }
 
 .pbg-desktop-form-field-disabled {
   background: #F0F3F8; }
 
-.pbg-consumer-desktop.pbg-container {
-  border-radius: 4px; }
-  .pbg-consumer-desktop.pbg-container.pbg-container-solid {
-    background: #fff; }
-  .pbg-consumer-desktop.pbg-container.pbg-container-stroked {
-    border: 1px solid #D5DDE9; }
+.pbg-consumer-desktop.pbg-popover-container {
+  position: relative;
+  display: inline-block; }
+
+.pbg-consumer-desktop .pbg-popover-tooltip {
+  display: none;
+  padding: 16px;
+  width: 340px; }
+
+.pbg-consumer-desktop .pbg-popover-active {
+  display: block;
+  position: absolute; }
