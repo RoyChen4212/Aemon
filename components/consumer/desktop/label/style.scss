@@ -3,6 +3,7 @@
 .pbg-consumer-desktop {
   .pbg-label {
     @extend .pbg-desktop-label-normal;
+    display: inline-block;
     margin-bottom: 0;
 
     * {
@@ -39,6 +40,7 @@
     &.pbg-label-clickable {
       @extend .pbg-desktop-label-link;
       cursor: pointer;
+      pointer-events: all;
     }
 
     &.pbg-label-error {

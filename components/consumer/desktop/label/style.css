@@ -80,6 +80,7 @@
   background: #F0F3F8; }
 
 .pbg-consumer-desktop .pbg-label {
+  display: inline-block;
   margin-bottom: 0; }
   .pbg-consumer-desktop .pbg-label * {
     line-height: 21px;
@@ -94,4 +95,5 @@
   .pbg-consumer-desktop .pbg-label.pbg-label-input {
     color: #000; }
   .pbg-consumer-desktop .pbg-label.pbg-label-clickable {
-    cursor: pointer; }
+    cursor: pointer;
+    pointer-events: all; }

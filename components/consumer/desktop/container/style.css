@@ -80,9 +80,7 @@
   background: #F0F3F8; }
 
 .pbg-consumer-desktop.pbg-container {
-  border-radius: 4px;
-  min-width: 300px;
-  min-height: 60px; }
+  border-radius: 4px; }
   .pbg-consumer-desktop.pbg-container.pbg-container-solid {
     background: #fff; }
   .pbg-consumer-desktop.pbg-container.pbg-container-stroked {

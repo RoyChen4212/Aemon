@@ -1,15 +1,15 @@
 import React from 'react';
 import './style.css';
 
-const Container = (props) => (
-  <div className={className(props)}>
+const Container = React.forwardRef((props, ref) => (
+  <div className={className(props)} ref={ref}>
     {props.children}
   </div>
-);
+));
 
 const className = (props) => {
   const base = 'pbg-consumer-desktop pbg-container';
-  let _className = base;
+  let _className = props.className ? `${base} ${props.className}` : base;
   if (props.solid) {
     _className += ' pbg-container-solid';
   }
