@@ -11,6 +11,7 @@ export const shouldBehaveLikeFormField = (wrapper) => {
   });
 
   it('should have correct class when error', () => {
+    wrapper.setProps({ error: 'some error'});
     expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
   });
 

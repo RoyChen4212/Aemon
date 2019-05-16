@@ -7,29 +7,8 @@
       height: 40px;
 
       .pbg-label {
-        visibility: visible;
-        font-family: Roboto;
-        font-size: 14px;
-        font-weight: normal;
-        color: $grey-80;
-        line-height: 21px;
         display:block;
         margin: 0 0 4px 2px;
-
-        &.pbg-label-error {
-          span {
-            color: $red-60;
-          }
-        }
-      }
-
-      .pbg-hint {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 16px;
-        color: $grey-60;
       }
 
       input {
@@ -67,9 +46,6 @@
 
       
       &.pbg-form-field-error {
-        .pbg-hint {
-          color: $red-60;
-        }
         input {
           border-color: $red-60;
         }

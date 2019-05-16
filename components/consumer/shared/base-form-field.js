@@ -8,7 +8,7 @@ class BaseFormField extends React.Component {
   get className() {
     let resultingClassName = this.baseClassName;
 
-    if (this.error) {
+    if (this.error && !this.focused) {
       resultingClassName += ' pbg-form-field-error';
     }
 
@@ -32,7 +32,7 @@ class BaseFormField extends React.Component {
 
   get hint() { return this.adaptedProps.hint; }
 
-  get focused() { return this.adaptedProps.focused || !!this.error; }
+  get focused() { return this.adaptedProps.focused; }
 
   get disabled() { return this.adaptedProps.disabled; }
 
@@ -60,7 +60,9 @@ class BaseFormField extends React.Component {
   }
 
   renderHintOrError(Hint) {
-    if (this.error) return <div><Hint type={hintTypes.ERROR}>{this.error}</Hint></div>;
+    if (this.error) {
+      return <div><Hint type={hintTypes.ERROR}>{this.error}</Hint></div>;
+    }
     if (this.hint) return <div><Hint>{this.hint}</Hint></div>;
     return null;
   }

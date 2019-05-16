@@ -151,6 +151,18 @@ describe('TextField', () => {
       const wrapper = shallow(<TextField error='and error' label={expected} />);
       expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
+
+    it('should have error label when error is given but field is focused', () => {
+      const expected = 'A label';
+      const wrapper = shallow(<TextField error='and error' label={expected} focused />);
+      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
+    });
+
+    it('should not have error class when error is given but field is focused', () => {
+      const expected = 'A label';
+      const wrapper = shallow(<TextField error='and error' label={expected} focused />);
+      expect(wrapper.hasClass('pbg-form-field-error')).to.be.false;
+    });
   });
 
   describe('when its a simple field', () => {

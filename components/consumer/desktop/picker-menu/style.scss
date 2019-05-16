@@ -4,6 +4,7 @@
   &.pbg-picker-menu {
     display: none;
     position: absolute;
+    z-index: 1050;
 
     &.active {
       display: block;
@@ -44,4 +45,3 @@
     }
   }
 }
-

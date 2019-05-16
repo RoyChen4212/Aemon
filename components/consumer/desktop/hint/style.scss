@@ -4,17 +4,23 @@
   &.pbg-hint {
     @extend .pbg-desktop-secondary-text;
     @extend .pbg-desktop-small-text;
+    &.pbg-hint-error {
+      @extend .pbg-desktop-small-error;
+      &:before {
+        content: url('../img/small-error-icon.svg');
+        margin-right: 5px;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    &.pbg-hint-clickable, &.pbg-hint-link {
+      @extend .pbg-desktop-small-link;
+    }
+
+    &.pbg-hint-strong {
+      @extend .pbg-desktop-small-strong;
+    }
   }
 
-  &.pbg-hint-error {
-    @extend .pbg-desktop-small-error;
-  }
-
-  &.pbg-hint-clickable, &.pbg-hint-link {
-    @extend .pbg-desktop-small-link;
-  }
-
-  &.pbg-hint-strong {
-    @extend .pbg-desktop-small-strong;
-  }
 }

@@ -9,8 +9,8 @@ class TextField extends FormField {
   baseType = 'text';
 
   get labelType() {
-    if (this.adaptedProps.error) return labelTypes.ERROR;
-    return labelTypes.ACTIVE;
+    if (this.error) return labelTypes.ERROR;
+    return labelTypes.base;
   }
 
   get type() { return this.adaptedProps.type || this.baseType };

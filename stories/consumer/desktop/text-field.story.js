@@ -79,6 +79,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
       onChange={action('change')}
       value="What you typed is wrong"
       error="this is an error"
+      hint="this is a hint"
     />
   ))
   .add('form-field/required', () => (

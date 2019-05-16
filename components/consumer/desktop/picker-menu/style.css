@@ -81,7 +81,8 @@
 
 .pbg-consumer-desktop.pbg-picker-menu {
   display: none;
-  position: absolute; }
+  position: absolute;
+  z-index: 1050; }
   .pbg-consumer-desktop.pbg-picker-menu.active {
     display: block; }
   .pbg-consumer-desktop.pbg-picker-menu .picker-menu-item {
