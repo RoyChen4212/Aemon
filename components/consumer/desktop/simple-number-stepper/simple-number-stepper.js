@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import makeEvent from '../../../lib/make-event';
 
-import './index.css';
+import './style.css';
 
 class SimpleNumberStepper extends Component {
   constructor(props) {

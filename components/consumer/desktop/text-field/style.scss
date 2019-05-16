@@ -33,18 +33,16 @@
       }
 
       input {
+        @extend .pbg-desktop-label-normal;
         background-color: #FFF;
         border: 1px solid $grey-50;
         border-radius: 4px;
-        padding: 10px;
+        padding: 8px 8px 9px;
         color: $grey-80;
         width: 100%;
 
         &::placeholder {  
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 14px;
+          @extend .pbg-desktop-label-normal;
           color: $grey-60;
         }
 
@@ -55,7 +53,7 @@
 
         &:disabled {
           background-color: $grey-10;
-          color: $grey-50;
+          color: $grey-60;
         }
       }
 

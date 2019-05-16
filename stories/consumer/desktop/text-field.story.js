@@ -8,25 +8,28 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Atomic Components/Simple Text Input', module)
+storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
   .addDecorator(storyFn => <WithFigma url='https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A7'>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('simple-text-input/default (focus for active)', () => (
-    <TextField
+    <FieldStateProvider
+      component={TextField}
       simple
       name="field2"
     />
   ))
   .add('simple-text-input/placeholder', () => (
-    <TextField
+    <FieldStateProvider
+      component={TextField}
       simple
       name="field2"
       label="Placeholder"
     />
   ))
   .add('simple-text-input/error', () => (
-    <TextField
+    <FieldStateProvider
+      component={TextField}
       simple
       name="field2"
       label="A text field"
@@ -45,7 +48,8 @@ storiesOf('Consumer/Desktop/Atomic Components/Simple Text Input', module)
     />
   ))
   .add('simple-text-input/facebook', () => (
-    <TextField
+    <FieldStateProvider
+      component={TextField}
       simple
       name="field3"
       label="A text field"
@@ -54,7 +58,7 @@ storiesOf('Consumer/Desktop/Atomic Components/Simple Text Input', module)
     />
   ));
 
-  storiesOf('Consumer/Desktop/Form Fields/Form field', module)
+  storiesOf('Consumer/Desktop/Form Fields/form-field', module)
   .addDecorator(storyFn => <WithFigma url='https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A9'>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)

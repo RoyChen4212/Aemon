@@ -23,7 +23,7 @@
   font-size: 18px;
   line-height: 28px; }
 
-.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text {
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text, .pbg-consumer-desktop.pbg-form-field.pbg-text-field input, .pbg-consumer-desktop.pbg-form-field.pbg-text-field input::placeholder {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -104,21 +104,17 @@
     background-color: #FFF;
     border: 1px solid #8093A6;
     border-radius: 4px;
-    padding: 10px;
+    padding: 8px 8px 9px;
     color: #24313E;
     width: 100%; }
     .pbg-consumer-desktop.pbg-form-field.pbg-text-field input::placeholder {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
       color: #526679; }
     .pbg-consumer-desktop.pbg-form-field.pbg-text-field input:focus {
       outline: none;
       border-color: #006AFF; }
     .pbg-consumer-desktop.pbg-form-field.pbg-text-field input:disabled {
       background-color: #F0F3F8;
-      color: #8093A6; }
+      color: #526679; }
   .pbg-consumer-desktop.pbg-form-field.pbg-text-field .pbg-text-field-icon {
     position: absolute;
     top: 9px;
