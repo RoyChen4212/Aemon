@@ -93,76 +93,6 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
     </div>
   ));
 
-storiesOf('Consumer/Desktop/Atomic Components/split-picker', module)
-  .addDecorator(wrapStory)
-  .addDecorator(withContainer)
-  .add('split-picker/default', () => (
-    <FieldStateProvider
-      component={Picker}
-      name="picker"
-      label="Label"
-      hint="Select one awesome value"
-      value="evenly"
-      onChange={action('onChange')}
-      options={splitOptions}
-      simple
-    />
-  ))
-  .add('split-picker/open', () => (
-    <FieldStateProvider
-      component={Picker}
-      name="picker"
-      label="Label"
-      hint="Select one awesome value"
-      value="evenly"
-      onChange={action('onChange')}
-      options={splitOptions}
-      simple
-    />
-  ))
-  .add('split-picker/error', () => (
-    <FieldStateProvider
-      component={Picker}
-      name="picker"
-      label="Label"
-      error="This field has an error"
-      hint="Select one awesome value"
-      value="evenly"
-      onChange={action('onChange')}
-      options={splitOptions}
-      simple
-    />
-  ))
-  .add('split-picker/disabled', () => (
-    <FieldStateProvider
-      component={Picker}
-      name="picker"
-      label="Label"
-      error="This field has an error"
-      hint="Select one awesome value"
-      value="evenly"
-      onChange={action('onChange')}
-      options={splitOptions}
-      simple
-      disabled
-    />
-  ))
-  .add('split-picker/big', () => (
-    <div className="w-25">
-      <FieldStateProvider
-        component={Picker}
-        name="picker"
-        label="Label"
-        hint="Select one awesome value"
-        value="evenly"
-        onChange={action('onChange')}
-        options={splitOptions}
-        simple
-        big
-      />
-    </div>
-  ));
-
 storiesOf('Consumer/Desktop/Form Fields/picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
@@ -201,4 +131,23 @@ storiesOf('Consumer/Desktop/Form Fields/picker', module)
       options={simpleOptions}
       disabled
     />
+  ));
+
+storiesOf('Consumer/Desktop/Payment Settings/split-picker', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('split-picker/default', () => (
+    <div className="w-25">
+      <FieldStateProvider
+        component={Picker}
+        name="picker"
+        label="Label"
+        hint="Select one awesome value"
+        value="evenly"
+        onChange={action('onChange')}
+        options={splitOptions}
+        simple
+        big
+      />
+    </div>
   ));
