@@ -58,11 +58,11 @@ class SimpleNumberStepper extends Component {
   renderDecrement() {
     if (this.canDecrement()) {
       return (
-        <button type="button" className="decrement" onClick={this.onDecrementClicked}>-</button>
+        <button type="button" className="decrement" onClick={this.onDecrementClicked}/>
       );
     } else {
       return (
-        <button disabled type="button" className="decrement disabled">-</button>
+        <button disabled type="button" className="decrement disabled"/>
       )
     }
   }
@@ -70,11 +70,11 @@ class SimpleNumberStepper extends Component {
   renderIncrement() {
     if (this.canIncrement()) {
       return (
-        <button type="button" className="increment" onClick={this.onIncrementClicked}>+</button>
+        <button type="button" className="increment" onClick={this.onIncrementClicked}/>
       )
     } else {
       return (
-        <button disabled type="button" className="increment disabled">+</button>
+        <button disabled type="button" className="increment disabled"/>
       )
     }
     

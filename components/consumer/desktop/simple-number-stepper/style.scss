@@ -2,25 +2,30 @@
 
 .pbg-consumer-desktop {
   &.simple-number-stepper {
-    border: 1px solid $pinkish-grey;
+    @extend .pbg-clearfix;
+    border: 1px solid $grey-50;
     border-radius: 3px;
-    display:inline-block;
   
     button {
       border: 0;
-      color: $clear-blue;
+      color: $blue-60;
       cursor: pointer;
-      font-family: monospace;
-      font-size: 1.2em;
-      line-height: 22px;
-      padding: 8px 10px;
+      float: left;
+      height: 38px;
+      padding: 0;
+      outline: 0;
+      width: 24px;
     }
 
     input {
+      @extend .pbg-desktop-h3;
       background-color: $white;
       border: 0;
+      float: left;
       margin: 0;
       text-align: center;
+      width: 42px;
+      height: 38px;
     }
     
     .has-danger {
@@ -31,22 +36,22 @@
     }
   
     .decrement {
-      background-color: $pale-grey;
       border-bottom-left-radius: 3px;
       border-top-left-radius: 3px;
+      background: $grey-10 url('../img/pbg-minus-small.svg') center no-repeat;
 
       &.disabled {
-        color: $grey-40;
+        background: $grey-10 url('../img/pbg-minus-small-grey.svg') center no-repeat;
       }
     }
   
     .increment {
-      background-color: $pale-grey;
       border-bottom-right-radius: 3px;
       border-top-right-radius: 3px;
+      background: $grey-10 url('../img/pbg-plus-small.svg') center no-repeat;
 
       &.disabled {
-        color: $grey-40;
+        background: $grey-10 url('../img/pbg-plus-small-grey.svg') center no-repeat;
       }
     }
   

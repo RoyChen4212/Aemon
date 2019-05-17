@@ -1,3 +1,8 @@
+.pbg-clearfix, .pbg-consumer-desktop.simple-number-stepper {
+  content: "";
+  clear: both;
+  display: table; }
+
 .pbg-desktop-h1 {
   font-family: "Roboto", serif;
   font-style: normal;
@@ -14,10 +19,9 @@
   font-size: 28px;
   line-height: 38px; }
 
-.pbg-desktop-h3 {
+.pbg-desktop-h3, .pbg-consumer-desktop.simple-number-stepper input {
   font-family: "Roboto", serif;
   font-style: normal;
-  font-weight: 300;
   color: #24313E;
   font-weight: normal;
   font-size: 18px;
@@ -80,37 +84,40 @@
   background: #F0F3F8; }
 
 .pbg-consumer-desktop.simple-number-stepper {
-  border: 1px solid #cfcfcf;
-  border-radius: 3px;
-  display: inline-block; }
+  border: 1px solid #8093A6;
+  border-radius: 3px; }
   .pbg-consumer-desktop.simple-number-stepper button {
     border: 0;
-    color: #2c81ff;
+    color: #006AFF;
     cursor: pointer;
-    font-family: monospace;
-    font-size: 1.2em;
-    line-height: 22px;
-    padding: 8px 10px; }
+    float: left;
+    height: 38px;
+    padding: 0;
+    outline: 0;
+    width: 24px; }
   .pbg-consumer-desktop.simple-number-stepper input {
     background-color: #fff;
     border: 0;
+    float: left;
     margin: 0;
-    text-align: center; }
+    text-align: center;
+    width: 42px;
+    height: 38px; }
   .pbg-consumer-desktop.simple-number-stepper .has-danger input {
     background-color: #fbe9e5;
     border-color: #f86143; }
   .pbg-consumer-desktop.simple-number-stepper .decrement {
-    background-color: #f5f8fb;
     border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px; }
+    border-top-left-radius: 3px;
+    background: #F0F3F8 url("../img/pbg-minus-small.svg") center no-repeat; }
     .pbg-consumer-desktop.simple-number-stepper .decrement.disabled {
-      color: #BCC7D3; }
+      background: #F0F3F8 url("../img/pbg-minus-small-grey.svg") center no-repeat; }
   .pbg-consumer-desktop.simple-number-stepper .increment {
-    background-color: #f5f8fb;
     border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px; }
+    border-top-right-radius: 3px;
+    background: #F0F3F8 url("../img/pbg-plus-small.svg") center no-repeat; }
     .pbg-consumer-desktop.simple-number-stepper .increment.disabled {
-      color: #BCC7D3; }
+      background: #F0F3F8 url("../img/pbg-plus-small-grey.svg") center no-repeat; }
   .pbg-consumer-desktop.simple-number-stepper [type="number"]::-webkit-outer-spin-button,
   .pbg-consumer-desktop.simple-number-stepper [type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;

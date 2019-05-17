@@ -18,7 +18,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-number-stepper', module)
   .add('simple-number-stepper/default', () => (
     <SimpleNumberStepper 
       min={1}
-      max={5}
-      value={1}
+      max={1001}
+      value={999}
     />
   ));

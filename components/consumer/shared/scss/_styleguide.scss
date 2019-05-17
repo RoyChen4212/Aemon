@@ -65,6 +65,12 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 // Not all "components" are really components, some can be styles that get extended
 // or used to compose a new component.
 
+.pbg-clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .pbg-desktop-h1 {
   font-family: $roboto;
   font-style: normal;
@@ -86,7 +92,6 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 .pbg-desktop-h3 {
   font-family: $roboto;
   font-style: normal;
-  font-weight: 300;
   color: $grey-80;
   font-weight: normal;
   font-size: 18px;

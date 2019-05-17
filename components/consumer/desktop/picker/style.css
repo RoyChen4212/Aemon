@@ -1,3 +1,8 @@
+.pbg-clearfix {
+  content: "";
+  clear: both;
+  display: table; }
+
 .pbg-desktop-h1 {
   font-family: "Roboto", serif;
   font-style: normal;
@@ -17,7 +22,6 @@
 .pbg-desktop-h3, .pbg-consumer-desktop.pbg-picker.pbg-picker-big .pbg-picker-container button {
   font-family: "Roboto", serif;
   font-style: normal;
-  font-weight: 300;
   color: #24313E;
   font-weight: normal;
   font-size: 18px;
