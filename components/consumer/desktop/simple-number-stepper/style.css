@@ -103,9 +103,6 @@
     text-align: center;
     width: 42px;
     height: 38px; }
-  .pbg-consumer-desktop.simple-number-stepper .has-danger input {
-    background-color: #fbe9e5;
-    border-color: #f86143; }
   .pbg-consumer-desktop.simple-number-stepper .decrement {
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
@@ -115,7 +112,8 @@
   .pbg-consumer-desktop.simple-number-stepper .increment {
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
-    background: #F0F3F8 url("../img/pbg-plus-small.svg") center no-repeat; }
+    background: #F0F3F8 url("../img/pbg-plus-small.svg") center no-repeat;
+    width: 25px; }
     .pbg-consumer-desktop.simple-number-stepper .increment.disabled {
       background: #F0F3F8 url("../img/pbg-plus-small-grey.svg") center no-repeat; }
   .pbg-consumer-desktop.simple-number-stepper [type="number"]::-webkit-outer-spin-button,
