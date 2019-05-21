@@ -1,0 +1,61 @@
+import React from 'react';
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
+
+import ModalBranding from '../../../components/consumer/desktop/modal-branding';
+import Divider from '../../../components/consumer/desktop/divider';
+
+describe('ModalBranding', () => {
+  const logo = 'https://myimage.com';
+
+  it('should have correct class name', () => {
+    const wrapper = shallow(<ModalBranding />);
+    expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
+    expect(wrapper.hasClass('pbg-modal-branding')).to.be.true;
+  });
+
+  it('should render a header', () => {
+    const wrapper = shallow(<ModalBranding />);
+    const header = wrapper.find('.modal-branding-header');
+    expect(header).to.have.lengthOf(1);
+  });
+
+  it('should render an image inside a merchant-logo', () => {
+    const wrapper = shallow(<ModalBranding logo={logo} />);
+    const img = wrapper.find('.modal-branding-merchant-logo').find('img');
+    expect(img).to.have.lengthOf(1);
+  });
+
+  it('should render an image inside a powered-by-logo', () => {
+    const wrapper = shallow(<ModalBranding />);
+    const img = wrapper.find('.modal-branding-powered-by-logo').find('img');
+    expect(img).to.have.lengthOf(1);
+  });
+
+  it('should render an "powered by" phrase inside a powered-by-text', () => {
+    const wrapper = shallow(<ModalBranding />);
+    const text = wrapper.find('.modal-branding-powered-by-text').text();
+    expect(text).to.be.equal('powered by');
+  });
+
+  it('should render a footer if children are given', () => {
+    const child = <span>Foobar</span>;
+    const wrapper = shallow(<ModalBranding>{child}</ModalBranding>);
+    const header = wrapper.find('.modal-branding-footer');
+    expect(header).to.have.lengthOf(1);
+  });
+
+  it('should render a Divider inside the footer', () => {
+    const child = <span>Foobar</span>;
+    const wrapper = shallow(<ModalBranding>{child}</ModalBranding>);
+    const header = wrapper.find('.modal-branding-footer').find(Divider);
+    expect(header).to.have.lengthOf(1);
+  });
+
+  it('should not render a footer if children are not given', () => {
+    const wrapper = shallow(<ModalBranding />);
+    const header = wrapper.find('.modal-branding-footer');
+    expect(header).to.have.lengthOf(0);
+  });
+});
+
