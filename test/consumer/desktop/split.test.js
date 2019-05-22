@@ -3,7 +3,9 @@ import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
-import { SplitEven } from '../../../components/consumer/desktop/split';
+import { 
+  SplitEven, SplitCustom,
+} from '../../../components/consumer/desktop/split';
 import Picker from '../../../components/consumer/desktop/picker';
 import Label from '../../../components/consumer/desktop/label';
 import NumberStepper  from '../../../components/consumer/desktop/simple-number-stepper';
@@ -136,4 +138,26 @@ describe('SplitEven', () => {
       wrapper.find(NumberStepper).at(1).simulate('change', {target: { value: 2}});
     });
   });
+});
+
+describe('SplitCustom', () => {
+  shouldBehaveLikeFormField(shallow(<SplitCustom />));
+  const options = [
+    { label: {term: 'even'}, value: 'even'},
+    { label: {term: 'custom'}, value: 'custom'},
+  ];
+  const copy = {split: 'Split', for: 'for different amounts per contributor'};
+
+  it('should render a simple picker', () => {
+    const wrapper = shallow(<SplitCustom value={{ splitType: 'custom' }} min />);
+    const picker = wrapper.find(Picker);
+    expect(picker).to.have.lengthOf(1);
+    expect(picker.props().simple).to.be.true;
+  });
+
+  it('should pass options to picker', () => {
+    const wrapper = shallow(<SplitCustom value={{ splitType: 'custom' }} min options={options}/>);
+    expect(wrapper.find(Picker).props().options).to.eql(options);
+  });
+
 });
