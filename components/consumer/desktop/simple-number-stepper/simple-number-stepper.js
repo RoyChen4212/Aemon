@@ -38,13 +38,13 @@ class SimpleNumberStepper extends Component {
   canIncrement() {
     const { value } = this.state;
     const { max } = this.props;
-    return value < max;
+    return max ? value < max : true;
   }
 
   canDecrement() {
     const { value } = this.state;
     const { min } = this.props;
-    return value > min;
+    return min ? value > min : true;
   }
 
   canUpdateValue(toValue) {
@@ -84,9 +84,11 @@ class SimpleNumberStepper extends Component {
     const { value } = this.state;
     return (
       <div className="pbg-consumer-desktop simple-number-stepper">
+        <div className="png-clearfix">
         {this.renderDecrement()}
         <input type="number" value={value} size="2" disabled />
         {this.renderIncrement()}
+        </div>
       </div>
     );
   }

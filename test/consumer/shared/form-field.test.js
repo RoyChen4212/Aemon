@@ -7,6 +7,7 @@ import BaseFormField from '../../../components/consumer/shared/base-form-field';
 
 export const shouldBehaveLikeFormField = (wrapper) => {
   it('should have class pbg-form-field', () => {
+    console.log(wrapper)
     expect(wrapper.hasClass('pbg-form-field')).to.be.true;
   });
 
