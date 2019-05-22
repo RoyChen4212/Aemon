@@ -27,13 +27,6 @@
       width: 42px;
       height: 38px;
     }
-    
-    .has-danger {
-      input {
-        background-color: $coral-light;
-        border-color: $coral;
-      }
-    }
   
     .decrement {
       border-bottom-left-radius: 3px;
@@ -49,6 +42,7 @@
       border-bottom-right-radius: 3px;
       border-top-right-radius: 3px;
       background: $grey-10 url('../img/pbg-plus-small.svg') center no-repeat;
+      width: 25px;
 
       &.disabled {
         background: $grey-10 url('../img/pbg-plus-small-grey.svg') center no-repeat;
