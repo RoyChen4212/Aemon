@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { SplitEven, SplitCustom } from '../../../components/consumer/desktop/split'
+import { SplitEven, SplitCustom, SplitFixed } from '../../../components/consumer/desktop/split';
 import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
 
@@ -15,10 +15,20 @@ const copy = {
   for: 'for different amounts per contributor',
 };
 
+const copyFixed = {
+  split: 'Split',
+  to: 'to',
+  shares: 'shares for purchase',
+};
+
 const options = [
   { label: {term: 'even'}, value: 'even' },
   { label: {term: 'custom'}, value: 'custom' },
 ];
+
+const sharesSingleValue = { minShares: 6 };
+const sharesRangeValue = { minShares: 6, maxShares: 10 };
+const boundaries = [5,15];
 
 storiesOf('Consumer/Desktop/Payment Settings/split', module)
   .addDecorator(wrapStory)
@@ -26,7 +36,8 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
   .add('split/even/option/min', () => (
     <FieldStateProvider
       component={SplitEven}
-      value={{splitType: 'even'}}
+      value={{splitType: 'even', ...sharesSingleValue}}
+      boundaries={boundaries}
       copy={copy}
       options={options}
       min 
@@ -35,7 +46,8 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
   .add('split/even/option/range', () => (
     <FieldStateProvider
       component={SplitEven}
-      value={{splitType: 'even'}}
+      value={{splitType: 'even', ...sharesRangeValue}}
+      boundaries={boundaries}
       copy={copy}
       options={options}
       range />
@@ -44,7 +56,8 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
   .add('split/even/locked/min', () => (
     <FieldStateProvider
       component={SplitEven}
-      value={{splitType: 'even'}}
+      value={{splitType: 'even', ...sharesSingleValue}}
+      boundaries={boundaries}
       copy={copy}
       options={options} 
       min locked
@@ -53,7 +66,8 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
   .add('split/even/locked/range', () => (
     <FieldStateProvider
       component={SplitEven}
-      value={{splitType: 'even'}}
+      value={{splitType: 'even', ...sharesRangeValue}}
+      boundaries={boundaries}
       copy={copy}
       options={options} 
       range locked
@@ -75,5 +89,23 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       copy={copy}
       options={options} 
       locked
+    />)
+  )
+  .add('split/fixed-per-person/min', () => (
+    <FieldStateProvider
+      value={sharesSingleValue}
+      component={SplitFixed}
+      copy={copyFixed}
+      boundaries={boundaries}
+      min 
+    />)
+  )
+  .add('split/fixed-per-person/range', () => (
+    <FieldStateProvider
+      value={sharesRangeValue}
+      component={SplitFixed}
+      copy={copyFixed}
+      boundaries={boundaries}
+      range 
     />)
   );
