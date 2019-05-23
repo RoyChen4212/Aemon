@@ -84,10 +84,10 @@ class SimpleNumberStepper extends Component {
     const { value } = this.state;
     return (
       <div className="pbg-consumer-desktop simple-number-stepper">
-        <div className="png-clearfix">
-        {this.renderDecrement()}
-        <input type="number" value={value} size="2" disabled />
-        {this.renderIncrement()}
+        <div className="pbg-clearfix">
+          {this.renderDecrement()}
+          <input type="number" value={value} size="2" disabled />
+          {this.renderIncrement()}
         </div>
       </div>
     );

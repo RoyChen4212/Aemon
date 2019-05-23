@@ -85,7 +85,8 @@
 
 .pbg-consumer-desktop.simple-number-stepper {
   border: 1px solid #8093A6;
-  border-radius: 3px; }
+  border-radius: 3px;
+  width: 91px; }
   .pbg-consumer-desktop.simple-number-stepper button {
     border: 0;
     color: #006AFF;
@@ -101,7 +102,7 @@
     float: left;
     margin: 0;
     text-align: center;
-    width: 42px;
+    width: 40px;
     height: 38px; }
   .pbg-consumer-desktop.simple-number-stepper .decrement {
     border-bottom-left-radius: 3px;
@@ -121,7 +122,6 @@
     -webkit-appearance: none;
     margin: 0; }
   .pbg-consumer-desktop.simple-number-stepper [type="number"] {
-    -moz-appearance: textfield;
-    width: 40px; }
+    -moz-appearance: textfield; }
     .pbg-consumer-desktop.simple-number-stepper [type="number"]:focus {
       outline: 0; }

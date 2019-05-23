@@ -4,6 +4,7 @@
   &.simple-number-stepper {
     border: 1px solid $grey-50;
     border-radius: 3px;
+    width: 91px;
   
     button {
       border: 0;
@@ -23,7 +24,7 @@
       float: left;
       margin: 0;
       text-align: center;
-      width: 42px;
+      width: 40px;
       height: 38px;
     }
   
@@ -56,7 +57,6 @@
   
     [type="number"] {
       -moz-appearance: textfield;
-      width: 40px;
   
       &:focus {
         outline: 0;
