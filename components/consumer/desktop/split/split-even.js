@@ -80,7 +80,7 @@ class SplitEven extends ComposedFormField {
       <React.Fragment>
         <div className="pbg-split-copy">{this.copy.across || ''}</div>
         <NumberStepper
-          onChange={(ev) => this.updateValue({ min: ev.target.value }) }
+          onChange={(ev) => this.updateValue({ minShares: ev.target.value }) }
           min={this.minBoundary}
           max={this.maxBoundary}
           value={this.currentValue.minShares}

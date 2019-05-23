@@ -85,7 +85,7 @@ describe('SplitEven', () => {
 
     it('should report correct value when number stepper value changes', function (done) {
       const onChange = (ev) => {
-        expect(ev.target.value).to.eql({ splitType: 'even', min: 2});
+        expect(ev.target.value).to.eql({ splitType: 'even', minShares: 2});
         done();
       };
       const wrapper = shallow(
