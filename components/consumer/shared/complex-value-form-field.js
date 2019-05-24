@@ -2,7 +2,7 @@ import React from 'react';
 import makeEvent from '../../lib/make-event';
 
 const ComposeFormField = (FormField) => (
-  class BaseCheckbox extends FormField {
+  class ComplexValueFormField extends FormField {
     get currentValue() { return this.adaptedProps.value || {}; }
 
     updateValue = (value) => {
