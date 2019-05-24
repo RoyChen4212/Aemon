@@ -14,16 +14,16 @@ storiesOf('Consumer/Desktop/Payment Settings/claim-toggle', module)
   .add('claim-toggle/default', () => (
     <FieldStateProvider
       component={ClaimToggle}
-      label="Toggle label"
-      text="Helper text"
+      label="Label"
+      explainer="Explainer text"
       onChange={action('change')}
     />
   ))
   .add('claim-toggle/required', () => (
     <FieldStateProvider
       component={ClaimToggle}
-      label="Toggle label"
-      text="Helper text"
+      label="Label"
+      explainer="Explainer text"
       required
       onChange={action('change')}
     />
@@ -31,10 +31,10 @@ storiesOf('Consumer/Desktop/Payment Settings/claim-toggle', module)
   .add('claim-toggle/locked', () => (
     <FieldStateProvider
       component={ClaimToggle}
-      label="Toggle label"
-      text="Helper text"
+      label="Label"
+      explainer="Explainer text"
       value
-      locked
+      disabled
       onChange={action('change')}
     />
   ));
