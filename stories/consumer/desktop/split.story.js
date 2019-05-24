@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { SplitEven, SplitCustom, SplitFixed } from '../../../components/consumer/desktop/split';
 import { withContainer, wrapStory } from '../../util/decorators';
+import { action } from '@storybook/addon-actions';
 import FieldStateProvider from '../../util/field-state-provider';
 
 import '../../style.css';
@@ -40,6 +41,7 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       boundaries={boundaries}
       copy={copy}
       options={options}
+      onChange={action('change')}
       min 
     />)
   )
@@ -50,6 +52,7 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       boundaries={boundaries}
       copy={copy}
       options={options}
+      onChange={action('change')}
       range />
     )
   )
@@ -60,6 +63,7 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       boundaries={boundaries}
       copy={copy}
       options={options} 
+      onChange={action('change')}
       min locked
     />)
   )
@@ -70,6 +74,7 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       boundaries={boundaries}
       copy={copy}
       options={options} 
+      onChange={action('change')}
       range locked
     />)
   )
@@ -79,6 +84,7 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       value={{splitType: 'custom'}}
       copy={copy}
       options={options}
+      onChange={action('change')}
       min 
     />)
   )
@@ -87,7 +93,8 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       component={SplitCustom}
       value={{splitType: 'custom'}}
       copy={copy}
-      options={options} 
+      options={options}
+      onChange={action('change')}
       locked
     />)
   )
@@ -97,6 +104,7 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       component={SplitFixed}
       copy={copyFixed}
       boundaries={boundaries}
+      onChange={action('change')}
       min 
     />)
   )
@@ -106,6 +114,7 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       component={SplitFixed}
       copy={copyFixed}
       boundaries={boundaries}
+      onChange={action('change')}
       range 
     />)
   );

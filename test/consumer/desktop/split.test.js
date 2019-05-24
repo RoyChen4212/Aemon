@@ -72,6 +72,15 @@ describe('SplitEven', () => {
       expect(wrapper.find('.pbg-split-copy strong').text()).to.include('even');
     });
 
+    it('should display empty copy for splitType when locked with no options', () => {
+      const wrapper = mount(
+        <SplitEven value={{ splitType: 'even' }} min locked copy={copy} />
+      );
+      expect(wrapper.text()).to.include(copy.split);
+      expect(wrapper.text()).to.include(copy.across);
+      expect(wrapper.text()).to.include(copy.shares);
+    });
+
     it('should report correct value when split type picker value changes', function (done) {
       const onChange = (ev) => {
         expect(ev.target.value).to.eql({ splitType: 'custom'});
@@ -167,7 +176,7 @@ describe('SplitEven', () => {
         done();
       }
       const wrapper = mount(
-        <SplitEven boundaries={[0, 10]} range value={{minShares: 2, maxShares: 3}} onChange={onChange}/>
+        <SplitEven boundaries={[0, 10]} range value={{minShares: 2, maxShares: 3}} onChange={onChange} />
       );
       wrapper.find(NumberStepper).at(0).find('.increment').simulate('click');
     });

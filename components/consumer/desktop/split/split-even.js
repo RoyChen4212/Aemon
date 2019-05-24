@@ -17,22 +17,28 @@ class SplitEven extends ComposedFormField {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-split pbg-split-even';
 
   get isLocked() { return this.adaptedProps.locked; }
+  
   get isMin () { return this.adaptedProps.min || !this.adaptedProps.range; }
+  
   get copy() { return this.adaptedProps.copy || {}; }
+
   get minBoundary() {
     const boundaries = get(this.props, 'boundaries', []);
     return first(boundaries);
   }
+  
   get maxBoundary() {
     const boundaries = get(this.props, 'boundaries', []);
     return last(boundaries);
   }
+  
   get minStepperMaxBoundary() {
     if (this.currentValue.maxShares === this.maxBoundary) {
       return this.maxBoundary - 1;
     }
     return null;
   };
+  
   get maxStepperMinBoundary() {
     if (this.currentValue.minShares === this.minBoundary) {
       return this.minBoundary + 1;
@@ -41,15 +47,13 @@ class SplitEven extends ComposedFormField {
   }
 
   get selectedSplitOptionText() { 
-    const selectedOption = find(this.adaptedProps.options || {}, (opt) => {
+    const selectedOption = find(this.adaptedProps.options || [], (opt) => {
       return opt.value === get(this.value, 'splitType');
     });
     return get(selectedOption, 'label.term');
   }
 
   renderSplitTypePicker() {
-    if (this.isFixed) return null;
-
     return (
       <React.Fragment>
         <div className="pbg-split-copy">
@@ -95,7 +99,7 @@ class SplitEven extends ComposedFormField {
       <React.Fragment>
         <div className="pbg-split-copy">{this.copy.across || ''}</div>
         <NumberStepper
-          onChange={(ev) => this.sanitizeMinRangeValue(ev.target.value) }
+          onChange={(ev) => this.sanitizeMinRangeValue(ev.target.value)}
           min={this.minBoundary}
           max={this.minStepperMaxBoundary}
           value={this.currentValue.minShares}
