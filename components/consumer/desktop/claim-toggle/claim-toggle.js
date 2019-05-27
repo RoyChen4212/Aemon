@@ -1,37 +1,29 @@
 import React from 'react';
 
-import { H3 } from '../heading';
-import P from '../paragraph';
 import Container from '../container';
 import FormField from '../form-field';
-import { Checkbox } from '../checkbox';
+import ClaimToggleContent from '../claim-toggle-content';
 
 import './style.css';
 
 class ClaimToggle extends FormField {
   baseClassName = 'pbg-claim-toggle'
 
-  get isRequiredOrLocked() {
-    return this.props.required || this.props.locked;
+  get isRequiredOrDisabled() {
+    return this.props.required || this.props.disabled;
   }
 
   render() {
     const required = this.props.required ? 'claim-toggle-required' : ''
-    const locked = this.props.locked ? 'claim-toggle-locked' : ''
+    const disabled = this.props.disabled ? 'claim-toggle-disabled' : ''
 
     return (
       <Container
-        className={`${this.baseClassName} ${required} ${locked}`}
-        stroked={!this.isRequiredOrLocked}
-        solid={this.isRequiredOrLocked} >
+        className={`${this.baseClassName} ${required} ${disabled}`}
+        stroked={!this.isRequiredOrDisabled}
+        solid={this.isRequiredOrDisabled} >
 
-        <Checkbox
-          onChange={this.onChange}
-          value={this.value}
-          disabled={this.props.locked}/>
-
-        <H3>{this.props.label}</H3>
-        <P>{this.props.text}</P>
+        <ClaimToggleContent {...this.props} />
       </Container>
     );
   }

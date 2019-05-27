@@ -19,7 +19,7 @@
   font-size: 28px;
   line-height: 38px; }
 
-.pbg-desktop-h3 {
+.pbg-desktop-h3, .pbg-consumer-desktop.pbg-claim-toggle-content .pbg-claim-toggle-content-label-explainer-placeholder .pbg-label {
   font-family: "Roboto", serif;
   font-style: normal;
   color: #24313E;
@@ -83,15 +83,20 @@
 .pbg-desktop-form-field-disabled {
   background: #F0F3F8; }
 
-.pbg-consumer-desktop.pbg-claim-toggle {
-  padding: 16px 16px 16px 16px; }
-  .pbg-consumer-desktop.pbg-claim-toggle.pbg-container.pbg-container-stroked {
-    box-sizing: content-box; }
-  .pbg-consumer-desktop.pbg-claim-toggle.pbg-container.claim-toggle-required {
-    background: #FFF3DD; }
-  .pbg-consumer-desktop.pbg-claim-toggle.pbg-container.claim-toggle-disabled {
-    background: #F0F3F8; }
-    .pbg-consumer-desktop.pbg-claim-toggle.pbg-container.claim-toggle-disabled .pbg-label {
-      color: #526679; }
-    .pbg-consumer-desktop.pbg-claim-toggle.pbg-container.claim-toggle-disabled .pbg-paragraph {
-      color: #526679; }
+.pbg-consumer-desktop.pbg-claim-toggle-content {
+  content: "";
+  clear: both;
+  display: table; }
+  .pbg-consumer-desktop.pbg-claim-toggle-content input {
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-top: 5px; }
+  .pbg-consumer-desktop.pbg-claim-toggle-content .pbg-claim-toggle-content-label-explainer-placeholder {
+    float: left;
+    width: calc(100% - 16px); }
+    .pbg-consumer-desktop.pbg-claim-toggle-content .pbg-claim-toggle-content-label-explainer-placeholder .pbg-label.pbg-label-error {
+      color: #E02E2E; }
+    .pbg-consumer-desktop.pbg-claim-toggle-content .pbg-claim-toggle-content-label-explainer-placeholder .pbg-paragraph {
+      margin-bottom: 0;
+      margin-left: 8px; }
