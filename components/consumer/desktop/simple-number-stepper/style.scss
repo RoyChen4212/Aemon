@@ -1,7 +1,7 @@
 @import '../../shared/scss/styleguide';
 
 .pbg-consumer-desktop {
-  &.simple-number-stepper {
+  &.pbg-simple-number-stepper {
     @extend .pbg-clearfix;
     border: 1px solid $grey-50;
     border-radius: 3px;
@@ -24,7 +24,7 @@
       float: left;
       margin: 0;
       text-align: center;
-      width: 40px;
+      width: 42px;
       height: 38px;
     }
     

@@ -1,4 +1,4 @@
-.pbg-clearfix, .pbg-consumer-desktop.simple-number-stepper {
+.pbg-clearfix, .pbg-consumer-desktop.pbg-simple-number-stepper {
   content: "";
   clear: both;
   display: table; }
@@ -19,7 +19,7 @@
   font-size: 28px;
   line-height: 38px; }
 
-.pbg-desktop-h3, .pbg-consumer-desktop.simple-number-stepper input {
+.pbg-desktop-h3, .pbg-consumer-desktop.pbg-simple-number-stepper input {
   font-family: "Roboto", serif;
   font-style: normal;
   color: #24313E;
@@ -83,10 +83,10 @@
 .pbg-desktop-form-field-disabled {
   background: #F0F3F8; }
 
-.pbg-consumer-desktop.simple-number-stepper {
+.pbg-consumer-desktop.pbg-simple-number-stepper {
   border: 1px solid #8093A6;
   border-radius: 3px; }
-  .pbg-consumer-desktop.simple-number-stepper button {
+  .pbg-consumer-desktop.pbg-simple-number-stepper button {
     border: 0;
     color: #006AFF;
     cursor: pointer;
@@ -95,35 +95,35 @@
     padding: 0;
     outline: 0;
     width: 24px; }
-  .pbg-consumer-desktop.simple-number-stepper input {
+  .pbg-consumer-desktop.pbg-simple-number-stepper input {
     background-color: #fff;
     border: 0;
     float: left;
     margin: 0;
     text-align: center;
-    width: 40px;
+    width: 42px;
     height: 38px; }
-  .pbg-consumer-desktop.simple-number-stepper .has-danger input {
+  .pbg-consumer-desktop.pbg-simple-number-stepper .has-danger input {
     background-color: #fbe9e5;
     border-color: #f86143; }
-  .pbg-consumer-desktop.simple-number-stepper .decrement {
+  .pbg-consumer-desktop.pbg-simple-number-stepper .decrement {
     border-bottom-left-radius: 3px;
     border-top-left-radius: 3px;
     background: #F0F3F8 url("../img/pbg-minus-small.svg") center no-repeat; }
-    .pbg-consumer-desktop.simple-number-stepper .decrement.disabled {
+    .pbg-consumer-desktop.pbg-simple-number-stepper .decrement.disabled {
       background: #F0F3F8 url("../img/pbg-minus-small-grey.svg") center no-repeat; }
-  .pbg-consumer-desktop.simple-number-stepper .increment {
+  .pbg-consumer-desktop.pbg-simple-number-stepper .increment {
     border-bottom-right-radius: 3px;
     border-top-right-radius: 3px;
     background: #F0F3F8 url("../img/pbg-plus-small.svg") center no-repeat; }
-    .pbg-consumer-desktop.simple-number-stepper .increment.disabled {
+    .pbg-consumer-desktop.pbg-simple-number-stepper .increment.disabled {
       background: #F0F3F8 url("../img/pbg-plus-small-grey.svg") center no-repeat; }
-  .pbg-consumer-desktop.simple-number-stepper [type="number"]::-webkit-outer-spin-button,
-  .pbg-consumer-desktop.simple-number-stepper [type="number"]::-webkit-inner-spin-button {
+  .pbg-consumer-desktop.pbg-simple-number-stepper [type="number"]::-webkit-outer-spin-button,
+  .pbg-consumer-desktop.pbg-simple-number-stepper [type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; }
-  .pbg-consumer-desktop.simple-number-stepper [type="number"] {
+  .pbg-consumer-desktop.pbg-simple-number-stepper [type="number"] {
     -moz-appearance: textfield;
     width: 40px; }
-    .pbg-consumer-desktop.simple-number-stepper [type="number"]:focus {
+    .pbg-consumer-desktop.pbg-simple-number-stepper [type="number"]:focus {
       outline: 0; }
