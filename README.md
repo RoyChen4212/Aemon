@@ -1,4 +1,4 @@
-# Aeamon
+# Aemon
 
 Aemon is a the UI library that empowers our consumer site (`varys`). Before start working on this project, it's important to know and understand our development process:
 
