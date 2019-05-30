@@ -27,7 +27,7 @@
   font-size: 18px;
   line-height: 28px; }
 
-.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text {
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text, .pbg-consumer-desktop.pbg-button > span {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -86,27 +86,43 @@
 .pbg-consumer-desktop.pbg-button {
   border: 0;
   cursor: pointer;
+  box-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.5);
+  border-radius: 4px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
+  height: 40px;
   line-height: 16px;
   padding: 0;
   text-align: center;
   width: 100%; }
   .pbg-consumer-desktop.pbg-button > span {
-    padding: 16px; }
-  .pbg-consumer-desktop.pbg-button.pbg-button-primary {
-    font-weight: bold;
-    font-size: 14px;
+    padding: 10px 16px;
     color: #fff;
-    background-color: #2c81ff;
-    box-shadow: 0px 1px 0px #2E3AA1, inset 0px 1px 0px rgba(255, 255, 255, 0.18883);
-    border-radius: 4px;
-    height: 47px; }
-    .pbg-consumer-desktop.pbg-button.pbg-button-primary:hover, .pbg-consumer-desktop.pbg-button.pbg-button-primary:focus {
-      background-color: #2568d0; }
-    .pbg-consumer-desktop.pbg-button.pbg-button-primary:focus {
-      box-shadow: none; }
+    font-weight: bold; }
+  .pbg-consumer-desktop.pbg-button.pbg-button-primary {
+    background-color: #006AFF; }
+    .pbg-consumer-desktop.pbg-button.pbg-button-primary.pbg-button-active {
+      background-color: #0044A3 !important;
+      outline: none; }
+    .pbg-consumer-desktop.pbg-button.pbg-button-primary:hover {
+      background-color: #0055CC; }
+    .pbg-consumer-desktop.pbg-button.pbg-button-primary:focus, .pbg-consumer-desktop.pbg-button.pbg-button-primary:active {
+      outline: none; }
   .pbg-consumer-desktop.pbg-button.disabled {
-    opacity: 0.65; }
+    background-color: #F0F3F8;
+    box-shadow: none; }
+    .pbg-consumer-desktop.pbg-button.disabled.pbg-button-active, .pbg-consumer-desktop.pbg-button.disabled:hover {
+      background-color: #F0F3F8; }
+    .pbg-consumer-desktop.pbg-button.disabled span {
+      color: #526679; }
+  .pbg-consumer-desktop.pbg-button.pbg-button-facebook {
+    background-color: #3B5998;
+    width: auto; }
+    .pbg-consumer-desktop.pbg-button.pbg-button-facebook:before {
+      content: url("../img/facebook-logo.svg");
+      float: left;
+      margin: 8px 0 8px 16px; }
+    .pbg-consumer-desktop.pbg-button.pbg-button-facebook span {
+      float: left; }

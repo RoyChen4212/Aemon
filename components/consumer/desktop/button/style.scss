@@ -4,39 +4,67 @@
   &.pbg-button {
     border: 0;
     cursor: pointer;
+    box-shadow: $cta-shadow;
+    border-radius: 4px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: $large-font;
+    height: 40px;
     line-height: $small-line-height;
     padding: 0;
     text-align: center;
     width: 100%;
 
     > span {
-      padding: 16px;
+      padding: 10px 16px;
+      @extend .pbg-desktop-regular-text;
+      color: $white;
+      font-weight: bold;
     }
 
     &.pbg-button-primary {
-      font-weight: bold;
-      font-size: $regular-font;
-      color: $white;
-      background-color: $clear-blue;
-      box-shadow: 0px 1px 0px $pbg-blue-light, inset 0px 1px 0px rgba(255, 255, 255, 0.18883);
-      border-radius: 4px;
-      height: 47px;
+      background-color: $blue-60;
 
-      &:hover, &:focus {
-        background-color: $bluish;
+      &.pbg-button-active {
+        background-color: $blue-80!important;
+        outline: none;
       }
 
-      &:focus {
-        box-shadow: none;
+      &:hover {
+        background-color: $blue-70;
+      }
+
+      &:focus, &:active {
+        outline: none;
       }
     }
 
     &.disabled {
-      opacity: 0.65;
+      background-color: $grey-10;
+      box-shadow: none;
+      &.pbg-button-active, &:hover {
+        background-color: $grey-10;
+      }
+
+      span {
+        color: $grey-60;
+      }
+    }
+
+    &.pbg-button-facebook {
+      background-color: $blue-facebook;
+      width: auto;
+
+      &:before {
+        content: url('../img/facebook-logo.svg');
+        float: left;
+        margin: 8px 0 8px 16px;
+      }
+
+      span {
+        float: left;
+      }
     }
   }
 }

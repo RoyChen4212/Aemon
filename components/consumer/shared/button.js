@@ -4,6 +4,9 @@ export const CLASS_NAME = 'pbg-button';
 
 class BaseButton extends React.PureComponent {
   baseClassName = CLASS_NAME;
+  state = {
+    active: false,
+  }
 
   get buttonType() {
     return !!this.props.onClick ? 'button' : 'submit';
@@ -12,11 +15,21 @@ class BaseButton extends React.PureComponent {
   get className() {
     const { disabled, className } = this.props;
     const base = className ? `${this.baseClassName} ${className}` :  this.baseClassName;
-    return disabled ? base + ' disabled' : base;
+    const disabledClass = disabled ? base + ' disabled' : base;
+    const activeClass = this.state.active ? disabledClass + ' pbg-button-active' : disabledClass;
+    return activeClass;
   }
 
   get hint() {
     throw new Error('Not implemented, Implement this method in a sub-class');
+  }
+
+  activate = () => {
+    this.setState({ active: true });
+  }
+
+  deactivate = () => {
+    this.setState({ active: false });
   }
 
   onClick = (ev) => {
@@ -41,6 +54,8 @@ class BaseButton extends React.PureComponent {
           type={this.buttonType}
           className={this.className}
           onClick={this.onClick}
+          onMouseDown={this.activate}
+          onMouseUp={this.deactivate}
           disabled={this.props.disabled}
         >
           <span>{this.props.children}</span>

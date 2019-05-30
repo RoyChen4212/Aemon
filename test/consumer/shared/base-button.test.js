@@ -43,6 +43,18 @@ export const shouldBehaveLikeButton = (wrapper) => {
     expect(onClick.calledOnce).to.be.true;
   });
 
+  it('should activate it when mousedown', () => {
+    wrapper.find('button').simulate('mousedown');
+    expect(wrapper.state().active).to.be.true;
+  });
+
+  it('should deactivate it when mouseup', () => {
+    wrapper.setState({ active: true });
+    expect(wrapper.state().active).to.be.true;
+    wrapper.find('button').simulate('mouseup');
+    expect(wrapper.state().active).to.be.false;
+  });
+
   it('should not execute click handler if given but disabled', () => {
     const onClick = sinon.spy();
     wrapper.setProps({ onClick, disabled: true });
