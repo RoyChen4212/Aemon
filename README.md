@@ -5,6 +5,10 @@ Aemon is a the UI library that empowers our consumer site (`varys`). Before star
 * [Dev Process](https://docs.google.com/document/d/1uCjFRPyoEttumeFD021zahaptu6-cU4zyLjV6Cx7qfg)
 * [Design + Dev Process](https://docs.google.com/document/d/187PdZdjwjTO4n1IQdK8VPZHtYhhjD_KmYb5u88aIO7U)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/049592dcc0608f7011bd/maintainability)](https://codeclimate.com/repos/5c096be7dccec43bdc00bc36/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/049592dcc0608f7011bd/test_coverage)](https://codeclimate.com/repos/5c096be7dccec43bdc00bc36/test_coverage)
+[![CircleCI](https://circleci.com/gh/paybygroup/aemon.svg?style=svg)](https://circleci.com/gh/paybygroup/aemon)
+
 ## Getting Started
 
 ### Prerequisites
