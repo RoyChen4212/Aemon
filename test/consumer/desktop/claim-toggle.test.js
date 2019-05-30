@@ -6,7 +6,7 @@ import sinon from 'sinon';
 import { H3 } from '../../../components/consumer/desktop/heading';
 import P from '../../../components/consumer/desktop/paragraph';
 import Container from '../../../components/consumer/desktop/container';
-import { Checkbox } from '../../../components/consumer/desktop/checkbox';
+import ClaimToggleContent from '../../../components/consumer/desktop/claim-toggle-content';
 import ClaimToggle from '../../../components/consumer/desktop/claim-toggle';
 
 describe('ClaimToggle', () => {
@@ -15,57 +15,64 @@ describe('ClaimToggle', () => {
     expect(wrapper.hasClass('pbg-claim-toggle')).to.be.true;
   });
 
-  it('should render a stroked Container when is non-required and non-locked', () => {
-    const wrapper = shallow(<ClaimToggle required={false} locked={false} />);
+  it('should render a stroked Container when is non-required and non-disabled', () => {
+    const wrapper = shallow(<ClaimToggle required={false} disabled={false} />);
     expect(wrapper.find(Container).prop('stroked')).to.be.equal(true);
   });
 
   it('should render a solid Container when is required', () => {
-    const wrapper = shallow(<ClaimToggle required={true} locked={false} />);
+    const wrapper = shallow(<ClaimToggle required={true} disabled={false} />);
     expect(wrapper.find(Container).prop('solid')).to.be.equal(true);
   });
 
   it('should render a Container with correct class when is required', () => {
-    const wrapper = shallow(<ClaimToggle required={true} locked={false} />);
+    const wrapper = shallow(<ClaimToggle required={true} disabled={false} />);
     expect(wrapper.find(Container).hasClass('claim-toggle-required')).to.be.equal(true);
   });
 
-  it('should render a solid Container when is locked', () => {
-    const wrapper = shallow(<ClaimToggle required={false} locked={true} />);
+  it('should render a solid Container when is disabled', () => {
+    const wrapper = shallow(<ClaimToggle required={false} disabled={true} />);
     expect(wrapper.find(Container).prop('solid')).to.be.equal(true);
   });
 
-  it('should render a Container with correct class when is locked', () => {
-    const wrapper = shallow(<ClaimToggle required={false} locked={true} />);
-    expect(wrapper.find(Container).hasClass('claim-toggle-locked')).to.be.equal(true);
+  it('should render a Container with correct class when is disabled', () => {
+    const wrapper = shallow(<ClaimToggle required={false} disabled={true} />);
+    expect(wrapper.find(Container).hasClass('claim-toggle-disabled')).to.be.equal(true);
   });
 
-  it('should render a Checkbox', () => {
+  it('should render a ClaimToggleContent', () => {
     const wrapper = shallow(<ClaimToggle />);
-    expect(wrapper.find(Checkbox)).to.have.lengthOf(1);
+    expect(wrapper.find(ClaimToggleContent)).to.have.lengthOf(1);
   });
 
-  it('should pass the value to the Checkbox', () => {
+  it('should pass value prop to the ClaimToggleContent', () => {
     const value = true;
     const wrapper = shallow(<ClaimToggle value={value} />);
-    expect(wrapper.find(Checkbox).prop('value')).to.be.equal(value);
+    expect(wrapper.find(ClaimToggleContent).prop('value')).to.be.equal(value);
   });
 
-  it('should disable the Checkbox when is locked', () => {
-    const wrapper = shallow(<ClaimToggle locked={true} />);
-    expect(wrapper.find(Checkbox).prop('disabled')).to.be.true;
+  it('should pass disable prop to the ClaimToggleContent', () => {
+    const disabled = true;
+    const wrapper = shallow(<ClaimToggle disabled={disabled} />);
+    expect(wrapper.find(ClaimToggleContent).prop('disabled')).to.be.equal(disabled);
   });
 
-  it('should render a H3 with the label', () => {
+  it('should pass label prop to the ClaimToggleContent', () => {
     const label = 'label';
     const wrapper = shallow(<ClaimToggle label={label} />);
-    expect(wrapper.contains(<H3>{label}</H3>)).to.be.true;
+    expect(wrapper.find(ClaimToggleContent).prop('label')).to.be.equal(label);
   });
 
-  it('should render a P with the text', () => {
-    const text = 'text';
-    const wrapper = shallow(<ClaimToggle text={text} />);
-    expect(wrapper.contains(<P>{text}</P>)).to.be.true;
+  it('should pass explainer prop to the ClaimToggleContent', () => {
+    const explainer = 'explainer';
+    const wrapper = shallow(<ClaimToggle explainer={explainer} />);
+    expect(wrapper.find(ClaimToggleContent).prop('explainer')).to.be.equal(explainer);
+  });
+
+  it('should pass error prop to the ClaimToggleContent', () => {
+    const error = 'error';
+    const wrapper = shallow(<ClaimToggle error={error} />);
+    expect(wrapper.find(ClaimToggleContent).prop('error')).to.be.equal(error);
   });
 
   it('reports the value as true upon checking the checkbox', function (done) {

@@ -1,40 +1,33 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import ClaimToggle from '../../../components/consumer/desktop/claim-toggle'
+import ClaimToggleContent from '../../../components/consumer/desktop/claim-toggle-content'
 import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Payment Settings/claim-toggle', module)
+storiesOf('Consumer/Desktop/Payment Settings/claim-toggle-content', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('claim-toggle/default', () => (
+  .add('claim-toggle-content/default', () => (
     <FieldStateProvider
-      component={ClaimToggle}
+      component={ClaimToggleContent}
       label="Label"
       explainer="Explainer text"
+      value="true"
       onChange={action('change')}
     />
   ))
-  .add('claim-toggle/required', () => (
+  .add('claim-toggle-content/error', () => (
     <FieldStateProvider
-      component={ClaimToggle}
+      component={ClaimToggleContent}
       label="Label"
       explainer="Explainer text"
-      required
-      onChange={action('change')}
-    />
-  ))
-  .add('claim-toggle/locked', () => (
-    <FieldStateProvider
-      component={ClaimToggle}
-      label="Label"
-      explainer="Explainer text"
-      value
-      disabled
+      value="true"
+      error="An error"
       onChange={action('change')}
     />
   ));
+

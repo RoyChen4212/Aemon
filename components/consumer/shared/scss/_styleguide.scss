@@ -24,6 +24,8 @@ $facebook-color: #3b5998;
 $blue-gradient: linear-gradient(267deg, $pbg-blue-light, $pbg-blue);
 $blue-linear: linear-gradient(90deg, $pbg-blue 0%, $pbg-blue-light 196.67%);
 
+$cta-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.5);
+
 $grey-10: #F0F3F8;
 $grey-30: #D5DDE9;
 $grey-40: #BCC7D3;
@@ -38,7 +40,16 @@ $yellow-10: #FFF3DD;
 $yellow-60: #FFBB33;
 
 $blue-10: #ECF4FF;
+$blue-20: #D9E9FF;
+$blue-30: #BBD7FF;
+$blue-40: #7DB3FF;
+$blue-50: #3388FF;
 $blue-60: #006AFF;
+$blue-70: #0055CC;
+$blue-80: #0044A3;
+$blue-90: #003682;
+$blue-100: #002B68;
+$blue-facebook: #3B5998;
 
 $green-10: #E2F4E6;
 $green-60: #53BC6A;
@@ -95,7 +106,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $grey-80;
   font-weight: normal;
   font-size: 18px;
-  line-height: 28px; 
+  line-height: 28px;
 }
 //Labels
 

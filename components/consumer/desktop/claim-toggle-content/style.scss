@@ -1,0 +1,34 @@
+@import "../../shared/scss/styleguide";
+
+.pbg-consumer-desktop {
+  &.pbg-claim-toggle-content {
+    content: "";
+    clear: both;
+    display: table;
+
+    input {
+      width: 16px;
+      height: 16px;
+      float: left;
+      margin-top: 6px;
+    }
+
+    .pbg-claim-toggle-content-label-explainer-placeholder {
+      float: left;
+      width: calc(100% - 16px);
+
+      .pbg-label {
+        @extend .pbg-desktop-h3;
+
+        &.pbg-label-error {
+          color: $red-60;
+        }
+      }
+
+      .pbg-paragraph {
+        margin-bottom: 0;
+        margin-left: 8px;
+      }
+    }
+  }
+}

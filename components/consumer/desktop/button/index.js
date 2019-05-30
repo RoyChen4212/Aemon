@@ -8,6 +8,10 @@ class PrimaryButton extends BaseButton {
   get hint() { return this.renderHint(Hint); }
 }
 
+class FacebookButton extends PrimaryButton {
+  baseClassName = `${CLASS_NAME} pbg-consumer-desktop pbg-button-facebook`;
+}
+
 export {
-  PrimaryButton,
+  PrimaryButton, FacebookButton,
 };

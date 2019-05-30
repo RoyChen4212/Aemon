@@ -36,6 +36,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
       onChange={action('onChange')}
       options={simpleOptions}
       simple
+      button
     />
   ))
   .add('simple-picker/open', () => (
@@ -48,6 +49,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
       onChange={action('onChange')}
       options={simpleOptions}
       simple
+      button
     />
   ))
   .add('simple-picker/error', () => (
@@ -61,6 +63,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
       onChange={action('onChange')}
       options={simpleOptions}
       simple
+      button
     />
   ))
   .add('simple-picker/disabled', () => (
@@ -74,6 +77,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
       onChange={action('onChange')}
       options={simpleOptions}
       simple
+      button
       disabled
     />
   ))
@@ -89,9 +93,26 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
         options={simpleOptions}
         simple
         big
+        button
       />
     </div>
   ));
+
+storiesOf('Consumer/Desktop/Atomic Components/small-simple-picker', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('small-simple-picker/default', () => (
+    <FieldStateProvider
+      component={Picker}
+      name="picker"
+      label="Label"
+      hint="Select one awesome value"
+      value={null}
+      onChange={action('onChange')}
+      options={simpleOptions}
+      simple
+    />
+  ))
 
 storiesOf('Consumer/Desktop/Form Fields/picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
@@ -106,6 +127,7 @@ storiesOf('Consumer/Desktop/Form Fields/picker', module)
       value={null}
       onChange={action('onChange')}
       options={simpleOptions}
+      button
     />
   ))
   .add('picker/error', () => (
@@ -118,6 +140,7 @@ storiesOf('Consumer/Desktop/Form Fields/picker', module)
       value={null}
       onChange={action('onChange')}
       options={simpleOptions}
+      button
     />
   ))
   .add('picker/disabled', () => (
@@ -129,6 +152,7 @@ storiesOf('Consumer/Desktop/Form Fields/picker', module)
       value={null}
       onChange={action('onChange')}
       options={simpleOptions}
+      button
       disabled
     />
   ));
@@ -148,6 +172,7 @@ storiesOf('Consumer/Desktop/Payment Settings/split-picker', module)
         options={splitOptions}
         simple
         big
+        button
       />
     </div>
   ));

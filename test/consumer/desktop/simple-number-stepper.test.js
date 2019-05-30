@@ -3,8 +3,12 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import SimpleNumberStepper from '../../../components/consumer/desktop/simple-number-stepper';
+import makeEvent from '../../../components/lib/make-event';
+import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 
 describe('SimpleNumberStepper', () => {
+  shouldBehaveLikeFormField(shallow(<SimpleNumberStepper />));
+
   const baseProps = {
     min: 1,
     max: 7,
@@ -23,44 +27,28 @@ describe('SimpleNumberStepper', () => {
     expect(wrapper.find('input').prop('disabled')).to.equal(true);
   });
 
-  it('should have a default value of 0', () => {
-    const wrapper = shallow(<SimpleNumberStepper />);
-    expect(wrapper.state('value')).to.equal(0);
-  });
-
-  it('should have a given value', () => {
-    const props = { value: 5 };
-    const wrapper = shallow(<SimpleNumberStepper {...props} />);
-    expect(wrapper.state('value')).to.equal(props.value);
+  it('should not update value when a boundary is met', () => {
+    const onChange = sinon.spy();
+    const wrapper = shallow(<SimpleNumberStepper value={0} min={0} onChange={onChange}/>);
+    wrapper.find('.decrement').simulate('click');
+    expect(onChange.calledOnce).to.be.false;
   });
 
   it('should decrement value upon - click', () => {
-    const props = { ...baseProps, value: 5 };
+    const onChange = sinon.spy();
+    const props = { ...baseProps, value: 5, onChange };
     const wrapper = mount(<SimpleNumberStepper {...props} />);
     wrapper.find('.decrement').simulate('click');
-    expect(wrapper.state('value')).to.equal(props.value - 1);
+    expect(onChange.calledOnce).to.be.true;
+    expect(onChange.calledWith(makeEvent(props.value - 1)));
   });
 
   it('should increment value upon + click', () => {
-    const props = { ...baseProps, value: 5 };
+    const onChange = sinon.spy();
+    const props = { ...baseProps, value: 5, onChange };
     const wrapper = mount(<SimpleNumberStepper {...props} />);
     wrapper.find('.increment').simulate('click');
-    expect(wrapper.state('value')).to.equal(props.value + 1);
-  });
-
-  it('should call onChange after it decrements', () => {
-    const onChange = sinon.spy();
-    const props = { ...baseProps, onChange, value: 5 };
-    const wrapper = mount(<SimpleNumberStepper {...props} />);
-    wrapper.find('.decrement').simulate('click');
-    expect(onChange.calledOnce).to.equal(true);
-  });
-
-  it('should call onChange after it increments', () => {
-    const onChange = sinon.spy();
-    const props = { ...baseProps, onChange, value: 5 };
-    const wrapper = mount(<SimpleNumberStepper {...props} />);
-    wrapper.find('.decrement').simulate('click');
-    expect(onChange.calledOnce).to.equal(true);
+    expect(onChange.calledOnce).to.be.true;
+    expect(onChange.calledWith(makeEvent(props.value + 1)));
   });
 });

@@ -9,6 +9,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "test": "mocha ./test/config/index.js ./test",
+    "test:watch": "mocha ./test/config/index.js --watch",
     "test:cover": "nyc --reporter=lcov mocha -r ignore-styles --compilers js:@babel/register -r ./test/config/enzyme.js --recursive --ui bdd ./test",
     "storybook": "npm-run-all -p css:watch storybook:start",
     "storybook:start": "start-storybook -p 9001 -c .storybook",

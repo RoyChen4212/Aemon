@@ -53,10 +53,11 @@ class Picker extends FormField {
   }
 
   renderPickerButton() {
+    const style = this.props.button ? 'pbg-picker-button' : 'pbg-picker-text';
     return (
-      <button type="button" onFocus={this.onFocus} onClick={this.activate} onBlur={ev => this.deactivate(ev, this.onBlur)}>
-        {this.labelText}
-        <i className="pbg-picker-arrow" />
+      <button className={style} type="button" onFocus={this.onFocus} onClick={this.activate} onBlur={ev => this.deactivate(ev, this.onBlur)}>
+        <span>{this.labelText}</span>
+        <i className="pbg-picker-arrow"/>
       </button>
     )
   }

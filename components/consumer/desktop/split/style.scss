@@ -1,0 +1,34 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-split {
+    width: 100%;
+    .pbg-clearfix {
+      width: 100%;
+    }
+    .pbg-split-copy {
+      @extend .pbg-desktop-h3;
+      display: block;
+      float: left;
+      line-height: 40px;
+    }
+
+    .pbg-split-copy-strong {
+      @extend .pbg-split-copy;
+      font-weight: bold;
+      margin: 0 8px;
+    }
+
+    .pbg-picker {
+      width: auto;
+      display: block;
+      float: left;
+      margin: 0 8px;
+    }
+
+    .pbg-simple-number-stepper {
+      float: left;
+      margin: 0 8px;
+    }
+  }
+}
