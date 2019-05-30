@@ -23,6 +23,16 @@ describe('Picker', () => {
     expect(wrapper.find('button')).to.have.lengthOf(1);
   });
 
+  it('should render a button with correct class name if button prop is false', () => {
+    const wrapper = shallow(<Picker button={false}/>);
+    expect(wrapper.find('button').hasClass('pbg-picker-text')).to.be.true;
+  });
+
+  it('should render a button with correct class name if button prop is true', () => {
+    const wrapper = shallow(<Picker button={true}/>);
+    expect(wrapper.find('button').hasClass('pbg-picker-button')).to.be.true;
+  });
+
   it('should render given options', () => {
     const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }];
     const wrapper = mount(<Picker options={opts} />);
@@ -132,27 +142,27 @@ describe('Picker', () => {
     const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }]
     const wrapper = shallow(<Picker options={opts} />);
     wrapper.find('button').simulate('click');
-    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(true); 
+    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(true);
   });
 
   it('should deactivate PickerMenu upon blurring button', function(done) {
     const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }]
     const onBlur = () => {
-      expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false); 
+      expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false);
       done();
     }
     const wrapper = shallow(<Picker options={opts} onBlur={onBlur} />);
     wrapper.find('button').simulate('click');
-    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(true); 
+    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(true);
     wrapper.find('button').simulate('blur');
   });
 
   it('should not be activable when disabled', () => {
     const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }]
     const wrapper = shallow(<Picker options={opts} disabled />);
-    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false); 
+    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false);
     wrapper.find('button').simulate('click');
-    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false); 
+    expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false);
   });
 
   it('should not execute deactivate code if disabled', () => {
