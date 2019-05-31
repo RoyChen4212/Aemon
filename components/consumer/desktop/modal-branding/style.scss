@@ -4,14 +4,14 @@
   &.pbg-modal-branding {
     width: 200px;
 
-    .modal-branding-header {
+    .pbg-modal-branding-header {
       padding: 0 20px 0 20px;
       position: relative;
       width: 200px;
       height: 85px;
       text-align: center;
 
-      .modal-branding-merchant-logo {
+      .pbg-modal-branding-merchant-logo {
         width: 160px;
         height: 60px;
         position: relative;
@@ -28,7 +28,7 @@
         }
       }
 
-      .modal-branding-powered-by-logo {
+      .pbg-modal-branding-powered-by-logo {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -37,7 +37,7 @@
         margin-right: auto;
         width: 131px;
 
-        .modal-branding-powered-by-text {
+        .pbg-modal-branding-powered-by-text {
           @extend .pbg-desktop-small-text;
           color: $grey-60;
           margin-right: 4px;
@@ -45,7 +45,7 @@
       }
     }
 
-    .modal-branding-footer {
+    .pbg-modal-branding-footer {
       height: 29px;
     }
   }

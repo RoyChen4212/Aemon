@@ -10,7 +10,7 @@ class ModalBranding extends React.PureComponent {
 
   renderFooter() {
     return (
-      <div className="modal-branding-footer">
+      <div className="pbg-modal-branding-footer">
         <Divider />
         {this.props.children}
       </div>
@@ -20,12 +20,12 @@ class ModalBranding extends React.PureComponent {
   render() {
     return (
       <div className={this.baseClass}>
-        <div className="modal-branding-header">
-          <div className="modal-branding-merchant-logo">
+        <div className="pbg-modal-branding-header">
+          <div className="pbg-modal-branding-merchant-logo">
             <img src={this.props.logo} />
           </div>
-          <div className="modal-branding-powered-by-logo">
-            <span className="modal-branding-powered-by-text">powered by</span>
+          <div className="pbg-modal-branding-powered-by-logo">
+            <span className="pbg-modal-branding-powered-by-text">powered by</span>
             <img src={powerByLogo} />
           </div>
         </div>
