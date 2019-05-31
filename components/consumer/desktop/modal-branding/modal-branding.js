@@ -1,6 +1,6 @@
 import React from 'react';
 
-import powerByLogo from '../img/pbg-powered-by-logo.svg'
+import powerByLogo from '../img/pbg-powered-by-logo.svg';
 import Divider from '../divider';
 
 import './style.css';
@@ -9,7 +9,7 @@ class ModalBranding extends React.PureComponent {
   baseClass = 'pbg-consumer-desktop pbg-modal-branding';
 
   renderFooter() {
-    return(
+    return (
       <div className="modal-branding-footer">
         <Divider />
         {this.props.children}
@@ -18,8 +18,8 @@ class ModalBranding extends React.PureComponent {
   }
 
   render() {
-    return(
-      <div className={this.baseClass} >
+    return (
+      <div className={this.baseClass}>
         <div className="modal-branding-header">
           <div className="modal-branding-merchant-logo">
             <img src={this.props.logo} />
