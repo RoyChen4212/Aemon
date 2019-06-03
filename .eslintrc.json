@@ -1,13 +1,22 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "mocha": true
     },
     "extends": "airbnb",
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    "overrides": [
+        {
+            "files": "*.test.js",
+            "rules": {
+                "no-unused-expressions": 0
+            }
+        }
+    ],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
@@ -20,5 +29,6 @@
         "react"
     ],
     "rules": {
+        "react/jsx-filename-extension": 0
     }
 }
