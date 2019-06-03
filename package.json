@@ -8,6 +8,7 @@
   "description": "PBG UI Library with Storybook",
   "main": "./dist/index.js",
   "scripts": {
+    "lint": "eslint .; exit 0",
     "test": "mocha ./test/config/index.js ./test",
     "test:watch": "mocha ./test/config/index.js --watch",
     "test:cover": "nyc --reporter=lcov mocha -r ignore-styles --compilers js:@babel/register -r ./test/config/enzyme.js --recursive --ui bdd ./test",
