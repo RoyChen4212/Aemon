@@ -1,9 +1,9 @@
 # Aemon
 
-Aemon is a the UI library that empowers our consumer site (`varys`). Before start working on this project, it's important to know and understand our development process:
+Aemon is a the UI library that powers our consumer site (`varys`). Before starting work on this project, it's important to know and understand our development process:
 
-* [Dev Process](https://docs.google.com/document/d/1uCjFRPyoEttumeFD021zahaptu6-cU4zyLjV6Cx7qfg)
-* [Design + Dev Process](https://docs.google.com/document/d/187PdZdjwjTO4n1IQdK8VPZHtYhhjD_KmYb5u88aIO7U)
+* [Design + Dev Process](https://docs.google.com/document/d/187PdZdjwjTO4n1IQdK8VPZHtYhhjD_KmYb5u88aIO7U), how we bridge the gap between design and engineering
+* [Dev Process](https://docs.google.com/document/d/1uCjFRPyoEttumeFD021zahaptu6-cU4zyLjV6Cx7qfg), a big picture about our development process
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/049592dcc0608f7011bd/maintainability)](https://codeclimate.com/repos/5c096be7dccec43bdc00bc36/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/049592dcc0608f7011bd/test_coverage)](https://codeclimate.com/repos/5c096be7dccec43bdc00bc36/test_coverage)
@@ -13,7 +13,7 @@ Aemon is a the UI library that empowers our consumer site (`varys`). Before star
 
 ### Prerequisites
 
-For development, you will only need Node.js installed on your environment. Please use the appropriate [EditorConfig plugin](https://editorconfig.org/#download) for your editor.
+For development, you will only need Node.js installed in your environment. Please use the appropriate [EditorConfig plugin](https://editorconfig.org/#download) for your editor.
 
 You should be able to run the following command after the installation procedure.
 
@@ -27,7 +27,7 @@ $ npm --version
 
 ### Installing
 
-First, clone this repo if you didn't yet.
+First, clone `aemon` repo if you have not done so already.
 
 ```
 $ git clone https://github.com/paybygroup.com/aemon.git
@@ -41,7 +41,7 @@ $ npm install
 
 ### Start & watch
 
-The following command should start Storybook server in a random port and open a new browser tab.
+The following command should start the Storybook server in a random port and open a new browser tab.
 
 ```
 $ npm run storybook
@@ -220,7 +220,7 @@ When you are working on a component, keep in mind:
 * Always prefix component's CSS styles with `pbg-component-name` to avoid collisions
 * Component's name should follow Figma specs
 
-The following template can help you to start a new component:
+The following template can help you start a new component:
 
 ```
 import React from 'react';
@@ -240,7 +240,7 @@ export default MyComponent;
 
 #### Style Guide
 
-Our CI and code quality tools will catch most the issues that may exist with your code when you create or update a pull request. Even though, you can run the lint locally before you push your changes:
+Our CI and code quality tools will catch most issues that may exist with your code when you create or update a pull request. However, you can run the lint locally before you push your changes:
 
 ```
 npm lint components/desktop/my-component
@@ -250,7 +250,7 @@ npm lint components/desktop/my-component
 
 In order to make the latest changes available to `varys` you should create a new realease.
 
-First, make sure you are that your `master` bran in the HEAD commit.
+First, make sure you have the `master` branch in the HEAD commit.
 
 ```
 $ git checkout master
@@ -265,7 +265,7 @@ $ git pull
 $ git merge master
 ```
 
-Then, bump `version` in `package.json` file by following [semantic versioning](https://semver.org/) rules. After that, commit and push the changes:
+Then, bump the `version` in the `package.json` file by following [semantic versioning](https://semver.org/) rules. After that, commit and push the changes:
 
 ```
 $ git commit -a -m "Bump version to X.Y.Z."
@@ -279,7 +279,7 @@ $ git tag X.Y.Z
 $ git push --tags
 ```
 
-Once the realese is ready, you should update `aemon` version in `varys` `package.json` file and run:
+Once the realese is ready, you should update the `aemon` version in the `varys` `package.json` file and run:
 
 ```
 $ npm install
