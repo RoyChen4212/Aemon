@@ -19,8 +19,10 @@ You should be able to run the following command after the installation procedure
 
 ```
 $ node --version
+v10.14.0
 
 $ npm --version
+6.4.1
 ```
 
 ### Installing
@@ -52,13 +54,13 @@ Now you can develop your components and write stories and see the changes in Sto
 To run the whole testing suite:
 
 ```
-$ npm tests
+$ npm test
 ```
 
 To keep running the tests for a single component, run the following command:
 
 ```
-$ npx mocha ./test/config/index.js ./test/consumer/desktop/your-component.test.js --watch
+$ npm run test:watch  -- ./test/consumer/desktop/your-component.test.js
 ```
 
 To verify the test coverge, you can run:
@@ -132,6 +134,117 @@ This is where all Storybook stories are defined. It has a very similar directory
 ### test/
 
 This is where all unit tests are defined. It has a very similar directory structure than `components`. There should one test file per component named after it but replacing `.js` with `.story.js` suffix.
+
+## Contributing
+
+Before continue reading, please take a look at our [SDLC Policy](https://github.com/paybygroup/hodor/wiki/SDLC-Policy) if you didn't yet.
+
+### Principles & Good Practices
+
+* Favor refactor over [premature generalization](http://wiki.c2.com/?PrematureGeneralization)
+* Favor [composition over inheritance](http://wiki.c2.com/?CompositionInsteadOfInheritance)
+* Don't introduce new dependencies to solve simple problems
+* Read the existing components, tests and stories, they could be a reference
+
+### Development workflow
+
+Regardless you're adding a new component or updating an existing one, you can follow the following steps a general guide:
+
+* Create component's story file under [stories directory](stories) if it doesn't exist yet
+* Create or update component's test file under [test directory](test) if it doesn't exist yet
+* Create component's files under [components directory](components) if they don't exist yet
+* Start a local server of [Storybook](start--watch)
+* Start waching [unit tests directory](running-the-tests)
+* Write some tests about the new structure and behavior
+* Implement structure and behavior you just define in the unit test file
+* Continue tests/implementation cycle until the component is ready
+* Add styles in the `.scss` file and see the progress on Storybook
+
+### Stories
+
+[Storybook](https://storybook.js.org/) is a user interface development environment and playground for UI components. The tool enables developers to create components independently and showcase components interactively in an isolated development environment.
+
+Storybook stories should include a back reference URL to Figma. You can found that URL on the Pivotal Tracker story.
+
+Use the following code to create the story for a new component:
+
+```
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { WithFigma } from 'storybook-addon-figma';
+import { withContainer, wrapStory } from '../../util/decorators';
+import MyComponent from '../../../components/consumer/desktop/my-component';
+
+import '../../style.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+const figmaUrl =
+  'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=997%3A8470';
+
+storiesOf('Consumer/Desktop/Info/my-component', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('my-component/default', () => <MyComponent />);
+```
+
+### Tests
+
+We use [mocha](https://mochajs.org/#getting-started), [chai](https://www.chaijs.com/guide/), [enzyme](https://github.com/airbnb/enzyme#basic-usage), and [sinon](https://sinonjs.org/#get-started) for our component unit tests.
+
+Tests are only meant for component structure and behavior. Use Storybook to ensure the component complies with Figma spec.
+
+The following code can help you to start creating unit tests for a new component.
+
+```
+import React from 'react';
+import { expect } from 'chai';
+import { mount, shallow } from 'enzyme';
+import sinon from 'sinon';
+
+import MyComponent from '../../../components/consumer/desktop/my-component';
+
+describe('my-component', () => {
+  it('should have correct class', () => {
+    const wrapper = shallow(<MyComponent />);
+    expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
+    expect(wrapper.hasClass('pbg-my-component')).to.be.true;
+  });
+});
+```
+
+### Components
+
+When you are working on a component, keep in mind:
+
+* All components here are [dumb](https://medium.com/@pramonowang/advanced-react-component-patterns-dumb-component-and-smart-component-4cb50fa63aa9), they receive all required data and functions via props
+* Always prefix component's CSS styles with `pbg-component-name` to avoid collisions
+* Component's name should follow Figma specs
+
+The following template can help you to start a new component:
+
+```
+import React from 'react';
+
+import './style.css';
+
+class MyComponent extends React.PureComponent {
+  baseClassName = 'pbg-consumer-desktop pbg-my-component';
+
+  render = () => {
+    return <div className={this.baseClassName} />;
+  };
+}
+
+export default MyComponent;
+```
+
+#### Style Guide
+
+Our CI and code quality tools will catch most the issues that may exist with your code when you create or update a pull request. Even though, you can run the lint locally before you push your changes:
+
+```
+npm lint components/desktop/my-component
+```
 
 ## Releasing
 
