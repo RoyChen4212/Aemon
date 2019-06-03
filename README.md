@@ -168,7 +168,7 @@ Storybook stories should include a back reference URL to Figma. You can find tha
 
 Use the following code to create the story for a new component:
 
-```
+```javascript
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { WithFigma } from 'storybook-addon-figma';
@@ -195,7 +195,7 @@ Tests are only meant for component structure and behavior. Use Storybook to ensu
 
 The following code can help you to start creating unit tests for a new component.
 
-```
+```javascript
 import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
@@ -222,7 +222,7 @@ When you are working on a component, keep in mind:
 
 The following template can help you start a new component:
 
-```
+```javascript
 import React from 'react';
 
 import './style.css';
