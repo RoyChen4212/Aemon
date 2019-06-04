@@ -1,0 +1,27 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-status {
+  display: flex;
+
+  .status-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .status-label {
+    @extend .pbg-desktop-small-strong;
+    margin-bottom: 4px;
+  }
+
+  .status-question-mark:after {
+    content: url('../img/link-question-mark.svg');
+    margin-left: 5px;
+    position: relative;
+    top: 3px;
+  }
+
+  .status-value {
+    @extend .pbg-desktop-label-normal;
+    margin-bottom: 0;
+  }
+}
