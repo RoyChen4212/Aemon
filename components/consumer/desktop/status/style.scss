@@ -2,10 +2,12 @@
 
 .pbg-status {
   display: flex;
+  align-items: flex-start;
 
   .status-text {
     display: flex;
     flex-direction: column;
+    margin-left: 8px;
   }
 
   .status-label {

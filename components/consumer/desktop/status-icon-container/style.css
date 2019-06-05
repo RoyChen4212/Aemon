@@ -27,7 +27,7 @@
   font-size: 18px;
   line-height: 28px; }
 
-.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-status .status-label, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text, .pbg-status .status-value {
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -35,7 +35,7 @@
   font-size: 14px;
   line-height: 21px; }
 
-.pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-status .status-label {
+.pbg-desktop-label-strong, .pbg-desktop-small-strong {
   font-weight: bold; }
 
 .pbg-desktop-label-link, .pbg-desktop-small-link {
@@ -59,7 +59,7 @@
   font-size: 12px;
   line-height: 16px; }
 
-.pbg-desktop-small-strong, .pbg-status .status-label {
+.pbg-desktop-small-strong {
   font-size: 12px;
   line-height: 16px; }
 
@@ -83,19 +83,10 @@
 .pbg-desktop-form-field-disabled {
   background: #F0F3F8; }
 
-.pbg-status {
+.pbg-status-icon-container {
   display: flex;
-  align-items: flex-start; }
-  .pbg-status .status-text {
-    display: flex;
-    flex-direction: column;
-    margin-left: 8px; }
-  .pbg-status .status-label {
-    margin-bottom: 4px; }
-  .pbg-status .status-question-mark:after {
-    content: url("../img/link-question-mark.svg");
-    margin-left: 5px;
-    position: relative;
-    top: 3px; }
-  .pbg-status .status-value {
-    margin-bottom: 0; }
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #D5DDE9;
+  border-radius: 50%; }

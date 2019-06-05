@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import Hint from '../hint';
 import PopoverTooltip from '../popover-tooltip';
-import StatusIcon from '../status-icon';
+import StatusIconContainer from '../status-icon-container';
 
 import './style.css';
 
@@ -13,6 +13,7 @@ class Status extends React.PureComponent {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     hint: PropTypes.string.isRequired,
+    iconType: PropTypes.string.isRequired,
     tooltip: PropTypes.string,
   }
 
@@ -20,6 +21,7 @@ class Status extends React.PureComponent {
     label: null,
     value: null,
     hint: null,
+    iconType: null,
     tooltip: null,
   }
 
@@ -47,7 +49,7 @@ class Status extends React.PureComponent {
   render() {
     return (
       <div className="pbg-status">
-        <StatusIcon />
+        <StatusIconContainer type={this.props.iconType} />
 
         <div className="status-text">
           {this.renderLabel()}
