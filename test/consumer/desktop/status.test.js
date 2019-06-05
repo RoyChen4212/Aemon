@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import moment from 'moment';
 
 import Status from '../../../components/consumer/desktop/status';
@@ -19,6 +19,10 @@ describe('Status', () => {
   it('should render the status icon', () => {
     const wrapper = shallow(<Status label={labelText} value={valueText} hint={hintText} iconType="lock" />);
     expect(wrapper.html()).to.include('pbg-status-icon-container');
+  });
+
+  it('should throw without iconType', () => {
+    expect(() => shallow(<Status label={labelText} value={valueText} hint={hintText} />)).to.throw();
   });
 
   it('should render the label', () => {
@@ -46,5 +50,22 @@ describe('Status', () => {
     const component = <Status label={labelText} value={valueText} hint={hintText} iconType="lock" tooltip={tooltip} />;
     const wrapper = shallow(component);
     expect(wrapper.find(PopoverTooltip)).to.have.lengthOf(1);
+  });
+
+  it('should display the tooltip content on hover', done => {
+    const tooltip = 'Tooltip content';
+    const component = <Status label={labelText} value={valueText} hint={hintText} iconType="lock" tooltip={tooltip} />;
+    const wrapper = mount(component);
+
+    wrapper.find('.pbg-status-question-mark').simulate('mouseenter');
+    setTimeout(() => {
+      expect(
+        wrapper
+          .find('.pbg-popover-tooltip')
+          .at(0)
+          .hasClass('pbg-popover-active')
+      ).to.be.true;
+      done();
+    });
   });
 });

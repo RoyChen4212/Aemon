@@ -4,7 +4,6 @@ import classnames from 'classnames';
 
 import Hint from '../hint';
 import PopoverTooltip from '../popover-tooltip';
-import StatusIconContainer from '../status-icon-container';
 
 import './style.css';
 
@@ -15,18 +14,14 @@ class Status extends React.PureComponent {
     hint: PropTypes.string.isRequired,
     iconType: PropTypes.string.isRequired,
     tooltip: PropTypes.string,
-  }
+  };
 
   static defaultProps = {
-    label: null,
-    value: null,
-    hint: null,
-    iconType: null,
     tooltip: null,
-  }
+  };
 
   renderLabel = () => {
-    const labelClassName = classnames('status-label', { 'status-question-mark': !!this.props.tooltip });
+    const labelClassName = classnames('pbg-status-label', { 'pbg-status-question-mark': !!this.props.tooltip });
 
     if (!this.props.tooltip) {
       return <p className={labelClassName}>{this.props.label}</p>;
@@ -38,22 +33,19 @@ class Status extends React.PureComponent {
       </p>
     );
 
-    return (
-      <PopoverTooltip
-        content={<span>{this.props.tooltip}</span>}
-        trigger={trigger}
-      />
-    );
-  }
+    return <PopoverTooltip content={<span>{this.props.tooltip}</span>} trigger={trigger} />;
+  };
 
   render() {
     return (
       <div className="pbg-status">
-        <StatusIconContainer type={this.props.iconType} />
+        <div className="pbg-status-icon-container">
+          <img src={require(`../img/${this.props.iconType}-small.svg`)} />
+        </div>
 
-        <div className="status-text">
+        <div className="pbg-status-text">
           {this.renderLabel()}
-          <p className="status-value">{this.props.value}</p>
+          <p className="pbg-status-value">{this.props.value}</p>
           <Hint>{this.props.hint}</Hint>
         </div>
       </div>

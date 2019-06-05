@@ -4,26 +4,35 @@
   display: flex;
   align-items: flex-start;
 
-  .status-text {
+  .pbg-status-text {
     display: flex;
     flex-direction: column;
     margin-left: 8px;
   }
 
-  .status-label {
+  .pbg-status-label {
     @extend .pbg-desktop-small-strong;
     margin-bottom: 4px;
   }
 
-  .status-question-mark:after {
+  .pbg-status-question-mark:after {
     content: url('../img/link-question-mark.svg');
     margin-left: 5px;
     position: relative;
     top: 3px;
   }
 
-  .status-value {
+  .pbg-status-value {
     @extend .pbg-desktop-label-normal;
     margin-bottom: 0;
+  }
+
+  .pbg-status-icon-container {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border: 1px solid $grey-30;
+    border-radius: 50%;
   }
 }
