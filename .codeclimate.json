@@ -1,4 +1,10 @@
 {
+  "plugins": {
+    "eslint": {
+      "enabled": true,
+      "channel": "eslint-5"
+    }
+  },
   "exclude_patterns": [
     "test/",
     "stories/"
