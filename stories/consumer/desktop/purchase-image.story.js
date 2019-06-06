@@ -8,9 +8,10 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const figmaUrl =
-  'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=997%3A8470';
+  'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=613%3A173';
 
 storiesOf('Consumer/Desktop/Info/purchase-image', module)
+  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('purchase-image/default', () => <PurchaseImage src="https://picsum.photos/200/100" />);
