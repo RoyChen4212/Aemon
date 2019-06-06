@@ -1,0 +1,9 @@
+@import "../../shared/scss/styleguide";
+
+.pbg-consumer-desktop {
+  &.pbg-purchase-image {
+    width: 200px;
+    height: 100px;
+    border-radius: 4px;
+  }
+}
