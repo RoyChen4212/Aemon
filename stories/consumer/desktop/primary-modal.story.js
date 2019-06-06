@@ -3,12 +3,11 @@ import drop from 'lodash/drop';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithFigma } from 'storybook-addon-figma';
+
 import PrimaryModal from '../../../components/consumer/desktop/primary-modal';
-import {
-  PrimaryButton,
-  types as buttonTypes,
-} from '../../../components/consumer/desktop/button';
-import { withGreyContainer, wrapStory } from '../../util/decorators';
+import { PrimaryButton } from '../../../components/consumer/desktop/button';
+import { withContainer, wrapStory } from '../../util/decorators';
+
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -17,14 +16,11 @@ const figmaUrl =
 
 storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
-  .addDecorator(storyFn => (
-    <div style={{ minHeight: '600px' }}>{storyFn()}</div>
-  ))
   .addDecorator(wrapStory)
-  .addDecorator(withGreyContainer)
+  .addDecorator(withContainer)
   .add('primary-modal', () => (
     <PrimaryModal
-      onBackClick={action('click')}
+      onClose={action('click')}
       mainContent={
         <div>
           <h2>Main content</h2>
@@ -85,7 +81,7 @@ class FullPrimaryModal extends React.Component {
     if (this.showingPrimaryModal) {
       return (
         <PrimaryModal
-          onBackClick={this.hidePrimaryModal}
+          onClose={this.hidePrimaryModal}
           mainContent={
             <div>
               <h2>Main content</h2>
