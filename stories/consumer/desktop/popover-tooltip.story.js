@@ -13,9 +13,11 @@ const trigger = props => (
   </a>
 );
 
-storiesOf('Consumer/Desktop/Modals & Popovers', module)
+storiesOf('Consumer/Desktop/Modals & Popovers/popover-tooltip', module)
   .addDecorator(withContainer)
-  .addDecorator((storyFn) => <div className="w-100 h-100 bg-light">{storyFn()}</div>)
+  .addDecorator(storyFn => (
+    <div className="w-100 h-100 bg-light">{storyFn()}</div>
+  ))
   .add('popover-tooltip/default', () => (
     <PopoverTooltip
       trigger={trigger}
