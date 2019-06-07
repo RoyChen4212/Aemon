@@ -21,22 +21,22 @@ describe('ClaimToggle', () => {
   });
 
   it('should render a solid Container when is required', () => {
-    const wrapper = shallow(<ClaimToggle required={true} disabled={false} />);
+    const wrapper = shallow(<ClaimToggle required disabled={false} />);
     expect(wrapper.find(Container).prop('solid')).to.be.equal(true);
   });
 
   it('should render a Container with correct class when is required', () => {
-    const wrapper = shallow(<ClaimToggle required={true} disabled={false} />);
+    const wrapper = shallow(<ClaimToggle required disabled={false} />);
     expect(wrapper.find(Container).hasClass('claim-toggle-required')).to.be.equal(true);
   });
 
   it('should render a solid Container when is disabled', () => {
-    const wrapper = shallow(<ClaimToggle required={false} disabled={true} />);
+    const wrapper = shallow(<ClaimToggle required={false} disabled />);
     expect(wrapper.find(Container).prop('solid')).to.be.equal(true);
   });
 
   it('should render a Container with correct class when is disabled', () => {
-    const wrapper = shallow(<ClaimToggle required={false} disabled={true} />);
+    const wrapper = shallow(<ClaimToggle required={false} disabled />);
     expect(wrapper.find(Container).hasClass('claim-toggle-disabled')).to.be.equal(true);
   });
 
@@ -75,11 +75,11 @@ describe('ClaimToggle', () => {
     expect(wrapper.find(ClaimToggleContent).prop('error')).to.be.equal(error);
   });
 
-  it('reports the value as true upon checking the checkbox', function (done) {
-    const onChange = (ev) => {
+  it('reports the value as true upon checking the checkbox', function(done) {
+    const onChange = ev => {
       expect(ev.target.value).to.be.true;
       done();
-    }
+    };
     const wrapper = mount(<ClaimToggle value={false} onChange={onChange} />);
     const event = { target: { checked: true } };
     wrapper.find({ type: 'checkbox' }).simulate('change', event);

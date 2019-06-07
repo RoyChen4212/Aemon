@@ -49,20 +49,20 @@ describe('Avatar', () => {
 
   describe('Initials Strategy', () => {
     it('should render a fallback avatar with 2 initial letters', () => {
-      const wrapper = mount(<Avatar fullName={"John Doe"} />);
+      const wrapper = mount(<Avatar fullName="John Doe" />);
 
       expect(wrapper.find('div > div').html()).to.contain('JD');
     });
 
     it('should render a fallback avatar with 1 initial letter', () => {
-      const wrapper = mount(<Avatar fullName={"John@example.com"} />);
+      const wrapper = mount(<Avatar fullName="John@example.com" />);
 
       expect(wrapper.find('div > div').html()).to.contain('J');
     });
   });
 
   describe('Fallback strategy', () => {
-    const getRenderedSVGPath = (userId) => {
+    const getRenderedSVGPath = userId => {
       const wrapper = mount(<Avatar src={src} />);
       wrapper.find('img').simulate('error');
       return wrapper.find('svg > path:first-child');
@@ -78,7 +78,7 @@ describe('Avatar', () => {
       expect(svg.exists()).to.be.true;
       expect(svg.prop('width')).to.be.equal(Avatar.DEFAULT_SIZE);
       expect(svg.prop('height')).to.be.equal(Avatar.DEFAULT_SIZE);
-      expect(svg.prop('viewBox')).to.be.equal(`0 0 32 32`)
+      expect(svg.prop('viewBox')).to.be.equal(`0 0 32 32`);
     });
 
     it('should consistently render the same fallback avatar and color for the same user’s id', () => {
@@ -86,19 +86,19 @@ describe('Avatar', () => {
       const avatarPropsById = {
         '01234567-abcd-abcd-abcd-0123456789ab': null,
         '0bc96121-c5a3-4b4d-9485-d7631ed4cf5e': null,
-        '179f26ed-7988-4975-a3aa-27305ab856d1': null
+        '179f26ed-7988-4975-a3aa-27305ab856d1': null,
       };
       const ids = Object.keys(avatarPropsById);
 
       ids.reduce((result, id) => {
         const path = getRenderedSVGPath(id);
         result[id] = {
-          color: path.prop('fill')
+          color: path.prop('fill'),
         };
         return result;
       }, avatarPropsById);
 
-      ids.forEach((id) => {
+      ids.forEach(id => {
         times(RUNS_FOR_ID, () => {
           const path = getRenderedSVGPath(id);
           const values = avatarPropsById[id];

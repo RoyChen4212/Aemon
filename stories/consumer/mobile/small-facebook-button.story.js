@@ -17,8 +17,12 @@ storiesOf('Consumer/Mobile/Atomic Components/Small Facebook Button', module)
     <SmallFacebookButton onClick={action('clicked')}>Small Facebook Button</SmallFacebookButton>
   ))
   .add('Enabled/With Hint', () => (
-    <SmallFacebookButton hint="With Hint" onClick={action('clicked')}>Small Facebook Button</SmallFacebookButton>
+    <SmallFacebookButton hint="With Hint" onClick={action('clicked')}>
+      Small Facebook Button
+    </SmallFacebookButton>
   ))
   .add('Disabled', () => (
-    <SmallFacebookButton disabled onClick={action('clicked')}>Small Facebook Button Disabled</SmallFacebookButton>
+    <SmallFacebookButton disabled onClick={action('clicked')}>
+      Small Facebook Button Disabled
+    </SmallFacebookButton>
   ));

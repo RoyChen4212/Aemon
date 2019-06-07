@@ -29,12 +29,12 @@ describe('Date picker', () => {
     expect(onChange.calledOnce).to.be.true;
   });
 
-  it('should call onChange with correct value', function (done) {
+  it('should call onChange with correct value', function(done) {
     const expected = '1984-10-19';
-    const onChange = (ev) => {
+    const onChange = ev => {
       expect(ev.target.value).to.equal(expected);
       done();
-    }
+    };
     const event = { target: { value: expected } };
     const wrapper = shallow(<DatePicker onChange={onChange} />);
     wrapper.find('input').simulate('change', event);
@@ -57,7 +57,7 @@ describe('Date picker', () => {
 
   it('should execute default formater if none provided for feedback', () => {
     const wrapper = shallow(<DatePicker />);
-    const expected = <Label type={labelTypes.SECONDARY}>mm/dd/yyyy</Label>
+    const expected = <Label type={labelTypes.SECONDARY}>mm/dd/yyyy</Label>;
     expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true;
   });
 
@@ -70,35 +70,35 @@ describe('Date picker', () => {
   it('should execute default formater if none provided for feedback with value', () => {
     const date = '2018-12-8';
     const wrapper = shallow(<DatePicker value={date} />);
-    const expected = <Label type={labelTypes.SECONDARY}>12/08/2018</Label>
+    const expected = <Label type={labelTypes.SECONDARY}>12/08/2018</Label>;
     expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true;
   });
 
   it('should provide correct feedback with small date numbers', () => {
     const date = '2018-1-1';
     const wrapper = shallow(<DatePicker value={date} />);
-    const expected = <Label type={labelTypes.SECONDARY}>01/01/2018</Label>
-    expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true
+    const expected = <Label type={labelTypes.SECONDARY}>01/01/2018</Label>;
+    expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true;
   });
 
   it('should provide correct feedback with date object value', () => {
     const date = new Date('January 1, 2018');
     const wrapper = shallow(<DatePicker value={date} />);
-    const expected = <Label type={labelTypes.SECONDARY}>01/01/2018</Label>
-    expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true
+    const expected = <Label type={labelTypes.SECONDARY}>01/01/2018</Label>;
+    expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true;
   });
 
   it('should provide correct feedback with date object value', () => {
     const date = new Date('November 12, 2018');
     const wrapper = shallow(<DatePicker value={date} />);
-    const expected = <Label type={labelTypes.SECONDARY}>11/12/2018</Label>
-    expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true
+    const expected = <Label type={labelTypes.SECONDARY}>11/12/2018</Label>;
+    expect(wrapper.find('.pbg-date-picker-mask').contains(expected)).to.be.true;
   });
 
   it('should add a label with given text', () => {
     const wrapper = shallow(<DatePicker label="A label" />);
-    const expected = <Label>A label</Label>
-    expect(wrapper.find('.pbg-date-picker').contains(expected)).to.be.true
+    const expected = <Label>A label</Label>;
+    expect(wrapper.find('.pbg-date-picker').contains(expected)).to.be.true;
   });
 
   describe('With error', () => {
@@ -123,7 +123,7 @@ describe('Date picker', () => {
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
-      const wrapper = shallow(<DatePicker error='and error' label={expected} />);
+      const wrapper = shallow(<DatePicker error="and error" label={expected} />);
       expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
   });

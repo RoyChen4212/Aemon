@@ -1,4 +1,4 @@
-export default (value) => {
+export default value => {
   return {
     target: { value },
     stopPropagation: () => {},

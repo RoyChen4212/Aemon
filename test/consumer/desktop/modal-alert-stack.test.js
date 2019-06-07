@@ -5,9 +5,9 @@ import ModalAlertStack from '../../../components/consumer/desktop/modal-alert-st
 
 describe('ModalAlertStack', () => {
   const alerts = [
-    { type: 'error', title: 'Error', text: 'Some error text', },
-    { type: 'warning', title: 'Warning', text: 'Some warning text', },
-    { type: 'success', title: 'Success', text: 'Some success text', },
+    { type: 'error', title: 'Error', text: 'Some error text' },
+    { type: 'warning', title: 'Warning', text: 'Some warning text' },
+    { type: 'success', title: 'Success', text: 'Some success text' },
   ];
 
   it('should render div', () => {
@@ -26,7 +26,7 @@ describe('ModalAlertStack', () => {
   });
 
   it('should render given alerts', () => {
-    const wrapper = mount(<ModalAlertStack alerts={alerts}/>);
+    const wrapper = mount(<ModalAlertStack alerts={alerts} />);
     expect(wrapper.find('.pbg-modal-alert-error')).to.have.lengthOf(1);
     expect(wrapper.find('.pbg-modal-alert-warning')).to.have.lengthOf(1);
     expect(wrapper.find('.pbg-modal-alert-success')).to.have.lengthOf(1);

@@ -13,59 +13,53 @@ const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-deskto
 
 storiesOf('Consumer/Desktop/Modals & Popovers', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
-  .addDecorator(storyFn => <div style={{minHeight: '600px'}}>{storyFn()}</div>)
+  .addDecorator(storyFn => <div style={{ minHeight: '600px' }}>{storyFn()}</div>)
   .addDecorator(wrapStory)
   .addDecorator(withGreyContainer)
   .add('primary-modal', () => (
     <PrimaryModal
       onBackClick={action('click')}
-      mainContent={(
+      mainContent={
         <div>
           <h2>Main content</h2>
           <p>This is the main content section, style it as you want.</p>
         </div>
-      )}
-      sidebarContent={(
+      }
+      sidebarContent={
         <div>
           <h2>Sidebar content</h2>
           <p>This is the sidebar content section, style it as you want.</p>
         </div>
-      )}
+      }
     />
   ))
-  .add('primary-modal/working sample', () => (<FullPrimaryModal />));
+  .add('primary-modal/working sample', () => <FullPrimaryModal />);
 
 class FullPrimaryModal extends React.Component {
   state = {
     showingPrimaryModal: false,
     alerts: [],
-  }
+  };
 
   showPrimaryModal = () => {
     this.setState({ showingPrimaryModal: true });
-  }
+  };
 
   hidePrimaryModal = () => {
     this.setState({ showingPrimaryModal: false });
-  }
+  };
 
   addSuccessAlert = () => {
     this.setState({
-      alerts: [
-        ...this.alerts, 
-        { type: 'success', title: 'New success.', text: 'Hey, you did it.'},
-      ],
+      alerts: [...this.alerts, { type: 'success', title: 'New success.', text: 'Hey, you did it.' }],
     });
-  }
+  };
 
   addWarningAlert = () => {
     this.setState({
-      alerts: [
-        ...this.alerts, 
-        { type: 'warning', title: 'New warning.', text: 'I\'m warning you!'},
-      ],
+      alerts: [...this.alerts, { type: 'warning', title: 'New warning.', text: "I'm warning you!" }],
     });
-  }
+  };
 
   get showingPrimaryModal() {
     return this.state.showingPrimaryModal;
@@ -80,23 +74,23 @@ class FullPrimaryModal extends React.Component {
       return (
         <PrimaryModal
           onBackClick={this.hidePrimaryModal}
-          mainContent={(
+          mainContent={
             <div>
               <h2>Main content</h2>
               <p>This is the main content section, style it as you want.</p>
               <PrimaryButton onClick={this.addSuccessAlert}>Add success alert</PrimaryButton>
             </div>
-          )}
-          sidebarContent={(
+          }
+          sidebarContent={
             <div>
               <h2>Sidebar content</h2>
               <p>This is the sidebar content section, style it as you want.</p>
               <PrimaryButton onClick={this.addWarningAlert}>Add warning alert</PrimaryButton>
             </div>
-          )}
+          }
           alerts={this.alerts}
         />
-      )
+      );
     }
   }
 

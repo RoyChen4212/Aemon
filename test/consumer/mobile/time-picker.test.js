@@ -29,7 +29,7 @@ describe('Date picker', () => {
     expect(onChange.calledOnce).to.be.true;
   });
 
-  it('should call onChange with correct value when date input changes', function (done) {
+  it('should call onChange with correct value when date input changes', function(done) {
     const expected = '12:22';
     const event = { target: { value: expected } };
     const onChange = ev => {
@@ -57,7 +57,7 @@ describe('Date picker', () => {
 
   it('should execute default formater if none provided for feedback', () => {
     const wrapper = shallow(<TimePicker />);
-    const expected = <Label type={labelTypes.SECONDARY}>hh:mm</Label>
+    const expected = <Label type={labelTypes.SECONDARY}>hh:mm</Label>;
     expect(wrapper.find('.pbg-time-picker-mask').contains(expected)).to.be.true;
   });
 
@@ -70,21 +70,21 @@ describe('Date picker', () => {
   it('should execute default formater if none provided for feedback with value', () => {
     const date = '23:45';
     const wrapper = shallow(<TimePicker value={date} />);
-    const expected = <Label type={labelTypes.SECONDARY}>23:45</Label>
+    const expected = <Label type={labelTypes.SECONDARY}>23:45</Label>;
     expect(wrapper.find('.pbg-time-picker-mask').contains(expected)).to.be.true;
   });
 
   it('should provide correct feedback with small time numbers', () => {
     const date = '04:20';
     const wrapper = shallow(<TimePicker value={date} />);
-    const expected = <Label type={labelTypes.SECONDARY}>04:20</Label>
-    expect(wrapper.find('.pbg-time-picker-mask').contains(expected)).to.be.true
+    const expected = <Label type={labelTypes.SECONDARY}>04:20</Label>;
+    expect(wrapper.find('.pbg-time-picker-mask').contains(expected)).to.be.true;
   });
 
   it('should add a label with given text', () => {
     const wrapper = shallow(<TimePicker label="A label" />);
-    const expected = <Label>A label</Label>
-    expect(wrapper.find('.pbg-time-picker').contains(expected)).to.be.true
+    const expected = <Label>A label</Label>;
+    expect(wrapper.find('.pbg-time-picker').contains(expected)).to.be.true;
   });
 
   describe('With error', () => {
@@ -109,7 +109,7 @@ describe('Date picker', () => {
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
-      const wrapper = shallow(<TimePicker error='and error' label={expected} />);
+      const wrapper = shallow(<TimePicker error="and error" label={expected} />);
       expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
   });

@@ -25,10 +25,7 @@ storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
       heading="You are a contributor!"
       title="Your expected charge: USD $850.00"
       content={<Hint multiline="true">Up to a max. of $900.00 on or before 08 Dic to your visa ending in 4432.</Hint>}
-      cta={[
-        { label: 'Change', onClick: action('click') },
-        { label: 'See Schedule', onClick: action('click') },
-      ]}
+      cta={[{ label: 'Change', onClick: action('click') }, { label: 'See Schedule', onClick: action('click') }]}
     />
   ))
   .add('With Picker', () => (
@@ -37,7 +34,12 @@ storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
       title="Your expected charge: USD $850.00"
       content={<Hint multiline="true">Up to a max. of $900.00 on or before 08 Dic to your visa ending in 4432.</Hint>}
       cta={[
-        { label: 'Change', onChange: action('change'), type: 'picker', options },
+        {
+          label: 'Change',
+          onChange: action('change'),
+          type: 'picker',
+          options,
+        },
         { label: 'See Schedule', onClick: action('click') },
       ]}
     />
@@ -58,4 +60,3 @@ storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
       cta={[{ label: 'CTA', onClick: action('click') }]}
     />
   ));
-

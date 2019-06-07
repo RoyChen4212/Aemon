@@ -7,24 +7,24 @@ import FormField from '../../../components/consumer/mobile/form-field';
 
 describe('Mobile: FormField', () => {
   it('should implement .label, .hintOrError, .labelType', () => {
-    const wrapper = shallow(<FormField />)
+    const wrapper = shallow(<FormField />);
     const instance = wrapper.instance();
 
     expect(() => {
-      return instance.label
+      return instance.label;
     }).to.not.throw;
 
     expect(() => {
-      return instance.hintOrError
+      return instance.hintOrError;
     }).to.not.throw;
 
     expect(() => {
-      return instance.labelType
+      return instance.labelType;
     }).to.not.throw;
   });
 
   it('should return labelType.ERROR  when error', () => {
-    const wrapper = shallow(<FormField error='this is an error' />)
+    const wrapper = shallow(<FormField error="this is an error" />);
     const instance = wrapper.instance();
 
     expect(instance.labelType).to.equal(labelTypes.ERROR);

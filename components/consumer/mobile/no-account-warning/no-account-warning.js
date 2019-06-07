@@ -4,7 +4,7 @@ import { SmallButton } from '../button';
 
 import './style.css';
 
-export const NoAccountWarning = (props) => (
+export const NoAccountWarning = props => (
   <div className={className(props)}>
     <div className="d-flex">
       <img src="https://assets.paybygroup.com/images/icons/warning.svg" />
@@ -19,7 +19,7 @@ export const NoAccountWarning = (props) => (
   </div>
 );
 
-const className = (props) => {
+const className = props => {
   let base = 'pbg-consumer-mobile pbg-no-account-warning';
   if (props.className) {
     base += ` ${props.className}`;
@@ -28,6 +28,6 @@ const className = (props) => {
   if (props.type && classNames[props.type]) return `${base} ${classNames[props.type]}`;
 
   return base;
-}
+};
 
 export default NoAccountWarning;

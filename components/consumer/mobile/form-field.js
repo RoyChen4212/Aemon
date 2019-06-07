@@ -19,6 +19,6 @@ class FormField extends BaseFormField {
   get hintOrError() {
     return this.renderHintOrError(Hint);
   }
-};
+}
 
 export default FormField;

@@ -7,14 +7,14 @@ const Container = React.forwardRef((props, ref) => (
   </div>
 ));
 
-const className = (props) => {
+const className = props => {
   const base = 'pbg-consumer-desktop pbg-container';
   let _className = props.className ? `${base} ${props.className}` : base;
   if (props.solid) {
     _className += ' pbg-container-solid';
   }
   if (props.stroked) {
-    _className += ' pbg-container-stroked'; 
+    _className += ' pbg-container-stroked';
   }
   if (props.shadow1 && !props.shadow2) {
     _className += ' pbg-container-shadow-1';

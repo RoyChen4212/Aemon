@@ -60,7 +60,7 @@ describe('TextArea', () => {
     });
 
     it('should have correct class when error is given', () => {
-      const wrapper = shallow(<TextArea error="an error"/>);
+      const wrapper = shallow(<TextArea error="an error" />);
       expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
     });
 
@@ -74,7 +74,7 @@ describe('TextArea', () => {
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
-      const wrapper = shallow(<TextArea error='and error' label={expected}/>);
+      const wrapper = shallow(<TextArea error="and error" label={expected} />);
       expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
   });

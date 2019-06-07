@@ -12,12 +12,14 @@ storiesOf('Consumer/Mobile/Atomic Components/Secondary Button', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Enabled/No Hint', () => (
-    <SecondaryButton onClick={action('clicked')}>Secondary Button</SecondaryButton>
-  ))
+  .add('Enabled/No Hint', () => <SecondaryButton onClick={action('clicked')}>Secondary Button</SecondaryButton>)
   .add('Enabled/With Hint', () => (
-    <SecondaryButton hint="With Hint" onClick={action('clicked')}>Secondary Button</SecondaryButton>
+    <SecondaryButton hint="With Hint" onClick={action('clicked')}>
+      Secondary Button
+    </SecondaryButton>
   ))
   .add('Disabled', () => (
-    <SecondaryButton disabled onClick={action('clicked')}>Secondary Button Disabled</SecondaryButton>
+    <SecondaryButton disabled onClick={action('clicked')}>
+      Secondary Button Disabled
+    </SecondaryButton>
   ));

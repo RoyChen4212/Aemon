@@ -5,7 +5,12 @@ import sinon from 'sinon';
 
 import { shouldBehaveLikeButton } from '../shared/base-button.test';
 import {
-  PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
+  PrimaryButton,
+  SecondaryButton,
+  SmallButton,
+  LinkButton,
+  FacebookButton,
+  SmallFacebookButton,
 } from '../../../components/consumer/mobile/button';
 
 import Hint from '../../../components/consumer/mobile/hint';

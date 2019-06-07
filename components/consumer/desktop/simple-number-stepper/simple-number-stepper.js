@@ -11,13 +11,13 @@ class SimpleNumberStepper extends FormField {
     if (this.canIncrement()) {
       this.onChange(makeEvent(this.value + 1));
     }
-  }
+  };
 
   onDecrementClicked = () => {
     if (this.canDecrement()) {
       this.onChange(makeEvent(this.value - 1));
     }
-  }
+  };
 
   canIncrement() {
     const { max } = this.props;
@@ -31,9 +31,9 @@ class SimpleNumberStepper extends FormField {
 
   renderDecrement() {
     if (this.canDecrement()) {
-      return <button type="button" className="decrement" onClick={this.onDecrementClicked}/>;
+      return <button type="button" className="decrement" onClick={this.onDecrementClicked} />;
     }
-    return <button disabled type="button" className="decrement disabled"/>;
+    return <button disabled type="button" className="decrement disabled" />;
   }
 
   renderIncrement() {

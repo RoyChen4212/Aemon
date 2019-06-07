@@ -15,7 +15,7 @@ export const hintTypes = {
   CLICKABLE,
 };
 
-export default (props) => {
+export default props => {
   if (props.onClick) {
     return mainTag(props, <a onClick={props.onClick}>{props.children}</a>);
   }

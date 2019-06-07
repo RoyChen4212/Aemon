@@ -7,22 +7,22 @@ import ClaimToggleContent from '../claim-toggle-content';
 import './style.css';
 
 class ClaimToggle extends FormField {
-  baseClassName = 'pbg-claim-toggle'
+  baseClassName = 'pbg-claim-toggle';
 
   get isRequiredOrDisabled() {
     return this.props.required || this.props.disabled;
   }
 
   render() {
-    const required = this.props.required ? 'claim-toggle-required' : ''
-    const disabled = this.props.disabled ? 'claim-toggle-disabled' : ''
+    const required = this.props.required ? 'claim-toggle-required' : '';
+    const disabled = this.props.disabled ? 'claim-toggle-disabled' : '';
 
     return (
       <Container
         className={`${this.baseClassName} ${required} ${disabled}`}
         stroked={!this.isRequiredOrDisabled}
-        solid={this.isRequiredOrDisabled} >
-
+        solid={this.isRequiredOrDisabled}
+      >
         <ClaimToggleContent {...this.props} />
       </Container>
     );

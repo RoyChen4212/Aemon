@@ -13,7 +13,7 @@ describe('Subheader', () => {
   });
 
   it('should render correct classes for wrapper, text and line elements', () => {
-    const wrapper = shallow(<Subheader text='' />);
+    const wrapper = shallow(<Subheader text="" />);
     const text = wrapper.childAt(0);
     const divider = wrapper.childAt(1);
 

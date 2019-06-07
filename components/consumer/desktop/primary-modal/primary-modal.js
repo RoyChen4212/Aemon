@@ -7,12 +7,10 @@ import './style.css';
 class PrimaryModal extends React.PureComponent {
   onBackClick = () => {
     if (this.props.onBackClick) return this.props.onBackClick();
-  }
+  };
 
   renderModalAlertStack() {
-    return (
-      <ModalAlertStack alerts={this.props.alerts} onHideAlert={this.props.onHideAlert} />
-    );
+    return <ModalAlertStack alerts={this.props.alerts} onHideAlert={this.props.onHideAlert} />;
   }
 
   renderMainContent() {
@@ -24,28 +22,24 @@ class PrimaryModal extends React.PureComponent {
   }
 
   _renderColumn(name, content) {
-    return (
-      <div className={`${name} pbg-primary-modal-col`}>
-        {content}
-      </div>
-    );
+    return <div className={`${name} pbg-primary-modal-col`}>{content}</div>;
   }
 
   render() {
     return (
       <div className="pbg-consumer-desktop pbg-modal pbg-primary-modal">
         <div className="pbg-modal-dialog">
-          { this.renderModalAlertStack() }
+          {this.renderModalAlertStack()}
           <Container solid shadow2>
-            { this.renderMainContent() }
-            { this.renderSidebarContent() }
-            <button type="button" className="pbg-modal-close-button" onClick={this.onBackClick}/>
+            {this.renderMainContent()}
+            {this.renderSidebarContent()}
+            <button type="button" className="pbg-modal-close-button" onClick={this.onBackClick} />
           </Container>
         </div>
         <div className="pbg-modal-overlay" onClick={this.onBackClick} />
       </div>
     );
   }
-};
+}
 
 export default PrimaryModal;

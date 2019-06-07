@@ -21,7 +21,9 @@ class Status extends React.PureComponent {
   };
 
   renderLabel = () => {
-    const labelClassName = classnames('pbg-status-label', { 'pbg-status-question-mark': !!this.props.tooltip });
+    const labelClassName = classnames('pbg-status-label', {
+      'pbg-status-question-mark': !!this.props.tooltip,
+    });
 
     if (!this.props.tooltip) {
       return <p className={labelClassName}>{this.props.label}</p>;

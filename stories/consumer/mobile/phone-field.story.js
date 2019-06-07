@@ -8,14 +8,13 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-
 const phoneOptions = [
-  {label: '+52 (33) 3684-7288', value: 'first'},
-  {label: '+1 (94) 5555-2222', value: 'second'},
-  {label: 'Add new phone', value: 'new'},
+  { label: '+52 (33) 3684-7288', value: 'first' },
+  { label: '+1 (94) 5555-2222', value: 'second' },
+  { label: 'Add new phone', value: 'new' },
 ];
 
-const validate = (value) => {
+const validate = value => {
   const errors = {};
   if (!value.phone) {
     errors.phone = 'Must type in your phone';

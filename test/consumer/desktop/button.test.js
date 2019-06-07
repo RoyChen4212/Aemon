@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import { CLASS_NAME } from '../../../components/consumer/shared/button'
+import { CLASS_NAME } from '../../../components/consumer/shared/button';
 import { PrimaryButton } from '../../../components/consumer/desktop/button';
 import { shouldBehaveLikeButton } from '../shared/base-button.test';
 

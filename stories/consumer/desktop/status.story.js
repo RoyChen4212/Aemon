@@ -14,12 +14,7 @@ storiesOf('Consumer/Desktop/Info/status', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('status/default', () => (
-    <Status
-      label="Inventory"
-      value="Reservation status"
-      hint="Small hint"
-      iconType="lock"
-    />
+    <Status label="Inventory" value="Reservation status" hint="Small hint" iconType="lock" />
   ))
   .add('status/with-tooltip', () => (
     <Status
@@ -29,4 +24,4 @@ storiesOf('Consumer/Desktop/Info/status', module)
       tooltip="This is the tooltip content."
       iconType="lock"
     />
-  ))
+  ));

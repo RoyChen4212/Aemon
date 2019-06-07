@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Subheader from '../../../components/consumer/desktop/subheader'
+import Subheader from '../../../components/consumer/desktop/subheader';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';

@@ -22,7 +22,7 @@ describe('Historical Picker', () => {
   });
 
   it('should render given options', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
+    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
     const wrapper = shallow(<HistoricalPicker options={opts} />);
     expect(wrapper.find('select').find('option')).to.have.lengthOf(2);
     opts.forEach(opt => {
@@ -57,13 +57,14 @@ describe('Historical Picker', () => {
 
   it('should render the an error if given despite a hint being passed', () => {
     const error = 'terrible error';
-    const wrapper = shallow(<HistoricalPicker error={error} hint='hint' />);
+    const wrapper = shallow(<HistoricalPicker error={error} hint="hint" />);
     expect(wrapper.find('.pbg-historical-picker').contains(<Hint type={hintTypes.ERROR}>{error}</Hint>)).to.be.true;
   });
 
   it('should render a custom arrow element', () => {
     const wrapper = shallow(<HistoricalPicker />);
-    const el = wrapper.find('.pbg-historical-picker')
+    const el = wrapper
+      .find('.pbg-historical-picker')
       .find('.pbg-picker-select-container')
       .find('.pbg-picker-arrow');
     expect(el).to.have.lengthOf(1);

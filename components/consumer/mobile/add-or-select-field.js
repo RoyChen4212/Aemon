@@ -21,7 +21,9 @@ class AddOrSelectField extends FormField {
     }
   }
 
-  get className() {return this.baseClassName; }
+  get className() {
+    return this.baseClassName;
+  }
 
   get addingNew() {
     if (!this.options || !this.options.length) return true;
@@ -48,8 +50,15 @@ class AddOrSelectField extends FormField {
     if (label) {
       return (
         <div className="pbg-add-or-select-field-label">
-          <Label type={labelTypes.STRONG} required={required}>{label}</Label>
-          { hint ? <React.Fragment><br /><Hint>{hint}</Hint></React.Fragment> : null }
+          <Label type={labelTypes.STRONG} required={required}>
+            {label}
+          </Label>
+          {hint ? (
+            <React.Fragment>
+              <br />
+              <Hint>{hint}</Hint>
+            </React.Fragment>
+          ) : null}
         </div>
       );
     }
@@ -60,30 +69,30 @@ class AddOrSelectField extends FormField {
     return (
       <HistoricalPicker
         options={this.options}
-        onChange={ev => this.updateValue({selected: ev.target.value })}
+        onChange={ev => this.updateValue({ selected: ev.target.value })}
         value={get(this.adaptedProps, 'value.selected')}
       />
     );
   }
 
-  updateValue = (value) => {
+  updateValue = value => {
     const newValue = {
       ...this.adaptedProps.value,
       ...value,
     };
     this.onChange(makeEvent(newValue));
-  }
+  };
 
   render() {
     return (
       <div className={this.className}>
-        { this.label }
-        { this.picker }
-        { this.addNewField }
-        { this.addNewButton }
+        {this.label}
+        {this.picker}
+        {this.addNewField}
+        {this.addNewButton}
       </div>
-    )
+    );
   }
-};
+}
 
 export default AddOrSelectField;

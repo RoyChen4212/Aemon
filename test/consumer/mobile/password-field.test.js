@@ -30,7 +30,10 @@ describe('PasswordField', () => {
   it('should call onForgotPassword when forgot password is clicked', () => {
     const onForgotPassword = sinon.spy();
     const wrapper = shallow(<PasswordField onForgotPassword={onForgotPassword} />);
-    wrapper.find('.pbg-forgot-password-container').find(Hint).simulate('click');
+    wrapper
+      .find('.pbg-forgot-password-container')
+      .find(Hint)
+      .simulate('click');
     expect(onForgotPassword.calledOnce).to.be.true;
   });
 
@@ -50,7 +53,7 @@ describe('PasswordField', () => {
     });
 
     it('should have correct class when error is given', () => {
-      const wrapper = shallow(<PasswordField error="an error"/>);
+      const wrapper = shallow(<PasswordField error="an error" />);
       expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
     });
 
@@ -64,7 +67,7 @@ describe('PasswordField', () => {
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
-      const wrapper = shallow(<PasswordField error='and error' label={expected}/>);
+      const wrapper = shallow(<PasswordField error="and error" label={expected} />);
       expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
 

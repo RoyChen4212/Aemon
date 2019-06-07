@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { WithFigma } from 'storybook-addon-figma';
-import Divider from '../../../components/consumer/desktop/divider'
+import Divider from '../../../components/consumer/desktop/divider';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';

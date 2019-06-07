@@ -11,4 +11,4 @@ class ActivityThumbnail extends BaseActivityThumbnail {
   }
 }
 
-export default ActivityThumbnail
+export default ActivityThumbnail;

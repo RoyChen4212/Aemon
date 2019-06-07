@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Banner from '../../../components/consumer/desktop/banner'
+import Banner from '../../../components/consumer/desktop/banner';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';

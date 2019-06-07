@@ -43,7 +43,7 @@ storiesOf('Consumer/Mobile/Atomic Components/ActivityCard/UserCommentCard', modu
   .add('With userId', () => (
     <UserCommentCard
       date={new Date()}
-      userId='22d9680a-9159-49cf-a923-a99d756b501f'
+      userId="22d9680a-9159-49cf-a923-a99d756b501f"
       title="Jamie Smith"
       comment="This is sample text used to demonstrate the body of this component."
     />
@@ -59,10 +59,9 @@ storiesOf('Consumer/Mobile/Atomic Components/ActivityCard/UserCommentCard', modu
   .add('With initials', () => (
     <UserCommentCard
       date={new Date()}
-      userId='22d9680a-9159-49cf-a923-a99d756b501f'
+      userId="22d9680a-9159-49cf-a923-a99d756b501f"
       title="John Doe"
       fullName="John Doe"
       comment="This is sample text used to demonstrate the body of this component."
     />
   ));
-

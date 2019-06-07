@@ -20,9 +20,11 @@ class Checkbox extends ComposedCheckbox {
     return (
       <div className="pbg-checkbox-label-hint-placeholder">
         {label && (
-          <Label type={this.labelType} required={this.adaptedProps.required}>{label}</Label>
+          <Label type={this.labelType} required={this.adaptedProps.required}>
+            {label}
+          </Label>
         )}
-        {hint && (<Hint>{hint}</Hint>)}
+        {hint && <Hint>{hint}</Hint>}
       </div>
     );
   }

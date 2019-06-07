@@ -7,7 +7,6 @@ import Hint from '../../../components/consumer/mobile/hint';
 import { SmallButton } from '../../../components/consumer/mobile/button';
 
 describe('Add comment', () => {
-
   it('should have correct wrapper class', () => {
     const wrapper = shallow(<AddComment />);
     expect(wrapper.hasClass('pbg-add-comment')).to.be.true;
@@ -37,7 +36,7 @@ describe('Add comment', () => {
   });
 
   it('should pass label to text area', () => {
-    const expected = "some label";
+    const expected = 'some label';
     const wrapper = mount(<AddComment textLabel={expected} />);
     expect(wrapper.find(TextArea).props().label).to.equal(expected);
   });
@@ -54,8 +53,8 @@ describe('Add comment', () => {
   });
 
   it('should pass label to button', () => {
-    const expected = "some label";
-    const wrapper = mount(<AddComment ctaLabel={expected} />)
+    const expected = 'some label';
+    const wrapper = mount(<AddComment ctaLabel={expected} />);
     expect(wrapper.find(SmallButton).text()).to.equal(expected);
   });
 });
