@@ -4,11 +4,7 @@
     "es6": true,
     "mocha": true
   },
-  "extends": [
-    "airbnb",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended"
-  ],
+  "extends": ["airbnb", "plugin:react/recommended", "plugin:prettier/recommended"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
@@ -31,13 +27,10 @@
     "sourceType": "module"
   },
   "rules": {
+    "prettier/prettier": "off",
     "no-else-return": ["error", { "allowElseIf": true }],
     "prefer-destructuring": ["warn", { "array": false, "object": true }],
-    "lines-between-class-members": [
-      "error",
-      "always",
-      { "exceptAfterSingleLine": true }
-    ],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
     "react/jsx-closing-tag-location": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": "off",
@@ -52,9 +45,6 @@
     "jsx-a11y/label-has-for": "off",
     "jsx-a11y/alt-text": "off",
     "import/prefer-default-export": "off",
-    "import/no-extraneous-dependencies": [
-      "error",
-      { "devDependencies": [".storybook/**", "stories/**", "test/**"] }
-    ]
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": [".storybook/**", "stories/**", "test/**"] }]
   }
 }
