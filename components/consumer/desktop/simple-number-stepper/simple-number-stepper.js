@@ -5,19 +5,20 @@ import FormField from '../form-field';
 import './style.css';
 
 class SimpleNumberStepper extends FormField {
-  baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-simple-number-stepper';
+  baseClassName =
+    'pbg-consumer-desktop pbg-form-field pbg-simple-number-stepper';
 
   onIncrementClicked = () => {
     if (this.canIncrement()) {
       this.onChange(makeEvent(this.value + 1));
     }
-  }
+  };
 
   onDecrementClicked = () => {
     if (this.canDecrement()) {
       this.onChange(makeEvent(this.value - 1));
     }
-  }
+  };
 
   canIncrement() {
     const { max } = this.props;
@@ -31,14 +32,26 @@ class SimpleNumberStepper extends FormField {
 
   renderDecrement() {
     if (this.canDecrement()) {
-      return <button type="button" className="decrement" onClick={this.onDecrementClicked}/>;
+      return (
+        <button
+          type="button"
+          className="decrement"
+          onClick={this.onDecrementClicked}
+        />
+      );
     }
-    return <button disabled type="button" className="decrement disabled"/>;
+    return <button disabled type="button" className="decrement disabled" />;
   }
 
   renderIncrement() {
     if (this.canIncrement()) {
-      return <button type="button" className="increment" onClick={this.onIncrementClicked} />;
+      return (
+        <button
+          type="button"
+          className="increment"
+          onClick={this.onIncrementClicked}
+        />
+      );
     }
     return <button disabled type="button" className="increment disabled" />;
   }

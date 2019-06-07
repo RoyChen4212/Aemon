@@ -4,8 +4,8 @@ import { labelTypes } from '../label';
 import './style.css';
 
 class TextField extends FormField {
-
   baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-text-field';
+
   baseType = 'text';
 
   get labelType() {
@@ -13,7 +13,9 @@ class TextField extends FormField {
     return labelTypes.ACTIVE;
   }
 
-  get type() { return this.adaptedProps.type || this.baseType };
+  get type() {
+    return this.adaptedProps.type || this.baseType;
+  }
 
   get value() {
     return this.adaptedProps.value || '';

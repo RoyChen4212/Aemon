@@ -7,15 +7,19 @@ import Avatar from '../avatar';
 import './style.css';
 
 const FORMAT = 'hh:mm a';
-const ActivityCard = (props) => (
+const ActivityCard = props => (
   <div className={className(props)}>
-    <Hint>{ props.date ? moment(props.date).format(FORMAT) : FORMAT }</Hint>
-    { props.children }
+    <Hint>{props.date ? moment(props.date).format(FORMAT) : FORMAT}</Hint>
+    {props.children}
   </div>
 );
 
-const UserCommentCard = (props) => (
-  <ActivityCard type={ActivityCard.types.white} date={props.date} className="pbg-user-comment-card">
+const UserCommentCard = props => (
+  <ActivityCard
+    type={ActivityCard.types.white}
+    date={props.date}
+    className="pbg-user-comment-card"
+  >
     <div className="d-flex">
       <Avatar {...props} />
       <div className="flex-grow-1">
@@ -26,30 +30,29 @@ const UserCommentCard = (props) => (
   </ActivityCard>
 );
 
-const GroupActivityCard = (props) => (
+const GroupActivityCard = props => (
   <ActivityCard date={props.date} className="pbg-group-activity-card">
     <div className="d-flex">
       <ActivityThumbnail type={props.type} />
       <div className="flex-grow-1">
-        <H3>{ props.title }</H3>
-        <div className="pbg-group-activity-card-content">
-          { props.children }
-        </div>
+        <H3>{props.title}</H3>
+        <div className="pbg-group-activity-card-content">{props.children}</div>
       </div>
     </div>
   </ActivityCard>
 );
 
-const className = (props) => {
+const className = props => {
   let base = 'pbg-consumer-mobile pbg-activity-card';
   if (props.className) {
     base += ` ${props.className}`;
   }
 
-  if (props.type && classNames[props.type]) return `${base} ${classNames[props.type]}`;
+  if (props.type && classNames[props.type])
+    return `${base} ${classNames[props.type]}`;
 
   return base;
-}
+};
 
 ActivityCard.types = {
   white: 'white',
@@ -59,8 +62,4 @@ const classNames = {
   white: 'pbg-activity-card-white',
 };
 
-export {
-  ActivityCard,
-  UserCommentCard,
-  GroupActivityCard,
-}
+export { ActivityCard, UserCommentCard, GroupActivityCard };

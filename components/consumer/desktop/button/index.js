@@ -5,13 +5,14 @@ import './style.css';
 
 class PrimaryButton extends BaseButton {
   baseClassName = `${CLASS_NAME} pbg-consumer-desktop pbg-button-primary`;
-  get hint() { return this.renderHint(Hint); }
+
+  get hint() {
+    return this.renderHint(Hint);
+  }
 }
 
 class FacebookButton extends PrimaryButton {
   baseClassName = `${CLASS_NAME} pbg-consumer-desktop pbg-button-facebook`;
 }
 
-export {
-  PrimaryButton, FacebookButton,
-};
+export { PrimaryButton, FacebookButton };

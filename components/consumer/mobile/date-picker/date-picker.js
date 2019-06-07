@@ -11,7 +11,9 @@ class DatePicker extends FormField {
 
   baseClassName = 'pbg-form-field pbg-date-picker';
 
-  get defaultFormater() { return defaultFormater; }
+  get defaultFormater() {
+    return defaultFormater;
+  }
 
   get displayValue() {
     const format = this.adaptedProps.formater || this.defaultFormater;
@@ -24,7 +26,7 @@ class DatePicker extends FormField {
         <Label type={labelTypes.SECONDARY}>{this.displayValue}</Label>
         <span className="pbg-picker-arrow" />
       </React.Fragment>
-    )
+    );
   }
 
   render() {
@@ -42,22 +44,25 @@ class DatePicker extends FormField {
         </div>
         {this.hintOrError}
       </div>
-    )
+    );
   }
 }
 
-const defaultFormater = (date) => {
+const defaultFormater = date => {
   if (!date) return 'mm/dd/yyyy';
-  return date.constructor.name === 'Date' ? formatDate(date) : formatDateString(date);
-}
+  return date.constructor.name === 'Date'
+    ? formatDate(date)
+    : formatDateString(date);
+};
 
-const formatDate = (date) => {
-  const month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+const formatDate = date => {
+  const month =
+    date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
   const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
   return `${month}/${day}/${date.getFullYear()}`;
 };
 
-const formatDateString = (date) => {
+const formatDateString = date => {
   const split = date.split('-');
   const month = split[1].length < 2 ? `0${split[1]}` : split[1];
   const day = split[2].length < 2 ? `0${split[2]}` : split[2];

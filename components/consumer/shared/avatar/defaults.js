@@ -9,7 +9,7 @@ const avatarDefaults = {
     '#E02E2E',
     '#B71BBE',
     '#C24A09',
-  ]
+  ],
 };
 
 export default avatarDefaults;

@@ -6,7 +6,8 @@ import { SplitEven } from './split-even';
 import NumberStepper from '../simple-number-stepper';
 
 class SplitFixed extends SplitEven {
-  baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-split pbg-split-fixed';
+  baseClassName =
+    'pbg-consumer-desktop pbg-form-field pbg-split pbg-split-fixed';
 
   render() {
     return (
@@ -16,6 +17,6 @@ class SplitFixed extends SplitEven {
       </div>
     );
   }
-};
+}
 
 export { SplitFixed };

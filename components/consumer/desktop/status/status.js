@@ -21,19 +21,30 @@ class Status extends React.PureComponent {
   };
 
   renderLabel = () => {
-    const labelClassName = classnames('pbg-status-label', { 'pbg-status-question-mark': !!this.props.tooltip });
+    const labelClassName = classnames('pbg-status-label', {
+      'pbg-status-question-mark': !!this.props.tooltip,
+    });
 
     if (!this.props.tooltip) {
       return <p className={labelClassName}>{this.props.label}</p>;
     }
 
     const trigger = ({ onMouseEnter, onMouseLeave }) => (
-      <p className={labelClassName} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <p
+        className={labelClassName}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      >
         {this.props.label}
       </p>
     );
 
-    return <PopoverTooltip content={<span>{this.props.tooltip}</span>} trigger={trigger} />;
+    return (
+      <PopoverTooltip
+        content={<span>{this.props.tooltip}</span>}
+        trigger={trigger}
+      />
+    );
   };
 
   render() {

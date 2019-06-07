@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-import ActivityThumbnail, { PURCHASE_COMMENT_CREATED } from '../activity-thumbnail';
+import ActivityThumbnail, {
+  PURCHASE_COMMENT_CREATED,
+} from '../activity-thumbnail';
 
 import './style.css';
+
 class ActivityComment extends React.PureComponent {
   static propTypes = {
     src: PropTypes.string,
@@ -13,16 +16,16 @@ class ActivityComment extends React.PureComponent {
     title: PropTypes.string.isRequired,
     comment: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
-  }
+  };
 
   static defaultProps = {
     src: null,
     title: null,
-    comment: null
-  }
+    comment: null,
+  };
 
   get time() {
-    return moment(this.props.time).format("hh:mm A");
+    return moment(this.props.time).format('hh:mm A');
   }
 
   render() {
@@ -35,7 +38,7 @@ class ActivityComment extends React.PureComponent {
           fullName={this.props.fullName}
         />
         <div className="activity-comment-text">
-          <div className="activity-comment-bubbletip"></div>
+          <div className="activity-comment-bubbletip" />
           <p className="activity-comment-title">{this.props.title}</p>
           <p className="activity-comment-time">{this.time}</p>
           <p className="activity-comment-comment">{this.props.comment}</p>

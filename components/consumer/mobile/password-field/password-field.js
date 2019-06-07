@@ -5,12 +5,15 @@ import './style.css';
 
 class PasswordField extends TextField {
   baseClassName = 'pbg-form-field pbg-text-field pbg-password-field';
+
   baseType = 'password';
 
   get hintOrError() {
     if (this.error) return this.errorFeedback;
     if (this.hint) return this.hintFeedback;
-    return <div className="pbg-forgot-password-container">{this.forgotPassword}</div>;
+    return (
+      <div className="pbg-forgot-password-container">{this.forgotPassword}</div>
+    );
   }
 
   get errorFeedback() {
@@ -28,17 +31,19 @@ class PasswordField extends TextField {
         <Hint>{this.hint}</Hint>
         {this.forgotPassword}
       </div>
-    )
+    );
   }
 
   get forgotPassword() {
     return (
-      <Hint type={hintTypes.CLICKABLE} onClick={this.adaptedProps.onForgotPassword}>
+      <Hint
+        type={hintTypes.CLICKABLE}
+        onClick={this.adaptedProps.onForgotPassword}
+      >
         {this.adaptedProps.forgotPasswordText || '[FORGOT PASSWROD]'}
       </Hint>
     );
   }
-
 }
 
 export { PasswordField };

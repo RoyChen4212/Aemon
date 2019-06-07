@@ -12,12 +12,12 @@ class Subheader extends React.PureComponent {
     const { text, anchor } = this.props;
 
     return (
-      <div className='pbg-subheader-wrapper'>
-        <div className='pbg-subheader-text'>
+      <div className="pbg-subheader-wrapper">
+        <div className="pbg-subheader-text">
           <a id={anchor}>{text}</a>
         </div>
 
-        <div className='pbg-subheader-divider' />
+        <div className="pbg-subheader-divider" />
       </div>
     );
   }

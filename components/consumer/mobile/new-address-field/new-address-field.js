@@ -22,34 +22,48 @@ class NewAddressField extends FormField {
     [`${STATE}Touched`]: false,
     [`${POSTAL_CODE}Touched`]: false,
     [`${COUNTRY}Touched`]: false,
+  };
+
+  get className() {
+    return this.baseClassName;
   }
 
-  get className() {return this.baseClassName; }
+  get countryOptions() {
+    return this.adaptedProps.countryOptions || [];
+  }
 
-  get countryOptions() { return this.adaptedProps.countryOptions || []; }
-
-  get currentValue() { return this.adaptedProps.value || {}; }
+  get currentValue() {
+    return this.adaptedProps.value || {};
+  }
 
   get label() {
     if (this.props.label) {
       return (
         <div className="pbg-new-address-field-label-and-hint">
-          <Label type={labelTypes.STRONG} required={this.props.required}>{this.props.label}</Label>
-          { this.props.hint ? (
-              <React.Fragment><br /><Hint>{this.props.hint}</Hint></React.Fragment>
-            ) : null }
+          <Label type={labelTypes.STRONG} required={this.props.required}>
+            {this.props.label}
+          </Label>
+          {this.props.hint ? (
+            <React.Fragment>
+              <br />
+              <Hint>{this.props.hint}</Hint>
+            </React.Fragment>
+          ) : null}
         </div>
       );
     }
   }
 
   onBlur = (ev, fieldName) => {
-    this.setState({
-      [`${fieldName}Touched`]: true,
-    }, () => {
-      if (this.adaptedProps.onBlur) this.adaptedProps.onBlur(ev);
-    });
-  }
+    this.setState(
+      {
+        [`${fieldName}Touched`]: true,
+      },
+      () => {
+        if (this.adaptedProps.onBlur) this.adaptedProps.onBlur(ev);
+      }
+    );
+  };
 
   extractLabel(fieldName) {
     return get(this.adaptedProps, `labels.${fieldName}`, '');
@@ -63,10 +77,10 @@ class NewAddressField extends FormField {
     return errorMessage;
   }
 
-  updateValue = (value) => {
+  updateValue = value => {
     const newValue = { ...this.currentValue, ...value };
     this.onChange(makeEvent(newValue));
-  }
+  };
 
   textFieldFor(fieldName) {
     return (
@@ -96,10 +110,10 @@ class NewAddressField extends FormField {
           label={this.extractLabel(COUNTRY)}
           error={this.extractError(COUNTRY)}
           onChange={ev => this.updateValue({ [COUNTRY]: ev.target.value })}
-          onBlur={() => this.onBlur(makeEvent(this.currentValue), COUNTRY) }
+          onBlur={() => this.onBlur(makeEvent(this.currentValue), COUNTRY)}
         />
       </div>
-    )
+    );
   }
 }
 
