@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import ClaimToggle from '../../../components/consumer/desktop/claim-toggle'
+import ClaimToggle from '../../../components/consumer/desktop/claim-toggle';
 import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
 

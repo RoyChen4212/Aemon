@@ -9,10 +9,16 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=134%3A5665';
+const figmaUrl =
+  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=134%3A5665';
 
-const customFormater = (dateStr) => {
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const customFormater = dateStr => {
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
   const date = new Date(dateStr);
   return date.toLocaleDateString('de-DE', options);
 };

@@ -50,5 +50,4 @@ storiesOf('Consumer/Desktop/Atomic Components/Activity Comment', module)
         <p>User changed the price from $2,000 to $20,000.</p>
       </ActivityCard>
     </React.Fragment>
-
-  ))
+  ));

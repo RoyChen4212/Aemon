@@ -14,4 +14,6 @@ storiesOf('Consumer/Desktop/Info/purchase-image', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('purchase-image/default', () => <PurchaseImage src="https://picsum.photos/200/100" />);
+  .add('purchase-image/default', () => (
+    <PurchaseImage src="https://picsum.photos/200/100" />
+  ));

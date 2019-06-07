@@ -9,21 +9,22 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=134%3A5665';
+const figmaUrl =
+  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=134%3A5665';
 
 const countries = [
   { label: 'United States', value: 'us' },
   { label: 'Mexico', value: 'mx' },
-  { label: 'Denmark', value: 'dk'},
-]
-
-const addressOptions = [
-  {label: '472 Evergreen Terrace', value: 'first'},
-  {label: '880 Harrison St, Suite 303C', value: 'second'},
-  {label: 'Add new address', value: 'new'},
+  { label: 'Denmark', value: 'dk' },
 ];
 
-const validate = (value) => {
+const addressOptions = [
+  { label: '472 Evergreen Terrace', value: 'first' },
+  { label: '880 Harrison St, Suite 303C', value: 'second' },
+  { label: 'Add new address', value: 'new' },
+];
+
+const validate = value => {
   const errors = {};
   if (!value.streetAddress) {
     errors.streetAddress = 'Must type in your street address';

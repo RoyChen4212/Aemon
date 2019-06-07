@@ -9,15 +9,15 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
-  .addDecorator(storyFn => <WithFigma url='https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A7'>{storyFn()}</WithFigma>)
+  .addDecorator(storyFn => (
+    <WithFigma url="https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A7">
+      {storyFn()}
+    </WithFigma>
+  ))
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('simple-text-input/default (focus for active)', () => (
-    <FieldStateProvider
-      component={TextField}
-      simple
-      name="field2"
-    />
+    <FieldStateProvider component={TextField} simple name="field2" />
   ))
   .add('simple-text-input/placeholder', () => (
     <FieldStateProvider
@@ -58,8 +58,12 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
     />
   ));
 
-  storiesOf('Consumer/Desktop/Form Fields/form-field', module)
-  .addDecorator(storyFn => <WithFigma url='https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A9'>{storyFn()}</WithFigma>)
+storiesOf('Consumer/Desktop/Form Fields/form-field', module)
+  .addDecorator(storyFn => (
+    <WithFigma url="https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A9">
+      {storyFn()}
+    </WithFigma>
+  ))
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('form-field/default', () => (
@@ -92,4 +96,4 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
       value="What you typed is wrong"
       hint="this is a hint"
     />
-  ))
+  ));

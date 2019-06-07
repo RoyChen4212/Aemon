@@ -8,7 +8,8 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
+const figmaUrl =
+  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 storiesOf('Consumer/Mobile/Form Fields/Text Field', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
@@ -30,11 +31,7 @@ storiesOf('Consumer/Mobile/Form Fields/Text Field', module)
     />
   ))
   .add('Valid/With Hint', () => (
-    <TextField
-      name="field2"
-      label="A text field"
-      hint="with a hint"
-    />
+    <TextField name="field2" label="A text field" hint="with a hint" />
   ))
   .add('Valid/Required', () => (
     <TextField

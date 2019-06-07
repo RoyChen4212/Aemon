@@ -13,9 +13,10 @@ const options = [
   { label: 'Mexican Tacos', value: 'mex' },
   { label: 'Italian Calzone', value: 'calzone' },
   { label: 'European Goulash', value: 'goulash' },
-]
+];
 
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
+const figmaUrl =
+  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 storiesOf('Consumer/Mobile/Form Fields/Multi Select Field', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)

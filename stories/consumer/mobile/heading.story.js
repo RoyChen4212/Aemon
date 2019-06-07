@@ -8,7 +8,8 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=1%3A5577';
+const figmaUrl =
+  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=1%3A5577';
 const sampleText = 'Pay By Group Rules';
 
 storiesOf('Consumer/Mobile/Atomic Components/Heading', module)

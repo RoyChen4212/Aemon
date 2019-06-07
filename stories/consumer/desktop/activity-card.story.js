@@ -17,4 +17,4 @@ storiesOf('Consumer/Desktop/Atomic Components/activity-card', module)
     >
       <p>User changed the price from $2,000 to $20,000.</p>
     </ActivityCard>
-  ))
+  ));
