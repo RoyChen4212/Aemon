@@ -87,12 +87,8 @@ describe('Sidebar Modal', () => {
   });
 
   it('should render given alerts', () => {
-    const alerts = [
-      { type: 'error', title: 'error alert title', text: 'error alert text' },
-    ];
+    const alerts = [{ type: 'error', title: 'error alert title', text: 'error alert text' }];
     const wrapper = mount(<PrimaryModal alerts={alerts} />);
-    expect(
-      wrapper.find('.pbg-modal-alert-stack').find(ModalAlert)
-    ).to.have.lengthOf(1);
+    expect(wrapper.find('.pbg-modal-alert-stack').find(ModalAlert)).to.have.lengthOf(1);
   });
 });

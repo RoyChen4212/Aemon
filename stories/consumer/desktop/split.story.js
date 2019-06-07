@@ -1,11 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import {
-  SplitEven,
-  SplitCustom,
-  SplitFixed,
-} from '../../../components/consumer/desktop/split';
+import { SplitEven, SplitCustom, SplitFixed } from '../../../components/consumer/desktop/split';
 import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
 
@@ -26,10 +22,7 @@ const copyFixed = {
   shares: 'shares for purchase',
 };
 
-const options = [
-  { label: { term: 'even' }, value: 'even' },
-  { label: { term: 'custom' }, value: 'custom' },
-];
+const options = [{ label: { term: 'even' }, value: 'even' }, { label: { term: 'custom' }, value: 'custom' }];
 
 const sharesSingleValue = { minShares: 6 };
 const sharesRangeValue = { minShares: 6, maxShares: 10 };

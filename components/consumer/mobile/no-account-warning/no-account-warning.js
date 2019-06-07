@@ -25,8 +25,7 @@ const className = props => {
     base += ` ${props.className}`;
   }
 
-  if (props.type && classNames[props.type])
-    return `${base} ${classNames[props.type]}`;
+  if (props.type && classNames[props.type]) return `${base} ${classNames[props.type]}`;
 
   return base;
 };

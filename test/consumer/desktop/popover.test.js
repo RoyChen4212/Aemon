@@ -4,9 +4,7 @@ import Popover from '../../../components/consumer/desktop/popover';
 
 describe('Popover', () => {
   it('should render trigger', () => {
-    const wrapper = mount(
-      <Popover trigger={() => <div className="child">I am child</div>} />
-    );
+    const wrapper = mount(<Popover trigger={() => <div className="child">I am child</div>} />);
     expect(wrapper.find('.child')).to.have.lengthOf(1);
   });
 
@@ -23,9 +21,7 @@ describe('Popover', () => {
 
   it('should add class pbg-popover-active to popover element on click', function(done) {
     const trigger = props => <a onClick={props.onClick}>Click Me</a>;
-    const wrapper = mount(
-      <Popover trigger={trigger} content={<div>I am content</div>} />
-    );
+    const wrapper = mount(<Popover trigger={trigger} content={<div>I am content</div>} />);
     wrapper.find('a').simulate('click');
     setTimeout(() => {
       expect(

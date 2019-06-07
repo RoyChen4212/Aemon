@@ -42,11 +42,4 @@ export const types = {
   FACEBOOK_SMALL: 'facebook-small',
 };
 
-export {
-  PrimaryButton,
-  SecondaryButton,
-  SmallButton,
-  LinkButton,
-  FacebookButton,
-  SmallFacebookButton,
-};
+export { PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton };

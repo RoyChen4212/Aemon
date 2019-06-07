@@ -10,26 +10,15 @@ class PrimaryModal extends React.PureComponent {
   };
 
   renderModalAlertStack() {
-    return (
-      <ModalAlertStack
-        alerts={this.props.alerts}
-        onHideAlert={this.props.onHideAlert}
-      />
-    );
+    return <ModalAlertStack alerts={this.props.alerts} onHideAlert={this.props.onHideAlert} />;
   }
 
   renderMainContent() {
-    return this._renderColumn(
-      'pbg-primary-modal-main-content',
-      this.props.mainContent
-    );
+    return this._renderColumn('pbg-primary-modal-main-content', this.props.mainContent);
   }
 
   renderSidebarContent() {
-    return this._renderColumn(
-      'pbg-primary-modal-sidebar-content',
-      this.props.sidebarContent
-    );
+    return this._renderColumn('pbg-primary-modal-sidebar-content', this.props.sidebarContent);
   }
 
   _renderColumn(name, content) {
@@ -44,11 +33,7 @@ class PrimaryModal extends React.PureComponent {
           <Container solid shadow2>
             {this.renderMainContent()}
             {this.renderSidebarContent()}
-            <button
-              type="button"
-              className="pbg-modal-close-button"
-              onClick={this.onBackClick}
-            />
+            <button type="button" className="pbg-modal-close-button" onClick={this.onBackClick} />
           </Container>
         </div>
         <div className="pbg-modal-overlay" onClick={this.onBackClick} />

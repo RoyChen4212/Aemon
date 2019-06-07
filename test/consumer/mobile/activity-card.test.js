@@ -2,14 +2,8 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 
-import {
-  ActivityCard,
-  UserCommentCard,
-  GroupActivityCard,
-} from '../../../components/consumer/mobile/activity-card';
-import ActivityThumbnail, {
-  PURCHASE_UPDATED,
-} from '../../../components/consumer/mobile/activity-thumbnail';
+import { ActivityCard, UserCommentCard, GroupActivityCard } from '../../../components/consumer/mobile/activity-card';
+import ActivityThumbnail, { PURCHASE_UPDATED } from '../../../components/consumer/mobile/activity-thumbnail';
 import Avatar from '../../../components/consumer/mobile/avatar';
 import Hint from '../../../components/consumer/mobile/hint';
 import { H3 } from '../../../components/consumer/mobile/heading';
@@ -59,9 +53,7 @@ describe('Activity Card', () => {
   describe('User Comment Card', () => {
     it('should be type white', () => {
       const wrapper = mount(<UserCommentCard />);
-      expect(wrapper.find(ActivityCard).props().type).to.equal(
-        ActivityCard.types.white
-      );
+      expect(wrapper.find(ActivityCard).props().type).to.equal(ActivityCard.types.white);
     });
 
     it('should have pbg-user-comment-card class', () => {
@@ -100,8 +92,7 @@ describe('Activity Card', () => {
     });
 
     it('should have a p element with the comment text', () => {
-      const comment =
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+      const comment = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
       const wrapper = mount(<UserCommentCard comment={comment} />);
       expect(wrapper.contains(<p>{comment}</p>)).to.be.true;
     });
@@ -132,16 +123,12 @@ describe('Activity Card', () => {
 
     it('should pass type to activity thumbnail', () => {
       const wrapper = mount(<GroupActivityCard type={PURCHASE_UPDATED} />);
-      expect(wrapper.find(ActivityThumbnail).props().type).to.equal(
-        PURCHASE_UPDATED
-      );
+      expect(wrapper.find(ActivityThumbnail).props().type).to.equal(PURCHASE_UPDATED);
     });
 
     it('should pass a title to activity card as an H3 element', () => {
       const title = 'Some title';
-      const wrapper = shallow(
-        <GroupActivityCard type={PURCHASE_UPDATED} title={title} />
-      );
+      const wrapper = shallow(<GroupActivityCard type={PURCHASE_UPDATED} title={title} />);
       expect(wrapper.contains(<H3>{title}</H3>)).to.be.true;
     });
 
@@ -153,8 +140,7 @@ describe('Activity Card', () => {
         </div>
       );
       const wrapper = mount(<GroupActivityCard>{content}</GroupActivityCard>);
-      expect(wrapper.find('.pbg-group-activity-card-content').contains(content))
-        .to.be.true;
+      expect(wrapper.find('.pbg-group-activity-card-content').contains(content)).to.be.true;
     });
   });
 });

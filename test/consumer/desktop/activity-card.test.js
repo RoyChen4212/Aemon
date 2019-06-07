@@ -19,9 +19,7 @@ describe('ActivityCard', () => {
 
     it('should render a title', () => {
       const title = 'Purchase updated';
-      const wrapper = shallow(
-        <ActivityCard type="purchase_updated" title={title} />
-      );
+      const wrapper = shallow(<ActivityCard type="purchase_updated" title={title} />);
       expect(wrapper.html()).to.include(title);
     });
 

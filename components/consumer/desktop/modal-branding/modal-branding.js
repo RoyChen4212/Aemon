@@ -25,9 +25,7 @@ class ModalBranding extends React.PureComponent {
             <img src={this.props.logo} />
           </div>
           <div className="pbg-modal-branding-powered-by-logo">
-            <span className="pbg-modal-branding-powered-by-text">
-              powered by
-            </span>
+            <span className="pbg-modal-branding-powered-by-text">powered by</span>
             <img src={powerByLogo} />
           </div>
         </div>

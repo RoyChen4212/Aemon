@@ -2,9 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithFigma } from 'storybook-addon-figma';
-import Picker, {
-  PICKER_EMPTY_VALUE,
-} from '../../../components/consumer/desktop/picker';
+import Picker, { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
 import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
 
@@ -31,8 +29,7 @@ const splitOptions = [
     value: 'custom',
   },
 ];
-const figmaUrl =
-  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
+const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 
 storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)

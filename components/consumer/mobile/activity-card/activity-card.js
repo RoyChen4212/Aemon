@@ -15,11 +15,7 @@ const ActivityCard = props => (
 );
 
 const UserCommentCard = props => (
-  <ActivityCard
-    type={ActivityCard.types.white}
-    date={props.date}
-    className="pbg-user-comment-card"
-  >
+  <ActivityCard type={ActivityCard.types.white} date={props.date} className="pbg-user-comment-card">
     <div className="d-flex">
       <Avatar {...props} />
       <div className="flex-grow-1">
@@ -48,8 +44,7 @@ const className = props => {
     base += ` ${props.className}`;
   }
 
-  if (props.type && classNames[props.type])
-    return `${base} ${classNames[props.type]}`;
+  if (props.type && classNames[props.type]) return `${base} ${classNames[props.type]}`;
 
   return base;
 };

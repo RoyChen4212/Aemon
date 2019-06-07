@@ -9,9 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 storiesOf('Consumer/Desktop/Modals & Popovers', module)
   .addDecorator(withContainer)
-  .addDecorator(storyFn => (
-    <div className="w-100 h-100 bg-light">{storyFn()}</div>
-  ))
+  .addDecorator(storyFn => <div className="w-100 h-100 bg-light">{storyFn()}</div>)
   .add('popover/default', () => (
     <Popover
       trigger={props => (

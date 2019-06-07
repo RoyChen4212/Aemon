@@ -22,9 +22,7 @@ export const shouldBehaveLikeFormField = wrapper => {
 };
 
 describe('BaseFormField', () => {
-  shouldBehaveLikeFormField(
-    shallow(<BaseFormField error="this is an error" />)
-  );
+  shouldBehaveLikeFormField(shallow(<BaseFormField error="this is an error" />));
 
   it('should use prop adapter when provided', () => {
     const onChange = sinon.spy();

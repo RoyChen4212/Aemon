@@ -35,12 +35,7 @@ class DatePicker extends FormField {
         {this.label}
         <div className="pbg-date-picker-container">
           <div className="pbg-date-picker-mask">{this.maskContents}</div>
-          <input
-            type="date"
-            value={this.adaptedProps.value}
-            onChange={this.onChange}
-            onBlur={this.onBlur}
-          />
+          <input type="date" value={this.adaptedProps.value} onChange={this.onChange} onBlur={this.onBlur} />
         </div>
         {this.hintOrError}
       </div>
@@ -50,14 +45,11 @@ class DatePicker extends FormField {
 
 const defaultFormater = date => {
   if (!date) return 'mm/dd/yyyy';
-  return date.constructor.name === 'Date'
-    ? formatDate(date)
-    : formatDateString(date);
+  return date.constructor.name === 'Date' ? formatDate(date) : formatDateString(date);
 };
 
 const formatDate = date => {
-  const month =
-    date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+  const month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
   const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
   return `${month}/${day}/${date.getFullYear()}`;
 };

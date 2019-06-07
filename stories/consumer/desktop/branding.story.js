@@ -6,9 +6,7 @@ import FieldStateProvider from '../../util/field-state-provider';
 
 import ModalBranding from '../../../components/consumer/desktop/modal-branding';
 import Hint from '../../../components/consumer/desktop/hint';
-import Picker, {
-  PICKER_EMPTY_VALUE,
-} from '../../../components/consumer/desktop/picker';
+import Picker, { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -56,6 +54,4 @@ const footer = (
 
 storiesOf('Consumer/Desktop/Info/branding', module)
   .add('modal-branding/default', () => <ModalBranding logo={randomLogo()} />)
-  .add('modal-branding/claim', () => (
-    <ModalBranding logo={randomLogo()}>{footer}</ModalBranding>
-  ));
+  .add('modal-branding/claim', () => <ModalBranding logo={randomLogo()}>{footer}</ModalBranding>);

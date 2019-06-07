@@ -45,10 +45,7 @@ describe('Segmented Control', () => {
   });
 
   it('should pass type to segments', () => {
-    const segments = [
-      { type: SegmentedControl.types.list },
-      { type: SegmentedControl.types.pulse },
-    ];
+    const segments = [{ type: SegmentedControl.types.list }, { type: SegmentedControl.types.pulse }];
     const wrapper = shallow(<SegmentedControl segments={segments} />);
     expect(
       wrapper
@@ -65,38 +62,25 @@ describe('Segmented Control', () => {
   });
 
   it('should activate first segment by default', function(done) {
-    const segments = [
-      { type: SegmentedControl.types.list },
-      { type: SegmentedControl.types.pulse },
-    ];
+    const segments = [{ type: SegmentedControl.types.list }, { type: SegmentedControl.types.pulse }];
     const onChange = ev => {
       expect(ev.target.value).to.equal(0);
       done();
     };
-    const wrapper = shallow(
-      <SegmentedControl segments={segments} onChange={onChange} />
-    );
+    const wrapper = shallow(<SegmentedControl segments={segments} onChange={onChange} />);
   });
 
   it('should activate correct segment according to configuration', function(done) {
-    const segments = [
-      { type: SegmentedControl.types.list },
-      { type: SegmentedControl.types.pulse, active: true },
-    ];
+    const segments = [{ type: SegmentedControl.types.list }, { type: SegmentedControl.types.pulse, active: true }];
     const onChange = ev => {
       expect(ev.target.value).to.equal(1);
       done();
     };
-    const wrapper = shallow(
-      <SegmentedControl segments={segments} onChange={onChange} />
-    );
+    const wrapper = shallow(<SegmentedControl segments={segments} onChange={onChange} />);
   });
 
   it('should call onChange with correct index upon clicking a segment', function(done) {
-    const segments = [
-      { type: SegmentedControl.types.list },
-      { type: SegmentedControl.types.pulse },
-    ];
+    const segments = [{ type: SegmentedControl.types.list }, { type: SegmentedControl.types.pulse }];
     let times = 0;
     const onChange = ev => {
       if (times > 0) {
@@ -105,9 +89,7 @@ describe('Segmented Control', () => {
       }
       times++;
     };
-    const wrapper = shallow(
-      <SegmentedControl segments={segments} onChange={onChange} />
-    );
+    const wrapper = shallow(<SegmentedControl segments={segments} onChange={onChange} />);
     wrapper
       .find('.pbg-segmented-control-button')
       .at(1)
@@ -115,10 +97,7 @@ describe('Segmented Control', () => {
   });
 
   it('should mark as active the correct initial segment', () => {
-    const segments = [
-      { type: SegmentedControl.types.list },
-      { type: SegmentedControl.types.pulse, active: true },
-    ];
+    const segments = [{ type: SegmentedControl.types.list }, { type: SegmentedControl.types.pulse, active: true }];
     const wrapper = shallow(<SegmentedControl segments={segments} />);
     expect(
       wrapper
@@ -129,10 +108,7 @@ describe('Segmented Control', () => {
   });
 
   it('should change active mark upon clicking the segment', () => {
-    const segments = [
-      { type: SegmentedControl.types.list },
-      { type: SegmentedControl.types.pulse, active: true },
-    ];
+    const segments = [{ type: SegmentedControl.types.list }, { type: SegmentedControl.types.pulse, active: true }];
     const wrapper = shallow(<SegmentedControl segments={segments} />);
     expect(
       wrapper

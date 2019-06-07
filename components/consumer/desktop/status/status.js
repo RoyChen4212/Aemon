@@ -30,21 +30,12 @@ class Status extends React.PureComponent {
     }
 
     const trigger = ({ onMouseEnter, onMouseLeave }) => (
-      <p
-        className={labelClassName}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
+      <p className={labelClassName} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         {this.props.label}
       </p>
     );
 
-    return (
-      <PopoverTooltip
-        content={<span>{this.props.tooltip}</span>}
-        trigger={trigger}
-      />
-    );
+    return <PopoverTooltip content={<span>{this.props.tooltip}</span>} trigger={trigger} />;
   };
 
   render() {

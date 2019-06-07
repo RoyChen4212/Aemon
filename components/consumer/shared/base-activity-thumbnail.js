@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { includes } from 'lodash';
 
-export const URL_PREFIX =
-  'https://assets.paybygroup.com/images/activity-icons/';
+export const URL_PREFIX = 'https://assets.paybygroup.com/images/activity-icons/';
 
 export const PURCHASE_UPDATED = 'purchase_updated';
 export const PURCHASE_CLAIMED = 'purchase_claimed';
@@ -51,10 +50,7 @@ class ActivityThumbnail extends React.PureComponent {
     fullName: PropTypes.string,
     type(props, propName) {
       if (!includes(types, props[propName])) {
-        return new Error(
-          `Invalid prop \`${propName}\` supplied to` +
-            ` \`${componentName}\`. Validation failed.`
-        );
+        return new Error(`Invalid prop \`${propName}\` supplied to` + ` \`${componentName}\`. Validation failed.`);
       }
     },
   };
@@ -86,10 +82,7 @@ class ActivityThumbnail extends React.PureComponent {
 
   get shouldRenderAvatar() {
     const hasUrl = !!ActivityThumbnail.icons[this.props.type];
-    return (
-      !hasUrl &&
-      (!!this.props.src || !!this.props.userId || !!this.props.fullName)
-    );
+    return !hasUrl && (!!this.props.src || !!this.props.userId || !!this.props.fullName);
   }
 
   renderAvatar() {

@@ -7,8 +7,7 @@ import { Checkbox } from '../checkbox';
 import './style.css';
 
 class ClaimToggleContent extends Checkbox {
-  baseClassName =
-    'pbg-consumer-desktop pbg-form-field pbg-checkbox pbg-claim-toggle-content';
+  baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-checkbox pbg-claim-toggle-content';
 
   get label() {
     const { label, explainer } = this.adaptedProps;

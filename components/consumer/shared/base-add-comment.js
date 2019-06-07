@@ -11,14 +11,8 @@ class BaseAddComment extends BaseFormField {
   }
 
   renderAvatar(Avatar) {
-    if (this.adaptedProps.avatarSrc)
-      return <Avatar src={this.adaptedProps.avatarSrc} />;
-    return (
-      <Avatar
-        userId={this.adaptedProps.userId}
-        fullName={this.adaptedProps.fullName}
-      />
-    );
+    if (this.adaptedProps.avatarSrc) return <Avatar src={this.adaptedProps.avatarSrc} />;
+    return <Avatar userId={this.adaptedProps.userId} fullName={this.adaptedProps.fullName} />;
   }
 
   get submitButton() {
@@ -34,9 +28,7 @@ class BaseAddComment extends BaseFormField {
   }
 
   renderTextArea(TextArea) {
-    return (
-      <TextArea {...this.props} rows={1} label={this.adaptedProps.textLabel} />
-    );
+    return <TextArea {...this.props} rows={1} label={this.adaptedProps.textLabel} />;
   }
 
   render() {

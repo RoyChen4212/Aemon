@@ -13,20 +13,13 @@ const options = [
   { label: 'Second option', value: 'second' },
   { label: 'Super long option text here', value: 'third' },
 ];
-const figmaUrl =
-  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
+const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 
 storiesOf('Consumer/Mobile/Form Fields/Historical Picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Valid/No Hint', () => (
-    <HistoricalPicker
-      name="picker"
-      onChange={action('onChange')}
-      options={options}
-    />
-  ))
+  .add('Valid/No Hint', () => <HistoricalPicker name="picker" onChange={action('onChange')} options={options} />)
   .add('Valid/With Hint', () => (
     <HistoricalPicker
       name="picker"
@@ -36,10 +29,5 @@ storiesOf('Consumer/Mobile/Form Fields/Historical Picker', module)
     />
   ))
   .add('Invalid', () => (
-    <HistoricalPicker
-      name="picker"
-      error="You selection is terrible"
-      onChange={action('onChange')}
-      options={options}
-    />
+    <HistoricalPicker name="picker" error="You selection is terrible" onChange={action('onChange')} options={options} />
   ));

@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-import ActivityThumbnail, {
-  PURCHASE_COMMENT_CREATED,
-} from '../activity-thumbnail';
+import ActivityThumbnail, { PURCHASE_COMMENT_CREATED } from '../activity-thumbnail';
 
 import './style.css';
 

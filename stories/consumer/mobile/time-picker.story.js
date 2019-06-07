@@ -9,8 +9,7 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const customFormater = () => 'Formated by custom formater';
-const figmaUrl =
-  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=134%3A5665';
+const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=134%3A5665';
 
 storiesOf('Consumer/Mobile/Form Fields/Time Picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)

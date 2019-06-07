@@ -13,10 +13,7 @@ class StateProvider extends React.Component {
   };
 
   onBlur = ev => {
-    this.setState(
-      { value: ev.target.value, focused: false },
-      this.runValidations
-    );
+    this.setState({ value: ev.target.value, focused: false }, this.runValidations);
     if (this.props.onBlur) return this.props.onBlur(ev);
   };
 

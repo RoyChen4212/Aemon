@@ -4,9 +4,7 @@ import PopoverTooltip from '../../../components/consumer/desktop/popover-tooltip
 
 describe('PopoverTooltip', () => {
   it('should render trigger', () => {
-    const wrapper = mount(
-      <PopoverTooltip trigger={() => <div className="child">I am child</div>} />
-    );
+    const wrapper = mount(<PopoverTooltip trigger={() => <div className="child">I am child</div>} />);
     expect(wrapper.find('.child')).to.have.lengthOf(1);
   });
 
@@ -22,12 +20,8 @@ describe('PopoverTooltip', () => {
   });
 
   it('should add class pbg-popover-active to popover element on mouseenter', function(done) {
-    const trigger = props => (
-      <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>
-    );
-    const wrapper = mount(
-      <PopoverTooltip trigger={trigger} content={<div>I am content</div>} />
-    );
+    const trigger = props => <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>;
+    const wrapper = mount(<PopoverTooltip trigger={trigger} content={<div>I am content</div>} />);
     wrapper.find('a').simulate('mouseenter');
     setTimeout(() => {
       expect(
@@ -41,9 +35,7 @@ describe('PopoverTooltip', () => {
   });
 
   it('should deactivate when mouseleave', function(done) {
-    const trigger = props => (
-      <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>
-    );
+    const trigger = props => <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>;
     const wrapper = mount(
       <div className="wrapper">
         <PopoverTooltip trigger={trigger} content={<div>I am content</div>} />

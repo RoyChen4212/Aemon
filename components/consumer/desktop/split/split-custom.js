@@ -6,8 +6,7 @@ import { SplitEven } from './split-even';
 import NumberStepper from '../simple-number-stepper';
 
 class SplitCustom extends SplitEven {
-  baseClassName =
-    'pbg-consumer-desktop pbg-form-field pbg-split pbg-split-custom';
+  baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-split pbg-split-custom';
 
   render() {
     return (

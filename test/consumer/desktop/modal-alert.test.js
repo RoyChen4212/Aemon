@@ -60,9 +60,7 @@ describe('ModalAlert', () => {
   });
 
   it('should have add clickable text', () => {
-    const wrapper = mount(
-      <ModalAlert text={{ label: 'some text', action: () => {} }} />
-    );
+    const wrapper = mount(<ModalAlert text={{ label: 'some text', action: () => {} }} />);
     expect(
       wrapper
         .find('.pbg-modal-alert-text')

@@ -15,9 +15,7 @@ class AddOrSelectField extends FormField {
     if (selected !== 'new' && get(this, 'options.length')) {
       const newValue = {
         ...this.adaptedProps.value,
-        selected: isString(selected)
-          ? selected
-          : get(first(this.options), 'value'),
+        selected: isString(selected) ? selected : get(first(this.options), 'value'),
       };
       this.onChange(makeEvent(newValue));
     }

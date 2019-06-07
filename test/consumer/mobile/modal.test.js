@@ -5,12 +5,7 @@ import sinon from 'sinon';
 
 import Modal from '../../../components/consumer/mobile/modal';
 import { H2 } from '../../../components/consumer/mobile/heading';
-import {
-  LinkButton,
-  PrimaryButton,
-  SecondaryButton,
-  types,
-} from '../../../components/consumer/mobile/button';
+import { LinkButton, PrimaryButton, SecondaryButton, types } from '../../../components/consumer/mobile/button';
 
 describe('Modal', () => {
   it('should have correct class', () => {
@@ -28,17 +23,12 @@ describe('Modal', () => {
     it('should accept a title prop and render it', () => {
       const expected = 'I am a title';
       const wrapper = shallow(<Modal title={expected} />);
-      expect(wrapper.find('.pbg-modal-heading').contains(<H2>{expected}</H2>))
-        .to.be.true;
+      expect(wrapper.find('.pbg-modal-heading').contains(<H2>{expected}</H2>)).to.be.true;
     });
 
     it('should have a back button', () => {
-      const wrapper = mount(
-        <Modal backButtonCaption="Back" onBackClick={() => {}} />
-      );
-      expect(
-        wrapper.find('.pbg-modal-heading').find(LinkButton)
-      ).to.have.lengthOf(1);
+      const wrapper = mount(<Modal backButtonCaption="Back" onBackClick={() => {}} />);
+      expect(wrapper.find('.pbg-modal-heading').find(LinkButton)).to.have.lengthOf(1);
     });
 
     it('should accept a backButtonCaption prop and use it within the button', () => {
@@ -107,9 +97,7 @@ describe('Modal', () => {
 
     it('should render one button if one is passed', () => {
       const wrapper = shallow(<Modal cta={[{ label: 'CTA' }]} />);
-      expect(
-        wrapper.find('.pbg-modal-cta').find(PrimaryButton)
-      ).to.have.lengthOf(1);
+      expect(wrapper.find('.pbg-modal-cta').find(PrimaryButton)).to.have.lengthOf(1);
     });
 
     it('should render two buttons with correct type if passed', () => {
@@ -119,15 +107,9 @@ describe('Modal', () => {
         { label: 'Maybe', type: types.PRIMARY },
       ];
       const wrapper = shallow(<Modal cta={ctaConfig} />);
-      expect(wrapper.find('.pbg-modal-cta').find(LinkButton)).to.have.lengthOf(
-        1
-      );
-      expect(
-        wrapper.find('.pbg-modal-cta').find(SecondaryButton)
-      ).to.have.lengthOf(1);
-      expect(
-        wrapper.find('.pbg-modal-cta').find(PrimaryButton)
-      ).to.have.lengthOf(1);
+      expect(wrapper.find('.pbg-modal-cta').find(LinkButton)).to.have.lengthOf(1);
+      expect(wrapper.find('.pbg-modal-cta').find(SecondaryButton)).to.have.lengthOf(1);
+      expect(wrapper.find('.pbg-modal-cta').find(PrimaryButton)).to.have.lengthOf(1);
     });
 
     it('should run onClick of cta', () => {
@@ -143,10 +125,7 @@ describe('Modal', () => {
     });
 
     it('should add a last className to last button to be rendered', () => {
-      const ctaConfig = [
-        { label: 'Yes', type: types.SECONDARY },
-        { label: 'No', type: types.LINK },
-      ];
+      const ctaConfig = [{ label: 'Yes', type: types.SECONDARY }, { label: 'No', type: types.LINK }];
       const wrapper = shallow(<Modal cta={ctaConfig} />);
       expect(
         wrapper
@@ -164,9 +143,7 @@ describe('Modal', () => {
 
     it('should accept disabled prop in cta config', () => {
       const onClick = sinon.spy();
-      const ctaConfig = [
-        { label: 'Out', type: types.LINK, disabled: true, onClick },
-      ];
+      const ctaConfig = [{ label: 'Out', type: types.LINK, disabled: true, onClick }];
       const wrapper = mount(<Modal cta={ctaConfig} />);
       const button = wrapper
         .find('.pbg-modal-cta')

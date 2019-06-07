@@ -6,9 +6,7 @@ export const withContainer = story => (
   </div>
 );
 
-export const withMobileSizing = story => (
-  <div className="mobile-size">{story()}</div>
-);
+export const withMobileSizing = story => <div className="mobile-size">{story()}</div>;
 
 export const withGreyContainer = story => (
   <div className="container-fluid grey">
@@ -16,6 +14,4 @@ export const withGreyContainer = story => (
   </div>
 );
 
-export const wrapStory = story => (
-  <div className="col-12 story-wrapper">{story()}</div>
-);
+export const wrapStory = story => <div className="col-12 story-wrapper">{story()}</div>;

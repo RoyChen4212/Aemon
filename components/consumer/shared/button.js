@@ -15,13 +15,9 @@ class BaseButton extends React.PureComponent {
 
   get className() {
     const { disabled, className } = this.props;
-    const base = className
-      ? `${this.baseClassName} ${className}`
-      : this.baseClassName;
+    const base = className ? `${this.baseClassName} ${className}` : this.baseClassName;
     const disabledClass = disabled ? `${base} disabled` : base;
-    const activeClass = this.state.active
-      ? `${disabledClass} pbg-button-active`
-      : disabledClass;
+    const activeClass = this.state.active ? `${disabledClass} pbg-button-active` : disabledClass;
     return activeClass;
   }
 

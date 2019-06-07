@@ -129,8 +129,7 @@ describe('TextField', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
       const wrapper = shallow(<TextField error={expected} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
-        .to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
     });
 
     it('should have correct class when error is given', () => {
@@ -142,34 +141,25 @@ describe('TextField', () => {
       const expected = 'a horrible error';
       const hint = 'nope';
       const wrapper = shallow(<TextField error={expected} hint={hint} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
-        .to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
       expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
     });
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
       const wrapper = shallow(<TextField error="and error" label={expected} />);
-      expect(
-        wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)
-      ).to.be.true;
+      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
 
     it('should have error label when error is given but field is focused', () => {
       const expected = 'A label';
-      const wrapper = shallow(
-        <TextField error="and error" label={expected} focused />
-      );
-      expect(
-        wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)
-      ).to.be.true;
+      const wrapper = shallow(<TextField error="and error" label={expected} focused />);
+      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
 
     it('should not have error class when error is given but field is focused', () => {
       const expected = 'A label';
-      const wrapper = shallow(
-        <TextField error="and error" label={expected} focused />
-      );
+      const wrapper = shallow(<TextField error="and error" label={expected} focused />);
       expect(wrapper.hasClass('pbg-form-field-error')).to.be.false;
     });
   });

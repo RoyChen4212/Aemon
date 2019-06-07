@@ -13,14 +13,7 @@ import {
   NewAddressField,
   MultiSelectField,
 } from './form-fields';
-import {
-  PrimaryButton,
-  SecondaryButton,
-  SmallButton,
-  LinkButton,
-  FacebookButton,
-  SmallFacebookButton,
-} from './button';
+import { PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton } from './button';
 import { H1, H2, H3 } from './heading';
 import Hint, { hintTypes } from './hint';
 import Label, { labelTypes } from './label';

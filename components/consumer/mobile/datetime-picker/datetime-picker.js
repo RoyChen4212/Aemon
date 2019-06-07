@@ -4,11 +4,7 @@ import FormField from '../form-field';
 import Label, { labelTypes } from '../label';
 import Hint, { hintTypes } from '../hint';
 import { DatePicker, TimePicker } from '../form-fields';
-import {
-  generateNewValue,
-  applyDateToValue,
-  applyTimeToValue,
-} from './value-generator';
+import { generateNewValue, applyDateToValue, applyTimeToValue } from './value-generator';
 import makeEvent from '../../../lib/make-event';
 
 import './style.css';
@@ -22,10 +18,7 @@ class DatetimePicker extends FormField {
   }
 
   get timeValue() {
-    if (this.value)
-      return toTimePickerString(
-        `${this.value.getHours()}:${this.value.getMinutes()}`
-      );
+    if (this.value) return toTimePickerString(`${this.value.getHours()}:${this.value.getMinutes()}`);
     return '';
   }
 
@@ -70,9 +63,7 @@ class DatetimePicker extends FormField {
     return (
       <div className={this.className}>
         {this.label}
-        <div className="pbg-datetime-picker-pickers-wrapper">
-          {this.pickers}
-        </div>
+        <div className="pbg-datetime-picker-pickers-wrapper">{this.pickers}</div>
         {this.hintOrError}
       </div>
     );

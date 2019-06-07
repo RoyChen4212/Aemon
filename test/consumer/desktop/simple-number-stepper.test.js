@@ -29,9 +29,7 @@ describe('SimpleNumberStepper', () => {
 
   it('should not update value when a boundary is met', () => {
     const onChange = sinon.spy();
-    const wrapper = shallow(
-      <SimpleNumberStepper value={0} min={0} onChange={onChange} />
-    );
+    const wrapper = shallow(<SimpleNumberStepper value={0} min={0} onChange={onChange} />);
     wrapper.find('.decrement').simulate('click');
     expect(onChange.calledOnce).to.be.false;
   });

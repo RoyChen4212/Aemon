@@ -28,16 +28,12 @@ describe('PickerMenu', () => {
 
   it('should add picker-menu-item-term class to given options', () => {
     const wrapper = shallow(<PickerMenu options={opts} />);
-    expect(
-      wrapper.find('.picker-menu-item .picker-menu-item-term')
-    ).to.have.lengthOf(2);
+    expect(wrapper.find('.picker-menu-item .picker-menu-item-term')).to.have.lengthOf(2);
   });
 
   it('should add picker-menu-item-desc class to options with desc', () => {
     const wrapper = shallow(<PickerMenu options={opts} />);
-    expect(
-      wrapper.find('.picker-menu-item .picker-menu-item-desc')
-    ).to.have.lengthOf(1);
+    expect(wrapper.find('.picker-menu-item .picker-menu-item-desc')).to.have.lengthOf(1);
   });
 
   it('should add picker-menu-item-rounded-top class to first option', () => {
@@ -95,12 +91,7 @@ describe('PickerMenu', () => {
 
   it('should call onOptionClick after an option is clicked', () => {
     const onOptionClick = sinon.spy();
-    const wrapper = shallow(
-      <PickerMenu
-        onOptionClick={sinon.fake.returns(onOptionClick)}
-        options={opts}
-      />
-    );
+    const wrapper = shallow(<PickerMenu onOptionClick={sinon.fake.returns(onOptionClick)} options={opts} />);
     wrapper
       .find('.picker-menu-item')
       .at(0)

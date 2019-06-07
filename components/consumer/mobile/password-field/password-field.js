@@ -11,9 +11,7 @@ class PasswordField extends TextField {
   get hintOrError() {
     if (this.error) return this.errorFeedback;
     if (this.hint) return this.hintFeedback;
-    return (
-      <div className="pbg-forgot-password-container">{this.forgotPassword}</div>
-    );
+    return <div className="pbg-forgot-password-container">{this.forgotPassword}</div>;
   }
 
   get errorFeedback() {
@@ -36,10 +34,7 @@ class PasswordField extends TextField {
 
   get forgotPassword() {
     return (
-      <Hint
-        type={hintTypes.CLICKABLE}
-        onClick={this.adaptedProps.onForgotPassword}
-      >
+      <Hint type={hintTypes.CLICKABLE} onClick={this.adaptedProps.onForgotPassword}>
         {this.adaptedProps.forgotPasswordText || '[FORGOT PASSWROD]'}
       </Hint>
     );

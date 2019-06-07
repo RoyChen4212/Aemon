@@ -28,9 +28,7 @@ describe('ActivityComment', () => {
     it('should render a title', () => {
       const title = 'John Doe';
       const userId = '01234567-abcd-abcd-abcd-0123456789ab';
-      const wrapper = shallow(
-        <ActivityComment userId={userId} title={title} />
-      );
+      const wrapper = shallow(<ActivityComment userId={userId} title={title} />);
       expect(wrapper.html()).to.include(title);
     });
 
@@ -39,9 +37,7 @@ describe('ActivityComment', () => {
       const comment =
         'This is a longer user comment to demonstrate how the comment bubble should behave when there are multiple lines of text. Lorerm ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque.';
       const userId = '01234567-abcd-abcd-abcd-0123456789ab';
-      const wrapper = shallow(
-        <ActivityComment userId={userId} title={title} comment={comment} />
-      );
+      const wrapper = shallow(<ActivityComment userId={userId} title={title} comment={comment} />);
       expect(wrapper.html()).to.include(comment);
     });
 
@@ -51,14 +47,7 @@ describe('ActivityComment', () => {
         'This is a longer user comment to demonstrate how the comment bubble should behave when there are multiple lines of text. Lorerm ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque.';
       const userId = '01234567-abcd-abcd-abcd-0123456789ab';
       const dateTime = new Date();
-      const wrapper = shallow(
-        <ActivityComment
-          userId={userId}
-          title={title}
-          comment={comment}
-          time={dateTime}
-        />
-      );
+      const wrapper = shallow(<ActivityComment userId={userId} title={title} comment={comment} time={dateTime} />);
       expect(wrapper.html()).to.include(moment(dateTime).format('hh:mm A'));
     });
   });

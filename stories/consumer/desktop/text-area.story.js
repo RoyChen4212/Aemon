@@ -8,8 +8,7 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl =
-  'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=86%3A0';
+const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=86%3A0';
 
 storiesOf('Consumer/Desktop/Atomic Components/TextArea', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
@@ -60,13 +59,7 @@ storiesOf('Consumer/Desktop/Form Fields/TextArea', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid', () => (
-    <FieldStateProvider
-      component={TextArea}
-      name="text1"
-      label="Type some large text"
-      value=""
-      hint="a poem maybe?"
-    />
+    <FieldStateProvider component={TextArea} name="text1" label="Type some large text" value="" hint="a poem maybe?" />
   ))
   .add('Valid/With Value', () => (
     <FieldStateProvider

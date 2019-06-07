@@ -14,8 +14,7 @@ import './style.css';
 const ComposedFormField = ComplexValueFormField(FormField);
 
 class SplitEven extends ComposedFormField {
-  baseClassName =
-    'pbg-consumer-desktop pbg-form-field pbg-split pbg-split-even';
+  baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-split pbg-split-even';
 
   get isLocked() {
     return this.adaptedProps.locked;

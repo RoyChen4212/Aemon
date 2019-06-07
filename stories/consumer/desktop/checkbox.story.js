@@ -9,36 +9,20 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl =
-  'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=607%3A5';
+const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=607%3A5';
 
 storiesOf('Consumer/Desktop/Atomic Components/Checkbox', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Checkbox/Unchecked', () => (
-    <FieldStateProvider
-      component={Checkbox}
-      name="field1"
-      onChange={action('change')}
-    />
+    <FieldStateProvider component={Checkbox} name="field1" onChange={action('change')} />
   ))
   .add('Checkbox/Checked', () => (
-    <FieldStateProvider
-      component={Checkbox}
-      name="field1"
-      value="true"
-      onChange={action('change')}
-    />
+    <FieldStateProvider component={Checkbox} name="field1" value="true" onChange={action('change')} />
   ))
   .add('Checkbox/Disabled', () => (
-    <FieldStateProvider
-      component={Checkbox}
-      name="field1"
-      value="true"
-      disabled
-      onChange={action('change')}
-    />
+    <FieldStateProvider component={Checkbox} name="field1" value="true" disabled onChange={action('change')} />
   ));
 
 storiesOf('Consumer/Desktop/Form Fields/Toggle', module)

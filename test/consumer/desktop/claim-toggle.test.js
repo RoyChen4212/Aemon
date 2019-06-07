@@ -27,9 +27,7 @@ describe('ClaimToggle', () => {
 
   it('should render a Container with correct class when is required', () => {
     const wrapper = shallow(<ClaimToggle required disabled={false} />);
-    expect(
-      wrapper.find(Container).hasClass('claim-toggle-required')
-    ).to.be.equal(true);
+    expect(wrapper.find(Container).hasClass('claim-toggle-required')).to.be.equal(true);
   });
 
   it('should render a solid Container when is disabled', () => {
@@ -39,9 +37,7 @@ describe('ClaimToggle', () => {
 
   it('should render a Container with correct class when is disabled', () => {
     const wrapper = shallow(<ClaimToggle required={false} disabled />);
-    expect(
-      wrapper.find(Container).hasClass('claim-toggle-disabled')
-    ).to.be.equal(true);
+    expect(wrapper.find(Container).hasClass('claim-toggle-disabled')).to.be.equal(true);
   });
 
   it('should render a ClaimToggleContent', () => {
@@ -58,9 +54,7 @@ describe('ClaimToggle', () => {
   it('should pass disable prop to the ClaimToggleContent', () => {
     const disabled = true;
     const wrapper = shallow(<ClaimToggle disabled={disabled} />);
-    expect(wrapper.find(ClaimToggleContent).prop('disabled')).to.be.equal(
-      disabled
-    );
+    expect(wrapper.find(ClaimToggleContent).prop('disabled')).to.be.equal(disabled);
   });
 
   it('should pass label prop to the ClaimToggleContent', () => {
@@ -72,9 +66,7 @@ describe('ClaimToggle', () => {
   it('should pass explainer prop to the ClaimToggleContent', () => {
     const explainer = 'explainer';
     const wrapper = shallow(<ClaimToggle explainer={explainer} />);
-    expect(wrapper.find(ClaimToggleContent).prop('explainer')).to.be.equal(
-      explainer
-    );
+    expect(wrapper.find(ClaimToggleContent).prop('explainer')).to.be.equal(explainer);
   });
 
   it('should pass error prop to the ClaimToggleContent', () => {

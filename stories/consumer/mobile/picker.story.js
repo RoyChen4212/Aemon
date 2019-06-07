@@ -15,8 +15,7 @@ const options = [
   { label: 'Second option', value: 'second' },
   { label: 'Super long option text here', value: 'third' },
 ];
-const figmaUrl =
-  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
+const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 
 storiesOf('Consumer/Mobile/Form Fields/Picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
@@ -34,13 +33,7 @@ storiesOf('Consumer/Mobile/Form Fields/Picker', module)
     />
   ))
   .add('Valid/Required', () => (
-    <Picker
-      name="picker"
-      label="Label"
-      onChange={action('onChange')}
-      required
-      options={options}
-    />
+    <Picker name="picker" label="Label" onChange={action('onChange')} required options={options} />
   ))
   .add('Invalid', () => (
     <Picker

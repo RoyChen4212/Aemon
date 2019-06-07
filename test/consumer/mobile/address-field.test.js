@@ -39,8 +39,7 @@ describe('Address Field', () => {
   it('should show a label if given', () => {
     const label = 'Some text';
     const wrapper = shallow(<AddressField label={label} />);
-    expect(wrapper.contains(<Label type={labelTypes.STRONG}>{label}</Label>)).to
-      .be.true;
+    expect(wrapper.contains(<Label type={labelTypes.STRONG}>{label}</Label>)).to.be.true;
   });
 
   it('should show a hint if given', () => {
@@ -56,18 +55,14 @@ describe('Address Field', () => {
 
   it('should pass address options to HistoricalPicker', () => {
     const wrapper = mount(<AddressField addressOptions={addressOptions} />);
-    expect(wrapper.find(HistoricalPicker).prop('options')).to.eql(
-      addressOptions
-    );
+    expect(wrapper.find(HistoricalPicker).prop('options')).to.eql(addressOptions);
   });
 
   it('should render NewAddressField when add new option is selected', () => {
     const value = {
       selected: 'new',
     };
-    const wrapper = mount(
-      <AddressField value={value} addressOptions={addressOptions} />
-    );
+    const wrapper = mount(<AddressField value={value} addressOptions={addressOptions} />);
     expect(wrapper.find(NewAddressField)).to.have.lengthOf(1);
   });
 
@@ -80,9 +75,7 @@ describe('Address Field', () => {
     const value = {
       selected: addressOptions[0].value,
     };
-    const wrapper = mount(
-      <AddressField value={value} addressOptions={addressOptions} />
-    );
+    const wrapper = mount(<AddressField value={value} addressOptions={addressOptions} />);
     expect(wrapper.find(NewAddressField)).to.have.lengthOf(0);
   });
 
@@ -97,9 +90,7 @@ describe('Address Field', () => {
       }
       runs++;
     };
-    const wrapper = mount(
-      <AddressField addressOptions={addressOptions} onChange={onChange} />
-    );
+    const wrapper = mount(<AddressField addressOptions={addressOptions} onChange={onChange} />);
     wrapper.find('select').simulate('change', event);
   });
 
@@ -111,9 +102,7 @@ describe('Address Field', () => {
 
   it('should pass its value to historical picker', () => {
     const value = { selected: 'new' };
-    const wrapper = mount(
-      <AddressField value={value} addressOptions={addressOptions} />
-    );
+    const wrapper = mount(<AddressField value={value} addressOptions={addressOptions} />);
     expect(wrapper.find(HistoricalPicker).prop('value')).to.eql(value.selected);
   });
 
@@ -126,34 +115,22 @@ describe('Address Field', () => {
       expect(ev.target.value).to.eql(expected);
       done();
     };
-    const wrapper = mount(
-      <AddressField value={{ selected: 'new' }} onChange={onChange} />
-    );
-    wrapper
-      .find({ type: 'text', name: addressFields.STREET_ADDRESS })
-      .simulate('change', {
-        target: { value: expected[addressFields.STREET_ADDRESS] },
-      });
+    const wrapper = mount(<AddressField value={{ selected: 'new' }} onChange={onChange} />);
+    wrapper.find({ type: 'text', name: addressFields.STREET_ADDRESS }).simulate('change', {
+      target: { value: expected[addressFields.STREET_ADDRESS] },
+    });
   });
 
   it('should render add new button when address is selected', () => {
     const value = { selected: addressOptions[0].value };
-    const wrapper = mount(
-      <AddressField value={value} addressOptions={addressOptions} />
-    );
+    const wrapper = mount(<AddressField value={value} addressOptions={addressOptions} />);
     expect(wrapper.find(SmallButton)).to.have.lengthOf(1);
   });
 
   it('should add correct lable to add new button', () => {
     const value = { selected: addressOptions[0].value };
     const label = 'Some label';
-    const wrapper = mount(
-      <AddressField
-        value={value}
-        addNewButtonLabel={label}
-        addressOptions={addressOptions}
-      />
-    );
+    const wrapper = mount(<AddressField value={value} addNewButtonLabel={label} addressOptions={addressOptions} />);
     expect(wrapper.find(SmallButton).text()).to.equal(label);
   });
 
@@ -168,28 +145,14 @@ describe('Address Field', () => {
       }
       runs++;
     };
-    const wrapper = mount(
-      <AddressField
-        value={value}
-        onChange={onChange}
-        addressOptions={addressOptions}
-      />
-    );
+    const wrapper = mount(<AddressField value={value} onChange={onChange} addressOptions={addressOptions} />);
     wrapper.find('button').simulate('click');
   });
 
   it('should pass countryOptions to new address', () => {
     const value = { selected: 'new' };
-    const wrapper = mount(
-      <AddressField
-        value={value}
-        countryOptions={countries}
-        onChange={() => {}}
-      />
-    );
-    expect(wrapper.find(NewAddressField).prop('countryOptions')).to.eql(
-      countries
-    );
+    const wrapper = mount(<AddressField value={value} countryOptions={countries} onChange={() => {}} />);
+    expect(wrapper.find(NewAddressField).prop('countryOptions')).to.eql(countries);
   });
 
   it('should pass error object to new address when present', () => {
@@ -207,9 +170,7 @@ describe('Address Field', () => {
 
   it('should pass forceErrorDisplay to new address field when present', () => {
     const value = { selected: 'new' };
-    const wrapper = mount(
-      <AddressField value={value} onChange={() => {}} forceErrorDisplay />
-    );
+    const wrapper = mount(<AddressField value={value} onChange={() => {}} forceErrorDisplay />);
     expect(wrapper.find(NewAddressField).prop('forceErrorDisplay')).to.be.true;
   });
 
@@ -219,9 +180,7 @@ describe('Address Field', () => {
       [addressFields.STREET_ADDRESS]: '472 Evergreen Terrace',
     };
     const labels = { [addressFields.STREET_ADDRESS]: 'Street address' };
-    const wrapper = mount(
-      <AddressField value={value} newAddressLabels={labels} />
-    );
+    const wrapper = mount(<AddressField value={value} newAddressLabels={labels} />);
     expect(wrapper.find(NewAddressField).prop('labels')).to.eql(labels);
   });
 });

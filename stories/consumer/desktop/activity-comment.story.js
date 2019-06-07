@@ -42,11 +42,7 @@ storiesOf('Consumer/Desktop/Atomic Components/Activity Comment', module)
         time={new Date()}
         fullName="John Doe"
       />
-      <ActivityCard
-        type="purchase_updated"
-        title="Purchase Updated"
-        time={new Date()}
-      >
+      <ActivityCard type="purchase_updated" title="Purchase Updated" time={new Date()}>
         <p>User changed the price from $2,000 to $20,000.</p>
       </ActivityCard>
     </React.Fragment>

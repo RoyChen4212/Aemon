@@ -18,9 +18,7 @@ describe('PasswordField', () => {
 
   it('should have forgot password label', () => {
     const wrapper = shallow(<PasswordField />);
-    expect(
-      wrapper.find('.pbg-forgot-password-container').find(Hint)
-    ).to.have.lengthOf(1);
+    expect(wrapper.find('.pbg-forgot-password-container').find(Hint)).to.have.lengthOf(1);
   });
 
   it('should show a hint when given', () => {
@@ -31,9 +29,7 @@ describe('PasswordField', () => {
 
   it('should call onForgotPassword when forgot password is clicked', () => {
     const onForgotPassword = sinon.spy();
-    const wrapper = shallow(
-      <PasswordField onForgotPassword={onForgotPassword} />
-    );
+    const wrapper = shallow(<PasswordField onForgotPassword={onForgotPassword} />);
     wrapper
       .find('.pbg-forgot-password-container')
       .find(Hint)
@@ -53,8 +49,7 @@ describe('PasswordField', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
       const wrapper = shallow(<PasswordField error={expected} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
-        .to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
     });
 
     it('should have correct class when error is given', () => {
@@ -66,19 +61,14 @@ describe('PasswordField', () => {
       const expected = 'a horrible error';
       const hint = 'nope';
       const wrapper = shallow(<PasswordField error={expected} hint={hint} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
-        .to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
       expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
     });
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
-      const wrapper = shallow(
-        <PasswordField error="and error" label={expected} />
-      );
-      expect(
-        wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)
-      ).to.be.true;
+      const wrapper = shallow(<PasswordField error="and error" label={expected} />);
+      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
 
     it('should have type password on input element', () => {

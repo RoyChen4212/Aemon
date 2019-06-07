@@ -81,8 +81,7 @@ describe('TextArea', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
       const wrapper = shallow(<TextArea error={expected} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
-        .to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
     });
 
     it('should have correct class when error is given', () => {
@@ -94,8 +93,7 @@ describe('TextArea', () => {
       const expected = 'a horrible error';
       const hint = 'nope';
       const wrapper = shallow(<TextArea error={expected} hint={hint} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
-        .to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
       expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
     });
   });

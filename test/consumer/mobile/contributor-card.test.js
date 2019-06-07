@@ -17,9 +17,7 @@ describe('ContributorCard Card', () => {
   });
 
   it('should accept a type and give it a class for it', () => {
-    const wrapper = shallow(
-      <ContributorCard type={ContributorCard.types.error} />
-    );
+    const wrapper = shallow(<ContributorCard type={ContributorCard.types.error} />);
     expect(wrapper.hasClass('pbg-contributor-card-type-error')).to.be.true;
   });
 
@@ -37,9 +35,7 @@ describe('ContributorCard Card', () => {
   it('should accept a heading prop and render it', () => {
     const expected = 'Oh no!';
     const wrapper = shallow(<ContributorCard heading={expected} />);
-    expect(wrapper.find('.pbg-contributor-card-heading').text()).to.equal(
-      expected
-    );
+    expect(wrapper.find('.pbg-contributor-card-heading').text()).to.equal(expected);
   });
 
   it('should render a card body element', () => {
@@ -54,12 +50,9 @@ describe('ContributorCard Card', () => {
   });
 
   it('should accept a content prop and render it', () => {
-    const expected = (
-      <p>This is some text to be passed to the content portion</p>
-    );
+    const expected = <p>This is some text to be passed to the content portion</p>;
     const wrapper = mount(<ContributorCard content={expected} />);
-    expect(wrapper.find('.pbg-contributor-card-content').contains(expected)).to
-      .be.true;
+    expect(wrapper.find('.pbg-contributor-card-content').contains(expected)).to.be.true;
   });
 
   it('should render cta section', () => {
@@ -91,10 +84,7 @@ describe('ContributorCard Card', () => {
   it('should give correct click handler to each cta', () => {
     const onClick = sinon.spy();
     const onClick2 = sinon.spy();
-    const cta = [
-      { label: 'CTA one', onClick },
-      { label: 'CTA 2', onClick: onClick2 },
-    ];
+    const cta = [{ label: 'CTA one', onClick }, { label: 'CTA 2', onClick: onClick2 }];
     const wrapper = shallow(<ContributorCard cta={cta} />);
     wrapper
       .find(LinkButton)
@@ -111,10 +101,7 @@ describe('ContributorCard Card', () => {
 
   it('should accept type picker as cta', () => {
     const onClick = () => {};
-    const cta = [
-      { label: 'CTA one', onClick },
-      { label: 'CTA 2', onChange: onClick, type: 'picker' },
-    ];
+    const cta = [{ label: 'CTA one', onClick }, { label: 'CTA 2', onChange: onClick, type: 'picker' }];
     const wrapper = shallow(<ContributorCard cta={cta} />);
     expect(wrapper.find(LinkButton)).to.have.lengthOf(1);
     expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(1);

@@ -54,10 +54,7 @@ class ModalAlertStack extends React.PureComponent {
 
   render() {
     return (
-      <div
-        className="pbg-consumer-desktop pbg-modal-alert-stack"
-        ref={this.stackElementRef}
-      >
+      <div className="pbg-consumer-desktop pbg-modal-alert-stack" ref={this.stackElementRef}>
         {this.alerts.map(this.renderAlert)}
       </div>
     );

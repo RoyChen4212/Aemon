@@ -3,11 +3,7 @@ import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
-import {
-  PhoneField,
-  HistoricalPicker,
-  TextField,
-} from '../../../components/consumer/mobile/form-fields';
+import { PhoneField, HistoricalPicker, TextField } from '../../../components/consumer/mobile/form-fields';
 import { SmallButton } from '../../../components/consumer/mobile/button';
 
 describe('Phone Field', () => {
@@ -39,19 +35,13 @@ describe('Phone Field', () => {
 
   it('should pass selected value to HistoricalPicker', () => {
     const value = { selected: phoneOptions[0] };
-    const wrapper = mount(
-      <PhoneField phoneOptions={phoneOptions} value={value} />
-    );
-    expect(wrapper.find(HistoricalPicker).prop('value')).to.equal(
-      value.selected
-    );
+    const wrapper = mount(<PhoneField phoneOptions={phoneOptions} value={value} />);
+    expect(wrapper.find(HistoricalPicker).prop('value')).to.equal(value.selected);
   });
 
   it('should show add new button when value other than new is selected', () => {
     const value = { selected: phoneOptions[0] };
-    const wrapper = mount(
-      <PhoneField phoneOptions={phoneOptions} value={value} />
-    );
+    const wrapper = mount(<PhoneField phoneOptions={phoneOptions} value={value} />);
     expect(wrapper.find(SmallButton)).to.have.lengthOf(1);
   });
 
@@ -62,22 +52,14 @@ describe('Phone Field', () => {
 
   it('should not show add new button when new value is selected', () => {
     const value = { selected: 'new' };
-    const wrapper = mount(
-      <PhoneField phoneOptions={phoneOptions} value={value} />
-    );
+    const wrapper = mount(<PhoneField phoneOptions={phoneOptions} value={value} />);
     expect(wrapper.find(SmallButton)).to.have.lengthOf(0);
   });
 
   it('should pass addNewButtonLabel to small button', () => {
     const value = { selected: phoneOptions[0] };
     const expected = 'add new label';
-    const wrapper = mount(
-      <PhoneField
-        phoneOptions={phoneOptions}
-        value={value}
-        addNewButtonLabel={expected}
-      />
-    );
+    const wrapper = mount(<PhoneField phoneOptions={phoneOptions} value={value} addNewButtonLabel={expected} />);
     expect(wrapper.find(SmallButton).text()).to.equal(expected);
   });
 
@@ -97,13 +79,7 @@ describe('Phone Field', () => {
       }
       runs++;
     };
-    const wrapper = mount(
-      <PhoneField
-        value={value}
-        onChange={onChange}
-        phoneOptions={phoneOptions}
-      />
-    );
+    const wrapper = mount(<PhoneField value={value} onChange={onChange} phoneOptions={phoneOptions} />);
     wrapper.find('button').simulate('click');
   });
 
@@ -144,22 +120,14 @@ describe('Phone Field', () => {
   it('should pass label to TextField change', () => {
     const expected = 'A label';
     const value = { selected: 'new' };
-    const wrapper = mount(
-      <PhoneField addPhoneLabel={expected} value={value} />
-    );
+    const wrapper = mount(<PhoneField addPhoneLabel={expected} value={value} />);
     expect(wrapper.find(TextField).prop('label')).to.equal(expected);
   });
 
   it('should pass error to phone field only if present and touched', () => {
     const expected = 'an error';
     const value = { selected: 'new' };
-    const wrapper = mount(
-      <PhoneField
-        error={{ phone: expected }}
-        value={value}
-        onChange={() => {}}
-      />
-    );
+    const wrapper = mount(<PhoneField error={{ phone: expected }} value={value} onChange={() => {}} />);
     expect(wrapper.instance().phoneError).to.be.undefined;
     wrapper.setState({ touched: true }, () => {
       expect(wrapper.instance().phoneError).to.equal(expected);
@@ -169,9 +137,7 @@ describe('Phone Field', () => {
   it('should pass error to phone field only if present and force display is passed', () => {
     const expected = 'an error';
     const value = { selected: 'new' };
-    const wrapper = mount(
-      <PhoneField error={{ phone: expected }} value={value} forceErrorDisplay />
-    );
+    const wrapper = mount(<PhoneField error={{ phone: expected }} value={value} forceErrorDisplay />);
     expect(wrapper.instance().phoneError).to.equal(expected);
   });
 

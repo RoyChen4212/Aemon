@@ -32,14 +32,9 @@ class PickerMenu extends React.PureComponent {
   renderOption = ({ value, label }, i) => {
     const selected = value === this.props.selected ? 'selected' : '';
     const first = i === 0 ? 'picker-menu-item-rounded-top' : '';
-    const last =
-      i === this.options.length - 1 ? 'picker-menu-item-rounded-bottom' : '';
+    const last = i === this.options.length - 1 ? 'picker-menu-item-rounded-bottom' : '';
     return (
-      <div
-        className={`picker-menu-item ${selected} ${first} ${last}`}
-        key={value}
-        onClick={this.onOptionClick(value)}
-      >
+      <div className={`picker-menu-item ${selected} ${first} ${last}`} key={value} onClick={this.onOptionClick(value)}>
         {this.renderLabel(label, selected)}
       </div>
     );

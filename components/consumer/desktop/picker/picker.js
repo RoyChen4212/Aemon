@@ -30,9 +30,7 @@ class Picker extends FormField {
   }
 
   get value() {
-    return this.adaptedProps.value === null
-      ? PICKER_EMPTY_VALUE
-      : this.adaptedProps.value;
+    return this.adaptedProps.value === null ? PICKER_EMPTY_VALUE : this.adaptedProps.value;
   }
 
   onOptionClick = value => () => {
@@ -50,10 +48,7 @@ class Picker extends FormField {
   deactivate = (ev, callback) => {
     if (this.disabled) return false;
     this.deactivateTimeout = setTimeout(() => {
-      this.setState(
-        { active: false },
-        () => callback && callback(makeEvent(this.value))
-      );
+      this.setState({ active: false }, () => callback && callback(makeEvent(this.value)));
     }, 150);
   };
 

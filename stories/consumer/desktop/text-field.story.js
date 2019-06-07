@@ -20,12 +20,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
     <FieldStateProvider component={TextField} simple name="field2" />
   ))
   .add('simple-text-input/placeholder', () => (
-    <FieldStateProvider
-      component={TextField}
-      simple
-      name="field2"
-      label="Placeholder"
-    />
+    <FieldStateProvider component={TextField} simple name="field2" label="Placeholder" />
   ))
   .add('simple-text-input/error', () => (
     <FieldStateProvider
@@ -38,14 +33,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
     />
   ))
   .add('simple-text-input/disabled', () => (
-    <TextField
-      simple
-      disabled
-      name="field3"
-      label="A text field"
-      value="Placeholder"
-      hint="this is a hint"
-    />
+    <TextField simple disabled name="field3" label="A text field" value="Placeholder" hint="this is a hint" />
   ))
   .add('simple-text-input/facebook', () => (
     <FieldStateProvider
@@ -67,13 +55,7 @@ storiesOf('Consumer/Desktop/Form Fields/form-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('form-field/default', () => (
-    <FieldStateProvider
-      component={TextField}
-      name="field1"
-      label="A text field"
-      plaholder="Placeholder"
-      hint="hint"
-    />
+    <FieldStateProvider component={TextField} name="field1" label="A text field" plaholder="Placeholder" hint="hint" />
   ))
   .add('form-field/error', () => (
     <FieldStateProvider

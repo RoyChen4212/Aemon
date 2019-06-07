@@ -9,8 +9,7 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl =
-  'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=134%3A5665';
+const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=134%3A5665';
 
 const customFormater = dateStr => {
   const options = {
@@ -37,12 +36,7 @@ storiesOf('Consumer/Mobile/Form Fields/Date Picker', module)
     />
   ))
   .add('Valid/No Value', () => (
-    <FieldStateProvider
-      component={DatePicker}
-      name="date-picker"
-      hint="Pick a date"
-      onChange={action('onChange')}
-    />
+    <FieldStateProvider component={DatePicker} name="date-picker" hint="Pick a date" onChange={action('onChange')} />
   ))
   .add('Valid/Required', () => (
     <FieldStateProvider

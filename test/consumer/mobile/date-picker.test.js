@@ -105,8 +105,7 @@ describe('Date picker', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
       const wrapper = shallow(<DatePicker error={expected} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
-        .to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
     });
 
     it('should have correct class when error is given', () => {
@@ -118,19 +117,14 @@ describe('Date picker', () => {
       const expected = 'a horrible error';
       const hint = 'nope';
       const wrapper = shallow(<DatePicker error={expected} hint={hint} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
-        .to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
       expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
     });
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
-      const wrapper = shallow(
-        <DatePicker error="and error" label={expected} />
-      );
-      expect(
-        wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)
-      ).to.be.true;
+      const wrapper = shallow(<DatePicker error="and error" label={expected} />);
+      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
     });
   });
 });

@@ -44,10 +44,7 @@ class ContributorCard extends React.PureComponent {
   get cta() {
     return this.props.cta.map((cta, index) => {
       return (
-        <div
-          className={this.props.cta.length > 1 ? 'cta-container' : ''}
-          key={`cta-${index}`}
-        >
+        <div className={this.props.cta.length > 1 ? 'cta-container' : ''} key={`cta-${index}`}>
           {cta.type === 'picker' ? (
             <HistoricalPicker options={cta.options} onChange={cta.onChange} />
           ) : (
@@ -61,16 +58,10 @@ class ContributorCard extends React.PureComponent {
   render() {
     return (
       <div className={this.className}>
-        {this.props.heading && (
-          <div className="pbg-contributor-card-heading">
-            {this.props.heading}
-          </div>
-        )}
+        {this.props.heading && <div className="pbg-contributor-card-heading">{this.props.heading}</div>}
         <div className="pbg-contributor-card-body">
           <H2>{this.props.title}</H2>
-          <div className="pbg-contributor-card-content">
-            {this.props.content}
-          </div>
+          <div className="pbg-contributor-card-content">{this.props.content}</div>
         </div>
         <div className="pbg-contributor-card-ctas">
           <div>{this.cta}</div>

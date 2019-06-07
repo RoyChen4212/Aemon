@@ -19,8 +19,7 @@ describe('Button', () => {
 
     it('should have a correct desktop class name', () => {
       const wrapper = shallow(<PrimaryButton />);
-      expect(wrapper.find('button').hasClass('pbg-consumer-desktop')).to.be
-        .true;
+      expect(wrapper.find('button').hasClass('pbg-consumer-desktop')).to.be.true;
     });
   });
 });

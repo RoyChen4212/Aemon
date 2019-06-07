@@ -12,12 +12,7 @@ storiesOf('Consumer/Desktop/Payment Settings/claim-toggle', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('claim-toggle/default', () => (
-    <FieldStateProvider
-      component={ClaimToggle}
-      label="Label"
-      explainer="Explainer text"
-      onChange={action('change')}
-    />
+    <FieldStateProvider component={ClaimToggle} label="Label" explainer="Explainer text" onChange={action('change')} />
   ))
   .add('claim-toggle/required', () => (
     <FieldStateProvider

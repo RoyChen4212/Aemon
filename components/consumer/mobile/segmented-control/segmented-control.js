@@ -7,16 +7,12 @@ import './style.css';
 
 class SegmentedControl extends React.Component {
   static propTypes = {
-    segments: PropTypes.arrayOf(
-      (propValue, key, componentName, _l, propName) => {
-        const prop = propValue[key];
-        if (!isObject(prop) || prop.label) {
-          return new Error(
-            `Invalid prop '${propName}' supplied to ${componentName}`
-          );
-        }
+    segments: PropTypes.arrayOf((propValue, key, componentName, _l, propName) => {
+      const prop = propValue[key];
+      if (!isObject(prop) || prop.label) {
+        return new Error(`Invalid prop '${propName}' supplied to ${componentName}`);
       }
-    ),
+    }),
     onChange: PropTypes.func.isRequired,
   };
 
@@ -59,14 +55,9 @@ class SegmentedControl extends React.Component {
 
   renderControl(config, index) {
     const isActive = this.state.activeSegment === index;
-    const className = `pbg-segmented-control-button ${config.type}${
-      isActive ? ' active' : ''
-    }`;
+    const className = `pbg-segmented-control-button ${config.type}${isActive ? ' active' : ''}`;
     return (
-      <div
-        className={className}
-        onClick={() => this.onChange(makeEvent(index))}
-      >
+      <div className={className} onClick={() => this.onChange(makeEvent(index))}>
         <span>{config.label ? config.label : '[Label Placeholder]'}</span>
       </div>
     );

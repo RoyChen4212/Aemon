@@ -3,10 +3,7 @@ import { expect } from 'chai';
 import { mount } from 'enzyme';
 import sinon from 'sinon';
 
-import {
-  labelClassNames,
-  labelTypes,
-} from '../../../components/consumer/shared/label';
+import { labelClassNames, labelTypes } from '../../../components/consumer/shared/label';
 import Label from '../../../components/consumer/mobile/label';
 
 describe('Mobile Label', () => {
@@ -19,8 +16,6 @@ describe('Mobile Label', () => {
 
   it('should render label tag as first element', () => {
     const wrapper = mount(<Label />);
-    expect(wrapper.html()).to.equal(
-      '<label class="pbg-label pbg-consumer-mobile"><span></span></label>'
-    );
+    expect(wrapper.html()).to.equal('<label class="pbg-label pbg-consumer-mobile"><span></span></label>');
   });
 });
