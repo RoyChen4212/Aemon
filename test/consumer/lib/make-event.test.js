@@ -1,5 +1,5 @@
-import makeEvent from '../../../components/lib/make-event';
 import { expect } from 'chai';
+import makeEvent from '../../../components/lib/make-event';
 
 describe('Make Event', () => {
   it('returns event like object with target.value', () => {

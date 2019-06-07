@@ -15,12 +15,22 @@ describe('Mobile ActivityThumbnail', () => {
   });
 
   it('should render a user avatar if type is purchase_comment_created and src are passed as props', () => {
-    const wrapper = shallow(<ActivityThumbnail type={PURCHASE_COMMENT_CREATED} src="https://myimage.com" />);
-    expect(wrapper.find(Avatar).prop('src')).to.include("https://myimage.com");
+    const wrapper = shallow(
+      <ActivityThumbnail
+        type={PURCHASE_COMMENT_CREATED}
+        src="https://myimage.com"
+      />
+    );
+    expect(wrapper.find(Avatar).prop('src')).to.include('https://myimage.com');
   });
 
   it('should render a user avatar if type is purchase_comment_created and userId are passed as props', () => {
-    const wrapper = shallow(<ActivityThumbnail type={PURCHASE_COMMENT_CREATED} userId="01234567-abcd-abcd-abcd-0123456789ab" />);
+    const wrapper = shallow(
+      <ActivityThumbnail
+        type={PURCHASE_COMMENT_CREATED}
+        userId="01234567-abcd-abcd-abcd-0123456789ab"
+      />
+    );
     expect(wrapper.find(Avatar).html()).to.include('<svg');
   });
 });

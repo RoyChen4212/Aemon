@@ -4,7 +4,10 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
-import { Picker, PICKER_EMPTY_VALUE } from '../../../components/consumer/mobile/form-fields';
+import {
+  Picker,
+  PICKER_EMPTY_VALUE,
+} from '../../../components/consumer/mobile/form-fields';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
@@ -22,7 +25,10 @@ describe('Picker', () => {
   });
 
   it('should render given options', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
+    const opts = [
+      { label: 'option 1', value: 'opt1' },
+      { label: 'option 2', value: 'opt2' },
+    ];
     const wrapper = shallow(<Picker options={opts} />);
     expect(wrapper.find('select').find('option')).to.have.lengthOf(2);
     opts.forEach(opt => {
@@ -34,13 +40,15 @@ describe('Picker', () => {
   it('should render the correct label', () => {
     const labelText = 'Pick your posion';
     const wrapper = shallow(<Picker label={labelText} />);
-    expect(wrapper.find('.pbg-picker').contains(<Label>{labelText}</Label>)).to.be.true;
+    expect(wrapper.find('.pbg-picker').contains(<Label>{labelText}</Label>)).to
+      .be.true;
   });
 
   it('should render the a hint if given', () => {
     const hintText = 'Pick your posion';
     const wrapper = shallow(<Picker hint={hintText} />);
-    expect(wrapper.find('.pbg-picker').contains(<Hint>{hintText}</Hint>)).to.be.true;
+    expect(wrapper.find('.pbg-picker').contains(<Hint>{hintText}</Hint>)).to.be
+      .true;
   });
 
   it('should have correct class when error is given', () => {
@@ -51,18 +59,27 @@ describe('Picker', () => {
   it('should render the an error if given', () => {
     const error = 'terrible error';
     const wrapper = shallow(<Picker error={error} />);
-    expect(wrapper.find('.pbg-picker').contains(<Hint type={hintTypes.ERROR}>{error}</Hint>)).to.be.true;
+    expect(
+      wrapper
+        .find('.pbg-picker')
+        .contains(<Hint type={hintTypes.ERROR}>{error}</Hint>)
+    ).to.be.true;
   });
 
   it('should render the an error if given despite a hint being passed', () => {
     const error = 'terrible error';
-    const wrapper = shallow(<Picker error={error} hint='hint' />);
-    expect(wrapper.find('.pbg-picker').contains(<Hint type={hintTypes.ERROR}>{error}</Hint>)).to.be.true;
+    const wrapper = shallow(<Picker error={error} hint="hint" />);
+    expect(
+      wrapper
+        .find('.pbg-picker')
+        .contains(<Hint type={hintTypes.ERROR}>{error}</Hint>)
+    ).to.be.true;
   });
 
   it('should render a custom arrow element', () => {
     const wrapper = shallow(<Picker />);
-    const el = wrapper.find('.pbg-picker')
+    const el = wrapper
+      .find('.pbg-picker')
       .find('.pbg-picker-select-container')
       .find('.pbg-picker-arrow');
     expect(el).to.have.lengthOf(1);
@@ -71,13 +88,17 @@ describe('Picker', () => {
   it('should use required label if required prop passed', () => {
     const labelText = 'Pick your posion';
     const wrapper = shallow(<Picker label={labelText} required />);
-    expect(wrapper.find('.pbg-picker').contains(<Label required>{labelText}</Label>)).to.be.true;
+    expect(
+      wrapper.find('.pbg-picker').contains(<Label required>{labelText}</Label>)
+    ).to.be.true;
   });
 
   it('should not use required label if required prop not passed', () => {
     const labelText = 'Pick your posion';
     const wrapper = shallow(<Picker label={labelText} />);
-    expect(wrapper.find('.pbg-picker').contains(<Label required>{labelText}</Label>)).to.be.false;
+    expect(
+      wrapper.find('.pbg-picker').contains(<Label required>{labelText}</Label>)
+    ).to.be.false;
   });
 
   it('should call onChange after select is changed', () => {
@@ -89,9 +110,12 @@ describe('Picker', () => {
     expect(onChange.calledWith(expected)).to.be.true;
   });
 
-  it('should call onChange with correct value if value is null', function (done) {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: null }];
-    const onChange = (ev) => {
+  it('should call onChange with correct value if value is null', function(done) {
+    const opts = [
+      { label: 'option 1', value: 'opt1' },
+      { label: 'option 2', value: null },
+    ];
+    const onChange = ev => {
       expect(ev.target.value).to.equal(null);
       done();
     };
@@ -100,12 +124,12 @@ describe('Picker', () => {
     wrapper.find('select').simulate('change', event);
   });
 
-  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function (done) {
+  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function(done) {
     const opts = [
       { label: 'option 1', value: 'opt1' },
-      { label: 'option 2', value: null }
+      { label: 'option 2', value: null },
     ];
-    const onChange = (ev) => {
+    const onChange = ev => {
       expect(ev.target.value).to.equal(null);
       done();
     };
@@ -127,8 +151,11 @@ describe('Picker', () => {
   });
 
   it('should select correct option when value is given', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
-    const value = opts[1].value;
+    const opts = [
+      { label: 'option 1', value: 'opt1' },
+      { label: 'option 2', value: 'opt2' },
+    ];
+    const { value } = opts[1];
     const wrapper = shallow(<Picker options={opts} value={value} />);
     expect(wrapper.find('select').prop('value')).to.be.equal(value);
   });

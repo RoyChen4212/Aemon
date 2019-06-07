@@ -4,7 +4,9 @@ import PopoverTooltip from '../../../components/consumer/desktop/popover-tooltip
 
 describe('PopoverTooltip', () => {
   it('should render trigger', () => {
-    const wrapper = mount(<PopoverTooltip trigger={() => <div className="child">I am child</div>} />);
+    const wrapper = mount(
+      <PopoverTooltip trigger={() => <div className="child">I am child</div>} />
+    );
     expect(wrapper.find('.child')).to.have.lengthOf(1);
   });
 
@@ -20,27 +22,39 @@ describe('PopoverTooltip', () => {
   });
 
   it('should add class pbg-popover-active to popover element on mouseenter', function(done) {
-    const trigger = (props) => <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>;
+    const trigger = props => (
+      <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>
+    );
     const wrapper = mount(
-      <PopoverTooltip trigger={trigger} content={<div>I am content</div>}/>
+      <PopoverTooltip trigger={trigger} content={<div>I am content</div>} />
     );
     wrapper.find('a').simulate('mouseenter');
     setTimeout(() => {
-      expect(wrapper.find('.pbg-popover-tooltip').at(0).hasClass('pbg-popover-active')).to.be.true;
+      expect(
+        wrapper
+          .find('.pbg-popover-tooltip')
+          .at(0)
+          .hasClass('pbg-popover-active')
+      ).to.be.true;
       done();
     });
   });
 
   it('should deactivate when mouseleave', function(done) {
-    const trigger = (props) => <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>;
+    const trigger = props => (
+      <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>
+    );
     const wrapper = mount(
       <div className="wrapper">
-        <PopoverTooltip trigger={trigger} content={<div>I am content</div>}/>
+        <PopoverTooltip trigger={trigger} content={<div>I am content</div>} />
       </div>
     );
     wrapper.find('a').simulate('mouseleave');
     setTimeout(() => {
-      wrapper.find(PopoverTooltip).instance().deactivateIfClickOutside({ target: <div></div> });
+      wrapper
+        .find(PopoverTooltip)
+        .instance()
+        .deactivateIfClickOutside({ target: <div /> });
       expect(wrapper.find(PopoverTooltip).instance().active).to.be.false;
       done();
     });

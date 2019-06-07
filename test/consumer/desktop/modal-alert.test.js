@@ -40,21 +40,38 @@ describe('ModalAlert', () => {
   });
 
   it('should add title in label strong', () => {
-    const wrapper = shallow(<ModalAlert title="some title"/>);
-    expect(wrapper.find('.pbg-modal-alert-title').at(0).prop('children')).to.equal('some title');
+    const wrapper = shallow(<ModalAlert title="some title" />);
+    expect(
+      wrapper
+        .find('.pbg-modal-alert-title')
+        .at(0)
+        .prop('children')
+    ).to.equal('some title');
   });
 
   it('should add text in label normal', () => {
-    const wrapper = mount(<ModalAlert text="some text"/>);
-    expect(wrapper.find('.pbg-modal-alert-text').at(0).prop('children')).to.equal('some text');
+    const wrapper = mount(<ModalAlert text="some text" />);
+    expect(
+      wrapper
+        .find('.pbg-modal-alert-text')
+        .at(0)
+        .prop('children')
+    ).to.equal('some text');
   });
 
   it('should have add clickable text', () => {
-    const wrapper = mount(<ModalAlert text={{ label: 'some text', action: () => {} }} />);
-    expect(wrapper.find('.pbg-modal-alert-text').find('a').text()).to.equal('some text');
+    const wrapper = mount(
+      <ModalAlert text={{ label: 'some text', action: () => {} }} />
+    );
+    expect(
+      wrapper
+        .find('.pbg-modal-alert-text')
+        .find('a')
+        .text()
+    ).to.equal('some text');
   });
 
-  it('should add a pbg-fade-out class after the given timeout', function (done) {
+  it('should add a pbg-fade-out class after the given timeout', function(done) {
     const wrapper = shallow(<ModalAlert hideAfter="100" />);
     expect(wrapper.hasClass('pbg-fade-out')).to.be.false;
     setTimeout(() => {

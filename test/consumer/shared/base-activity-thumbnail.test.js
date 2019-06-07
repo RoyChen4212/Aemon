@@ -15,7 +15,6 @@ import ActivityThumbnail, {
   PURCHASE_COMMENT_CREATED,
 } from '../../../components/consumer/shared/base-activity-thumbnail';
 
-
 describe('BaseActivityThumbnail', () => {
   it('should have the pbg-activity-thumbnail className', () => {
     const wrapper = shallow(<ActivityThumbnail type={PURCHASE_UPDATED} />);
@@ -25,12 +24,16 @@ describe('BaseActivityThumbnail', () => {
 
   describe('Props', () => {
     it('should not throw if bad type is given', () => {
-      expect(() => shallow(<ActivityThumbnail type="some bad type" />)).not.to.throw();
+      expect(() =>
+        shallow(<ActivityThumbnail type="some bad type" />)
+      ).not.to.throw();
     });
 
     it('should set "size" prop as width and height', () => {
       const size = 40;
-      const wrapper = shallow(<ActivityThumbnail size={size} type={PURCHASE_UPDATED} />);
+      const wrapper = shallow(
+        <ActivityThumbnail size={size} type={PURCHASE_UPDATED} />
+      );
 
       expect(wrapper.find('img').prop('width')).to.equal(size);
     });
@@ -97,7 +100,12 @@ describe('BaseActivityThumbnail', () => {
 
     it('should throw if avatar is attempted to render', () => {
       expect(() => {
-        shallow(<ActivityThumbnail type={PURCHASE_COMMENT_CREATED} userId="01234567-abcd-abcd-abcd-0123456789ab" />);
+        shallow(
+          <ActivityThumbnail
+            type={PURCHASE_COMMENT_CREATED}
+            userId="01234567-abcd-abcd-abcd-0123456789ab"
+          />
+        );
       }).to.throw();
     });
   });

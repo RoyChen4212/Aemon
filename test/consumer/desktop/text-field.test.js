@@ -8,8 +8,7 @@ import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import Label, { labelTypes } from '../../../components/consumer/desktop/label';
 import Hint, { hintTypes } from '../../../components/consumer/desktop/hint';
 
-
-export const shouldBehaveLikeTextField = (wrapper) => {
+export const shouldBehaveLikeTextField = wrapper => {
   it('should have class pbg-form-field', () => {
     expect(wrapper.hasClass('pbg-form-field')).to.be.true;
   });
@@ -18,14 +17,14 @@ export const shouldBehaveLikeTextField = (wrapper) => {
     expect(wrapper.hasClass('pbg-text-field')).to.be.true;
   });
 
-  it('should add pbg-form-field-focused class when focused', function (done) {
+  it('should add pbg-form-field-focused class when focused', function(done) {
     wrapper.setProps({ focused: true }, () => {
       expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
       done();
     });
   });
 
-  it('should remove pbg-form-field-focused class when not focused', function (done) {
+  it('should remove pbg-form-field-focused class when not focused', function(done) {
     wrapper.setProps({ focused: true }, () => {
       wrapper.setProps({ focused: false }, () => {
         expect(wrapper.hasClass('pbg-form-field-focused')).to.be.false;
@@ -92,7 +91,7 @@ describe('TextField', () => {
   it('should add * to placeholder when required', () => {
     const expected = 'a placeholder';
     const wrapper = shallow(<TextField label={expected} required />);
-    expect(wrapper.find('input').prop('placeholder')).to.equal(expected + '*');
+    expect(wrapper.find('input').prop('placeholder')).to.equal(`${expected}*`);
   });
 
   it('should include label element with passed label along with input', () => {
@@ -130,7 +129,8 @@ describe('TextField', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
       const wrapper = shallow(<TextField error={expected} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
+        .to.be.true;
     });
 
     it('should have correct class when error is given', () => {
@@ -142,37 +142,46 @@ describe('TextField', () => {
       const expected = 'a horrible error';
       const hint = 'nope';
       const wrapper = shallow(<TextField error={expected} hint={hint} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
+        .to.be.true;
       expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
     });
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
-      const wrapper = shallow(<TextField error='and error' label={expected} />);
-      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
+      const wrapper = shallow(<TextField error="and error" label={expected} />);
+      expect(
+        wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)
+      ).to.be.true;
     });
 
     it('should have error label when error is given but field is focused', () => {
       const expected = 'A label';
-      const wrapper = shallow(<TextField error='and error' label={expected} focused />);
-      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
+      const wrapper = shallow(
+        <TextField error="and error" label={expected} focused />
+      );
+      expect(
+        wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)
+      ).to.be.true;
     });
 
     it('should not have error class when error is given but field is focused', () => {
       const expected = 'A label';
-      const wrapper = shallow(<TextField error='and error' label={expected} focused />);
+      const wrapper = shallow(
+        <TextField error="and error" label={expected} focused />
+      );
       expect(wrapper.hasClass('pbg-form-field-error')).to.be.false;
     });
   });
 
   describe('when its a simple field', () => {
     it('should not render the label and hint', () => {
-      const label = "label text";
-      const hint = "hint text";
+      const label = 'label text';
+      const hint = 'hint text';
       const wrapper = shallow(<TextField simple label={label} hint={hint} />);
 
       expect(wrapper.find(Label)).to.have.lengthOf(0);
       expect(wrapper.find(Hint)).to.have.lengthOf(0);
     });
-  })
+  });
 });

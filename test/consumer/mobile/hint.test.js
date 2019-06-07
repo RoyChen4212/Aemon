@@ -12,11 +12,15 @@ describe('Mobile Hint', () => {
 
   it('should render span tag as first element', () => {
     const wrapper = mount(<Hint />);
-    expect(wrapper.html()).to.equal('<span class="pbg-hint pbg-consumer-mobile"></span>');
+    expect(wrapper.html()).to.equal(
+      '<span class="pbg-hint pbg-consumer-mobile"></span>'
+    );
   });
 
   it('should accept a multiline prop that turns it into p', () => {
     const wrapper = shallow(<Hint multiline />);
-    expect(wrapper.html()).to.equal('<p class="pbg-hint pbg-consumer-mobile"></p>');
+    expect(wrapper.html()).to.equal(
+      '<p class="pbg-hint pbg-consumer-mobile"></p>'
+    );
   });
 });

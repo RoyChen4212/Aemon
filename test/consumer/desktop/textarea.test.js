@@ -17,7 +17,7 @@ describe('TextArea', () => {
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
   });
 
-  it('should add pbg-form-field-focused class when focused', function (done) {
+  it('should add pbg-form-field-focused class when focused', function(done) {
     const wrapper = shallow(<TextArea />);
     wrapper.setProps({ focused: true }, () => {
       expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
@@ -25,7 +25,7 @@ describe('TextArea', () => {
     });
   });
 
-  it('should remove pbg-form-field-focused class when not focused', function (done) {
+  it('should remove pbg-form-field-focused class when not focused', function(done) {
     const wrapper = shallow(<TextArea />);
     wrapper.setProps({ focused: true }, () => {
       wrapper.setProps({ focused: false }, () => {
@@ -65,7 +65,8 @@ describe('TextArea', () => {
   });
 
   it('should provide correct rows when value is larger than 100', () => {
-    const value = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare orci dolor, scelerisque posuere.';
+    const value =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare orci dolor, scelerisque posuere.';
     const wrapper = shallow(<TextArea value={value} />);
     expect(wrapper.instance().rows).to.equal(3);
   });
@@ -80,7 +81,8 @@ describe('TextArea', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
       const wrapper = shallow(<TextArea error={expected} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
+        .to.be.true;
     });
 
     it('should have correct class when error is given', () => {
@@ -92,7 +94,8 @@ describe('TextArea', () => {
       const expected = 'a horrible error';
       const hint = 'nope';
       const wrapper = shallow(<TextArea error={expected} hint={hint} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
+      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>))
+        .to.be.true;
       expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
     });
   });

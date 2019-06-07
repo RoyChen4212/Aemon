@@ -5,7 +5,12 @@ import sinon from 'sinon';
 
 import { shouldBehaveLikeButton } from '../shared/base-button.test';
 import {
-  PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton,
+  PrimaryButton,
+  SecondaryButton,
+  SmallButton,
+  LinkButton,
+  FacebookButton,
+  SmallFacebookButton,
 } from '../../../components/consumer/mobile/button';
 
 import Hint from '../../../components/consumer/mobile/hint';
@@ -31,7 +36,8 @@ describe('Button', () => {
 
     it('should have correct class name', () => {
       const wrapper = shallow(<SecondaryButton />);
-      expect(wrapper.find('button').hasClass('pbg-button-secondary')).to.be.true;
+      expect(wrapper.find('button').hasClass('pbg-button-secondary')).to.be
+        .true;
     });
 
     it('should have correct class name for mobile', () => {
@@ -86,7 +92,8 @@ describe('Button', () => {
 
     it('should have correct class name', () => {
       const wrapper = shallow(<SmallFacebookButton />);
-      expect(wrapper.find('button').hasClass('pbg-button-facebook-small')).to.be.true;
+      expect(wrapper.find('button').hasClass('pbg-button-facebook-small')).to.be
+        .true;
     });
 
     it('should have correct class name for mobile', () => {

@@ -7,41 +7,41 @@ import { labelTypes } from '../../../components/consumer/shared/label';
 
 describe('Desktop: FormField', () => {
   it('should implement .label, .hintOrError, .labelType', () => {
-    const wrapper = shallow(<FormField />)
+    const wrapper = shallow(<FormField />);
     const instance = wrapper.instance();
 
     expect(() => {
-      return instance.label
+      return instance.label;
     }).to.not.throw;
 
     expect(() => {
-      return instance.hintOrError
+      return instance.hintOrError;
     }).to.not.throw;
 
     expect(() => {
-      return instance.labelType
+      return instance.labelType;
     }).to.not.throw;
   });
 
   it('should return labelType.base even when error', () => {
-    const wrapper = shallow(<FormField error='this is an error' />)
+    const wrapper = shallow(<FormField error="this is an error" />);
     const instance = wrapper.instance();
 
     expect(instance.labelType).to.equal(labelTypes.base);
   });
 
   it('should return labelType.BASE when NO error', () => {
-    const wrapper = shallow(<FormField />)
+    const wrapper = shallow(<FormField />);
     const instance = wrapper.instance();
 
     expect(instance.labelType).to.equal(labelTypes.BASE);
   });
 
   it('should render a Label if specified in props', () => {
-    const wrapper = shallow(<FormField label="this is a label" />)
+    const wrapper = shallow(<FormField label="this is a label" />);
     const instance = wrapper.instance();
     const labelWrapper = shallow(instance.label);
 
-    expect(labelWrapper.html()).to.contain('<label')
+    expect(labelWrapper.html()).to.contain('<label');
   });
 });

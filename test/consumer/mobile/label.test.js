@@ -19,6 +19,8 @@ describe('Mobile Label', () => {
 
   it('should render label tag as first element', () => {
     const wrapper = mount(<Label />);
-    expect(wrapper.html()).to.equal('<label class="pbg-label pbg-consumer-mobile"><span></span></label>');
+    expect(wrapper.html()).to.equal(
+      '<label class="pbg-label pbg-consumer-mobile"><span></span></label>'
+    );
   });
 });
