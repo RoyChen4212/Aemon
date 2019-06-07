@@ -13,13 +13,15 @@
   .pbg-status-label {
     @extend .pbg-desktop-small-strong;
     margin-bottom: 4px;
+    display: flex;
+    height: 16px;
   }
 
   .pbg-status-question-mark:after {
     content: url('../img/link-question-mark.svg');
     margin-left: 5px;
     position: relative;
-    top: 3px;
+    top: 2px;
   }
 
   .pbg-status-value {

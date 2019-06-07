@@ -91,12 +91,14 @@
     flex-direction: column;
     margin-left: 8px; }
   .pbg-status .pbg-status-label {
-    margin-bottom: 4px; }
+    margin-bottom: 4px;
+    display: flex;
+    height: 16px; }
   .pbg-status .pbg-status-question-mark:after {
     content: url("../img/link-question-mark.svg");
     margin-left: 5px;
     position: relative;
-    top: 3px; }
+    top: 2px; }
   .pbg-status .pbg-status-value {
     margin-bottom: 0; }
   .pbg-status .pbg-status-icon-container {
