@@ -15,13 +15,7 @@ storiesOf('Consumer/Mobile/Form Fields/TextArea', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid', () => (
-    <FieldStateProvider
-      component={TextArea}
-      name="text1"
-      label="Type some large text"
-      value=""
-      hint="a poem maybe?"
-    />
+    <FieldStateProvider component={TextArea} name="text1" label="Type some large text" value="" hint="a poem maybe?" />
   ))
   .add('Valid/With Value', () => (
     <FieldStateProvider

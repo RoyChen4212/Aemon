@@ -11,10 +11,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 const countries = [
   { label: 'United States', value: 'us' },
   { label: 'Mexico', value: 'mx' },
-  { label: 'Denmark', value: 'dk'},
-]
+  { label: 'Denmark', value: 'dk' },
+];
 
-const validate = (value) => {
+const validate = value => {
   const errors = {};
   if (!value.streetAddress) {
     errors.streetAddress = 'Must type in your street address';

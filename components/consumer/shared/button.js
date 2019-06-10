@@ -4,19 +4,20 @@ export const CLASS_NAME = 'pbg-button';
 
 class BaseButton extends React.PureComponent {
   baseClassName = CLASS_NAME;
+
   state = {
     active: false,
-  }
+  };
 
   get buttonType() {
-    return !!this.props.onClick ? 'button' : 'submit';
+    return this.props.onClick ? 'button' : 'submit';
   }
 
   get className() {
     const { disabled, className } = this.props;
-    const base = className ? `${this.baseClassName} ${className}` :  this.baseClassName;
-    const disabledClass = disabled ? base + ' disabled' : base;
-    const activeClass = this.state.active ? disabledClass + ' pbg-button-active' : disabledClass;
+    const base = className ? `${this.baseClassName} ${className}` : this.baseClassName;
+    const disabledClass = disabled ? `${base} disabled` : base;
+    const activeClass = this.state.active ? `${disabledClass} pbg-button-active` : disabledClass;
     return activeClass;
   }
 
@@ -26,16 +27,16 @@ class BaseButton extends React.PureComponent {
 
   activate = () => {
     this.setState({ active: true });
-  }
+  };
 
   deactivate = () => {
     this.setState({ active: false });
-  }
+  };
 
-  onClick = (ev) => {
+  onClick = ev => {
     if (this.props.disabled) return;
-    if ((typeof this.props.onClick) === 'function') return this.props.onClick(ev);
-  }
+    if (typeof this.props.onClick === 'function') return this.props.onClick(ev);
+  };
 
   renderHint(Hint) {
     if (this.props.hint) {
@@ -60,7 +61,7 @@ class BaseButton extends React.PureComponent {
         >
           <span>{this.props.children}</span>
         </button>
-        { this.hint }
+        {this.hint}
       </div>
     );
   }

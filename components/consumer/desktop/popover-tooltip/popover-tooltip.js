@@ -1,11 +1,13 @@
 import React from 'react';
+import jQuery from 'jquery';
 import Container from '../container';
 import Popover from '../popover';
-import jQuery from 'jquery';
 import './style.css';
 
 class PopoverTooltip extends Popover {
-  bindDeactivationEvent = () => { return null; }
+  bindDeactivationEvent = () => {
+    return null;
+  };
 
   componentDidMount() {
     this.viewWidth = jQuery(window).width();
@@ -18,10 +20,15 @@ class PopoverTooltip extends Popover {
   get triggerComponent() {
     const TriggerComponent = this.props.trigger;
     if (!TriggerComponent) return null;
-    return <TriggerComponent onMouseEnter={() => {
-      console.log('activating')
-      this.activate()
-    }} onMouseLeave={this.deactivate}/>;
+    return (
+      <TriggerComponent
+        onMouseEnter={() => {
+          console.log('activating');
+          this.activate();
+        }}
+        onMouseLeave={this.deactivate}
+      />
+    );
   }
 }
 

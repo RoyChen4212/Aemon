@@ -2,9 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithFigma } from 'storybook-addon-figma';
-import {
-  Checkbox,
-} from '../../../components/consumer/desktop/checkbox';
+import { Checkbox } from '../../../components/consumer/desktop/checkbox';
 import FieldStateProvider from '../../util/field-state-provider';
 import { withContainer, wrapStory } from '../../util/decorators';
 
@@ -18,28 +16,13 @@ storiesOf('Consumer/Desktop/Atomic Components/Checkbox', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Checkbox/Unchecked', () => (
-    <FieldStateProvider
-      component={Checkbox}
-      name="field1"
-      onChange={action('change')}
-    />
+    <FieldStateProvider component={Checkbox} name="field1" onChange={action('change')} />
   ))
   .add('Checkbox/Checked', () => (
-    <FieldStateProvider
-      component={Checkbox}
-      name="field1"
-      value="true"
-      onChange={action('change')}
-    />
+    <FieldStateProvider component={Checkbox} name="field1" value="true" onChange={action('change')} />
   ))
   .add('Checkbox/Disabled', () => (
-    <FieldStateProvider
-      component={Checkbox}
-      name="field1"
-      value="true"
-      disabled
-      onChange={action('change')}
-    />
+    <FieldStateProvider component={Checkbox} name="field1" value="true" disabled onChange={action('change')} />
   ));
 
 storiesOf('Consumer/Desktop/Form Fields/Toggle', module)

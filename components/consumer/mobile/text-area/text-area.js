@@ -12,26 +12,29 @@ class TextArea extends TextField {
     style: {
       height: 'auto',
     },
-  }
+  };
 
   resetHeight() {
-    this.setState({
-      style: {
-        height: 'auto',
-      }
-    }, () => {
-      this.setState({
+    this.setState(
+      {
         style: {
-          height: `${this.el.current.scrollHeight}px`,
-        }
-      });
-    });
+          height: 'auto',
+        },
+      },
+      () => {
+        this.setState({
+          style: {
+            height: `${this.el.current.scrollHeight}px`,
+          },
+        });
+      }
+    );
   }
 
-  onTextChange = (value) => {
+  onTextChange = value => {
     this.onChange(value);
     this.resetHeight();
-  }
+  };
 
   get textAreaPlaceholder() {
     if (this.focused) return null;
@@ -54,7 +57,6 @@ class TextArea extends TextField {
       />
     );
   }
-
 }
 
 export { TextArea };

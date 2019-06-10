@@ -53,4 +53,4 @@ storiesOf('Consumer/Mobile/Form Fields/Password Field', module)
       forgotPasswordText="Forgot?"
       onForgotPassword={action('click')}
     />
-  ))
+  ));

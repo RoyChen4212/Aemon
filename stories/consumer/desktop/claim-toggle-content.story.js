@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import ClaimToggleContent from '../../../components/consumer/desktop/claim-toggle-content'
+import ClaimToggleContent from '../../../components/consumer/desktop/claim-toggle-content';
 import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
 
@@ -30,4 +30,3 @@ storiesOf('Consumer/Desktop/Payment Settings/claim-toggle-content', module)
       onChange={action('change')}
     />
   ));
-

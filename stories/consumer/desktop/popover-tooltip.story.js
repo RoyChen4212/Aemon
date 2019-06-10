@@ -15,18 +15,12 @@ const trigger = props => (
 
 storiesOf('Consumer/Desktop/Modals & Popovers', module)
   .addDecorator(withContainer)
-  .addDecorator((storyFn) => <div className="w-100 h-100 bg-light">{storyFn()}</div>)
+  .addDecorator(storyFn => <div className="w-100 h-100 bg-light">{storyFn()}</div>)
   .add('popover-tooltip/default', () => (
-    <PopoverTooltip
-      trigger={trigger}
-      content={<span>I am popover content</span>}
-    />
+    <PopoverTooltip trigger={trigger} content={<span>I am popover content</span>} />
   ))
   .add('popover-tooltip/default/constrained', () => (
     <div className="offset-sm-10 col-sm-2">
-      <PopoverTooltip
-        trigger={trigger}
-        content={<span>I am popover content</span>}
-      />
+      <PopoverTooltip trigger={trigger} content={<span>I am popover content</span>} />
     </div>
   ));

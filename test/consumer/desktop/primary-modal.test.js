@@ -30,7 +30,7 @@ describe('Sidebar Modal', () => {
 
   it('should call onBackClick upon clicking overlay', () => {
     const spy = sinon.spy();
-    const wrapper = shallow(<PrimaryModal onBackClick={spy}/>)
+    const wrapper = shallow(<PrimaryModal onBackClick={spy} />);
     wrapper.find('.pbg-modal-overlay').simulate('click');
     expect(spy.calledOnce).to.be.true;
   });
@@ -49,45 +49,45 @@ describe('Sidebar Modal', () => {
 
   it('should call onBackClick upon clicking overlay close icon', () => {
     const spy = sinon.spy();
-    const wrapper = shallow(<PrimaryModal onBackClick={spy}/>)
+    const wrapper = shallow(<PrimaryModal onBackClick={spy} />);
     wrapper.find('.pbg-modal-close-button').simulate('click');
     expect(spy.calledOnce).to.be.true;
   });
 
   it('should have main content section', () => {
     const wrapper = shallow(<PrimaryModal />);
-    expect(
-      wrapper.find(dialogClass).find(contentClass)
-    ).to.have.lengthOf(1);
+    expect(wrapper.find(dialogClass).find(contentClass)).to.have.lengthOf(1);
   });
 
   it('should render given children in main content', () => {
     const expected = <div>Some content</div>;
     const wrapper = shallow(<PrimaryModal mainContent={expected} />);
     expect(
-      wrapper.find(dialogClass).find(contentClass).contains(expected)
+      wrapper
+        .find(dialogClass)
+        .find(contentClass)
+        .contains(expected)
     ).to.be.true;
   });
 
   it('should have sidebar content section', () => {
     const wrapper = shallow(<PrimaryModal />);
-    expect(
-      wrapper.find(dialogClass).find(sidebarClass)
-    ).to.have.lengthOf(1);
+    expect(wrapper.find(dialogClass).find(sidebarClass)).to.have.lengthOf(1);
   });
 
   it('should render given children in main content', () => {
     const expected = <div>Some content</div>;
     const wrapper = shallow(<PrimaryModal sidebarContent={expected} />);
     expect(
-      wrapper.find(dialogClass).find(sidebarClass).contains(expected)
+      wrapper
+        .find(dialogClass)
+        .find(sidebarClass)
+        .contains(expected)
     ).to.be.true;
   });
 
   it('should render given alerts', () => {
-    const alerts = [
-      { type: 'error', title: 'error alert title', text: 'error alert text' },
-    ];
+    const alerts = [{ type: 'error', title: 'error alert title', text: 'error alert text' }];
     const wrapper = mount(<PrimaryModal alerts={alerts} />);
     expect(wrapper.find('.pbg-modal-alert-stack').find(ModalAlert)).to.have.lengthOf(1);
   });

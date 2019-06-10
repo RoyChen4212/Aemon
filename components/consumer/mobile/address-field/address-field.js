@@ -9,12 +9,14 @@ import './style.css';
 class AddressField extends AddOrSelectField {
   baseClassName = 'pbg-form-field pbg-address-field';
 
-  get options() { return this.adaptedProps.addressOptions; }
+  get options() {
+    return this.adaptedProps.addressOptions;
+  }
 
   get field() {
     return (
       <NewAddressField
-        onChange={(ev) => this.updateValue(ev.target.value)}
+        onChange={ev => this.updateValue(ev.target.value)}
         name="newAddressField"
         value={this.adaptedProps.value}
         countryOptions={this.adaptedProps.countryOptions}

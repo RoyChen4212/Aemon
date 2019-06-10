@@ -13,12 +13,14 @@ storiesOf('Consumer/Mobile/Atomic Components/Small Button', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Enabled/No Hint', () => (
-    <SmallButton onClick={action('clicked')}>Small Button</SmallButton>
-  ))
+  .add('Enabled/No Hint', () => <SmallButton onClick={action('clicked')}>Small Button</SmallButton>)
   .add('Enabled/With Hint', () => (
-    <SmallButton hint="With Hint" onClick={action('clicked')}>Small Button</SmallButton>
+    <SmallButton hint="With Hint" onClick={action('clicked')}>
+      Small Button
+    </SmallButton>
   ))
   .add('Disabled', () => (
-    <SmallButton disabled onClick={action('clicked')}>Small Button Disabled</SmallButton>
+    <SmallButton disabled onClick={action('clicked')}>
+      Small Button Disabled
+    </SmallButton>
   ));

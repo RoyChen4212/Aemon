@@ -9,10 +9,7 @@ import Label from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
 describe('MultiSelectField', () => {
-  const options = [
-    { label: 'Option 1', value: 'opt1' },
-    { label: 'Option 2', value: 'opt2' },
-  ];
+  const options = [{ label: 'Option 1', value: 'opt1' }, { label: 'Option 2', value: 'opt2' }];
 
   shouldBehaveLikeFormField(shallow(<MultiSelectField error="some error" />));
 
@@ -55,32 +52,30 @@ describe('MultiSelectField', () => {
     expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
   });
 
-  it('should return value with a list of all selected values', function (done) {
-    const onChange = (ev) => {
+  it('should return value with a list of all selected values', function(done) {
+    const onChange = ev => {
       expect(ev.target.value).to.eql(['opt1']);
       done();
-    }
+    };
     const wrapper = mount(<MultiSelectField onChange={onChange} options={options} />);
     const event = { target: { checked: true } };
     wrapper.find({ type: 'checkbox', name: 'checkbox_0' }).simulate('change', event);
   });
 
-  it('should return value with a list of all selected values', function (done) {
-    const onChange = (ev) => {
+  it('should return value with a list of all selected values', function(done) {
+    const onChange = ev => {
       expect(ev.target.value).to.eql([options[1].value]);
       done();
-    }
+    };
     const value = [options[1].value, options[0].value];
-    const wrapper = mount(
-      <MultiSelectField onChange={onChange} options={options} value={value} />
-    );
+    const wrapper = mount(<MultiSelectField onChange={onChange} options={options} value={value} />);
     const event = { target: { checked: false } };
     wrapper.find({ type: 'checkbox', name: 'checkbox_0' }).simulate('change', event);
   });
 
   it('should pass value to checkboxes', () => {
     const wrapper = shallow(<MultiSelectField options={options} value={[options[1].value]} />);
-    expect(wrapper.find(Checkbox).get(0).props.value).to.be.false
+    expect(wrapper.find(Checkbox).get(0).props.value).to.be.false;
     expect(wrapper.find(Checkbox).get(1).props.value).to.equal(true);
   });
 });

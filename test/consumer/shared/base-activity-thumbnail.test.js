@@ -15,7 +15,6 @@ import ActivityThumbnail, {
   PURCHASE_COMMENT_CREATED,
 } from '../../../components/consumer/shared/base-activity-thumbnail';
 
-
 describe('BaseActivityThumbnail', () => {
   it('should have the pbg-activity-thumbnail className', () => {
     const wrapper = shallow(<ActivityThumbnail type={PURCHASE_UPDATED} />);

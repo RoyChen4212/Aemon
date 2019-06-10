@@ -20,38 +20,42 @@ describe('Popover', () => {
   });
 
   it('should add class pbg-popover-active to popover element on click', function(done) {
-    const trigger = (props) => <a onClick={props.onClick}>Click Me</a>;
-    const wrapper = mount(
-      <Popover trigger={trigger} content={<div>I am content</div>}/>
-    );
+    const trigger = props => <a onClick={props.onClick}>Click Me</a>;
+    const wrapper = mount(<Popover trigger={trigger} content={<div>I am content</div>} />);
     wrapper.find('a').simulate('click');
     setTimeout(() => {
-      expect(wrapper.find('.pbg-popover').at(0).hasClass('pbg-popover-active')).to.be.true;
+      expect(
+        wrapper
+          .find('.pbg-popover')
+          .at(0)
+          .hasClass('pbg-popover-active')
+      ).to.be.true;
       done();
     });
   });
 
   it('should deactivate when clicked outside', function(done) {
-    const trigger = (props) => <a onClick={props.onClick}>Click Me</a>;
+    const trigger = props => <a onClick={props.onClick}>Click Me</a>;
     const wrapper = mount(
       <div className="wrapper">
-        <Popover trigger={trigger} content={<div>I am content</div>}/>
+        <Popover trigger={trigger} content={<div>I am content</div>} />
       </div>
     );
     wrapper.find('a').simulate('click');
     setTimeout(() => {
-      wrapper.find(Popover).instance().deactivateIfClickOutside({ target: <div></div> });
+      wrapper
+        .find(Popover)
+        .instance()
+        .deactivateIfClickOutside({ target: <div /> });
       expect(wrapper.find(Popover).instance().active).to.be.false;
       done();
     });
   });
 
   it('should not deactivate when clicked inside', function(done) {
-    const trigger = (props) => <a onClick={props.onClick}>Click Me</a>;
+    const trigger = props => <a onClick={props.onClick}>Click Me</a>;
     const content = <div className="content">I am content</div>;
-    const wrapper = mount(
-      <Popover trigger={trigger} content={content}/>
-    );
+    const wrapper = mount(<Popover trigger={trigger} content={content} />);
     wrapper.find('a').simulate('click');
     setTimeout(() => {
       wrapper.find('.content').simulate('click');

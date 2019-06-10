@@ -15,6 +15,8 @@ storiesOf('Consumer/Mobile/Atomic Components/Hint', module)
   .addDecorator(withContainer)
   .add('Standard', () => <Hint>{sampleText}</Hint>)
   .add('Clickable', () => (
-    <Hint type={hintTypes.CLICKABLE} onClick={action('click')}>{sampleText} (Click me)</Hint>
+    <Hint type={hintTypes.CLICKABLE} onClick={action('click')}>
+      {sampleText} (Click me)
+    </Hint>
   ))
-  .add('Error', () => <Hint type={hintTypes.ERROR}>{sampleText}</Hint>)
+  .add('Error', () => <Hint type={hintTypes.ERROR}>{sampleText}</Hint>);

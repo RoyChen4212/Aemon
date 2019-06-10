@@ -21,7 +21,9 @@ storiesOf('Consumer/Desktop/Atomic Components/Buttons', module)
     </React.Fragment>
   ))
   .add('cta-primary/submitting', () => (
-    <PrimaryButton disabled onClick={action('clicked')}>Primary Button</PrimaryButton>
+    <PrimaryButton disabled onClick={action('clicked')}>
+      Primary Button
+    </PrimaryButton>
   ))
   .add('facebook-button/default', () => (
     <FacebookButton onClick={action('clicked')}>Continue with Facebook</FacebookButton>

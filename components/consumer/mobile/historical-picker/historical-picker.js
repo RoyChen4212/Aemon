@@ -19,6 +19,6 @@ class HistoricalPicker extends Picker {
       </div>
     );
   }
-};
+}
 
 export { HistoricalPicker };

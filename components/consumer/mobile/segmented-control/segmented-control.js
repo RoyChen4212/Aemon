@@ -14,31 +14,31 @@ class SegmentedControl extends React.Component {
       }
     }),
     onChange: PropTypes.func.isRequired,
-  }
+  };
 
   static defaultProps = {
     array: [],
     onChange: () => {},
-  }
+  };
 
   static types = {
     list: 'list',
     pulse: 'pulse',
-  }
+  };
 
   state = {
     activeSegment: this.activeSegment,
-  }
+  };
 
   componentDidMount() {
     this.onChange(makeEvent(this.intialActiveSegment()));
     this.setState({ activeSegment: this.intialActiveSegment() });
   }
 
-  onChange = (ev) => {
+  onChange = ev => {
     this.props.onChange(ev);
     this.setState({ activeSegment: ev.target.value });
-  }
+  };
 
   intialActiveSegment() {
     const index = findIndex(this.props.segments, segment => segment.active);
@@ -58,7 +58,7 @@ class SegmentedControl extends React.Component {
     const className = `pbg-segmented-control-button ${config.type}${isActive ? ' active' : ''}`;
     return (
       <div className={className} onClick={() => this.onChange(makeEvent(index))}>
-        <span>{ config.label ? config.label : '[Label Placeholder]' }</span>
+        <span>{config.label ? config.label : '[Label Placeholder]'}</span>
       </div>
     );
   }
@@ -66,11 +66,11 @@ class SegmentedControl extends React.Component {
   render() {
     return (
       <div className="pbg-consumer-mobile pbg-segmented-control">
-        { this.firstControl }
-        { this.secondControl }
+        {this.firstControl}
+        {this.secondControl}
       </div>
-    )
+    );
   }
-};
+}
 
 export default SegmentedControl;
