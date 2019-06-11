@@ -1,0 +1,29 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-secondary-modal {
+  .pbg-modal-dialog {
+    top: calc((100% - 300px + 46px) / 2);
+    left: calc((100% - 450px) / 2);
+  }
+
+  .pbg-modal-content {
+    background: $white;
+    padding: 32px;
+    width: 450px;
+    border-radius: 4px;
+    text-align: center;
+  }
+
+  .pbg-modal-header {
+    padding-bottom: 24px;
+  }
+
+  .pbg-modal-icon {
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+
+  .pbg-icon-rocket-big:before {
+    content: url('../img/rocket-big.svg');
+  }
+}

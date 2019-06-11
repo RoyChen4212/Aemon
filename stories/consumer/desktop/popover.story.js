@@ -2,12 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Popover from '../../../components/consumer/desktop/popover';
 import Label, { labelTypes } from '../../../components/consumer/desktop/label';
-import { withContainer, wrapStory } from '../../util/decorators';
+import { withContainer } from '../../util/decorators';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Modals & Popovers', module)
+storiesOf('Consumer/Desktop/Modals & Popovers/popover', module)
   .addDecorator(withContainer)
   .addDecorator(storyFn => <div className="w-100 h-100 bg-light">{storyFn()}</div>)
   .add('popover/default', () => (

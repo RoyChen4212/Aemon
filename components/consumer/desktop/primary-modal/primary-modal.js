@@ -1,43 +1,42 @@
 import React from 'react';
-import Container from '../container';
-import ModalAlertStack from '../modal-alert-stack';
+import PropTypes from 'prop-types';
+
+import Modal from '../modal';
 
 import './style.css';
 
 class PrimaryModal extends React.PureComponent {
-  onBackClick = () => {
-    if (this.props.onBackClick) return this.props.onBackClick();
+  static propTypes = {
+    mainContent: PropTypes.node,
+    sidebarContent: PropTypes.node,
+    onClose: PropTypes.func,
+    onHideAlert: PropTypes.func,
+    alerts: PropTypes.arrayOf(PropTypes.object),
   };
 
-  renderModalAlertStack() {
-    return <ModalAlertStack alerts={this.props.alerts} onHideAlert={this.props.onHideAlert} />;
-  }
-
-  renderMainContent() {
-    return this._renderColumn('pbg-primary-modal-main-content', this.props.mainContent);
-  }
-
-  renderSidebarContent() {
-    return this._renderColumn('pbg-primary-modal-sidebar-content', this.props.sidebarContent);
-  }
-
-  _renderColumn(name, content) {
-    return <div className={`${name} pbg-primary-modal-col`}>{content}</div>;
-  }
+  static defaultProps = {
+    mainContent: null,
+    sidebarContent: null,
+    onClose: null,
+    onHideAlert: null,
+    alerts: [],
+  };
 
   render() {
     return (
-      <div className="pbg-consumer-desktop pbg-modal pbg-primary-modal">
-        <div className="pbg-modal-dialog">
-          {this.renderModalAlertStack()}
-          <Container solid shadow2>
-            {this.renderMainContent()}
-            {this.renderSidebarContent()}
-            <button type="button" className="pbg-modal-close-button" onClick={this.onBackClick} />
-          </Container>
+      <Modal
+        className="pbg-primary-modal"
+        onClose={this.props.onClose}
+        alerts={this.props.alerts}
+        onHideAlert={this.props.onHideAlert}
+      >
+        <div className="pbg-primary-modal-main-content pbg-primary-modal-col">
+          {this.props.mainContent}
         </div>
-        <div className="pbg-modal-overlay" onClick={this.onBackClick} />
-      </div>
+        <div className="pbg-primary-modal-sidebar-content pbg-primary-modal-col">
+          {this.props.sidebarContent}
+        </div>
+      </Modal>
     );
   }
 }
