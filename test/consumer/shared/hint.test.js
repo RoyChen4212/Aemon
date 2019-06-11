@@ -42,7 +42,10 @@ describe('Hint', () => {
   it('should call onClick event when given', () => {
     const onClick = sinon.spy();
     const wrapper = shallow(<Hint onClick={onClick}>some text</Hint>);
-    wrapper.find('span').find('a').simulate('click');
+    wrapper
+      .find('span')
+      .find('a')
+      .simulate('click');
     expect(onClick.calledOnce).to.be.true;
   });
 

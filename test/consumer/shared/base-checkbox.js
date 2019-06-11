@@ -3,10 +3,11 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import { shouldBehaveLikeFormField } from '../shared/form-field.test';
+import { shouldBehaveLikeFormField } from './form-field.test';
 import BaseCheckbox from '../../../components/consumer/shared/base-checkbox';
 import MobileFormField from '../../../components/consumer/mobile/form-field';
 import Label from '../../../components/consumer/mobile/label';
+
 const Checkbox = BaseCheckbox(MobileFormField, Label);
 
 describe('BaseCheckbox', () => {
@@ -30,25 +31,25 @@ describe('BaseCheckbox', () => {
   });
 
   it('checks the checkbox if true is passed as value', () => {
-    const wrapper = shallow(<Checkbox value={true} />)
+    const wrapper = shallow(<Checkbox value />);
     expect(wrapper.find({ type: 'checkbox' }).props().checked).to.be.true;
   });
 
   it('checkbox not checked if false is passed as value', () => {
-    const wrapper = shallow(<Checkbox value={false} />)
+    const wrapper = shallow(<Checkbox value={false} />);
     expect(wrapper.find({ type: 'checkbox' }).props().checked).to.be.false;
   });
 
   it('checkbox not checked if no value is passed', () => {
-    const wrapper = shallow(<Checkbox />)
+    const wrapper = shallow(<Checkbox />);
     expect(wrapper.find({ type: 'checkbox' }).props().checked).to.be.false;
   });
 
-  it('reports the value as true upon checking the checkbox', function (done) {
-    const onChange = (ev) => {
+  it('reports the value as true upon checking the checkbox', function(done) {
+    const onChange = ev => {
       expect(ev.target.value).to.be.true;
       done();
-    }
+    };
     const wrapper = shallow(<Checkbox onChange={onChange} />);
     const event = { target: { checked: true } };
     wrapper.find({ type: 'checkbox' }).simulate('change', event);

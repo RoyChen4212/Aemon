@@ -13,25 +13,11 @@ import {
   NewAddressField,
   MultiSelectField,
 } from './form-fields';
-import {
-  PrimaryButton,
-  SecondaryButton,
-  SmallButton,
-  LinkButton,
-  FacebookButton,
-  SmallFacebookButton,
-} from './button';
-import {
-  H1,
-  H2,
-  H3,
-} from './heading';
+import { PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton } from './button';
+import { H1, H2, H3 } from './heading';
 import Hint, { hintTypes } from './hint';
 import Label, { labelTypes } from './label';
-import {
-  UserCommentCard,
-  GroupActivityCard
-} from './activity-card';
+import { UserCommentCard, GroupActivityCard } from './activity-card';
 import SegmentedControl from './segmented-control';
 import Modal from './modal';
 import ContributorCard from './contributor-card';
@@ -60,8 +46,10 @@ const mobile = {
   H1,
   H2,
   H3,
-  Hint, hintTypes,
-  Label, labelTypes,
+  Hint,
+  hintTypes,
+  Label,
+  labelTypes,
   MultiSelectField,
   UserCommentCard,
   GroupActivityCard,

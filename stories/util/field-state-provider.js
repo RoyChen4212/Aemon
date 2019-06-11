@@ -5,19 +5,19 @@ class StateProvider extends React.Component {
     value: this.props.value || null,
     error: this.props.error || null,
     focused: false,
-  }
+  };
 
-  onChange = (ev) => {
+  onChange = ev => {
     this.setState({ value: ev.target.value }, this.runValidations);
     if (this.props.onChange) return this.props.onChange(ev);
-  }
+  };
 
-  onBlur = (ev) => {
+  onBlur = ev => {
     this.setState({ value: ev.target.value, focused: false }, this.runValidations);
     if (this.props.onBlur) return this.props.onBlur(ev);
-  }
+  };
 
-  onFocus = () => this.setState({ focused: true })
+  onFocus = () => this.setState({ focused: true });
 
   runValidations = () => {
     let error;
@@ -27,9 +27,11 @@ class StateProvider extends React.Component {
     if (error) {
       this.setState({ error });
     }
-  }
+  };
 
-  get error() { return this.state.error; }
+  get error() {
+    return this.state.error;
+  }
 
   render() {
     const Field = this.props.component;
@@ -45,7 +47,7 @@ class StateProvider extends React.Component {
           error={this.error}
         />
       </React.Fragment>
-    )
+    );
   }
 }
 

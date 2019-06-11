@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import PrimaryModal from '../../../components/consumer/desktop/primary-modal';
 import ModalAlert from '../../../components/consumer/desktop/modal-alert';

@@ -56,13 +56,14 @@ describe('Picker', () => {
 
   it('should render the an error if given despite a hint being passed', () => {
     const error = 'terrible error';
-    const wrapper = shallow(<Picker error={error} hint='hint' />);
+    const wrapper = shallow(<Picker error={error} hint="hint" />);
     expect(wrapper.find('.pbg-picker').contains(<Hint type={hintTypes.ERROR}>{error}</Hint>)).to.be.true;
   });
 
   it('should render a custom arrow element', () => {
     const wrapper = shallow(<Picker />);
-    const el = wrapper.find('.pbg-picker')
+    const el = wrapper
+      .find('.pbg-picker')
       .find('.pbg-picker-select-container')
       .find('.pbg-picker-arrow');
     expect(el).to.have.lengthOf(1);
@@ -89,9 +90,9 @@ describe('Picker', () => {
     expect(onChange.calledWith(expected)).to.be.true;
   });
 
-  it('should call onChange with correct value if value is null', function (done) {
+  it('should call onChange with correct value if value is null', function(done) {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: null }];
-    const onChange = (ev) => {
+    const onChange = ev => {
       expect(ev.target.value).to.equal(null);
       done();
     };
@@ -100,12 +101,9 @@ describe('Picker', () => {
     wrapper.find('select').simulate('change', event);
   });
 
-  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function (done) {
-    const opts = [
-      { label: 'option 1', value: 'opt1' },
-      { label: 'option 2', value: null }
-    ];
-    const onChange = (ev) => {
+  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function(done) {
+    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: null }];
+    const onChange = ev => {
       expect(ev.target.value).to.equal(null);
       done();
     };
@@ -127,8 +125,8 @@ describe('Picker', () => {
   });
 
   it('should select correct option when value is given', () => {
-    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }]
-    const value = opts[1].value;
+    const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: 'opt2' }];
+    const { value } = opts[1];
     const wrapper = shallow(<Picker options={opts} value={value} />);
     expect(wrapper.find('select').prop('value')).to.be.equal(value);
   });

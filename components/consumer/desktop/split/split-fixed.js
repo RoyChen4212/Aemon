@@ -16,6 +16,6 @@ class SplitFixed extends SplitEven {
       </div>
     );
   }
-};
+}
 
 export { SplitFixed };

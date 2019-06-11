@@ -5,9 +5,14 @@ import sinon from 'sinon';
 
 import Button from '../../../components/consumer/shared/button';
 
-export const shouldBehaveLikeButton = (wrapper) => {
+export const shouldBehaveLikeButton = wrapper => {
   beforeEach(() => {
-    wrapper.setProps({ children: 'A button', disabled: null, onClick: null, hint: null });
+    wrapper.setProps({
+      children: 'A button',
+      disabled: null,
+      onClick: null,
+      hint: null,
+    });
   });
 
   it('should render a button tag', () => {
@@ -20,13 +25,13 @@ export const shouldBehaveLikeButton = (wrapper) => {
 
   it('should pass extra classNames given', () => {
     const expected = 'extra-class';
-    wrapper.setProps({ className: expected});
+    wrapper.setProps({ className: expected });
     expect(wrapper.find('button').hasClass('pbg-button')).to.be.true;
     expect(wrapper.find('button').hasClass(expected)).to.be.true;
   });
 
   it('should add disabled class when disabled prop is present', () => {
-    wrapper.setProps({ disabled: true })
+    wrapper.setProps({ disabled: true });
     expect(wrapper.find('button').hasClass('disabled')).to.be.true;
   });
 
@@ -64,7 +69,7 @@ export const shouldBehaveLikeButton = (wrapper) => {
 
   it('should not attempt to call click handler if not a function', () => {
     const onClick = '';
-    wrapper.setProps({ onClick  });
+    wrapper.setProps({ onClick });
     expect(() => wrapper.find('button').simulate('click')).not.to.throw();
   });
 

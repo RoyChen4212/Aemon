@@ -33,13 +33,7 @@ storiesOf('Consumer/Mobile/Form Fields/Picker', module)
     />
   ))
   .add('Valid/Required', () => (
-    <Picker
-      name="picker"
-      label="Label"
-      onChange={action('onChange')}
-      required
-      options={options}
-    />
+    <Picker name="picker" label="Label" onChange={action('onChange')} required options={options} />
   ))
   .add('Invalid', () => (
     <Picker

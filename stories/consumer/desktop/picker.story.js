@@ -13,12 +13,21 @@ const simpleOptions = [
   { label: { term: 'Choose one' }, value: PICKER_EMPTY_VALUE },
   { label: { term: 'First option' }, value: 'first' },
   { label: { term: 'Second option' }, value: 'second' },
-  { label: { term: 'Extremely long text here, this should expand menu' }, value: 'third' },
+  {
+    label: { term: 'Extremely long text here, this should expand menu' },
+    value: 'third',
+  },
 ];
 
 const splitOptions = [
-  { label: { term: 'evenly', desc: 'split total cost into even shares' }, value: 'evenly' },
-  { label: { term: 'custom', desc: 'vary share amounts per contributor' }, value: 'custom' },
+  {
+    label: { term: 'evenly', desc: 'split total cost into even shares' },
+    value: 'evenly',
+  },
+  {
+    label: { term: 'custom', desc: 'vary share amounts per contributor' },
+    value: 'custom',
+  },
 ];
 const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 
@@ -112,7 +121,7 @@ storiesOf('Consumer/Desktop/Atomic Components/small-simple-picker', module)
       options={simpleOptions}
       simple
     />
-  ))
+  ));
 
 storiesOf('Consumer/Desktop/Form Fields/picker', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)

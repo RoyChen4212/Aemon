@@ -1,5 +1,4 @@
 import React from 'react';
-import drop from 'lodash/drop';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { WithFigma } from 'storybook-addon-figma';
@@ -43,6 +42,42 @@ class FullPrimaryModal extends React.Component {
     alerts: [],
   };
 
+  get showingPrimaryModal() {
+    return this.state.showingPrimaryModal;
+  }
+
+  get alerts() {
+    return this.state.alerts;
+  }
+
+  get modal() {
+    if (!this.showingPrimaryModal) return null;
+    return (
+      <PrimaryModal
+        onClose={this.hidePrimaryModal}
+        mainContent={
+          <div>
+            <h2>Main content</h2>
+            <p>This is the main content section, style it as you want.</p>
+            <PrimaryButton onClick={this.addSuccessAlert}>
+              Add success alert
+            </PrimaryButton>
+          </div>
+        }
+        sidebarContent={
+          <div>
+            <h2>Sidebar content</h2>
+            <p>This is the sidebar content section, style it as you want.</p>
+            <PrimaryButton onClick={this.addWarningAlert}>
+              Add warning alert
+            </PrimaryButton>
+          </div>
+        }
+        alerts={this.alerts}
+      />
+    );
+  }
+
   showPrimaryModal = () => {
     this.setState({ showingPrimaryModal: true });
   };
@@ -68,43 +103,6 @@ class FullPrimaryModal extends React.Component {
       ],
     });
   };
-
-  get showingPrimaryModal() {
-    return this.state.showingPrimaryModal;
-  }
-
-  get alerts() {
-    return this.state.alerts;
-  }
-
-  get modal() {
-    if (this.showingPrimaryModal) {
-      return (
-        <PrimaryModal
-          onClose={this.hidePrimaryModal}
-          mainContent={
-            <div>
-              <h2>Main content</h2>
-              <p>This is the main content section, style it as you want.</p>
-              <PrimaryButton onClick={this.addSuccessAlert}>
-                Add success alert
-              </PrimaryButton>
-            </div>
-          }
-          sidebarContent={
-            <div>
-              <h2>Sidebar content</h2>
-              <p>This is the sidebar content section, style it as you want.</p>
-              <PrimaryButton onClick={this.addWarningAlert}>
-                Add warning alert
-              </PrimaryButton>
-            </div>
-          }
-          alerts={this.alerts}
-        />
-      );
-    }
-  }
 
   render() {
     return (

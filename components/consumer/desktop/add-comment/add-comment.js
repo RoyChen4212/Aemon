@@ -4,7 +4,7 @@ import TextArea from '../text-area';
 import Avatar from '../avatar';
 import { PrimaryButton } from '../button';
 
-import './style.css'
+import './style.css';
 
 class AddComment extends BaseAddComment {
   baseClassName = 'pbg-consumer-desktop pbg-add-comment';
@@ -20,6 +20,6 @@ class AddComment extends BaseAddComment {
   get textArea() {
     return this.renderTextArea(TextArea);
   }
-};
+}
 
 export default AddComment;

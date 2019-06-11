@@ -3,10 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Label, {
-  labelClassNames,
-  labelTypes,
-} from '../../../components/consumer/shared/label';
+import Label, { labelClassNames, labelTypes } from '../../../components/consumer/shared/label';
 
 describe('Label', () => {
   it('should render a label tag', () => {
@@ -54,7 +51,11 @@ describe('Label', () => {
 
   it('should contain all correct classes when given className and type', () => {
     const className = 'extra-class';
-    const wrapper = shallow(<Label type={labelTypes.STRONG} className={className}>some text</Label>);
+    const wrapper = shallow(
+      <Label type={labelTypes.STRONG} className={className}>
+        some text
+      </Label>
+    );
     expect(wrapper.find('label').hasClass(labelClassNames.base)).to.be.true;
     expect(wrapper.find('label').hasClass(className)).to.be.true;
     expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.STRONG])).to.be.true;
@@ -63,18 +64,30 @@ describe('Label', () => {
   it('should call onClick when when clickable type', () => {
     const onClick = sinon.spy();
     const wrapper = shallow(
-      <Label type={labelTypes.CLICKABLE} onClick={onClick}>some text</Label>
+      <Label type={labelTypes.CLICKABLE} onClick={onClick}>
+        some text
+      </Label>
     );
-    wrapper.find('label').find('a').simulate('click');
+    wrapper
+      .find('label')
+      .find('a')
+      .simulate('click');
     expect(onClick.calledOnce).to.be.true;
   });
 
   it('should add href prop with correct value when provided to clickable type', () => {
     const url = '/some/url';
     const wrapper = shallow(
-      <Label type={labelTypes.CLICKABLE} href={url}>some text</Label>
+      <Label type={labelTypes.CLICKABLE} href={url}>
+        some text
+      </Label>
     );
-    expect(wrapper.find('label').find('a').prop('href')).to.equal(url);
+    expect(
+      wrapper
+        .find('label')
+        .find('a')
+        .prop('href')
+    ).to.equal(url);
   });
 
   it('should have correct class when active type', () => {

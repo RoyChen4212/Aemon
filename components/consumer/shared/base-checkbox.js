@@ -1,16 +1,20 @@
 import React from 'react';
 import makeEvent from '../../lib/make-event';
 
-const ComposeCheckbox = (FormField, Label, _baseClassName) => (
+const ComposeCheckbox = (FormField, Label, _baseClassName) =>
   class BaseCheckbox extends FormField {
     baseClassName = _baseClassName || 'pbg-form-field pbg-checkbox';
 
-    get checked() { return this.adaptedProps.value || false; }
+    get checked() {
+      return this.adaptedProps.value || false;
+    }
 
     get label() {
       const { label } = this.adaptedProps;
       const labelElement = (
-        <Label type={this.labelType} required={this.adaptedProps.required}>{label}</Label>
+        <Label type={this.labelType} required={this.adaptedProps.required}>
+          {label}
+        </Label>
       );
       return label ? labelElement : null;
     }
@@ -31,7 +35,6 @@ const ComposeCheckbox = (FormField, Label, _baseClassName) => (
         </div>
       );
     }
-  }
-);
+  };
 
 export default ComposeCheckbox;

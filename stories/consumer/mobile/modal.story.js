@@ -13,7 +13,7 @@ const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile
 
 storiesOf('Consumer/Mobile/Dashboard/Modal', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
-  .addDecorator(storyFn => <div style={{minHeight: '600px'}}>{storyFn()}</div>)
+  .addDecorator(storyFn => <div style={{ minHeight: '600px' }}>{storyFn()}</div>)
   .addDecorator(wrapStory)
   .addDecorator(withMobileSizing)
   .addDecorator(withGreyContainer)
@@ -23,8 +23,16 @@ storiesOf('Consumer/Mobile/Dashboard/Modal', module)
       onBackClick={action('click')}
       title="Remove from group"
       cta={[
-        { label: 'Cancel', onClick: action('click'), type: buttonTypes.SECONDARY },
-        { label: 'Remove 3 contributors', onClick: action('click'), type: buttonTypes.PRIMARY },
+        {
+          label: 'Cancel',
+          onClick: action('click'),
+          type: buttonTypes.SECONDARY,
+        },
+        {
+          label: 'Remove 3 contributors',
+          onClick: action('click'),
+          type: buttonTypes.PRIMARY,
+        },
       ]}
     >
       <p>
@@ -32,8 +40,8 @@ storiesOf('Consumer/Mobile/Dashboard/Modal', module)
         <Label type={labelTypes.STRONG}>Dora Grant, Simon Pague, and Ronnie Johns</Label>
       </p>
       <p>
-        If you remove these contributors, they will no longer count towards your group's total,
-        and they will not receive any future updates about this purchase.
+        If you remove these contributors, they will no longer count towards your group's total, and they will not
+        receive any future updates about this purchase.
       </p>
     </Modal>
   ))
@@ -43,8 +51,18 @@ storiesOf('Consumer/Mobile/Dashboard/Modal', module)
       onBackClick={action('click')}
       title="Remove from group"
       cta={[
-        { label: 'Cancel', onClick: action('click'), type: buttonTypes.SECONDARY, disabled: true },
-        { label: 'Remove 3 contributors', onClick: action('click'), type: buttonTypes.PRIMARY, disabled: true },
+        {
+          label: 'Cancel',
+          onClick: action('click'),
+          type: buttonTypes.SECONDARY,
+          disabled: true,
+        },
+        {
+          label: 'Remove 3 contributors',
+          onClick: action('click'),
+          type: buttonTypes.PRIMARY,
+          disabled: true,
+        },
       ]}
     >
       <p>
@@ -52,25 +70,25 @@ storiesOf('Consumer/Mobile/Dashboard/Modal', module)
         <Label type={labelTypes.STRONG}>Dora Grant, Simon Pague, and Ronnie Johns</Label>
       </p>
       <p>
-        If you remove these contributors, they will no longer count towards your group's total,
-        and they will not receive any future updates about this purchase.
+        If you remove these contributors, they will no longer count towards your group's total, and they will not
+        receive any future updates about this purchase.
       </p>
     </Modal>
   ))
-  .add('Fully functional', () => (<FullModal />));
+  .add('Fully functional', () => <FullModal />);
 
 class FullModal extends React.Component {
   state = {
     showingModal: false,
-  }
+  };
 
   showModal = () => {
     this.setState({ showingModal: true });
-  }
+  };
 
   hideModal = () => {
     this.setState({ showingModal: false });
-  }
+  };
 
   get showingModal() {
     return this.state.showingModal;
@@ -84,8 +102,16 @@ class FullModal extends React.Component {
           onBackClick={this.hideModal}
           title="Remove from group"
           cta={[
-            { label: 'Cancel', onClick: action('click'), type: buttonTypes.SECONDARY },
-            { label: 'Remove 3 contributors', onClick: action('click'), type: buttonTypes.PRIMARY },
+            {
+              label: 'Cancel',
+              onClick: action('click'),
+              type: buttonTypes.SECONDARY,
+            },
+            {
+              label: 'Remove 3 contributors',
+              onClick: action('click'),
+              type: buttonTypes.PRIMARY,
+            },
           ]}
         >
           <p>
@@ -93,11 +119,11 @@ class FullModal extends React.Component {
             <Label type={labelTypes.STRONG}>Dora Grant, Simon Pague, and Ronnie Johns</Label>
           </p>
           <p>
-            If you remove these contributors, they will no longer count towards your group's total,
-            and they will not receive any future updates about this purchase.
+            If you remove these contributors, they will no longer count towards your group's total, and they will not
+            receive any future updates about this purchase.
           </p>
         </Modal>
-      )
+      );
     }
   }
 

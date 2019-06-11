@@ -1,6 +1,6 @@
 .pbg-consumer-desktop {
   &.pbg-checkbox {
-    content: "";
+    content: '';
     clear: both;
     display: table;
     input {
@@ -13,6 +13,11 @@
     .pbg-checkbox-label-hint-placeholder {
       float: left;
       width: calc(100% - 16px);
+
+      .pbg-label {
+        display: flex;
+        margin-top: 2px;
+      }
 
       .pbg-hint {
         display: block;

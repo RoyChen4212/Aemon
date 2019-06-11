@@ -11,13 +11,13 @@ describe('Banner', () => {
   });
 
   it('should have correct wrapper class', () => {
-    const wrapper = shallow(<Banner text='' />);
+    const wrapper = shallow(<Banner text="" />);
     expect(wrapper.hasClass('pbg-banner')).to.be.true;
   });
 
   it('should pass "dark-blue" as default color prop and render correct background class', () => {
     const expectedColor = Banner.COLORS.DARK_BLUE;
-    const wrapper = mount(<Banner text='Any' />);
+    const wrapper = mount(<Banner text="Any" />);
     expect(wrapper.prop('color')).to.equal(expectedColor);
     expect(wrapper.render().hasClass('pbg-banner-dark-blue')).to.be.true;
   });

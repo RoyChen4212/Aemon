@@ -13,12 +13,14 @@ storiesOf('Consumer/Mobile/Atomic Components/Primary Button', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Enabled/No Hint', () => (
-    <PrimaryButton onClick={action('clicked')}>Primary Button</PrimaryButton>
-  ))
+  .add('Enabled/No Hint', () => <PrimaryButton onClick={action('clicked')}>Primary Button</PrimaryButton>)
   .add('Enabled/With Hint', () => (
-    <PrimaryButton hint="With Hint" onClick={action('clicked')}>Primary Button</PrimaryButton>
+    <PrimaryButton hint="With Hint" onClick={action('clicked')}>
+      Primary Button
+    </PrimaryButton>
   ))
   .add('Disabled', () => (
-    <PrimaryButton disabled onClick={action('clicked')}>Primary Button Disabled</PrimaryButton>
+    <PrimaryButton disabled onClick={action('clicked')}>
+      Primary Button Disabled
+    </PrimaryButton>
   ));

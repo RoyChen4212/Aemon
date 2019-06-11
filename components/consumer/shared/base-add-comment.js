@@ -2,7 +2,9 @@ import React from 'react';
 import BaseFormField from './base-form-field';
 
 class BaseAddComment extends BaseFormField {
-  get className() { return this.baseClassName; }
+  get className() {
+    return this.baseClassName;
+  }
 
   get avatar() {
     throw new Error('Not implemented, Implement this method in a sub-class.');
@@ -32,16 +34,14 @@ class BaseAddComment extends BaseFormField {
   render() {
     return (
       <div className={this.className}>
-        <div className="pbg-add-comment-avatar-placeholder">
-          {this.avatar}
-        </div>
+        <div className="pbg-add-comment-avatar-placeholder">{this.avatar}</div>
         <div className="pbg-add-comment-form-placeholder">
-          { this.textArea }
-          { this.submitButton }
+          {this.textArea}
+          {this.submitButton}
         </div>
       </div>
     );
   }
-};
+}
 
 export default BaseAddComment;

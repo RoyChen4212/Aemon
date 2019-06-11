@@ -12,12 +12,14 @@ storiesOf('Consumer/Mobile/Atomic Components/Facebook Button', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Enabled/No Hint', () => (
-    <FacebookButton onClick={action('clicked')}>Facebook Button</FacebookButton>
-  ))
+  .add('Enabled/No Hint', () => <FacebookButton onClick={action('clicked')}>Facebook Button</FacebookButton>)
   .add('Enabled/With Hint', () => (
-    <FacebookButton hint="With Hint" onClick={action('clicked')}>Facebook Button</FacebookButton>
+    <FacebookButton hint="With Hint" onClick={action('clicked')}>
+      Facebook Button
+    </FacebookButton>
   ))
   .add('Disabled', () => (
-    <FacebookButton disabled onClick={action('clicked')}>Facebook Button Disabled</FacebookButton>
+    <FacebookButton disabled onClick={action('clicked')}>
+      Facebook Button Disabled
+    </FacebookButton>
   ));

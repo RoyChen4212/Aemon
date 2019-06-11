@@ -20,6 +20,8 @@ storiesOf('Consumer/Mobile/Atomic Components/Label', module)
   .add('Strong Label', () => <Label type={labelTypes.STRONG}>{sampleText}</Label>)
   .add('Secondary Label', () => <Label type={labelTypes.SECONDARY}>{sampleText}</Label>)
   .add('Clickable Label', () => (
-    <Label type={labelTypes.CLICKABLE} onClick={action('clicked')}>{sampleText} (Click me)</Label>
+    <Label type={labelTypes.CLICKABLE} onClick={action('clicked')}>
+      {sampleText} (Click me)
+    </Label>
   ))
   .add('Error Label', () => <Label type={labelTypes.ERROR}>{sampleText}</Label>);

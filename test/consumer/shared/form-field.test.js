@@ -5,13 +5,13 @@ import sinon from 'sinon';
 
 import BaseFormField from '../../../components/consumer/shared/base-form-field';
 
-export const shouldBehaveLikeFormField = (wrapper) => {
+export const shouldBehaveLikeFormField = wrapper => {
   it('should have class pbg-form-field', () => {
     expect(wrapper.hasClass('pbg-form-field')).to.be.true;
   });
 
   it('should have correct class when error', () => {
-    wrapper.setProps({ error: 'some error'});
+    wrapper.setProps({ error: 'some error' });
     expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
   });
 
@@ -26,11 +26,11 @@ describe('BaseFormField', () => {
 
   it('should use prop adapter when provided', () => {
     const onChange = sinon.spy();
-    const adapter = sinon.spy((props) => ({ ...props.toAdapt }));
+    const adapter = sinon.spy(props => ({ ...props.toAdapt }));
     const props = {
       toAdapt: { onChange },
     };
-    const wrapper = shallow(<BaseFormField {...props} adapter={adapter} />)
+    const wrapper = shallow(<BaseFormField {...props} adapter={adapter} />);
     wrapper.instance().onChange();
     expect(adapter.called).to.be.true;
     expect(onChange.called).to.be.true;
@@ -51,5 +51,4 @@ describe('BaseFormField', () => {
       return instance.hintOrError;
     }).to.throw('Not implemented, Implement this method in a sub-class.');
   });
-
 });

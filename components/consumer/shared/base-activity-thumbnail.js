@@ -17,7 +17,7 @@ export const PAYMENT_AUTHORIZED_REGULAR = 'payment_authorized_regular';
 export const PAYMENT_AUTHORIZED_LAST = 'payment_authorized_last';
 export const PAYMENT_CAPTURED = 'payment_captured';
 export const PURCHASE_COMPLETED = 'purchase_completed';
-export const PURCHASE_COMMENT_CREATED = 'purchase_comment_created'
+export const PURCHASE_COMMENT_CREATED = 'purchase_comment_created';
 export const DEFAULT_ICON_URL = `${URL_PREFIX}${MEMBER_WITHDREW}`;
 
 const types = [
@@ -41,7 +41,7 @@ const types = [
 class ActivityThumbnail extends React.PureComponent {
   baseClassName = 'pbg-activity-thumbnail';
 
-  static DEFAULT_SIZE = 32
+  static DEFAULT_SIZE = 32;
 
   static propTypes = {
     size: PropTypes.number.isRequired,
@@ -50,13 +50,10 @@ class ActivityThumbnail extends React.PureComponent {
     fullName: PropTypes.string,
     type(props, propName) {
       if (!includes(types, props[propName])) {
-        return new Error(
-          'Invalid prop `' + propName + '` supplied to' +
-          ' `' + componentName + '`. Validation failed.'
-        );
+        return new Error(`Invalid prop \`${propName}\` supplied to` + ` \`${componentName}\`. Validation failed.`);
       }
     },
-  }
+  };
 
   static defaultProps = {
     size: ActivityThumbnail.DEFAULT_SIZE,
@@ -64,7 +61,7 @@ class ActivityThumbnail extends React.PureComponent {
     userId: null,
     src: null,
     fullName: null,
-  }
+  };
 
   static icons = {
     [PURCHASE_UPDATED]: `${URL_PREFIX}${PURCHASE_UPDATED}.svg`,
@@ -81,7 +78,7 @@ class ActivityThumbnail extends React.PureComponent {
     [PAYMENT_CAPTURED]: `${URL_PREFIX}${PAYMENT_CAPTURED}.svg`,
     [PURCHASE_COMPLETED]: `${URL_PREFIX}${PURCHASE_COMPLETED}.svg`,
     [PURCHASE_COMMENT_CREATED]: false,
-  }
+  };
 
   get shouldRenderAvatar() {
     const hasUrl = !!ActivityThumbnail.icons[this.props.type];
@@ -111,4 +108,4 @@ class ActivityThumbnail extends React.PureComponent {
   }
 }
 
-export default ActivityThumbnail
+export default ActivityThumbnail;

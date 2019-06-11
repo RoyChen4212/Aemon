@@ -27,10 +27,22 @@ storiesOf('Consumer/Desktop/Atomic Components/Typography', module)
   .add('label/required', () => <p className="pbg-desktop-label-normal">required label *</p>)
   .add('label/link', () => <p className="pbg-desktop-label-link">link label</p>)
   .add('p', () => <P>paragraph</P>)
-  .add('p/secondary', () => <P><span className="pbg-paragraph-secondary">paragraph</span></P>)
+  .add('p/secondary', () => (
+    <P>
+      <span className="pbg-paragraph-secondary">paragraph</span>
+    </P>
+  ))
   .add('small/normal', () => <Hint>small normal</Hint>)
   .add('small/link', () => <span className="pbg-consumer-desktop pbg-hint-link">small link</span>)
   .add('small/error', () => <span className="pbg-consumer-desktop pbg-hint-error">small error</span>)
   .add('small/strong', () => <span className="pbg-consumer-desktop pbg-hint-strong">small strong</span>)
-  .add('list/unordered', () => <Ul><li>Label</li></Ul>)
-  .add('list/ordered', () => <Ol><li>Label</li></Ol>);
+  .add('list/unordered', () => (
+    <Ul>
+      <li>Label</li>
+    </Ul>
+  ))
+  .add('list/ordered', () => (
+    <Ol>
+      <li>Label</li>
+    </Ol>
+  ));

@@ -4,8 +4,8 @@ import { labelTypes } from '../label';
 import './style.css';
 
 class TextField extends FormField {
-
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-text-field';
+
   baseType = 'text';
 
   get labelType() {
@@ -13,7 +13,9 @@ class TextField extends FormField {
     return labelTypes.base;
   }
 
-  get type() { return this.adaptedProps.type || this.baseType };
+  get type() {
+    return this.adaptedProps.type || this.baseType;
+  }
 
   get value() {
     return this.adaptedProps.value || '';
@@ -56,9 +58,9 @@ class TextField extends FormField {
 
     return (
       <div className="pbg-text-field-icon">
-        <img src={this.props.icon}  />
+        <img src={this.props.icon} />
       </div>
-    )
+    );
   }
 
   render() {

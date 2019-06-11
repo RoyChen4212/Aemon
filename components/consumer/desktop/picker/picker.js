@@ -18,7 +18,7 @@ class Picker extends FormField {
 
   state = {
     active: false,
-  }
+  };
 
   get labelText() {
     const opt = find(this.options, opt => opt.value === this.value);
@@ -33,7 +33,7 @@ class Picker extends FormField {
     return this.adaptedProps.value === null ? PICKER_EMPTY_VALUE : this.adaptedProps.value;
   }
 
-  onOptionClick = (value) => () => {
+  onOptionClick = value => () => {
     const val = value === PICKER_EMPTY_VALUE ? null : value;
     clearTimeout(this.deactivateTimeout);
     this.onChange(makeEvent(val));
@@ -41,25 +41,31 @@ class Picker extends FormField {
   };
 
   activate = () => {
-    if (this.disabled) return
+    if (this.disabled) return;
     this.setState({ active: true });
-  }
+  };
 
   deactivate = (ev, callback) => {
     if (this.disabled) return false;
     this.deactivateTimeout = setTimeout(() => {
       this.setState({ active: false }, () => callback && callback(makeEvent(this.value)));
     }, 150);
-  }
+  };
 
   renderPickerButton() {
     const style = this.props.button ? 'pbg-picker-button' : 'pbg-picker-text';
     return (
-      <button className={style} type="button" onFocus={this.onFocus} onClick={this.activate} onBlur={ev => this.deactivate(ev, this.onBlur)}>
+      <button
+        className={style}
+        type="button"
+        onFocus={this.onFocus}
+        onClick={this.activate}
+        onBlur={ev => this.deactivate(ev, this.onBlur)}
+      >
         <span>{this.labelText}</span>
-        <i className="pbg-picker-arrow"/>
+        <i className="pbg-picker-arrow" />
       </button>
-    )
+    );
   }
 
   render() {
@@ -72,12 +78,13 @@ class Picker extends FormField {
             options={this.options}
             active={this.state.active}
             selected={this.value}
-            onOptionClick={this.onOptionClick} />
+            onOptionClick={this.onOptionClick}
+          />
         </div>
         {!this.props.simple && this.hintOrError}
       </div>
     );
   }
-};
+}
 
 export default Picker;

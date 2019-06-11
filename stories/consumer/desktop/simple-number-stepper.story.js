@@ -15,10 +15,4 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-number-stepper', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('simple-number-stepper/default', () => (
-    <SimpleNumberStepper 
-      min={1}
-      max={1001}
-      value={999}
-    />
-  ));
+  .add('simple-number-stepper/default', () => <SimpleNumberStepper min={1} max={1001} value={999} />);

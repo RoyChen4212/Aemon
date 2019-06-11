@@ -5,7 +5,9 @@ import Label, { labelTypes } from './label';
 import Hint from './hint';
 
 class FormField extends BaseFormField {
-  get labelType() { return labelTypes.base; }
+  get labelType() {
+    return labelTypes.base;
+  }
 
   get label() {
     return this.renderLabel(Label);
@@ -14,6 +16,6 @@ class FormField extends BaseFormField {
   get hintOrError() {
     return this.renderHintOrError(Hint);
   }
-};
+}
 
 export default FormField;

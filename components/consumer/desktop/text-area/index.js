@@ -5,6 +5,7 @@ import './style.css';
 
 class TextArea extends FormField {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-text-area';
+
   baseType = 'text';
 
   get rows() {

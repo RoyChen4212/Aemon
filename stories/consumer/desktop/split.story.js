@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { SplitEven, SplitCustom, SplitFixed } from '../../../components/consumer/desktop/split';
 import { withContainer, wrapStory } from '../../util/decorators';
-import { action } from '@storybook/addon-actions';
 import FieldStateProvider from '../../util/field-state-provider';
 
 import '../../style.css';
@@ -22,14 +22,11 @@ const copyFixed = {
   shares: 'shares for purchase',
 };
 
-const options = [
-  { label: {term: 'even'}, value: 'even' },
-  { label: {term: 'custom'}, value: 'custom' },
-];
+const options = [{ label: { term: 'even' }, value: 'even' }, { label: { term: 'custom' }, value: 'custom' }];
 
 const sharesSingleValue = { minShares: 6 };
 const sharesRangeValue = { minShares: 6, maxShares: 10 };
-const boundaries = [5,15];
+const boundaries = [5, 15];
 
 storiesOf('Consumer/Desktop/Payment Settings/split', module)
   .addDecorator(wrapStory)
@@ -37,67 +34,69 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
   .add('split/even/option/min', () => (
     <FieldStateProvider
       component={SplitEven}
-      value={{splitType: 'even', ...sharesSingleValue}}
+      value={{ splitType: 'even', ...sharesSingleValue }}
       boundaries={boundaries}
       copy={copy}
       options={options}
       onChange={action('change')}
-      min 
-    />)
-  )
+      min
+    />
+  ))
   .add('split/even/option/range', () => (
     <FieldStateProvider
       component={SplitEven}
-      value={{splitType: 'even', ...sharesRangeValue}}
+      value={{ splitType: 'even', ...sharesRangeValue }}
       boundaries={boundaries}
       copy={copy}
       options={options}
       onChange={action('change')}
-      range />
-    )
-  )
+      range
+    />
+  ))
   .add('split/even/locked/min', () => (
     <FieldStateProvider
       component={SplitEven}
-      value={{splitType: 'even', ...sharesSingleValue}}
+      value={{ splitType: 'even', ...sharesSingleValue }}
       boundaries={boundaries}
-      copy={copy}
-      options={options} 
-      onChange={action('change')}
-      min locked
-    />)
-  )
-  .add('split/even/locked/range', () => (
-    <FieldStateProvider
-      component={SplitEven}
-      value={{splitType: 'even', ...sharesRangeValue}}
-      boundaries={boundaries}
-      copy={copy}
-      options={options} 
-      onChange={action('change')}
-      range locked
-    />)
-  )
-  .add('split/custom/dropdown', () => (
-    <FieldStateProvider
-      component={SplitCustom}
-      value={{splitType: 'custom'}}
       copy={copy}
       options={options}
       onChange={action('change')}
-      min 
-    />)
-  )
+      min
+      locked
+    />
+  ))
+  .add('split/even/locked/range', () => (
+    <FieldStateProvider
+      component={SplitEven}
+      value={{ splitType: 'even', ...sharesRangeValue }}
+      boundaries={boundaries}
+      copy={copy}
+      options={options}
+      onChange={action('change')}
+      range
+      locked
+    />
+  ))
+  .add('split/custom/dropdown', () => (
+    <FieldStateProvider
+      component={SplitCustom}
+      value={{ splitType: 'custom' }}
+      copy={copy}
+      options={options}
+      onChange={action('change')}
+      min
+    />
+  ))
   .add('split/custom/locked', () => (
     <FieldStateProvider
       component={SplitCustom}
-      value={{splitType: 'custom'}}
+      value={{ splitType: 'custom' }}
       copy={copy}
       options={options}
       onChange={action('change')}
       locked
-    />)
-  )
+    />
+  ))
   .add('split/fixed-per-person/min', () => (
     <FieldStateProvider
       value={sharesSingleValue}
@@ -105,9 +104,9 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       copy={copyFixed}
       boundaries={boundaries}
       onChange={action('change')}
-      min 
-    />)
-  )
+      min
+    />
+  ))
   .add('split/fixed-per-person/range', () => (
     <FieldStateProvider
       value={sharesRangeValue}
@@ -115,6 +114,6 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       copy={copyFixed}
       boundaries={boundaries}
       onChange={action('change')}
-      range 
-    />)
-  );
+      range
+    />
+  ));

@@ -2,14 +2,8 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 
-import {
-  ActivityCard,
-  UserCommentCard,
-  GroupActivityCard,
-} from '../../../components/consumer/mobile/activity-card';
-import ActivityThumbnail, {
-  PURCHASE_UPDATED,
-} from '../../../components/consumer/mobile/activity-thumbnail';
+import { ActivityCard, UserCommentCard, GroupActivityCard } from '../../../components/consumer/mobile/activity-card';
+import ActivityThumbnail, { PURCHASE_UPDATED } from '../../../components/consumer/mobile/activity-thumbnail';
 import Avatar from '../../../components/consumer/mobile/avatar';
 import Hint from '../../../components/consumer/mobile/hint';
 import { H3 } from '../../../components/consumer/mobile/heading';
@@ -46,7 +40,11 @@ describe('Activity Card', () => {
     });
 
     it('should pass any children', () => {
-      const children = <div><p>some content</p></div>;
+      const children = (
+        <div>
+          <p>some content</p>
+        </div>
+      );
       const wrapper = shallow(<ActivityCard>{children}</ActivityCard>);
       expect(wrapper.contains(children)).to.be.true;
     });
@@ -65,7 +63,7 @@ describe('Activity Card', () => {
 
     it('should pass date', () => {
       const date = new Date('1984-10-09T19:02');
-      const wrapper = mount(<UserCommentCard date={date}/>);
+      const wrapper = mount(<UserCommentCard date={date} />);
       expect(wrapper.find(ActivityCard).props().date).to.equal(date);
       expect(wrapper.contains(<Hint>07:02 pm</Hint>)).to.be.true;
     });
@@ -89,13 +87,13 @@ describe('Activity Card', () => {
 
     it('should have a heading 3 with user name', () => {
       const userName = 'John Doe';
-      const wrapper = mount(<UserCommentCard title={userName}/>);
+      const wrapper = mount(<UserCommentCard title={userName} />);
       expect(wrapper.contains(<H3>{userName}</H3>)).to.be.true;
     });
 
     it('should have a p element with the comment text', () => {
       const comment = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-      const wrapper = mount(<UserCommentCard comment={comment}/>);
+      const wrapper = mount(<UserCommentCard comment={comment} />);
       expect(wrapper.contains(<p>{comment}</p>)).to.be.true;
     });
   });
@@ -113,7 +111,7 @@ describe('Activity Card', () => {
 
     it('should pass date', () => {
       const date = new Date('1984-10-09T19:02');
-      const wrapper = mount(<GroupActivityCard date={date}/>);
+      const wrapper = mount(<GroupActivityCard date={date} />);
       expect(wrapper.find(ActivityCard).props().date).to.equal(date);
       expect(wrapper.contains(<Hint>07:02 pm</Hint>)).to.be.true;
     });
@@ -135,7 +133,12 @@ describe('Activity Card', () => {
     });
 
     it('should pass children to activity card as children within a container', () => {
-      const content = <div><p>Txt one</p><p>Text two</p></div>;
+      const content = (
+        <div>
+          <p>Txt one</p>
+          <p>Text two</p>
+        </div>
+      );
       const wrapper = mount(<GroupActivityCard>{content}</GroupActivityCard>);
       expect(wrapper.find('.pbg-group-activity-card-content').contains(content)).to.be.true;
     });

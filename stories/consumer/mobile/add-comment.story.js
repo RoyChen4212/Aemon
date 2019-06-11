@@ -1,11 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { WithFigma } from 'storybook-addon-figma';
-import AddComment from '../../../components/consumer/mobile/add-comment'
+import AddComment from '../../../components/consumer/mobile/add-comment';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
+
 const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=557%3A38';
 
 storiesOf('Consumer/Mobile/Activity Section Components/AddComment', module)
@@ -17,8 +18,8 @@ storiesOf('Consumer/Mobile/Activity Section Components/AddComment', module)
       hint="Only logged-in group members see comments."
       ctaLabel="Post comment"
       textLabel="Write a comment..."
-      avatarSrc='http://i.pravatar.cc/300'
-      fullName='John Doe'
+      avatarSrc="http://i.pravatar.cc/300"
+      fullName="John Doe"
     />
   ))
   .add('With initials', () => (
@@ -26,7 +27,7 @@ storiesOf('Consumer/Mobile/Activity Section Components/AddComment', module)
       hint="Only logged-in group members see comments."
       ctaLabel="Post comment"
       textLabel="Write a comment..."
-      fullName='John Doe'
+      fullName="John Doe"
     />
   ))
   .add('With Error', () => (
@@ -35,7 +36,7 @@ storiesOf('Consumer/Mobile/Activity Section Components/AddComment', module)
       ctaLabel="Post comment"
       textLabel="Write a comment..."
       error="This is a bad error"
-      avatarSrc='http://i.pravatar.cc/300'
-      fullName='John Doe'
+      avatarSrc="http://i.pravatar.cc/300"
+      fullName="John Doe"
     />
   ));

@@ -16,6 +16,6 @@ class SplitCustom extends SplitEven {
       </div>
     );
   }
-};
+}
 
 export { SplitCustom };

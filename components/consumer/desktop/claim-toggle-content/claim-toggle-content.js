@@ -14,9 +14,11 @@ class ClaimToggleContent extends Checkbox {
     return (
       <div className="pbg-claim-toggle-content-label-explainer-placeholder">
         {label && (
-          <Label type={this.labelType} required={this.adaptedProps.required}>{label}</Label>
+          <Label type={this.labelType} required={this.adaptedProps.required}>
+            {label}
+          </Label>
         )}
-        {explainer && (<P>{explainer}</P>)}
+        {explainer && <P>{explainer}</P>}
       </div>
     );
   }

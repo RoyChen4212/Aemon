@@ -2,9 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import {
-  H1, H2, H3
-} from '../../../components/consumer/mobile/heading';
+import { H1, H2, H3 } from '../../../components/consumer/mobile/heading';
 
 describe('Heading', () => {
   it('should render an H1 tag when using H1', () => {

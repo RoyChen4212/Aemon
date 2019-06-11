@@ -27,19 +27,19 @@ const logos = [
   'http://pigment.github.io/fake-logos/logos/small/color/petes-blinds.png',
 ];
 
-const randomLogo = () => logos[Math.floor(Math.random()*logos.length)];
+const randomLogo = () => logos[Math.floor(Math.random() * logos.length)];
 const options = [
-  {label: { term: 'English'}, value: 'en'},
-  {label: { term: 'Danish'}, value: 'da'},
-  {label: { term: 'French'}, value: 'fr'},
-  {label: { term: 'Spanish'}, value: 'es'},
+  { label: { term: 'English' }, value: 'en' },
+  { label: { term: 'Danish' }, value: 'da' },
+  { label: { term: 'French' }, value: 'fr' },
+  { label: { term: 'Spanish' }, value: 'es' },
 ];
 const footer = (
-  <div style={{padding: '8px 10px 0 0'}}>
-    <a style={{float: 'left'}} className="pbg-desktop-small-link" href="">
+  <div style={{ padding: '8px 10px 0 0' }}>
+    <a style={{ float: 'left' }} className="pbg-desktop-small-link" href="">
       How does it work?
     </a>
-    <div style={{float: 'right'}}>
+    <div style={{ float: 'right' }}>
       <FieldStateProvider
         component={Picker}
         name="picker"
@@ -53,9 +53,5 @@ const footer = (
 );
 
 storiesOf('Consumer/Desktop/Info/branding', module)
-  .add('modal-branding/default', () => (
-    <ModalBranding logo={randomLogo()}/>
-  ))
-  .add('modal-branding/claim', () => (
-    <ModalBranding logo={randomLogo()}>{footer}</ModalBranding>
-  ));
+  .add('modal-branding/default', () => <ModalBranding logo={randomLogo()} />)
+  .add('modal-branding/claim', () => <ModalBranding logo={randomLogo()}>{footer}</ModalBranding>);
