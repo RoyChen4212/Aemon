@@ -106,14 +106,13 @@
     border: 1px solid #8093A6;
     border-radius: 4px;
     min-width: 80px;
-    padding: 9px 26px 8px 8px; }
+    padding: 8px 26px 9px 8px; }
     .pbg-consumer-desktop.pbg-picker .pbg-picker-container .pbg-picker-button .pbg-picker-arrow {
       position: absolute;
-      background-position: top center;
-      right: 8px;
-      width: 10px;
-      height: 10px;
-      top: 19px; }
+      width: 18px;
+      height: 18px;
+      right: 4px;
+      top: 11px; }
   .pbg-consumer-desktop.pbg-picker .pbg-picker-container .pbg-picker-text span {
     margin-top: 2px; }
   .pbg-consumer-desktop.pbg-picker .pbg-picker-container .pbg-picker-text .pbg-picker-arrow {
@@ -139,4 +138,4 @@
     background-position: top center; }
 
 .pbg-consumer-desktop.pbg-picker.pbg-picker-big .pbg-picker-container button {
-  padding: 5px 26px 5px 8px; }
+  padding: 4px 26px 6px 8px; }

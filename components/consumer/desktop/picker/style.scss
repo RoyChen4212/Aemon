@@ -34,15 +34,14 @@
         border: 1px solid $grey-50;
         border-radius: 4px;
         min-width: 80px;
-        padding: 9px 26px 8px 8px;
+        padding: 8px 26px 9px 8px;
 
         .pbg-picker-arrow {
           position: absolute;
-          background-position: top center;
-          right: 8px;
-          width: 10px;
-          height: 10px;
-          top: 19px;
+          width: 18px;
+          height: 18px;
+          right: 4px;
+          top: 11px;
         }
       }
 
@@ -61,11 +60,11 @@
 
     &.pbg-form-field-error {
       .pbg-picker-button {
-        border: 1px solid $red-60; 
+        border: 1px solid $red-60;
       }
 
       .pbg-picker-text {
-        color: $red-60; 
+        color: $red-60;
       }
     }
 
@@ -92,7 +91,7 @@
       .pbg-picker-container {
         button {
           @extend .pbg-desktop-h3;
-          padding: 5px 26px 5px 8px;
+          padding: 4px 26px 6px 8px;
         }
       }
     }
