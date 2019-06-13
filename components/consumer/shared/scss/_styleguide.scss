@@ -82,7 +82,8 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   display: table;
 }
 
-.pbg-desktop-h1 {
+// Headings
+.pbg-desktop-heading-1 {
   font-family: $roboto;
   font-style: normal;
   font-weight: 300;
@@ -91,7 +92,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   line-height: 48px;
 }
 
-.pbg-desktop-h2 {
+.pbg-desktop-heading-2 {
   font-family: $roboto;
   font-style: normal;
   font-weight: 300;
@@ -100,7 +101,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   line-height: 38px;
 }
 
-.pbg-desktop-h3 {
+.pbg-desktop-heading-3 {
   font-family: $roboto;
   font-style: normal;
   color: $grey-80;
@@ -108,8 +109,8 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-size: 18px;
   line-height: 28px;
 }
-//Labels
 
+// Labels
 .pbg-desktop-label-normal {
   color: $grey-80;
   font-family: $roboto;
@@ -134,6 +135,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $red-60;
 }
 
+// Text
 .pbg-desktop-regular-text {
   @extend .pbg-desktop-label-normal;
 }
@@ -143,6 +145,16 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $grey-60;
 }
 
+// Paragraph
+.pbg-desktop-paragraph {
+  @extend .pbg-desktop-regular-text;
+}
+
+.pbg-desktop-paragraph-secondary {
+  @extend .pbg-desktop-secondary-text;
+}
+
+// Small
 .pbg-desktop-small-text {
   @extend .pbg-desktop-regular-text;
   font-size: $small-font;
@@ -165,6 +177,16 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   @extend .pbg-desktop-label-strong;
   font-size: $small-font;
   line-height: $small-line-height;
+}
+
+// List
+.pbg-desktop-list-unordered {
+  @extend .pbg-desktop-label-normal;
+  list-style-image: url('../../desktop/img/pbg-list-bullet.svg');
+}
+
+.pbg-desktop-list-ordered {
+  @extend .pbg-desktop-label-normal;
 }
 
 .regular-text {
