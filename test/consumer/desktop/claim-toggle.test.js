@@ -1,10 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
 
-import { H3 } from '../../../components/consumer/desktop/heading';
-import P from '../../../components/consumer/desktop/paragraph';
 import Container from '../../../components/consumer/desktop/container';
 import ClaimToggleContent from '../../../components/consumer/desktop/claim-toggle-content';
 import ClaimToggle from '../../../components/consumer/desktop/claim-toggle';
@@ -75,7 +72,7 @@ describe('ClaimToggle', () => {
     expect(wrapper.find(ClaimToggleContent).prop('error')).to.be.equal(error);
   });
 
-  it('reports the value as true upon checking the checkbox', function(done) {
+  it('reports the value as true upon checking the checkbox', (done) => {
     const onChange = ev => {
       expect(ev.target.value).to.be.true;
       done();

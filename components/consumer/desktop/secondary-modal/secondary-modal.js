@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Modal from '../modal';
-import { H2 } from '../heading';
 
 import './style.css';
 
@@ -31,7 +30,7 @@ class SecondaryModal extends React.PureComponent {
                 className={`pbg-modal-icon pbg-icon-${this.props.iconType}-big`}
               />
             )}
-            {this.props.title && <H2>{this.props.title}</H2>}
+            {this.props.title && <h2 className="pbg-consumer-desktop pbg-desktop-heading-2">{this.props.title}</h2>}
           </div>
           {this.props.children}
         </div>

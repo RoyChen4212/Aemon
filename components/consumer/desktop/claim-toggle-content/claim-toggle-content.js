@@ -1,7 +1,6 @@
 import React from 'react';
-import FormField from '../form-field';
-import Label, { labelTypes } from '../label';
-import P from '../paragraph';
+
+import Label from '../label';
 import { Checkbox } from '../checkbox';
 
 import './style.css';
@@ -18,7 +17,7 @@ class ClaimToggleContent extends Checkbox {
             {label}
           </Label>
         )}
-        {explainer && <P>{explainer}</P>}
+        {explainer && <p className="pbg-consumer-desktop pbg-desktop-paragraph">{explainer}</p>}
       </div>
     );
   }

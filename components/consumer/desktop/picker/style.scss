@@ -1,4 +1,4 @@
-@import "../../shared/scss/styleguide";
+@import '../../shared/scss/styleguide';
 
 .pbg-consumer-desktop {
   &.pbg-picker {
@@ -18,7 +18,7 @@
         padding: 0;
 
         &:focus {
-          outline:0;
+          outline: 0;
         }
 
         .pbg-picker-arrow {
@@ -69,7 +69,8 @@
     }
 
     &.pbg-form-field-disabled {
-      .pbg-picker-button, .pbg-picker-text {
+      .pbg-picker-button,
+      .pbg-picker-text {
         color: $grey-60;
 
         .pbg-picker-arrow {
@@ -90,7 +91,7 @@
     &.pbg-picker-big {
       .pbg-picker-container {
         button {
-          @extend .pbg-desktop-h3;
+          @extend .pbg-desktop-heading-3;
           padding: 4px 26px 6px 8px;
         }
       }
