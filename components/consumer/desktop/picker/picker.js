@@ -3,8 +3,6 @@ import React from 'react';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import FormField from '../form-field';
-import Label, { labelTypes } from '../label';
-import Hint, { hintTypes } from '../hint';
 import PickerMenu from '../picker-menu';
 import makeEvent from '../../../lib/make-event';
 
@@ -21,7 +19,7 @@ class Picker extends FormField {
   };
 
   get labelText() {
-    const opt = find(this.options, opt => opt.value === this.value);
+    const opt = find(this.options, op => op.value === this.value);
     return opt ? opt.label.term : null;
   }
 
@@ -50,6 +48,7 @@ class Picker extends FormField {
     this.deactivateTimeout = setTimeout(() => {
       this.setState({ active: false }, () => callback && callback(makeEvent(this.value)));
     }, 150);
+    return true;
   };
 
   renderPickerButton() {

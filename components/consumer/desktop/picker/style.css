@@ -105,7 +105,7 @@
     background: #fff;
     border: 1px solid #8093A6;
     border-radius: 4px;
-    min-width: 80px;
+    min-width: 97px;
     padding: 8px 26px 9px 8px; }
     .pbg-consumer-desktop.pbg-picker .pbg-picker-container .pbg-picker-button .pbg-picker-arrow {
       position: absolute;
@@ -126,9 +126,11 @@
 .pbg-consumer-desktop.pbg-picker.pbg-form-field-error .pbg-picker-text {
   color: #E02E2E; }
 
-.pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled .pbg-picker-button, .pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled .pbg-picker-text {
+.pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled .pbg-picker-button,
+.pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled .pbg-picker-text {
   color: #526679; }
-  .pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled .pbg-picker-button .pbg-picker-arrow, .pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled .pbg-picker-text .pbg-picker-arrow {
+  .pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled .pbg-picker-button .pbg-picker-arrow,
+  .pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled .pbg-picker-text .pbg-picker-arrow {
     background: url("../img/pbg-picker-disabled-arrow.svg") no-repeat center; }
 
 .pbg-consumer-desktop.pbg-picker.pbg-form-field-disabled .pbg-picker-button {
