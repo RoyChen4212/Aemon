@@ -5,7 +5,7 @@ import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import Picker, { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
-import Label, { labelTypes } from '../../../components/consumer/desktop/label';
+import Label from '../../../components/consumer/desktop/label';
 import Hint, { hintTypes } from '../../../components/consumer/desktop/hint';
 import PickerMenu from '../../../components/consumer/desktop/picker-menu';
 
@@ -101,7 +101,7 @@ describe('Picker', () => {
     expect(onChange.calledOnce).to.be.true;
   });
 
-  it('should call onChange with correct value if value is null', function(done) {
+  it('should call onChange with correct value if value is null', done => {
     const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: null }];
     const onChange = ev => {
       expect(ev.target.value).to.equal(null);
@@ -115,7 +115,7 @@ describe('Picker', () => {
       .simulate('click');
   });
 
-  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function(done) {
+  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', done => {
     const opts = [
       { label: { term: 'option 1' }, value: 'opt1' },
       { label: { term: 'option 2' }, value: PICKER_EMPTY_VALUE },
@@ -158,13 +158,13 @@ describe('Picker', () => {
     expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(true);
   });
 
-  it('should deactivate PickerMenu upon blurring button', function(done) {
+  it('should deactivate PickerMenu upon blurring button', done => {
     const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }];
-    const onBlur = () => {
+    const onBlur = wrapper => {
       expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false);
       done();
     };
-    const wrapper = shallow(<Picker options={opts} onBlur={onBlur} />);
+    const wrapper = shallow(<Picker options={opts} onBlur={() => onBlur(wrapper)} />);
     wrapper.find('button').simulate('click');
     expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(true);
     wrapper.find('button').simulate('blur');
