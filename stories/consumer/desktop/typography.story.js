@@ -1,12 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { WithFigma } from 'storybook-addon-figma';
-import { H1, H2, H3 } from '../../../components/consumer/desktop/heading';
-import Label, { labelTypes } from '../../../components/consumer/desktop/label';
-import Hint from '../../../components/consumer/desktop/hint';
-import P from '../../../components/consumer/desktop/paragraph';
-import { Ol, Ul } from '../../../components/consumer/desktop/list';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
@@ -19,30 +13,27 @@ storiesOf('Consumer/Desktop/Atomic Components/Typography', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('H1', () => <H1>{sampleText}</H1>)
-  .add('H2', () => <H2>{sampleText}</H2>)
-  .add('H3', () => <H3>{sampleText}</H3>)
-  .add('label/normal', () => <Label>normal label</Label>)
-  .add('label/strong', () => <Label type={labelTypes.STRONG}>strong label</Label>)
-  .add('label/required', () => <p className="pbg-desktop-label-normal">required label *</p>)
-  .add('label/link', () => <p className="pbg-desktop-label-link">link label</p>)
-  .add('p', () => <P>paragraph</P>)
-  .add('p/secondary', () => (
-    <P>
-      <span className="pbg-paragraph-secondary">paragraph</span>
-    </P>
-  ))
-  .add('small/normal', () => <Hint>small normal</Hint>)
-  .add('small/link', () => <span className="pbg-consumer-desktop pbg-hint-link">small link</span>)
-  .add('small/error', () => <span className="pbg-consumer-desktop pbg-hint-error">small error</span>)
-  .add('small/strong', () => <span className="pbg-consumer-desktop pbg-hint-strong">small strong</span>)
+  .add('heading-1', () => <h1 className="pbg-consumer-desktop pbg-desktop-heading-1">{sampleText}</h1>)
+  .add('heading-2', () => <h2 className="pbg-consumer-desktop pbg-desktop-heading-2">{sampleText}</h2>)
+  .add('heading-3', () => <h3 className="pbg-consumer-desktop pbg-desktop-heading-3">{sampleText}</h3>)
+  .add('label/normal', () => <span className="pbg-consumer-desktop pbg-desktop-label-normal">normal label</span>)
+  .add('label/strong', () => <span className="pbg-consumer-desktop pbg-desktop-label-strong">strong label</span>)
+  .add('label/required', () => <span className="pbg-consumer-desktop pbg-desktop-label-normal">required label *</span>)
+  .add('label/link', () => <span className="pbg-consumer-desktop pbg-desktop-label-link">link label</span>)
+  .add('label/error', () => <span className="pbg-consumer-desktop pbg-desktop-label-error">error label</span>)
+  .add('p', () => <p className="pbg-consumer-desktop pbg-desktop-paragraph">paragraph</p>)
+  .add('p/secondary', () => <p className="pbg-consumer-desktop pbg-desktop-paragraph-secondary">paragraph secondary</p>)
+  .add('small/normal', () => <span className="pbg-consumer-desktop pbg-desktop-small-text">small normal</span>)
+  .add('small/link', () => <span className="pbg-consumer-desktop pbg-desktop-small-link">small link</span>)
+  .add('small/error', () => <span className="pbg-consumer-desktop pbg-desktop-small-error">small error</span>)
+  .add('small/strong', () => <span className="pbg-consumer-desktop pbg-desktop-small-strong">small strong</span>)
   .add('list/unordered', () => (
-    <Ul>
+    <ul className="pbg-consumer-desktop pbg-desktop-list-unordered">
       <li>Label</li>
-    </Ul>
+    </ul>
   ))
   .add('list/ordered', () => (
-    <Ol>
+    <ol className="pbg-consumer-desktop pbg-desktop-list-ordered">
       <li>Label</li>
-    </Ol>
+    </ol>
   ));

@@ -1,7 +1,7 @@
 @import "../../shared/scss/styleguide";
 
 .pbg-consumer-desktop {
-  .pbg-label {
+  &.pbg-label {
     @extend .pbg-desktop-label-normal;
     display: inline-block;
     margin-bottom: 0;

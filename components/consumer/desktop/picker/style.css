@@ -3,7 +3,7 @@
   clear: both;
   display: table; }
 
-.pbg-desktop-h1 {
+.pbg-desktop-heading-1 {
   font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 300;
@@ -11,7 +11,7 @@
   font-size: 38px;
   line-height: 48px; }
 
-.pbg-desktop-h2 {
+.pbg-desktop-heading-2 {
   font-family: "Roboto", serif;
   font-style: normal;
   font-weight: 300;
@@ -19,7 +19,7 @@
   font-size: 28px;
   line-height: 38px; }
 
-.pbg-desktop-h3, .pbg-consumer-desktop.pbg-picker.pbg-picker-big .pbg-picker-container button {
+.pbg-desktop-heading-3, .pbg-consumer-desktop.pbg-picker.pbg-picker-big .pbg-picker-container button {
   font-family: "Roboto", serif;
   font-style: normal;
   color: #24313E;
@@ -27,7 +27,7 @@
   font-size: 18px;
   line-height: 28px; }
 
-.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled, .pbg-desktop-small-text, .pbg-consumer-desktop.pbg-picker .pbg-picker-container button {
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-paragraph-secondary, .pbg-desktop-form-field-disabled, .pbg-desktop-paragraph, .pbg-desktop-small-text, .pbg-consumer-desktop.pbg-picker .pbg-picker-container button, .pbg-desktop-list-unordered, .pbg-desktop-list-ordered {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -44,7 +44,7 @@
 .pbg-desktop-label-error, .pbg-desktop-small-error {
   color: #E02E2E; }
 
-.pbg-desktop-secondary-text, .pbg-desktop-form-field-disabled {
+.pbg-desktop-secondary-text, .pbg-desktop-paragraph-secondary, .pbg-desktop-form-field-disabled {
   color: #526679; }
 
 .pbg-desktop-small-text, .pbg-consumer-desktop.pbg-picker .pbg-picker-container button {
@@ -62,6 +62,9 @@
 .pbg-desktop-small-strong {
   font-size: 12px;
   line-height: 16px; }
+
+.pbg-desktop-list-unordered {
+  list-style-image: url("../../desktop/img/pbg-list-bullet.svg"); }
 
 .regular-text, .pbg-consumer-desktop.pbg-picker .pbg-picker-container .pbg-picker-button {
   color: #4c4c4c;

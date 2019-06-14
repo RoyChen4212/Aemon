@@ -1,8 +1,8 @@
-@import "../../shared/scss/styleguide";
+@import '../../shared/scss/styleguide';
 
 .pbg-consumer-desktop {
   &.pbg-claim-toggle-content {
-    content: "";
+    content: '';
     clear: both;
     display: table;
 
@@ -18,14 +18,14 @@
       width: calc(100% - 16px);
 
       .pbg-label {
-        @extend .pbg-desktop-h3;
+        @extend .pbg-desktop-heading-3;
 
         &.pbg-label-error {
           color: $red-60;
         }
       }
 
-      .pbg-paragraph {
+      .pbg-desktop-paragraph {
         margin-bottom: 0;
         margin-left: 8px;
       }

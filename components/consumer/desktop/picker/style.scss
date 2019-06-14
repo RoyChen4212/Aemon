@@ -91,7 +91,7 @@
     &.pbg-picker-big {
       .pbg-picker-container {
         button {
-          @extend .pbg-desktop-h3;
+          @extend .pbg-desktop-heading-3;
           padding: 4px 26px 6px 8px;
         }
       }
