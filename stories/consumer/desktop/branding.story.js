@@ -35,7 +35,7 @@ const options = [
   { label: { term: 'Spanish' }, value: 'es' },
 ];
 const footer = (
-  <div style={{ padding: '8px 10px 0 0' }}>
+  <div>
     <a style={{ float: 'left' }} className="pbg-desktop-small-link" href="">
       How does it work?
     </a>
