@@ -99,8 +99,10 @@
     height: 16px; }
   .pbg-status .pbg-status-question-mark:after {
     content: url("../img/link-question-mark.svg");
-    margin-left: 5px;
     position: relative;
+    margin-left: 5px;
+    height: 14px;
+    width: 14px;
     top: 2px; }
   .pbg-status .pbg-status-value {
     margin-bottom: 0; }
@@ -111,3 +113,7 @@
     width: 40px;
     border: 1px solid #D5DDE9;
     border-radius: 50%; }
+    .pbg-status .pbg-status-icon-container img {
+      height: 18px;
+      width: 18px;
+      margin-top: 10px; }
