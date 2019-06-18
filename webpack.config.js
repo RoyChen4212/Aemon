@@ -1,15 +1,26 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'components/index.js'),
+  entry: {
+    desktop: './components/consumer/desktop/index.js',
+    mobile: './components/consumer/mobile/index.js',
+  },
   output: {
-    path: path.resolve(__dirname, 'dist/components'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
     library: '',
     libraryTarget: 'commonjs',
   },
   externals: [nodeExternals()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -21,8 +32,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        test: /\.(sa|sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.svg$/,
