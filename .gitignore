@@ -37,6 +37,8 @@ jspm_packages
 .env
 .DS_Store
 .idea
+.cache
 config/development.js
 config/test.js
 dist
+dist_old

@@ -1,40 +1,33 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  mode: 'development',
-  entry: {
-    consumerMobile: './components/consumer/mobile/index.js'
-  },
+  entry: path.resolve(__dirname, 'components/index.js'),
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist/components'),
+    filename: 'bundle.js',
+    library: '',
+    libraryTarget: 'commonjs',
   },
+  externals: [nodeExternals()],
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
-      },
-      {
-        test: /\.svg$/,
-        loader: "file-loader"
-      },
-      {
-        test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"],
-        include: path.resolve(__dirname, "../")
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/react'],
+        },
       },
       {
         test: /\.css$/,
-        loaders: ["style-loader", "css-loader"],
-        include: path.resolve(__dirname, "../")
-      }
-    ]
-  }
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'file-loader',
+      },
+    ],
+  },
 };
