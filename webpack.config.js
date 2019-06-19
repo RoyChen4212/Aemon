@@ -5,12 +5,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
+    index: './components/index.js',
     desktop: './components/consumer/desktop/index.js',
     mobile: './components/consumer/mobile/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].js',
     library: '',
     libraryTarget: 'commonjs',
   },

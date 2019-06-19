@@ -6,7 +6,7 @@
     "npm": "6.x"
   },
   "description": "PBG UI Library with Storybook",
-  "main": "./dist/desktop.bundle.js",
+  "main": "./dist/index.js",
   "scripts": {
     "start": "./node_modules/.bin/parcel docs/index.html",
     "build": "./node_modules/.bin/webpack --mode=production",
