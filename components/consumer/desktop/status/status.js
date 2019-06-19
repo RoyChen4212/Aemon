@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import Hint from '../hint';
 import PopoverTooltip from '../popover-tooltip';
 
 import './style.css';
@@ -39,16 +38,18 @@ class Status extends React.PureComponent {
   };
 
   render() {
+    // eslint-disable-next-line global-require, import/no-dynamic-require
+    const iconSource = require(`../img/pbg-${this.props.iconType}-small.svg`);
     return (
-      <div className="pbg-status">
+      <div className="pbg-consumer-desktop pbg-status">
         <div className="pbg-status-icon-container">
-          <img src={require(`../img/${this.props.iconType}-small.svg`)} />
+          <img src={iconSource} />
         </div>
 
         <div className="pbg-status-text">
           {this.renderLabel()}
           <p className="pbg-status-value">{this.props.value}</p>
-          <Hint>{this.props.hint}</Hint>
+          <span className="pbg-desktop-small-text pbg-desktop-secondary-text">{this.props.hint}</span>
         </div>
       </div>
     );
