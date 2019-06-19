@@ -1,9 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import moment from 'moment';
 
 import Status from '../../../components/consumer/desktop/status';
-import Hint from '../../../components/consumer/desktop/hint';
 import PopoverTooltip from '../../../components/consumer/desktop/popover-tooltip';
 
 describe('Status', () => {
@@ -37,7 +35,7 @@ describe('Status', () => {
 
   it('should render the hint', () => {
     const wrapper = shallow(<Status label={labelText} value={valueText} hint={hintText} iconType="lock" />);
-    expect(wrapper.find(Hint).contains(hintText)).to.be.true;
+    expect(wrapper.html()).to.include(hintText);
   });
 
   it('should not render a tooltip if it is not given', () => {
