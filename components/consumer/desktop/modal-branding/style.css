@@ -27,7 +27,7 @@
   font-size: 18px;
   line-height: 28px; }
 
-.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-paragraph-secondary, .pbg-desktop-form-field-disabled, .pbg-desktop-paragraph, .pbg-desktop-small-text, .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo .pbg-modal-branding-powered-by-text, .pbg-desktop-list-unordered, .pbg-desktop-list-ordered {
+.pbg-desktop-label-normal, .pbg-desktop-label-strong, .pbg-desktop-small-strong, .pbg-desktop-label-link, .pbg-desktop-small-link, .pbg-desktop-label-error, .pbg-desktop-small-error, .pbg-desktop-regular-text, .pbg-desktop-secondary-text, .pbg-desktop-paragraph-secondary, .pbg-desktop-form-field-disabled, .pbg-desktop-paragraph, .pbg-desktop-small-text, .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo span, .pbg-desktop-list-unordered, .pbg-desktop-list-ordered {
   color: #24313E;
   font-family: "Roboto", serif;
   font-style: normal;
@@ -47,7 +47,7 @@
 .pbg-desktop-secondary-text, .pbg-desktop-paragraph-secondary, .pbg-desktop-form-field-disabled {
   color: #526679; }
 
-.pbg-desktop-small-text, .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo .pbg-modal-branding-powered-by-text {
+.pbg-desktop-small-text, .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo span {
   font-size: 12px;
   line-height: 16px; }
 
@@ -92,7 +92,7 @@
     padding: 0 20px 0 20px;
     position: relative;
     width: 200px;
-    height: 85px;
+    height: 76px;
     text-align: center; }
     .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-merchant-logo {
       width: 160px;
@@ -114,9 +114,16 @@
       right: 0;
       margin-left: auto;
       margin-right: auto;
-      width: 131px; }
-      .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo .pbg-modal-branding-powered-by-text {
+      width: 131px;
+      height: 16px;
+      line-height: 16px; }
+      .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo span {
         color: #526679;
         margin-right: 4px; }
+      .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo img {
+        margin-top: 2px; }
   .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-footer {
+    margin-top: 8px;
     height: 29px; }
+    .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-footer .pbg-modal-branding-footer-content {
+      margin-top: 8px; }
