@@ -6,7 +6,7 @@ import FormField from '../form-field';
 import PickerMenu from '../picker-menu';
 import makeEvent from '../../../lib/make-event';
 
-import './style.css';
+import './style.scss';
 
 export const PICKER_EMPTY_VALUE = '__EmptyValue';
 

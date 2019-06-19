@@ -4,7 +4,8 @@ import Hint from '../hint';
 import { H3 } from '../heading';
 import ActivityThumbnail from '../activity-thumbnail';
 import Avatar from '../avatar';
-import './style.css';
+
+import './style.scss';
 
 const FORMAT = 'hh:mm a';
 const ActivityCard = props => (

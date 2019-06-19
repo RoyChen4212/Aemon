@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Container from '../container';
 import ModalAlertStack from '../modal-alert-stack';
 
-import './style.css';
+import './style.scss';
 
 class Modal extends React.PureComponent {
   static propTypes = {

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Modal from '../modal';
 
-import './style.css';
+import './style.scss';
 
 class SecondaryModal extends React.PureComponent {
   static propTypes = {

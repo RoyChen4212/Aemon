@@ -4,7 +4,7 @@ import TextArea from '../text-area';
 import Avatar from '../avatar';
 import { PrimaryButton } from '../button';
 
-import './style.css';
+import './style.scss';
 
 class AddComment extends BaseAddComment {
   baseClassName = 'pbg-consumer-desktop pbg-add-comment';

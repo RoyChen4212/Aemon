@@ -1,7 +1,8 @@
 import React from 'react';
 import jQuery from 'jquery';
 import Container from '../container';
-import './style.css';
+
+import './style.scss';
 
 class Popover extends React.PureComponent {
   popoverElementRef = React.createRef();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextField } from '../text-field';
 import Hint, { hintTypes } from '../hint';
-import './style.css';
+import './style.scss';
 
 class TextArea extends TextField {
   baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-text-field pbg-text-area';

@@ -5,7 +5,7 @@ import Avatar from '../avatar';
 import { SmallButton } from '../button';
 import Label, { labelTypes } from '../label';
 
-import './style.css';
+import './style.scss';
 
 class AddComment extends BaseAddComment {
   baseClassName = 'pbg-consumer-mobile pbg-add-comment';

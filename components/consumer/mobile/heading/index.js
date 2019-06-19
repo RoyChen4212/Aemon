@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './style.scss';
 
 export const H1 = props => <h1 className="pbg-heading pbg-h1">{props.children}</h1>;
 export const H2 = props => <h2 className="pbg-heading pbg-h2">{props.children}</h2>;

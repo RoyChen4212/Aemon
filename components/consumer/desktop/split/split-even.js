@@ -9,7 +9,7 @@ import Picker from '../picker';
 import NumberStepper from '../simple-number-stepper';
 import Label, { labelTypes } from '../label';
 
-import './style.css';
+import './style.scss';
 
 const ComposedFormField = ComplexValueFormField(FormField);
 

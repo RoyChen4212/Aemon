@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import defaults from './defaults';
-import './style.css';
+
+import './style.scss';
 
 class Avatar extends React.PureComponent {
   static DEFAULT_SIZE = 32;
