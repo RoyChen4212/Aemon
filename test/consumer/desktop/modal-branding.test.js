@@ -32,10 +32,10 @@ describe('ModalBranding', () => {
     expect(img).to.have.lengthOf(1);
   });
 
-  it('should render an "powered by" phrase inside a powered-by-text', () => {
+  it('should render a "powered by" phrase inside a powered-by-logo', () => {
     const wrapper = shallow(<ModalBranding />);
-    const text = wrapper.find('.pbg-modal-branding-powered-by-text').text();
-    expect(text).to.be.equal('powered by');
+    const span = wrapper.find('.pbg-modal-branding-powered-by-logo').find('span');
+    expect(span.text()).to.be.equal('powered by');
   });
 
   it('should render a footer if children are given', () => {
@@ -49,6 +49,13 @@ describe('ModalBranding', () => {
     const child = <span>Foobar</span>;
     const wrapper = shallow(<ModalBranding>{child}</ModalBranding>);
     const header = wrapper.find('.pbg-modal-branding-footer').find(Divider);
+    expect(header).to.have.lengthOf(1);
+  });
+
+  it('should render a pbg-modal-branding-footer-content inside the footer', () => {
+    const child = <span>Foobar</span>;
+    const wrapper = shallow(<ModalBranding>{child}</ModalBranding>);
+    const header = wrapper.find('.pbg-modal-branding-footer').find('.pbg-modal-branding-footer-content');
     expect(header).to.have.lengthOf(1);
   });
 
