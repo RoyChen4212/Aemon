@@ -41,14 +41,3 @@ module.exports = {
     ],
   },
 };
-
-// "storybook": "npm-run-all -p css:watch storybook:start",
-// "storybook:start": "start-storybook -p 9001 -c .storybook",
-// "storybook:build": "build-storybook -c .storybook -o dist_old",
-// "storybook:build:all": "npm-run-all -p css:build storybook:build",
-// "css:watch": "node-sass-chokidar ./components -o ./components --watch",
-// "css:build": "node-sass-chokidar ./components -o ./dist_old",
-// "heroku-postbuild": "npm-run-all -p storybook:build:all",
-// "svg:build": "copyfiles -u 1 `find components -type f \\( -iname \"*.svg\" \\) | tr '\n' ' '` dist_old",
-// "build:all": "npm-run-all -p css:build svg:build build:release",
-// "build:release": "babel components/ --out-dir dist_old"
