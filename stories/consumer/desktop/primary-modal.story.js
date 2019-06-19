@@ -10,8 +10,7 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl =
-  'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=877%3A10660';
+const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=877%3A10660';
 
 storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
   .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
@@ -28,9 +27,12 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
       }
       sidebarContent={
         <div>
-          <h2>Sidebar content</h2>
+          <h2>Sidebar</h2>
           <p>This is the sidebar content section, style it as you want.</p>
         </div>
+      }
+      footerContent={
+        <p style={{ textAlign: 'center', paddingTop: 20 }}>This is the footer content section, style it as you want.</p>
       }
     />
   ))
@@ -59,19 +61,20 @@ class FullPrimaryModal extends React.Component {
           <div>
             <h2>Main content</h2>
             <p>This is the main content section, style it as you want.</p>
-            <PrimaryButton onClick={this.addSuccessAlert}>
-              Add success alert
-            </PrimaryButton>
+            <PrimaryButton onClick={this.addSuccessAlert}>Add success alert</PrimaryButton>
           </div>
         }
         sidebarContent={
           <div>
             <h2>Sidebar content</h2>
             <p>This is the sidebar content section, style it as you want.</p>
-            <PrimaryButton onClick={this.addWarningAlert}>
-              Add warning alert
-            </PrimaryButton>
+            <PrimaryButton onClick={this.addWarningAlert}>Add warning alert</PrimaryButton>
           </div>
+        }
+        footerContent={
+          <p style={{ textAlign: 'center', paddingTop: 20 }}>
+            This is the footer content section, style it as you want.
+          </p>
         }
         alerts={this.alerts}
       />
@@ -88,19 +91,13 @@ class FullPrimaryModal extends React.Component {
 
   addSuccessAlert = () => {
     this.setState({
-      alerts: [
-        ...this.alerts,
-        { type: 'success', title: 'New success.', text: 'Hey, you did it.' },
-      ],
+      alerts: [...this.alerts, { type: 'success', title: 'New success.', text: 'Hey, you did it.' }],
     });
   };
 
   addWarningAlert = () => {
     this.setState({
-      alerts: [
-        ...this.alerts,
-        { type: 'warning', title: 'New warning.', text: "I'm warning you!" },
-      ],
+      alerts: [...this.alerts, { type: 'warning', title: 'New warning.', text: "I'm warning you!" }],
     });
   };
 
@@ -110,9 +107,7 @@ class FullPrimaryModal extends React.Component {
         {this.modal}
         <div className="container">
           <div className="row">
-            <PrimaryButton onClick={this.showPrimaryModal}>
-              Show modal
-            </PrimaryButton>
+            <PrimaryButton onClick={this.showPrimaryModal}>Show modal</PrimaryButton>
           </div>
         </div>
       </div>

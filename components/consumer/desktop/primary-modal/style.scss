@@ -7,18 +7,23 @@
     width: 848px;
   }
 
+  .pbg-primary-modal-content {
+    display: flex;
+  }
+
   .pbg-primary-modal-col {
-    float: left;
-    height: 100%;
     padding: 40px;
   }
 
   .pbg-primary-modal-main-content {
     background: $white;
-    height: 658px;
-    width: 568px;
-    border-bottom-left-radius: 4px;
-    border-top-left-radius: 4px;
+    height: 490px;
+    width: 538px;
+  }
+
+  .pbg-primary-modal-footer-content {
+    height: 87px;
+    width: 538px;
   }
 
   .pbg-primary-modal-sidebar-content {
