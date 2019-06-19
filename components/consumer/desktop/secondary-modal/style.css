@@ -98,11 +98,13 @@
   text-align: center; }
 
 .pbg-secondary-modal .pbg-modal-header {
-  padding-bottom: 24px; }
+  padding-bottom: 8px; }
 
 .pbg-secondary-modal .pbg-modal-icon {
   display: inline-block;
   margin-bottom: 24px; }
 
 .pbg-secondary-modal .pbg-icon-rocket-big:before {
-  content: url("../img/rocket-big.svg"); }
+  content: url("../img/pbg-rocket-big.svg");
+  height: 48px;
+  width: 48px; }

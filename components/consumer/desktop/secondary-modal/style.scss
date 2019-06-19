@@ -15,7 +15,7 @@
   }
 
   .pbg-modal-header {
-    padding-bottom: 24px;
+    padding-bottom: 8px;
   }
 
   .pbg-modal-icon {
@@ -24,6 +24,8 @@
   }
 
   .pbg-icon-rocket-big:before {
-    content: url('../img/rocket-big.svg');
+    content: url('../img/pbg-rocket-big.svg');
+    height: 48px;
+    width: 48px;
   }
 }
