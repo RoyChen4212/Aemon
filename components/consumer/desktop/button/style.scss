@@ -28,7 +28,11 @@
 
       &.pbg-button-active {
         background-color: $blue-80!important;
+        box-shadow: none;
         outline: none;
+        height: 39px;
+        margin-top: 1px;
+        padding-top: 1px;
       }
 
       &:hover {
@@ -40,15 +44,32 @@
       }
     }
 
-    &.disabled {
+    &.submitting {
       background-color: $grey-10;
       box-shadow: none;
+      cursor: none;
+      height: 39px;
+      margin-top: 1px;
+      padding-top: 1px;
       &.pbg-button-active, &:hover {
         background-color: $grey-10;
       }
 
       span {
         color: $grey-60;
+      }
+    }
+
+    &.disabled {
+      background-color: $grey-10;
+      box-shadow: $cta-disabled-shadow;
+      cursor: none;
+      &.pbg-button-active, &:hover {
+        background-color: $grey-10;
+      }
+
+      span {
+        color: $grey-50;
       }
     }
 

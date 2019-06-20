@@ -83,6 +83,9 @@
 .pbg-desktop-shadow-level-two {
   box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06); }
 
+.pbg-desktop-cta-disabled-shadow {
+  box-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.15); }
+
 .pbg-desktop-form-field-disabled {
   background: #F0F3F8; }
 
@@ -108,18 +111,34 @@
     background-color: #006AFF; }
     .pbg-consumer-desktop.pbg-button.pbg-button-primary.pbg-button-active {
       background-color: #0044A3 !important;
-      outline: none; }
+      box-shadow: none;
+      outline: none;
+      height: 39px;
+      margin-top: 1px;
+      padding-top: 1px; }
     .pbg-consumer-desktop.pbg-button.pbg-button-primary:hover {
       background-color: #0055CC; }
     .pbg-consumer-desktop.pbg-button.pbg-button-primary:focus, .pbg-consumer-desktop.pbg-button.pbg-button-primary:active {
       outline: none; }
+  .pbg-consumer-desktop.pbg-button.submitting {
+    background-color: #F0F3F8;
+    box-shadow: none;
+    cursor: none;
+    height: 39px;
+    margin-top: 1px;
+    padding-top: 1px; }
+    .pbg-consumer-desktop.pbg-button.submitting.pbg-button-active, .pbg-consumer-desktop.pbg-button.submitting:hover {
+      background-color: #F0F3F8; }
+    .pbg-consumer-desktop.pbg-button.submitting span {
+      color: #526679; }
   .pbg-consumer-desktop.pbg-button.disabled {
     background-color: #F0F3F8;
-    box-shadow: none; }
+    box-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.15);
+    cursor: none; }
     .pbg-consumer-desktop.pbg-button.disabled.pbg-button-active, .pbg-consumer-desktop.pbg-button.disabled:hover {
       background-color: #F0F3F8; }
     .pbg-consumer-desktop.pbg-button.disabled span {
-      color: #526679; }
+      color: #8093A6; }
   .pbg-consumer-desktop.pbg-button.pbg-button-facebook {
     background-color: #3B5998;
     width: auto; }

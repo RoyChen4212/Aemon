@@ -25,6 +25,7 @@ $blue-gradient: linear-gradient(267deg, $pbg-blue-light, $pbg-blue);
 $blue-linear: linear-gradient(90deg, $pbg-blue 0%, $pbg-blue-light 196.67%);
 
 $cta-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.5);
+$cta-disabled-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.15);
 
 $grey-10: #F0F3F8;
 $grey-30: #D5DDE9;
@@ -209,6 +210,10 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
 .pbg-desktop-shadow-level-two {
   box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06);
+}
+
+.pbg-desktop-cta-disabled-shadow {
+  box-shadow: $cta-disabled-shadow;
 }
 
 .pbg-desktop-form-field-disabled {

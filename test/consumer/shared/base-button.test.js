@@ -35,6 +35,11 @@ export const shouldBehaveLikeButton = wrapper => {
     expect(wrapper.find('button').hasClass('disabled')).to.be.true;
   });
 
+  it('should add submitting class when submitting prop is present', () => {
+    wrapper.setProps({ submitting: true });
+    expect(wrapper.find('button').hasClass('submitting')).to.be.true;
+  });
+
   it('should render correct text', () => {
     const expected = 'some text';
     wrapper.setProps({ children: expected });
@@ -43,7 +48,7 @@ export const shouldBehaveLikeButton = wrapper => {
 
   it('should execute click handler if given', () => {
     const onClick = sinon.spy();
-    wrapper.setProps({ onClick });
+    wrapper.setProps({ onClick, disabled: false, submitting: false });
     wrapper.find('button').simulate('click');
     expect(onClick.calledOnce).to.be.true;
   });
@@ -63,6 +68,13 @@ export const shouldBehaveLikeButton = wrapper => {
   it('should not execute click handler if given but disabled', () => {
     const onClick = sinon.spy();
     wrapper.setProps({ onClick, disabled: true });
+    wrapper.find('button').simulate('click');
+    expect(onClick.calledOnce).to.be.false;
+  });
+
+  it('should not execute click handler if given but submitting', () => {
+    const onClick = sinon.spy();
+    wrapper.setProps({ onClick, submitting: true });
     wrapper.find('button').simulate('click');
     expect(onClick.calledOnce).to.be.false;
   });

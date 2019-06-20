@@ -21,6 +21,11 @@ storiesOf('Consumer/Desktop/Atomic Components/Buttons', module)
     </React.Fragment>
   ))
   .add('cta-primary/submitting', () => (
+    <PrimaryButton submitting onClick={action('clicked')}>
+      Primary Button
+    </PrimaryButton>
+  ))
+  .add('cta-primary/disabled', () => (
     <PrimaryButton disabled onClick={action('clicked')}>
       Primary Button
     </PrimaryButton>

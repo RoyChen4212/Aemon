@@ -83,6 +83,9 @@
 .pbg-desktop-shadow-level-two, .pbg-consumer-desktop.pbg-container.pbg-container-shadow-2 {
   box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06); }
 
+.pbg-desktop-cta-disabled-shadow {
+  box-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.15); }
+
 .pbg-desktop-form-field-disabled {
   background: #F0F3F8; }
 
