@@ -79,6 +79,7 @@ class BaseButton extends React.PureComponent {
           onMouseDown={this.activate}
           onMouseOut={this.deactivate}
           onMouseUp={this.deactivate}
+          onBlur={this.deactivate}
           disabled={this.props.disabled || this.props.submitting}
         >
           <span>{this.props.children}</span>
