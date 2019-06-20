@@ -8,7 +8,7 @@
   "description": "PBG UI Library with Storybook",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --mode=production",
+    "build": "./node_modules/.bin/webpack",
     "lint": "node scripts/lint.js",
     "format:stage": "precise-commits",
     "test": "mocha ./test/config/index.js ./test",

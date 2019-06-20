@@ -41,4 +41,3 @@ jspm_packages
 config/development.js
 config/test.js
 dist
-dist_old

@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  mode: 'production',
   entry: {
     index: './components/index.js',
     desktop: './components/consumer/desktop/index.js',
@@ -12,6 +13,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
+    library: 'aemon',
+    libraryTarget: 'umd'
   },
   externals: [nodeExternals()],
   plugins: [
