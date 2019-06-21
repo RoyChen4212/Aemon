@@ -15,7 +15,7 @@
     "test:watch": "mocha ./test/config/index.js --watch",
     "test:cover": "nyc --reporter=lcov mocha -r ignore-styles --compilers js:@babel/register -r ./test/config/enzyme.js --recursive --ui bdd ./test",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "heroku-postbuild": "build-storybook -c .storybook -o dist"
+    "heroku-postbuild": "build-storybook -c .storybook -o static"
   },
   "repository": {
     "type": "git",
