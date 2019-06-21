@@ -34,12 +34,14 @@ class PrimaryModal extends React.PureComponent {
         onHideAlert={this.props.onHideAlert}
       >
         <div className="pbg-primary-modal-content">
-          <div className="pbg-primary-modal-col">
+          <div className="pbg-primary-modal-main-container">
             <div className="pbg-primary-modal-main-content">{this.props.mainContent}</div>
-            <Divider />
-            <div className="pbg-primary-modal-footer-content">{this.props.footerContent}</div>
+            <div>
+              <Divider />
+              <div className="pbg-primary-modal-footer-content">{this.props.footerContent}</div>
+            </div>
           </div>
-          <div className="pbg-primary-modal-sidebar-content pbg-primary-modal-col">{this.props.sidebarContent}</div>
+          <div className="pbg-primary-modal-sidebar-content">{this.props.sidebarContent}</div>
         </div>
       </Modal>
     );
