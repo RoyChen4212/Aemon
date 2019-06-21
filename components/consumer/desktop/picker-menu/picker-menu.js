@@ -4,7 +4,7 @@ import get from 'lodash/get';
 import Label, { labelTypes } from '../label';
 import Container from '../container';
 
-import './style.css';
+import './style.scss';
 
 const baseClassName = 'pbg-consumer-desktop pbg-picker-menu';
 

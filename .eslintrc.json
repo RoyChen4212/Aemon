@@ -45,6 +45,9 @@
     "jsx-a11y/label-has-for": "off",
     "jsx-a11y/alt-text": "off",
     "import/prefer-default-export": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": [".storybook/**", "stories/**", "test/**"] }]
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": [".storybook/**", "stories/**", "test/**", "webpack.*"] }
+    ]
   }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import FormField from '../form-field';
 import { labelTypes } from '../label';
-import './style.css';
+
+import './style.scss';
 
 class TextArea extends FormField {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-text-area';

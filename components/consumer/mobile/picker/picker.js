@@ -5,7 +5,7 @@ import Label, { labelTypes } from '../label';
 import Hint, { hintTypes } from '../hint';
 import makeEvent from '../../../lib/make-event';
 
-import './style.css';
+import './style.scss';
 
 export const PICKER_EMPTY_VALUE = '__EmptyValue';
 

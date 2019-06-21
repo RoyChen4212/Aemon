@@ -5,7 +5,7 @@ import Label, { labelTypes } from '../label';
 import Hint from '../hint';
 import FormField from '../form-field';
 import makeEvent from '../../../lib/make-event';
-import './style.css';
+import './style.scss';
 
 const STREET_ADDRESS = 'streetAddress';
 const CITY = 'city';

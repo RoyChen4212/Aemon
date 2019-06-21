@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import ActivityThumbnail, { PURCHASE_COMMENT_CREATED } from '../activity-thumbnail';
 
-import './style.css';
+import './style.scss';
 
 class ActivityComment extends React.PureComponent {
   static propTypes = {

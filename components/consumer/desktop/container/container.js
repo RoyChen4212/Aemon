@@ -1,5 +1,6 @@
 import React from 'react';
-import './style.css';
+
+import './style.scss';
 
 const Container = React.forwardRef((props, ref) => (
   <div className={className(props)} ref={ref}>

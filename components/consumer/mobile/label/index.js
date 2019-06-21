@@ -2,7 +2,7 @@ import React from 'react';
 
 import Label from '../../shared/label';
 
-import './style.css';
+import './style.scss';
 
 export * from '../../shared/label';
 

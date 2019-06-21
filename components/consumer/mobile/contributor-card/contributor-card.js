@@ -5,7 +5,7 @@ import Hint from '../hint';
 import Label, { labelTypes } from '../label';
 import { LinkButton } from '../button';
 import { HistoricalPicker } from '../historical-picker';
-import './style.css';
+import './style.scss';
 
 const TYPE_ERROR = 'error';
 

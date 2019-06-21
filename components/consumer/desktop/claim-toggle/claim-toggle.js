@@ -4,7 +4,7 @@ import Container from '../container';
 import FormField from '../form-field';
 import ClaimToggleContent from '../claim-toggle-content';
 
-import './style.css';
+import './style.scss';
 
 class ClaimToggle extends FormField {
   baseClassName = 'pbg-claim-toggle';

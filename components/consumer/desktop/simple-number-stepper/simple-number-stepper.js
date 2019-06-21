@@ -2,7 +2,7 @@ import React from 'react';
 import makeEvent from '../../../lib/make-event';
 import FormField from '../form-field';
 
-import './style.css';
+import './style.scss';
 
 class SimpleNumberStepper extends FormField {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-simple-number-stepper';

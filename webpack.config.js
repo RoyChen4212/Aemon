@@ -1,40 +1,46 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
-    consumerMobile: './components/consumer/mobile/index.js'
+    index: './components/index.js',
+    desktop: './components/consumer/desktop/index.js',
+    mobile: './components/consumer/mobile/index.js',
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    library: 'aemon',
+    libraryTarget: 'umd'
   },
+  externals: [nodeExternals()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+  ],
   module: {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/react'],
+        },
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.svg$/,
-        loader: "file-loader"
+        loader: 'file-loader',
       },
-      {
-        test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"],
-        include: path.resolve(__dirname, "../")
-      },
-      {
-        test: /\.css$/,
-        loaders: ["style-loader", "css-loader"],
-        include: path.resolve(__dirname, "../")
-      }
-    ]
-  }
+    ],
+  },
 };

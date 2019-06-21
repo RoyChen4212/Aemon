@@ -1,6 +1,7 @@
 import React from 'react';
 import Label, { labelTypes } from '../label';
-import './style.css';
+
+import './style.scss';
 
 export default class ModalAlert extends React.PureComponent {
   baseClass = 'pbg-consumer-desktop pbg-modal-alert';

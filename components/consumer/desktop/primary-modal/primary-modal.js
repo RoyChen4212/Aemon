@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Divider from '../divider';
 import Modal from '../modal';
 
-import './style.css';
+import './style.scss';
 
 class PrimaryModal extends React.PureComponent {
   static propTypes = {

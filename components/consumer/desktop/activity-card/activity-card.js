@@ -4,19 +4,14 @@ import moment from 'moment';
 
 import ActivityThumbnail from '../activity-thumbnail';
 
-import './style.css';
+import './style.scss';
 
 class ActivityCard extends React.PureComponent {
   static propTypes = {
     type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
-  };
-
-  static defaultProps = {
-    type: null,
-    title: null,
-    time: null,
+    children: PropTypes.node.isRequired,
   };
 
   get time() {

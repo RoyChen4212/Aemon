@@ -2,7 +2,7 @@ import React from 'react';
 import { H3 } from '../heading';
 import { SmallButton } from '../button';
 
-import './style.css';
+import './style.scss';
 
 export const NoAccountWarning = props => (
   <div className={className(props)}>

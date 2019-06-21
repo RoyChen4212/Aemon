@@ -3,7 +3,7 @@ import FormField from '../form-field';
 import Label from '../label';
 import BaseCheckbox from '../../shared/base-checkbox';
 
-import './style.css';
+import './style.scss';
 
 const Checkbox = BaseCheckbox(FormField, Label, 'pbg-mobile pbg-form-field pbg-checkbox');
 

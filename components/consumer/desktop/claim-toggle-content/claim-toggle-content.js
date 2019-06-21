@@ -3,7 +3,7 @@ import React from 'react';
 import Label from '../label';
 import { Checkbox } from '../checkbox';
 
-import './style.css';
+import './style.scss';
 
 class ClaimToggleContent extends Checkbox {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-checkbox pbg-claim-toggle-content';

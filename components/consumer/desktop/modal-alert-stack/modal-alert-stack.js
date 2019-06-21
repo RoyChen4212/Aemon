@@ -2,7 +2,8 @@ import React from 'react';
 import last from 'lodash/last';
 import jQuery from 'jquery';
 import ModalAlert from '../modal-alert';
-import './style.css';
+
+import './style.scss';
 
 class ModalAlertStack extends React.PureComponent {
   stackElementRef = React.createRef();
