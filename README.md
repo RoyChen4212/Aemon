@@ -155,6 +155,7 @@ Regardless of whether you're adding a new component or updating an existing one,
 * Implement the structure and behavior you just defined in the unit test file
 * Continue the tests/implementation cycle until the component is ready
 * Add styles in the `.scss` file and see the progress on Storybook
+* Expose your component by adding it to `/components/consumer/desktop/index.js` or `/components/consumer/mobile/index.js`
 
 ### Stories
 
