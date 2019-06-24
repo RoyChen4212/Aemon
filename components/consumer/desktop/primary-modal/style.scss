@@ -1,6 +1,8 @@
 @import '../../shared/scss/styleguide';
 
 .pbg-primary-modal {
+  overflow-y: auto;
+
   .pbg-modal-dialog {
     top: calc((100% - 658px + 46px) / 2);
     left: calc((100% - 848px) / 2);
@@ -11,25 +13,30 @@
     display: flex;
   }
 
-  .pbg-primary-modal-col {
+  .pbg-primary-modal-main-container {
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .pbg-primary-modal-main-content {
     background: $white;
-    height: 490px;
+    min-height: 120px;
     width: 538px;
   }
 
   .pbg-primary-modal-footer-content {
-    height: 87px;
+    padding-top: 16px;
+    min-height: 87px;
     width: 538px;
   }
 
   .pbg-primary-modal-sidebar-content {
+    padding: 40px;
     background: $grey_10;
     width: 280px;
-    height: 658px;
+    min-height: 658px;
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
   }
