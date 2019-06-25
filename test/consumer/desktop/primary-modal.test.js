@@ -20,14 +20,14 @@ describe('primary-modal', () => {
     expect(wrapper.find(contentClass)).to.have.lengthOf(1);
   });
 
-  it('should have footer content section', () => {
-    const wrapper = shallow(<PrimaryModal />);
-    expect(wrapper.find(footerClass)).to.have.lengthOf(1);
-  });
-
   it('should have sidebar content section', () => {
     const wrapper = shallow(<PrimaryModal />);
     expect(wrapper.find(sidebarClass)).to.have.lengthOf(1);
+  });
+
+  it('should not have footer content section if no footer content is given', () => {
+    const wrapper = shallow(<PrimaryModal />);
+    expect(wrapper.find(footerClass)).to.be.empty;
   });
 
   it('should render given children in main content', () => {
