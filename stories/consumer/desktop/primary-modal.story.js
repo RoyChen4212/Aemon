@@ -31,7 +31,30 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
           <p>This is the sidebar content section, style it as you want.</p>
         </div>
       }
-      footerContent={<p>This is the footer content section, style it as you want.</p>}
+      footerContent={
+        <div className="container">
+          <div className="row">
+            <PrimaryButton onClick={action('clicked')}>Call to action</PrimaryButton>
+          </div>
+        </div>
+      }
+    />
+  ))
+  .add('primary-modal/no-footer', () => (
+    <PrimaryModal
+      onClose={action('click')}
+      mainContent={
+        <div>
+          <h2>Main content</h2>
+          <p>This is the main content section, style it as you want.</p>
+        </div>
+      }
+      sidebarContent={
+        <div>
+          <h2>Sidebar</h2>
+          <p>This is the sidebar content section, style it as you want.</p>
+        </div>
+      }
     />
   ))
   .add('primary-modal/working sample', () => <FullPrimaryModal />);
