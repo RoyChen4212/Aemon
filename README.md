@@ -254,12 +254,11 @@ $ git checkout master
 $ git pull
 ```
 
-Then, move to `latest-release` branch and merge it into `master`.
+Then, build the project and add the changes in `dist/` folder to the git stage.
 
 ```
-$ git checkout latest-release
-$ git pull
-$ git merge master
+$ npm run build
+$ git add dist
 ```
 
 Then, bump the `version` in the `package.json` file by following [semantic versioning](https://semver.org/) rules. After that, commit and push the changes:
@@ -276,8 +275,4 @@ $ git tag X.Y.Z
 $ git push --tags
 ```
 
-Once the realese is ready, you should update the `aemon` version in the `varys` `package.json` file and run:
-
-```
-$ npm install
-```
+Once the realese is ready, you should update the `aemon` version in the `varys` `package.json`. Follow the instructions in `varys` `README` file.
