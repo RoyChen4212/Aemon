@@ -3,7 +3,7 @@ import React from 'react';
 import { TextField } from '../text-field';
 import Hint, { hintTypes } from '../hint';
 
-import './style.css';
+import './style.scss';
 
 class PasswordField extends TextField {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-text-field pbg-password-field';

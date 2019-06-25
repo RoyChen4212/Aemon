@@ -7,7 +7,7 @@ import PasswordField from '../password-field';
 import { Checkbox } from '../checkbox';
 import makeEvent from '../../../lib/make-event';
 
-import './style.css';
+import './style.scss';
 
 const ComposedFormField = ComplexValueFormField(FormField);
 
