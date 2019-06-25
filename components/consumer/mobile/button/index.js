@@ -1,7 +1,8 @@
 import React from 'react';
 import BaseButton, { CLASS_NAME } from '../../shared/button';
 import Hint from '../hint';
-import './style.css';
+
+import './style.scss';
 
 class BaseMobileButton extends BaseButton {
   get hint() {

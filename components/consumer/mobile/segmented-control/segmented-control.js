@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { isObject, findIndex, first, last } from 'lodash';
 import makeEvent from '../../../lib/make-event';
 
-import './style.css';
+import './style.scss';
 
 class SegmentedControl extends React.Component {
   static propTypes = {

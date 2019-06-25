@@ -4,7 +4,7 @@ import Label, { labelTypes } from '../label';
 import Hint from '../hint';
 import BaseCheckbox from '../../shared/base-checkbox';
 
-import './style.css';
+import './style.scss';
 
 const baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-checkbox';
 const ComposedCheckbox = BaseCheckbox(FormField, Label, baseClassName);

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import powerByLogo from '../img/pbg-powered-by-logo.svg';
 import Divider from '../divider';
 
-import './style.css';
+import './style.scss';
 
 class ModalBranding extends React.PureComponent {
   baseClass = 'pbg-consumer-desktop pbg-modal-branding';

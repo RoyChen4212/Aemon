@@ -3,7 +3,7 @@ import get from 'lodash/get';
 import { TextField } from '../form-fields';
 import AddOrSelectField from '../add-or-select-field';
 import makeEvent from '../../../lib/make-event';
-import './style.css';
+import './style.scss';
 
 class PhoneField extends AddOrSelectField {
   baseClassName = 'pbg-form-field pbg-phone-field';

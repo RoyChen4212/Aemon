@@ -31,9 +31,7 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
           <p>This is the sidebar content section, style it as you want.</p>
         </div>
       }
-      footerContent={
-        <p style={{ textAlign: 'center', paddingTop: 20 }}>This is the footer content section, style it as you want.</p>
-      }
+      footerContent={<p>This is the footer content section, style it as you want.</p>}
     />
   ))
   .add('primary-modal/working sample', () => <FullPrimaryModal />);
@@ -71,11 +69,7 @@ class FullPrimaryModal extends React.Component {
             <PrimaryButton onClick={this.addWarningAlert}>Add warning alert</PrimaryButton>
           </div>
         }
-        footerContent={
-          <p style={{ textAlign: 'center', paddingTop: 20 }}>
-            This is the footer content section, style it as you want.
-          </p>
-        }
+        footerContent={<p style={{ textAlign: 'center' }}>This is the footer content section, style it as you want.</p>}
         alerts={this.alerts}
       />
     );

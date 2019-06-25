@@ -24,6 +24,7 @@ coverage
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/*
+static/*
 # Dependency directories
 node_modules
 jspm_packages
@@ -37,6 +38,7 @@ jspm_packages
 .env
 .DS_Store
 .idea
+.cache
 config/development.js
 config/test.js
 dist

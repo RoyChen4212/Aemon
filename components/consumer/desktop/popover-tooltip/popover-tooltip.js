@@ -2,7 +2,8 @@ import React from 'react';
 import jQuery from 'jquery';
 import Container from '../container';
 import Popover from '../popover';
-import './style.css';
+
+import './style.scss';
 
 class PopoverTooltip extends Popover {
   bindDeactivationEvent = () => {

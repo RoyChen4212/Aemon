@@ -2,7 +2,7 @@ import React from 'react';
 import { H2 } from '../heading';
 import { LinkButton, PrimaryButton, SecondaryButton, types as buttonTypes } from '../button';
 
-import './style.css';
+import './style.scss';
 
 class Modal extends React.PureComponent {
   onBackClick = () => {

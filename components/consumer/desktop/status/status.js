@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import PopoverTooltip from '../popover-tooltip';
 
-import './style.css';
+import './style.scss';
 
 class Status extends React.PureComponent {
   static propTypes = {

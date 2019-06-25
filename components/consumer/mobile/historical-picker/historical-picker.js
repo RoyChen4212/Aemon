@@ -3,7 +3,7 @@ import React from 'react';
 import { Picker } from '../picker';
 import Label from '../label';
 
-import './style.css';
+import './style.scss';
 
 class HistoricalPicker extends Picker {
   baseClassName = 'pbg-form-field pbg-picker pbg-historical-picker';
