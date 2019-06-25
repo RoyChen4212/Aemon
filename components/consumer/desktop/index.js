@@ -7,6 +7,8 @@ import ActivityComment from './activity-comment';
 import AddComment from './add-comment';
 import { PrimaryButton } from './button';
 import { TextField } from './text-field';
+import PasswordField from './password-field';
+import GuestPasswordField from './guest-password-field';
 
 import ActivityThumbnail, {
   PURCHASE_UPDATED,
@@ -50,6 +52,8 @@ const desktop = {
   AddComment,
   PrimaryButton,
   TextField,
+  PasswordField,
+  GuestPasswordField,
 };
 
 export default desktop;
