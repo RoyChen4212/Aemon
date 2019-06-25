@@ -46,11 +46,6 @@ describe('TextArea', () => {
     expect(wrapper.contains(<Hint>{expected}</Hint>)).to.be.true;
   });
 
-  it('should add an * to label (placeholder) when required', () => {
-    const wrapper = shallow(<TextArea label="a label" required />);
-    expect(wrapper.find('textarea').prop('placeholder')).to.equal('a label*');
-  });
-
   it('should execute onBlur when clicked out of textarea', () => {
     const onBlur = sinon.spy();
     const wrapper = shallow(<TextArea onBlur={onBlur} />);

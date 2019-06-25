@@ -88,12 +88,6 @@ describe('TextField', () => {
     expect(wrapper.find('input').prop('placeholder')).to.equal(expected);
   });
 
-  it('should add * to placeholder when required', () => {
-    const expected = 'a placeholder';
-    const wrapper = shallow(<TextField label={expected} required />);
-    expect(wrapper.find('input').prop('placeholder')).to.equal(`${expected}*`);
-  });
-
   it('should include label element with passed label along with input', () => {
     const expected = 'A label';
     const wrapper = shallow(<TextField label={expected} />);
