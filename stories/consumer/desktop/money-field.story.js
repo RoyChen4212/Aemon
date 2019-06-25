@@ -18,5 +18,4 @@ storiesOf('Consumer/Desktop/Atomic Components/price-input', module)
   .addDecorator(withContainer)
   .add('price-input/default', () => <FieldStateProvider component={MoneyField} />)
   .add('price-input/with-default-value', () => <FieldStateProvider component={MoneyField} defaultValue={1899} />)
-  .add('price-input/with-comma-separator', () => <FieldStateProvider component={MoneyField} separator="," />)
-  .add('price-input/with-currency-sign', () => <FieldStateProvider component={MoneyField} currencySign="£" />);
+  .add('price-input/with-different-currency', () => <FieldStateProvider component={MoneyField} currency="GBP" />);

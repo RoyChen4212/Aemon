@@ -1,30 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { TextField } from '../text-field';
-import toCurrency from './toCurrency';
+import money, { USD, format } from '@paybygroup/baelish';
 
-import './style.scss';
+import { TextField } from '../text-field';
+
+const formatCurrency = (value, currency) => format(money(value, currency));
 
 class MoneyField extends TextField {
   static propTypes = {
     value: PropTypes.string,
     defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    separator: PropTypes.oneOf(['.', ',']),
-    currencySign: PropTypes.string,
+    currency: PropTypes.string,
   };
 
   static defaultProps = {
-    separator: '.',
-    currencySign: '$',
+    currency: USD,
   };
 
   state = {
-    value: toCurrency(this.props.defaultValue, this.props.separator),
+    value: formatCurrency(this.props.defaultValue, this.props.currency),
   };
 
   handleChange = event => {
-    const valueAsCurrency = toCurrency(event.target.value, this.props.separator);
-    this.setState({ value: valueAsCurrency });
+    this.setState({ value: formatCurrency(event.target.value, this.props.currency) });
   };
 
   get value() {
@@ -37,16 +35,14 @@ class MoneyField extends TextField {
 
   get input() {
     return (
-      <div className="pbg-consumer-desktop pbg-money-field">
-        <i>{this.props.currencySign}</i>
-        <input
-          pattern="\d*"
-          name={this.name}
-          value={this.value}
-          onChange={this.handleChange}
-          placeholder={toCurrency(0, this.props.separator)}
-        />
-      </div>
+      <input
+        className="pbg-money-field"
+        pattern="\d*"
+        name={this.name}
+        value={this.value}
+        onChange={this.handleChange}
+        placeholder={formatCurrency(0, this.props.currency)}
+      />
     );
   }
 }
