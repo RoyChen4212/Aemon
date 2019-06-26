@@ -155,6 +155,7 @@ Regardless of whether you're adding a new component or updating an existing one,
 * Implement the structure and behavior you just defined in the unit test file
 * Continue the tests/implementation cycle until the component is ready
 * Add styles in the `.scss` file and see the progress on Storybook
+* Expose your component by adding it to `/components/consumer/desktop/index.js` or `/components/consumer/mobile/index.js`
 
 ### Stories
 
@@ -253,12 +254,11 @@ $ git checkout master
 $ git pull
 ```
 
-Then, move to `latest-release` branch and merge it into `master`.
+Then, build the project and add the changes in `dist/` folder to the git stage.
 
 ```
-$ git checkout latest-release
-$ git pull
-$ git merge master
+$ npm run build
+$ git add -f dist
 ```
 
 Then, bump the `version` in the `package.json` file by following [semantic versioning](https://semver.org/) rules. After that, commit and push the changes:
@@ -275,8 +275,4 @@ $ git tag X.Y.Z
 $ git push --tags
 ```
 
-Once the realese is ready, you should update the `aemon` version in the `varys` `package.json` file and run:
-
-```
-$ npm install
-```
+Once the realese is ready, you should update the `aemon` version in the `varys` `package.json`. Follow the instructions in `varys` `README` file.

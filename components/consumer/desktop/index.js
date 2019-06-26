@@ -7,6 +7,7 @@ import ActivityComment from './activity-comment';
 import AddComment from './add-comment';
 import { PrimaryButton } from './button';
 import { TextField } from './text-field';
+import { MoneyField } from './money-field';
 import PasswordField from './password-field';
 import GuestPasswordField from './guest-password-field';
 
@@ -52,6 +53,7 @@ const desktop = {
   AddComment,
   PrimaryButton,
   TextField,
+  MoneyField,
   PasswordField,
   GuestPasswordField,
 };
