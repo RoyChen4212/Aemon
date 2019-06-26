@@ -175,10 +175,10 @@ import MyComponent from '../../../components/consumer/desktop/my-component';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl =
-  'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=997%3A8470';
+const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=997%3A8470';
 
 storiesOf('Consumer/Desktop/Info/my-component', module)
+  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('my-component/default', () => <MyComponent />);

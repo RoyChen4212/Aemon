@@ -44,4 +44,18 @@ describe('Desktop: FormField', () => {
 
     expect(labelWrapper.html()).to.contain('<label');
   });
+
+  it('should render a placeholder if specified in props', () => {
+    const wrapper = shallow(<FormField placeholder="this is a placeholder" />);
+    const instance = wrapper.instance();
+
+    expect(instance.placeholder).to.equal('this is a placeholder');
+  });
+
+  it('should not render a placeholder if specified in props', () => {
+    const wrapper = shallow(<FormField placeholder="this is a placeholder" disabled />);
+    const instance = wrapper.instance();
+
+    expect(instance.placeholder).not.to.equal('this is a placeholder');
+  });
 });

@@ -1,0 +1,17 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-form-field {
+    &.pbg-password-field {
+      .pbg-password-field-header {
+        position: relative;
+
+        .pbg-hint-clickable {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}

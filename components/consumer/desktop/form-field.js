@@ -16,6 +16,12 @@ class FormField extends BaseFormField {
   get hintOrError() {
     return this.renderHintOrError(Hint);
   }
+
+  get placeholder() {
+    const { disabled, label } = this.adaptedProps;
+    const placeholder = this.adaptedProps.placeholder || label;
+    return !disabled ? placeholder : null;
+  }
 }
 
 export default FormField;
