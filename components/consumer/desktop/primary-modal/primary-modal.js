@@ -36,10 +36,12 @@ class PrimaryModal extends React.PureComponent {
         <div className="pbg-primary-modal-content">
           <div className="pbg-primary-modal-main-container">
             <div className="pbg-primary-modal-main-content">{this.props.mainContent}</div>
-            <div>
-              <Divider />
-              <div className="pbg-primary-modal-footer-content">{this.props.footerContent}</div>
-            </div>
+            {this.props.footerContent && (
+              <div>
+                <Divider />
+                <div className="pbg-primary-modal-footer-content">{this.props.footerContent}</div>
+              </div>
+            )}
           </div>
           <div className="pbg-primary-modal-sidebar-content">{this.props.sidebarContent}</div>
         </div>
