@@ -1,0 +1,66 @@
+@import '../../shared/scss/styleguide';
+
+$width: 200px;
+$height: 177px;
+$shadow-size: 20px;
+
+.pbg-email-preview {
+  &.pbg-consumer-desktop {
+    font-family: $roboto;
+    width: $width;
+    height: $height;
+    position: relative;
+
+    .pbg-email-preview-inner {
+      background-color: $white;
+      border-top: 4px solid $blue-60;
+      border-radius: 4px;
+      box-shadow: 0px 0px $shadow-size rgba(36, 49, 62, 0.1);
+      padding: 8px 16px;
+      margin: 0 16px;
+      width: 168px;
+      height: 138px;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+    }
+
+    .pbg-email-preview-merchant-logo img {
+      margin-bottom: 8px;
+      height: 10px;
+    }
+
+    .pbg-email-preview-content {
+      word-wrap: break-word;
+
+      p {
+        color: $grey-60;
+        font-size: 10px;
+        line-height: 13px;
+      }
+
+      h5 {
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 13px;
+      }
+    }
+
+    .pbg-email-preview-envelope-back {
+      background-image: url('../img/pbg-envelope-back.svg');
+      height: $height - 7px;
+      width: $width;
+      position: absolute;
+      top: 7px;
+    }
+
+    .pbg-email-preview-envelope-front {
+      background-image: url('../img/pbg-envelope-front.svg');
+      height: 120px;
+      width: $width + (2 * $shadow-size);
+      position: absolute;
+      bottom: -$shadow-size;
+      left: -$shadow-size;
+    }
+  }
+}
