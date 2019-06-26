@@ -258,7 +258,7 @@ Then, build the project and add the changes in `dist/` folder to the git stage.
 
 ```
 $ npm run build
-$ git add dist
+$ git add -f dist
 ```
 
 Then, bump the `version` in the `package.json` file by following [semantic versioning](https://semver.org/) rules. After that, commit and push the changes:
