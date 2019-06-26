@@ -47,7 +47,7 @@
     &.submitting {
       background-color: $grey-10;
       box-shadow: none;
-      cursor: none;
+      cursor: default;
       height: 39px;
       margin-top: 1px;
       padding-top: 1px;
@@ -63,7 +63,7 @@
     &.disabled {
       background-color: $grey-10;
       box-shadow: $cta-disabled-shadow;
-      cursor: none;
+      cursor: default;
       &.pbg-button-active, &:hover {
         background-color: $grey-10;
       }
