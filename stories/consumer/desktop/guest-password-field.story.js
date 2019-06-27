@@ -19,7 +19,7 @@ storiesOf('Consumer/Desktop/Form Fields/guest-password-field', module)
     <FieldStateProvider
       component={GuestPasswordField}
       name="password"
-      label="Create Password"
+      label="Create password"
       hint="Don't create an account, just contribute."
       placeholder="Must be at least 8 characters"
       onChange={action('change')}
