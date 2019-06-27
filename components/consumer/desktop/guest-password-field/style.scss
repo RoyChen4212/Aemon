@@ -2,12 +2,16 @@
 
 .pbg-consumer-desktop {
   &.pbg-guest-password-field {
-    .pbg-checkbox-label-hint-placeholder {
-      .pbg-label {
-        @extend .pbg-desktop-secondary-text;
-        @extend .pbg-desktop-small-text;
+    .pbg-checkbox {
+      display: initial;
 
-        margin-left: 2px;
+      .pbg-checkbox-label-hint-placeholder {
+        .pbg-label {
+          @extend .pbg-desktop-secondary-text;
+          @extend .pbg-desktop-small-text;
+
+          margin-left: 2px;
+        }
       }
     }
   }
