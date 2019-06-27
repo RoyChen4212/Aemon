@@ -6,6 +6,8 @@
       .pbg-label {
         @extend .pbg-desktop-secondary-text;
         @extend .pbg-desktop-small-text;
+
+        margin-left: 2px;
       }
     }
   }
