@@ -29,7 +29,7 @@ class EmailPreview extends Component {
             <img src={this.props.logo} />
           </div>
           <div className="pbg-email-preview-content">
-            <h5>{truncate(this.props.title, { length: 30 })}</h5>
+            <h5>{truncate(this.props.title, { length: 43 })}</h5>
             <p>{this.props.content}</p>
           </div>
         </div>

@@ -22,7 +22,7 @@ storiesOf('Consumer/Desktop/Add Contributors/email-preview', module)
   .add('email-preview/default', () => (
     <EmailPreview
       logo={randomLogo()}
-      title="Split the cost of [Purchase Title]"
+      title="Split the cost of [Purchase Title up to two lines]"
       content="“Click through for all the details, and you can decide whether to contribute. Click through for all the details, and you can decide whether to contribute. Click through for all the details, and you can decide whether to contribute.”"
     />
   ));

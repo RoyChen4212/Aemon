@@ -31,9 +31,9 @@ describe('email-preview', () => {
     expect(wrapper.find('.pbg-email-preview-content').html()).to.include(content);
   });
 
-  it('should truncate the title if longer than 30 characters', () => {
-    const longTitle = 'Lorem ipsum dolor sit amet posuere';
-    const truncatedTitle = 'Lorem ipsum dolor sit amet ...';
+  it('should truncate the title if longer than 43 characters', () => {
+    const longTitle = 'Lorem ipsum dolor sit amet posuere. Lorem ipsum dolor sit amet, consectetur amet.';
+    const truncatedTitle = 'Lorem ipsum dolor sit amet posuere. Lore...';
     const wrapper = shallow(<EmailPreview logo={logo} title={longTitle} />);
     expect(wrapper.find('.pbg-email-preview-content').html()).to.include(truncatedTitle);
   });
