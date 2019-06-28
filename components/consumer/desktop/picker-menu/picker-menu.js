@@ -14,8 +14,9 @@ class PickerMenu extends React.PureComponent {
   }
 
   onOptionClick = value => {
-    if (!this.props.onOptionClick) return;
-    return this.props.onOptionClick(value);
+    const { onOptionClick } = this.props;
+    if (!onOptionClick) return;
+    return onOptionClick(value);
   };
 
   renderLabel = (label, selected) => {
@@ -30,19 +31,25 @@ class PickerMenu extends React.PureComponent {
   };
 
   renderOption = ({ value, label }, i) => {
-    const selected = value === this.props.selected ? 'selected' : '';
+    const { selected } = this.props;
+    const selectedClass = value === selected ? 'selected' : '';
     const first = i === 0 ? 'picker-menu-item-rounded-top' : '';
     const last = i === this.options.length - 1 ? 'picker-menu-item-rounded-bottom' : '';
     return (
-      <div className={`picker-menu-item ${selected} ${first} ${last}`} key={value} onClick={this.onOptionClick(value)}>
-        {this.renderLabel(label, selected)}
+      <div
+        className={`picker-menu-item ${selectedClass} ${first} ${last}`}
+        key={value}
+        onClick={this.onOptionClick(value)}
+      >
+        {this.renderLabel(label, selectedClass)}
       </div>
     );
   };
 
   render() {
+    const { active } = this.props;
     return (
-      <div className={`${baseClassName} ${this.props.active ? 'active' : ''}`}>
+      <div className={`${baseClassName} ${active ? 'active' : ''}`}>
         <Container solid shadow2 stroked>
           {this.options.map(this.renderOption)}
         </Container>

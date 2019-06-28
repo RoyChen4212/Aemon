@@ -26,24 +26,20 @@ class PrimaryModal extends React.PureComponent {
   };
 
   render() {
+    const { onClose, alerts, onHideAlert, mainContent, footerContent, sidebarContent } = this.props;
     return (
-      <Modal
-        className="pbg-primary-modal"
-        onClose={this.props.onClose}
-        alerts={this.props.alerts}
-        onHideAlert={this.props.onHideAlert}
-      >
+      <Modal className="pbg-primary-modal" onClose={onClose} alerts={alerts} onHideAlert={onHideAlert}>
         <div className="pbg-primary-modal-content">
           <div className="pbg-primary-modal-main-container">
-            <div className="pbg-primary-modal-main-content">{this.props.mainContent}</div>
-            {this.props.footerContent && (
+            <div className="pbg-primary-modal-main-content">{mainContent}</div>
+            {footerContent && (
               <div>
                 <Divider />
-                <div className="pbg-primary-modal-footer-content">{this.props.footerContent}</div>
+                <div className="pbg-primary-modal-footer-content">{footerContent}</div>
               </div>
             )}
           </div>
-          <div className="pbg-primary-modal-sidebar-content">{this.props.sidebarContent}</div>
+          <div className="pbg-primary-modal-sidebar-content">{sidebarContent}</div>
         </div>
       </Modal>
     );

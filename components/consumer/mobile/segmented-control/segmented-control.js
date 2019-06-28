@@ -36,25 +36,30 @@ class SegmentedControl extends React.Component {
   }
 
   onChange = ev => {
-    this.props.onChange(ev);
+    const { onChange } = this.props;
+    onChange(ev);
     this.setState({ activeSegment: ev.target.value });
   };
 
   intialActiveSegment() {
-    const index = findIndex(this.props.segments, segment => segment.active);
+    const { segments } = this.props;
+    const index = findIndex(segments, segment => segment.active);
     return index > -1 ? index : 0;
   }
 
   get firstControl() {
-    return this.renderControl(first(this.props.segments) || {}, 0);
+    const { segments } = this.props;
+    return this.renderControl(first(segments) || {}, 0);
   }
 
   get secondControl() {
-    return this.renderControl(last(this.props.segments) || {}, 1);
+    const { segments } = this.props;
+    return this.renderControl(last(segments) || {}, 1);
   }
 
   renderControl(config, index) {
-    const isActive = this.state.activeSegment === index;
+    const { activeSegment } = this.state;
+    const isActive = activeSegment === index;
     const className = `pbg-segmented-control-button ${config.type}${isActive ? ' active' : ''}`;
     return (
       <div className={className} onClick={() => this.onChange(makeEvent(index))}>

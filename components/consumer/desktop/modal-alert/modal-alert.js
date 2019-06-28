@@ -11,32 +11,38 @@ export default class ModalAlert extends React.PureComponent {
   };
 
   componentDidMount() {
-    if (this.props.hideAfter) {
-      setTimeout(() => this.setState({ hide: true }), this.props.hideAfter);
+    const { hideAfter } = this.props;
+    if (hideAfter) {
+      setTimeout(() => this.setState({ hide: true }), hideAfter);
     }
   }
 
   get error() {
-    return this.props.error || false;
+    const { error } = this.props;
+    return error || false;
   }
 
   get warning() {
-    return this.props.warning || false;
+    const { warning } = this.props;
+    return warning || false;
   }
 
   get success() {
-    return this.props.success || false;
+    const { success } = this.props;
+    return success || false;
   }
 
   get hide() {
-    return this.state.hide;
+    const { hide } = this.state;
+    return hide;
   }
 
   get text() {
-    if (this.props.text && this.props.text.label) {
-      return <a onClick={this.props.text.action}>{this.props.text.label}</a>;
+    const { text } = this.props;
+    if (text && text.label) {
+      return <a onClick={text.action}>{text.label}</a>;
     }
-    return this.props.text;
+    return text;
   }
 
   className() {
@@ -48,10 +54,11 @@ export default class ModalAlert extends React.PureComponent {
   }
 
   render() {
+    const { title } = this.props;
     return (
       <div className={this.className()}>
         <Label className="pbg-modal-alert-title" type={labelTypes.STRONG}>
-          {this.props.title}
+          {title}
         </Label>
         <Label className="pbg-modal-alert-text">{this.text}</Label>
       </div>

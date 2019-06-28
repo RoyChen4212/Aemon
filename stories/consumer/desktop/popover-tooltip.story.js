@@ -7,8 +7,8 @@ import { withContainer } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const trigger = (props) => (
-  <a onMouseEnter={props.onMouseEnter} onMouseLeave={props.onMouseLeave}>
+const trigger = ({ onMouseEnter, onMouseLeave }) => (
+  <a onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
     mouse here.
   </a>
 );
@@ -16,7 +16,7 @@ const trigger = (props) => (
 trigger.propTypes = {
   onMouseEnter: PropTypes.func.isRequired,
   onMouseLeave: PropTypes.func.isRequired,
-}
+};
 
 storiesOf('Consumer/Desktop/Modals & Popovers/popover-tooltip', module)
   .addDecorator(withContainer)

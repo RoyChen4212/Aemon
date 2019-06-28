@@ -2,27 +2,31 @@ import React from 'react';
 
 class StateProvider extends React.Component {
   state = {
-    value: this.props.value || null,
-    error: this.props.error || null,
+    value: this.props.value || null, // eslint-disable-line react/destructuring-assignment
+    error: this.props.error || null, // eslint-disable-line react/destructuring-assignment
     focused: false,
   };
 
   onChange = ev => {
+    const { onChange } = this.props;
     this.setState({ value: ev.target.value }, this.runValidations);
-    if (this.props.onChange) return this.props.onChange(ev);
+    if (onChange) return onChange(ev);
   };
 
   onBlur = ev => {
+    const { onBlur } = this.props;
     this.setState({ value: ev.target.value, focused: false }, this.runValidations);
-    if (this.props.onBlur) return this.props.onBlur(ev);
+    if (onBlur) return onBlur(ev);
   };
 
   onFocus = () => this.setState({ focused: true });
 
   runValidations = () => {
+    const { validate } = this.props;
+    const { value } = this.state;
     let error;
-    if (this.props.validate) {
-      error = this.props.validate(this.state.value);
+    if (validate) {
+      error = validate(value);
     }
     if (error) {
       this.setState({ error });
@@ -30,17 +34,19 @@ class StateProvider extends React.Component {
   };
 
   get error() {
-    return this.state.error;
+    const { error } = this.state;
+    return error;
   }
 
   render() {
-    const Field = this.props.component;
+    const { component: Field } = this.props;
+    const { focused, value } = this.state;
     return (
       <React.Fragment>
         <Field
           {...this.props}
-          focused={this.state.focused}
-          value={this.state.value}
+          focused={focused}
+          value={value}
           onChange={this.onChange}
           onBlur={this.onBlur}
           onFocus={this.onFocus}

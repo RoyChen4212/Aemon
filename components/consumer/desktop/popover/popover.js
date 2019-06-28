@@ -55,20 +55,23 @@ class Popover extends React.PureComponent {
   }
 
   get triggerComponent() {
-    const TriggerComponent = this.props.trigger;
+    const { trigger } = this.props;
+    const TriggerComponent = trigger;
     return TriggerComponent ? <TriggerComponent onClick={this.activate} /> : null;
   }
 
   get active() {
-    return this.state.active;
+    const { active } = this.state;
+    return active;
   }
 
   render() {
+    const { content } = this.props;
     return (
       <div className="pbg-consumer-desktop pbg-popover-container">
         {this.triggerComponent}
         <Container shadow2 stroked solid className={this.className} ref={this.popoverElementRef}>
-          {this.props.content}
+          {content}
         </Container>
       </div>
     );

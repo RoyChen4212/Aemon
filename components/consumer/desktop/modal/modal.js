@@ -24,32 +24,25 @@ class Modal extends React.PureComponent {
   };
 
   onCloseClick = () => {
-    if (this.props.onClose) this.props.onClose();
+    const { onClose } = this.props;
+    if (onClose) onClose();
   };
 
   renderModalAlertStack() {
-    return (
-      <ModalAlertStack
-        alerts={this.props.alerts}
-        onHideAlert={this.props.onHideAlert}
-      />
-    );
+    const { alerts, onHideAlert } = this.props;
+    return <ModalAlertStack alerts={alerts} onHideAlert={onHideAlert} />;
   }
 
   render() {
+    const { className, children } = this.props;
     return (
-      <div className={`pbg-consumer-desktop pbg-modal ${this.props.className}`}>
+      <div className={`pbg-consumer-desktop pbg-modal ${className}`}>
         <div className="pbg-modal-dialog">
           {this.renderModalAlertStack()}
 
           <Container solid shadow2>
-            {this.props.children}
-
-            <button
-              type="button"
-              className="pbg-modal-close-button"
-              onClick={this.onCloseClick}
-            />
+            {children}
+            <button type="button" className="pbg-modal-close-button" onClick={this.onCloseClick} />
           </Container>
         </div>
 

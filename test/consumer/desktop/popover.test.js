@@ -19,8 +19,8 @@ describe('Popover', () => {
     expect(wrapper.find('.pbg-popover').contains(content)).to.be.true;
   });
 
-  it('should add class pbg-popover-active to popover element on click', function(done) {
-    const trigger = props => <a onClick={props.onClick}>Click Me</a>;
+  it('should add class pbg-popover-active to popover element on click', done => {
+    const trigger = ({ onClick }) => <a onClick={onClick}>Click Me</a>;
     const wrapper = mount(<Popover trigger={trigger} content={<div>I am content</div>} />);
     wrapper.find('a').simulate('click');
     setTimeout(() => {
@@ -34,8 +34,8 @@ describe('Popover', () => {
     });
   });
 
-  it('should deactivate when clicked outside', function(done) {
-    const trigger = props => <a onClick={props.onClick}>Click Me</a>;
+  it('should deactivate when clicked outside', done => {
+    const trigger = ({ onClick }) => <a onClick={onClick}>Click Me</a>;
     const wrapper = mount(
       <div className="wrapper">
         <Popover trigger={trigger} content={<div>I am content</div>} />
@@ -52,8 +52,8 @@ describe('Popover', () => {
     });
   });
 
-  it('should not deactivate when clicked inside', function(done) {
-    const trigger = props => <a onClick={props.onClick}>Click Me</a>;
+  it('should not deactivate when clicked inside', done => {
+    const trigger = ({ onClick }) => <a onClick={onClick}>Click Me</a>;
     const content = <div className="content">I am content</div>;
     const wrapper = mount(<Popover trigger={trigger} content={content} />);
     wrapper.find('a').simulate('click');

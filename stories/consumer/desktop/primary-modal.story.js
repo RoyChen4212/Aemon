@@ -62,11 +62,13 @@ class FullPrimaryModal extends React.Component {
   };
 
   get showingPrimaryModal() {
-    return this.state.showingPrimaryModal;
+    const { showingPrimaryModal } = this.state;
+    return showingPrimaryModal;
   }
 
   get alerts() {
-    return this.state.alerts;
+    const { alerts } = this.state;
+    return alerts;
   }
 
   get modal() {

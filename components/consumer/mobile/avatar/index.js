@@ -1,4 +1,7 @@
 import React from 'react';
 import Avatar from '../../shared/avatar';
 
-export default props => <Avatar {...props} className="pbg-consumer-mobile" size={props.size || 32} />;
+export default props => {
+  const { size } = props;
+  return <Avatar {...props} className="pbg-consumer-mobile" size={size || 32} />;
+};

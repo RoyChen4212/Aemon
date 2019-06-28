@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { H2 } from '../heading';
-import Hint from '../hint';
-import Label, { labelTypes } from '../label';
 import { LinkButton } from '../button';
 import { HistoricalPicker } from '../historical-picker';
 import './style.scss';
@@ -33,7 +31,8 @@ class ContributorCard extends React.PureComponent {
   }
 
   get typeClassName() {
-    switch (this.props.type) {
+    const { type } = this.props;
+    switch (type) {
       case TYPE_ERROR:
         return 'pbg-contributor-card-type-error';
       default:
@@ -42,13 +41,14 @@ class ContributorCard extends React.PureComponent {
   }
 
   get cta() {
-    return this.props.cta.map((cta, index) => {
+    const { cta } = this.props;
+    return cta.map((item, index) => {
       return (
-        <div className={this.props.cta.length > 1 ? 'cta-container' : ''} key={`cta-${index}`}>
-          {cta.type === 'picker' ? (
-            <HistoricalPicker options={cta.options} onChange={cta.onChange} />
+        <div className={cta.length > 1 ? 'cta-container' : ''} key={`cta-${index}`}>
+          {item.type === 'picker' ? (
+            <HistoricalPicker options={item.options} onChange={item.onChange} />
           ) : (
-            <LinkButton onClick={cta.onClick}>{cta.label}</LinkButton>
+            <LinkButton onClick={item.onClick}>{item.label}</LinkButton>
           )}
         </div>
       );
@@ -56,12 +56,13 @@ class ContributorCard extends React.PureComponent {
   }
 
   render() {
+    const { heading, title, content } = this.props;
     return (
       <div className={this.className}>
-        {this.props.heading && <div className="pbg-contributor-card-heading">{this.props.heading}</div>}
+        {heading && <div className="pbg-contributor-card-heading">{heading}</div>}
         <div className="pbg-contributor-card-body">
-          <H2>{this.props.title}</H2>
-          <div className="pbg-contributor-card-content">{this.props.content}</div>
+          <H2>{title}</H2>
+          <div className="pbg-contributor-card-content">{content}</div>
         </div>
         <div className="pbg-contributor-card-ctas">
           <div>{this.cta}</div>

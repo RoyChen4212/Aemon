@@ -87,7 +87,8 @@ class FullModal extends React.Component {
   };
 
   get showingModal() {
-    return this.state.showingModal;
+    const { showingModal } = this.state;
+    return showingModal;
   }
 
   get modal() {

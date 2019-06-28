@@ -1,6 +1,5 @@
 import React from 'react';
 import jQuery from 'jquery';
-import Container from '../container';
 import Popover from '../popover';
 
 import './style.scss';
@@ -19,7 +18,8 @@ class PopoverTooltip extends Popover {
   }
 
   get triggerComponent() {
-    const TriggerComponent = this.props.trigger;
+    const { trigger } = this.props;
+    const TriggerComponent = trigger;
     if (!TriggerComponent) return null;
     return (
       <TriggerComponent

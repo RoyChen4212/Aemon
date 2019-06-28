@@ -4,28 +4,28 @@ import { SmallButton } from '../button';
 
 import './style.scss';
 
-export const NoAccountWarning = props => (
-  <div className={className(props)}>
+export const NoAccountWarning = ({ title, text, onClick, ctaText, type, className }) => (
+  <div className={buildClassName({ type, className })}>
     <div className="d-flex">
       <img src="https://assets.paybygroup.com/images/icons/warning.svg" />
       <div className="flex-grow-1">
-        <H3>{props.title}</H3>
+        <H3>{title}</H3>
       </div>
     </div>
-    <p>{props.text}</p>
+    <p>{text}</p>
     <div>
-      <SmallButton onClick={props.onClick}>{props.ctaText}</SmallButton>
+      <SmallButton onClick={onClick}>{ctaText}</SmallButton>
     </div>
   </div>
 );
 
-const className = props => {
+const buildClassName = ({ type, className }) => {
   let base = 'pbg-consumer-mobile pbg-no-account-warning';
-  if (props.className) {
-    base += ` ${props.className}`;
+  if (className) {
+    base += ` ${className}`;
   }
 
-  if (props.type && classNames[props.type]) return `${base} ${classNames[props.type]}`;
+  if (type && classNames[type]) return `${base} ${classNames[type]}`;
 
   return base;
 };

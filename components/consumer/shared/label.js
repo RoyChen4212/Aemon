@@ -26,28 +26,7 @@ export const labelClassNames = {
   [STRONG]: STRONG_CLASS,
 };
 
-const Label = props => {
-  if (isClickable(props)) return clickableLabel(props);
-  return normalLabel(props);
-};
-
-const isClickable = ({ type, onClick }) => type === CLICKABLE || (type === ACTIVE && !!onClick);
-
-const clickableLabel = props => (
-  <label className={className(props)}>
-    <a href={props.href} onClick={props.onClick}>
-      {props.children}
-    </a>
-  </label>
-);
-
-const normalLabel = props => (
-  <label className={className(props)}>
-    <span>{props.children}</span>
-  </label>
-);
-
-const className = ({ type, required, className }) => {
+const buildClassName = ({ type, required, className }) => {
   let resultingClassName = BASE_CLASS;
   if (className) {
     resultingClassName += ` ${trim(className)}`;
@@ -62,6 +41,27 @@ const className = ({ type, required, className }) => {
   }
 
   return resultingClassName;
+};
+
+const clickableLabel = ({ href, onClick, children, type, required, className }) => (
+  <label className={buildClassName({ type, required, className })}>
+    <a href={href} onClick={onClick}>
+      {children}
+    </a>
+  </label>
+);
+
+const normalLabel = ({ children, type, required, className }) => (
+  <label className={buildClassName({ type, required, className })}>
+    <span>{children}</span>
+  </label>
+);
+
+const isClickable = ({ type, onClick }) => type === CLICKABLE || (type === ACTIVE && !!onClick);
+
+const Label = props => {
+  if (isClickable(props)) return clickableLabel(props);
+  return normalLabel(props);
 };
 
 export const labelTypes = {

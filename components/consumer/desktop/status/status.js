@@ -20,26 +20,26 @@ class Status extends React.PureComponent {
   };
 
   renderLabel = () => {
-    const labelClassName = classnames('pbg-status-label', {
-      'pbg-status-question-mark': !!this.props.tooltip,
-    });
+    const { tooltip, label } = this.props;
+    const labelClassName = classnames('pbg-status-label', { 'pbg-status-question-mark': !!tooltip });
 
-    if (!this.props.tooltip) {
-      return <p className={labelClassName}>{this.props.label}</p>;
+    if (!tooltip) {
+      return <p className={labelClassName}>{label}</p>;
     }
 
     const trigger = ({ onMouseEnter, onMouseLeave }) => (
       <p className={labelClassName} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-        {this.props.label}
+        {label}
       </p>
     );
 
-    return <PopoverTooltip content={<span>{this.props.tooltip}</span>} trigger={trigger} />;
+    return <PopoverTooltip content={<span>{tooltip}</span>} trigger={trigger} />;
   };
 
   render() {
+    const { iconType, value, hint } = this.props;
     // eslint-disable-next-line global-require, import/no-dynamic-require
-    const iconSource = require(`../img/pbg-${this.props.iconType}-small.svg`);
+    const iconSource = require(`../img/pbg-${iconType}-small.svg`);
     return (
       <div className="pbg-consumer-desktop pbg-status">
         <div className="pbg-status-icon-container">
@@ -48,8 +48,8 @@ class Status extends React.PureComponent {
 
         <div className="pbg-status-text">
           {this.renderLabel()}
-          <p className="pbg-status-value">{this.props.value}</p>
-          <span className="pbg-desktop-small-text pbg-desktop-secondary-text">{this.props.hint}</span>
+          <p className="pbg-status-value">{value}</p>
+          <span className="pbg-desktop-small-text pbg-desktop-secondary-text">{hint}</span>
         </div>
       </div>
     );
