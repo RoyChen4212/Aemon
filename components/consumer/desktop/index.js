@@ -5,6 +5,7 @@ import Subheader from './subheader';
 import ActivityCard from './activity-card';
 import ActivityComment from './activity-comment';
 import AddComment from './add-comment';
+import EmailPreview from './email-preview';
 import { PrimaryButton } from './button';
 import { TextField } from './text-field';
 import { MoneyField } from './money-field';
@@ -51,6 +52,7 @@ const desktop = {
   PURCHASE_COMPLETED,
   PURCHASE_COMMENT_CREATED,
   AddComment,
+  EmailPreview,
   PrimaryButton,
   TextField,
   MoneyField,
