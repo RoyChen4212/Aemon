@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WithFigma } from 'storybook-addon-figma';
 import { TextField } from '../../../components/consumer/desktop/text-field';
 import FieldStateProvider from '../../util/field-state-provider';
 import { withContainer, wrapStory } from '../../util/decorators';
@@ -9,11 +8,6 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
-  .addDecorator(storyFn => (
-    <WithFigma url="https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A7">
-      {storyFn()}
-    </WithFigma>
-  ))
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('simple-text-input/default (focus for active)', () => (
@@ -47,11 +41,6 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
   ));
 
 storiesOf('Consumer/Desktop/Form Fields/form-field', module)
-  .addDecorator(storyFn => (
-    <WithFigma url="https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=161%3A9">
-      {storyFn()}
-    </WithFigma>
-  ))
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('form-field/default', () => (

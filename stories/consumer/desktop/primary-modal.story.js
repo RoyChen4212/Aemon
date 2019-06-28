@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WithFigma } from 'storybook-addon-figma';
 
 import PrimaryModal from '../../../components/consumer/desktop/primary-modal';
 import { PrimaryButton } from '../../../components/consumer/desktop/button';
@@ -10,10 +9,7 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=877%3A10660';
-
 storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('primary-modal', () => (

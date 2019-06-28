@@ -1,11 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { WithFigma } from 'storybook-addon-figma';
 import { withGreyContainer, wrapStory } from '../../util/decorators';
 
 import EmailPreview from '../../../components/consumer/desktop/email-preview';
-
-const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=1736%3A25535';
 
 const logos = [
   'http://pigment.github.io/fake-logos/logos/small/color/fast-banana.png',
@@ -15,7 +12,6 @@ const logos = [
 const randomLogo = () => logos[Math.floor(Math.random() * logos.length)];
 
 storiesOf('Consumer/Desktop/Add Contributors/email-preview', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withGreyContainer)
   .addDecorator(story => <div style={{ height: 500 }}>{story()}</div>)

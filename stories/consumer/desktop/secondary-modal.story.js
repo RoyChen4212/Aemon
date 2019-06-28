@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WithFigma } from 'storybook-addon-figma';
 
 import SecondaryModal from '../../../components/consumer/desktop/secondary-modal';
 import { PrimaryButton } from '../../../components/consumer/desktop/button';
@@ -9,10 +8,7 @@ import { withContainer } from '../../util/decorators';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../../style.css';
 
-const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=3274%3A16';
-
 storiesOf('Consumer/Desktop/Modals & Popovers/secondary-modal', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(withContainer)
   .add('secondary-modal/icon', () => (
     <SecondaryModal title="Secondary Modal" iconType="rocket" onClose={action('click')}>

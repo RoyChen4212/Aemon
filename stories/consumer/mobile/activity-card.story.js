@@ -1,23 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { WithFigma } from 'storybook-addon-figma';
-import { ActivityCard, UserCommentCard, GroupActivityCard } from '../../../components/consumer/mobile/activity-card';
-import ActivityThumbnail, {
+import { UserCommentCard, GroupActivityCard } from '../../../components/consumer/mobile/activity-card';
+import {
   MEMBER_WITHDREW,
   MEMBER_JOINED,
   PURCHASE_UPDATED,
 } from '../../../components/consumer/mobile/activity-thumbnail';
-import { H1 } from '../../../components/consumer/mobile/heading';
 import { withGreyContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=551%3A455';
-const figmaUserCommentUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=551%3A445';
 
 storiesOf('Consumer/Mobile/Atomic Components/ActivityCard/GroupActivityCard', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withGreyContainer)
   .add('New contributor', () => (
@@ -37,7 +31,6 @@ storiesOf('Consumer/Mobile/Atomic Components/ActivityCard/GroupActivityCard', mo
   ));
 
 storiesOf('Consumer/Mobile/Atomic Components/ActivityCard/UserCommentCard', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUserCommentUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withGreyContainer)
   .add('With userId', () => (

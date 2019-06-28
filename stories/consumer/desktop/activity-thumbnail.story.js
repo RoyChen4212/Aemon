@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import AvtivityThumbnail from '../../../components/consumer/desktop/activity-thumbnail';
+import ActivityThumbnail from '../../../components/consumer/desktop/activity-thumbnail';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import ActivityThumbnail from '../../../components/consumer/desktop/activity-thumbnail';
 
 storiesOf('Consumer/Desktop/Atomic Components/ActivityThumbnail', module)
   .addDecorator(wrapStory)

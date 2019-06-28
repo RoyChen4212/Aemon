@@ -1,14 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WithFigma } from 'storybook-addon-figma';
 import ContributorCard from '../../../components/consumer/mobile/contributor-card';
 import Hint from '../../../components/consumer/mobile/hint';
 import { withGreyContainer, wrapStory, withMobileSizing } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=649%3A309';
 const options = [
   { label: 'Change', value: 'change' },
   { label: 'Edit', value: 'edit' },
@@ -16,7 +14,6 @@ const options = [
 ];
 
 storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withMobileSizing)
   .addDecorator(withGreyContainer)

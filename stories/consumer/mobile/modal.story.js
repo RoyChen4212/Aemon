@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WithFigma } from 'storybook-addon-figma';
 import Modal from '../../../components/consumer/mobile/modal';
 import { types as buttonTypes } from '../../../components/consumer/mobile/button';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
@@ -9,10 +8,7 @@ import { withGreyContainer, wrapStory, withMobileSizing } from '../../util/decor
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=0%3A11427';
-
 storiesOf('Consumer/Mobile/Dashboard/Modal', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(storyFn => <div style={{ minHeight: '600px' }}>{storyFn()}</div>)
   .addDecorator(wrapStory)
   .addDecorator(withMobileSizing)

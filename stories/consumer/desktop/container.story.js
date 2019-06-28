@@ -1,13 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { WithFigma } from 'storybook-addon-figma';
 import Container from '../../../components/consumer/desktop/container';
 import { withGreyContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
-
-const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=90%3A5';
 
 const spacer = <div style={{ width: '300px', height: '60px' }} />;
 storiesOf('Consumer/Desktop/Atomic Components/Container', module)

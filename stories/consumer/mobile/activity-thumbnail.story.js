@@ -1,17 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { WithFigma } from 'storybook-addon-figma';
-import AvtivityThumbnail from '../../../components/consumer/mobile/activity-thumbnail';
+import ActivityThumbnail from '../../../components/consumer/mobile/activity-thumbnail';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import ActivityThumbnail from '../../../components/consumer/mobile/activity-thumbnail';
-
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=551%3A451';
 
 storiesOf('Consumer/Mobile/Atomic Components/ActivityThumbnail', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Purchase Updated', () => <ActivityThumbnail type="purchase_updated" />)

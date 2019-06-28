@@ -1,12 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
 
 import ModalBranding from '../../../components/consumer/desktop/modal-branding';
-import Hint from '../../../components/consumer/desktop/hint';
-import Picker, { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
+import Picker from '../../../components/consumer/desktop/picker';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';

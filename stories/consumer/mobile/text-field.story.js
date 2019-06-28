@@ -1,16 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { WithFigma } from 'storybook-addon-figma';
 import { TextField } from '../../../components/consumer/mobile/form-fields';
 import FieldStateProvider from '../../util/field-state-provider';
 import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XnI28YVfYr7c83oZomUuC6qz/pbg-mobile?node-id=7%3A8';
 storiesOf('Consumer/Mobile/Form Fields/Text Field', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('Valid', () => <FieldStateProvider component={TextField} name="field1" label="A text field" />)
