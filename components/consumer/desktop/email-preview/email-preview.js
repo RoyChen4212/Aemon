@@ -20,17 +20,18 @@ class EmailPreview extends Component {
   };
 
   render() {
-    const borderStyle = { borderTopColor: this.props.borderColor };
+    const { borderColor, logo, title, content } = this.props;
+    const borderStyle = { borderTopColor: borderColor };
     return (
       <div className={this.baseClass}>
         <div className="pbg-email-preview-envelope-back" />
         <div className="pbg-email-preview-inner" style={borderStyle}>
           <div className="pbg-email-preview-merchant-logo">
-            <img src={this.props.logo} />
+            <img src={logo} />
           </div>
           <div className="pbg-email-preview-content">
-            <h5>{truncate(this.props.title, { length: 43 })}</h5>
-            <p>{this.props.content}</p>
+            <h5>{truncate(title, { length: 43 })}</h5>
+            <p>{content}</p>
           </div>
         </div>
         <div className="pbg-email-preview-envelope-front" />

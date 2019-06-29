@@ -29,15 +29,17 @@ class BaseButton extends React.PureComponent {
   };
 
   get buttonType() {
-    return this.props.onClick ? 'button' : 'submit';
+    const { onClick } = this.props;
+    return onClick ? 'button' : 'submit';
   }
 
   get className() {
     const { disabled, className, submitting } = this.props;
+    const { active } = this.state;
     const base = className ? `${this.baseClassName} ${className}` : this.baseClassName;
     const disabledClass = disabled ? `${base} disabled` : base;
     const submittingClass = submitting ? `${disabledClass} submitting` : disabledClass;
-    const activeClass = this.state.active ? `${submittingClass} pbg-button-active` : submittingClass;
+    const activeClass = active ? `${submittingClass} pbg-button-active` : submittingClass;
     return activeClass;
   }
 
@@ -54,22 +56,24 @@ class BaseButton extends React.PureComponent {
   };
 
   onClick = ev => {
-    if (this.props.disabled || this.props.submitting) return;
-    if (typeof this.props.onClick === 'function') this.props.onClick(ev);
+    const { disabled, submitting, onClick } = this.props;
+    if (disabled || submitting) return;
+    if (typeof onClick === 'function') onClick(ev);
   };
 
   renderHint(Hint) {
-    if (this.props.hint) {
-      return (
-        <div className="pbg-button-hint-container">
-          <Hint>{this.props.hint}</Hint>
-        </div>
-      );
-    }
-    return null;
+    const { hint } = this.props;
+    if (!hint) return null;
+
+    return (
+      <div className="pbg-button-hint-container">
+        <Hint>{hint}</Hint>
+      </div>
+    );
   }
 
   render() {
+    const { disabled, submitting, children } = this.props;
     return (
       <div>
         <button
@@ -80,9 +84,9 @@ class BaseButton extends React.PureComponent {
           onMouseOut={this.deactivate}
           onMouseUp={this.deactivate}
           onBlur={this.deactivate}
-          disabled={this.props.disabled || this.props.submitting}
+          disabled={disabled || submitting}
         >
-          <span>{this.props.children}</span>
+          <span>{children}</span>
         </button>
         {this.hint}
       </div>

@@ -15,18 +15,20 @@ class ActivityCard extends React.PureComponent {
   };
 
   get time() {
-    return moment(this.props.time).format('hh:mm A');
+    const { time } = this.props;
+    return moment(time).format('hh:mm A');
   }
 
   render() {
+    const { type, title, children } = this.props;
     return (
       <div className="activity-card d-flex">
-        <ActivityThumbnail type={this.props.type} />
+        <ActivityThumbnail type={type} />
 
         <div className="activity-card-text">
-          <p className="activity-card-title">{this.props.title}</p>
+          <p className="activity-card-title">{title}</p>
           <p className="activity-card-time">{this.time}</p>
-          <div className="activity-card-description">{this.props.children}</div>
+          <div className="activity-card-description">{children}</div>
         </div>
       </div>
     );

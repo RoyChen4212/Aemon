@@ -29,9 +29,10 @@ class ModalWrapper extends React.Component {
   hideModal = () => this.setState({ visible: false });
 
   render() {
+    const { visible } = this.state;
     return (
       <div>
-        {this.state.visible && (
+        {visible && (
           <SecondaryModal title="Secondary Modal" iconType="rocket" onClose={this.hideModal}>
             <p>This is the content section, style it as you want.</p>
           </SecondaryModal>

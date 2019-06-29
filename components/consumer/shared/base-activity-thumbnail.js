@@ -81,8 +81,9 @@ class ActivityThumbnail extends React.PureComponent {
   };
 
   get shouldRenderAvatar() {
-    const hasUrl = !!ActivityThumbnail.icons[this.props.type];
-    return !hasUrl && (!!this.props.src || !!this.props.userId || !!this.props.fullName);
+    const { type, src, userId, fullName } = this.props;
+    const hasUrl = !!ActivityThumbnail.icons[type];
+    return !hasUrl && (!!src || !!userId || !!fullName);
   }
 
   renderAvatar() {
@@ -98,11 +99,12 @@ class ActivityThumbnail extends React.PureComponent {
   }
 
   render() {
+    const { type, size } = this.props;
     if (this.shouldRenderAvatar) return this.renderAvatar();
-    const url = ActivityThumbnail.icons[this.props.type];
+    const url = ActivityThumbnail.icons[type];
     return (
       <div className={this.baseClassName}>
-        <img src={url} width={this.props.size} height={this.props.size} />
+        <img src={url} width={size} height={size} />
       </div>
     );
   }

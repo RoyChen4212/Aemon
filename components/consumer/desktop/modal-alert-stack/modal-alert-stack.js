@@ -9,26 +9,26 @@ class ModalAlertStack extends React.PureComponent {
   stackElementRef = React.createRef();
 
   get alerts() {
-    return this.props.alerts || [];
+    const { alerts } = this.props;
+    return alerts || [];
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.alerts.length < this.props.alerts.length) {
-      this.reposition(this.onAlertAdded(last(this.props.alerts)));
+    const { alerts } = this.props;
+    if (prevProps.alerts.length < alerts.length) {
+      this.reposition(this.onAlertAdded(last(alerts)));
     }
   }
 
   onAlertAdded = alert => {
     return () => {
-      setTimeout(() => {
-        this.props.onHideAlert(alert);
-      }, 8000);
+      const { onHideAlert } = this.props;
+      setTimeout(() => onHideAlert(alert), 8000);
     };
   };
 
   reposition(callback) {
     const elem = jQuery(this.stackElementRef.current);
-    const alert = last(this.props.alerts);
     if (elem) {
       elem.animate(
         { top: `-${elem.height()}px` },

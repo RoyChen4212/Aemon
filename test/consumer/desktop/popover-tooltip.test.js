@@ -19,8 +19,8 @@ describe('PopoverTooltip', () => {
     expect(wrapper.find('.pbg-popover-tooltip').contains(content)).to.be.true;
   });
 
-  it('should add class pbg-popover-active to popover element on mouseenter', function(done) {
-    const trigger = props => <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>;
+  it('should add class pbg-popover-active to popover element on mouseenter', done => {
+    const trigger = ({ onMouseEnter }) => <a onMouseEnter={onMouseEnter}>Put pointer over Me</a>;
     const wrapper = mount(<PopoverTooltip trigger={trigger} content={<div>I am content</div>} />);
     wrapper.find('a').simulate('mouseenter');
     setTimeout(() => {
@@ -34,8 +34,8 @@ describe('PopoverTooltip', () => {
     });
   });
 
-  it('should deactivate when mouseleave', function(done) {
-    const trigger = props => <a onMouseEnter={props.onMouseEnter}>Put pointer over Me</a>;
+  it('should deactivate when mouseleave', done => {
+    const trigger = ({ onMouseEnter }) => <a onMouseEnter={onMouseEnter}>Put pointer over Me</a>;
     const wrapper = mount(
       <div className="wrapper">
         <PopoverTooltip trigger={trigger} content={<div>I am content</div>} />

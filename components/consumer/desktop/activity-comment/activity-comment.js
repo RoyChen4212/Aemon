@@ -18,28 +18,25 @@ class ActivityComment extends React.PureComponent {
 
   static defaultProps = {
     src: null,
-    title: null,
-    comment: null,
+    fullName: null,
+    userId: null,
   };
 
   get time() {
-    return moment(this.props.time).format('hh:mm A');
+    const { time } = this.props;
+    return moment(time).format('hh:mm A');
   }
 
   render() {
+    const { src, userId, fullName, title, comment } = this.props;
     return (
       <div className="activity-comment d-flex">
-        <ActivityThumbnail
-          type={PURCHASE_COMMENT_CREATED}
-          src={this.props.src}
-          userId={this.props.userId}
-          fullName={this.props.fullName}
-        />
+        <ActivityThumbnail type={PURCHASE_COMMENT_CREATED} src={src} userId={userId} fullName={fullName} />
         <div className="activity-comment-text">
           <div className="activity-comment-bubbletip" />
-          <p className="activity-comment-title">{this.props.title}</p>
+          <p className="activity-comment-title">{title}</p>
           <p className="activity-comment-time">{this.time}</p>
-          <p className="activity-comment-comment">{this.props.comment}</p>
+          <p className="activity-comment-comment">{comment}</p>
         </div>
       </div>
     );

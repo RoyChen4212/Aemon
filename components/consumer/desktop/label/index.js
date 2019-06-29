@@ -6,4 +6,7 @@ import './style.scss';
 
 export * from '../../shared/label';
 
-export default props => <Label {...props} className={`${props.className} pbg-consumer-desktop`} />;
+export default props => {
+  const { className } = props;
+  return <Label {...props} className={`${className} pbg-consumer-desktop`} />;
+};

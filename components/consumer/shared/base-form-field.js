@@ -24,7 +24,8 @@ class BaseFormField extends React.Component {
   }
 
   get adaptedProps() {
-    if (this.props.adapter) return this.props.adapter(this.props);
+    const { adapter } = this.props;
+    if (adapter) return adapter(this.props);
     return this.props;
   }
 
@@ -58,10 +59,10 @@ class BaseFormField extends React.Component {
   }
 
   renderLabel(Label) {
-    const { label } = this.props;
+    const { label, required } = this.props;
     const labelElement = (
       <div>
-        <Label type={this.labelType} required={this.props.required}>
+        <Label type={this.labelType} required={required}>
           {label}
         </Label>
       </div>

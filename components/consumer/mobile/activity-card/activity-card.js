@@ -8,44 +8,47 @@ import Avatar from '../avatar';
 import './style.scss';
 
 const FORMAT = 'hh:mm a';
-const ActivityCard = props => (
-  <div className={className(props)}>
-    <Hint>{props.date ? moment(props.date).format(FORMAT) : FORMAT}</Hint>
-    {props.children}
+const ActivityCard = ({ date, children, type, className }) => (
+  <div className={buildClassName({ type, className })}>
+    <Hint>{date ? moment(date).format(FORMAT) : FORMAT}</Hint>
+    {children}
   </div>
 );
 
-const UserCommentCard = props => (
-  <ActivityCard type={ActivityCard.types.white} date={props.date} className="pbg-user-comment-card">
+const UserCommentCard = props => {
+  const { date, title, comment } = props;
+  return (
+    <ActivityCard type={ActivityCard.types.white} date={date} className="pbg-user-comment-card">
+      <div className="d-flex">
+        <Avatar {...props} />
+        <div className="flex-grow-1">
+          <H3>{title}</H3>
+        </div>
+      </div>
+      <p>{comment}</p>
+    </ActivityCard>
+  );
+};
+
+const GroupActivityCard = ({ date, type, title, children }) => (
+  <ActivityCard date={date} className="pbg-group-activity-card">
     <div className="d-flex">
-      <Avatar {...props} />
+      <ActivityThumbnail type={type} />
       <div className="flex-grow-1">
-        <H3>{props.title}</H3>
+        <H3>{title}</H3>
+        <div className="pbg-group-activity-card-content">{children}</div>
       </div>
     </div>
-    <p>{props.comment}</p>
   </ActivityCard>
 );
 
-const GroupActivityCard = props => (
-  <ActivityCard date={props.date} className="pbg-group-activity-card">
-    <div className="d-flex">
-      <ActivityThumbnail type={props.type} />
-      <div className="flex-grow-1">
-        <H3>{props.title}</H3>
-        <div className="pbg-group-activity-card-content">{props.children}</div>
-      </div>
-    </div>
-  </ActivityCard>
-);
-
-const className = props => {
+const buildClassName = ({ type, className }) => {
   let base = 'pbg-consumer-mobile pbg-activity-card';
-  if (props.className) {
-    base += ` ${props.className}`;
+  if (className) {
+    base += ` ${className}`;
   }
 
-  if (props.type && classNames[props.type]) return `${base} ${classNames[props.type]}`;
+  if (type && classNames[type]) return `${base} ${classNames[type]}`;
 
   return base;
 };
