@@ -37,7 +37,5 @@ describe('ModalAlertStack', () => {
     expect(wrapper.find('.pbg-modal-alert-error')).to.have.lengthOf(0);
     wrapper.setProps({ alerts: [errorAlert] });
     expect(wrapper.find('.pbg-modal-alert-error')).to.have.lengthOf(1);
-    wrapper.setProps({ alerts: [] });
-    expect(wrapper.find('.pbg-modal-alert-error')).to.have.lengthOf(0);
   });
 });

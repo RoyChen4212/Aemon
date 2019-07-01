@@ -17,14 +17,14 @@ export const shouldBehaveLikeTextField = wrapper => {
     expect(wrapper.hasClass('pbg-text-field')).to.be.true;
   });
 
-  it('should add pbg-form-field-focused class when focused', function(done) {
+  it('should add pbg-form-field-focused class when focused', done => {
     wrapper.setProps({ focused: true }, () => {
       expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
       done();
     });
   });
 
-  it('should remove pbg-form-field-focused class when not focused', function(done) {
+  it('should remove pbg-form-field-focused class when not focused', done => {
     wrapper.setProps({ focused: true }, () => {
       wrapper.setProps({ focused: false }, () => {
         expect(wrapper.hasClass('pbg-form-field-focused')).to.be.false;

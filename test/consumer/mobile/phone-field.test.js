@@ -68,7 +68,7 @@ describe('Phone Field', () => {
     expect(wrapper.instance().currentValue).to.eql({});
   });
 
-  it('should return correct value when clicking add new button', function(done) {
+  it('should return correct value when clicking add new button', done => {
     const value = { selected: phoneOptions[0].value };
     const expected = { selected: 'new' };
     let runs = 0;
@@ -99,7 +99,7 @@ describe('Phone Field', () => {
     expect(wrapper.find(TextField).prop('type')).to.equal('tel');
   });
 
-  it('should report new phone value on TextField change', function(done) {
+  it('should report new phone value on TextField change', done => {
     const value = { selected: 'new' };
     const phone = '99-1234-1234';
     const event = { target: { value: phone } };

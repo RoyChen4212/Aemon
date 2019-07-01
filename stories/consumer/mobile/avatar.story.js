@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import Avatar from '../../../components/consumer/mobile/avatar';
 import { withContainer, wrapStory } from '../../util/decorators';
 
@@ -26,7 +25,6 @@ storiesOf('Consumer/Mobile/Atomic Components/Avatar', module)
       <Avatar className="mr-2" size={50} src="brokenlink.broken" userId="34567890" />
       <Avatar className="mr-2" size={50} src="brokenlink.broken" userId="4567890123" />
       <Avatar className="mr-2" size={50} src="brokenlink.broken" userId="56789012" />
-
       <Avatar className="mr-2" size={15} src="brokenlink.broken" userId="56789012" />
     </div>
   ));

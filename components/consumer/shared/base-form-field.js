@@ -1,6 +1,5 @@
 import React from 'react';
 import { hintTypes } from './hint';
-import { labelTypes } from './label';
 
 class BaseFormField extends React.Component {
   baseClassName = 'pbg-form-field';
@@ -58,21 +57,21 @@ class BaseFormField extends React.Component {
     return !required ? label : `${label}*`;
   }
 
-  renderLabel(Label) {
-    const { label, required } = this.props;
-    const labelElement = (
-      <div>
-        <Label type={this.labelType} required={required}>
-          {label}
-        </Label>
-      </div>
-    );
-    return label ? labelElement : null;
-  }
-
   get hintOrError() {
     throw new Error('Not implemented, Implement this method in a sub-class.');
   }
+
+  onFocus = ev => {
+    if (this.adaptedProps.onFocus) return this.adaptedProps.onFocus(ev);
+  };
+
+  onChange = value => {
+    if (this.adaptedProps.onChange) return this.adaptedProps.onChange(value);
+  };
+
+  onBlur = value => {
+    if (this.adaptedProps.onBlur) return this.adaptedProps.onBlur(value);
+  };
 
   renderHintOrError(Hint) {
     if (this.error) {
@@ -91,17 +90,17 @@ class BaseFormField extends React.Component {
     return null;
   }
 
-  onFocus = ev => {
-    if (this.adaptedProps.onFocus) return this.adaptedProps.onFocus(ev);
-  };
-
-  onChange = value => {
-    if (this.adaptedProps.onChange) return this.adaptedProps.onChange(value);
-  };
-
-  onBlur = value => {
-    if (this.adaptedProps.onBlur) return this.adaptedProps.onBlur(value);
-  };
+  renderLabel(Label) {
+    const { label, required } = this.props;
+    const labelElement = (
+      <div>
+        <Label type={this.labelType} required={required}>
+          {label}
+        </Label>
+      </div>
+    );
+    return label ? labelElement : null;
+  }
 
   render() {
     return <div className={this.className} />;

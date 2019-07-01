@@ -1,4 +1,3 @@
-import React from 'react';
 import BaseButton, { CLASS_NAME } from '../../shared/button';
 import Hint from '../hint';
 

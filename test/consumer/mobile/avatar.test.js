@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import times from 'lodash/times';
 import Avatar from '../../../components/consumer/mobile/avatar';
 
 describe('Mobile Avatar', () => {

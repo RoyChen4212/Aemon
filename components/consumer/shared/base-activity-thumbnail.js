@@ -39,19 +39,18 @@ const types = [
 ];
 
 class ActivityThumbnail extends React.PureComponent {
-  baseClassName = 'pbg-activity-thumbnail';
-
   static DEFAULT_SIZE = 32;
 
   static propTypes = {
-    size: PropTypes.number.isRequired,
+    size: PropTypes.number,
     userId: PropTypes.string,
     src: PropTypes.string,
     fullName: PropTypes.string,
     type(props, propName) {
       if (!includes(types, props[propName])) {
-        return new Error(`Invalid prop \`${propName}\` supplied to` + ` \`${componentName}\`. Validation failed.`);
+        return new Error(`Invalid prop ${propName} supplied to ActivityThumbnail. Validation failed.`);
       }
+      return null;
     },
   };
 
@@ -79,6 +78,8 @@ class ActivityThumbnail extends React.PureComponent {
     [PURCHASE_COMPLETED]: `${URL_PREFIX}${PURCHASE_COMPLETED}.svg`,
     [PURCHASE_COMMENT_CREATED]: false,
   };
+
+  baseClassName = 'pbg-activity-thumbnail';
 
   get shouldRenderAvatar() {
     const { type, src, userId, fullName } = this.props;

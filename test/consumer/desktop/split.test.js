@@ -1,11 +1,9 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
 
 import { SplitEven, SplitCustom, SplitFixed } from '../../../components/consumer/desktop/split';
 import Picker from '../../../components/consumer/desktop/picker';
-import Label from '../../../components/consumer/desktop/label';
 import NumberStepper from '../../../components/consumer/desktop/simple-number-stepper';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 
@@ -71,7 +69,7 @@ describe('SplitEven', () => {
       expect(wrapper.text()).to.include(copy.shares);
     });
 
-    it('should report correct value when split type picker value changes', function(done) {
+    it('should report correct value when split type picker value changes', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ splitType: 'custom' });
         done();
@@ -80,7 +78,7 @@ describe('SplitEven', () => {
       wrapper.find(Picker).simulate('change', { target: { value: 'custom' } });
     });
 
-    it('should report correct value when number stepper value changes', function(done) {
+    it('should report correct value when number stepper value changes', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ splitType: 'even', minShares: 2 });
         done();
@@ -122,7 +120,7 @@ describe('SplitEven', () => {
       expect(wrapper.text()).to.include(copy.shares);
     });
 
-    it('should report correct value when min number stepper value changes', function(done) {
+    it('should report correct value when min number stepper value changes', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ splitType: 'even', minShares: 2 });
         done();
@@ -134,7 +132,7 @@ describe('SplitEven', () => {
         .simulate('change', { target: { value: 2 } });
     });
 
-    it('should report correct value when max number stepper value changes', function(done) {
+    it('should report correct value when max number stepper value changes', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ splitType: 'even', maxShares: 2 });
         done();
@@ -178,7 +176,7 @@ describe('SplitEven', () => {
       ).to.equal(10);
     });
 
-    it('should increment steppers when min stepper will have same value as max', function(done) {
+    it('should increment steppers when min stepper will have same value as max', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ minShares: 3, maxShares: 4 });
         done();
@@ -193,7 +191,7 @@ describe('SplitEven', () => {
         .simulate('click');
     });
 
-    it('should decrement steppers when max stepper will have same value as min', function(done) {
+    it('should decrement steppers when max stepper will have same value as min', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ minShares: 3, maxShares: 4 });
         done();
@@ -235,7 +233,6 @@ describe('SplitEven', () => {
 describe('SplitCustom', () => {
   shouldBehaveLikeFormField(shallow(<SplitCustom />));
   const options = [{ label: { term: 'even' }, value: 'even' }, { label: { term: 'custom' }, value: 'custom' }];
-  const copy = { split: 'Split', for: 'for different amounts per contributor' };
 
   it('should render a simple picker', () => {
     const wrapper = shallow(<SplitCustom value={{ splitType: 'custom' }} min />);
@@ -251,7 +248,6 @@ describe('SplitCustom', () => {
 });
 
 describe('SplitFixed', () => {
-  const options = [{ label: { term: 'even' }, value: 'even' }, { label: { term: 'custom' }, value: 'custom' }];
   const copy = { split: 'Split', to: 'to', shares: 'shares for purchase' };
   describe('Min', () => {
     it('should render one number stepper', () => {

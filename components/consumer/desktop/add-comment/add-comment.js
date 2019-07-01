@@ -1,4 +1,3 @@
-import React from 'react';
 import BaseAddComment from '../../shared/base-add-comment';
 import TextArea from '../text-area';
 import Avatar from '../avatar';

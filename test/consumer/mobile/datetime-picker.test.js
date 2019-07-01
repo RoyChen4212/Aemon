@@ -11,8 +11,6 @@ import {
   applyTimeToValue,
 } from '../../../components/consumer/mobile/datetime-picker/value-generator';
 import { DatetimePicker, DatePicker, TimePicker } from '../../../components/consumer/mobile/form-fields';
-import Label, { labelTypes } from '../../../components/consumer/mobile/label';
-import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
 describe('Datetime Picker Value Generator', () => {
   const timezone = 'America/Mexico_City';
@@ -165,7 +163,7 @@ describe('Datetime picker', () => {
   it('should use prop adapter if provided', () => {
     const adapter = sinon.spy(props => props);
     const value = new Date(moment('2018-02-23T00:00').tz(timezone));
-    const wrapper = shallow(<DatetimePicker adapter={adapter} timezone={timezone} value={value} />);
+    shallow(<DatetimePicker adapter={adapter} timezone={timezone} value={value} />);
     expect(adapter.called).to.be.true;
   });
 
@@ -201,7 +199,7 @@ describe('Datetime picker', () => {
       expect(onChange.calledOnce).to.be.true;
     });
 
-    it('should execute onChange with correct date value from DatePicker component', function(done) {
+    it('should execute onChange with correct date value from DatePicker component', done => {
       const event = { target: { value: '1984-10-19' } };
       const expected = new Date(moment('1984-10-19T00:00').tz(timezone));
       const onChange = ev => {
@@ -212,7 +210,7 @@ describe('Datetime picker', () => {
       wrapper.find('input[type="date"]').simulate('change', event);
     });
 
-    it('should execute onChange with correct date value from DatePicker component with initial value', function(done) {
+    it('should execute onChange with correct date value from DatePicker component with initial value', done => {
       const event = { target: { value: '1984-10-19' } };
       const inital = new Date(moment('2018-02-23T00:00').tz(timezone));
       const expected = new Date(moment('1984-10-19T00:00').tz(timezone));
@@ -224,7 +222,7 @@ describe('Datetime picker', () => {
       wrapper.find('input[type="date"]').simulate('change', event);
     });
 
-    it('should handle date values with single digit days', function(done) {
+    it('should handle date values with single digit days', done => {
       const event = { target: { value: '1984-10-01' } };
       const expected = new Date(moment('1984-10-01T00:00').tz(timezone));
       const onChange = ev => {
@@ -235,7 +233,7 @@ describe('Datetime picker', () => {
       wrapper.find('input[type="date"]').simulate('change', event);
     });
 
-    it('should execute onChange with correct time value from TimePicker component', function(done) {
+    it('should execute onChange with correct time value from TimePicker component', done => {
       const event = { target: { value: '12:22' } };
       const expected = new Date(moment('1984-10-19T12:22').tz(timezone));
       const initialValue = new Date(moment('1984-10-19T00:00').tz(timezone));
@@ -247,9 +245,8 @@ describe('Datetime picker', () => {
       wrapper.find('input[type="time"]').simulate('change', event);
     });
 
-    it('should handle properly changes to double digit times', function(done) {
+    it('should handle properly changes to double digit times', done => {
       const value = new Date(moment('1984-10-19T12:22').tz(timezone));
-      const expected = '12:22';
       const wrapper = mount(<DatetimePicker timezone={timezone} />);
       wrapper.setProps({ value }, () => {
         expect(wrapper.find('.pbg-time-picker').text()).to.equal('12:22');
@@ -257,7 +254,7 @@ describe('Datetime picker', () => {
       });
     });
 
-    it('should handle date values with single digit hours and minutes', function(done) {
+    it('should handle date values with single digit hours and minutes', done => {
       const event = { target: { value: '02:01' } };
       const expected = new Date(moment('1984-10-19T02:01').tz(timezone));
       const initialValue = new Date(moment('1984-10-19T00:00').tz(timezone));

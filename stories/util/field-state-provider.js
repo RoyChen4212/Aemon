@@ -7,19 +7,10 @@ class StateProvider extends React.Component {
     focused: false,
   };
 
-  onChange = ev => {
-    const { onChange } = this.props;
-    this.setState({ value: ev.target.value }, this.runValidations);
-    if (onChange) return onChange(ev);
-  };
-
-  onBlur = ev => {
-    const { onBlur } = this.props;
-    this.setState({ value: ev.target.value, focused: false }, this.runValidations);
-    if (onBlur) return onBlur(ev);
-  };
-
-  onFocus = () => this.setState({ focused: true });
+  get error() {
+    const { error } = this.state;
+    return error;
+  }
 
   runValidations = () => {
     const { validate } = this.props;
@@ -33,10 +24,19 @@ class StateProvider extends React.Component {
     }
   };
 
-  get error() {
-    const { error } = this.state;
-    return error;
-  }
+  onChange = ev => {
+    const { onChange } = this.props;
+    this.setState({ value: ev.target.value }, this.runValidations);
+    if (onChange) return onChange(ev);
+  };
+
+  onBlur = ev => {
+    const { onBlur } = this.props;
+    this.setState({ value: ev.target.value, focused: false }, this.runValidations);
+    if (onBlur) return onBlur(ev);
+  };
+
+  onFocus = () => this.setState({ focused: true });
 
   render() {
     const { component: Field } = this.props;

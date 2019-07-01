@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import SegmentedControl from '../../../components/consumer/mobile/segmented-control';
 
@@ -61,25 +60,25 @@ describe('Segmented Control', () => {
     ).to.be.true;
   });
 
-  it('should activate first segment by default', function(done) {
+  it('should activate first segment by default', done => {
     const segments = [{ type: SegmentedControl.types.list }, { type: SegmentedControl.types.pulse }];
     const onChange = ev => {
       expect(ev.target.value).to.equal(0);
       done();
     };
-    const wrapper = shallow(<SegmentedControl segments={segments} onChange={onChange} />);
+    shallow(<SegmentedControl segments={segments} onChange={onChange} />);
   });
 
-  it('should activate correct segment according to configuration', function(done) {
+  it('should activate correct segment according to configuration', done => {
     const segments = [{ type: SegmentedControl.types.list }, { type: SegmentedControl.types.pulse, active: true }];
     const onChange = ev => {
       expect(ev.target.value).to.equal(1);
       done();
     };
-    const wrapper = shallow(<SegmentedControl segments={segments} onChange={onChange} />);
+    shallow(<SegmentedControl segments={segments} onChange={onChange} />);
   });
 
-  it('should call onChange with correct index upon clicking a segment', function(done) {
+  it('should call onChange with correct index upon clicking a segment', done => {
     const segments = [{ type: SegmentedControl.types.list }, { type: SegmentedControl.types.pulse }];
     let times = 0;
     const onChange = ev => {

@@ -4,12 +4,26 @@ import { LinkButton, PrimaryButton, SecondaryButton, types as buttonTypes } from
 
 import './style.scss';
 
-class Modal extends React.PureComponent {
-  onBackClick = () => {
-    const { onBackClick } = this.props;
-    if (onBackClick) return onBackClick();
-  };
+const chooseComponent = type => {
+  switch (type) {
+    case buttonTypes.LINK:
+      return LinkButton;
+    case buttonTypes.SECONDARY:
+      return SecondaryButton;
+    case buttonTypes.PRIMARY:
+    default:
+      return PrimaryButton;
+  }
+};
 
+const renderButton = ({ label, onClick, type, disabled }, isLast) => {
+  const ButtonComponent = chooseComponent(type);
+  const className = isLast ? 'last' : '';
+  const props = { key: label, className, onClick, disabled };
+  return <ButtonComponent {...props}>{label}</ButtonComponent>;
+};
+
+class Modal extends React.PureComponent {
   get cta() {
     const { cta } = this.props;
     if (cta && cta.length) {
@@ -20,6 +34,11 @@ class Modal extends React.PureComponent {
       );
     }
   }
+
+  onBackClick = () => {
+    const { onBackClick } = this.props;
+    if (onBackClick) return onBackClick();
+  };
 
   render() {
     const { title, children, onBackClick, backButtonCaption } = this.props;
@@ -38,24 +57,5 @@ class Modal extends React.PureComponent {
     );
   }
 }
-
-const renderButton = ({ label, onClick, type, disabled }, isLast) => {
-  const ButtonComponent = chooseComponent(type);
-  const className = isLast ? 'last' : '';
-  const props = { key: label, className, onClick, disabled };
-  return <ButtonComponent {...props}>{label}</ButtonComponent>;
-};
-
-const chooseComponent = type => {
-  switch (type) {
-    case buttonTypes.LINK:
-      return LinkButton;
-    case buttonTypes.SECONDARY:
-      return SecondaryButton;
-    case buttonTypes.PRIMARY:
-    default:
-      return PrimaryButton;
-  }
-};
 
 export default Modal;

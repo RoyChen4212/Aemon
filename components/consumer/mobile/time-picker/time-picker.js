@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { DatePicker } from '../date-picker';
-import Label, { labelTypes } from '../label';
-import makeEvent from '../../../lib/make-event';
+
 import './style.scss';
 
 class TimePicker extends DatePicker {

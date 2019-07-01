@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextField } from '../text-field';
-import Hint, { hintTypes } from '../hint';
+
 import './style.scss';
 
 class TextArea extends TextField {

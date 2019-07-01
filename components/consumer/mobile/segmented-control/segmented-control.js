@@ -13,11 +13,11 @@ class SegmentedControl extends React.Component {
         return new Error(`Invalid prop '${propName}' supplied to ${componentName}`);
       }
     }),
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
   };
 
   static defaultProps = {
-    array: [],
+    segments: [],
     onChange: () => {},
   };
 
@@ -30,23 +30,6 @@ class SegmentedControl extends React.Component {
     activeSegment: this.activeSegment,
   };
 
-  componentDidMount() {
-    this.onChange(makeEvent(this.intialActiveSegment()));
-    this.setState({ activeSegment: this.intialActiveSegment() });
-  }
-
-  onChange = ev => {
-    const { onChange } = this.props;
-    onChange(ev);
-    this.setState({ activeSegment: ev.target.value });
-  };
-
-  intialActiveSegment() {
-    const { segments } = this.props;
-    const index = findIndex(segments, segment => segment.active);
-    return index > -1 ? index : 0;
-  }
-
   get firstControl() {
     const { segments } = this.props;
     return this.renderControl(first(segments) || {}, 0);
@@ -56,6 +39,23 @@ class SegmentedControl extends React.Component {
     const { segments } = this.props;
     return this.renderControl(last(segments) || {}, 1);
   }
+
+  componentDidMount() {
+    this.onChange(makeEvent(this.initialActiveSegment()));
+    this.setState({ activeSegment: this.initialActiveSegment() });
+  }
+
+  initialActiveSegment() {
+    const { segments } = this.props;
+    const index = findIndex(segments, segment => segment.active);
+    return index > -1 ? index : 0;
+  }
+
+  onChange = ev => {
+    const { onChange } = this.props;
+    onChange(ev);
+    this.setState({ activeSegment: ev.target.value });
+  };
 
   renderControl(config, index) {
     const { activeSegment } = this.state;

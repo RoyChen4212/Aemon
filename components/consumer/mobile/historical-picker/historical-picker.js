@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Picker } from '../picker';
-import Label from '../label';
 
 import './style.scss';
 

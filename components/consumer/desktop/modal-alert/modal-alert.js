@@ -10,13 +10,6 @@ export default class ModalAlert extends React.PureComponent {
     hide: false,
   };
 
-  componentDidMount() {
-    const { hideAfter } = this.props;
-    if (hideAfter) {
-      setTimeout(() => this.setState({ hide: true }), hideAfter);
-    }
-  }
-
   get error() {
     const { error } = this.props;
     return error || false;
@@ -40,6 +33,13 @@ export default class ModalAlert extends React.PureComponent {
   get text() {
     const { text, onTextClick } = this.props;
     return onTextClick ? <a onClick={onTextClick}>{text}</a> : text;
+  }
+
+  componentDidMount() {
+    const { hideAfter } = this.props;
+    if (hideAfter) {
+      setTimeout(() => this.setState({ hide: true }), hideAfter);
+    }
   }
 
   className() {

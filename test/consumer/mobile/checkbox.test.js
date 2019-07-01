@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { Checkbox } from '../../../components/consumer/mobile/form-fields';
@@ -43,7 +42,7 @@ describe('Checkbox', () => {
     expect(wrapper.find({ type: 'checkbox' }).props().checked).to.be.false;
   });
 
-  it('reports the value as true upon checking the checkbox', function(done) {
+  it('reports the value as true upon checking the checkbox', done => {
     const onChange = ev => {
       expect(ev.target.value).to.be.true;
       done();

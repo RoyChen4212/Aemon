@@ -1,8 +1,7 @@
 import React from 'react';
 
 import FormField from '../form-field';
-import Label, { labelTypes } from '../label';
-import Hint, { hintTypes } from '../hint';
+import Label from '../label';
 import makeEvent from '../../../lib/make-event';
 
 import './style.scss';

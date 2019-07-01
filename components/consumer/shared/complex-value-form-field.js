@@ -1,4 +1,3 @@
-import React from 'react';
 import makeEvent from '../../lib/make-event';
 
 const ComposeFormField = FormField =>

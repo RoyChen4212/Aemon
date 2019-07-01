@@ -78,57 +78,56 @@ class FullModal extends React.Component {
     showingModal: false,
   };
 
-  showModal = () => {
-    this.setState({ showingModal: true });
-  };
-
-  hideModal = () => {
-    this.setState({ showingModal: false });
-  };
-
   get showingModal() {
     const { showingModal } = this.state;
     return showingModal;
   }
 
   get modal() {
-    if (this.showingModal) {
-      return (
-        <Modal
-          backButtonCaption="Back"
-          onBackClick={this.hideModal}
-          title="Remove from group"
-          cta={[
-            {
-              label: 'Cancel',
-              onClick: action('click'),
-              type: buttonTypes.SECONDARY,
-            },
-            {
-              label: 'Remove 3 contributors',
-              onClick: action('click'),
-              type: buttonTypes.PRIMARY,
-            },
-          ]}
-        >
-          <p>
-            Contributors being removed
-            <Label type={labelTypes.STRONG}>Dora Grant, Simon Pague, and Ronnie Johns</Label>
-          </p>
-          <p>
-            If you remove these contributors, they will no longer count towards your group's total, and they will not
-            receive any future updates about this purchase.
-          </p>
-        </Modal>
-      );
-    }
+    if (!this.showingModal) return null;
+    return (
+      <Modal
+        backButtonCaption="Back"
+        onBackClick={this.onBackClick}
+        title="Remove from group"
+        cta={[
+          {
+            label: 'Cancel',
+            onClick: action('click'),
+            type: buttonTypes.SECONDARY,
+          },
+          {
+            label: 'Remove 3 contributors',
+            onClick: action('click'),
+            type: buttonTypes.PRIMARY,
+          },
+        ]}
+      >
+        <p>
+          Contributors being removed
+          <Label type={labelTypes.STRONG}>Dora Grant, Simon Pague, and Ronnie Johns</Label>
+        </p>
+        <p>
+          If you remove these contributors, they will no longer count towards your group's total, and they will not
+          receive any future updates about this purchase.
+        </p>
+      </Modal>
+    );
   }
+
+  onClick = () => {
+    this.setState({ showingModal: true });
+  };
+
+  onBackClick = () => {
+    this.setState({ showingModal: false });
+  };
 
   render() {
     return (
       <div>
         {this.modal}
-        <button onClick={this.showModal}>Show modal</button>
+        <button onClick={this.onClick}>Show modal</button>
       </div>
     );
   }

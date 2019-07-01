@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import { fieldNames } from '../../../components/consumer/mobile/new-address-field/new-address-field';
-import { TextField, Picker, NewAddressField } from '../../../components/consumer/mobile/form-fields';
+import { Picker, NewAddressField } from '../../../components/consumer/mobile/form-fields';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint from '../../../components/consumer/mobile/hint';
 
@@ -255,7 +255,7 @@ describe('NewAddressField', () => {
           expect(onChange.calledOnce).to.be.true;
         });
 
-        it('should report correct value when streetAddress TextField changes', function(done) {
+        it('should report correct value when streetAddress TextField changes', done => {
           const event = { target: { value: '742 Evergreen Terrace' } };
           const onChange = ev => {
             const expected = {
@@ -269,7 +269,7 @@ describe('NewAddressField', () => {
           wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('change', event);
         });
 
-        it('should report correct value when streetAddress TextField changes', function(done) {
+        it('should report correct value when streetAddress TextField changes', done => {
           const expected = { streetAddress: '742 Evergreen Terrace' };
           const event = { target: { value: expected.streetAddress } };
           const onChange = ev => {
@@ -290,7 +290,7 @@ describe('NewAddressField', () => {
           );
         });
 
-        it('should execute onBlur with current value when streetAddress is blurred', function(done) {
+        it('should execute onBlur with current value when streetAddress is blurred', done => {
           const value = {
             streetAddress: '742 Evergreen Terrace',
             city: 'Springfield',
@@ -313,7 +313,7 @@ describe('NewAddressField', () => {
           expect(onChange.calledOnce).to.be.true;
         });
 
-        it('should report correct value when city TextField changes', function(done) {
+        it('should report correct value when city TextField changes', done => {
           const event = { target: { value: 'Springfield' } };
           const onChange = ev => {
             const expected = { ...initialValue, city: 'Springfield' };
@@ -324,7 +324,7 @@ describe('NewAddressField', () => {
           wrapper.find({ type: 'text', name: fieldNames.CITY }).simulate('change', event);
         });
 
-        it('should report correct value when city TextField changes', function(done) {
+        it('should report correct value when city TextField changes', done => {
           const expected = { city: 'Springfield' };
           const event = { target: { value: expected.city } };
           const onChange = ev => {
@@ -343,7 +343,7 @@ describe('NewAddressField', () => {
           expect(wrapper.find({ type: 'text', name: fieldNames.CITY }).prop('value')).to.equal(value.city);
         });
 
-        it('should execute onBlur with current value when city is blurred', function(done) {
+        it('should execute onBlur with current value when city is blurred', done => {
           const value = {
             streetAddress: '742 Evergreen Terrace',
             city: 'Springfield',
@@ -366,7 +366,7 @@ describe('NewAddressField', () => {
           expect(onChange.calledOnce).to.be.true;
         });
 
-        it('should report correct value when state TextField changes', function(done) {
+        it('should report correct value when state TextField changes', done => {
           const event = { target: { value: 'Oregon' } };
           const onChange = ev => {
             const expected = { ...initialValue, state: 'Oregon' };
@@ -377,7 +377,7 @@ describe('NewAddressField', () => {
           wrapper.find({ type: 'text', name: fieldNames.STATE }).simulate('change', event);
         });
 
-        it('should report correct value when state TextField changes', function(done) {
+        it('should report correct value when state TextField changes', done => {
           const expected = { state: 'Oregon' };
           const event = { target: { value: expected.state } };
           const onChange = ev => {
@@ -396,7 +396,7 @@ describe('NewAddressField', () => {
           expect(wrapper.find({ type: 'text', name: fieldNames.STATE }).prop('value')).to.equal(value.state);
         });
 
-        it('should execute onBlur with current value when state is blurred', function(done) {
+        it('should execute onBlur with current value when state is blurred', done => {
           const value = {
             streetAddress: '742 Evergreen Terrace',
             city: 'Springfield',
@@ -419,7 +419,7 @@ describe('NewAddressField', () => {
           expect(onChange.calledOnce).to.be.true;
         });
 
-        it('should report correct value when postalCode TextField changes', function(done) {
+        it('should report correct value when postalCode TextField changes', done => {
           const event = { target: { value: '555636' } };
           const onChange = ev => {
             const expected = { ...initialValue, postalCode: '555636' };
@@ -430,7 +430,7 @@ describe('NewAddressField', () => {
           wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).simulate('change', event);
         });
 
-        it('should report correct value when postalCode TextField changes', function(done) {
+        it('should report correct value when postalCode TextField changes', done => {
           const expected = { postalCode: '555636' };
           const event = { target: { value: expected.postalCode } };
           const onChange = ev => {
@@ -449,7 +449,7 @@ describe('NewAddressField', () => {
           expect(wrapper.find({ type: 'text', name: fieldNames.POSTAL_CODE }).prop('value')).to.equal(value.postalCode);
         });
 
-        it('should execute onBlur with current value when postalCode is blurred', function(done) {
+        it('should execute onBlur with current value when postalCode is blurred', done => {
           const value = {
             streetAddress: '742 Evergreen Terrace',
             city: 'Springfield',
@@ -472,7 +472,7 @@ describe('NewAddressField', () => {
           expect(onChange.calledOnce).to.be.true;
         });
 
-        it('should report correct value when country TextField changes', function(done) {
+        it('should report correct value when country TextField changes', done => {
           const event = { target: { value: 'US' } };
           const onChange = ev => {
             const expected = { ...initialValue, country: 'US' };
@@ -483,7 +483,7 @@ describe('NewAddressField', () => {
           wrapper.find('select').simulate('change', event);
         });
 
-        it('should report correct value when country TextField changes', function(done) {
+        it('should report correct value when country TextField changes', done => {
           const expected = { country: 'US' };
           const event = { target: { value: expected.country } };
           const onChange = ev => {
@@ -515,7 +515,6 @@ describe('NewAddressField', () => {
         });
 
         it('should be touched when focused', () => {
-          const touchState = `${fieldNames.STREET_ADDRESS}Touched`;
           const wrapper = mount(<NewAddressField onChange={() => {}} />);
           expect(wrapper.state()[`${fieldNames.STREET_ADDRESS}Touched`]).to.be.false;
           wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('blur');

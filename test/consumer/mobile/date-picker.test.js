@@ -29,7 +29,7 @@ describe('Date picker', () => {
     expect(onChange.calledOnce).to.be.true;
   });
 
-  it('should call onChange with correct value', function(done) {
+  it('should call onChange with correct value', done => {
     const expected = '1984-10-19';
     const onChange = ev => {
       expect(ev.target.value).to.equal(expected);
@@ -42,7 +42,6 @@ describe('Date picker', () => {
 
   it('should call onBlur event when date input loses focus', () => {
     const onBlur = sinon.spy();
-    const expected = 'expected value';
     const wrapper = shallow(<DatePicker onBlur={onBlur} />);
     wrapper.find('input').simulate('focus');
     wrapper.find('input').simulate('blur');
@@ -51,7 +50,7 @@ describe('Date picker', () => {
 
   it('should execute formater provided for feedback', () => {
     const formater = sinon.spy();
-    const wrapper = shallow(<DatePicker formater={formater} />);
+    shallow(<DatePicker formater={formater} />);
     expect(formater.calledOnce).to.be.true;
   });
 

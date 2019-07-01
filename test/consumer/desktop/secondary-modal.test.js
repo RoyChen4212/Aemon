@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import { mount, shallow } from 'enzyme';
-import sinon from 'sinon';
+import { shallow } from 'enzyme';
 
 import SecondaryModal from '../../../components/consumer/desktop/secondary-modal';
 

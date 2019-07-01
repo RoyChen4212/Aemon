@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import times from 'lodash/times';
-import first from 'lodash/first';
 import Avatar from '../../../components/consumer/shared/avatar';
 import defaults from '../../../components/consumer/shared/avatar/defaults';
 
@@ -63,7 +62,7 @@ describe('Avatar', () => {
 
   describe('Fallback strategy', () => {
     const getRenderedSVGPath = userId => {
-      const wrapper = mount(<Avatar src={src} />);
+      const wrapper = mount(<Avatar src={src} userId={userId} />);
       wrapper.find('img').simulate('error');
       return wrapper.find('svg > path:first-child');
     };

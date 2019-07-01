@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { HistoricalPicker } from '../../../components/consumer/mobile/form-fields';
@@ -26,7 +25,6 @@ describe('Historical Picker', () => {
     const wrapper = shallow(<HistoricalPicker options={opts} />);
     expect(wrapper.find('select').find('option')).to.have.lengthOf(2);
     opts.forEach(opt => {
-      const expected = <option value={opt.value}>{opt.label}</option>;
       expect(wrapper.find({ value: opt.value })).to.have.lengthOf(1);
     });
   });
