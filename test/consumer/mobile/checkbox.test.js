@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { Checkbox } from '../../../components/consumer/mobile/form-fields';

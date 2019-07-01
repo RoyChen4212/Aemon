@@ -5,7 +5,7 @@ import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { Picker, PICKER_EMPTY_VALUE } from '../../../components/consumer/mobile/form-fields';
-import Label, { labelTypes } from '../../../components/consumer/mobile/label';
+import Label from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
 describe('Picker', () => {
@@ -26,7 +26,6 @@ describe('Picker', () => {
     const wrapper = shallow(<Picker options={opts} />);
     expect(wrapper.find('select').find('option')).to.have.lengthOf(2);
     opts.forEach(opt => {
-      const expected = <option value={opt.value}>{opt.label}</option>;
       expect(wrapper.find({ value: opt.value })).to.have.lengthOf(1);
     });
   });

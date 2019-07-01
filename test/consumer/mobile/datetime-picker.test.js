@@ -11,8 +11,6 @@ import {
   applyTimeToValue,
 } from '../../../components/consumer/mobile/datetime-picker/value-generator';
 import { DatetimePicker, DatePicker, TimePicker } from '../../../components/consumer/mobile/form-fields';
-import Label, { labelTypes } from '../../../components/consumer/mobile/label';
-import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
 describe('Datetime Picker Value Generator', () => {
   const timezone = 'America/Mexico_City';
@@ -165,7 +163,7 @@ describe('Datetime picker', () => {
   it('should use prop adapter if provided', () => {
     const adapter = sinon.spy(props => props);
     const value = new Date(moment('2018-02-23T00:00').tz(timezone));
-    const wrapper = shallow(<DatetimePicker adapter={adapter} timezone={timezone} value={value} />);
+    shallow(<DatetimePicker adapter={adapter} timezone={timezone} value={value} />);
     expect(adapter.called).to.be.true;
   });
 
@@ -249,7 +247,6 @@ describe('Datetime picker', () => {
 
     it('should handle properly changes to double digit times', done => {
       const value = new Date(moment('1984-10-19T12:22').tz(timezone));
-      const expected = '12:22';
       const wrapper = mount(<DatetimePicker timezone={timezone} />);
       wrapper.setProps({ value }, () => {
         expect(wrapper.find('.pbg-time-picker').text()).to.equal('12:22');

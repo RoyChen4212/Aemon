@@ -1,9 +1,6 @@
 import React from 'react';
-import get from 'lodash/get';
-import { HistoricalPicker, NewAddressField } from '../form-fields';
-import { SmallButton } from '../button';
+import { NewAddressField } from '../form-fields';
 import AddOrSelectField from '../add-or-select-field';
-import makeEvent from '../../../lib/make-event';
 
 import './style.scss';
 

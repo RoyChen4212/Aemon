@@ -1,6 +1,5 @@
 import React from 'react';
 import FormField from '../form-field';
-import { labelTypes } from '../label';
 
 import './style.scss';
 

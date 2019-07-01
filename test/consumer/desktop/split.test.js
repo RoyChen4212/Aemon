@@ -1,11 +1,9 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
 
 import { SplitEven, SplitCustom, SplitFixed } from '../../../components/consumer/desktop/split';
 import Picker from '../../../components/consumer/desktop/picker';
-import Label from '../../../components/consumer/desktop/label';
 import NumberStepper from '../../../components/consumer/desktop/simple-number-stepper';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 
@@ -235,7 +233,6 @@ describe('SplitEven', () => {
 describe('SplitCustom', () => {
   shouldBehaveLikeFormField(shallow(<SplitCustom />));
   const options = [{ label: { term: 'even' }, value: 'even' }, { label: { term: 'custom' }, value: 'custom' }];
-  const copy = { split: 'Split', for: 'for different amounts per contributor' };
 
   it('should render a simple picker', () => {
     const wrapper = shallow(<SplitCustom value={{ splitType: 'custom' }} min />);
@@ -251,7 +248,6 @@ describe('SplitCustom', () => {
 });
 
 describe('SplitFixed', () => {
-  const options = [{ label: { term: 'even' }, value: 'even' }, { label: { term: 'custom' }, value: 'custom' }];
   const copy = { split: 'Split', to: 'to', shares: 'shares for purchase' };
   describe('Min', () => {
     it('should render one number stepper', () => {

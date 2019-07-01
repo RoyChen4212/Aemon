@@ -7,7 +7,6 @@ import FormField from '../form-field';
 import ComplexValueFormField from '../../shared/complex-value-form-field';
 import Picker from '../picker';
 import NumberStepper from '../simple-number-stepper';
-import Label, { labelTypes } from '../label';
 
 import './style.scss';
 

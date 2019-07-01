@@ -1,4 +1,3 @@
-import React from 'react';
 import FormField from '../form-field';
 import Label from '../label';
 import BaseCheckbox from '../../shared/base-checkbox';

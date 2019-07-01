@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import { shouldBehaveLikeButton } from '../shared/base-button.test';
 import {
@@ -12,8 +11,6 @@ import {
   FacebookButton,
   SmallFacebookButton,
 } from '../../../components/consumer/mobile/button';
-
-import Hint from '../../../components/consumer/mobile/hint';
 
 describe('Button', () => {
   describe('Primary button', () => {

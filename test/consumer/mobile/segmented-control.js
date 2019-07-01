@@ -1,7 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 
 import SegmentedControl from '../../../components/consumer/mobile/segmented-control';
 
@@ -67,7 +66,7 @@ describe('Segmented Control', () => {
       expect(ev.target.value).to.equal(0);
       done();
     };
-    const wrapper = shallow(<SegmentedControl segments={segments} onChange={onChange} />);
+    shallow(<SegmentedControl segments={segments} onChange={onChange} />);
   });
 
   it('should activate correct segment according to configuration', done => {
@@ -76,7 +75,7 @@ describe('Segmented Control', () => {
       expect(ev.target.value).to.equal(1);
       done();
     };
-    const wrapper = shallow(<SegmentedControl segments={segments} onChange={onChange} />);
+    shallow(<SegmentedControl segments={segments} onChange={onChange} />);
   });
 
   it('should call onChange with correct index upon clicking a segment', done => {

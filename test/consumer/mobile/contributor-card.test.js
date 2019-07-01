@@ -5,7 +5,6 @@ import sinon from 'sinon';
 
 import ContributorCard from '../../../components/consumer/mobile/contributor-card';
 import { H2 } from '../../../components/consumer/mobile/heading';
-import Hint from '../../../components/consumer/mobile/hint';
 import { LinkButton } from '../../../components/consumer/mobile/button';
 import { HistoricalPicker } from '../../../components/consumer/mobile/historical-picker';
 
@@ -27,7 +26,6 @@ describe('ContributorCard Card', () => {
   });
 
   it('should have no heading if prop not present', () => {
-    const expected = 'Oh no!';
     const wrapper = shallow(<ContributorCard />);
     expect(wrapper.find('.pbg-contributor-card-heading')).to.have.lengthOf(0);
   });

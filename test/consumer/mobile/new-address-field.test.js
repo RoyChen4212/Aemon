@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import { fieldNames } from '../../../components/consumer/mobile/new-address-field/new-address-field';
-import { TextField, Picker, NewAddressField } from '../../../components/consumer/mobile/form-fields';
+import { Picker, NewAddressField } from '../../../components/consumer/mobile/form-fields';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint from '../../../components/consumer/mobile/hint';
 
@@ -515,7 +515,6 @@ describe('NewAddressField', () => {
         });
 
         it('should be touched when focused', () => {
-          const touchState = `${fieldNames.STREET_ADDRESS}Touched`;
           const wrapper = mount(<NewAddressField onChange={() => {}} />);
           expect(wrapper.state()[`${fieldNames.STREET_ADDRESS}Touched`]).to.be.false;
           wrapper.find({ type: 'text', name: fieldNames.STREET_ADDRESS }).simulate('blur');

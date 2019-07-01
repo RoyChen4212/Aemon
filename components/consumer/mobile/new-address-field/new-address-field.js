@@ -1,5 +1,5 @@
 import React from 'react';
-import { get, first, isEmpty } from 'lodash';
+import { get } from 'lodash';
 import { TextField, Picker } from '../form-fields';
 import Label, { labelTypes } from '../label';
 import Hint from '../hint';

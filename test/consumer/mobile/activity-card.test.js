@@ -34,7 +34,6 @@ describe('Activity Card', () => {
     });
 
     it('should have correct class for type white', () => {
-      const date = new Date('1984-10-09T19:02');
       const wrapper = shallow(<ActivityCard type={ActivityCard.types.white} />);
       expect(wrapper.hasClass('pbg-activity-card-white')).to.be.true;
     });

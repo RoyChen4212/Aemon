@@ -1,6 +1,5 @@
 import React from 'react';
 import { hintTypes } from './hint';
-import { labelTypes } from './label';
 
 class BaseFormField extends React.Component {
   baseClassName = 'pbg-form-field';

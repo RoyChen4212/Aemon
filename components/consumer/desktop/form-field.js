@@ -1,5 +1,3 @@
-import React from 'react';
-
 import BaseFormField from '../shared/base-form-field';
 import Label, { labelTypes } from './label';
 import Hint from './hint';
