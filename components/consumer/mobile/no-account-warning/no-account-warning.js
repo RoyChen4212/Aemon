@@ -4,6 +4,14 @@ import { SmallButton } from '../button';
 
 import './style.scss';
 
+const buildClassName = ({ className }) => {
+  let base = 'pbg-consumer-mobile pbg-no-account-warning';
+  if (className) {
+    base += ` ${className}`;
+  }
+  return base;
+};
+
 export const NoAccountWarning = ({ title, text, onClick, ctaText, type, className }) => (
   <div className={buildClassName({ type, className })}>
     <div className="d-flex">
@@ -18,16 +26,5 @@ export const NoAccountWarning = ({ title, text, onClick, ctaText, type, classNam
     </div>
   </div>
 );
-
-const buildClassName = ({ type, className }) => {
-  let base = 'pbg-consumer-mobile pbg-no-account-warning';
-  if (className) {
-    base += ` ${className}`;
-  }
-
-  if (type && classNames[type]) return `${base} ${classNames[type]}`;
-
-  return base;
-};
 
 export default NoAccountWarning;

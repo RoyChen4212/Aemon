@@ -10,21 +10,21 @@ class BaseAddComment extends BaseFormField {
     throw new Error('Not implemented, Implement this method in a sub-class.');
   }
 
+  get submitButton() {
+    throw new Error('Not implemented, Implement this method in a sub-class.');
+  }
+
+  get textArea() {
+    throw new Error('Not implemented, Implement this method in a sub-class.');
+  }
+
   renderAvatar(Avatar) {
     if (this.adaptedProps.avatarSrc) return <Avatar src={this.adaptedProps.avatarSrc} />;
     return <Avatar userId={this.adaptedProps.userId} fullName={this.adaptedProps.fullName} />;
   }
 
-  get submitButton() {
-    throw new Error('Not implemented, Implement this method in a sub-class.');
-  }
-
   renderSubmitButton(Button) {
     return <Button>{this.adaptedProps.ctaLabel}</Button>;
-  }
-
-  get textArea() {
-    throw new Error('Not implemented, Implement this method in a sub-class.');
   }
 
   renderTextArea(TextArea) {

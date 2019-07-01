@@ -41,7 +41,7 @@ class TextArea extends TextField {
     return this.placeholder;
   }
 
-  get input() {
+  renderInput() {
     return (
       <textarea
         rows={1}

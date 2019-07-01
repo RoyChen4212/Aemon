@@ -62,15 +62,15 @@ class BaseFormField extends React.Component {
   }
 
   onFocus = ev => {
-    if (this.adaptedProps.onFocus) return this.adaptedProps.onFocus(ev);
+    return this.adaptedProps.onFocus ? this.adaptedProps.onFocus(ev) : null;
   };
 
   onChange = value => {
-    if (this.adaptedProps.onChange) return this.adaptedProps.onChange(value);
+    return this.adaptedProps.onChange ? this.adaptedProps.onChange(value) : null;
   };
 
   onBlur = value => {
-    if (this.adaptedProps.onBlur) return this.adaptedProps.onBlur(value);
+    return this.adaptedProps.onBlur ? this.adaptedProps.onBlur(value) : null;
   };
 
   renderHintOrError(Hint) {

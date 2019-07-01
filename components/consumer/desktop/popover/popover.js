@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import jQuery from 'jquery';
+
 import Container from '../container';
 
 import './style.scss';
@@ -7,18 +9,22 @@ import './style.scss';
 class Popover extends React.PureComponent {
   popoverElementRef = React.createRef();
 
+  static propTypes = {
+    trigger: PropTypes.node,
+    content: PropTypes.node,
+  };
+
+  static defaultProps = {
+    trigger: null,
+    content: null,
+  };
+
   state = {
     active: false,
   };
 
   get className() {
     return `pbg-popover ${this.active ? 'pbg-popover-active' : ''}`;
-  }
-
-  get triggerComponent() {
-    const { trigger } = this.props;
-    const TriggerComponent = trigger;
-    return TriggerComponent ? <TriggerComponent onClick={this.onClick} /> : null;
   }
 
   get active() {
@@ -77,11 +83,17 @@ class Popover extends React.PureComponent {
     this.deactivate();
   };
 
+  renderTriggerComponent = () => {
+    const { trigger: TriggerComponent } = this.props;
+    if (!TriggerComponent) return null;
+    return <TriggerComponent onClick={this.onClick} />;
+  };
+
   render() {
     const { content } = this.props;
     return (
       <div className="pbg-consumer-desktop pbg-popover-container">
-        {this.triggerComponent}
+        {this.renderTriggerComponent()}
         <Container shadow2 stroked solid className={this.className} ref={this.popoverElementRef}>
           {content}
         </Container>

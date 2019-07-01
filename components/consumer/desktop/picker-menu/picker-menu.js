@@ -15,7 +15,7 @@ class PickerMenu extends React.PureComponent {
 
   onOptionClick = value => {
     const { onOptionClick } = this.props;
-    if (!onOptionClick) return;
+    if (!onOptionClick) return null;
     return onOptionClick(value);
   };
 

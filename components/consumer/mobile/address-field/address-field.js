@@ -11,7 +11,7 @@ class AddressField extends AddOrSelectField {
     return this.adaptedProps.addressOptions;
   }
 
-  get field() {
+  renderField() {
     return (
       <NewAddressField
         onChange={ev => this.updateValue(ev.target.value)}

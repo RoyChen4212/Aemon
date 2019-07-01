@@ -31,40 +31,25 @@ class AddOrSelectField extends FormField {
     return selected === 'new';
   }
 
-  get addNewButton() {
-    if (this.addingNew) return null;
+  renderLabel() {
+    const { label, hint, required } = this.props;
+    if (!label) return null;
     return (
-      <SmallButton onClick={() => this.updateValue({ selected: 'new' })}>
-        {this.adaptedProps.addNewButtonLabel}
-      </SmallButton>
+      <div className="pbg-add-or-select-field-label">
+        <Label type={labelTypes.STRONG} required={required}>
+          {label}
+        </Label>
+        {hint ? (
+          <React.Fragment>
+            <br />
+            <Hint>{hint}</Hint>
+          </React.Fragment>
+        ) : null}
+      </div>
     );
   }
 
-  get addNewField() {
-    if (!this.addingNew) return null;
-    return this.field;
-  }
-
-  get label() {
-    const { label, hint, required } = this.props;
-    if (label) {
-      return (
-        <div className="pbg-add-or-select-field-label">
-          <Label type={labelTypes.STRONG} required={required}>
-            {label}
-          </Label>
-          {hint ? (
-            <React.Fragment>
-              <br />
-              <Hint>{hint}</Hint>
-            </React.Fragment>
-          ) : null}
-        </div>
-      );
-    }
-  }
-
-  get picker() {
+  renderPicker() {
     if (!this.options || !this.options.length) return null;
     return (
       <HistoricalPicker
@@ -72,6 +57,20 @@ class AddOrSelectField extends FormField {
         onChange={ev => this.updateValue({ selected: ev.target.value })}
         value={get(this.adaptedProps, 'value.selected')}
       />
+    );
+  }
+
+  renderAddNewField() {
+    if (!this.addingNew) return null;
+    return this.renderField();
+  }
+
+  renderAddNewButton() {
+    if (this.addingNew) return null;
+    return (
+      <SmallButton onClick={() => this.updateValue({ selected: 'new' })}>
+        {this.adaptedProps.addNewButtonLabel}
+      </SmallButton>
     );
   }
 
@@ -86,10 +85,10 @@ class AddOrSelectField extends FormField {
   render() {
     return (
       <div className={this.className}>
-        {this.label}
-        {this.picker}
-        {this.addNewField}
-        {this.addNewButton}
+        {this.renderLabel()}
+        {this.renderPicker()}
+        {this.renderAddNewField()}
+        {this.renderAddNewButton()}
       </div>
     );
   }

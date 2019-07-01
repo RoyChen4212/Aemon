@@ -36,24 +36,6 @@ class NewAddressField extends FormField {
     return this.adaptedProps.value || {};
   }
 
-  get label() {
-    if (this.props.label) {
-      return (
-        <div className="pbg-new-address-field-label-and-hint">
-          <Label type={labelTypes.STRONG} required={this.props.required}>
-            {this.props.label}
-          </Label>
-          {this.props.hint ? (
-            <React.Fragment>
-              <br />
-              <Hint>{this.props.hint}</Hint>
-            </React.Fragment>
-          ) : null}
-        </div>
-      );
-    }
-  }
-
   onBlur = (ev, fieldName) => {
     this.setState(
       {
@@ -73,7 +55,7 @@ class NewAddressField extends FormField {
     const forceDisplay = get(this.adaptedProps, 'forceErrorDisplay', false);
     const errorMessage = get(this.adaptedProps, `error.${fieldName}`);
     if (errorMessage && forceDisplay) return errorMessage;
-    if (!errorMessage || !this.state[`${fieldName}Touched`]) return;
+    if (!errorMessage || !this.state[`${fieldName}Touched`]) return null;
     return errorMessage;
   }
 
@@ -82,7 +64,7 @@ class NewAddressField extends FormField {
     this.onChange(makeEvent(newValue));
   };
 
-  textFieldFor(fieldName) {
+  renderTextFieldFor(fieldName) {
     return (
       <TextField
         name={fieldName}
@@ -95,14 +77,31 @@ class NewAddressField extends FormField {
     );
   }
 
+  renderLabel() {
+    if (!this.props.label) return null;
+    return (
+      <div className="pbg-new-address-field-label-and-hint">
+        <Label type={labelTypes.STRONG} required={this.props.required}>
+          {this.props.label}
+        </Label>
+        {this.props.hint ? (
+          <React.Fragment>
+            <br />
+            <Hint>{this.props.hint}</Hint>
+          </React.Fragment>
+        ) : null}
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className={this.className}>
-        {this.label}
-        {this.textFieldFor(STREET_ADDRESS)}
-        {this.textFieldFor(CITY)}
-        {this.textFieldFor(STATE)}
-        {this.textFieldFor(POSTAL_CODE)}
+        {this.renderLabel()}
+        {this.renderTextFieldFor(STREET_ADDRESS)}
+        {this.renderTextFieldFor(CITY)}
+        {this.renderTextFieldFor(STATE)}
+        {this.renderTextFieldFor(POSTAL_CODE)}
         <Picker
           name={COUNTRY}
           options={this.countryOptions}

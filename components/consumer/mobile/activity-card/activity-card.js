@@ -7,7 +7,23 @@ import Avatar from '../avatar';
 
 import './style.scss';
 
+const classNames = {
+  white: 'pbg-activity-card-white',
+};
+
+const buildClassName = ({ type, className }) => {
+  let base = 'pbg-consumer-mobile pbg-activity-card';
+  if (className) {
+    base += ` ${className}`;
+  }
+
+  if (type && classNames[type]) return `${base} ${classNames[type]}`;
+
+  return base;
+};
+
 const FORMAT = 'hh:mm a';
+
 const ActivityCard = ({ date, children, type, className }) => (
   <div className={buildClassName({ type, className })}>
     <Hint>{date ? moment(date).format(FORMAT) : FORMAT}</Hint>
@@ -42,23 +58,8 @@ const GroupActivityCard = ({ date, type, title, children }) => (
   </ActivityCard>
 );
 
-const buildClassName = ({ type, className }) => {
-  let base = 'pbg-consumer-mobile pbg-activity-card';
-  if (className) {
-    base += ` ${className}`;
-  }
-
-  if (type && classNames[type]) return `${base} ${classNames[type]}`;
-
-  return base;
-};
-
 ActivityCard.types = {
   white: 'white',
-};
-
-const classNames = {
-  white: 'pbg-activity-card-white',
 };
 
 export { ActivityCard, UserCommentCard, GroupActivityCard };

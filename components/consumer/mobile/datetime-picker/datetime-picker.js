@@ -6,6 +6,19 @@ import makeEvent from '../../../lib/make-event';
 
 import './style.scss';
 
+const toDatePickerString = date => {
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return `${date.getFullYear()}-${month}-${day}`;
+};
+
+const toTimePickerString = date => {
+  const split = date.split(':');
+  const hours = split[0].length < 2 ? `0${split[0]}` : split[0];
+  const mins = split[1].length < 2 ? `0${split[1]}` : split[1];
+  return `${hours}:${mins}`;
+};
+
 class DatetimePicker extends FormField {
   baseClassName = 'pbg-form-field pbg-datetime-picker';
 
@@ -43,7 +56,7 @@ class DatetimePicker extends FormField {
     this.onBlur(makeEvent(newValue));
   };
 
-  get pickers() {
+  renderPickers() {
     const components = [
       <DatePicker value={this.dateValue} onChange={this.onChangeDateValue} />,
       <TimePicker value={this.timeValue} onChange={this.onChangeTimeValue} />,
@@ -60,24 +73,11 @@ class DatetimePicker extends FormField {
     return (
       <div className={this.className}>
         {this.label}
-        <div className="pbg-datetime-picker-pickers-wrapper">{this.pickers}</div>
+        <div className="pbg-datetime-picker-pickers-wrapper">{this.renderPickers()}</div>
         {this.hintOrError}
       </div>
     );
   }
 }
-
-const toDatePickerString = date => {
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  return `${date.getFullYear()}-${month}-${day}`;
-};
-
-const toTimePickerString = date => {
-  const split = date.split(':');
-  const hours = split[0].length < 2 ? `0${split[0]}` : split[0];
-  const mins = split[1].length < 2 ? `0${split[1]}` : split[1];
-  return `${hours}:${mins}`;
-};
 
 export { DatetimePicker };
