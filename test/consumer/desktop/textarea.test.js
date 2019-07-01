@@ -17,7 +17,7 @@ describe('TextArea', () => {
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
   });
 
-  it('should add pbg-form-field-focused class when focused', function(done) {
+  it('should add pbg-form-field-focused class when focused', done => {
     const wrapper = shallow(<TextArea />);
     wrapper.setProps({ focused: true }, () => {
       expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
@@ -25,7 +25,7 @@ describe('TextArea', () => {
     });
   });
 
-  it('should remove pbg-form-field-focused class when not focused', function(done) {
+  it('should remove pbg-form-field-focused class when not focused', done => {
     const wrapper = shallow(<TextArea />);
     wrapper.setProps({ focused: true }, () => {
       wrapper.setProps({ focused: false }, () => {

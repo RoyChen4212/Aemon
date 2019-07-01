@@ -29,7 +29,7 @@ describe('Date picker', () => {
     expect(onChange.calledOnce).to.be.true;
   });
 
-  it('should call onChange with correct value', function(done) {
+  it('should call onChange with correct value', done => {
     const expected = '1984-10-19';
     const onChange = ev => {
       expect(ev.target.value).to.equal(expected);

@@ -90,7 +90,7 @@ describe('Picker', () => {
     expect(onChange.calledWith(expected)).to.be.true;
   });
 
-  it('should call onChange with correct value if value is null', function(done) {
+  it('should call onChange with correct value if value is null', done => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: null }];
     const onChange = ev => {
       expect(ev.target.value).to.equal(null);
@@ -101,7 +101,7 @@ describe('Picker', () => {
     wrapper.find('select').simulate('change', event);
   });
 
-  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', function(done) {
+  it('should call onChange with correct value if value is PICKER_EMPTY_VALUE', done => {
     const opts = [{ label: 'option 1', value: 'opt1' }, { label: 'option 2', value: null }];
     const onChange = ev => {
       expect(ev.target.value).to.equal(null);

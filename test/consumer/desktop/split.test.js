@@ -71,7 +71,7 @@ describe('SplitEven', () => {
       expect(wrapper.text()).to.include(copy.shares);
     });
 
-    it('should report correct value when split type picker value changes', function(done) {
+    it('should report correct value when split type picker value changes', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ splitType: 'custom' });
         done();
@@ -80,7 +80,7 @@ describe('SplitEven', () => {
       wrapper.find(Picker).simulate('change', { target: { value: 'custom' } });
     });
 
-    it('should report correct value when number stepper value changes', function(done) {
+    it('should report correct value when number stepper value changes', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ splitType: 'even', minShares: 2 });
         done();
@@ -122,7 +122,7 @@ describe('SplitEven', () => {
       expect(wrapper.text()).to.include(copy.shares);
     });
 
-    it('should report correct value when min number stepper value changes', function(done) {
+    it('should report correct value when min number stepper value changes', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ splitType: 'even', minShares: 2 });
         done();
@@ -134,7 +134,7 @@ describe('SplitEven', () => {
         .simulate('change', { target: { value: 2 } });
     });
 
-    it('should report correct value when max number stepper value changes', function(done) {
+    it('should report correct value when max number stepper value changes', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ splitType: 'even', maxShares: 2 });
         done();
@@ -178,7 +178,7 @@ describe('SplitEven', () => {
       ).to.equal(10);
     });
 
-    it('should increment steppers when min stepper will have same value as max', function(done) {
+    it('should increment steppers when min stepper will have same value as max', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ minShares: 3, maxShares: 4 });
         done();
@@ -193,7 +193,7 @@ describe('SplitEven', () => {
         .simulate('click');
     });
 
-    it('should decrement steppers when max stepper will have same value as min', function(done) {
+    it('should decrement steppers when max stepper will have same value as min', done => {
       const onChange = ev => {
         expect(ev.target.value).to.eql({ minShares: 3, maxShares: 4 });
         done();

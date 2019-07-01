@@ -79,7 +79,7 @@ describe('Address Field', () => {
     expect(wrapper.find(NewAddressField)).to.have.lengthOf(0);
   });
 
-  it('should return correct value when address is selected', function(done) {
+  it('should return correct value when address is selected', done => {
     const event = { target: { value: addressOptions[1] } };
     const expected = { selected: addressOptions[1] };
     let runs = 0;
@@ -106,7 +106,7 @@ describe('Address Field', () => {
     expect(wrapper.find(HistoricalPicker).prop('value')).to.eql(value.selected);
   });
 
-  it('should return correct value when address is typed in', function(done) {
+  it('should return correct value when address is typed in', done => {
     const expected = {
       selected: 'new',
       [addressFields.STREET_ADDRESS]: '472 Evergreen Terrace',
@@ -134,7 +134,7 @@ describe('Address Field', () => {
     expect(wrapper.find(SmallButton).text()).to.equal(label);
   });
 
-  it('should return correct value when clicking add new button', function(done) {
+  it('should return correct value when clicking add new button', done => {
     const value = { selected: addressOptions[0].value };
     const expected = { selected: 'new' };
     let runs = 0;

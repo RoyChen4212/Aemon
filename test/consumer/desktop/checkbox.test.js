@@ -58,7 +58,7 @@ describe('Checkbox', () => {
     expect(wrapper.find({ type: 'checkbox' }).props().checked).to.be.false;
   });
 
-  it('reports the value as true upon checking the checkbox', function(done) {
+  it('reports the value as true upon checking the checkbox', done => {
     const onChange = ev => {
       expect(ev.target.value).to.be.true;
       done();

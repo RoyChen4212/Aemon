@@ -52,7 +52,7 @@ describe('MultiSelectField', () => {
     expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
   });
 
-  it('should return value with a list of all selected values', function(done) {
+  it('should return value with a list of all selected values', done => {
     const onChange = ev => {
       expect(ev.target.value).to.eql(['opt1']);
       done();
@@ -62,7 +62,7 @@ describe('MultiSelectField', () => {
     wrapper.find({ type: 'checkbox', name: 'checkbox_0' }).simulate('change', event);
   });
 
-  it('should return value with a list of all selected values', function(done) {
+  it('should return value with a list of all selected values', done => {
     const onChange = ev => {
       expect(ev.target.value).to.eql([options[1].value]);
       done();
