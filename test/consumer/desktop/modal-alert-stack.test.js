@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import ModalAlert from '../../../components/consumer/desktop/modal-alert';
 import ModalAlertStack from '../../../components/consumer/desktop/modal-alert-stack';
 
 describe('ModalAlertStack', () => {

@@ -60,7 +60,7 @@ describe('ModalAlert', () => {
   });
 
   it('should have add clickable text', () => {
-    const wrapper = mount(<ModalAlert text={{ label: 'some text', action: () => {} }} />);
+    const wrapper = mount(<ModalAlert text="some text" onTextClick={() => {}} />);
     expect(
       wrapper
         .find('.pbg-modal-alert-text')
@@ -69,7 +69,7 @@ describe('ModalAlert', () => {
     ).to.equal('some text');
   });
 
-  it('should add a pbg-fade-out class after the given timeout', function(done) {
+  it('should add a pbg-fade-out class after the given timeout', done => {
     const wrapper = shallow(<ModalAlert hideAfter="100" />);
     expect(wrapper.hasClass('pbg-fade-out')).to.be.false;
     setTimeout(() => {
