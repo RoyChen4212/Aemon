@@ -20,13 +20,6 @@ class ModalAlertStack extends React.PureComponent {
     }
   }
 
-  onAlertAdded = alert => {
-    return () => {
-      const { onHideAlert } = this.props;
-      setTimeout(() => onHideAlert(alert), 8000);
-    };
-  };
-
   reposition(callback) {
     const elem = jQuery(this.stackElementRef.current);
     if (elem) {
@@ -39,6 +32,13 @@ class ModalAlertStack extends React.PureComponent {
       );
     }
   }
+
+  onAlertAdded = alert => {
+    return () => {
+      const { onHideAlert } = this.props;
+      setTimeout(() => onHideAlert && onHideAlert(alert), 8000);
+    };
+  };
 
   renderAlert = (alert, index) => {
     return (

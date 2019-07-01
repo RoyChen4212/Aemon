@@ -11,6 +11,40 @@ class Popover extends React.PureComponent {
     active: false,
   };
 
+  get className() {
+    return `pbg-popover ${this.active ? 'pbg-popover-active' : ''}`;
+  }
+
+  get triggerComponent() {
+    const { trigger } = this.props;
+    const TriggerComponent = trigger;
+    return TriggerComponent ? <TriggerComponent onClick={this.onClick} /> : null;
+  }
+
+  get active() {
+    const { active } = this.state;
+    return active;
+  }
+
+  componentDidMount() {
+    this.viewWidth = jQuery(window).width();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.active && !prevState.active) {
+      this.positionPopoverWithinWindow();
+      this.bindDeactivationEvent();
+    }
+  }
+
+  positionPopoverWithinWindow() {
+    const elem = jQuery(this.popoverElementRef.current);
+    const popoverRightBorderPosition = elem.offset().left + elem.outerWidth();
+    if (this.viewWidth < popoverRightBorderPosition) {
+      elem.css({ left: this.viewWidth - popoverRightBorderPosition - 16 });
+    }
+  }
+
   activate = () => {
     this.setState({ active: true });
   };
@@ -31,25 +65,6 @@ class Popover extends React.PureComponent {
     if (clickedOutside) this.deactivate();
   };
 
-  positionPopoverWithinWindow() {
-    const elem = jQuery(this.popoverElementRef.current);
-    const popoverRightBorderPosition = elem.offset().left + elem.outerWidth();
-    if (this.viewWidth < popoverRightBorderPosition) {
-      elem.css({ left: this.viewWidth - popoverRightBorderPosition - 16 });
-    }
-  }
-
-  componentDidMount() {
-    this.viewWidth = jQuery(window).width();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.active && !prevState.active) {
-      this.positionPopoverWithinWindow();
-      this.bindDeactivationEvent();
-    }
-  }
-
   onClick = () => {
     this.activate();
   };
@@ -61,21 +76,6 @@ class Popover extends React.PureComponent {
   onMouseLeave = () => {
     this.deactivate();
   };
-
-  get className() {
-    return `pbg-popover ${this.active ? 'pbg-popover-active' : ''}`;
-  }
-
-  get triggerComponent() {
-    const { trigger } = this.props;
-    const TriggerComponent = trigger;
-    return TriggerComponent ? <TriggerComponent onClick={this.onClick} /> : null;
-  }
-
-  get active() {
-    const { active } = this.state;
-    return active;
-  }
 
   render() {
     const { content } = this.props;

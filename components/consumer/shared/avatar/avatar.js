@@ -24,10 +24,6 @@ class Avatar extends React.PureComponent {
     hasError: false,
   };
 
-  onError = () => {
-    this.setState({ hasError: true });
-  };
-
   getFallbackImageProps = () => {
     const { userId } = this.props;
     const { colors } = defaults;
@@ -55,6 +51,10 @@ class Avatar extends React.PureComponent {
       .filter((word, idx) => idx === 0 || idx === nameArray.length - 1)
       .map(i => i.substr(0, 1).toUpperCase())
       .join('');
+  };
+
+  onError = () => {
+    this.setState({ hasError: true });
   };
 
   renderInitials = () => {
