@@ -249,9 +249,9 @@ Our CI and code quality tools will catch most issues that may exist with your co
 npm lint components/desktop/my-component
 ```
 
-Some style guidelines not covered by our quality code tools that you should take into accout:
+Some style guidelines not covered by our quality code tools that you should take into account:
 
-* Component props and methods for event handling should be named with `on` prefix (i.e. `onChange`, `onFocuss`)
+* Component props and methods for event handling should be named with `on` prefix (i.e. `onChange`, `onFocus`)
 * Component methods that return JSX should be named with `render` prefix (i.e. `renderError`, `renderInput`)
 * Component method order should be: `static-methods`, `getters`, `lifecycle`, `instance-methods`, `handlers` and `renderers`
 * Main `render` function should be the last function in the file
