@@ -1,17 +1,5 @@
-import Avatar from './avatar';
-import Banner from './banner';
-import Divider from './divider';
-import Subheader from './subheader';
 import ActivityCard from './activity-card';
 import ActivityComment from './activity-comment';
-import AddComment from './add-comment';
-import EmailPreview from './email-preview';
-import { PrimaryButton } from './button';
-import { TextField } from './text-field';
-import { MoneyField } from './money-field';
-import PasswordField from './password-field';
-import GuestPasswordField from './guest-password-field';
-
 import ActivityThumbnail, {
   PURCHASE_UPDATED,
   PURCHASE_CLAIMED,
@@ -28,15 +16,65 @@ import ActivityThumbnail, {
   PURCHASE_COMPLETED,
   PURCHASE_COMMENT_CREATED,
 } from './activity-thumbnail';
+import AddComment from './add-comment';
+import Avatar from './avatar';
+import Banner from './banner';
+import { Checkbox } from './checkbox';
+import ClaimToggle from './claim-toggle';
+import Container from './container';
+import Divider from './divider';
+import EmailPreview from './email-preview';
+import GuestPasswordField from './guest-password-field';
+import ModalAlert from './modal-alert';
+import { MoneyField } from './money-field';
+import PasswordField from './password-field';
+import Picker, { PICKER_EMPTY_VALUE } from './picker';
+import Popover from './popover';
+import PopoverTooltip from './popover-tooltip';
+import { PrimaryButton } from './button';
+import PrimaryModal from './primary-modal';
+import PurchaseImage from './purchase-image';
+import SecondaryModal from './secondary-modal';
+import SimpleNumberStepper from './simple-number-stepper';
+import { SplitCustom, SplitEven, SplitFixed } from './split'
+import Status from './status';
+import Subheader from './subheader';
+import TextArea from './text-area';
+import { TextField } from './text-field';
+
 
 const desktop = {
-  Avatar,
-  Banner,
-  Divider,
-  Subheader,
   ActivityCard,
   ActivityComment,
   ActivityThumbnail,
+  AddComment,
+  Avatar,
+  Banner,
+  Checkbox,
+  ClaimToggle,
+  Container,
+  Divider,
+  EmailPreview,
+  GuestPasswordField,
+  ModalAlert,
+  MoneyField,
+  PasswordField,
+  Picker,
+  Popover,
+  PopoverTooltip,
+  PrimaryButton,
+  PrimaryModal,
+  PurchaseImage,
+  SecondaryModal,
+  SimpleNumberStepper,
+  SplitCustom,
+  SplitEven,
+  SplitFixed,
+  Status,
+  Subheader,
+  TextArea,
+  TextField,
+
   PURCHASE_UPDATED,
   PURCHASE_CLAIMED,
   MEMBER_INVITED,
@@ -51,13 +89,8 @@ const desktop = {
   PAYMENT_CAPTURED,
   PURCHASE_COMPLETED,
   PURCHASE_COMMENT_CREATED,
-  AddComment,
-  EmailPreview,
-  PrimaryButton,
-  TextField,
-  MoneyField,
-  PasswordField,
-  GuestPasswordField,
+
+  PICKER_EMPTY_VALUE
 };
 
 export default desktop;
