@@ -11,11 +11,12 @@ class Popover extends React.PureComponent {
     active: false,
   };
 
-  // TODO rename activate to onTriggerComponentClick
+  // TODO: rename to follow naming conventions
   activate = () => {
     this.setState({ active: true });
   };
 
+  // TODO: rename to follow naming conventions
   deactivate = () => {
     this.setState({ active: false });
   };

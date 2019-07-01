@@ -47,12 +47,12 @@ class BaseButton extends React.PureComponent {
     throw new Error('Not implemented, Implement this method in a sub-class');
   }
 
-  // TODO: onMouseDown
+  // TODO: rename to follow naming conventions
   activate = () => {
     this.setState({ active: true });
   };
 
-  // TODO: either onMouseOut, onMouseUp, or onBlur
+  // TODO: rename to follow naming conventions
   deactivate = () => {
     this.setState({ active: false });
   };

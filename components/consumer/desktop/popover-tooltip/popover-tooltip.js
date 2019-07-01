@@ -17,7 +17,6 @@ class PopoverTooltip extends Popover {
     return `pbg-popover-tooltip ${this.active ? 'pbg-popover-active' : ''}`;
   }
 
-  // TODO: rename deactivate to onTriggerComponentMouseLeave
   get triggerComponent() {
     const { trigger } = this.props;
     const TriggerComponent = trigger;
@@ -26,6 +25,7 @@ class PopoverTooltip extends Popover {
       <TriggerComponent
         onMouseEnter={() => {
           console.log('activating');
+          // TODO: rename after popover activate renaming
           this.activate();
         }}
         onMouseLeave={this.deactivate}
