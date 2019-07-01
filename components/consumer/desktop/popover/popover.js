@@ -11,12 +11,10 @@ class Popover extends React.PureComponent {
     active: false,
   };
 
-  // TODO: rename to follow naming conventions
   activate = () => {
     this.setState({ active: true });
   };
 
-  // TODO: rename to follow naming conventions
   deactivate = () => {
     this.setState({ active: false });
   };
@@ -52,6 +50,18 @@ class Popover extends React.PureComponent {
     }
   }
 
+  onClick = () => {
+    this.activate();
+  };
+
+  onMouseEnter = () => {
+    this.activate();
+  };
+
+  onMouseLeave = () => {
+    this.deactivate();
+  };
+
   get className() {
     return `pbg-popover ${this.active ? 'pbg-popover-active' : ''}`;
   }
@@ -59,7 +69,7 @@ class Popover extends React.PureComponent {
   get triggerComponent() {
     const { trigger } = this.props;
     const TriggerComponent = trigger;
-    return TriggerComponent ? <TriggerComponent onClick={this.activate} /> : null;
+    return TriggerComponent ? <TriggerComponent onClick={this.onClick} /> : null;
   }
 
   get active() {

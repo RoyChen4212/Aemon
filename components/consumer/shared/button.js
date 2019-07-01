@@ -47,12 +47,10 @@ class BaseButton extends React.PureComponent {
     throw new Error('Not implemented, Implement this method in a sub-class');
   }
 
-  // TODO: rename to follow naming conventions
   activate = () => {
     this.setState({ active: true });
   };
 
-  // TODO: rename to follow naming conventions
   deactivate = () => {
     this.setState({ active: false });
   };
@@ -62,6 +60,14 @@ class BaseButton extends React.PureComponent {
     if (disabled || submitting) return;
     if (typeof onClick === 'function') onClick(ev);
   };
+
+  onMouseDown = () => this.activate();
+
+  onMouseUp = () => this.deactivate();
+
+  onMouseOut = () => this.deactivate();
+
+  onBlur = () => this.deactivate();
 
   renderHint(Hint) {
     const { hint } = this.props;
@@ -78,14 +84,15 @@ class BaseButton extends React.PureComponent {
     const { disabled, submitting, children } = this.props;
     return (
       <div>
+        {/* eslint-disable-next-line react/button-has-type */}
         <button
           type={this.buttonType}
           className={this.className}
           onClick={this.onClick}
-          onMouseDown={this.activate}
-          onMouseOut={this.deactivate}
-          onMouseUp={this.deactivate}
-          onBlur={this.deactivate}
+          onMouseDown={this.onMouseDown}
+          onMouseOut={this.onMouseOut}
+          onMouseUp={this.onMouseUp}
+          onBlur={this.onBlur}
           disabled={disabled || submitting}
         >
           <span>{children}</span>

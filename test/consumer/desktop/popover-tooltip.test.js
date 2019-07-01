@@ -35,20 +35,26 @@ describe('PopoverTooltip', () => {
   });
 
   it('should deactivate when mouseleave', done => {
-    const trigger = ({ onMouseEnter }) => <a onMouseEnter={onMouseEnter}>Put pointer over Me</a>;
+    const trigger = ({ onMouseEnter, onMouseLeave }) => (
+      <a onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+        Put pointer over Me
+      </a>
+    );
     const wrapper = mount(
       <div className="wrapper">
         <PopoverTooltip trigger={trigger} content={<div>I am content</div>} />
       </div>
     );
-    wrapper.find('a').simulate('mouseleave');
+
+    wrapper.find('a').simulate('mouseenter');
     setTimeout(() => {
-      wrapper
-        .find(PopoverTooltip)
-        .instance()
-        .deactivateIfClickOutside({ target: <div /> });
-      expect(wrapper.find(PopoverTooltip).instance().active).to.be.false;
-      done();
+      expect(wrapper.find(PopoverTooltip).instance().active).to.be.true;
+
+      wrapper.find('a').simulate('mouseleave');
+      setTimeout(() => {
+        expect(wrapper.find(PopoverTooltip).instance().active).to.be.false;
+        done();
+      });
     });
   });
 });
