@@ -21,15 +21,7 @@ class PopoverTooltip extends Popover {
     const { trigger } = this.props;
     const TriggerComponent = trigger;
     if (!TriggerComponent) return null;
-    return (
-      <TriggerComponent
-        onMouseEnter={() => {
-          console.log('activating');
-          this.activate();
-        }}
-        onMouseLeave={this.deactivate}
-      />
-    );
+    return <TriggerComponent onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} />;
   }
 }
 

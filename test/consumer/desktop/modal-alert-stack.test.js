@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import ModalAlert from '../../../components/consumer/desktop/modal-alert';
 import ModalAlertStack from '../../../components/consumer/desktop/modal-alert-stack';
 
 describe('ModalAlertStack', () => {
@@ -30,5 +29,15 @@ describe('ModalAlertStack', () => {
     expect(wrapper.find('.pbg-modal-alert-error')).to.have.lengthOf(1);
     expect(wrapper.find('.pbg-modal-alert-warning')).to.have.lengthOf(1);
     expect(wrapper.find('.pbg-modal-alert-success')).to.have.lengthOf(1);
+  });
+
+  it('should update alerts', () => {
+    const [errorAlert] = alerts;
+    const wrapper = mount(<ModalAlertStack alerts={[]} />);
+    expect(wrapper.find('.pbg-modal-alert-error')).to.have.lengthOf(0);
+    wrapper.setProps({ alerts: [errorAlert] });
+    expect(wrapper.find('.pbg-modal-alert-error')).to.have.lengthOf(1);
+    wrapper.setProps({ alerts: [] });
+    expect(wrapper.find('.pbg-modal-alert-error')).to.have.lengthOf(0);
   });
 });

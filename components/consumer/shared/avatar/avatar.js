@@ -24,7 +24,7 @@ class Avatar extends React.PureComponent {
     hasError: false,
   };
 
-  handleError = () => {
+  onError = () => {
     this.setState({ hasError: true });
   };
 
@@ -123,7 +123,7 @@ class Avatar extends React.PureComponent {
           height={size}
           src={src}
           width={size}
-          onError={this.handleError}
+          onError={this.onError}
         />
       );
     }

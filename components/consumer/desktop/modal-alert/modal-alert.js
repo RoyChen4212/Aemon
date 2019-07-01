@@ -38,11 +38,8 @@ export default class ModalAlert extends React.PureComponent {
   }
 
   get text() {
-    const { text } = this.props;
-    if (text && text.label) {
-      return <a onClick={text.action}>{text.label}</a>;
-    }
-    return text;
+    const { text, onTextClick } = this.props;
+    return onTextClick ? <a onClick={onTextClick}>{text}</a> : text;
   }
 
   className() {
