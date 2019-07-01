@@ -11,6 +11,7 @@ class Popover extends React.PureComponent {
     active: false,
   };
 
+  // TODO rename activate to onTriggerComponentClick
   activate = () => {
     this.setState({ active: true });
   };

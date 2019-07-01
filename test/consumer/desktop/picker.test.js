@@ -178,9 +178,9 @@ describe('Picker', () => {
     expect(wrapper.find(PickerMenu).prop('active')).to.be.equal(false);
   });
 
-  it('should not execute deactivate code if disabled', () => {
+  it('should not execute onButtonBlur code if disabled', () => {
     const wrapper = shallow(<Picker disabled />);
-    expect(wrapper.instance().deactivate()).to.be.false;
+    expect(wrapper.instance().onButtonBlur()).to.be.false;
   });
 
   it('should have no label when simple', () => {

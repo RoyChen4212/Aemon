@@ -35,15 +35,15 @@ class Picker extends FormField {
     const val = value === PICKER_EMPTY_VALUE ? null : value;
     clearTimeout(this.deactivateTimeout);
     this.onChange(makeEvent(val));
-    this.deactivate();
+    this.onButtonBlur();
   };
 
-  activate = () => {
+  onButtonClick = () => {
     if (this.disabled) return;
     this.setState({ active: true });
   };
 
-  deactivate = (ev, callback) => {
+  onButtonBlur = (ev, callback) => {
     if (this.disabled) return false;
     this.deactivateTimeout = setTimeout(() => {
       this.setState({ active: false }, () => callback && callback(makeEvent(this.value)));
@@ -58,8 +58,8 @@ class Picker extends FormField {
         className={style}
         type="button"
         onFocus={this.onFocus}
-        onClick={this.activate}
-        onBlur={ev => this.deactivate(ev, this.onBlur)}
+        onClick={this.onButtonClick}
+        onBlur={ev => this.onButtonBlur(ev, this.onBlur)}
       >
         <span>{this.labelText}</span>
         <i className="pbg-picker-arrow" />

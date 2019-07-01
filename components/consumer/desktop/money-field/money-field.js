@@ -21,7 +21,7 @@ class MoneyField extends TextField {
     value: formatCurrency(this.props.defaultValue, this.props.currency),
   };
 
-  handleChange = event => {
+  onChange = event => {
     this.setState({ value: formatCurrency(event.target.value, this.props.currency) });
   };
 
@@ -40,7 +40,7 @@ class MoneyField extends TextField {
         pattern="\d*"
         name={this.name}
         value={this.value}
-        onChange={this.handleChange}
+        onChange={this.onChange}
         placeholder={formatCurrency(0, this.props.currency)}
       />
     );
