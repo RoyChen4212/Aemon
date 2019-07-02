@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import { CLASS_NAME } from '../../../components/consumer/shared/button';
+import { CLASS_NAME } from '../../../components/consumer/shared/base-button';
 import { PrimaryButton } from '../../../components/consumer/desktop/button';
 import { shouldBehaveLikeButton } from '../shared/base-button.test';
 
