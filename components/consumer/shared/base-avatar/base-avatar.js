@@ -5,7 +5,7 @@ import defaults from './defaults';
 
 import './style.scss';
 
-class Avatar extends React.PureComponent {
+class BaseAvatar extends React.PureComponent {
   static DEFAULT_SIZE = 32;
 
   static propTypes = {
@@ -18,7 +18,7 @@ class Avatar extends React.PureComponent {
 
   static defaultProps = {
     className: '',
-    size: Avatar.DEFAULT_SIZE,
+    size: BaseAvatar.DEFAULT_SIZE,
     src: null,
     fullName: null,
     userId: null,
@@ -140,4 +140,4 @@ class Avatar extends React.PureComponent {
   }
 }
 
-export default Avatar;
+export default BaseAvatar;
