@@ -7,16 +7,16 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Form Fields/simple-text-input', module)
+storiesOf('Consumer/Desktop/Form Fields/text-input', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('simple-text-input/default', () => (
+  .add('text-input/simple/default', () => (
     <FieldStateProvider component={TextField} simple name="field2" />
   ))
-  .add('simple-text-input/placeholder', () => (
+  .add('text-input/simple/placeholder', () => (
     <FieldStateProvider component={TextField} simple name="field2" label="Placeholder" />
   ))
-  .add('simple-text-input/error', () => (
+  .add('text-input/simple/error', () => (
     <FieldStateProvider
       component={TextField}
       simple
@@ -26,10 +26,10 @@ storiesOf('Consumer/Desktop/Form Fields/simple-text-input', module)
       error="this is an error"
     />
   ))
-  .add('simple-text-input/disabled', () => (
+  .add('text-input/simple/disabled', () => (
     <TextField simple disabled name="field3" label="A text field" value="Placeholder" hint="this is a hint" />
   ))
-  .add('simple-text-input/facebook', () => (
+  .add('text-input/simple/facebook', () => (
     <FieldStateProvider
       component={TextField}
       simple
@@ -40,13 +40,13 @@ storiesOf('Consumer/Desktop/Form Fields/simple-text-input', module)
     />
   ));
 
-storiesOf('Consumer/Desktop/Form Fields/form-field', module)
+storiesOf('Consumer/Desktop/Form Fields/text-input', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('form-field/default', () => (
+  .add('text-input/default', () => (
     <FieldStateProvider component={TextField} name="field1" label="A text field" plaholder="Placeholder" hint="hint" />
   ))
-  .add('form-field/error', () => (
+  .add('text-input/error', () => (
     <FieldStateProvider
       component={TextField}
       name="field3"
@@ -57,7 +57,7 @@ storiesOf('Consumer/Desktop/Form Fields/form-field', module)
       hint="this is a hint"
     />
   ))
-  .add('form-field/required', () => (
+  .add('text-input/required', () => (
     <FieldStateProvider
       required
       component={TextField}

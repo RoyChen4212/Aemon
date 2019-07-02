@@ -29,10 +29,10 @@ const splitOptions = [
   },
 ];
 
-storiesOf('Consumer/Desktop/Form Fields/simple-picker', module)
+storiesOf('Consumer/Desktop/Form Fields/picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('simple-picker/default', () => (
+  .add('picker/simple/default', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -45,7 +45,7 @@ storiesOf('Consumer/Desktop/Form Fields/simple-picker', module)
       button
     />
   ))
-  .add('simple-picker/open', () => (
+  .add('picker/simple/open', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -58,7 +58,7 @@ storiesOf('Consumer/Desktop/Form Fields/simple-picker', module)
       button
     />
   ))
-  .add('simple-picker/error', () => (
+  .add('picker/simple/error', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -72,7 +72,7 @@ storiesOf('Consumer/Desktop/Form Fields/simple-picker', module)
       button
     />
   ))
-  .add('simple-picker/disabled', () => (
+  .add('picker/simple/disabled', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
@@ -87,7 +87,7 @@ storiesOf('Consumer/Desktop/Form Fields/simple-picker', module)
       disabled
     />
   ))
-  .add('simple-picker/big', () => (
+  .add('picker/simple/big', () => (
     <div className="w-25">
       <FieldStateProvider
         component={Picker}
@@ -102,12 +102,8 @@ storiesOf('Consumer/Desktop/Form Fields/simple-picker', module)
         button
       />
     </div>
-  ));
-
-storiesOf('Consumer/Desktop/Form Fields/small-simple-picker', module)
-  .addDecorator(wrapStory)
-  .addDecorator(withContainer)
-  .add('small-simple-picker/default', () => (
+  ))
+  .add('picker/simple/small', () => (
     <FieldStateProvider
       component={Picker}
       name="picker"
