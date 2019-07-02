@@ -7,16 +7,15 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Atomic Components/Link Button', module)
+storiesOf('Consumer/Mobile/Atomic Components/btn-link', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Enabled/No Hint', () => <LinkButton onClick={action('clicked')}>Link Button</LinkButton>)
-  .add('Enabled/With Hint', () => (
+  .add('btn-link/enabled', () => (
     <LinkButton hint="With Hint" onClick={action('clicked')}>
       Link Button
     </LinkButton>
   ))
-  .add('Disabled', () => (
+  .add('btn-link/disabled', () => (
     <LinkButton disabled onClick={action('clicked')}>
       Link Button Disabled
     </LinkButton>

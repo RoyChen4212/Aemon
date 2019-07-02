@@ -6,16 +6,15 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { withContainer, wrapStory } from '../../util/decorators';
 
-storiesOf('Consumer/Mobile/Atomic Components/Secondary Button', module)
+storiesOf('Consumer/Mobile/Atomic Components/secondary-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Enabled/No Hint', () => <SecondaryButton onClick={action('clicked')}>Secondary Button</SecondaryButton>)
-  .add('Enabled/With Hint', () => (
-    <SecondaryButton hint="With Hint" onClick={action('clicked')}>
+  .add('secondary-button/default', () => (
+    <SecondaryButton onClick={action('clicked')}>
       Secondary Button
     </SecondaryButton>
   ))
-  .add('Disabled', () => (
+  .add('secondary-button/disabled', () => (
     <SecondaryButton disabled onClick={action('clicked')}>
       Secondary Button Disabled
     </SecondaryButton>

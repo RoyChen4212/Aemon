@@ -7,30 +7,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const customFormater = () => 'Formated by custom formater';
-
-storiesOf('Consumer/Mobile/Form Fields/Time Picker', module)
+storiesOf('Consumer/Mobile/Form Fields/time-picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Valid', () => (
-    <FieldStateProvider
-      component={TimePicker}
-      name="time-picker"
-      value="12:32"
-      hint="With no label"
-      onChange={action('onChange')}
-    />
-  ))
-  .add('Valid/No Value', () => (
-    <FieldStateProvider
-      component={TimePicker}
-      name="time-picker"
-      value=""
-      hint="Pick a time"
-      onChange={action('onChange')}
-    />
-  ))
-  .add('Valid/Required', () => (
+  .add('time-picker/default', () => (
     <FieldStateProvider
       component={TimePicker}
       name="time-picker"
@@ -41,17 +21,7 @@ storiesOf('Consumer/Mobile/Form Fields/Time Picker', module)
       onChange={action('onChange')}
     />
   ))
-  .add('Valid/Custom Formater', () => (
-    <FieldStateProvider
-      component={TimePicker}
-      name="time-picker"
-      hint="Pick a time"
-      value="10:00"
-      formater={customFormater}
-      onChange={action('onChange')}
-    />
-  ))
-  .add('Invalid', () => (
+  .add('time-picker/error', () => (
     <FieldStateProvider
       component={TimePicker}
       name="time-picker"

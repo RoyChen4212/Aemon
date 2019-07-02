@@ -7,32 +7,12 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Form Fields/Password Field', module)
+storiesOf('Consumer/Mobile/Form Fields/password-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Valid', () => (
-    <PasswordField
-      name="pwd1"
-      label="Your password"
-      hint="is secret"
-      forgotPasswordText="Forgot?"
-      onForgotPassword={action('click')}
-    />
-  ))
-  .add('Valid/With Value', () => (
+  .add('password-field/default', () => (
     <FieldStateProvider
       component={PasswordField}
-      name="pwd2"
-      label="Your password"
-      hint="is secret"
-      value="secret"
-      onChange={action('change')}
-      forgotPasswordText="Forgot?"
-      onForgotPassword={action('click')}
-    />
-  ))
-  .add('Valid/Required', () => (
-    <PasswordField
       name="pwd2"
       label="Your password"
       hint="is secret"
@@ -41,8 +21,9 @@ storiesOf('Consumer/Mobile/Form Fields/Password Field', module)
       required
     />
   ))
-  .add('Invalid', () => (
-    <PasswordField
+  .add('password-field/error', () => (
+    <FieldStateProvider
+      component={PasswordField}
       name="pwd3"
       label="Your password"
       error="this field has error"

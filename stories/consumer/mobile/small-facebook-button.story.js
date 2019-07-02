@@ -6,18 +6,13 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Atomic Components/Small Facebook Button', module)
+storiesOf('Consumer/Mobile/Atomic Components/small-facebook-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Enabled/No Hint', () => (
+  .add('small-facebook-button/default', () => (
     <SmallFacebookButton onClick={action('clicked')}>Small Facebook Button</SmallFacebookButton>
   ))
-  .add('Enabled/With Hint', () => (
-    <SmallFacebookButton hint="With Hint" onClick={action('clicked')}>
-      Small Facebook Button
-    </SmallFacebookButton>
-  ))
-  .add('Disabled', () => (
+  .add('small-facebook-button/disabled', () => (
     <SmallFacebookButton disabled onClick={action('clicked')}>
       Small Facebook Button Disabled
     </SmallFacebookButton>

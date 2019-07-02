@@ -7,28 +7,29 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Form Fields/Text Field', module)
+storiesOf('Consumer/Mobile/Form Fields/text-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Valid', () => <FieldStateProvider component={TextField} name="field1" label="A text field" />)
-  .add('Valid/With value', () => (
+  .add('text-field/default', () => (
     <FieldStateProvider
       component={TextField}
       name="field1"
       onChange={action('change')}
       value="You typed this"
+      hint="with a hint"
       label="A text field"
+      required
     />
   ))
-  .add('Valid/With Hint', () => <TextField name="field2" label="A text field" hint="with a hint" />)
-  .add('Valid/Required', () => <TextField name="field2" label="A required text field" hint="with a hint" required />)
-  .add('Invalid', () => (
+  .add('text-field/error', () => (
     <FieldStateProvider
       component={TextField}
-      name="field3"
-      label="A text field"
+      name="field1"
       onChange={action('change')}
-      value="What you typed is wrong"
+      value="You typed this"
+      hint="with a hint"
+      label="A text field"
       error="this is an error"
+      required
     />
   ));

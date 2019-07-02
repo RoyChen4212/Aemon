@@ -8,21 +8,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const customFormater = dateStr => {
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('de-DE', options);
-};
-
-storiesOf('Consumer/Mobile/Form Fields/Date Picker', module)
+storiesOf('Consumer/Mobile/Form Fields/date-picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Valid', () => (
+  .add('date-picker/simple', () => (
     <FieldStateProvider
       component={DatePicker}
       name="date-picker"
@@ -31,10 +20,7 @@ storiesOf('Consumer/Mobile/Form Fields/Date Picker', module)
       onChange={action('onChange')}
     />
   ))
-  .add('Valid/No Value', () => (
-    <FieldStateProvider component={DatePicker} name="date-picker" hint="Pick a date" onChange={action('onChange')} />
-  ))
-  .add('Valid/Required', () => (
+  .add('date-picker/default', () => (
     <FieldStateProvider
       component={DatePicker}
       name="date-picker"
@@ -45,17 +31,7 @@ storiesOf('Consumer/Mobile/Form Fields/Date Picker', module)
       onChange={action('onChange')}
     />
   ))
-  .add('Valid/Custom Formater', () => (
-    <FieldStateProvider
-      component={DatePicker}
-      name="date-picker"
-      hint="Pick a date"
-      value="1984-10-19"
-      formater={customFormater}
-      onChange={action('onChange')}
-    />
-  ))
-  .add('Invalid', () => (
+  .add('date-picker/error', () => (
     <FieldStateProvider
       component={DatePicker}
       name="date-picker"

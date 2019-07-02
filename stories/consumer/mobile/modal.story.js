@@ -8,12 +8,12 @@ import { withGreyContainer, wrapStory, withMobileSizing } from '../../util/decor
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Dashboard/Modal', module)
+storiesOf('Consumer/Mobile/modal', module)
   .addDecorator(storyFn => <div style={{ minHeight: '600px' }}>{storyFn()}</div>)
   .addDecorator(wrapStory)
   .addDecorator(withMobileSizing)
   .addDecorator(withGreyContainer)
-  .add('Standard', () => (
+  .add('modal/default', () => (
     <Modal
       backButtonCaption="Back"
       onBackClick={action('click')}
@@ -41,7 +41,7 @@ storiesOf('Consumer/Mobile/Dashboard/Modal', module)
       </p>
     </Modal>
   ))
-  .add('Disabled CTA', () => (
+  .add('modal/disabled-cta', () => (
     <Modal
       backButtonCaption="Back"
       onBackClick={action('click')}
@@ -71,7 +71,7 @@ storiesOf('Consumer/Mobile/Dashboard/Modal', module)
       </p>
     </Modal>
   ))
-  .add('Fully functional', () => <FullModal />);
+  .add('modal/fully-functional', () => <FullModal />);
 
 class FullModal extends React.Component {
   state = {

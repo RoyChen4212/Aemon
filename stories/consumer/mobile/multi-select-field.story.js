@@ -14,10 +14,10 @@ const options = [
   { label: 'European Goulash', value: 'goulash' },
 ];
 
-storiesOf('Consumer/Mobile/Form Fields/Multi Select Field', module)
+storiesOf('Consumer/Mobile/Form Fields', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Default', () => (
+  .add('multi-select-field', () => (
     <FieldStateProvider
       component={MultiSelectField}
       name="multi-select-field"
