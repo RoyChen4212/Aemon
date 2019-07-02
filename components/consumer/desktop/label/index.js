@@ -1,5 +1,4 @@
 import React from 'react';
-
 import BaseLabel from '../../shared/base-label';
 
 import './style.scss';

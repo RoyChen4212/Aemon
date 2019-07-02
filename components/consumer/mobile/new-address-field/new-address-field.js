@@ -1,9 +1,10 @@
 import React from 'react';
 import { get } from 'lodash';
-import { TextField, Picker } from '../form-fields';
+import Picker from '../picker';
 import Label, { labelTypes } from '../label';
 import Hint from '../hint';
 import FormField from '../form-field';
+import TextField from '../text-field';
 import makeEvent from '../../../lib/make-event';
 import './style.scss';
 
@@ -116,7 +117,7 @@ class NewAddressField extends FormField {
   }
 }
 
-const fieldNames = {
+export const fieldNames = {
   STREET_ADDRESS,
   CITY,
   STATE,
@@ -124,4 +125,4 @@ const fieldNames = {
   COUNTRY,
 };
 
-export { NewAddressField, fieldNames };
+export default NewAddressField;

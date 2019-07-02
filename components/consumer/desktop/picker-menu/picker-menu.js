@@ -1,6 +1,6 @@
 import React from 'react';
-
 import get from 'lodash/get';
+
 import Label, { labelTypes } from '../label';
 import Container from '../container';
 

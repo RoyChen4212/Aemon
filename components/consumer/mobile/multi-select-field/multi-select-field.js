@@ -1,7 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
 import includes from 'lodash/includes';
-import { Checkbox } from '../form-fields';
+import Checkbox from '../checkbox';
 import FormField from '../form-field';
 import makeEvent from '../../../lib/make-event';
 
@@ -46,4 +46,4 @@ class MultiSelectField extends FormField {
   }
 }
 
-export { MultiSelectField };
+export default MultiSelectField;

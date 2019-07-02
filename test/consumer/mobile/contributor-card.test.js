@@ -4,9 +4,9 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import ContributorCard from '../../../components/consumer/mobile/contributor-card';
+import HistoricalPicker from '../../../components/consumer/mobile/historical-picker';
 import { H2 } from '../../../components/consumer/mobile/heading';
 import { LinkButton } from '../../../components/consumer/mobile/button';
-import { HistoricalPicker } from '../../../components/consumer/mobile/historical-picker';
 
 describe('ContributorCard Card', () => {
   it('should have correct class', () => {

@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { TextArea } from '../../../components/consumer/mobile/form-fields';
+
+import TextArea from '../../../components/consumer/mobile/text-area';
 import FieldStateProvider from '../../util/field-state-provider';
 import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';

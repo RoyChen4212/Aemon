@@ -4,7 +4,7 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
-import { Picker, PICKER_EMPTY_VALUE } from '../../../components/consumer/mobile/form-fields';
+import Picker, { PICKER_EMPTY_VALUE } from '../../../components/consumer/mobile/picker';
 import Label from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 

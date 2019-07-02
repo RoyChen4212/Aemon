@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { HistoricalPicker } from '../../../components/consumer/mobile/form-fields';
+
+import HistoricalPicker from '../../../components/consumer/mobile/historical-picker';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';

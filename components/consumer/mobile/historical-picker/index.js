@@ -1,1 +1,1 @@
-export * from './historical-picker';
+export { default } from './historical-picker';

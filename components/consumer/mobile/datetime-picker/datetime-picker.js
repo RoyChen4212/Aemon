@@ -1,8 +1,10 @@
 import React from 'react';
-import FormField from '../form-field';
-import { DatePicker, TimePicker } from '../form-fields';
-import { generateNewValue, applyDateToValue, applyTimeToValue } from './value-generator';
+
 import makeEvent from '../../../lib/make-event';
+import FormField from '../form-field';
+import DatePicker from '../date-picker';
+import TimePicker from '../time-picker';
+import { generateNewValue, applyDateToValue, applyTimeToValue } from './value-generator';
 
 import './style.scss';
 
@@ -80,4 +82,4 @@ class DatetimePicker extends FormField {
   }
 }
 
-export { DatetimePicker };
+export default DatetimePicker;

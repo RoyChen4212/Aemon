@@ -1,1 +1,1 @@
-export * from './datetime-picker';
+export { default } from './datetime-picker';

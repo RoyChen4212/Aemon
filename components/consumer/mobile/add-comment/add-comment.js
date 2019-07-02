@@ -1,6 +1,6 @@
 import React from 'react';
 import BaseAddComment from '../../shared/base-add-comment';
-import { TextArea } from '../text-area';
+import TextArea from '../text-area';
 import Avatar from '../avatar';
 import { SmallButton } from '../button';
 import Label, { labelTypes } from '../label';

@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
-import { DatePicker } from '../../../components/consumer/mobile/form-fields';
+import DatePicker from '../../../components/consumer/mobile/date-picker';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 

@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
-import { HistoricalPicker } from '../../../components/consumer/mobile/form-fields';
+import HistoricalPicker from '../../../components/consumer/mobile/historical-picker';
 import Label from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 

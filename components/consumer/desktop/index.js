@@ -19,14 +19,14 @@ import ActivityThumbnail, {
 import AddComment from './add-comment';
 import Avatar from './avatar';
 import Banner from './banner';
-import { Checkbox } from './checkbox';
+import Checkbox from './checkbox';
 import ClaimToggle from './claim-toggle';
 import Container from './container';
 import Divider from './divider';
 import EmailPreview from './email-preview';
 import GuestPasswordField from './guest-password-field';
 import ModalAlert from './modal-alert';
-import { MoneyField } from './money-field';
+import MoneyField from './money-field';
 import PasswordField from './password-field';
 import Picker, { PICKER_EMPTY_VALUE } from './picker';
 import Popover from './popover';
@@ -36,12 +36,11 @@ import PrimaryModal from './primary-modal';
 import PurchaseImage from './purchase-image';
 import SecondaryModal from './secondary-modal';
 import SimpleNumberStepper from './simple-number-stepper';
-import { SplitCustom, SplitEven, SplitFixed } from './split'
+import { SplitCustom, SplitEven, SplitFixed } from './split';
 import Status from './status';
 import Subheader from './subheader';
 import TextArea from './text-area';
-import { TextField } from './text-field';
-
+import TextField from './text-field';
 
 const desktop = {
   ActivityCard,
@@ -90,7 +89,7 @@ const desktop = {
   PURCHASE_COMPLETED,
   PURCHASE_COMMENT_CREATED,
 
-  PICKER_EMPTY_VALUE
+  PICKER_EMPTY_VALUE,
 };
 
 export default desktop;

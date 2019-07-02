@@ -1,1 +1,1 @@
-export * from './phone-field';
+export { default } from './phone-field';

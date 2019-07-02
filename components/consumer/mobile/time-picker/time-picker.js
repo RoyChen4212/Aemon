@@ -1,5 +1,5 @@
 import React from 'react';
-import { DatePicker } from '../date-picker';
+import DatePicker from '../date-picker';
 
 import './style.scss';
 
@@ -29,4 +29,4 @@ class TimePicker extends DatePicker {
   }
 }
 
-export { TimePicker };
+export default TimePicker;

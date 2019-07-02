@@ -4,7 +4,7 @@ import get from 'lodash/get';
 import FormField from '../form-field';
 import ComplexValueFormField from '../../shared/complex-value-form-field';
 import PasswordField from '../password-field';
-import { Checkbox } from '../checkbox';
+import Checkbox from '../checkbox';
 import makeEvent from '../../../lib/make-event';
 
 import './style.scss';

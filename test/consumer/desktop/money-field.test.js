@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import { MoneyField } from '../../../components/consumer/desktop/money-field';
+import MoneyField from '../../../components/consumer/desktop/money-field';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 
 export const shouldBehaveLikeTextField = wrapper => {

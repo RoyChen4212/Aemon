@@ -76,4 +76,4 @@ class TextField extends FormField {
   }
 }
 
-export { TextField };
+export default TextField;

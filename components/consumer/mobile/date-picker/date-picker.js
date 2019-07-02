@@ -61,4 +61,4 @@ class DatePicker extends FormField {
   }
 }
 
-export { DatePicker };
+export default DatePicker;

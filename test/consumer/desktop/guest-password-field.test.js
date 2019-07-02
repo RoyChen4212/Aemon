@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
 
-import { Checkbox } from '../../../components/consumer/desktop/checkbox';
+import Checkbox from '../../../components/consumer/desktop/checkbox';
 import PasswordField from '../../../components/consumer/desktop/password-field';
 import GuestPasswordField from '../../../components/consumer/desktop/guest-password-field';
 

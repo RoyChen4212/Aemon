@@ -1,1 +1,1 @@
-export * from './address-field';
+export { default } from './address-field';

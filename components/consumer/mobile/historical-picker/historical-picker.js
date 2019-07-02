@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Picker } from '../picker';
+import Picker from '../picker';
 
 import './style.scss';
 
@@ -20,4 +20,4 @@ class HistoricalPicker extends Picker {
   }
 }
 
-export { HistoricalPicker };
+export default HistoricalPicker;

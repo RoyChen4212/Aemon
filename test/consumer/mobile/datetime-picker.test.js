@@ -10,7 +10,9 @@ import {
   applyDateToValue,
   applyTimeToValue,
 } from '../../../components/consumer/mobile/datetime-picker/value-generator';
-import { DatetimePicker, DatePicker, TimePicker } from '../../../components/consumer/mobile/form-fields';
+import DatetimePicker from '../../../components/consumer/mobile/datetime-picker';
+import DatePicker from '../../../components/consumer/mobile/date-picker';
+import TimePicker from '../../../components/consumer/mobile/time-picker';
 
 describe('Datetime Picker Value Generator', () => {
   const timezone = 'America/Mexico_City';

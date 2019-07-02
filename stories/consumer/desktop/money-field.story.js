@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
-import { MoneyField } from '../../../components/consumer/desktop/money-field';
+import MoneyField from '../../../components/consumer/desktop/money-field';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';

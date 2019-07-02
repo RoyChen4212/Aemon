@@ -1,8 +1,9 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+
 import AddComment from '../../../components/consumer/mobile/add-comment';
 import Avatar from '../../../components/consumer/mobile/avatar';
-import { TextArea } from '../../../components/consumer/mobile/text-area';
+import TextArea from '../../../components/consumer/mobile/text-area';
 import Hint from '../../../components/consumer/mobile/hint';
 import { SmallButton } from '../../../components/consumer/mobile/button';
 

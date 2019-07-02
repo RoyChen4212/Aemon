@@ -1,6 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
-import { TextField } from '../form-fields';
+import TextField from '../text-field';
 import AddOrSelectField from '../add-or-select-field';
 import makeEvent from '../../../lib/make-event';
 import './style.scss';
@@ -52,4 +52,4 @@ class PhoneField extends AddOrSelectField {
   }
 }
 
-export { PhoneField };
+export default PhoneField;

@@ -1,1 +1,1 @@
-export * from './activity-card';
+export { ActivityCard, UserCommentCard, GroupActivityCard } from './activity-card';

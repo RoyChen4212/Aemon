@@ -2,8 +2,9 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 
-import { Checkbox, MultiSelectField } from '../../../components/consumer/mobile/form-fields';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
+import MultiSelectField from '../../../components/consumer/mobile/multi-select-field';
+import Checkbox from '../../../components/consumer/mobile/checkbox';
 import Label from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 

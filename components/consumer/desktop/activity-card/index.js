@@ -1,3 +1,1 @@
-import ActivityCard from './activity-card';
-
-export default ActivityCard;
+export { default } from './activity-card';

@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import { TextField } from '../../../components/consumer/desktop/text-field';
+import TextField from '../../../components/consumer/desktop/text-field';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import Label, { labelTypes } from '../../../components/consumer/desktop/label';
 import Hint, { hintTypes } from '../../../components/consumer/desktop/hint';

@@ -5,7 +5,7 @@ import Label, { labelTypes } from '../label';
 
 import './style.scss';
 
-export default class ModalAlert extends React.PureComponent {
+class ModalAlert extends React.PureComponent {
   baseClass = 'pbg-consumer-desktop pbg-modal-alert';
 
   static propTypes = {
@@ -66,3 +66,5 @@ export default class ModalAlert extends React.PureComponent {
     );
   }
 }
+
+export default ModalAlert;

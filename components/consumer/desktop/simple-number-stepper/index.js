@@ -1,3 +1,1 @@
-import SimpleNumberStepper from './simple-number-stepper';
-
-export default SimpleNumberStepper;
+export { default } from './simple-number-stepper';
