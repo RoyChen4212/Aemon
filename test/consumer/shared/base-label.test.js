@@ -3,58 +3,58 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Label, { labelClassNames, labelTypes } from '../../../components/consumer/shared/label';
+import BaseLabel, { labelClassNames, labelTypes } from '../../../components/consumer/shared/base-label';
 
-describe('Label', () => {
+describe('BaseLabel', () => {
   it('should render a label tag', () => {
-    const wrapper = shallow(<Label />);
+    const wrapper = shallow(<BaseLabel />);
     expect(wrapper.find('label')).to.have.lengthOf(1);
   });
 
   it('should render with text', () => {
     const expected = 'Some text';
-    const wrapper = shallow(<Label>{expected}</Label>);
+    const wrapper = shallow(<BaseLabel>{expected}</BaseLabel>);
     expect(wrapper.find('label > span').text()).to.equal(expected);
   });
 
   it('should have base class when no type is given', () => {
-    const wrapper = shallow(<Label>some text</Label>);
+    const wrapper = shallow(<BaseLabel>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass(labelClassNames.base)).to.be.true;
   });
 
   it('should contain any extra css classes given', () => {
     const expected = 'extra-class';
-    const wrapper = shallow(<Label className={expected}>some text</Label>);
+    const wrapper = shallow(<BaseLabel className={expected}>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass(labelClassNames.base)).to.be.true;
     expect(wrapper.find('label').hasClass(expected)).to.be.true;
   });
 
   it('should have correct class when strong type', () => {
-    const wrapper = shallow(<Label type={labelTypes.STRONG}>some text</Label>);
+    const wrapper = shallow(<BaseLabel type={labelTypes.STRONG}>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.STRONG])).to.be.true;
   });
 
   it('should have correct class when secondary type', () => {
-    const wrapper = shallow(<Label type={labelTypes.SECONDARY}>some text</Label>);
+    const wrapper = shallow(<BaseLabel type={labelTypes.SECONDARY}>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.SECONDARY])).to.be.true;
   });
 
   it('should have correct class when input type', () => {
-    const wrapper = shallow(<Label type={labelTypes.INPUT}>some text</Label>);
+    const wrapper = shallow(<BaseLabel type={labelTypes.INPUT}>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.INPUT])).to.be.true;
   });
 
   it('should have correct class when clickable type', () => {
-    const wrapper = shallow(<Label type={labelTypes.CLICKABLE}>some text</Label>);
+    const wrapper = shallow(<BaseLabel type={labelTypes.CLICKABLE}>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.CLICKABLE])).to.be.true;
   });
 
   it('should contain all correct classes when given className and type', () => {
     const className = 'extra-class';
     const wrapper = shallow(
-      <Label type={labelTypes.STRONG} className={className}>
+      <BaseLabel type={labelTypes.STRONG} className={className}>
         some text
-      </Label>
+      </BaseLabel>
     );
     expect(wrapper.find('label').hasClass(labelClassNames.base)).to.be.true;
     expect(wrapper.find('label').hasClass(className)).to.be.true;
@@ -64,9 +64,9 @@ describe('Label', () => {
   it('should call onClick when when clickable type', () => {
     const onClick = sinon.spy();
     const wrapper = shallow(
-      <Label type={labelTypes.CLICKABLE} onClick={onClick}>
+      <BaseLabel type={labelTypes.CLICKABLE} onClick={onClick}>
         some text
-      </Label>
+      </BaseLabel>
     );
     wrapper
       .find('label')
@@ -78,9 +78,9 @@ describe('Label', () => {
   it('should add href prop with correct value when provided to clickable type', () => {
     const url = '/some/url';
     const wrapper = shallow(
-      <Label type={labelTypes.CLICKABLE} href={url}>
+      <BaseLabel type={labelTypes.CLICKABLE} href={url}>
         some text
-      </Label>
+      </BaseLabel>
     );
     expect(
       wrapper
@@ -91,17 +91,17 @@ describe('Label', () => {
   });
 
   it('should have correct class when active type', () => {
-    const wrapper = shallow(<Label type={labelTypes.ACTIVE}>some text</Label>);
+    const wrapper = shallow(<BaseLabel type={labelTypes.ACTIVE}>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.ACTIVE])).to.be.true;
   });
 
   it('should have correct class when active error', () => {
-    const wrapper = shallow(<Label type={labelTypes.ERROR}>some text</Label>);
+    const wrapper = shallow(<BaseLabel type={labelTypes.ERROR}>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass(labelClassNames[labelTypes.ERROR])).to.be.true;
   });
 
   it('should have correct class when required prop is passed', () => {
-    const wrapper = shallow(<Label required>some text</Label>);
+    const wrapper = shallow(<BaseLabel required>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass('required')).to.be.true;
   });
 });

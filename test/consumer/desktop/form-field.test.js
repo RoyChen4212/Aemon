@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
 import FormField from '../../../components/consumer/desktop/form-field';
-import { labelTypes } from '../../../components/consumer/shared/label';
+import { labelTypes } from '../../../components/consumer/shared/base-label';
 
 describe('Desktop: FormField', () => {
   it('should implement .label, .hintOrError, .labelType', () => {

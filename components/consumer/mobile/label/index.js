@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Label from '../../shared/label';
+import BaseLabel from '../../shared/base-label';
 
 import './style.scss';
 
-export * from '../../shared/label';
+export * from '../../shared/base-label';
 
-export default props => <Label {...props} className="pbg-consumer-mobile" />;
+export default props => <BaseLabel {...props} className="pbg-consumer-mobile" />;

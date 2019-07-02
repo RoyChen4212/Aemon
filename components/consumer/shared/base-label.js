@@ -59,7 +59,7 @@ const normalLabel = ({ children, type, required, className }) => (
 
 const isClickable = ({ type, onClick }) => type === CLICKABLE || (type === ACTIVE && !!onClick);
 
-const Label = props => {
+const BaseLabel = props => {
   if (isClickable(props)) return clickableLabel(props);
   return normalLabel(props);
 };
@@ -73,4 +73,4 @@ export const labelTypes = {
   STRONG,
 };
 
-export default Label;
+export default BaseLabel;
