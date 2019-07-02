@@ -133,7 +133,7 @@ This is where all unit tests are defined. It has a very similar directory struct
 
 ## Contributing
 
-Before you continue reading, please take a look at our [SDLC Policy](https://github.com/paybygroup/hodor/wiki/SDLC-Policy) if you haven't already.
+Before you continue reading, please take a look at our [SDLC Policy](https://docs.google.com/document/d/1LZ0Je3NdUr3SSNooKtX-RBry4IN8EGdXHLB66vw2ks0) if you haven't already.
 
 ### Principles & Good Practices
 
@@ -168,17 +168,13 @@ Use the following code to create the story for a new component:
 ```javascript
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { WithFigma } from 'storybook-addon-figma';
 import { withContainer, wrapStory } from '../../util/decorators';
 import MyComponent from '../../../components/consumer/desktop/my-component';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const figmaUrl = 'https://www.figma.com/file/XpekCUXwdO46PcY2mqkmgATD/pbg-desktop?node-id=997%3A8470';
-
 storiesOf('Consumer/Desktop/Info/my-component', module)
-  .addDecorator(storyFn => <WithFigma url={figmaUrl}>{storyFn()}</WithFigma>)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('my-component/default', () => <MyComponent />);
@@ -235,6 +231,16 @@ class MyComponent extends React.PureComponent {
 export default MyComponent;
 ```
 
+#### Code duplication
+
+Even though a code duplication is a code smell, we can go with a little bit of that to prevent premature generalizations. Having said that, we tackle code duplication with several strategies:
+
+* Centralizing general use code in functions under `/components/consumer/lib`
+* Extracting duplicated code into internal components inside the main component folder
+* Generalizing common component code between `desktop` and `mobile` in base components under `components/consumer/shared`
+
+For the last bullet, let the lead engineering team to decide wheather or not to move code into base components.
+
 #### Style Guide
 
 Our CI and code quality tools will catch most issues that may exist with your code when you create or update a pull request. However, you can run the lint locally before you push your changes:
@@ -242,6 +248,14 @@ Our CI and code quality tools will catch most issues that may exist with your co
 ```
 npm lint components/desktop/my-component
 ```
+
+Some style guidelines not covered by our quality code tools that you should take into account:
+
+* Component props and methods for event handling should be named with `on` prefix (i.e. `onChange`, `onFocus`)
+* Component methods that return JSX should be named with `render` prefix (i.e. `renderError`, `renderInput`)
+* Component method order should be: `static-methods`, `instance-variables`, `getters`, `lifecycle`, `instance-methods`, `handlers` and `renderers`
+* Main `render` function should be the last function in the file
+* Components under `components/consumer/shared` should be named with `base` prefix (i.e. `BaseCheckbox`)
 
 ## Releasing
 
