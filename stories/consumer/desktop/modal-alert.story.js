@@ -7,7 +7,7 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Alerts/ModalAlert', module)
+storiesOf('Consumer/Desktop/Alerts/modal-alert', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(story => <div style={{ width: '500px' }}>{story()}</div>)

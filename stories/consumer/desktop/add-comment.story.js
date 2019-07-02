@@ -6,10 +6,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Form Components/AddComment', module)
+storiesOf('Consumer/Desktop/add-comment', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Default', () => (
+  .add('add-comment/default', () => (
     <AddComment
       hint="Only logged-in group members see comments."
       ctaLabel="Post comment"
@@ -17,15 +17,7 @@ storiesOf('Consumer/Desktop/Form Components/AddComment', module)
       avatarSrc="http://i.pravatar.cc/300"
     />
   ))
-  .add('With initials', () => (
-    <AddComment
-      hint="Only logged-in group members see comments."
-      ctaLabel="Post comment"
-      textLabel="Write a comment..."
-      fullName="John Doe"
-    />
-  ))
-  .add('With Error', () => (
+  .add('add-comment/error', () => (
     <AddComment
       hint="Only logged-in group members see comments."
       ctaLabel="Post comment"

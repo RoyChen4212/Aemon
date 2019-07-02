@@ -7,9 +7,9 @@ import FieldStateProvider from '../../util/field-state-provider';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Atomic Components/simple-number-stepper', module)
+storiesOf('Consumer/Desktop/Form Fields', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('simple-number-stepper/default', () => (
+  .add('simple-number-stepper', () => (
     <FieldStateProvider component={SimpleNumberStepper} min={1} max={1001} value={999} />
   ));

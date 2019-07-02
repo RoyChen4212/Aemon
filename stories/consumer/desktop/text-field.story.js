@@ -7,10 +7,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Atomic Components/simple-text-input', module)
+storiesOf('Consumer/Desktop/Form Fields/simple-text-input', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('simple-text-input/default (focus for active)', () => (
+  .add('simple-text-input/default', () => (
     <FieldStateProvider component={TextField} simple name="field2" />
   ))
   .add('simple-text-input/placeholder', () => (

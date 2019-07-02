@@ -29,7 +29,7 @@ const splitOptions = [
   },
 ];
 
-storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
+storiesOf('Consumer/Desktop/Form Fields/simple-picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('simple-picker/default', () => (
@@ -104,7 +104,7 @@ storiesOf('Consumer/Desktop/Atomic Components/simple-picker', module)
     </div>
   ));
 
-storiesOf('Consumer/Desktop/Atomic Components/small-simple-picker', module)
+storiesOf('Consumer/Desktop/Form Fields/small-simple-picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('small-simple-picker/default', () => (

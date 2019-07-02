@@ -8,23 +8,19 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Atomic Components/Checkbox', module)
+storiesOf('Consumer/Desktop/Form Fields/checkbox', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Checkbox/Unchecked', () => (
+  .add('checkbox/simple/unchecked', () => (
     <FieldStateProvider component={Checkbox} name="field1" onChange={action('change')} />
   ))
-  .add('Checkbox/Checked', () => (
+  .add('checkbox/simple/checked', () => (
     <FieldStateProvider component={Checkbox} name="field1" value="true" onChange={action('change')} />
   ))
-  .add('Checkbox/Disabled', () => (
+  .add('checkbox/simple/disabled', () => (
     <FieldStateProvider component={Checkbox} name="field1" value="true" disabled onChange={action('change')} />
-  ));
-
-storiesOf('Consumer/Desktop/Form Fields/Toggle', module)
-  .addDecorator(wrapStory)
-  .addDecorator(withContainer)
-  .add('Toggle/Checked', () => (
+  ))
+  .add('checkbox/checked', () => (
     <FieldStateProvider
       component={Checkbox}
       label="A checked checkbox field"
@@ -33,7 +29,7 @@ storiesOf('Consumer/Desktop/Form Fields/Toggle', module)
       onChange={action('change')}
     />
   ))
-  .add('Toggle/Unchecked', () => (
+  .add('checkbox/unchecked', () => (
     <FieldStateProvider
       component={Checkbox}
       name="field1"
@@ -42,7 +38,7 @@ storiesOf('Consumer/Desktop/Form Fields/Toggle', module)
       onChange={action('change')}
     />
   ))
-  .add('Toggle/Disabled', () => (
+  .add('checkbox/disabled', () => (
     <FieldStateProvider
       component={Checkbox}
       name="field1"
@@ -53,7 +49,7 @@ storiesOf('Consumer/Desktop/Form Fields/Toggle', module)
       onChange={action('change')}
     />
   ))
-  .add('Toggle/Error', () => (
+  .add('checkbox/error', () => (
     <FieldStateProvider
       component={Checkbox}
       label="A checkbox field"
