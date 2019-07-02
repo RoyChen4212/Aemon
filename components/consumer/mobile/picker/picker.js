@@ -16,15 +16,15 @@ class Picker extends FormField {
     return this.adaptedProps.onChange(ev);
   };
 
-  get label() {
-    return <Label required={this.adaptedProps.required}>{this.adaptedProps.label}</Label>;
-  }
-
   get value() {
     return this.adaptedProps.value === null ? PICKER_EMPTY_VALUE : this.adaptedProps.value;
   }
 
-  get select() {
+  renderLabel() {
+    return <Label required={this.adaptedProps.required}>{this.adaptedProps.label}</Label>;
+  }
+
+  renderSelect() {
     const { options = [] } = this.adaptedProps;
     return (
       <select onChange={this.onChange} onBlur={this.onBlur} onFocus={this.onFocus} value={this.value}>
@@ -41,8 +41,8 @@ class Picker extends FormField {
     return (
       <div className={this.className}>
         <div className="pbg-picker-select-container">
-          {this.label}
-          {this.select}
+          {this.renderLabel()}
+          {this.renderSelect()}
           <i className="pbg-picker-arrow" />
         </div>
         {this.hintOrError}

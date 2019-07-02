@@ -17,12 +17,11 @@ class PopoverTooltip extends Popover {
     return `pbg-popover-tooltip ${this.active ? 'pbg-popover-active' : ''}`;
   }
 
-  get triggerComponent() {
-    const { trigger } = this.props;
-    const TriggerComponent = trigger;
+  renderTriggerComponent = () => {
+    const { trigger: TriggerComponent } = this.props;
     if (!TriggerComponent) return null;
     return <TriggerComponent onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} />;
-  }
+  };
 }
 
 export default PopoverTooltip;

@@ -11,7 +11,7 @@ class HistoricalPicker extends Picker {
     return (
       <div className={this.className}>
         <div className="pbg-picker-select-container">
-          {this.select}
+          {this.renderSelect()}
           <i className="pbg-picker-arrow" />
         </div>
         {this.hintOrError}

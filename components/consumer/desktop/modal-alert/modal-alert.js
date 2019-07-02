@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import Label, { labelTypes } from '../label';
 
 import './style.scss';
@@ -6,33 +8,38 @@ import './style.scss';
 export default class ModalAlert extends React.PureComponent {
   baseClass = 'pbg-consumer-desktop pbg-modal-alert';
 
-  state = {
-    hide: false,
+  static propTypes = {
+    title: PropTypes.string,
+    text: PropTypes.string,
+    error: PropTypes.bool,
+    warning: PropTypes.bool,
+    success: PropTypes.bool,
+    onTextClick: PropTypes.func,
+    hideAfter: PropTypes.func,
   };
 
-  get error() {
-    const { error } = this.props;
-    return error || false;
-  }
+  static defaultProps = {
+    title: '',
+    text: '',
+    error: false,
+    warning: false,
+    success: false,
+    onTextClick: null,
+    hideAfter: null,
+  };
 
-  get warning() {
-    const { warning } = this.props;
-    return warning || false;
-  }
+  state = { hide: false };
 
-  get success() {
-    const { success } = this.props;
-    return success || false;
-  }
-
-  get hide() {
+  get className() {
+    const { error, warning, success } = this.props;
     const { hide } = this.state;
-    return hide;
-  }
 
-  get text() {
-    const { text, onTextClick } = this.props;
-    return onTextClick ? <a onClick={onTextClick}>{text}</a> : text;
+    return classnames(this.baseClass, {
+      'pbg-fade-out': hide,
+      'pbg-modal-alert-error': error,
+      'pbg-modal-alert-warning': warning,
+      'pbg-modal-alert-success': success,
+    });
   }
 
   componentDidMount() {
@@ -42,22 +49,19 @@ export default class ModalAlert extends React.PureComponent {
     }
   }
 
-  className() {
-    const base = this.hide ? `${this.baseClass} pbg-fade-out` : this.baseClass;
-    if (this.error) return `${base} pbg-modal-alert-error`;
-    if (this.warning) return `${base} pbg-modal-alert-warning`;
-    if (this.success) return `${base} pbg-modal-alert-success`;
-    return base;
-  }
+  renderText = () => {
+    const { text, onTextClick } = this.props;
+    return onTextClick ? <a onClick={onTextClick}>{text}</a> : text;
+  };
 
   render() {
     const { title } = this.props;
     return (
-      <div className={this.className()}>
+      <div className={this.className}>
         <Label className="pbg-modal-alert-title" type={labelTypes.STRONG}>
           {title}
         </Label>
-        <Label className="pbg-modal-alert-text">{this.text}</Label>
+        <Label className="pbg-modal-alert-text">{this.renderText()}</Label>
       </div>
     );
   }

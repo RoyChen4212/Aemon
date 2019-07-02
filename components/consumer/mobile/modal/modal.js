@@ -24,21 +24,18 @@ const renderButton = ({ label, onClick, type, disabled }, isLast) => {
 };
 
 class Modal extends React.PureComponent {
-  get cta() {
-    const { cta } = this.props;
-    if (cta && cta.length) {
-      return (
-        <div className="pbg-modal-cta">
-          {cta.map((config, index) => renderButton(config, index === cta.length - 1))}
-        </div>
-      );
-    }
-  }
-
   onBackClick = () => {
     const { onBackClick } = this.props;
-    if (onBackClick) return onBackClick();
+    return onBackClick ? onBackClick() : null;
   };
+
+  renderCta() {
+    const { cta } = this.props;
+    if (!cta || !cta.length) return null;
+    return (
+      <div className="pbg-modal-cta">{cta.map((config, index) => renderButton(config, index === cta.length - 1))}</div>
+    );
+  }
 
   render() {
     const { title, children, onBackClick, backButtonCaption } = this.props;
@@ -50,7 +47,7 @@ class Modal extends React.PureComponent {
             <H2>{title}</H2>
           </div>
           <div className="pbg-modal-body">{children}</div>
-          {this.cta}
+          {this.renderCta()}
         </div>
         <div className="pbg-modal-overlay" onClick={onBackClick} />
       </div>

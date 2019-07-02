@@ -21,7 +21,7 @@ class TextField extends FormField {
     return this.adaptedProps.value || '';
   }
 
-  get input() {
+  renderInput() {
     return (
       <input
         onBlur={this.onBlur}
@@ -40,7 +40,7 @@ class TextField extends FormField {
     return (
       <div className={this.className}>
         {this.label}
-        {this.input}
+        {this.renderInput()}
         {this.hintOrError}
       </div>
     );

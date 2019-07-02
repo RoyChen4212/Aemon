@@ -9,12 +9,14 @@ const formatCurrency = (value, currency) => format(money(value, currency));
 class MoneyField extends TextField {
   static propTypes = {
     value: PropTypes.string,
+    name: PropTypes.string,
     defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     currency: PropTypes.string,
   };
 
   static defaultProps = {
     currency: USD,
+    name: 'money-field',
   };
 
   state = {
@@ -29,16 +31,13 @@ class MoneyField extends TextField {
     return this.props.value || this.state.value;
   }
 
-  get name() {
-    return this.props.name || 'money-field';
-  }
-
-  get input() {
+  _renderInput() {
+    const { name } = this.props;
     return (
       <input
         className="pbg-money-field"
         pattern="\d*"
-        name={this.name}
+        name={name}
         value={this.value}
         onChange={this.onChange}
         placeholder={formatCurrency(0, this.props.currency)}

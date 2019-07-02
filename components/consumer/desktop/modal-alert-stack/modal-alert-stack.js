@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import last from 'lodash/last';
 import jQuery from 'jquery';
+
 import ModalAlert from '../modal-alert';
 
 import './style.scss';
@@ -8,10 +10,15 @@ import './style.scss';
 class ModalAlertStack extends React.PureComponent {
   stackElementRef = React.createRef();
 
-  get alerts() {
-    const { alerts } = this.props;
-    return alerts || [];
-  }
+  static propTypes = {
+    alerts: PropTypes.array,
+    onHideAlert: PropTypes.func,
+  };
+
+  static defaultProps = {
+    alerts: [],
+    onHideAlert: null,
+  };
 
   componentDidUpdate(prevProps) {
     const { alerts } = this.props;
@@ -36,7 +43,7 @@ class ModalAlertStack extends React.PureComponent {
   onAlertAdded = alert => {
     return () => {
       const { onHideAlert } = this.props;
-      setTimeout(() => onHideAlert && onHideAlert(alert), 8000);
+      if (onHideAlert) setTimeout(() => onHideAlert(alert), 8000);
     };
   };
 
@@ -54,9 +61,10 @@ class ModalAlertStack extends React.PureComponent {
   };
 
   render() {
+    const { alerts } = this.props;
     return (
       <div className="pbg-consumer-desktop pbg-modal-alert-stack" ref={this.stackElementRef}>
-        {this.alerts.map(this.renderAlert)}
+        {alerts.map(this.renderAlert)}
       </div>
     );
   }

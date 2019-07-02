@@ -30,16 +30,6 @@ class SegmentedControl extends React.Component {
     activeSegment: this.activeSegment,
   };
 
-  get firstControl() {
-    const { segments } = this.props;
-    return this.renderControl(first(segments) || {}, 0);
-  }
-
-  get secondControl() {
-    const { segments } = this.props;
-    return this.renderControl(last(segments) || {}, 1);
-  }
-
   componentDidMount() {
     this.onChange(makeEvent(this.initialActiveSegment()));
     this.setState({ activeSegment: this.initialActiveSegment() });
@@ -57,6 +47,16 @@ class SegmentedControl extends React.Component {
     this.setState({ activeSegment: ev.target.value });
   };
 
+  renderFirstControl() {
+    const { segments } = this.props;
+    return this.renderControl(first(segments) || {}, 0);
+  }
+
+  renderSecondControl() {
+    const { segments } = this.props;
+    return this.renderControl(last(segments) || {}, 1);
+  }
+
   renderControl(config, index) {
     const { activeSegment } = this.state;
     const isActive = activeSegment === index;
@@ -71,8 +71,8 @@ class SegmentedControl extends React.Component {
   render() {
     return (
       <div className="pbg-consumer-mobile pbg-segmented-control">
-        {this.firstControl}
-        {this.secondControl}
+        {this.renderFirstControl()}
+        {this.renderSecondControl()}
       </div>
     );
   }

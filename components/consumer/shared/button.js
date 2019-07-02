@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 export const CLASS_NAME = 'pbg-button';
 
@@ -36,11 +37,11 @@ class BaseButton extends React.PureComponent {
   get className() {
     const { disabled, className, submitting } = this.props;
     const { active } = this.state;
-    const base = className ? `${this.baseClassName} ${className}` : this.baseClassName;
-    const disabledClass = disabled ? `${base} disabled` : base;
-    const submittingClass = submitting ? `${disabledClass} submitting` : disabledClass;
-    const activeClass = active ? `${submittingClass} pbg-button-active` : submittingClass;
-    return activeClass;
+    return classnames(this.baseClassName, className, {
+      disabled,
+      submitting,
+      'pbg-button-active': active,
+    });
   }
 
   get hint() {

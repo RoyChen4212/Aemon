@@ -16,7 +16,7 @@ class TextArea extends FormField {
     return this.adaptedProps.value || '';
   }
 
-  get input() {
+  renderInput() {
     return (
       <textarea
         rows={this.rows}
@@ -34,7 +34,7 @@ class TextArea extends FormField {
   render() {
     return (
       <div className={this.className}>
-        {this.input}
+        {this.renderInput()}
         {!this.props.simple && this.hintOrError}
       </div>
     );

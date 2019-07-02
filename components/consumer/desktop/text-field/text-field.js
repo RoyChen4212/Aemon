@@ -22,7 +22,15 @@ class TextField extends FormField {
     return this.adaptedProps.value || '';
   }
 
-  get input() {
+  _renderLabel() {
+    if (this.props.simple) {
+      return null;
+    }
+
+    return this.label;
+  }
+
+  _renderInput() {
     return (
       <input
         onBlur={this.onBlur}
@@ -38,22 +46,6 @@ class TextField extends FormField {
     );
   }
 
-  _renderLabel() {
-    if (this.props.simple) {
-      return null;
-    }
-
-    return this.label;
-  }
-
-  _renderHint() {
-    if (this.props.simple) {
-      return null;
-    }
-
-    return this.hintOrError;
-  }
-
   _renderIcon() {
     if (!this.props.icon) return null;
 
@@ -64,11 +56,19 @@ class TextField extends FormField {
     );
   }
 
+  _renderHint() {
+    if (this.props.simple) {
+      return null;
+    }
+
+    return this.hintOrError;
+  }
+
   render() {
     return (
       <div className={this.className}>
         {this._renderLabel()}
-        {this.input}
+        {this._renderInput()}
         {this._renderIcon()}
         {this._renderHint()}
       </div>

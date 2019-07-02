@@ -37,7 +37,7 @@ class PhoneField extends AddOrSelectField {
     return get(this.value, 'phone');
   }
 
-  get field() {
+  renderField() {
     return (
       <TextField
         label={this.adaptedProps.addPhoneLabel}
