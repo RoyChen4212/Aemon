@@ -1,4 +1,4 @@
 import React from 'react';
-import Avatar from '../../shared/avatar';
+import BaseAvatar from '../../shared/base-avatar';
 
-export default props => <Avatar {...props} className="pbg-consumer-desktop" />;
+export default props => <BaseAvatar {...props} className="pbg-consumer-desktop" />;

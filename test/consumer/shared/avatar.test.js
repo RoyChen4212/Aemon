@@ -1,22 +1,22 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import times from 'lodash/times';
-import Avatar from '../../../components/consumer/shared/avatar';
-import defaults from '../../../components/consumer/shared/avatar/defaults';
+import BaseAvatar from '../../../components/consumer/shared/base-avatar';
+import defaults from '../../../components/consumer/shared/base-avatar/defaults';
 
-describe('Avatar', () => {
+describe('BaseAvatar', () => {
   const src = 'https://myimage.com';
 
   describe('Props', () => {
     it('should pass "src" prop as attribute for the <img> tag', () => {
-      const wrapper = shallow(<Avatar src={src} />);
+      const wrapper = shallow(<BaseAvatar src={src} />);
 
       expect(wrapper.find('img').prop('src')).to.equal(src);
     });
 
     it('should set "size" prop as width and height', () => {
       const size = 68;
-      const wrapper = shallow(<Avatar src={src} size={size} />);
+      const wrapper = shallow(<BaseAvatar src={src} size={size} />);
       const img = wrapper.find('img');
 
       expect(img.prop('width')).to.equal(size);
@@ -24,23 +24,23 @@ describe('Avatar', () => {
     });
 
     it('should set default size if none is passed', () => {
-      const wrapper = shallow(<Avatar src={src} />);
+      const wrapper = shallow(<BaseAvatar src={src} />);
       const img = wrapper.find('img');
 
-      expect(img.prop('width')).to.equal(Avatar.DEFAULT_SIZE);
-      expect(img.prop('height')).to.equal(Avatar.DEFAULT_SIZE);
+      expect(img.prop('width')).to.equal(BaseAvatar.DEFAULT_SIZE);
+      expect(img.prop('height')).to.equal(BaseAvatar.DEFAULT_SIZE);
     });
   });
 
   describe('CSS classes', () => {
     it('should add proper class to <img> tag', () => {
-      const wrapper = shallow(<Avatar src={src} />);
+      const wrapper = shallow(<BaseAvatar src={src} />);
       expect(wrapper.hasClass('pbg-avatar')).to.be.true;
     });
 
     it('should pass additional css class', () => {
       const expected = 'additional-class';
-      const wrapper = shallow(<Avatar className={expected} />);
+      const wrapper = shallow(<BaseAvatar className={expected} />);
       expect(wrapper.hasClass('pbg-avatar')).to.be.true;
       expect(wrapper.hasClass(expected)).to.be.true;
     });
@@ -48,13 +48,13 @@ describe('Avatar', () => {
 
   describe('Initials Strategy', () => {
     it('should render a fallback avatar with 2 initial letters', () => {
-      const wrapper = mount(<Avatar fullName="John Doe" />);
+      const wrapper = mount(<BaseAvatar fullName="John Doe" />);
 
       expect(wrapper.find('div > div').html()).to.contain('JD');
     });
 
     it('should render a fallback avatar with 1 initial letter', () => {
-      const wrapper = mount(<Avatar fullName="John@example.com" />);
+      const wrapper = mount(<BaseAvatar fullName="John@example.com" />);
 
       expect(wrapper.find('div > div').html()).to.contain('J');
     });
@@ -62,21 +62,21 @@ describe('Avatar', () => {
 
   describe('Fallback strategy', () => {
     const getRenderedSVGPath = userId => {
-      const wrapper = mount(<Avatar src={src} userId={userId} />);
+      const wrapper = mount(<BaseAvatar src={src} userId={userId} />);
       wrapper.find('img').simulate('error');
       return wrapper.find('svg > path:first-child');
     };
 
     it('should render a properly sized fallback avatar if image fails to load', () => {
-      const wrapper = mount(<Avatar src={src} />);
+      const wrapper = mount(<BaseAvatar src={src} />);
       wrapper.find('img').simulate('error');
 
       expect(wrapper.find('img').exists()).to.be.false;
 
       const svg = wrapper.find('svg');
       expect(svg.exists()).to.be.true;
-      expect(svg.prop('width')).to.be.equal(Avatar.DEFAULT_SIZE);
-      expect(svg.prop('height')).to.be.equal(Avatar.DEFAULT_SIZE);
+      expect(svg.prop('width')).to.be.equal(BaseAvatar.DEFAULT_SIZE);
+      expect(svg.prop('height')).to.be.equal(BaseAvatar.DEFAULT_SIZE);
       expect(svg.prop('viewBox')).to.be.equal(`0 0 32 32`);
     });
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import trim from 'lodash/trim';
 
 const ACTIVE = 'active';
@@ -51,15 +52,47 @@ const clickableLabel = ({ href, onClick, children, type, required, className }) 
   </label>
 );
 
+clickableLabel.propTypes = {
+  href: PropTypes.string,
+  type: PropTypes.string,
+  required: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+};
+
+clickableLabel.defaultProps = {
+  href: null,
+  type: null,
+  required: false,
+  className: null,
+  children: null,
+  onClick: null,
+};
+
 const normalLabel = ({ children, type, required, className }) => (
   <label className={buildClassName({ type, required, className })}>
     <span>{children}</span>
   </label>
 );
 
+normalLabel.propTypes = {
+  type: PropTypes.string,
+  required: PropTypes.bool,
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+
+normalLabel.defaultProps = {
+  type: null,
+  required: false,
+  className: null,
+  children: null,
+};
+
 const isClickable = ({ type, onClick }) => type === CLICKABLE || (type === ACTIVE && !!onClick);
 
-const Label = props => {
+const BaseLabel = props => {
   if (isClickable(props)) return clickableLabel(props);
   return normalLabel(props);
 };
@@ -73,4 +106,4 @@ export const labelTypes = {
   STRONG,
 };
 
-export default Label;
+export default BaseLabel;

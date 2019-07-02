@@ -1,4 +1,4 @@
-import BaseButton, { CLASS_NAME } from '../../shared/button';
+import BaseButton, { CLASS_NAME } from '../../shared/base-button';
 import Hint from '../hint';
 
 import './style.scss';

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Label from '../../shared/label';
+import BaseLabel from '../../shared/base-label';
 
 import './style.scss';
 
-export * from '../../shared/label';
+export * from '../../shared/base-label';
 
 export default props => {
   const { className } = props;
-  return <Label {...props} className={`${className} pbg-consumer-desktop`} />;
+  return <BaseLabel {...props} className={`${className} pbg-consumer-desktop`} />;
 };

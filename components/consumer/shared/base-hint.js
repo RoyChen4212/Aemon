@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import trim from 'lodash/trim';
 
 const ERROR = 'error';
@@ -34,6 +35,18 @@ const mainTag = ({ multiline, type, className }, content) => {
     return <p className={buildClassName({ type, className })}>{content}</p>;
   }
   return <span className={buildClassName({ type, className })}>{content}</span>;
+};
+
+mainTag.propTypes = {
+  multiline: PropTypes.bool,
+  type: PropTypes.string,
+  className: PropTypes.string,
+};
+
+mainTag.defaultProps = {
+  multiline: false,
+  type: null,
+  className: null,
 };
 
 export default props => {

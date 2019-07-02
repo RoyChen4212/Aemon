@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Button from '../../../components/consumer/shared/button';
+import BaseButton from '../../../components/consumer/shared/base-button';
 
 export const shouldBehaveLikeButton = wrapper => {
   beforeEach(() => {
@@ -114,10 +114,10 @@ export const shouldBehaveLikeButton = wrapper => {
   });
 };
 
-describe('Base Button', () => {
+describe('Base BaseButton', () => {
   it('should throw when render is attempted', () => {
     expect(() => {
-      shallow(<Button />);
+      shallow(<BaseButton />);
     }).to.throw();
   });
 });

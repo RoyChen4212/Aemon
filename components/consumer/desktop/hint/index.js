@@ -1,7 +1,7 @@
 import React from 'react';
-import Hint from '../../shared/hint';
+import BaseHint from '../../shared/base-hint';
 
 import './style.scss';
 
-export * from '../../shared/hint';
-export default props => <Hint {...props} className="pbg-consumer-desktop" />;
+export * from '../../shared/base-hint';
+export default props => <BaseHint {...props} className="pbg-consumer-desktop" />;

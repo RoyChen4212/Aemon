@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { mount } from 'enzyme';
 
-import { labelClassNames } from '../../../components/consumer/shared/label';
+import { labelClassNames } from '../../../components/consumer/shared/base-label';
 import Label from '../../../components/consumer/mobile/label';
 
 describe('Mobile Label', () => {
