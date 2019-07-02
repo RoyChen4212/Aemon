@@ -6,9 +6,9 @@ import { wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Activity Section Components/Segmented Control', module)
+storiesOf('Consumer/Mobile', module)
   .addDecorator(wrapStory)
-  .add('Standard', () => (
+  .add('segmented-control', () => (
     <SegmentedControl
       segments={[
         { label: 'Summary', type: SegmentedControl.types.list },

@@ -7,10 +7,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Atomic Components/TextArea', module)
+storiesOf('Consumer/Desktop/Form Fields/text-area', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('textarea/placeholder', () => (
+  .add('text-area/simple/default', () => (
     <FieldStateProvider
       component={TextArea}
       name="text1"
@@ -20,16 +20,7 @@ storiesOf('Consumer/Desktop/Atomic Components/TextArea', module)
       simple
     />
   ))
-  .add('textarea/default (focus for active)', () => (
-    <FieldStateProvider
-      component={TextArea}
-      name="text2"
-      value="this is user input"
-      onChange={action('change')}
-      simple
-    />
-  ))
-  .add('textarea/error', () => (
+  .add('text-area/simple/error', () => (
     <FieldStateProvider
       component={TextArea}
       name="text4"
@@ -39,7 +30,7 @@ storiesOf('Consumer/Desktop/Atomic Components/TextArea', module)
       simple
     />
   ))
-  .add('textarea/disabled', () => (
+  .add('text-area/simple/disabled', () => (
     <FieldStateProvider
       component={TextArea}
       name="text4"
@@ -48,25 +39,8 @@ storiesOf('Consumer/Desktop/Atomic Components/TextArea', module)
       simple
       disabled
     />
-  ));
-
-storiesOf('Consumer/Desktop/Form Fields/TextArea', module)
-  .addDecorator(wrapStory)
-  .addDecorator(withContainer)
-  .add('Valid', () => (
-    <FieldStateProvider component={TextArea} name="text1" label="Type some large text" value="" hint="a poem maybe?" />
   ))
-  .add('Valid/With Value', () => (
-    <FieldStateProvider
-      component={TextArea}
-      name="text2"
-      label="Type some large text"
-      hint="a poem maybe?"
-      value="Lorem ipsum dolor sit amet"
-      onChange={action('change')}
-    />
-  ))
-  .add('Valid/Required', () => (
+  .add('text-area/default', () => (
     <FieldStateProvider
       component={TextArea}
       name="text3"
@@ -76,7 +50,7 @@ storiesOf('Consumer/Desktop/Form Fields/TextArea', module)
       required
     />
   ))
-  .add('Invalid', () => (
+  .add('text-area/error', () => (
     <FieldStateProvider
       component={TextArea}
       name="text4"

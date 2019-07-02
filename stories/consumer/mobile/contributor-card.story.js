@@ -13,11 +13,11 @@ const options = [
   { label: 'Withdraw', value: 'withdraw' },
 ];
 
-storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
+storiesOf('Consumer/Mobile/contributor-card', module)
   .addDecorator(wrapStory)
   .addDecorator(withMobileSizing)
   .addDecorator(withGreyContainer)
-  .add('Standard', () => (
+  .add('contributor-card/default', () => (
     <ContributorCard
       heading="You are a contributor!"
       title="Your expected charge: USD $850.00"
@@ -25,7 +25,7 @@ storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
       cta={[{ label: 'Change', onClick: action('click') }, { label: 'See Schedule', onClick: action('click') }]}
     />
   ))
-  .add('With Picker', () => (
+  .add('contributor-card/with-picker', () => (
     <ContributorCard
       heading="You are a contributor!"
       title="Your expected charge: USD $850.00"
@@ -41,7 +41,7 @@ storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
       ]}
     />
   ))
-  .add('Error', () => (
+  .add('contributor-card/error', () => (
     <ContributorCard
       type={ContributorCard.types.error}
       heading="Payment failure!"
@@ -50,7 +50,7 @@ storiesOf('Consumer/Mobile/Dashboard/ContributorCard', module)
       cta={[{ label: 'CTA', onClick: action('click') }]}
     />
   ))
-  .add('No Heading', () => (
+  .add('contributor-card/no-heading', () => (
     <ContributorCard
       title="This is a Card with no heading."
       content={<Hint multiline>Body text providing supplementary information regarding the failure to the user.</Hint>}

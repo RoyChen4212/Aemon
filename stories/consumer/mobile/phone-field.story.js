@@ -24,33 +24,10 @@ const validate = value => {
   return errors;
 };
 
-storiesOf('Consumer/Mobile/Form Fields/Phone Field', module)
+storiesOf('Consumer/Mobile/Form Fields/phone-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('No phone options', () => (
-    <FieldStateProvider
-      component={PhoneField}
-      name="new-phone-field"
-      addPhoneLabel="Phone Number"
-      label="Phone label"
-      hint="Select a phone number or add a new one"
-      addNewButtonLabel="Add new"
-      onChange={action('onChange')}
-    />
-  ))
-  .add('No validations', () => (
-    <FieldStateProvider
-      component={PhoneField}
-      name="new-phone-field"
-      phoneOptions={phoneOptions}
-      label="Phone label"
-      hint="Select a phone number or add a new one"
-      addPhoneLabel="Phone Number"
-      addNewButtonLabel="Add new"
-      onChange={action('onChange')}
-    />
-  ))
-  .add('With required street and city', () => (
+  .add('phone-field/default', () => (
     <FieldStateProvider
       validate={validate}
       component={PhoneField}
@@ -61,6 +38,17 @@ storiesOf('Consumer/Mobile/Form Fields/Phone Field', module)
       label="Phone label"
       hint="Select a phone number or add a new one"
       required
+      onChange={action('onChange')}
+    />
+  ))
+  .add('phone-field/empty', () => (
+    <FieldStateProvider
+      component={PhoneField}
+      name="new-phone-field"
+      addPhoneLabel="Phone Number"
+      label="Phone label"
+      hint="Select a phone number or add a new one"
+      addNewButtonLabel="Add new"
       onChange={action('onChange')}
     />
   ));

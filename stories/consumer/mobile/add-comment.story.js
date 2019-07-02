@@ -6,10 +6,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Activity Section Components/AddComment', module)
+storiesOf('Consumer/Mobile/activity-header', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Default', () => (
+  .add('add-comment/default', () => (
     <AddComment
       hint="Only logged-in group members see comments."
       ctaLabel="Post comment"
@@ -18,7 +18,7 @@ storiesOf('Consumer/Mobile/Activity Section Components/AddComment', module)
       fullName="John Doe"
     />
   ))
-  .add('With initials', () => (
+  .add('add-comment/no-avatar', () => (
     <AddComment
       hint="Only logged-in group members see comments."
       ctaLabel="Post comment"
@@ -26,7 +26,7 @@ storiesOf('Consumer/Mobile/Activity Section Components/AddComment', module)
       fullName="John Doe"
     />
   ))
-  .add('With Error', () => (
+  .add('add-comment/error', () => (
     <AddComment
       hint="Only logged-in group members see comments."
       ctaLabel="Post comment"

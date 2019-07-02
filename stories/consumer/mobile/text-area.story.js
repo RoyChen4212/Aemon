@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 import TextArea from '../../../components/consumer/mobile/text-area';
 import FieldStateProvider from '../../util/field-state-provider';
@@ -8,23 +7,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Form Fields/TextArea', module)
+storiesOf('Consumer/Mobile/Form Fields/text-area', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Valid', () => (
-    <FieldStateProvider component={TextArea} name="text1" label="Type some large text" value="" hint="a poem maybe?" />
-  ))
-  .add('Valid/With Value', () => (
-    <FieldStateProvider
-      component={TextArea}
-      name="text2"
-      label="Type some large text"
-      hint="a poem maybe?"
-      value="Lorem ipsum dolor sit amet"
-      onChange={action('change')}
-    />
-  ))
-  .add('Valid/Required', () => (
+  .add('text-area/default', () => (
     <FieldStateProvider
       component={TextArea}
       name="text3"
@@ -34,7 +20,7 @@ storiesOf('Consumer/Mobile/Form Fields/TextArea', module)
       required
     />
   ))
-  .add('Invalid', () => (
+  .add('text-area/error', () => (
     <FieldStateProvider
       component={TextArea}
       name="text4"

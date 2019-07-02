@@ -8,9 +8,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const sampleText = 'Pay By Group Rules';
 
-storiesOf('Consumer/Mobile/Atomic Components/Heading', module)
+storiesOf('Consumer/Mobile/Atomic Components/heading', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('H1', () => <H1>{sampleText}</H1>)
-  .add('H2', () => <H2>{sampleText}</H2>)
-  .add('H3', () => <H3>{sampleText}</H3>);
+  .add('h1', () => <H1>{sampleText}</H1>)
+  .add('h2', () => <H2>{sampleText}</H2>)
+  .add('h3', () => <H3>{sampleText}</H3>);

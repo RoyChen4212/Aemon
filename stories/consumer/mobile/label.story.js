@@ -9,17 +9,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const sampleText = 'Pay By Group Rules';
 
-storiesOf('Consumer/Mobile/Atomic Components/Label', module)
+storiesOf('Consumer/Mobile/Atomic Components/label', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Standard Label', () => <Label>{sampleText}</Label>)
-  .add('Required Label', () => <Label required>{sampleText}</Label>)
-  .add('Active Label', () => <Label type={labelTypes.ACTIVE}>{sampleText}</Label>)
-  .add('Strong Label', () => <Label type={labelTypes.STRONG}>{sampleText}</Label>)
-  .add('Secondary Label', () => <Label type={labelTypes.SECONDARY}>{sampleText}</Label>)
-  .add('Clickable Label', () => (
-    <Label type={labelTypes.CLICKABLE} onClick={action('clicked')}>
-      {sampleText} (Click me)
-    </Label>
-  ))
-  .add('Error Label', () => <Label type={labelTypes.ERROR}>{sampleText}</Label>);
+  .add('label', () => <Label>{sampleText}</Label>)
+  .add('label/required', () => <Label required>{sampleText}</Label>)
+  .add('label/clickable', () => <Label type={labelTypes.ACTIVE}>{sampleText}</Label>)
+  .add('label/strong', () => <Label type={labelTypes.STRONG}>{sampleText}</Label>)
+  .add('label/secondary', () => <Label type={labelTypes.SECONDARY}>{sampleText}</Label>)
+  .add('label/error', () => <Label type={labelTypes.ERROR}>{sampleText}</Label>);
