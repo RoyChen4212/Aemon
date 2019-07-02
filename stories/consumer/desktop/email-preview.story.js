@@ -11,11 +11,11 @@ const logos = [
 ];
 const randomLogo = () => logos[Math.floor(Math.random() * logos.length)];
 
-storiesOf('Consumer/Desktop/Add Contributors/email-preview', module)
+storiesOf('Consumer/Desktop/Add Contributors', module)
   .addDecorator(wrapStory)
   .addDecorator(withGreyContainer)
   .addDecorator(story => <div style={{ height: 500 }}>{story()}</div>)
-  .add('email-preview/default', () => (
+  .add('email-preview', () => (
     <EmailPreview
       logo={randomLogo()}
       title="Split the cost of [Purchase Title up to two lines]"

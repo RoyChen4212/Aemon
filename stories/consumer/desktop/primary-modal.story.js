@@ -53,7 +53,7 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
       }
     />
   ))
-  .add('primary-modal/working sample', () => <FullPrimaryModal />);
+  .add('primary-modal/working-sample', () => <FullPrimaryModal />);
 
 class FullPrimaryModal extends React.Component {
   state = {

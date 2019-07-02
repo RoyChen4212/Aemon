@@ -8,13 +8,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const sampleText = 'Pay By Group Rules';
 
-storiesOf('Consumer/Mobile/Atomic Components/Hint', module)
+storiesOf('Consumer/Mobile/Atomic Components/hint', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Standard', () => <Hint>{sampleText}</Hint>)
-  .add('Clickable', () => (
+  .add('hint/default', () => <Hint>{sampleText}</Hint>)
+  .add('hint/link', () => (
     <Hint type={hintTypes.CLICKABLE} onClick={action('click')}>
       {sampleText} (Click me)
     </Hint>
   ))
-  .add('Error', () => <Hint type={hintTypes.ERROR}>{sampleText}</Hint>);
+  .add('hint/error', () => <Hint type={hintTypes.ERROR}>{sampleText}</Hint>);

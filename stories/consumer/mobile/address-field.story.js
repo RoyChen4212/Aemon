@@ -40,23 +40,10 @@ const labels = {
   country: 'Country',
 };
 
-storiesOf('Consumer/Mobile/Form Fields/Address Field', module)
+storiesOf('Consumer/Mobile/Form Fields', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('No validations', () => (
-    <FieldStateProvider
-      component={AddressField}
-      name="new-address-field"
-      label="Address label"
-      hint="Select an address or add a new one"
-      addressOptions={addressOptions}
-      newAddressLabels={labels}
-      addNewButtonLabel="Add new"
-      countryOptions={countries}
-      onChange={action('onChange')}
-    />
-  ))
-  .add('With required street and city', () => (
+  .add('address-field', () => (
     <FieldStateProvider
       validate={validate}
       component={AddressField}

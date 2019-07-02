@@ -7,16 +7,15 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Atomic Components/Primary Button', module)
+storiesOf('Consumer/Mobile/Atomic Components/primary-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Enabled/No Hint', () => <PrimaryButton onClick={action('clicked')}>Primary Button</PrimaryButton>)
-  .add('Enabled/With Hint', () => (
-    <PrimaryButton hint="With Hint" onClick={action('clicked')}>
+  .add('primary-button/default', () => (
+    <PrimaryButton onClick={action('clicked')}>
       Primary Button
     </PrimaryButton>
   ))
-  .add('Disabled', () => (
+  .add('primary-button/disabled', () => (
     <PrimaryButton disabled onClick={action('clicked')}>
       Primary Button Disabled
     </PrimaryButton>

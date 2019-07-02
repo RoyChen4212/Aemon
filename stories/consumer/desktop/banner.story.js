@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const sampleText = 'Pay By Group Rules';
 
-storiesOf('Consumer/Desktop/Atomic Components/Banner', module)
+storiesOf('Consumer/Desktop/Atomic Components', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Dark blue (default)', () => <Banner text={sampleText} />);
+  .add('banner', () => <Banner text={sampleText} />);

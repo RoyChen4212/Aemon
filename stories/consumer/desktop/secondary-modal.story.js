@@ -20,7 +20,7 @@ storiesOf('Consumer/Desktop/Modals & Popovers/secondary-modal', module)
       <p>This is the content section, style it as you want.</p>
     </SecondaryModal>
   ))
-  .add('secondary-modal/working sample', () => <ModalWrapper />);
+  .add('secondary-modal/working-sample', () => <ModalWrapper />);
 
 class ModalWrapper extends React.Component {
   state = { visible: false };

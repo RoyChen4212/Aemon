@@ -6,7 +6,7 @@ import PurchaseImage from '../../../components/consumer/desktop/purchase-image';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Info/purchase-image', module)
+storiesOf('Consumer/Desktop/Info', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('purchase-image/default', () => <PurchaseImage src="https://picsum.photos/200/100" />);
+  .add('purchase-image', () => <PurchaseImage src="https://picsum.photos/200/100" />);

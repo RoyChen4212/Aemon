@@ -6,8 +6,7 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Atomic Components/Divider', module)
+storiesOf('Consumer/Desktop/Atomic Components', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Default', () => <Divider />)
-  .add('With added className', () => <Divider className="my-5" />);
+  .add('divider', () => <Divider />)

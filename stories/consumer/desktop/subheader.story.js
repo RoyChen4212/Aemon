@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 const sampleText = 'Pay By Group Rules';
 
-storiesOf('Consumer/Desktop/Atomic Components/Heading', module)
+storiesOf('Consumer/Desktop/Atomic Components', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Subheader', () => <Subheader text={sampleText} anchor="hi" />);
+  .add('subheader', () => <Subheader text={sampleText} anchor="hi" />);

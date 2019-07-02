@@ -13,11 +13,10 @@ const options = [
   { label: 'Super long option text here', value: 'third' },
 ];
 
-storiesOf('Consumer/Mobile/Form Fields/Historical Picker', module)
+storiesOf('Consumer/Mobile/Form Fields/historical-picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Valid/No Hint', () => <HistoricalPicker name="picker" onChange={action('onChange')} options={options} />)
-  .add('Valid/With Hint', () => (
+  .add('historical-picker/default', () => (
     <HistoricalPicker
       name="picker"
       hint="Pick a value or use default"
@@ -25,6 +24,6 @@ storiesOf('Consumer/Mobile/Form Fields/Historical Picker', module)
       options={options}
     />
   ))
-  .add('Invalid', () => (
+  .add('historical-picker/error', () => (
     <HistoricalPicker name="picker" error="You selection is terrible" onChange={action('onChange')} options={options} />
   ));

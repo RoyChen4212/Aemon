@@ -8,10 +8,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Form Fields/Datetime Picker', module)
+storiesOf('Consumer/Mobile/Form Fields/datetime-picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Valid', () => (
+  .add('datetime-picker/simple', () => (
     <FieldStateProvider
       component={DatetimePicker}
       name="date-picker"
@@ -21,16 +21,7 @@ storiesOf('Consumer/Mobile/Form Fields/Datetime Picker', module)
       onChange={action('onChange')}
     />
   ))
-  .add('Valid/No Value', () => (
-    <FieldStateProvider
-      component={DatetimePicker}
-      name="date-picker"
-      timezone="America/Mexico_City"
-      hint="Pick date and time"
-      onChange={action('onChange')}
-    />
-  ))
-  .add('Valid/With a Label', () => (
+  .add('datetime-picker/default', () => (
     <FieldStateProvider
       component={DatetimePicker}
       name="date-picker"
@@ -41,7 +32,7 @@ storiesOf('Consumer/Mobile/Form Fields/Datetime Picker', module)
       onChange={action('onChange')}
     />
   ))
-  .add('Invalid', () => (
+  .add('datetime-picker/error', () => (
     <FieldStateProvider
       component={DatetimePicker}
       name="date-picker"

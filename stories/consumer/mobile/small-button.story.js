@@ -6,16 +6,11 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Atomic Components/Small Button', module)
+storiesOf('Consumer/Mobile/Atomic Components/small-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('Enabled/No Hint', () => <SmallButton onClick={action('clicked')}>Small Button</SmallButton>)
-  .add('Enabled/With Hint', () => (
-    <SmallButton hint="With Hint" onClick={action('clicked')}>
-      Small Button
-    </SmallButton>
-  ))
-  .add('Disabled', () => (
+  .add('small-button/default', () => <SmallButton onClick={action('clicked')}>Small Button</SmallButton>)
+  .add('small-button/disabled', () => (
     <SmallButton disabled onClick={action('clicked')}>
       Small Button Disabled
     </SmallButton>
