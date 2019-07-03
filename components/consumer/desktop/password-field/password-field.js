@@ -11,7 +11,7 @@ class PasswordField extends TextField {
 
   baseType = 'password';
 
-  renderForgotPassword = () => {
+  renderForgotPassword() {
     if (!this.props.forgotPasswordText) return null;
     return (
       <Hint type={hintTypes.CLICKABLE} onClick={this.adaptedProps.onForgotPassword}>

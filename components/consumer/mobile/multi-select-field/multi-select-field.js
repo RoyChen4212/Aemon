@@ -8,20 +8,6 @@ import makeEvent from '../../../lib/make-event';
 class MultiSelectField extends FormField {
   baseClassName = 'pbg-form-field pbg-multi-select-field';
 
-  get checkboxList() {
-    return get(this.adaptedProps, 'options', []).map((opt, index) => {
-      return (
-        <Checkbox
-          key={`checkbox_${index}`}
-          label={opt.label}
-          value={this.valueForOption(opt)}
-          name={`checkbox_${index}`}
-          onChange={({ target }) => this.updateValue(target.value, opt.value)}
-        />
-      );
-    });
-  }
-
   get value() {
     return get(this, 'adaptedProps.value', []);
   }
@@ -35,12 +21,26 @@ class MultiSelectField extends FormField {
     return this.onChange(makeEvent(this.value.filter(v => v !== value)));
   };
 
+  renderCheckboxList() {
+    return get(this.adaptedProps, 'options', []).map((opt, index) => {
+      return (
+        <Checkbox
+          key={`checkbox_${index}`}
+          label={opt.label}
+          value={this.valueForOption(opt)}
+          name={`checkbox_${index}`}
+          onChange={({ target }) => this.updateValue(target.value, opt.value)}
+        />
+      );
+    });
+  }
+
   render() {
     return (
       <div className={this.className}>
         {this.renderLabel()}
         {this.renderHintOrError()}
-        {this.checkboxList}
+        {this.renderCheckboxList()}
       </div>
     );
   }

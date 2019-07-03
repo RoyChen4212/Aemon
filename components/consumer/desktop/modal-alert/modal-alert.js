@@ -49,7 +49,7 @@ class ModalAlert extends React.PureComponent {
     }
   }
 
-  renderText = () => {
+  renderText() {
     const { text, onTextClick } = this.props;
     return onTextClick ? <a onClick={onTextClick}>{text}</a> : text;
   };

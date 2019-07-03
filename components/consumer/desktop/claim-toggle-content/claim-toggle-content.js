@@ -8,7 +8,7 @@ import './style.scss';
 class ClaimToggleContent extends Checkbox {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-checkbox pbg-claim-toggle-content';
 
-  get label() {
+  renderLabel() {
     const { label, explainer } = this.adaptedProps;
     return (
       <div className="pbg-claim-toggle-content-label-explainer-placeholder">
