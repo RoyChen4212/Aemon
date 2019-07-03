@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
-import { Checkbox } from '../../../components/consumer/mobile/form-fields';
+import Checkbox from '../../../components/consumer/mobile/checkbox';
 import Label from '../../../components/consumer/mobile/label';
 
 describe('Checkbox', () => {

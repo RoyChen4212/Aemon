@@ -51,4 +51,4 @@ class Picker extends FormField {
   }
 }
 
-export { Picker };
+export default Picker;

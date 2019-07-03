@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Label from '../label';
-import { Checkbox } from '../checkbox';
+import Checkbox from '../checkbox';
 
 import './style.scss';
 

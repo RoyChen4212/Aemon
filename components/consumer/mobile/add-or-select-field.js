@@ -2,12 +2,13 @@ import React from 'react';
 import get from 'lodash/get';
 import first from 'lodash/first';
 import isString from 'lodash/isString';
-import { HistoricalPicker } from './form-fields';
+
+import makeEvent from '../../lib/make-event';
+import HistoricalPicker from './historical-picker';
 import { SmallButton } from './button';
 import Label, { labelTypes } from './label';
 import Hint from './hint';
 import FormField from './form-field';
-import makeEvent from '../../lib/make-event';
 
 class AddOrSelectField extends FormField {
   componentDidMount() {

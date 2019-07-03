@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField } from '../text-field';
+import TextField from '../text-field';
 import Hint, { hintTypes } from '../hint';
 import './style.scss';
 
@@ -41,4 +41,4 @@ class PasswordField extends TextField {
   }
 }
 
-export { PasswordField };
+export default PasswordField;

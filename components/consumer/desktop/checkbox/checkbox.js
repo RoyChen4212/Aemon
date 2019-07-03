@@ -30,4 +30,4 @@ class Checkbox extends ComposedCheckbox {
   }
 }
 
-export { Checkbox };
+export default Checkbox;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NewAddressField } from '../form-fields';
+import NewAddressField from '../new-address-field';
 import AddOrSelectField from '../add-or-select-field';
 
 import './style.scss';
@@ -28,4 +28,4 @@ class AddressField extends AddOrSelectField {
   }
 }
 
-export { AddressField };
+export default AddressField;

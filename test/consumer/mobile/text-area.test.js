@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
-import { TextArea } from '../../../components/consumer/mobile/form-fields';
+import TextArea from '../../../components/consumer/mobile/text-area';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 import { shouldBehaveLikeTextField } from './text-field.test';

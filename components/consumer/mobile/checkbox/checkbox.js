@@ -6,4 +6,4 @@ import './style.scss';
 
 const Checkbox = BaseCheckbox(FormField, Label, 'pbg-mobile pbg-form-field pbg-checkbox');
 
-export { Checkbox };
+export default Checkbox;

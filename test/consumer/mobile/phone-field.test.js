@@ -3,7 +3,9 @@ import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
-import { PhoneField, HistoricalPicker, TextField } from '../../../components/consumer/mobile/form-fields';
+import PhoneField from '../../../components/consumer/mobile/phone-field';
+import HistoricalPicker from '../../../components/consumer/mobile/historical-picker';
+import TextField from '../../../components/consumer/mobile/text-field';
 import { SmallButton } from '../../../components/consumer/mobile/button';
 
 describe('Phone Field', () => {

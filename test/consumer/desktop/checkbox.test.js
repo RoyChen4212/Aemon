@@ -3,7 +3,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
-import { Checkbox } from '../../../components/consumer/desktop/checkbox';
+import Checkbox from '../../../components/consumer/desktop/checkbox';
 import Label, { labelTypes } from '../../../components/consumer/desktop/label';
 import Hint from '../../../components/consumer/desktop/hint';
 

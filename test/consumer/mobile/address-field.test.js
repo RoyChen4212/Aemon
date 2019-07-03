@@ -2,12 +2,9 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 
-import {
-  AddressField,
-  HistoricalPicker,
-  NewAddressField,
-  addressFields,
-} from '../../../components/consumer/mobile/form-fields';
+import AddressField from '../../../components/consumer/mobile/address-field';
+import HistoricalPicker from '../../../components/consumer/mobile/historical-picker';
+import NewAddressField, { addressFields } from '../../../components/consumer/mobile/new-address-field';
 import { SmallButton } from '../../../components/consumer/mobile/button';
 import Label, { labelTypes } from '../../../components/consumer/mobile/label';
 import Hint from '../../../components/consumer/mobile/hint';

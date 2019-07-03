@@ -1,63 +1,61 @@
-import {
-  AddressField,
-  Checkbox,
-  DatePicker,
-  DatetimePicker,
-  HistoricalPicker,
-  PasswordField,
-  Picker,
-  PhoneField,
-  TextArea,
-  TextField,
-  TimePicker,
-  NewAddressField,
-  MultiSelectField,
-} from './form-fields';
-import { PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton } from './button';
 import { H1, H2, H3 } from './heading';
-import Hint, { hintTypes } from './hint';
-import Label, { labelTypes } from './label';
+import { PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton, SmallFacebookButton } from './button';
 import { UserCommentCard, GroupActivityCard } from './activity-card';
-import SegmentedControl from './segmented-control';
-import Modal from './modal';
-import ContributorCard from './contributor-card';
 import AddComment from './add-comment';
+import AddressField from './address-field';
+import Checkbox from './checkbox';
+import ContributorCard from './contributor-card';
+import DatePicker from './date-picker';
+import DatetimePicker from './datetime-picker';
+import Hint, { hintTypes } from './hint';
+import HistoricalPicker from './historical-picker';
+import Label, { labelTypes } from './label';
+import Modal from './modal';
+import MultiSelectField from './multi-select-field';
+import NewAddressField from './new-address-field';
 import NoAccountWarning from './no-account-warning';
+import PasswordField from './password-field';
+import PhoneField from './phone-field';
+import Picker from './picker';
+import SegmentedControl from './segmented-control';
+import TextArea from './text-area';
+import TextField from './text-field';
+import TimePicker from './time-picker';
 
 const mobile = {
+  AddComment,
   AddressField,
   Checkbox,
+  ContributorCard,
   DatePicker,
   DatetimePicker,
-  HistoricalPicker,
-  PasswordField,
-  Picker,
-  PhoneField,
-  TextArea,
-  TextField,
-  TimePicker,
-  NewAddressField,
-  PrimaryButton,
-  SecondaryButton,
-  SmallButton,
-  LinkButton,
   FacebookButton,
-  SmallFacebookButton,
+  GroupActivityCard,
   H1,
   H2,
   H3,
   Hint,
   hintTypes,
+  HistoricalPicker,
   Label,
   labelTypes,
-  MultiSelectField,
-  UserCommentCard,
-  GroupActivityCard,
-  SegmentedControl,
+  LinkButton,
   Modal,
-  ContributorCard,
-  AddComment,
+  MultiSelectField,
+  NewAddressField,
   NoAccountWarning,
+  PasswordField,
+  PhoneField,
+  Picker,
+  PrimaryButton,
+  SecondaryButton,
+  SegmentedControl,
+  SmallButton,
+  SmallFacebookButton,
+  TextArea,
+  TextField,
+  TimePicker,
+  UserCommentCard,
 };
 
 export default mobile;

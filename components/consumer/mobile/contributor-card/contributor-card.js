@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { H2 } from '../heading';
 import { LinkButton } from '../button';
-import { HistoricalPicker } from '../historical-picker';
+import HistoricalPicker from '../historical-picker';
 import './style.scss';
 
 const TYPE_ERROR = 'error';

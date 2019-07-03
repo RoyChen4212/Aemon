@@ -1,3 +1,1 @@
-import ActivityComment from './activity-comment';
-
-export default ActivityComment;
+export { default } from './activity-comment';

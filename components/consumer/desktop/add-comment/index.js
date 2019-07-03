@@ -1,3 +1,1 @@
-import AddComment from './add-comment';
-
-export default AddComment;
+export { default } from './add-comment';

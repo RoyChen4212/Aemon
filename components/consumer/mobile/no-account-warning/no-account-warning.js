@@ -12,7 +12,7 @@ const buildClassName = ({ className }) => {
   return base;
 };
 
-export const NoAccountWarning = ({ title, text, onClick, ctaText, type, className }) => (
+const NoAccountWarning = ({ title, text, onClick, ctaText, type, className }) => (
   <div className={buildClassName({ type, className })}>
     <div className="d-flex">
       <img src="https://assets.paybygroup.com/images/icons/warning.svg" />
