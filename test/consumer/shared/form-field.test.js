@@ -35,20 +35,4 @@ describe('BaseFormField', () => {
     expect(adapter.called).to.be.true;
     expect(onChange.called).to.be.true;
   });
-
-  it('should throw an error when calling .label directly from the super class', () => {
-    const wrapper = shallow(<BaseFormField />);
-    const instance = wrapper.instance();
-    expect(() => {
-      return instance.label;
-    }).to.throw('Not implemented, Implement this method in a sub-class.');
-  });
-
-  it('should throw an error when calling .hintOrError directly from the super class', () => {
-    const wrapper = shallow(<BaseFormField />);
-    const instance = wrapper.instance();
-    expect(() => {
-      return instance.hintOrError;
-    }).to.throw('Not implemented, Implement this method in a sub-class.');
-  });
 });

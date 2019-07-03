@@ -39,9 +39,9 @@ class TextField extends FormField {
   render() {
     return (
       <div className={this.className}>
-        {this.label}
+        {this.renderLabel()}
         {this.renderInput()}
-        {this.hintOrError}
+        {this.renderHintOrError()}
       </div>
     );
   }

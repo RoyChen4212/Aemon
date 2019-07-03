@@ -33,7 +33,7 @@ class MoneyField extends TextField {
     return this.props.value || this.state.value;
   }
 
-  _renderInput() {
+  renderInput() {
     const { name } = this.props;
     return (
       <input

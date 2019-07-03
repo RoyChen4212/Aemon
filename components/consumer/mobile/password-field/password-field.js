@@ -8,31 +8,31 @@ class PasswordField extends TextField {
 
   baseType = 'password';
 
-  get hintOrError() {
-    if (this.error) return this.errorFeedback;
-    if (this.hint) return this.hintFeedback;
-    return <div className="pbg-forgot-password-container">{this.forgotPassword}</div>;
+  renderHintOrError() {
+    if (this.error) return this.renderErrorFeedback();
+    if (this.hint) return this.renderHintFeedback();
+    return <div className="pbg-forgot-password-container">{this.renderForgotPassword()}</div>;
   }
 
-  get errorFeedback() {
-    return (
-      <div className="pbg-forgot-password-container">
-        <Hint type={hintTypes.ERROR}>{this.error}</Hint>
-        {this.forgotPassword}
-      </div>
-    );
-  }
-
-  get hintFeedback() {
+  renderHintFeedback() {
     return (
       <div className="pbg-forgot-password-container">
         <Hint>{this.hint}</Hint>
-        {this.forgotPassword}
+        {this.renderForgotPassword()}
       </div>
     );
   }
 
-  get forgotPassword() {
+  renderErrorFeedback() {
+    return (
+      <div className="pbg-forgot-password-container">
+        <Hint type={hintTypes.ERROR}>{this.error}</Hint>
+        {this.renderForgotPassword()}
+      </div>
+    );
+  }
+
+  renderForgotPassword() {
     return (
       <Hint type={hintTypes.CLICKABLE} onClick={this.adaptedProps.onForgotPassword}>
         {this.adaptedProps.forgotPasswordText || '[FORGOT PASSWROD]'}

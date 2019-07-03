@@ -70,7 +70,7 @@ class Picker extends FormField {
   render() {
     return (
       <div className={this.className}>
-        {!this.props.simple && this.label}
+        {this.renderLabel()}
         <div className="pbg-picker-container">
           {this.renderPickerButton()}
           <PickerMenu
@@ -80,7 +80,7 @@ class Picker extends FormField {
             onOptionClick={this.onOptionClick}
           />
         </div>
-        {!this.props.simple && this.hintOrError}
+        {this.renderHintOrError()}
       </div>
     );
   }

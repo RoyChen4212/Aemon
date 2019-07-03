@@ -32,14 +32,14 @@ class MultiSelectField extends FormField {
 
   updateValue = (checked, value) => {
     if (checked) return this.onChange(makeEvent([...this.value, value]));
-    this.onChange(makeEvent(this.value.filter(v => v !== value)));
+    return this.onChange(makeEvent(this.value.filter(v => v !== value)));
   };
 
   render() {
     return (
       <div className={this.className}>
-        {this.label}
-        {this.hintOrError}
+        {this.renderLabel()}
+        {this.renderHintOrError()}
         {this.checkboxList}
       </div>
     );

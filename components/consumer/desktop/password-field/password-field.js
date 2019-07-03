@@ -2,6 +2,7 @@ import React from 'react';
 
 import TextField from '../text-field';
 import Hint, { hintTypes } from '../hint';
+import Label from '../label';
 
 import './style.scss';
 
@@ -19,7 +20,7 @@ class PasswordField extends TextField {
     );
   };
 
-  renderLabel = Label => {
+  renderLabel() {
     if (this.props.simple) return null;
 
     const { label, forgotPasswordText } = this.props;
