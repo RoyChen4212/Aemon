@@ -7,9 +7,9 @@ import MoneyField from '../../../components/consumer/desktop/money-field';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Atomic Components/price-input', module)
+storiesOf('Consumer/Desktop/Form Fields/price-input', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('price-input/default', () => <FieldStateProvider component={MoneyField} />)
-  .add('price-input/with-default-value', () => <FieldStateProvider component={MoneyField} defaultValue={1899} />)
-  .add('price-input/with-different-currency', () => <FieldStateProvider component={MoneyField} currency="GBP" />);
+  .add('price-input/with-currency-sign', () => <FieldStateProvider component={MoneyField} currency="GBP" />)
+  .add('price-input/with-currency-abbreviation', () => <FieldStateProvider component={MoneyField} currency="CHF" />);
