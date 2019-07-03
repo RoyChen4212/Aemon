@@ -114,10 +114,3 @@ export const shouldBehaveLikeButton = wrapper => {
   });
 };
 
-describe('Base BaseButton', () => {
-  it('should throw when render is attempted', () => {
-    expect(() => {
-      shallow(<BaseButton />);
-    }).to.throw();
-  });
-});
