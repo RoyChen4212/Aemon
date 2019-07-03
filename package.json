@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/paybygroup/aemon#readme",
   "dependencies": {
-    "@paybygroup/baelish": "^1.1.1",
+    "@paybygroup/baelish": "^1.2.0",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "jquery": "^3.4.1",

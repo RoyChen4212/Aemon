@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import money, { USD, format } from '@paybygroup/baelish';
 
 import TextField from '../text-field';
+import './style.scss';
 
-const formatCurrency = (value, currency) => format(money(value, currency));
+const formatCurrency = (value, currency) =>
+  format(money(value, currency), { format: { pos: '%s %v', zero: '%s 0.00' } });
 
 class MoneyField extends TextField {
   static propTypes = {
