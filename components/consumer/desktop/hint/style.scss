@@ -16,6 +16,7 @@
 
     &.pbg-hint-clickable, &.pbg-hint-link {
       @extend .pbg-desktop-small-link;
+      cursor: pointer;
     }
 
     &.pbg-hint-strong {
