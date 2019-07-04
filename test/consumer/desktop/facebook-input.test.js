@@ -16,15 +16,19 @@ describe('facebook-input', () => {
   });
 
   it('should have correct text', () => {
-    const wrapper = shallow(<FacebookInput />);
+    const text = 'Continue with Facebook';
+    const hint = 'You previously logged in with Facebook. Please click to authenticate again.';
+    const wrapper = shallow(<FacebookInput hint={hint}>{text}</FacebookInput>);
     const facebookButton = wrapper.find(FacebookButton);
-    expect(facebookButton.dive().find("span").text()).to.equal('Continue with Facebook');
+    expect(facebookButton.dive().find("span").text()).to.equal(text);
   });
 
   it('should have correct hint', () => {
-    const wrapper = shallow(<FacebookInput />);
-    const hint = wrapper.find(".pbg-desktop-secondary-text");
-    expect(hint.text()).to.equal('You previously logged in with Facebook. Please click to authenticate again.');
+    const text = 'Continue with Facebook';
+    const hint = 'You previously logged in with Facebook. Please click to authenticate again.';
+    const wrapper = shallow(<FacebookInput hint={hint}>{text}</FacebookInput>);
+    const hintEl = wrapper.find(".pbg-desktop-secondary-text");
+    expect(hintEl.text()).to.equal(hint);
   });
 
   it('should be clickable', () => {
