@@ -6,18 +6,6 @@ class BaseAddComment extends BaseFormField {
     return this.baseClassName;
   }
 
-  get avatar() {
-    throw new Error('Not implemented, Implement this method in a sub-class.');
-  }
-
-  get submitButton() {
-    throw new Error('Not implemented, Implement this method in a sub-class.');
-  }
-
-  get textArea() {
-    throw new Error('Not implemented, Implement this method in a sub-class.');
-  }
-
   renderAvatar(Avatar) {
     if (this.adaptedProps.avatarSrc) return <Avatar src={this.adaptedProps.avatarSrc} />;
     return <Avatar userId={this.adaptedProps.userId} fullName={this.adaptedProps.fullName} />;
@@ -34,10 +22,10 @@ class BaseAddComment extends BaseFormField {
   render() {
     return (
       <div className={this.className}>
-        <div className="pbg-add-comment-avatar-placeholder">{this.avatar}</div>
+        <div className="pbg-add-comment-avatar-placeholder">{this.renderAvatar()}</div>
         <div className="pbg-add-comment-form-placeholder">
-          {this.textArea}
-          {this.submitButton}
+          {this.renderTextArea()}
+          {this.renderSubmitButton()}
         </div>
       </div>
     );

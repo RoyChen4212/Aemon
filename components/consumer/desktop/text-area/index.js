@@ -35,7 +35,7 @@ class TextArea extends FormField {
     return (
       <div className={this.className}>
         {this.renderInput()}
-        {!this.props.simple && this.hintOrError}
+        {!this.props.simple && this.renderHintOrError()}
       </div>
     );
   }

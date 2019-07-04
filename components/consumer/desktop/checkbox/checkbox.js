@@ -15,7 +15,7 @@ class Checkbox extends ComposedCheckbox {
     return labelTypes.base;
   }
 
-  get label() {
+  renderLabel() {
     const { label, hint } = this.adaptedProps;
     return (
       <div className="pbg-checkbox-label-hint-placeholder">

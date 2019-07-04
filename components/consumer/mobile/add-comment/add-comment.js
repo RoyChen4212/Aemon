@@ -10,21 +10,21 @@ import './style.scss';
 class AddComment extends BaseAddComment {
   baseClassName = 'pbg-consumer-mobile pbg-add-comment';
 
-  get avatar() {
+  renderAvatar() {
     return (
       <div className="pbg-add-comment-avatar-with-name">
-        {this.renderAvatar(Avatar)}
+        {super.renderAvatar(Avatar)}
         <Label type={labelTypes.STRONG}>{this.adaptedProps.fullName}</Label>
       </div>
     );
   }
 
-  get submitButton() {
-    return this.renderSubmitButton(SmallButton);
+  renderSubmitButton() {
+    return super.renderSubmitButton(SmallButton);
   }
 
-  get textArea() {
-    return this.renderTextArea(TextArea);
+  renderTextArea() {
+    return super.renderTextArea(TextArea);
   }
 }
 

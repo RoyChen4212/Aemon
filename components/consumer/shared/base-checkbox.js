@@ -9,7 +9,7 @@ const ComposeCheckbox = (FormField, Label, _baseClassName) =>
       return this.adaptedProps.value || false;
     }
 
-    get label() {
+    renderLabel() {
       const { label } = this.adaptedProps;
       const labelElement = (
         <Label type={this.labelType} required={this.adaptedProps.required}>
@@ -31,7 +31,7 @@ const ComposeCheckbox = (FormField, Label, _baseClassName) =>
             name={this.adaptedProps.name}
             disabled={this.adaptedProps.disabled}
           />
-          {this.label}
+          {this.renderLabel()}
         </div>
       );
     }

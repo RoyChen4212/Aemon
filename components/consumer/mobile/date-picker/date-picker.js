@@ -50,12 +50,12 @@ class DatePicker extends FormField {
   render() {
     return (
       <div className={this.className}>
-        {this.label}
+        {this.renderLabel()}
         <div className="pbg-date-picker-container">
           <div className="pbg-date-picker-mask">{this.renderMaskContents()}</div>
           <input type="date" value={this.adaptedProps.value} onChange={this.onChange} onBlur={this.onBlur} />
         </div>
-        {this.hintOrError}
+        {this.renderHintOrError()}
       </div>
     );
   }

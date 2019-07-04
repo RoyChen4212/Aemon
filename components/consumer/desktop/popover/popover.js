@@ -83,7 +83,7 @@ class Popover extends React.PureComponent {
     this.deactivate();
   };
 
-  renderTriggerComponent = () => {
+  renderTriggerComponent() {
     const { trigger: TriggerComponent } = this.props;
     if (!TriggerComponent) return null;
     return <TriggerComponent onClick={this.onClick} />;

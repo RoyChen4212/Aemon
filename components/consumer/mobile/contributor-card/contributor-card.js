@@ -41,7 +41,7 @@ class ContributorCard extends React.PureComponent {
     }
   }
 
-  get cta() {
+  renderCTA() {
     const { cta } = this.props;
     return cta.map((item, index) => {
       return (
@@ -66,7 +66,7 @@ class ContributorCard extends React.PureComponent {
           <div className="pbg-contributor-card-content">{content}</div>
         </div>
         <div className="pbg-contributor-card-ctas">
-          <div>{this.cta}</div>
+          <div>{this.renderCTA()}</div>
         </div>
       </div>
     );

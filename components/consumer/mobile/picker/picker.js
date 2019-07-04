@@ -45,7 +45,7 @@ class Picker extends FormField {
           {this.renderSelect()}
           <i className="pbg-picker-arrow" />
         </div>
-        {this.hintOrError}
+        {this.renderHintOrError()}
       </div>
     );
   }

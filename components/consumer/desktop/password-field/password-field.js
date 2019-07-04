@@ -2,6 +2,7 @@ import React from 'react';
 
 import TextField from '../text-field';
 import Hint, { hintTypes } from '../hint';
+import Label from '../label';
 
 import './style.scss';
 
@@ -10,7 +11,7 @@ class PasswordField extends TextField {
 
   baseType = 'password';
 
-  renderForgotPassword = () => {
+  renderForgotPassword() {
     if (!this.props.forgotPasswordText) return null;
     return (
       <Hint type={hintTypes.CLICKABLE} onClick={this.adaptedProps.onForgotPassword}>
@@ -19,7 +20,7 @@ class PasswordField extends TextField {
     );
   };
 
-  renderLabel = Label => {
+  renderLabel() {
     if (this.props.simple) return null;
 
     const { label, forgotPasswordText } = this.props;
