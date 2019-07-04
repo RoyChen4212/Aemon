@@ -6,10 +6,10 @@ import './style.scss';
 
 const baseClassName = 'pbg-consumer-desktop pbg-facebook-input';
 
-const FacebookInput = ({children, hint, ...rest}) => (
+const FacebookInput = ({buttonLabel, hint, ...rest}) => (
   <div className={baseClassName}>
     <FacebookButton {...rest}>
-      { children }
+      { buttonLabel }
     </FacebookButton>
     <p
       className="pbg-desktop-secondary-text pbg-desktop-small-text"
@@ -20,7 +20,7 @@ const FacebookInput = ({children, hint, ...rest}) => (
 );
 
 FacebookInput.propTypes = {
-  children: PropTypes.string.isRequired,
+  buttonLabel: PropTypes.string.isRequired,
   hint: PropTypes.string.isRequired,
 };
 
