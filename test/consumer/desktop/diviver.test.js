@@ -4,9 +4,9 @@ import { shallow } from 'enzyme';
 import Divider from '../../../components/consumer/desktop/divider';
 
 describe('Divider', () => {
-  it('should render div', () => {
+  it('should render 2 div', () => {
     const wrapper = shallow(<Divider />);
-    expect(wrapper.find('div')).to.have.lengthOf(1);
+    expect(wrapper.find('div')).to.have.lengthOf(2);
   });
 
   it('should have class pbg-consumer-desktop', () => {

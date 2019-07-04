@@ -146,6 +146,18 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $grey-60;
 }
 
+.pbg-desktop-upcase-text {
+  text-transform: uppercase;
+}
+
+.pbg-desktop-strong-text {
+  font-weight: bold;
+}
+
+.pbg-desktop-italic-text {
+  font-style: italic;
+}
+
 // Paragraph
 .pbg-desktop-paragraph {
   @extend .pbg-desktop-regular-text;

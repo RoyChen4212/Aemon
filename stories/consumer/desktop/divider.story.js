@@ -9,4 +9,4 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Desktop/Atomic Components', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('divider', () => <Divider />)
+  .add('divider', () => <Divider label='Label' hint='Helper text' />)
