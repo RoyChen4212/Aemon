@@ -24,6 +24,7 @@ import ClaimToggle from './claim-toggle';
 import Container from './container';
 import Divider from './divider';
 import EmailPreview from './email-preview';
+import FacebookInput from './facebook-input';
 import GuestPasswordField from './guest-password-field';
 import ModalAlert from './modal-alert';
 import MoneyField from './money-field';
@@ -54,6 +55,7 @@ const desktop = {
   Container,
   Divider,
   EmailPreview,
+  FacebookInput,
   GuestPasswordField,
   ModalAlert,
   MoneyField,
