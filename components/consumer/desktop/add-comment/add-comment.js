@@ -8,16 +8,16 @@ import './style.scss';
 class AddComment extends BaseAddComment {
   baseClassName = 'pbg-consumer-desktop pbg-add-comment';
 
-  get avatar() {
-    return this.renderAvatar(Avatar);
+  renderAvatar() {
+    return super.renderAvatar(Avatar);
   }
 
-  get submitButton() {
-    return this.renderSubmitButton(PrimaryButton);
+  renderSubmitButton() {
+    return super.renderSubmitButton(PrimaryButton);
   }
 
-  get textArea() {
-    return this.renderTextArea(TextArea);
+  renderTextArea() {
+    return super.renderTextArea(TextArea);
   }
 }
 

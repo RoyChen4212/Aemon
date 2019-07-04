@@ -44,10 +44,6 @@ class BaseButton extends React.PureComponent {
     });
   }
 
-  get hint() {
-    throw new Error('Not implemented, Implement this method in a sub-class');
-  }
-
   activate = () => {
     this.setState({ active: true });
   };
@@ -98,7 +94,7 @@ class BaseButton extends React.PureComponent {
         >
           <span>{children}</span>
         </button>
-        {this.hint}
+        {this.renderHint()}
       </div>
     );
   }

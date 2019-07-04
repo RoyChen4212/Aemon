@@ -48,17 +48,9 @@ class BaseFormField extends React.Component {
     return this.adaptedProps.value;
   }
 
-  get label() {
-    throw new Error('Not implemented, Implement this method in a sub-class.');
-  }
-
   get placeholder() {
     const { required, label } = this.adaptedProps;
     return !required ? label : `${label}*`;
-  }
-
-  get hintOrError() {
-    throw new Error('Not implemented, Implement this method in a sub-class.');
   }
 
   onFocus = ev => {

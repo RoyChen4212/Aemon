@@ -10,12 +10,12 @@ class FormField extends BaseFormField {
     return labelTypes.base;
   }
 
-  get label() {
-    return this.renderLabel(Label);
+  renderLabel() {
+    return super.renderLabel(Label);
   }
 
-  get hintOrError() {
-    return this.renderHintOrError(Hint);
+  renderHintOrError() {
+    return super.renderHintOrError(Hint);
   }
 }
 

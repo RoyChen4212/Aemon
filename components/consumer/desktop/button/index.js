@@ -6,8 +6,8 @@ import './style.scss';
 class PrimaryButton extends BaseButton {
   baseClassName = `${CLASS_NAME} pbg-consumer-desktop pbg-button-primary`;
 
-  get hint() {
-    return this.renderHint(Hint);
+  renderHint() {
+    return super.renderHint(Hint);
   }
 }
 

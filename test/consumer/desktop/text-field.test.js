@@ -32,6 +32,14 @@ export const shouldBehaveLikeTextField = wrapper => {
       });
     });
   });
+
+  it('should not render label and hint if simple prop', done => {
+    wrapper.setProps({ simple: true, label: 'some label', hint: 'a hint' }, () => {
+      expect(wrapper.find(Label)).to.have.lengthOf(0);
+      expect(wrapper.find(Hint)).to.have.lengthOf(0);
+      done();
+    });
+  });
 };
 
 describe('TextField', () => {
@@ -155,6 +163,11 @@ describe('TextField', () => {
       const expected = 'A label';
       const wrapper = shallow(<TextField error="and error" label={expected} focused />);
       expect(wrapper.hasClass('pbg-form-field-error')).to.be.false;
+    });
+
+    it('should add a pbg-text-field-icon element when icon prop is passed', () => {
+      const wrapper = shallow(<TextField icon="/urlhere.dude" />);
+      expect(wrapper.find('.pbg-text-field-icon')).to.have.lengthOf(1);
     });
   });
 

@@ -33,7 +33,7 @@ class GuestPasswordField extends ComposedFormField {
     this.updateValue({ password: ev.target.value });
   };
 
-  renderHintWithCheckbox = () => {
+  renderHintWithCheckbox() {
     if (this.error) return null;
     if (!this.hint) return null;
 
@@ -44,7 +44,7 @@ class GuestPasswordField extends ComposedFormField {
     );
   };
 
-  render = () => {
+  render() {
     return (
       <div className={this.className}>
         <PasswordField

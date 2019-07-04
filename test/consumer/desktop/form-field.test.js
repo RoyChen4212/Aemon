@@ -40,7 +40,7 @@ describe('Desktop: FormField', () => {
   it('should render a Label if specified in props', () => {
     const wrapper = shallow(<FormField label="this is a label" />);
     const instance = wrapper.instance();
-    const labelWrapper = shallow(instance.label);
+    const labelWrapper = shallow(instance.renderLabel());
 
     expect(labelWrapper.html()).to.contain('<label');
   });

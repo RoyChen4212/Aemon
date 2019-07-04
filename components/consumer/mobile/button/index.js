@@ -4,8 +4,8 @@ import Hint from '../hint';
 import './style.scss';
 
 class BaseMobileButton extends BaseButton {
-  get hint() {
-    return this.renderHint(Hint);
+  renderHint() {
+    return super.renderHint(Hint);
   }
 }
 
