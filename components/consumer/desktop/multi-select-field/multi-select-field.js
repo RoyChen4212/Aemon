@@ -15,10 +15,6 @@ class MultiSelectField extends FormField {
     return get(this, 'adaptedProps.value', []);
   }
 
-  get label() {
-    return this.adaptedProps.label;
-  }
-
   valueForOption(opt) {
     return includes(this.value, opt.value);
   }
