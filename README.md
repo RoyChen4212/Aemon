@@ -276,7 +276,7 @@ Some style guidelines not covered by our quality code tools that you should take
 
 ### Styles
 
-The general CSS styles are defined in the [styleguide](components/shared/scss/_styleguide.scss) file. This file contains:
+The general CSS styles are defined in the [styleguide](components/consumer/shared/scss/_styleguide.scss) file. This file contains:
 
 * Color palette variables (i.e. `$grey-10`, `$red-60`)
 * Font family variables (i.e. `$roboto`)
