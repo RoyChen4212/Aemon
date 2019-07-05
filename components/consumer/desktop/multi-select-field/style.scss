@@ -1,0 +1,27 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-multi-select-field {
+    .pbg-multi-select-field-label-wrapper {
+      line-height: 21px;
+    }
+
+    .pbg-multi-select-field-hint-wrapper {
+      margin-top: 4px;
+      margin-bottom: 6.5px;
+      line-height: 16px;
+    }
+
+    .pbg-checkbox {
+      & > input {
+        margin-top: 4px;
+      }
+      .pbg-checkbox-label-hint-placeholder {
+        .pbg-label {
+          margin-top: 1.5px;
+          margin-bottom: 1.5px;
+        }
+      }
+    }
+  }
+}

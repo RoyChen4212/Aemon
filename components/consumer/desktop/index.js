@@ -27,6 +27,7 @@ import EmailPreview from './email-preview';
 import GuestPasswordField from './guest-password-field';
 import ModalAlert from './modal-alert';
 import MoneyField from './money-field';
+import MultiSelectField from './multi-select-field';
 import PasswordField from './password-field';
 import Picker, { PICKER_EMPTY_VALUE } from './picker';
 import Popover from './popover';
@@ -57,6 +58,7 @@ const desktop = {
   GuestPasswordField,
   ModalAlert,
   MoneyField,
+  MultiSelectField,
   PasswordField,
   Picker,
   Popover,
