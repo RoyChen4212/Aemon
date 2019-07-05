@@ -7,16 +7,16 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Form Fields/text-input', module)
+storiesOf('Consumer/Desktop/Form Fields/text-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('text-input/simple/default', () => (
+  .add('text-field/simple/default', () => (
     <FieldStateProvider component={TextField} simple name="field2" />
   ))
-  .add('text-input/simple/placeholder', () => (
+  .add('text-field/simple/placeholder', () => (
     <FieldStateProvider component={TextField} simple name="field2" label="Placeholder" />
   ))
-  .add('text-input/simple/error', () => (
+  .add('text-field/simple/error', () => (
     <FieldStateProvider
       component={TextField}
       simple
@@ -26,10 +26,10 @@ storiesOf('Consumer/Desktop/Form Fields/text-input', module)
       error="this is an error"
     />
   ))
-  .add('text-input/simple/disabled', () => (
+  .add('text-field/simple/disabled', () => (
     <TextField simple disabled name="field3" label="A text field" value="Placeholder" hint="this is a hint" />
   ))
-  .add('text-input/simple/facebook', () => (
+  .add('text-field/simple/facebook', () => (
     <FieldStateProvider
       component={TextField}
       simple
@@ -40,13 +40,13 @@ storiesOf('Consumer/Desktop/Form Fields/text-input', module)
     />
   ));
 
-storiesOf('Consumer/Desktop/Form Fields/text-input', module)
+storiesOf('Consumer/Desktop/Form Fields/text-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('text-input/default', () => (
+  .add('text-field/default', () => (
     <FieldStateProvider component={TextField} name="field1" label="A text field" plaholder="Placeholder" hint="hint" />
   ))
-  .add('text-input/error', () => (
+  .add('text-field/error', () => (
     <FieldStateProvider
       component={TextField}
       name="field3"
@@ -57,7 +57,7 @@ storiesOf('Consumer/Desktop/Form Fields/text-input', module)
       hint="this is a hint"
     />
   ))
-  .add('text-input/required', () => (
+  .add('text-field/required', () => (
     <FieldStateProvider
       required
       component={TextField}
