@@ -7,7 +7,7 @@ import MoneyField from '../../../components/consumer/desktop/money-field';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/Form Fields/price-input', module)
+storiesOf('Consumer/Desktop/Form Fields/money-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('price-input/default', () => <FieldStateProvider component={MoneyField} />)
