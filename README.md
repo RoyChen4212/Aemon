@@ -261,7 +261,7 @@ For the last bullet, let the lead engineering team to decide wheather or not to 
 Our CI and code quality tools will catch most issues that may exist with your code when you create or update a pull request. However, you can run the lint locally before you push your changes:
 
 ```
-npm lint components/desktop/my-component
+$ npm run lint components/consumer/desktop/my-component
 ```
 
 The above line is also useful if our code quality tools raise issues and you dont have access to those. We also recommend you configure your editor integration with [ESLint](https://eslint.org/docs/user-guide/integrations) and [Prettier](https://prettier.io/docs/en/editors.html).
