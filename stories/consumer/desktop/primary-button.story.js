@@ -10,18 +10,18 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Desktop/Atomic Components/Buttons', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('cta-primary/normal', () => (
+  .add('primary-button/normal', () => (
     <React.Fragment>
       <PrimaryButton onClick={action('clicked')}>Primary Button</PrimaryButton>
       <p>Mouse over for hover, click for pressed</p>
     </React.Fragment>
   ))
-  .add('cta-primary/submitting', () => (
+  .add('primary-button/submitting', () => (
     <PrimaryButton submitting onClick={action('clicked')}>
       Primary Button
     </PrimaryButton>
   ))
-  .add('cta-primary/disabled', () => (
+  .add('primary-button/disabled', () => (
     <PrimaryButton disabled onClick={action('clicked')}>
       Primary Button
     </PrimaryButton>

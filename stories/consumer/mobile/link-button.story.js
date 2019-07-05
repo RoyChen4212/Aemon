@@ -10,12 +10,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Mobile/Atomic Components/btn-link', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('btn-link/enabled', () => (
+  .add('link-button/enabled', () => (
     <LinkButton hint="With Hint" onClick={action('clicked')}>
       Link Button
     </LinkButton>
   ))
-  .add('btn-link/disabled', () => (
+  .add('link-button/disabled', () => (
     <LinkButton disabled onClick={action('clicked')}>
       Link Button Disabled
     </LinkButton>
