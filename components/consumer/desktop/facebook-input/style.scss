@@ -1,8 +1,10 @@
 .pbg-consumer-desktop {
   &.pbg-facebook-input {
     display: block;
+    padding-top: 25px;
     .pbg-desktop-small-text {
       max-width: 220px;
+      margin: 0;
     }
   }
 }
