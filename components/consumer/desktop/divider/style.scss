@@ -5,5 +5,16 @@
     height: 1px;
     border-bottom: 1px solid $almost-white;
     width: 100%;
+    position: relative;
+    div {
+      position: relative;
+      top: -12px;
+      span {
+        background-color: #fff;
+        &:last-child {
+          margin-left: 3px;
+        }
+      }
+    }
   }
 }
