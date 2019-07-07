@@ -9,5 +9,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Desktop/Atomic Components/divider', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .add('divider', () => <Divider />)
   .add('divider/label-only', () => <Divider label='Label' />)
   .add('divider/label-with-helper', () => <Divider label='Label' hint='Helper text' />)
