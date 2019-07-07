@@ -41,13 +41,8 @@ class MultiSelectField extends FormField {
   render() {
     return (
       <div className={this.className}>
-        {/* LABEL */}
         <div className="pbg-multi-select-field-label-wrapper">{this.renderLabel()}</div>
-
-        {/* HINT */}
         <div className="pbg-multi-select-field-hint-wrapper">{this.renderHintOrError()}</div>
-
-        {/* CHECKBOX LIST */}
         {this.renderCheckboxList()}
       </div>
     );
