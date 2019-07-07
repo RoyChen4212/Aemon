@@ -8,6 +8,7 @@ import makeEvent from '../../../lib/make-event';
 
 import './style.scss';
 
+/** @extends React.Component */
 class MultiSelectField extends FormField {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-multi-select-field';
 
