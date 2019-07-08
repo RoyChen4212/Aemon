@@ -10,6 +10,9 @@ class PasswordField extends TextField {
   baseType = 'password';
 
   get labelType() {
+    if (this.adaptedProps.error) {
+      return labelTypes.ERROR;
+    }
     return labelTypes.base;
   }
 
