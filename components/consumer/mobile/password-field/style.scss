@@ -6,10 +6,19 @@
       position: relative;
 
       .pbg-hint-clickable {
-        position: absolute;
         visibility: visible;
-        right: 0;
+        margin-left: 4px;
       }
+    }
+    input {
+      background: $white;
+      border: 1px solid $grey-50;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding: 10px 8px;
+      font-size: 14px;
+      line-height: 18px;
+      width: 100%;
     }
   }
 }

@@ -15,9 +15,21 @@ storiesOf('Consumer/Mobile/Form Fields/password-field', module)
     <FieldStateProvider
       component={PasswordField}
       name="pwd2"
-      label="Your password"
-      hint="is secret"
+      label="Your password "
+      hint="Please login with your password."
       forgotPasswordText="Forgot?"
+      placeholder="8 characters minimum"
+      onForgotPassword={action('click')}
+      required
+    />
+  ))
+  .add('password-field/create', () => (
+    <FieldStateProvider
+      component={PasswordField}
+      name="pwd4"
+      label="Create Password "
+      forgotPasswordText=""
+      placeholder="8 characters minimum"
       onForgotPassword={action('click')}
       required
     />
@@ -26,8 +38,9 @@ storiesOf('Consumer/Mobile/Form Fields/password-field', module)
     <FieldStateProvider
       component={PasswordField}
       name="pwd3"
-      label="Your password"
+      label="Your password "
       error="this field has error"
+      placeholder="8 characters minimum"
       forgotPasswordText="Forgot?"
       onForgotPassword={action('click')}
     />
