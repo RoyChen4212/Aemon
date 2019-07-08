@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import DivInput from '../../../components/consumer/desktop/div-input/div-input';
+import DivInput from '../../../components/consumer/desktop/div-input';
 
 describe('facebook-input', () => {
   it('should have correct class names', () => {

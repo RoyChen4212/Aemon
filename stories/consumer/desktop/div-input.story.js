@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withContainer, wrapStory } from '../../util/decorators';
-import DivInput from '../../../components/consumer/desktop/div-input/div-input';
+import DivInput from '../../../components/consumer/desktop/div-input';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
