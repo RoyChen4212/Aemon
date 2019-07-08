@@ -8,11 +8,11 @@
     position: relative;
     div {
       position: relative;
-      top: -12px;
+      top: -13px;
       span {
         background-color: #fff;
-        &:last-child {
-          margin-left: 3px;
+        &.pbg-divider-hint {
+          margin-left: 4px;
         }
       }
     }
