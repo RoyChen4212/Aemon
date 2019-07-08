@@ -78,11 +78,27 @@
 
     &.pbg-button-facebook-small {
       background: $facebook-color;
-      border-radius: 100px;
+      border-radius: 4px;
       color: $white;
       font-size: $small-font;
       line-height: $small-line-height;
       height: 26px;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+
+      &:before {
+        content: '';
+        background: $facebook-logo;
+        width: 18px;
+        height: 18px;
+        background-size: contain;
+      }
+
+      span {
+        padding: 0 0 0 8px;
+      }
     }
 
     &.disabled {
