@@ -23,8 +23,8 @@ class Divider extends React.PureComponent {
     return (
       <div className={className ? `${baseClassName} ${className}` : baseClassName}>
         <div>
-          <span className='pbg-desktop-secondary-text pbg-desktop-strong-text pbg-desktop-upcase-text'>{label}</span>
-          {hint && <span className='pbg-desktop-secondary-text pbg-desktop-italic-text'>{hint}</span>}
+          {label && <span className='pbg-desktop-secondary-text pbg-desktop-small-strong pbg-desktop-upcase-text'>{label}</span>}
+          {hint && <span className='pbg-desktop-secondary-text pbg-desktop-small-text pbg-desktop-italic-text pbg-divider-hint'>{hint}</span>}
         </div>
       </div>
     )
