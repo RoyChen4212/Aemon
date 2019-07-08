@@ -1,4 +1,4 @@
-@import "../../shared/scss/styleguide";
+@import '../../shared/scss/styleguide';
 
 .pbg-consumer-mobile {
   &.pbg-button {
@@ -55,12 +55,24 @@
 
     &.pbg-button-facebook {
       background: $facebook-color;
-      border-radius: 31px;
+      border-radius: 4px;
       color: $white;
       height: 47px;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
 
       &:before {
-        content: $facebook-icon;
+        content: '';
+        background: $facebook-logo;
+        width: 18px;
+        height: 18px;
+        background-size: contain;
+      }
+
+      span {
+        padding: 0 0 0 16px;
       }
     }
 
