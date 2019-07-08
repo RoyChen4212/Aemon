@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import includes from 'lodash/includes';
 
@@ -11,6 +12,20 @@ import './style.scss';
 /** @extends React.Component */
 class MultiSelectField extends FormField {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-multi-select-field';
+
+  static propTypes = {
+    label: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
+    hint: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
+    value: PropTypes.array.isRequired, // eslint-disable-line react/no-unused-prop-types
+    options: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
+    onChange: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
+  };
+
+  static defaultProps = {
+    label: null,
+    hint: null,
+    onChange: () => {},
+  };
 
   get value() {
     return get(this, 'adaptedProps.value', []);
