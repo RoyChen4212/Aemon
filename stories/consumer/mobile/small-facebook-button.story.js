@@ -10,10 +10,10 @@ storiesOf('Consumer/Mobile/Atomic Components/small-facebook-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('small-facebook-button/default', () => (
-    <SmallFacebookButton onClick={action('clicked')}>Small Facebook Button</SmallFacebookButton>
+    <SmallFacebookButton onClick={action('clicked')}>Connect</SmallFacebookButton>
   ))
   .add('small-facebook-button/disabled', () => (
     <SmallFacebookButton disabled onClick={action('clicked')}>
-      Small Facebook Button Disabled
+      Connect
     </SmallFacebookButton>
   ));
