@@ -233,3 +233,86 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   @extend .pbg-desktop-secondary-text;
   background: $grey-10;
 }
+
+// Mobile Text Styles
+
+.pbg-mobile-heading-1 {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: $grey-80;
+}
+
+.pbg-mobile-heading-2 {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 28px;
+  color: $grey-80;
+}
+
+.pbg-mobile-paragraph {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: $grey-80;
+}
+
+.pbg-mobile-label-strong {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: $grey-80;
+}
+
+.pbg-mobile-label-link {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: $blue-60;
+}
+
+.pbg-mobile-label-secondary {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: $grey-60;
+}
+
+.pbg-mobile-small-text {
+  font-family: $roboto;
+  color: $grey-80;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.pbg-mobile-small-secondary {
+  font-family: $roboto;
+  color: $grey-60;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.pbg-mobile-hint-normal {
+  font-family: $roboto;
+  color: $grey_60;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
