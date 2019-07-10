@@ -229,7 +229,7 @@ When you are working on a component, keep in mind:
 * Define component's props with [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes) and [defaultProps](https://reactjs.org/docs/typechecking-with-proptypes.html#default-prop-values) values
 * Annotate components that don't directly extend `React.Component` or `React.PureComponent` with `@extends React.Component` [comment](https://github.com/yannickcr/eslint-plugin-react/issues/717#issuecomment-257731857)
 * Always prefix a component's CSS styles with `pbg-component-name` to avoid collisions
-* Let components to fit their containers width
+* Let components fit their container's width
 * Avoid using 3rd party libraries for styling (such as bootstrap)
 
 The following template can help you start a new component:
