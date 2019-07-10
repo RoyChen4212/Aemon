@@ -12,9 +12,9 @@ class PasswordField extends TextField {
 
   renderLabel() {
     if (this.adaptedProps.error) {
-      return (<div className="pbg-password-field-label pbg-mobile-paragraph-error">{this.adaptedProps.label}</div>)
+      return <div className="pbg-password-field-label pbg-mobile-paragraph-error">{this.adaptedProps.label}</div>;
     }
-    return (<div className="pbg-password-field-label pbg-mobile-paragraph">{this.adaptedProps.label}</div>)
+    return <div className="pbg-password-field-label pbg-mobile-paragraph">{this.adaptedProps.label}</div>;
   }
 
   renderHintOrError() {
