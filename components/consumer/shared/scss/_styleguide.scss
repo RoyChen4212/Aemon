@@ -263,6 +263,11 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $grey-80;
 }
 
+.pbg-mobile-paragraph-error {
+  @extend .pbg-mobile-paragraph;
+  color: $red-60;
+}
+
 .pbg-mobile-label-strong {
   font-family: $roboto;
   font-style: normal;
@@ -315,4 +320,15 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
+}
+
+.pbg-mobile-hint-error {
+  @extend .pbg-mobile-hint-normal;
+  color: $red-60;
+}
+
+.pbg-mobile-hint-clickable {
+  @extend .pbg-mobile-hint-normal;
+  color: $blue-60;
+  cursor: pointer;
 }

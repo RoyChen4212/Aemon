@@ -1,23 +1,20 @@
 import React from 'react';
 import TextField from '../text-field';
-import Hint, { hintTypes } from '../hint';
 import './style.scss';
-import { labelTypes } from '../../desktop/label';
 
 class PasswordField extends TextField {
   baseClassName = 'pbg-form-field pbg-text-field pbg-password-field';
-
   baseType = 'password';
-
-  get labelType() {
-    if (this.adaptedProps.error) {
-      return labelTypes.ERROR;
-    }
-    return labelTypes.base;
-  }
 
   get placeholder() {
     return this.adaptedProps.placeholder;
+  }
+
+  renderLabel() {
+    if (this.adaptedProps.error) {
+      return (<div className="pbg-password-field-label pbg-mobile-paragraph-error">{this.adaptedProps.label}</div>)
+    }
+    return (<div className="pbg-password-field-label pbg-mobile-paragraph">{this.adaptedProps.label}</div>)
   }
 
   renderHintOrError() {
@@ -29,7 +26,7 @@ class PasswordField extends TextField {
   renderHintFeedback() {
     return (
       <div className="pbg-forgot-password-container">
-        <Hint>{this.hint}</Hint>
+        <span className="pbg-mobile-hint-normal">{this.hint}</span>
         {this.renderForgotPassword()}
       </div>
     );
@@ -38,7 +35,7 @@ class PasswordField extends TextField {
   renderErrorFeedback() {
     return (
       <div className="pbg-forgot-password-container">
-        <Hint type={hintTypes.ERROR}>{this.error}</Hint>
+        <span className="pbg-mobile-hint-error">{this.error}</span>
         {this.renderForgotPassword()}
       </div>
     );
@@ -49,9 +46,9 @@ class PasswordField extends TextField {
       return null;
     }
     return (
-      <Hint type={hintTypes.CLICKABLE} onClick={this.adaptedProps.onForgotPassword}>
+      <span className="pbg-mobile-hint-clickable" onClick={this.adaptedProps.onForgotPassword}>
         {this.adaptedProps.forgotPasswordText || '[FORGOT PASSWROD]'}
-      </Hint>
+      </span>
     );
   }
 }
