@@ -8,10 +8,10 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Form Fields/password-field/login', module)
+storiesOf('Consumer/Mobile/Form Fields/password-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('password-field/default', () => (
+  .add('password-field/login', () => (
     <FieldStateProvider
       component={PasswordField}
       name="pwd2"
