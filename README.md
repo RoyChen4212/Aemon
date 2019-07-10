@@ -225,8 +225,12 @@ describe('my-component', () => {
 When you are working on a component, keep in mind:
 
 * All components here are [dumb](https://medium.com/@pramonowang/advanced-react-component-patterns-dumb-component-and-smart-component-4cb50fa63aa9); they receive all required text, data and functions via props
-* Always prefix a component's CSS styles with `pbg-component-name` to avoid collisions
 * Component's name should follow Figma specs
+* Define component's props with [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes) and [defaultProps](https://reactjs.org/docs/typechecking-with-proptypes.html#default-prop-values) values
+* Annotate components that don't directly extend `React.Component` or `React.PureComponent` with `@extends React.Component` [comment](https://github.com/yannickcr/eslint-plugin-react/issues/717#issuecomment-257731857)
+* Always prefix a component's CSS styles with `pbg-component-name` to avoid collisions
+* Let components fit their container's width
+* Avoid using 3rd party libraries for styling (such as bootstrap)
 
 The following template can help you start a new component:
 
