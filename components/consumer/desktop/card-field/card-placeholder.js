@@ -6,17 +6,17 @@ import './style.scss';
 const CardPlaceholder = ({ cardType }) => {
   switch (cardType) {
     case 'visa':
-      return <div className="pgb-placeholder-icon pbg-visa-card" />;
+      return <div className="pbg-placeholder-icon pbg-visa-card" />;
     case 'master':
-      return <div className="pgb-placeholder-icon pbg-master-card" />;
+      return <div className="pbg-placeholder-icon pbg-master-card" />;
     case 'american_express':
-      return <div className="pgb-placeholder-icon pbg-amex-card" />;
+      return <div className="pbg-placeholder-icon pbg-amex-card" />;
     case 'discover':
-      return <div className="pgb-placeholder-icon pbg-discover-card" />;
+      return <div className="pbg-placeholder-icon pbg-discover-card" />;
     case 'diners_club':
-      return <div className="pgb-placeholder-icon pbg-dinners-club-card" />;
+      return <div className="pbg-placeholder-icon pbg-dinners-club-card" />;
     default:
-      return <div className="pgb-placeholder-icon pbg-default-placeholder-icon" />;
+      return <div className="pbg-placeholder-icon pbg-default-placeholder-icon" />;
   }
 };
 
