@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
@@ -9,30 +8,29 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+const opened = true;
 storiesOf('Consumer/Mobile/Overlay', module)
 .addDecorator(wrapStory)
 .addDecorator(withContainer)
 .add('overlay view', () =>
   <Overlay
     title="Title"
-    opened={true}
+    opened={opened}
     onBackButtonClick={action('onBackButtonClick')}
   />
 )
-.add('overlay animation', () =>
-  <AnimationOverlay
-    onOpened={action('onOpened')}
-    onClosed={action('onClosed')}
+.add('overlay view 1', () =>
+  <Overlay
+    title="Title"
+    opened={opened}
   />
+)
+.add('overlay animation', () =>
+  <AnimationOverlay />
 );
 
 
 class AnimationOverlay extends React.Component {
-  static propTypes = {
-    onClosed: PropTypes.func.isRequired,
-    onOpened: PropTypes.func.isRequired
-  };
-
   state = {
     overlayOpened: false,
   };
@@ -47,7 +45,6 @@ class AnimationOverlay extends React.Component {
 
   render() {
     const { overlayOpened } = this.state;
-    const { onOpened, onClosed } = this.props;
     return (
       <React.Fragment>
         <button onClick={this.onClick}>Show overlay</button>
@@ -55,8 +52,6 @@ class AnimationOverlay extends React.Component {
           title='Title'
           opened={overlayOpened}
           onBackButtonClick={this.onBackButtonClick}
-          onOpened={onOpened}
-          onClosed={onClosed}
         />
       </React.Fragment>
     );
