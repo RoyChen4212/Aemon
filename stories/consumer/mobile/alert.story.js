@@ -31,7 +31,7 @@ storiesOf('Consumer/Mobile/Alerts/alert', module)
   ))
   .add('alert/error', () => (
     <Alert
-      success
+      error
       title="Error alert label"
       text="Secondary alert text to further expand on the alert label above."
       onCallToAction={action('onCallToAction')}
