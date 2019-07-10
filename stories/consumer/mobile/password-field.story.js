@@ -8,7 +8,7 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Form Fields/password-field', module)
+storiesOf('Consumer/Mobile/Form Fields/password-field/login', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('password-field/default', () => (
@@ -28,7 +28,6 @@ storiesOf('Consumer/Mobile/Form Fields/password-field', module)
       component={PasswordField}
       name="pwd4"
       label="Create Password "
-      forgotPasswordText=""
       placeholder="8 characters minimum"
       onForgotPassword={action('click')}
       required
