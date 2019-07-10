@@ -10,7 +10,7 @@ storiesOf('Consumer/Mobile/Atomic Components/facebook-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('facebook-button/default', () => (
-    <FacebookButton hint="With Hint" onClick={action('clicked')}>
+    <FacebookButton onClick={action('clicked')}>
       Continue with Facebook
     </FacebookButton>
   ))
