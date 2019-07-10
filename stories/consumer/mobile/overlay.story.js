@@ -9,23 +9,17 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const opened = true;
-storiesOf('Consumer/Mobile/Overlay', module)
+storiesOf('Consumer/Mobile/Info/overlay', module)
 .addDecorator(wrapStory)
 .addDecorator(withContainer)
-.add('overlay view', () =>
+.add('overlay/default', () =>
   <Overlay
     title="Title"
-    opened={opened}
+    opened
     onBackButtonClick={action('onBackButtonClick')}
   />
 )
-.add('overlay view 1', () =>
-  <Overlay
-    title="Title"
-    opened={opened}
-  />
-)
-.add('overlay animation', () =>
+.add('overlay/animation', () =>
   <AnimationOverlay />
 );
 
