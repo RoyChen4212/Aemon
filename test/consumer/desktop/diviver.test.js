@@ -33,4 +33,10 @@ describe('Divider', () => {
     const wrapper = mount(<Divider hint={hint} />);
     expect(wrapper.props().hint).to.equal(hint);
   })
+
+  it('Label should\'\n be rendered if property is not provided', () => {
+    const hint = 'Helper text';
+    const wrapper = mount(<Divider hint={hint} />);
+    expect(wrapper.find('.pbg-divider-hint')).to.have.lengthOf(0);
+  });
 });
