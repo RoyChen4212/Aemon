@@ -18,22 +18,19 @@ describe('PasswordField', () => {
 
   it('should have forgot password label', () => {
     const wrapper = shallow(<PasswordField forgotPasswordText="Forget?" />);
-    expect(wrapper.find('.pbg-forgot-password-container').find(Hint)).to.have.lengthOf(1);
+    expect(wrapper.find('.pbg-forgot-password-container').find('.pbg-mobile-hint-clickable')).to.have.lengthOf(1);
   });
 
   it('should show a hint when given', () => {
     const expected = 'a hint';
     const wrapper = shallow(<PasswordField hint={expected} />);
-    expect(wrapper.contains(<Hint>{expected}</Hint>)).to.be.true;
+    expect(wrapper.find('.pbg-mobile-hint-normal').text()).to.equal(expected);
   });
 
   it('should call onForgotPassword when forgot password is clicked', () => {
     const onForgotPassword = sinon.spy();
     const wrapper = shallow(<PasswordField onForgotPassword={onForgotPassword} forgotPasswordText="Forget?" />);
-    wrapper
-      .find('.pbg-forgot-password-container')
-      .find(Hint)
-      .simulate('click');
+    wrapper.find('.pbg-mobile-hint-clickable').simulate('click');
     expect(onForgotPassword.calledOnce).to.be.true;
   });
 
@@ -49,7 +46,7 @@ describe('PasswordField', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
       const wrapper = shallow(<PasswordField error={expected} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
+      expect(wrapper.find('.pbg-mobile-hint-error').text()).to.equal(expected);
     });
 
     it('should have correct class when error is given', () => {
@@ -61,14 +58,13 @@ describe('PasswordField', () => {
       const expected = 'a horrible error';
       const hint = 'nope';
       const wrapper = shallow(<PasswordField error={expected} hint={hint} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
-      expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
+      expect(wrapper.find('.pbg-mobile-hint-error').text()).to.equal(expected);
     });
 
     it('should show an error label when error is given', () => {
       const expected = 'A label';
       const wrapper = shallow(<PasswordField error="and error" label={expected} />);
-      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
+      expect(wrapper.find('.pbg-mobile-paragraph-error').text()).to.equal(expected);
     });
 
     it('should have type password on input element', () => {
