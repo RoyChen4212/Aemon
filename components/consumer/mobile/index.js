@@ -3,6 +3,7 @@ import { PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton
 import { UserCommentCard, GroupActivityCard } from './activity-card';
 import AddComment from './add-comment';
 import AddressField from './address-field';
+import Alert from './alert';
 import Checkbox from './checkbox';
 import ContributorCard from './contributor-card';
 import DatePicker from './date-picker';
@@ -26,6 +27,7 @@ import TimePicker from './time-picker';
 const mobile = {
   AddComment,
   AddressField,
+  Alert,
   Checkbox,
   ContributorCard,
   DatePicker,
