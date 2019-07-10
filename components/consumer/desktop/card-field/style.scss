@@ -1,6 +1,5 @@
 .pbg-consumer-desktop {
   &.pbg-card-field {
-    width: 234px;
     .pbg-label {
       & > span {
         width: 100%;
@@ -18,17 +17,14 @@
       .pgb-placeholder-icon {
         width: 24px;
         height: 18px;
-        background: url('../img/card-placeholder.svg');
         border-radius: 2px;
         position: absolute;
         top: 10px;
         left: 8px;
+        background-size: cover;
       }
     }
   }
-}
-
-.pbg-consumer-desktop {
   &.pbg-cards-wrapper {
     display: inline-flex;
     height: 21px;
@@ -38,21 +34,25 @@
       height: 14px;
       margin-left: 6px;
       border-radius: 2px;
-      &.pbg-visa-card {
-        background: url('../img/visa-card.svg');
-      }
-      &.pbg-master-card {
-        background: url('../img/master-card.svg');
-      }
-      &.pbg-amex-card {
-        background: url('../img/amex-card.svg');
-      }
-      &.pbg-discover-card {
-        background: url('../img/discover-card.svg');
-      }
-      &.pbg-dinners-club-card {
-        background: url('../img/dinners-club-card.svg');
-      }
+      background-size: cover;
     }
+  }
+  .pbg-visa-card {
+    background: url('../img/visa-card.svg');
+  }
+  .pbg-master-card {
+    background: url('../img/master-card.svg');
+  }
+  .pbg-amex-card {
+    background: url('../img/amex-card.svg');
+  }
+  .pbg-discover-card {
+    background: url('../img/discover-card.svg');
+  }
+  .pbg-dinners-club-card {
+    background: url('../img/dinners-club-card.svg');
+  }
+  .pbg-default-placeholder-icon {
+    background: url('../img/card-placeholder.svg');
   }
 }
