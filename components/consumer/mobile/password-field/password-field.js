@@ -2,11 +2,23 @@ import React from 'react';
 import TextField from '../text-field';
 import Hint, { hintTypes } from '../hint';
 import './style.scss';
+import { labelTypes } from '../../desktop/label';
 
 class PasswordField extends TextField {
   baseClassName = 'pbg-form-field pbg-text-field pbg-password-field';
 
   baseType = 'password';
+
+  get labelType() {
+    if (this.adaptedProps.error) {
+      return labelTypes.ERROR;
+    }
+    return labelTypes.base;
+  }
+
+  get placeholder() {
+    return this.adaptedProps.placeholder;
+  }
 
   renderHintOrError() {
     if (this.error) return this.renderErrorFeedback();
@@ -33,6 +45,9 @@ class PasswordField extends TextField {
   }
 
   renderForgotPassword() {
+    if (!this.adaptedProps.forgotPasswordText) {
+      return null;
+    }
     return (
       <Hint type={hintTypes.CLICKABLE} onClick={this.adaptedProps.onForgotPassword}>
         {this.adaptedProps.forgotPasswordText || '[FORGOT PASSWROD]'}
