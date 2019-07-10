@@ -1,0 +1,39 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-overlay-container {
+  position: fixed;
+  top: -100vh;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  transition: top .3s ease-in-out, right .3s ease-in-out;
+  background: $white;
+
+  &.open {
+    top: 0;
+    right: 0;
+  }
+
+  .pbg-overlay {
+    padding: 16px 15px 69px 15px;
+    position: relative;
+    min-height: 100vh;
+    user-select: none;
+
+    &--header {
+      margin-bottom: 6px;
+    }
+
+    &--footer {
+      border-top: 1px solid $grey-30;
+      padding: 16px 0;
+      text-align: center;
+      position: absolute;
+      width: calc(100% - 30px);
+      left: 15px;
+      bottom: 0;
+    }
+  }
+}
+
+
