@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import Alert from '../../../components/consumer/mobile/alert';
+import Alert, { alertTypes } from '../../../components/consumer/mobile/alert';
 
 describe('Alert', () => {
   it('should render div', () => {
@@ -22,21 +22,21 @@ describe('Alert', () => {
   });
 
   it('should add pbg-alert-error className', () => {
-    const wrapper = shallow(<Alert error />);
+    const wrapper = shallow(<Alert type={alertTypes.ERROR} />);
     expect(wrapper.hasClass('pbg-alert-error')).to.be.true;
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-alert')).to.be.true;
   });
 
   it('should add pbg-alert-warning className', () => {
-    const wrapper = shallow(<Alert warning />);
+    const wrapper = shallow(<Alert type={alertTypes.WARNING} />);
     expect(wrapper.hasClass('pbg-alert-warning')).to.be.true;
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-alert')).to.be.true;
   });
 
-  it('should add pbg-alert-success className', () => {
-    const wrapper = shallow(<Alert success />);
+  it('should add pbg-alert-success className as default', () => {
+    const wrapper = shallow(<Alert />);
     expect(wrapper.hasClass('pbg-alert-success')).to.be.true;
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-alert')).to.be.true;
