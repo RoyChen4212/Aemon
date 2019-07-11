@@ -2,10 +2,14 @@
 
 .pbg-form-field {
   &.pbg-password-field {
+    .pbg-password-field-label {
+      margin-bottom: 4px;
+    }
     .pbg-forgot-password-container {
-      position: relative;
+      line-height: 15px;
+      margin-top: 4px;
 
-      .pbg-hint-clickable {
+      .pbg-mobile-hint-clickable {
         visibility: visible;
         margin-left: 4px;
       }

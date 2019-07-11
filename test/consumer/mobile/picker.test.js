@@ -6,7 +6,6 @@ import sinon from 'sinon';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import Picker, { PICKER_EMPTY_VALUE } from '../../../components/consumer/mobile/picker';
 import Label from '../../../components/consumer/mobile/label';
-import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
 describe('Picker', () => {
   shouldBehaveLikeFormField(shallow(<Picker error="some error" />));
@@ -16,7 +15,7 @@ describe('Picker', () => {
     expect(wrapper.hasClass('pbg-picker')).to.be.true;
   });
 
-  it('should render a select', () => {
+  it('should render a select element', () => {
     const wrapper = shallow(<Picker />);
     expect(wrapper.find('select')).to.have.lengthOf(1);
   });
@@ -39,7 +38,7 @@ describe('Picker', () => {
   it('should render the a hint if given', () => {
     const hintText = 'Pick your posion';
     const wrapper = shallow(<Picker hint={hintText} />);
-    expect(wrapper.find('.pbg-picker').contains(<Hint>{hintText}</Hint>)).to.be.true;
+    expect(wrapper.find('.pbg-picker').contains(<span className="pbg-hint pbg-consumer-mobile">{hintText}</span>)).to.be.true;
   });
 
   it('should have correct class when error is given', () => {
@@ -47,24 +46,34 @@ describe('Picker', () => {
     expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
   });
 
+  it('should have correct class when disabled property is given', () => {
+    const wrapper = shallow(<Picker disabled={true} />);
+    expect(wrapper.find('.pbg-picker').hasClass('pbg-form-field-disabled')).to.be.true;
+  });
+
+  it('should be disabled when disabled property is given', () => {
+    const wrapper = shallow(<Picker disabled={true} />);
+    expect(wrapper.find('select').is('[disabled]')).to.be.true;
+  });
+
   it('should render the an error if given', () => {
     const error = 'terrible error';
     const wrapper = shallow(<Picker error={error} />);
-    expect(wrapper.find('.pbg-picker').contains(<Hint type={hintTypes.ERROR}>{error}</Hint>)).to.be.true;
+    expect(wrapper.find('.pbg-picker').contains(<span className="pbg-hint pbg-consumer-mobile pbg-hint-error">{error}</span>)).to.be.true;
   });
 
   it('should render the an error if given despite a hint being passed', () => {
     const error = 'terrible error';
     const wrapper = shallow(<Picker error={error} hint="hint" />);
-    expect(wrapper.find('.pbg-picker').contains(<Hint type={hintTypes.ERROR}>{error}</Hint>)).to.be.true;
+    expect(wrapper.find('.pbg-picker').contains(<span className="pbg-hint pbg-consumer-mobile pbg-hint-error">{error}</span>)).to.be.true;
   });
 
   it('should render a custom arrow element', () => {
     const wrapper = shallow(<Picker />);
     const el = wrapper
-      .find('.pbg-picker')
-      .find('.pbg-picker-select-container')
-      .find('.pbg-picker-arrow');
+    .find('.pbg-picker')
+    .find('.pbg-picker-select-container')
+    .find('.pbg-picker-arrow');
     expect(el).to.have.lengthOf(1);
   });
 
