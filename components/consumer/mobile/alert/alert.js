@@ -4,6 +4,12 @@ import classnames from 'classnames';
 
 import './style.scss';
 
+export const alertTypes = {
+  SUCCESS: 'success',
+  WARNING: 'warning',
+  ERROR: 'error',
+};
+
 /** @extends React.Component */
 class Alert extends React.PureComponent {
   baseClass = 'pbg-consumer-mobile pbg-alert';
@@ -11,9 +17,7 @@ class Alert extends React.PureComponent {
   static propTypes = {
     title: PropTypes.string,
     text: PropTypes.string,
-    error: PropTypes.bool,
-    warning: PropTypes.bool,
-    success: PropTypes.bool,
+    type: PropTypes.oneOf([alertTypes.SUCCESS, alertTypes.WARNING, alertTypes.ERROR]),
     ctaLabel: PropTypes.string,
     onCallToAction: PropTypes.func,
     onCloseClick: PropTypes.func,
@@ -22,21 +26,19 @@ class Alert extends React.PureComponent {
   static defaultProps = {
     title: null,
     text: null,
-    error: false,
-    warning: false,
-    success: false,
+    type: alertTypes.SUCCESS,
     ctaLabel: 'Call to action',
     onCallToAction: () => {},
     onCloseClick: () => {},
   };
 
   get className() {
-    const { error, warning, success } = this.props;
+    const { type } = this.props;
 
     return classnames(this.baseClass, {
-      'pbg-alert-success': success,
-      'pbg-alert-warning': warning,
-      'pbg-alert-error': error,
+      'pbg-alert-success': type === alertTypes.SUCCESS,
+      'pbg-alert-warning': type === alertTypes.WARNING,
+      'pbg-alert-error': type === alertTypes.ERROR,
     });
   }
 
