@@ -19,7 +19,7 @@
         color: $grey-80;
         width: 100%;
 
-        &::placeholder {  
+        &::placeholder {
           @extend .pbg-desktop-label-normal;
           color: $grey-60;
         }
@@ -37,13 +37,13 @@
 
       .pbg-text-field-icon {
         position: absolute;
-        top: 9px;
-        right: 12px;
+        top: 11px;
+        right: 11px;
         width: 16px;
         height: 16px;
       }
 
-      
+
       &.pbg-form-field-error {
         input {
           border-color: $red-60;

@@ -42,9 +42,7 @@ class TextField extends FormField {
     if (!this.props.icon) return null;
 
     return (
-      <div className="pbg-text-field-icon">
-        <img src={this.props.icon} />
-      </div>
+      <img className="pbg-text-field-icon" src={this.props.icon} />
     );
   }
 
