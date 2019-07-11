@@ -16,14 +16,13 @@ class PaymentMethodSelector extends Picker {
 
   static propTypes = {
     label: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
-    value: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
+    value: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
     options: PropTypes.array.isRequired, // eslint-disable-line react/no-unused-prop-types
     onChange: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   };
 
   static defaultProps = {
     label: null,
-    value: [],
     onChange: () => {},
   };
 
@@ -36,7 +35,7 @@ class PaymentMethodSelector extends Picker {
   };
 
   renderPickerButton() {
-    const { cardType, label } = this.selectedItem;
+    const { cardType, label } = this.selectedItem || {};
 
     return (
       <button
@@ -46,7 +45,7 @@ class PaymentMethodSelector extends Picker {
         onClick={this.onButtonClick}
         onBlur={ev => this.onButtonBlur(ev, this.onBlur)}
       >
-        <PaymentMethodField cardType={cardType} label={label} />
+        {cardType && <PaymentMethodField cardType={cardType} label={label} />}
         <i className="pbg-picker-arrow" />
       </button>
     );

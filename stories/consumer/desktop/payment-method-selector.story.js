@@ -32,7 +32,6 @@ storiesOf('Consumer/Desktop/Form Fields/payment-method-selector', module)
       value="visa"
       onChange={action('onChange')}
       options={options}
-      big
     />
   ))
   .add('payment-method-selector/new', () => (
@@ -44,6 +43,5 @@ storiesOf('Consumer/Desktop/Form Fields/payment-method-selector', module)
       value={PAYMENT_METHOD_ADD_VALUE}
       onChange={action('onChange')}
       options={options}
-      big
     />
   ));
