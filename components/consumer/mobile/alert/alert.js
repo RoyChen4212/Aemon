@@ -34,12 +34,7 @@ class Alert extends React.PureComponent {
 
   get className() {
     const { type } = this.props;
-
-    return classnames(this.baseClass, {
-      'pbg-alert-success': type === alertTypes.SUCCESS,
-      'pbg-alert-warning': type === alertTypes.WARNING,
-      'pbg-alert-error': type === alertTypes.ERROR,
-    });
+    return classnames(this.baseClass, `pbg-alert-${type}`);
   }
 
   render() {

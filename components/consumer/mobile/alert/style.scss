@@ -9,16 +9,28 @@
     &.pbg-alert-error {
       background: $red-10;
       border-left: 4px solid $red-60;
+
+      .pbg-alert-divider {
+        background: #F4B8B8;
+      }
     }
 
     &.pbg-alert-warning {
       background: $yellow-10;
       border-left: 4px solid $yellow-60;
+
+      .pbg-alert-divider {
+        background: #FFDD9B;
+      }
     }
 
     &.pbg-alert-success {
       background: $green-10;
       border-left: 4px solid $green-60;
+
+      .pbg-alert-divider {
+        background: #ABDEB6;
+      }
     }
 
     .pbg-mobile-label-strong {
@@ -27,7 +39,6 @@
 
     .pbg-alert-divider {
       height: 1px;
-      background: #ABDEB6;
     }
 
     .pbg-button-link {
