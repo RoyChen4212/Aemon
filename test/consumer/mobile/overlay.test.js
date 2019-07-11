@@ -23,52 +23,69 @@ class OverlayWrapper extends React.Component {
       <div id="hide-button" onClick={this.hideOverlay}>Hide</div>
       <Overlay
         opened={overlayOpened}
+        onBackButtonClick={this.hideOverlay}
       />
     </React.Fragment>
   }
 }
 
+const defaultBackButtonText = Overlay.defaultProps.backText;
+const defaultTitle = Overlay.defaultProps.title;
+
 describe('Overlay', () => {
   it ('Should have correct class name', () => {
-    const opened = true;
-    const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={() => null} />);
+    const wrapper = shallow(<Overlay opened onBackButtonClick={() => null} />);
     expect(wrapper.hasClass('pbg-overlay')).to.be.true;
   });
 
   it('Should have \'open\' class when Overlay opened', () => {
-    const opened = true;
-    const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={() => null} />);
+    const wrapper = shallow(<Overlay opened onBackButtonClick={() => null} />);
     expect(wrapper.hasClass('open')).to.be.true;
   });
 
   it('Should\'n have \'open\' class when Overlay closed', () => {
-    const wrapper = shallow(<Overlay title="Title" opened={false} onBackButtonClick={() => null} />);
+    const wrapper = shallow(<Overlay opened={false} onBackButtonClick={() => null} />);
     expect(wrapper.hasClass('open')).to.be.false;
   });
 
+  it('Should render correct default title value', () => {
+    const wrapper = shallow(<Overlay opened onBackButtonClick={() => null} />);
+    expect(wrapper.find('.pbg-overlay').contains(<div className="pbg-mobile-heading-1">{defaultTitle}</div>)).to.be.true;
+  });
+
   it('Should render the correct title', () => {
-    const opened = true;
-    const title = 'Title';
+    const title = 'Overlay Title';
     const wrapper = shallow(<Overlay title={title} opened onBackButtonClick={() => null} />);
     expect(wrapper.find('.pbg-overlay').contains(<div className="pbg-mobile-heading-1">{title}</div>)).to.be.true;
   });
 
-  it('Should render the back button in header', () => {
-    const opened = true;
+  it('Should render the back button in header with default text', () => {
     const onBackButtonClick = () => null;
     const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={onBackButtonClick} />);
-    expect(wrapper.find('.pbg-overlay-inner--header').contains(<div className="pbg-mobile-label-link" onClick={onBackButtonClick}>&#60; Back</div>)).to.be.true;
+    expect(wrapper.find('.pbg-overlay-inner--header').text()).to.equal(defaultBackButtonText);
   });
 
-  it('Should render Back button in footer', () => {
-    const opened = true;
+  it('Should render Back button in footer with default text', () => {
     const onBackButtonClick = () => null;
     const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={onBackButtonClick} />);
-    expect(wrapper.find('.pbg-overlay-inner--footer').contains(<div className="pbg-mobile-label-link" onClick={onBackButtonClick}>&#60; Back</div>)).to.be.true;
+    expect(wrapper.find('.pbg-overlay-inner--footer').text()).to.equal(defaultBackButtonText);
+  });
+
+  it('Should render header Back button with presented text', () => {
+    const onBackButtonClick = () => null;
+    const backText = 'Previous Screen';
+    const wrapper = shallow(<Overlay opened backText={backText} onBackButtonClick={onBackButtonClick} />);
+    expect(wrapper.find('.pbg-overlay-inner--header').text()).to.equal(backText);
+  });
+
+  it('Should render footer Back button with presented text', () => {
+    const onBackButtonClick = () => null;
+    const backText = 'Previous Screen';
+    const wrapper = shallow(<Overlay opened backText={backText} onBackButtonClick={onBackButtonClick} />);
+    expect(wrapper.find('.pbg-overlay-inner--footer').text()).to.equal(backText);
   });
 
   it('\'onBackButtonClick\' event should be triggered when header back button clicked', done => {
-    const opened = true;
     const onBackButtonClick = () => {
       done();
     };
@@ -80,7 +97,6 @@ describe('Overlay', () => {
   });
 
   it('\'onBackButtonClick\' event should be triggered when footer back button clicked', done => {
-    const opened = true;
     const onBackButtonClick = () => {
       done();
     };
@@ -114,14 +130,12 @@ describe('Overlay', () => {
   });
 
   it('Should not break when \'title\' is not present', () => {
-    const opened = false;
     const wrapper = shallow(<Overlay opened onBackButtonClick={() => null} />);
 
     expect(wrapper.find('.pbg-overlay')).to.have.lengthOf(1);
   });
 
   it('Should not be rendered if \'onBackButtonClick\' is not present', () => {
-    const opened = false;
     const wrapper = shallow(<Overlay opened />);
     expect(wrapper.find('.pbg-overlay')).to.have.lengthOf(0);
   });

@@ -26,6 +26,10 @@
       min-height: 100vh;
       user-select: none;
 
+      .pbg-mobile-label-link {
+        text-transform: capitalize;
+      }
+
       &--header {
         margin-bottom: 6px;
       }
