@@ -8,6 +8,7 @@ import Checkbox from './checkbox';
 import ContributorCard from './contributor-card';
 import DatePicker from './date-picker';
 import DatetimePicker from './datetime-picker';
+import ExternalLink from './external-link';
 import Hint, { hintTypes } from './hint';
 import HistoricalPicker from './historical-picker';
 import Label, { labelTypes } from './label';
@@ -32,6 +33,7 @@ const mobile = {
   ContributorCard,
   DatePicker,
   DatetimePicker,
+  ExternalLink,
   FacebookButton,
   GroupActivityCard,
   H1,
