@@ -41,12 +41,14 @@ class Picker extends FormField {
     const { required, label, hint, error } = this.adaptedProps;
     return (
       <div className={this.className}>
-        <Label required={required}>{label}</Label>
+        <div className="pbg-picker-select-label">
+          <Label required={required}>{label}</Label>
+        </div>
         <div className="pbg-picker-select-container">
           {this.renderSelect()}
           <i className="pbg-picker-arrow" />
         </div>
-        <span className={`pbg-hint pbg-consumer-mobile${error ? ' pbg-hint-error' : ''}`}>{error || hint}</span>
+        <span className={`pbg-mobile-hint-normal pbg-consumer-mobile${error ? ' pbg-hint-error' : ''}`}>{error || hint}</span>
       </div>
     );
   }

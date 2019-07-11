@@ -3,6 +3,10 @@
 .pbg-picker {
   width: 100%;
 
+  .pbg-picker-select-label {
+    margin-bottom: 4px;
+  }
+
   .pbg-picker-select-container {
     background: $white;
     border: 1px solid $grey-50;
@@ -38,6 +42,13 @@
     }
   }
 
+  .pbg-mobile-hint-normal {
+    &.pbg-consumer-mobile {
+      display: inline-block;
+      margin-top: 4px;
+    }
+  }
+
   &:active,
   &:focus {
     .pbg-picker-select-container {
@@ -49,7 +60,7 @@
     .pbg-picker-select-container {
       border-color: $red-60;
     }
-    .pbg-hint {
+    .pbg-mobile-hint-normal {
       color: $red-60;
     }
   }
