@@ -17,7 +17,7 @@ class Picker extends FormField {
   };
 
   get value() {
-    return this.adaptedProps.value === null ? PICKER_EMPTY_VALUE : this.adaptedProps.value;
+    return this.adaptedProps.value || PICKER_EMPTY_VALUE;
   }
 
   renderLabel() {
@@ -25,9 +25,9 @@ class Picker extends FormField {
   }
 
   renderSelect() {
-    const { options = [] } = this.adaptedProps;
+    const { options = [], disabled } = this.adaptedProps;
     return (
-      <select onChange={this.onChange} onBlur={this.onBlur} onFocus={this.onFocus} value={this.value}>
+      <select onChange={this.onChange} onBlur={this.onBlur} onFocus={this.onFocus} value={this.value} disabled={disabled}>
         {options.map(({ label, value }, i) => (
           <option value={value === null ? PICKER_EMPTY_VALUE : value} key={`option-${i}`}>
             {label}
@@ -38,14 +38,15 @@ class Picker extends FormField {
   }
 
   render() {
+    const { required, label, hint, error } = this.adaptedProps;
     return (
       <div className={this.className}>
+        <Label required={required}>{label}</Label>
         <div className="pbg-picker-select-container">
-          {this.renderLabel()}
           {this.renderSelect()}
           <i className="pbg-picker-arrow" />
         </div>
-        {this.renderHintOrError()}
+        <span className={`pbg-hint pbg-consumer-mobile${error ? ' pbg-hint-error' : ''}`}>{error || hint}</span>
       </div>
     );
   }
