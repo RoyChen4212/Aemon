@@ -1,0 +1,9 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-divider {
+    height: 4px;
+    border-bottom: 4px solid $grey-10;
+    width: 100%;
+  }
+}
