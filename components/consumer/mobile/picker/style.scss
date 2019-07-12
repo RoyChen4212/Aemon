@@ -18,13 +18,14 @@
     box-sizing: border-box;
     border-radius: 4px;
     position: relative;
+    height: 40px;
 
     select {
       width: 100%;
       background: none;
       border: 0;
       color: $grey-80;
-      height: 40px;
+      height: 38px;
       line-height: $regular-line-height;
       font-size: $regular-font;
       outline: 0;
@@ -42,7 +43,8 @@
       position: absolute;
       pointer-events: none;
       top: 18px;
-      right: 15px;
+      bottom: 18px;
+      right: 12px;
       width: 10px;
       height: 6px;
     }
@@ -51,7 +53,7 @@
   .pbg-mobile-hint-normal,
   .pbg-mobile-hint-error {
     &.pbg-consumer-mobile {
-      display: inline-block;
+      display: block;
       margin-top: 4px;
     }
   }
