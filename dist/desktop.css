@@ -4859,7 +4859,8 @@ div.pbg-avatar {
     text-overflow: ellipsis;
     max-width: 100%;
     border: 0;
-    padding: 0; }
+    padding: 0;
+    background-color: transparent; }
     .pbg-consumer-desktop.pbg-picker .pbg-picker-container button:focus {
       outline: 0; }
     .pbg-consumer-desktop.pbg-picker .pbg-picker-container button .pbg-picker-arrow {
