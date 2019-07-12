@@ -47,7 +47,7 @@ storiesOf('Consumer/Mobile/Form Fields/picker', module)
     hint="Hint"
     value={options[1].value}
     onChange={action('onChange')}
-    disabled={true}
+    disabled
     options={options}
   />
 ))
