@@ -1,6 +1,7 @@
 import React from 'react';
+import { values } from 'lodash';
 import { storiesOf } from '@storybook/react';
-import Status from '../../../components/consumer/desktop/status';
+import Status, { iconTypes } from '../../../components/consumer/desktop/status';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
@@ -20,4 +21,11 @@ storiesOf('Consumer/Desktop/Info/status', module)
       tooltip="This is the tooltip content."
       iconType="lock"
     />
-  ));
+  ))
+  .add('status/available-icons', () =>
+    values(iconTypes).map(iconType => (
+      <p key={iconType}>
+        <Status label={iconType} iconType={iconType} />
+      </p>
+    ))
+  );
