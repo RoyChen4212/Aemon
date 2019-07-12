@@ -2,18 +2,29 @@
 
 .pbg-consumer-desktop {
   &.pbg-divider {
-    height: 1px;
-    border-bottom: 1px solid $almost-white;
-    width: 100%;
     position: relative;
-    div {
-      position: relative;
-      top: -13px;
+
+    .pbg-divider--line {
+      height: 1px;
+      width: 100%;
+      background: $almost-white;
+    }
+    .pbg-divider--text {
+      position: absolute;
+      top: -9px;
+      left: 0;
+      line-height: 16px;
+      background: $white;
       span {
-        background-color: #fff;
-        &.pbg-divider-hint {
-          margin-left: 4px;
+        &:after {
+          content: ' ';
         }
+      }
+    }
+
+    &.has-label {
+      .pbg-divider--line {
+        margin: 9px 0 11px;
       }
     }
   }
