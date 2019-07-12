@@ -8,6 +8,7 @@
     .pbg-card-field-label-wrapper {
       display: flex;
       justify-content: space-between;
+      margin-bottom: 5px;
       .pbg-label-with-cards {
         display: block;
       }
@@ -31,7 +32,7 @@
     align-items: center;
     .pbg-card {
       width: 20px;
-      height: 14px;
+      height: 15px;
       margin-left: 6px;
       border-radius: 2px;
       background-size: cover;

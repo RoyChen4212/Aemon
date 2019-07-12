@@ -1,0 +1,60 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-alert {
+    position: relative;
+    padding: 24px 24px 16px;
+    width: 320px;
+
+    &.pbg-alert-error {
+      background: $red-10;
+      border-left: 4px solid $red-60;
+
+      .pbg-alert-divider {
+        background: #F4B8B8;
+      }
+    }
+
+    &.pbg-alert-warning {
+      background: $yellow-10;
+      border-left: 4px solid $yellow-60;
+
+      .pbg-alert-divider {
+        background: #FFDD9B;
+      }
+    }
+
+    &.pbg-alert-success {
+      background: $green-10;
+      border-left: 4px solid $green-60;
+
+      .pbg-alert-divider {
+        background: #ABDEB6;
+      }
+    }
+
+    .pbg-mobile-label-strong {
+      margin-right: 37px;
+    }
+
+    .pbg-alert-divider {
+      height: 1px;
+    }
+
+    .pbg-button-link {
+      margin-top: 15px;
+      padding: 0;
+    }
+
+    .pbg-alert-close-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+      padding: 11px;
+      background: transparent url('../img/pbg-alert-close-button.svg') no-repeat center;
+      border: none;
+    }
+  }
+}
