@@ -10,9 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Desktop/Form Fields/text-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('text-field/simple/default', () => (
-    <FieldStateProvider component={TextField} simple name="field2" />
-  ))
+  .add('text-field/simple/default', () => <FieldStateProvider component={TextField} simple name="field2" />)
   .add('text-field/simple/placeholder', () => (
     <FieldStateProvider component={TextField} simple name="field2" label="Placeholder" />
   ))
@@ -37,6 +35,7 @@ storiesOf('Consumer/Desktop/Form Fields/text-field', module)
       label="A text field"
       value="Placeholder"
       icon="https://assets.paybygroup.com/images/icons/facebook.svg"
+      onIconClick={action('onIconClick')}
     />
   ));
 
