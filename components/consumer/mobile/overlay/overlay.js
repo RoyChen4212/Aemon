@@ -15,14 +15,14 @@ class Overlay extends React.PureComponent {
   static defaultProps = {
     title: '',
     backText: '',
-    opened: false
+    opened: false,
   };
 
   render() {
     const { title, opened, backText, onBackButtonClick } = this.props;
     if (!onBackButtonClick) return null;
     return (
-      <div className={classnames('pbg-consumer-mobile', 'pbg-overlay', { 'open': opened })}>
+      <div className={classnames('pbg-consumer-mobile', 'pbg-overlay', { open: opened })}>
         <div className="pbg-overlay-inner">
           <div className="pbg-overlay-inner--header">
             <div className="pbg-mobile-label-link" onClick={onBackButtonClick}>
@@ -38,7 +38,7 @@ class Overlay extends React.PureComponent {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

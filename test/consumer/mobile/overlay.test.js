@@ -5,7 +5,7 @@ import Overlay from '../../../components/consumer/mobile/overlay';
 
 class OverlayWrapper extends React.Component {
   state = {
-    overlayOpened: false
+    overlayOpened: false,
   };
 
   openOverlay = () => {
@@ -18,14 +18,17 @@ class OverlayWrapper extends React.Component {
 
   render() {
     const { overlayOpened } = this.state;
-    return <React.Fragment>
-      <div id="open-button" onClick={this.openOverlay}>Open</div>
-      <div id="hide-button" onClick={this.hideOverlay}>Hide</div>
-      <Overlay
-        opened={overlayOpened}
-        onBackButtonClick={this.hideOverlay}
-      />
-    </React.Fragment>
+    return (
+      <React.Fragment>
+        <div id="open-button" onClick={this.openOverlay}>
+          Open
+        </div>
+        <div id="hide-button" onClick={this.hideOverlay}>
+          Hide
+        </div>
+        <Overlay opened={overlayOpened} onBackButtonClick={this.hideOverlay} />
+      </React.Fragment>
+    );
   }
 }
 
@@ -33,7 +36,7 @@ const defaultBackButtonText = Overlay.defaultProps.backText;
 const defaultTitle = Overlay.defaultProps.title;
 
 describe('Overlay', () => {
-  it ('Should have correct class name', () => {
+  it('Should have correct class name', () => {
     const wrapper = shallow(<Overlay opened onBackButtonClick={() => null} />);
     expect(wrapper.hasClass('pbg-overlay')).to.be.true;
   });
@@ -50,7 +53,8 @@ describe('Overlay', () => {
 
   it('Should render correct default title value', () => {
     const wrapper = shallow(<Overlay opened onBackButtonClick={() => null} />);
-    expect(wrapper.find('.pbg-overlay').contains(<div className="pbg-mobile-heading-1">{defaultTitle}</div>)).to.be.true;
+    expect(wrapper.find('.pbg-overlay').contains(<div className="pbg-mobile-heading-1">{defaultTitle}</div>)).to.be
+      .true;
   });
 
   it('Should render the correct title', () => {
@@ -91,9 +95,9 @@ describe('Overlay', () => {
     };
     const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={onBackButtonClick} />);
     wrapper
-    .find('.pbg-overlay-inner--header')
-    .find('.pbg-mobile-label-link')
-    .simulate('click');
+      .find('.pbg-overlay-inner--header')
+      .find('.pbg-mobile-label-link')
+      .simulate('click');
   });
 
   it('"onBackButtonClick" event should be triggered when footer back button clicked', done => {
@@ -102,28 +106,22 @@ describe('Overlay', () => {
     };
     const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={onBackButtonClick} />);
     wrapper
-    .find('.pbg-overlay-inner--footer')
-    .find('.pbg-mobile-label-link')
-    .simulate('click');
+      .find('.pbg-overlay-inner--footer')
+      .find('.pbg-mobile-label-link')
+      .simulate('click');
   });
 
   it('Should have opened as "true" when opened button clicked', () => {
     const wrapper = shallow(<OverlayWrapper />);
-    wrapper
-      .find('#open-button')
-      .simulate('click');
+    wrapper.find('#open-button').simulate('click');
     const overlay = wrapper.childAt(2);
     expect(overlay.props().opened).to.be.true;
   });
 
-  it ('Should have opened as "false" when header back button clicked', () => {
+  it('Should have opened as "false" when header back button clicked', () => {
     const wrapper = shallow(<OverlayWrapper />);
-    wrapper
-    .find('#open-button')
-    .simulate('click');
-    wrapper
-      .find('#hide-button')
-      .simulate('click');
+    wrapper.find('#open-button').simulate('click');
+    wrapper.find('#hide-button').simulate('click');
 
     const overlay = wrapper.childAt(2);
     expect(overlay.props().opened).to.be.false;

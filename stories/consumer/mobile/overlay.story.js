@@ -8,22 +8,13 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const opened = true;
 storiesOf('Consumer/Mobile/Info/overlay', module)
-.addDecorator(wrapStory)
-.addDecorator(withContainer)
-.add('overlay/default', () =>
-  <Overlay
-    title="Title"
-    backText='back'
-    opened
-    onBackButtonClick={action('onBackButtonClick')}
-  />
-)
-.add('overlay/animation', () =>
-  <AnimationOverlay />
-);
-
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('overlay/default', () => (
+    <Overlay title="Title" backText="back" opened onBackButtonClick={action('onBackButtonClick')} />
+  ))
+  .add('overlay/animation', () => <AnimationOverlay />);
 
 class AnimationOverlay extends React.Component {
   state = {
@@ -42,13 +33,10 @@ class AnimationOverlay extends React.Component {
     const { overlayOpened } = this.state;
     return (
       <React.Fragment>
-        <button onClick={this.onClick}>Show overlay</button>
-        <Overlay
-          title='Title'
-          backText='back'
-          opened={overlayOpened}
-          onBackButtonClick={this.onBackButtonClick}
-        />
+        <button type="button" onClick={this.onClick}>
+          Show overlay
+        </button>
+        <Overlay title="Title" backText="back" opened={overlayOpened} onBackButtonClick={this.onBackButtonClick} />
       </React.Fragment>
     );
   }

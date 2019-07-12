@@ -10,7 +10,7 @@
     max-height: 100vh;
     min-height: 100vh;
     opacity: 0;
-    transition: top .3s ease-in-out, right .3s ease-in-out, opacity .3s ease-in-out;
+    transition: top 0.3s ease-in-out, right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     background: $white;
     overflow-x: auto;
 
@@ -41,7 +41,6 @@
       }
 
       &--content {
-
       }
 
       &--footer {
@@ -56,5 +55,3 @@
     }
   }
 }
-
-
