@@ -1,12 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
+import * as sinon from 'sinon';
 
 import CardField from '../../../components/consumer/desktop/card-field';
 import CardFormFields from '../../../components/consumer/desktop/card-form-fields';
-import StateProvider from '../../../stories/util/field-state-provider';
-import TextField from '../../../components/consumer/desktop/text-field';
-import * as sinon from 'sinon';
+import Label from '../../../components/consumer/desktop/label';
 
 describe('CardFormFields', () => {
   const labels = {
@@ -25,36 +24,28 @@ describe('CardFormFields', () => {
 
   it('should have correct labels', () => {
     const wrapper = shallow(<CardFormFields labels={labels} />);
-    const fields = wrapper.find(StateProvider);
-
     expect(
-      fields
+      wrapper
         .find({ name: 'fullName' })
         .dive()
-        .find(TextField)
-        .prop('label')
+        .find(Label)
+        .prop('children')
     ).to.equal(labels.fullName);
     expect(
-      fields
+      wrapper
         .find({ name: 'expDate' })
         .dive()
-        .find(TextField)
-        .prop('label')
+        .find(Label)
+        .prop('children')
     ).to.equal(labels.expDate);
     expect(
-      fields
+      wrapper
         .find({ name: 'postalCode' })
         .dive()
-        .find(TextField)
-        .prop('label')
+        .find(Label)
+        .prop('children')
     ).to.equal(labels.postalCode);
-    expect(
-      fields
-        .find({ name: 'secCode' })
-        .dive()
-        .find(TextField)
-        .prop('label')
-    ).to.equal(labels.securityCode);
+    expect(wrapper.find('.pbg-label').text()).to.equal(labels.securityCode);
     expect(
       wrapper
         .find(CardField)
@@ -65,44 +56,26 @@ describe('CardFormFields', () => {
   });
 
   it('should have func validate function', () => {
-    const o = {
-      method: () => {
-        return null;
-      },
-    };
-    const validateFn = sinon.spy(o, 'method');
     const onChange = sinon.spy();
-    const wrapper = shallow(<CardFormFields labels={labels} validate={validateFn} onChange={onChange} />);
+    const wrapper = shallow(<CardFormFields labels={labels} onChange={onChange} />);
     wrapper
       .find({ name: 'fullName' })
       .dive()
-      .find(TextField)
+      .find('input')
       .simulate('change', { target: { value: 'My new value' } });
 
     wrapper.update();
 
     expect(onChange.calledOnce).to.be.true;
-    expect(validateFn.calledOnce).to.be.true;
   });
 
-  it('should validate also on blur', () => {
-    const o = {
-      method: () => {
-        return null;
-      },
-    };
-    const validateFn = sinon.spy(o, 'method');
-    const onChange = sinon.spy();
-    const wrapper = shallow(<CardFormFields labels={labels} validate={validateFn} onChange={onChange} />);
-    wrapper
-      .find({ name: 'fullName' })
-      .dive()
-      .find(TextField)
-      .simulate('focus')
-      .simulate('blur', { target: { value: 'My new value' } });
+  it('should be configurable', () => {
+    const wrapper = shallow(<CardFormFields labels={labels} config={['cardNumber', 'fullName', 'expDate']} />);
 
-    wrapper.update();
-
-    expect(validateFn.calledOnce).to.be.true;
+    expect(wrapper.find(CardField).length).to.equal(1);
+    expect(wrapper.find({ name: 'fullName' }).length).to.equal(1);
+    expect(wrapper.find({ name: 'expDate' }).length).to.equal(1);
+    expect(wrapper.find({ name: 'securityCode' }).length).to.equal(0);
+    expect(wrapper.find({ name: 'postalCode' }).length).to.equal(0);
   });
 });

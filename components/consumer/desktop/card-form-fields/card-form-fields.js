@@ -1,29 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { includes } from 'lodash';
 
-import './style.scss';
 import CardField from '../card-field/card-field';
 import TextField from '../text-field';
-import FieldStateProvider from '../../../../stories/util/field-state-provider';
+import { cardTypes } from '../card-field/card-field-types';
+
+import './style.scss';
+import DivInput from '../div-input/div-input';
+
+const defaultConfig = ['cardNumber', 'fullName', 'expDate', 'securityCode', 'postalCode'];
 
 class CardFormFields extends React.Component {
   baseClassName = 'pbg-consumer-desktop pbg-card-form-fields';
 
   static propTypes = {
     labels: PropTypes.shape({
-      cardNumber: PropTypes.string.isRequired,
-      expDate: PropTypes.string.isRequired,
-      securityCode: PropTypes.string.isRequired,
-      fullName: PropTypes.string.isRequired,
-      postalCode: PropTypes.string.isRequired,
+      cardNumber: PropTypes.string,
+      expDate: PropTypes.string,
+      securityCode: PropTypes.string,
+      fullName: PropTypes.string,
+      postalCode: PropTypes.string,
     }).isRequired,
     allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
-    cardType: PropTypes.oneOf(['visa', 'master', 'american_express', 'discover', 'diners_club']),
+    cardType: PropTypes.oneOf(cardTypes),
+    config: PropTypes.arrayOf(PropTypes.oneOf(defaultConfig)),
   };
 
   static defaultProps = {
     cardType: null,
-    allowedCardTypes: ['visa', 'master', 'american_express', 'discover', 'diners_club'],
+    allowedCardTypes: cardTypes,
+    config: defaultConfig,
   };
 
   render() {
@@ -31,21 +38,31 @@ class CardFormFields extends React.Component {
       allowedCardTypes,
       cardType,
       labels: { cardNumber, expDate, securityCode, fullName, postalCode },
+      config,
       ...rest
     } = this.props;
 
     return (
       <div className={this.baseClassName}>
         <div className="pbg-card-form-fields-col">
-          <CardField allowedCardTypes={allowedCardTypes} cardType={cardType} label={cardNumber} />
-          <FieldStateProvider component={TextField} name="fullName" label={fullName} placeholder=" " {...rest} />
+          {includes(config, 'cardNumber') && (
+            <CardField allowedCardTypes={allowedCardTypes} cardType={cardType} label={cardNumber} />
+          )}
+          {includes(config, 'fullName') && <TextField name="fullName" label={fullName} placeholder=" " {...rest} />}
         </div>
         <div className="pbg-card-form-fields-col">
-          <FieldStateProvider component={TextField} name="expDate" label={expDate} placeholder="MM/YY" {...rest} />
-          <FieldStateProvider component={TextField} name="postalCode" label={postalCode} placeholder=" " {...rest} />
+          {includes(config, 'expDate') && <TextField name="expDate" label={expDate} placeholder="MM/YY" {...rest} />}
+          {includes(config, 'postalCode') && (
+            <TextField name="postalCode" label={postalCode} placeholder=" " {...rest} />
+          )}
         </div>
         <div className="pbg-card-form-fields-col">
-          <FieldStateProvider component={TextField} name="secCode" label={securityCode} placeholder=" " {...rest} />
+          {includes(config, 'securityCode') && (
+            <div>
+              <span className="pbg-label pbg-consumer-desktop">{securityCode}</span>
+              <DivInput name="secCode" placeholder=" " {...rest} />
+            </div>
+          )}
         </div>
       </div>
     );

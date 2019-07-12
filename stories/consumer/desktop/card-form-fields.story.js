@@ -16,7 +16,7 @@ const labels = {
   postalCode: 'Postal code',
 };
 
-storiesOf('Consumer/Desktop/Form Fields/card-form-fields/payment-method-fields', module)
+storiesOf('Consumer/Desktop/Form Fields/card-form-fields', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('default', () => <CardFormFields labels={labels} onChange={action('change')} />)
@@ -31,5 +31,13 @@ storiesOf('Consumer/Desktop/Form Fields/card-form-fields/payment-method-fields',
       cardType="diners_club"
       onChange={action('change')}
       allowedCardTypes={['master', 'visa']}
+    />
+  ))
+  .add('default config', () => (
+    <CardFormFields
+      labels={labels}
+      cardType="diners_club"
+      onChange={action('change')}
+      config={['cardNumber', 'fullName', 'expDate']}
     />
   ));
