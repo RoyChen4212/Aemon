@@ -37,10 +37,15 @@
 
       .pbg-text-field-icon {
         position: absolute;
-        top: 11px;
-        right: 11px;
+        top: 12px;
+        right: 12px;
         width: 16px;
         height: 16px;
+        cursor: pointer;
+
+        img {
+          display: block;
+        }
       }
 
 
