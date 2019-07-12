@@ -48,17 +48,39 @@ class CardFormFields extends React.Component {
           {includes(config, 'cardNumber') && (
             <CardField allowedCardTypes={allowedCardTypes} cardType={cardType} label={cardNumber} />
           )}
-          {includes(config, 'fullName') && <TextField name="fullName" label={fullName} placeholder=" " {...rest} />}
+          {includes(config, 'fullName') && (
+            <TextField
+              name="fullName"
+              label={fullName}
+              className="pbg-card-fields-full-name"
+              placeholder=" "
+              {...rest}
+            />
+          )}
         </div>
         <div className="pbg-card-form-fields-col">
-          {includes(config, 'expDate') && <TextField name="expDate" label={expDate} placeholder="MM/YY" {...rest} />}
+          {includes(config, 'expDate') && (
+            <TextField
+              name="expDate"
+              label={expDate}
+              className="pbg-card-fields-exp-date"
+              placeholder="MM/YY"
+              {...rest}
+            />
+          )}
           {includes(config, 'postalCode') && (
-            <TextField name="postalCode" label={postalCode} placeholder=" " {...rest} />
+            <TextField
+              name="postalCode"
+              label={postalCode}
+              className="pbg-card-fields-exp-date"
+              placeholder=" "
+              {...rest}
+            />
           )}
         </div>
         <div className="pbg-card-form-fields-col">
           {includes(config, 'securityCode') && (
-            <div>
+            <div className="pbg-card-fields-sec-code">
               <span className="pbg-label pbg-consumer-desktop">{securityCode}</span>
               <DivInput name="secCode" placeholder=" " {...rest} />
             </div>
