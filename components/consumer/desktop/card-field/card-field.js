@@ -5,6 +5,7 @@ import './style.scss';
 import Cards from './cards';
 import DivInput from '../div-input';
 import CardPlaceholder from './card-placeholder';
+import { cardTypes } from './card-field-types';
 
 class CardField extends React.Component {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-text-field pbg-card-field';
@@ -12,13 +13,13 @@ class CardField extends React.Component {
   static propTypes = {
     label: PropTypes.string,
     allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
-    cardType: PropTypes.oneOf(['visa', 'master', 'american_express', 'discover', 'diners_club']),
+    cardType: PropTypes.oneOf(cardTypes),
   };
 
   static defaultProps = {
     label: null,
     cardType: null,
-    allowedCardTypes: ['visa', 'master', 'american_express', 'discover', 'diners_club'],
+    allowedCardTypes: cardTypes,
   };
 
   render() {
