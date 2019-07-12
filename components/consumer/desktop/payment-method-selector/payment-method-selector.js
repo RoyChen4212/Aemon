@@ -30,7 +30,7 @@ class PaymentMethodSelector extends Picker {
     return find(this.options, op => op.value === this.value);
   }
 
-  handleAddNew = () => {
+  onAddNewClick = () => {
     this.onChange({ target: { value: PAYMENT_METHOD_ADD_VALUE } });
   };
 
@@ -59,7 +59,7 @@ class PaymentMethodSelector extends Picker {
     return (
       <div className="pbg-payment-method-selector-add-container">
         <p className="pbg-desktop-label-normal">Or</p>
-        <button type="button" className="pbg-button pbg-consumer-desktop" onClick={this.handleAddNew}>
+        <button type="button" className="pbg-button pbg-consumer-desktop" onClick={this.onAddNewClick}>
           <span>Add New</span>
         </button>
       </div>
