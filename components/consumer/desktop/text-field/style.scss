@@ -6,18 +6,19 @@
       position: relative;
 
       .pbg-label {
-        display:block;
+        display: block;
         margin: 0 0 5px 2px;
       }
 
       input {
         @extend .pbg-desktop-label-normal;
-        background-color: #FFF;
+        background-color: $white;
         border: 1px solid $grey-50;
         border-radius: 4px;
         padding: 8px 8px 9px;
         color: $grey-80;
         width: 100%;
+        height: 40px;
 
         &::placeholder {
           @extend .pbg-desktop-label-normal;
@@ -47,7 +48,6 @@
           display: block;
         }
       }
-
 
       &.pbg-form-field-error {
         input {
