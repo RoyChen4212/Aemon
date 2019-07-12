@@ -24,7 +24,7 @@ class Picker extends FormField {
 
   renderLabel() {
     const { required, label } = this.adaptedProps;
-    return <div className="pbg-picker-select-label pbg-mobile-paragraph-error">
+    return <div className="pbg-picker-select-label pbg-mobile-paragraph">
       <Label required={required}>{label}</Label>
     </div>;
   }
