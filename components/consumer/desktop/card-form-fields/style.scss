@@ -1,6 +1,27 @@
 .pbg-consumer-desktop {
   &.pbg-card-form-fields {
     display: flex;
+    width: 488px;
+
+    .pbg-card-fields-full-name {
+      width: 236px;
+    }
+
+    .pbg-card-fields-exp-date,
+    .pbg-card-fields-postal-code {
+      width: 114px;
+    }
+
+    .pbg-card-fields-sec-code {
+      width: 106px;
+      display: flex;
+      flex-direction: column;
+
+      .pbg-label {
+        margin: 0 0 5px 2px;
+      }
+    }
+
     .pbg-card-form-fields-col {
       display: flex;
       flex-grow: 1;
