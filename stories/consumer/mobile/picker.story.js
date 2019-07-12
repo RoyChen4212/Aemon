@@ -17,26 +17,38 @@ const options = [
 ];
 
 storiesOf('Consumer/Mobile/Form Fields/picker', module)
-  .addDecorator(wrapStory)
-  .addDecorator(withContainer)
-  .add('picker/default', () => (
-    <FieldStateProvider
-      component={Picker}
-      name="picker"
-      label="Label"
-      hint="Select one awesome value"
-      value={null}
-      onChange={action('onChange')}
-      options={options}
-    />
-  ))
-  .add('picker/error', () => (
-    <Picker
-      name="picker"
-      label="Label"
-      hint="Select one awesome value"
-      error="You selection is terrible"
-      onChange={action('onChange')}
-      options={options}
-    />
-  ));
+.addDecorator(wrapStory)
+.addDecorator(withContainer)
+.add('picker/default', () => (
+  <FieldStateProvider
+    component={Picker}
+    name="picker"
+    label="Label"
+    hint="Hint"
+    value={null}
+    onChange={action('onChange')}
+    options={options}
+  />
+))
+.add('picker/error', () => (
+  <Picker
+    name="picker"
+    label="Label"
+    hint="Hint"
+    error="You selection is terrible"
+    onChange={action('onChange')}
+    options={options}
+  />
+))
+.add('picker/disabled', () => (
+  <Picker
+    name="picker"
+    label="Label"
+    hint="Hint"
+    value={options[1].value}
+    onChange={action('onChange')}
+    disabled={true}
+    options={options}
+  />
+))
+;

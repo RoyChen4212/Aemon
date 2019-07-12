@@ -3,10 +3,12 @@ import { PrimaryButton, SecondaryButton, SmallButton, LinkButton, FacebookButton
 import { UserCommentCard, GroupActivityCard } from './activity-card';
 import AddComment from './add-comment';
 import AddressField from './address-field';
+import Alert from './alert';
 import Checkbox from './checkbox';
 import ContributorCard from './contributor-card';
 import DatePicker from './date-picker';
 import DatetimePicker from './datetime-picker';
+import ExternalLink from './external-link';
 import Hint, { hintTypes } from './hint';
 import HistoricalPicker from './historical-picker';
 import Label, { labelTypes } from './label';
@@ -26,10 +28,12 @@ import TimePicker from './time-picker';
 const mobile = {
   AddComment,
   AddressField,
+  Alert,
   Checkbox,
   ContributorCard,
   DatePicker,
   DatetimePicker,
+  ExternalLink,
   FacebookButton,
   GroupActivityCard,
   H1,

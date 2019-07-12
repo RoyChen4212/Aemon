@@ -2,14 +2,28 @@
 
 .pbg-form-field {
   &.pbg-password-field {
+    .pbg-password-field-label {
+      margin-bottom: 4px;
+    }
     .pbg-forgot-password-container {
-      position: relative;
+      line-height: 15px;
+      margin-top: 4px;
 
-      .pbg-hint-clickable {
-        position: absolute;
+      .pbg-mobile-hint-clickable {
         visibility: visible;
-        right: 0;
+        margin-left: 4px;
       }
+    }
+    input {
+      -webkit-appearance: none;
+      background: $white;
+      border: 1px solid $grey-50;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding: 10px 8px;
+      font-size: 14px;
+      line-height: 18px;
+      width: 100%;
     }
   }
 }
