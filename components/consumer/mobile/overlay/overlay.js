@@ -13,7 +13,7 @@ class Overlay extends React.PureComponent {
   };
 
   static defaultProps = {
-    title: 'Label',
+    title: '',
     backText: '',
     opened: false
   };
@@ -26,14 +26,14 @@ class Overlay extends React.PureComponent {
         <div className="pbg-overlay-inner">
           <div className="pbg-overlay-inner--header">
             <div className="pbg-mobile-label-link" onClick={onBackButtonClick}>
-              <span className="pbk-overlay-back-button">{backText}</span>
+              <span className="pbg-overlay-back-button">{backText}</span>
             </div>
           </div>
           <div className="pbg-mobile-heading-1">{title}</div>
 
           <div className="pbg-overlay-inner--footer">
             <div className="pbg-mobile-label-link" onClick={onBackButtonClick}>
-              <span className="pbk-overlay-back-button">{backText}</span>
+              <span className="pbg-overlay-back-button">{backText}</span>
             </div>
           </div>
         </div>
