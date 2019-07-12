@@ -4,12 +4,10 @@ import { includes } from 'lodash';
 
 import CardField from '../card-field/card-field';
 import TextField from '../text-field';
-import { cardTypes } from '../card-field/card-field-types';
+import { cardTypes, defaultCardsConfig } from '../card-field/card-field-types';
 
 import './style.scss';
 import DivInput from '../div-input/div-input';
-
-const defaultConfig = ['cardNumber', 'fullName', 'expDate', 'securityCode', 'postalCode'];
 
 class CardFormFields extends React.Component {
   baseClassName = 'pbg-consumer-desktop pbg-card-form-fields';
@@ -24,13 +22,13 @@ class CardFormFields extends React.Component {
     }).isRequired,
     allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
     cardType: PropTypes.oneOf(cardTypes),
-    config: PropTypes.arrayOf(PropTypes.oneOf(defaultConfig)),
+    config: PropTypes.arrayOf(PropTypes.oneOf(defaultCardsConfig)),
   };
 
   static defaultProps = {
     cardType: null,
     allowedCardTypes: cardTypes,
-    config: defaultConfig,
+    config: defaultCardsConfig,
   };
 
   render() {

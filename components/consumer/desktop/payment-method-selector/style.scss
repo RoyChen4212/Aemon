@@ -44,6 +44,9 @@
         }
       }
     }
+    .pbg-payment-method-selector-new-card-container {
+      margin-top: 16px;
+    }
 
     .pbg-payment-method-field {
       display: flex;
@@ -67,7 +70,7 @@
 
         &.selected {
           span {
-            color: #006AFF;
+            color: #006aff;
           }
         }
       }
