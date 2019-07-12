@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import FormField from '../form-field';
 import { labelTypes } from '../label';
@@ -15,11 +16,13 @@ class TextField extends FormField {
   static propTypes = {
     icon: PropTypes.string,
     onIconClick: PropTypes.func,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     icon: null,
     onIconClick: () => {},
+    className: null,
   };
 
   get labelType() {
@@ -64,8 +67,9 @@ class TextField extends FormField {
   }
 
   render() {
+    const { className } = this.props;
     return (
-      <div className={this.className}>
+      <div className={classnames(this.className, className)}>
         {this.renderLabel()}
         {this.renderInput()}
         {this.renderIcon()}
