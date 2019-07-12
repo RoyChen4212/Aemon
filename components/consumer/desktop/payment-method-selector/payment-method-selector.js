@@ -4,11 +4,9 @@ import find from 'lodash/find';
 
 import PaymentMethodSelectorMenu from './payment-method-selector-menu';
 import PaymentMethodField from './payment-method-field';
-import Picker from '../picker';
+import Picker, { PICKER_EMPTY_VALUE } from '../picker';
 
 import './style.scss';
-
-export const PAYMENT_METHOD_ADD_VALUE = '__ADD_Value';
 
 /** @extends React.Component */
 class PaymentMethodSelector extends Picker {
@@ -31,7 +29,7 @@ class PaymentMethodSelector extends Picker {
   }
 
   onAddNewClick = () => {
-    this.onChange({ target: { value: PAYMENT_METHOD_ADD_VALUE } });
+    this.onChange({ target: { value: PICKER_EMPTY_VALUE } });
   };
 
   renderPickerButton() {
@@ -45,14 +43,14 @@ class PaymentMethodSelector extends Picker {
         onClick={this.onButtonClick}
         onBlur={ev => this.onButtonBlur(ev, this.onBlur)}
       >
-        {cardType && <PaymentMethodField cardType={cardType} label={label} />}
+        {label && <PaymentMethodField cardType={cardType} label={label} />}
         <i className="pbg-picker-arrow" />
       </button>
     );
   }
 
   renderAddNewButton() {
-    if (this.value === PAYMENT_METHOD_ADD_VALUE) {
+    if (this.value === PICKER_EMPTY_VALUE) {
       return null;
     }
 

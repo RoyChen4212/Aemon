@@ -1,19 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 
 import CardPlaceholder from '../card-field/card-placeholder';
+import { cardTypes } from '../card-field/card-field-types';
 
 import './style.scss';
-
-export const cardTypes = {
-  VISA: 'visa',
-  MASTER: 'master',
-  AMERICAN_EXPRESS: 'american_express',
-  DISCOVER: 'discover',
-  DINERS_CLUB: 'diners_club',
-  ADD_NEW: 'new',
-};
 
 const PaymentMethodField = ({ cardType, label }) => (
   <div className="pbg-consumer-desktop pbg-payment-method-field">
@@ -25,8 +16,12 @@ const PaymentMethodField = ({ cardType, label }) => (
 );
 
 PaymentMethodField.propTypes = {
-  cardType: PropTypes.oneOf(_.map(cardTypes, value => value)).isRequired,
+  cardType: PropTypes.oneOf(cardTypes),
   label: PropTypes.string.isRequired,
+};
+
+PaymentMethodField.defaultProps = {
+  cardType: null,
 };
 
 export default PaymentMethodField;
