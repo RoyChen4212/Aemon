@@ -42,7 +42,8 @@
     }
   }
 
-  .pbg-mobile-hint-normal {
+  .pbg-mobile-hint-normal,
+  .pbg-mobile-hint-error {
     &.pbg-consumer-mobile {
       display: inline-block;
       margin-top: 4px;
@@ -59,9 +60,6 @@
   &.pbg-form-field-error {
     .pbg-picker-select-container {
       border-color: $red-60;
-    }
-    .pbg-mobile-hint-normal {
-      color: $red-60;
     }
   }
 

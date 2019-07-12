@@ -12,6 +12,8 @@ describe('Picker', () => {
 
   it('should have correct class name', () => {
     const wrapper = shallow(<Picker />);
+    expect(wrapper.hasClass('pbg-form-field')).to.be.true;
+    expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-picker')).to.be.true;
   });
 
@@ -38,9 +40,8 @@ describe('Picker', () => {
   it('should render the a hint if given', () => {
     const hintText = 'Pick your posion';
     const wrapper = shallow(<Picker hint={hintText} />);
-    expect(wrapper.find('.pbg-picker').contains(<span className="pbg-mobile-hint-normal pbg-consumer-mobile">{hintText}</span>)).to.be.true;
+    expect(wrapper.find('.pbg-picker').contains(<span className="pbg-consumer-mobile pbg-mobile-hint-normal">{hintText}</span>)).to.be.true;
   });
-
   it('should have correct class when error is given', () => {
     const wrapper = shallow(<Picker error="an error" />);
     expect(wrapper.hasClass('pbg-form-field-error')).to.be.true;
@@ -59,13 +60,13 @@ describe('Picker', () => {
   it('should render the an error if given', () => {
     const error = 'terrible error';
     const wrapper = shallow(<Picker error={error} />);
-    expect(wrapper.find('.pbg-picker').contains(<span className="pbg-mobile-hint-normal pbg-consumer-mobile pbg-hint-error">{error}</span>)).to.be.true;
+    expect(wrapper.find('.pbg-picker').contains(<span className="pbg-consumer-mobile pbg-mobile-hint-error">{error}</span>)).to.be.true;
   });
 
   it('should render the an error if given despite a hint being passed', () => {
     const error = 'terrible error';
     const wrapper = shallow(<Picker error={error} hint="hint" />);
-    expect(wrapper.find('.pbg-picker').contains(<span className="pbg-mobile-hint-normal pbg-consumer-mobile pbg-hint-error">{error}</span>)).to.be.true;
+    expect(wrapper.find('.pbg-picker').contains(<span className="pbg-consumer-mobile pbg-mobile-hint-error">{error}</span>)).to.be.true;
   });
 
   it('should render a custom arrow element', () => {
