@@ -10,12 +10,12 @@ storiesOf('Consumer/Mobile/Atomic Components/facebook-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('facebook-button/default', () => (
-    <FacebookButton hint="With Hint" onClick={action('clicked')}>
-      Facebook Button
+    <FacebookButton onClick={action('clicked')}>
+      Continue with Facebook
     </FacebookButton>
   ))
   .add('facebook-button/disabled', () => (
     <FacebookButton disabled onClick={action('clicked')}>
-      Facebook Button Disabled
+      Continue with Facebook
     </FacebookButton>
   ));

@@ -1,0 +1,59 @@
+.pbg-consumer-desktop {
+  &.pbg-card-field {
+    .pbg-label {
+      & > span {
+        width: 100%;
+      }
+    }
+    .pbg-card-field-label-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      .pbg-label-with-cards {
+        display: block;
+      }
+    }
+    .pbg-card-field-wrapper {
+      position: relative;
+      .pbg-placeholder-icon {
+        width: 24px;
+        height: 18px;
+        border-radius: 2px;
+        position: absolute;
+        top: 10px;
+        left: 8px;
+        background-size: cover;
+      }
+    }
+  }
+  &.pbg-cards-wrapper {
+    display: inline-flex;
+    height: 21px;
+    align-items: center;
+    .pbg-card {
+      width: 20px;
+      height: 15px;
+      margin-left: 6px;
+      border-radius: 2px;
+      background-size: cover;
+    }
+  }
+  .pbg-visa-card {
+    background: url('../img/visa-card.svg');
+  }
+  .pbg-master-card {
+    background: url('../img/master-card.svg');
+  }
+  .pbg-amex-card {
+    background: url('../img/amex-card.svg');
+  }
+  .pbg-discover-card {
+    background: url('../img/discover-card.svg');
+  }
+  .pbg-dinners-club-card {
+    background: url('../img/dinners-club-card.svg');
+  }
+  .pbg-default-placeholder-icon {
+    background: url('../img/card-placeholder.svg');
+  }
+}

@@ -19,6 +19,8 @@ import ActivityThumbnail, {
 import AddComment from './add-comment';
 import Avatar from './avatar';
 import Banner from './banner';
+import CardField from './card-field';
+import CardFormFields from './card-form-fields';
 import Checkbox from './checkbox';
 import ClaimToggle from './claim-toggle';
 import Container from './container';
@@ -51,6 +53,8 @@ const desktop = {
   AddComment,
   Avatar,
   Banner,
+  CardField,
+  CardFormFields,
   Checkbox,
   ClaimToggle,
   Container,

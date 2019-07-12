@@ -20,7 +20,7 @@ $black: #000;
 $black-19: rgba(0, 0, 0, .19);
 $black-25: rgba(0, 0, 0, .25);
 $white-1: rgba(255, 255, 255, .1);
-$facebook-color: #3b5998;
+$facebook-color: #4267B2;
 $blue-gradient: linear-gradient(267deg, $pbg-blue-light, $pbg-blue);
 $blue-linear: linear-gradient(90deg, $pbg-blue 0%, $pbg-blue-light 196.67%);
 
@@ -68,6 +68,7 @@ $small-font: 12px;
 
 // Icons
 $facebook-icon: url('../img/facebook-icon.svg');
+$facebook-logo: url('../img/facebook-logo.svg');
 $pulse-icon-white: url('../img/pulse-icon-white.svg');
 $list-icon-white: url('../img/view-list-icon-white.svg');
 $pulse-icon-grey: url('../img/pulse-icon-grey.svg');
@@ -262,10 +263,15 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $grey-80;
 }
 
+.pbg-mobile-paragraph-error {
+  @extend .pbg-mobile-paragraph;
+  color: $red-60;
+}
+
 .pbg-mobile-label-strong {
   font-family: $roboto;
   font-style: normal;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 14px;
   line-height: 20px;
   color: $grey-80;
@@ -314,4 +320,15 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
+}
+
+.pbg-mobile-hint-error {
+  @extend .pbg-mobile-hint-normal;
+  color: $red-60;
+}
+
+.pbg-mobile-hint-clickable {
+  @extend .pbg-mobile-hint-normal;
+  color: $blue-60;
+  cursor: pointer;
 }

@@ -3,55 +3,73 @@
 .pbg-picker {
   width: 100%;
 
-  &.pbg-form-field-error {
-    .pbg-picker-select-container {
-      border-color: $coral-error;
-    }
+  .pbg-picker-select-label {
+    margin-bottom: 4px;
   }
 
   .pbg-picker-select-container {
-    border-bottom: 1px solid;
-    border-color: $pinkish-grey;
-    padding-bottom: 8px;
+    background: $white;
+    border: 1px solid $grey-50;
+    box-sizing: border-box;
+    border-radius: 4px;
     position: relative;
-    width: 100%;
 
     select {
+      width: 100%;
       background: none;
       border: 0;
-      color: $clear-blue;
-      display: inline-block;
-      height: calc(2.25rem + 2px);
+      color: $grey-80;
       line-height: $regular-line-height;
       font-size: $regular-font;
-      max-width: 100%;
-      padding: 0 0 8px;
+      outline: 0;
+      padding: 8px 12px;
       vertical-align: middle;
       -moz-appearance: none;
       -webkit-appearance: none;
-      outline: 0;
-      position: absolute;
-      right: 12px;
-      text-align: right;
-      text-align-last: right;
-
-      option {
-        text-align: center;
-      }
-
       &::-ms-expand {
         display: none;
       }
-
     }
+
     .pbg-picker-arrow {
       background: url('../img/pbg-picker-arrow.svg') no-repeat;
       position: absolute;
       pointer-events: none;
-      right: 0px;
-      width: 7px;
-      height: 7px;
-      top: 13px;
+      top: 18px;
+      right: 12px;
+      width: 8px;
+      height: 4px;
+    }
+  }
+
+  .pbg-mobile-hint-normal,
+  .pbg-mobile-hint-error {
+    &.pbg-consumer-mobile {
+      display: inline-block;
+      margin-top: 4px;
+    }
+  }
+
+  &:active,
+  &:focus {
+    .pbg-picker-select-container {
+      border: 1px solid $blue-60;
+    }
+  }
+
+  &.pbg-form-field-error {
+    .pbg-picker-select-container {
+      border-color: $red-60;
+    }
+  }
+
+  &.pbg-form-field-disabled {
+    .pbg-picker-select-container {
+      border-color: $grey-50;
+      background: $grey-10;
+      select {
+        color: $grey-60;
+      }
     }
   }
 }
