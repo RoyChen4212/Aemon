@@ -41,6 +41,10 @@
       height: 1px;
     }
 
+    .pbg-button:focus {
+      outline:0;
+    }
+
     .pbg-button-link {
       margin-top: 15px;
       padding: 0;
