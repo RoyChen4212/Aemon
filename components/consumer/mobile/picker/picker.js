@@ -24,7 +24,7 @@ class Picker extends FormField {
 
   renderLabel() {
     const { required, label } = this.adaptedProps;
-    return <div className="pbg-picker-select-label">
+    return <div className="pbg-picker-select-label pbg-mobile-paragraph-error">
       <Label required={required}>{label}</Label>
     </div>;
   }
@@ -32,7 +32,7 @@ class Picker extends FormField {
   renderSelect() {
     const { options = [], disabled } = this.adaptedProps;
     return (
-      <select onChange={this.onChange} onBlur={this.onBlur} onFocus={this.onFocus} value={this.value} disabled={disabled}>
+      <select className="pbg-mobile-paragraph" onChange={this.onChange} onBlur={this.onBlur} onFocus={this.onFocus} value={this.value} disabled={disabled}>
         {options.map(({ label, value }) => (
           <option value={value || PICKER_EMPTY_VALUE} key={`option-${value || PICKER_EMPTY_VALUE}`}>
             {label}
