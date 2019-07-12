@@ -57,4 +57,12 @@ describe('StepProgressBar', () => {
 
     expect(actualProgress.length).to.equal(expectedProgress.length);
   });
+
+  it('should show progress correctly', () => {
+    const wrapper = shallow(<StepProgressBar stepCount={5} progress={1} />);
+    const steps = wrapper.find(StepProgressBarStep);
+    const step = steps.first().dive();
+
+    expect(step.find('.pbg-step-progress-bar-step').hasClass('pbg-step-progress-bar-step-complete')).to.be.true;
+  });
 });

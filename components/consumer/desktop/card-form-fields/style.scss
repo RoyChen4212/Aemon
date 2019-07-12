@@ -1,0 +1,24 @@
+.pbg-consumer-desktop {
+  &.pbg-card-form-fields {
+    display: flex;
+    .pbg-card-form-fields-col {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      margin-right: 16px;
+      & > .pbg-text-field {
+        margin-bottom: 16px;
+        flex-grow: 1;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      &:first-child {
+        flex-grow: 2;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

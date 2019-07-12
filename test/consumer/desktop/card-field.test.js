@@ -99,4 +99,14 @@ describe('card field', () => {
 
     expect(icon.hasClass('pbg-dinners-club-card')).to.be.true;
   });
+
+  it('should show default card type', () => {
+    const labelText = 'text';
+
+    const wrapper = shallow(<CardField label={labelText} />);
+    const placeholder = wrapper.find(CardPlaceholder);
+    const icon = placeholder.dive().find('.pbg-placeholder-icon');
+
+    expect(icon.hasClass('pbg-default-placeholder-icon')).to.be.true;
+  });
 });
