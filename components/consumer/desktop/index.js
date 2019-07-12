@@ -32,6 +32,7 @@ import ModalAlert from './modal-alert';
 import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
 import PasswordField from './password-field';
+import PaymentMethodSelector from './payment-method-selector';
 import Picker, { PICKER_EMPTY_VALUE } from './picker';
 import Popover from './popover';
 import PopoverTooltip from './popover-tooltip';
@@ -66,6 +67,7 @@ const desktop = {
   MoneyField,
   MultiSelectField,
   PasswordField,
+  PaymentMethodSelector,
   Picker,
   Popover,
   PopoverTooltip,
