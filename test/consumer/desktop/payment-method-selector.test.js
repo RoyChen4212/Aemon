@@ -4,20 +4,19 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
-import PaymentMethodSelector, {
-  cardTypes,
-  PAYMENT_METHOD_ADD_VALUE,
-} from '../../../components/consumer/desktop/payment-method-selector';
+import PaymentMethodSelector from '../../../components/consumer/desktop/payment-method-selector';
+import { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
+import { cardTypes } from '../../../components/consumer/desktop/card-field/card-field-types';
 import Label from '../../../components/consumer/desktop/label';
 import PaymentMethodSelectorMenu from '../../../components/consumer/desktop/payment-method-selector/payment-method-selector-menu';
 
 const options = [
-  { cardType: cardTypes.VISA, label: 'ending in XXXX (exp:mm/yy)', value: 'visa' },
-  { cardType: cardTypes.MASTER, label: 'ending in XXXX (exp:mm/yy)', value: 'master' },
-  { cardType: cardTypes.AMERICAN_EXPRESS, label: 'ending in XXXX (exp:mm/yy)', value: 'american_express' },
-  { cardType: cardTypes.DISCOVER, label: 'ending in XXXX (exp:mm/yy)', value: 'discover' },
-  { cardType: cardTypes.DINERS_CLUB, label: 'ending in XXXX (exp:mm/yy)', value: 'diners_club' },
-  { cardType: cardTypes.ADD_NEW, label: 'Add new [term]', value: PAYMENT_METHOD_ADD_VALUE },
+  { cardType: cardTypes[0], label: 'ending in XXXX (exp:mm/yy)', value: 'visa' },
+  { cardType: cardTypes[1], label: 'ending in XXXX (exp:mm/yy)', value: 'master' },
+  { cardType: cardTypes[2], label: 'ending in XXXX (exp:mm/yy)', value: 'american_express' },
+  { cardType: cardTypes[3], label: 'ending in XXXX (exp:mm/yy)', value: 'discover' },
+  { cardType: cardTypes[4], label: 'ending in XXXX (exp:mm/yy)', value: 'diners_club' },
+  { cardType: null, label: 'Add new [term]', value: PICKER_EMPTY_VALUE },
 ];
 
 describe('PaymentMethodSelector', () => {
@@ -79,8 +78,8 @@ describe('PaymentMethodSelector', () => {
   });
 
   it('should return PAYMENT_METHOD_ADD_VALUE when value is add', () => {
-    const wrapper = shallow(<PaymentMethodSelector value={PAYMENT_METHOD_ADD_VALUE} />);
-    expect(wrapper.instance().value).to.equal(PAYMENT_METHOD_ADD_VALUE);
+    const wrapper = shallow(<PaymentMethodSelector value={PICKER_EMPTY_VALUE} />);
+    expect(wrapper.instance().value).to.equal(PICKER_EMPTY_VALUE);
   });
 
   it('should select correct option when value is given', () => {
