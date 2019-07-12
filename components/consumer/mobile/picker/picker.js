@@ -9,17 +9,18 @@ import './style.scss';
 
 export const PICKER_EMPTY_VALUE = '__EmptyValue';
 
+/** @extends React.Component */
 class Picker extends FormField {
   baseClassName = 'pbg-form-field pbg-consumer-mobile pbg-picker';
+
+  get value() {
+    return this.adaptedProps.value || PICKER_EMPTY_VALUE;
+  }
 
   onChange = ev => {
     if (ev.target.value === PICKER_EMPTY_VALUE) return this.adaptedProps.onChange(makeEvent(null));
     return this.adaptedProps.onChange(ev);
   };
-
-  get value() {
-    return this.adaptedProps.value || PICKER_EMPTY_VALUE;
-  }
 
   renderLabel() {
     const { required, label } = this.adaptedProps;
@@ -32,8 +33,8 @@ class Picker extends FormField {
     const { options = [], disabled } = this.adaptedProps;
     return (
       <select onChange={this.onChange} onBlur={this.onBlur} onFocus={this.onFocus} value={this.value} disabled={disabled}>
-        {options.map(({ label, value }, i) => (
-          <option value={value === null ? PICKER_EMPTY_VALUE : value} key={`option-${i}`}>
+        {options.map(({ label, value }) => (
+          <option value={value || PICKER_EMPTY_VALUE} key={`option-${value || PICKER_EMPTY_VALUE}`}>
             {label}
           </option>
         ))}
