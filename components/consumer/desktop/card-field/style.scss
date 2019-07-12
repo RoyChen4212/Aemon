@@ -1,10 +1,13 @@
 .pbg-consumer-desktop {
   &.pbg-card-field {
+    width: 236px;
+
     .pbg-label {
       & > span {
         width: 100%;
       }
     }
+
     .pbg-card-field-label-wrapper {
       display: flex;
       justify-content: space-between;
@@ -13,6 +16,7 @@
         display: block;
       }
     }
+
     .pbg-card-field-wrapper {
       position: relative;
       .pbg-placeholder-icon {
@@ -26,10 +30,12 @@
       }
     }
   }
+
   &.pbg-cards-wrapper {
     display: inline-flex;
     height: 21px;
     align-items: center;
+
     .pbg-card {
       width: 20px;
       height: 15px;
@@ -38,6 +44,7 @@
       background-size: cover;
     }
   }
+
   .pbg-visa-card {
     background: url('../img/visa-card.svg');
   }

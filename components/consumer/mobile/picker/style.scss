@@ -5,6 +5,11 @@
 
   .pbg-picker-select-label {
     margin-bottom: 4px;
+    .pbg-label {
+      &.pbg-consumer-mobile {
+        color: $grey-80;
+      }
+    }
   }
 
   .pbg-picker-select-container {
@@ -19,10 +24,11 @@
       background: none;
       border: 0;
       color: $grey-80;
+      height: 40px;
       line-height: $regular-line-height;
       font-size: $regular-font;
       outline: 0;
-      padding: 8px 12px;
+      padding: 10px 8px;
       vertical-align: middle;
       -moz-appearance: none;
       -webkit-appearance: none;
@@ -36,9 +42,9 @@
       position: absolute;
       pointer-events: none;
       top: 18px;
-      right: 12px;
-      width: 8px;
-      height: 4px;
+      right: 15px;
+      width: 10px;
+      height: 6px;
     }
   }
 
@@ -58,6 +64,11 @@
   }
 
   &.pbg-form-field-error {
+    .pbg-label {
+      &.pbg-consumer-mobile {
+        color: $red-60;
+      }
+    }
     .pbg-picker-select-container {
       border-color: $red-60;
     }
