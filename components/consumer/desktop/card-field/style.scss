@@ -24,9 +24,9 @@
         height: 18px;
         border-radius: 2px;
         position: absolute;
-        top: 10px;
+        top: 11px;
         left: 8px;
-        background-size: cover;
+        background-size: contain;
       }
     }
   }
@@ -41,26 +41,26 @@
       height: 15px;
       margin-left: 6px;
       border-radius: 2px;
-      background-size: cover;
+      background-size: contain;
     }
   }
 
   .pbg-visa-card {
-    background: url('../img/visa-card.svg');
+    background: url('../img/visa-card.svg') no-repeat;
   }
   .pbg-master-card {
-    background: url('../img/master-card.svg');
+    background: url('../img/master-card.svg') no-repeat;
   }
   .pbg-amex-card {
-    background: url('../img/amex-card.svg');
+    background: url('../img/amex-card.svg') no-repeat;
   }
   .pbg-discover-card {
-    background: url('../img/discover-card.svg');
+    background: url('../img/discover-card.svg') no-repeat;
   }
   .pbg-dinners-club-card {
-    background: url('../img/dinners-club-card.svg');
+    background: url('../img/dinners-club-card.svg') no-repeat;
   }
   .pbg-default-placeholder-icon {
-    background: url('../img/card-placeholder.svg');
+    background: url('../img/card-placeholder.svg') no-repeat;
   }
 }
