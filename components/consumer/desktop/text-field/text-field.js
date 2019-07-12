@@ -1,13 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import FormField from '../form-field';
 import { labelTypes } from '../label';
 
 import './style.scss';
 
+/** @extends React.Component */
 class TextField extends FormField {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-text-field';
 
   baseType = 'text';
+
+  static propTypes = {
+    icon: PropTypes.string,
+    onIconClick: PropTypes.func,
+  };
+
+  static defaultProps = {
+    icon: null,
+    onIconClick: () => {},
+  };
 
   get labelType() {
     if (this.error) return labelTypes.ERROR;
@@ -39,11 +52,13 @@ class TextField extends FormField {
   }
 
   renderIcon() {
-    if (!this.props.icon) return null;
+    const { icon, onIconClick } = this.props;
+
+    if (!icon) return null;
 
     return (
-      <div className="pbg-text-field-icon">
-        <img src={this.props.icon} />
+      <div className="pbg-text-field-icon" onClick={onIconClick}>
+        <img src={icon} />
       </div>
     );
   }
