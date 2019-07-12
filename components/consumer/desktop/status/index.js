@@ -1,3 +1,1 @@
-import Status from './status';
-
-export default Status;
+export { default, iconTypes } from './status';
