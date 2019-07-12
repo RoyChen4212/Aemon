@@ -27,6 +27,12 @@
       user-select: none;
 
       .pbg-mobile-label-link {
+        .pbk-overlay-back-button {
+          &:before {
+            content: url('../img/pbg-back-arrow.svg');
+            margin-right: 7px;
+          }
+        }
         text-transform: capitalize;
       }
 

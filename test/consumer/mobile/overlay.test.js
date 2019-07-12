@@ -38,12 +38,12 @@ describe('Overlay', () => {
     expect(wrapper.hasClass('pbg-overlay')).to.be.true;
   });
 
-  it('Should have \'open\' class when Overlay opened', () => {
+  it('Should have "open" class when Overlay opened', () => {
     const wrapper = shallow(<Overlay opened onBackButtonClick={() => null} />);
     expect(wrapper.hasClass('open')).to.be.true;
   });
 
-  it('Should\'n have \'open\' class when Overlay closed', () => {
+  it('Should not have "open" class when Overlay closed', () => {
     const wrapper = shallow(<Overlay opened={false} onBackButtonClick={() => null} />);
     expect(wrapper.hasClass('open')).to.be.false;
   });
@@ -85,7 +85,7 @@ describe('Overlay', () => {
     expect(wrapper.find('.pbg-overlay-inner--footer').text()).to.equal(backText);
   });
 
-  it('\'onBackButtonClick\' event should be triggered when header back button clicked', done => {
+  it('"onBackButtonClick" event should be triggered when header back button clicked', done => {
     const onBackButtonClick = () => {
       done();
     };
@@ -96,7 +96,7 @@ describe('Overlay', () => {
     .simulate('click');
   });
 
-  it('\'onBackButtonClick\' event should be triggered when footer back button clicked', done => {
+  it('"onBackButtonClick" event should be triggered when footer back button clicked', done => {
     const onBackButtonClick = () => {
       done();
     };
@@ -107,7 +107,7 @@ describe('Overlay', () => {
     .simulate('click');
   });
 
-  it('Should have opened as \'true\' when opened button clicked', () => {
+  it('Should have opened as "true" when opened button clicked', () => {
     const wrapper = shallow(<OverlayWrapper />);
     wrapper
       .find('#open-button')
@@ -116,7 +116,7 @@ describe('Overlay', () => {
     expect(overlay.props().opened).to.be.true;
   });
 
-  it ('Should have opened as \'false\' when header back button clicked', () => {
+  it ('Should have opened as "false" when header back button clicked', () => {
     const wrapper = shallow(<OverlayWrapper />);
     wrapper
     .find('#open-button')
@@ -129,18 +129,18 @@ describe('Overlay', () => {
     expect(overlay.props().opened).to.be.false;
   });
 
-  it('Should not break when \'title\' is not present', () => {
+  it('Should not break when "title" is not present', () => {
     const wrapper = shallow(<Overlay opened onBackButtonClick={() => null} />);
 
     expect(wrapper.find('.pbg-overlay')).to.have.lengthOf(1);
   });
 
-  it('Should not be rendered if \'onBackButtonClick\' is not present', () => {
+  it('Should not be rendered if "onBackButtonClick" is not present', () => {
     const wrapper = shallow(<Overlay opened />);
     expect(wrapper.find('.pbg-overlay')).to.have.lengthOf(0);
   });
 
-  it('Should not break when \'opened\' is not present', () => {
+  it('Should not break when "opened" is not present', () => {
     const wrapper = shallow(<Overlay />);
     expect(wrapper.find('.pbg-overlay')).to.have.lengthOf(0);
   });

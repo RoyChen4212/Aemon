@@ -15,6 +15,7 @@ storiesOf('Consumer/Mobile/Info/overlay', module)
 .add('overlay/default', () =>
   <Overlay
     title="Title"
+    backText='back'
     opened
     onBackButtonClick={action('onBackButtonClick')}
   />
@@ -44,6 +45,7 @@ class AnimationOverlay extends React.Component {
         <button onClick={this.onClick}>Show overlay</button>
         <Overlay
           title='Title'
+          backText='back'
           opened={overlayOpened}
           onBackButtonClick={this.onBackButtonClick}
         />
