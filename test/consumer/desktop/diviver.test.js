@@ -26,15 +26,15 @@ describe('Divider', () => {
     const label = 'Label';
     const wrapper = mount(<Divider label={label} />);
     expect(wrapper.props().label).to.equal(label);
-  })
+  });
 
   it('should accept hint prop', () => {
     const hint = 'Helper text';
     const wrapper = mount(<Divider hint={hint} />);
     expect(wrapper.props().hint).to.equal(hint);
-  })
+  });
 
-  it('Label should\'\n be rendered if property is not provided', () => {
+  it('Label should not be rendered if property is not provided', () => {
     const hint = 'Helper text';
     const wrapper = mount(<Divider hint={hint} />);
     expect(wrapper.find('.pbg-divider-hint')).to.have.lengthOf(0);
