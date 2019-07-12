@@ -2,6 +2,11 @@
 
 .pbg-form-field {
   &.pbg-password-field {
+    &.pbg-form-field-error {
+      input {
+        border-color: $red-60;
+      }
+    }
     .pbg-password-field-label {
       margin-bottom: 4px;
     }
@@ -24,6 +29,10 @@
       font-size: 14px;
       line-height: 18px;
       width: 100%;
+      outline: none;
+      &:focus {
+        border-color: $blue-60;
+      }
     }
   }
 }
