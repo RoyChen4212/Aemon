@@ -1,7 +1,8 @@
 import React from 'react';
 import { values } from 'lodash';
 import { storiesOf } from '@storybook/react';
-import Status, { iconTypes } from '../../../components/consumer/desktop/status';
+import { iconTypes } from '../../../components/consumer/shared/icon-types';
+import Status from '../../../components/consumer/desktop/status';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
