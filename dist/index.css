@@ -9972,13 +9972,29 @@ div.pbg-avatar {
   color: #006AFF;
   cursor: pointer; }
 
-.pbg-consumer-desktop.pbg-modal {
+.pbg-consumer-desktop.pbg-modal .pbg-modal-dialog {
+  display: block;
+  box-orient: vertical;
+  box-direction: normal;
+  position: relative; }
+  .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-container {
+    content: '';
+    clear: both;
+    display: table;
+    position: relative; }
+  .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-modal-alert-stack {
+    position: absolute;
+    width: 100%;
+    padding: 0 40px;
+    left: 0; }
+
+.pbg-consumer-desktop.pbg-modal-with-overlay {
   position: fixed;
   top: 0;
   height: 100%;
   width: 100%;
   z-index: 1050; }
-  .pbg-consumer-desktop.pbg-modal .pbg-modal-overlay {
+  .pbg-consumer-desktop.pbg-modal-with-overlay .pbg-modal-overlay {
     position: fixed;
     top: 0;
     width: 100%;
@@ -9986,35 +10002,19 @@ div.pbg-avatar {
     background: #000;
     opacity: 0.5;
     z-index: 1040; }
-  .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog {
-    display: block;
-    box-orient: vertical;
-    box-direction: normal;
-    position: relative;
+  .pbg-consumer-desktop.pbg-modal-with-overlay .pbg-modal-dialog {
     z-index: 1050; }
-    .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-container {
-      content: '';
-      clear: both;
-      display: table;
-      position: relative; }
-    .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-modal-alert-stack {
-      position: absolute;
-      width: 100%;
-      padding: 0 40px;
-      left: 0; }
-      .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-modal-alert-stack.pbg-modal-alert {
-        z-index: 1040; }
-    .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-modal-close-button {
-      background: url(ee35b9c61620ad75cab12c39a4f62bf3.svg) no-repeat center;
-      background-color: transparent;
-      cursor: pointer;
-      border: none;
-      display: block;
-      width: 10px;
-      height: 10px;
-      position: absolute;
-      top: 12px;
-      right: 12px; }
+  .pbg-consumer-desktop.pbg-modal-with-overlay .pbg-modal-close-button {
+    background: url(ee35b9c61620ad75cab12c39a4f62bf3.svg) no-repeat center;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 12px;
+    right: 12px; }
 
 .pbg-clearfix {
   content: "";
