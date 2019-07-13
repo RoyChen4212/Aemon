@@ -19,10 +19,6 @@ describe('Status', () => {
     expect(wrapper.html()).to.include('pbg-status-icon-container');
   });
 
-  it('should throw without iconType', () => {
-    expect(() => shallow(<Status label={labelText} value={valueText} hint={hintText} />)).to.throw();
-  });
-
   it('should render the label', () => {
     const wrapper = shallow(<Status label={labelText} value={valueText} hint={hintText} iconType="lock" />);
     expect(wrapper.html()).to.include(labelText);
