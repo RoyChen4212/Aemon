@@ -40,9 +40,7 @@
     border: 1px solid $grey-30;
     border-radius: 50%;
 
-    img {
-      height: 18px;
-      width: 18px;
+    [class^="pbg-icon-"] {
       margin-top: 10px;
     }
   }
