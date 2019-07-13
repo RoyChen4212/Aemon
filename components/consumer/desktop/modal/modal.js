@@ -33,20 +33,31 @@ class Modal extends React.PureComponent {
     return <ModalAlertStack alerts={alerts} onHideAlert={onHideAlert} />;
   }
 
+  renderModalCloseButton() {
+    const { onClose } = this.props;
+    if (!onClose) return null;
+    return <button type="button" className="pbg-modal-close-button" onClick={this.onCloseClick} />;
+  }
+
+  renderOverlay() {
+    const { onClose } = this.props;
+    if (!onClose) return null;
+    return <div className="pbg-modal-overlay" onClick={this.onCloseClick} />;
+  }
+
   render() {
-    const { className, children } = this.props;
+    const { className, children, onClose } = this.props;
     return (
-      <div className={`pbg-consumer-desktop pbg-modal ${className}`}>
+      <div className={`pbg-consumer-desktop pbg-modal${onClose ? ' pbg-modal-with-overlay' : ''} ${className}`}>
         <div className="pbg-modal-dialog">
           {this.renderModalAlertStack()}
-
           <Container solid shadow2>
             {children}
-            <button type="button" className="pbg-modal-close-button" onClick={this.onCloseClick} />
+            {this.renderModalCloseButton()}
           </Container>
         </div>
 
-        <div className="pbg-modal-overlay" onClick={this.onCloseClick} />
+        {this.renderOverlay()}
       </div>
     );
   }

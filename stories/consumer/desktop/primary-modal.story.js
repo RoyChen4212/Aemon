@@ -4,54 +4,56 @@ import { action } from '@storybook/addon-actions';
 
 import PrimaryModal from '../../../components/consumer/desktop/primary-modal';
 import { PrimaryButton } from '../../../components/consumer/desktop/button';
-import { withContainer, wrapStory } from '../../util/decorators';
+import { withGreyContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
   .addDecorator(wrapStory)
-  .addDecorator(withContainer)
+  .addDecorator(withGreyContainer)
   .add('primary-modal', () => (
-    <PrimaryModal
-      onClose={action('click')}
-      mainContent={
-        <div>
-          <h2>Main content</h2>
-          <p>This is the main content section, style it as you want.</p>
-        </div>
-      }
-      sidebarContent={
-        <div>
-          <h2>Sidebar</h2>
-          <p>This is the sidebar content section, style it as you want.</p>
-        </div>
-      }
-      footerContent={
-        <div className="container">
-          <div className="row">
-            <PrimaryButton onClick={action('clicked')}>Call to action</PrimaryButton>
+    <div className="p2">
+      <PrimaryModal
+        mainContent={
+          <div>
+            <h2>Main content</h2>
+            <p>This is the main content section, style it as you want.</p>
           </div>
-        </div>
-      }
-    />
+        }
+        sidebarContent={
+          <div>
+            <h2>Sidebar</h2>
+            <p>This is the sidebar content section, style it as you want.</p>
+          </div>
+        }
+        footerContent={
+          <div className="container">
+            <div className="row">
+              <PrimaryButton onClick={action('clicked')}>Call to action</PrimaryButton>
+            </div>
+          </div>
+        }
+      />
+    </div>
   ))
   .add('primary-modal/no-footer', () => (
-    <PrimaryModal
-      onClose={action('click')}
-      mainContent={
-        <div>
-          <h2>Main content</h2>
-          <p>This is the main content section, style it as you want.</p>
-        </div>
-      }
-      sidebarContent={
-        <div>
-          <h2>Sidebar</h2>
-          <p>This is the sidebar content section, style it as you want.</p>
-        </div>
-      }
-    />
+    <div className="p2">
+      <PrimaryModal
+        mainContent={
+          <div>
+            <h2>Main content</h2>
+            <p>This is the main content section, style it as you want.</p>
+          </div>
+        }
+        sidebarContent={
+          <div>
+            <h2>Sidebar</h2>
+            <p>This is the sidebar content section, style it as you want.</p>
+          </div>
+        }
+      />
+    </div>
   ))
   .add('primary-modal/working-sample', () => <FullPrimaryModal />);
 
