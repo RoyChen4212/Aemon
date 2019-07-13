@@ -29,6 +29,7 @@ import EmailPreview from './email-preview';
 import FacebookInput from './facebook-input';
 import GuestPasswordField from './guest-password-field';
 import ModalAlert from './modal-alert';
+import ModalBranding from './modal-branding';
 import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
 import PasswordField from './password-field';
@@ -64,6 +65,7 @@ const desktop = {
   FacebookInput,
   GuestPasswordField,
   ModalAlert,
+  ModalBranding,
   MoneyField,
   MultiSelectField,
   PasswordField,
