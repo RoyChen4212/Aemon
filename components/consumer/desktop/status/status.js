@@ -3,25 +3,10 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { values } from 'lodash';
 
+import { iconTypes } from '../../shared/icon-types';
 import PopoverTooltip from '../popover-tooltip';
 
 import './style.scss';
-
-export const iconTypes = {
-  LOCK: 'lock',
-  UNLOCK: 'unlock',
-  PRICE_TAG: 'price-tag',
-  TRANSACTION: 'transaction',
-  CREDIT_CARD: 'credit-card',
-  CREDIT_CARD_PENDING: 'credit-card-pending',
-  CREDIT_CARD_ADD: 'credit-card-add',
-  CREDIT_CARD_SUBTRACT: 'credit-card-subtract',
-  CALENDAR: 'calendar',
-  CALENDAR_START: 'calendar-start',
-  CALENDAR_END: 'calendar-end',
-  CLOCK: 'clock',
-  HOUR_GLASS: 'hour-glass',
-};
 
 class Status extends React.PureComponent {
   static propTypes = {
@@ -55,12 +40,11 @@ class Status extends React.PureComponent {
 
   render() {
     const { iconType, value, hint } = this.props;
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    const iconSource = require(`../img/pbg-${iconType}-small.svg`);
+    const iconClass = `pbg-icon-${iconType}-small`;
     return (
       <div className="pbg-consumer-desktop pbg-status">
         <div className="pbg-status-icon-container">
-          <img src={iconSource} />
+          <i className={iconClass} />
         </div>
 
         <div className="pbg-status-text">

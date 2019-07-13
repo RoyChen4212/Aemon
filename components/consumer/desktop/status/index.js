@@ -1,1 +1,1 @@
-export { default, iconTypes } from './status';
+export { default } from './status';
