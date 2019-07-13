@@ -40,7 +40,6 @@ class Status extends React.PureComponent {
 
   render() {
     const { iconType, value, hint } = this.props;
-    // eslint-disable-next-line global-require, import/no-dynamic-require
     const iconClass = `pbg-icon-${iconType}-small`;
     return (
       <div className="pbg-consumer-desktop pbg-status">
