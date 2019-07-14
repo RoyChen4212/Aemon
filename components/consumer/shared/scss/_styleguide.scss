@@ -75,6 +75,7 @@ $pulse-icon-grey: url('../img/pulse-icon-grey.svg');
 $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
 .pbg-icon-small {
+  display: inline-block;
   width: 18px;
   height: 18px;
   background-size: cover;
@@ -139,6 +140,16 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 .pbg-icon-hour-glass-small {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-hour-glass-small.svg');
+}
+
+// Logos
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url('../../shared/img/pbg-powered-by-logo.svg');
 }
 
 // Design System

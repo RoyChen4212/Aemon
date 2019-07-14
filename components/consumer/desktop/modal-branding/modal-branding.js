@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import powerByLogo from '../img/pbg-powered-by-logo.svg';
 import Divider from '../divider';
 
 import './style.scss';
@@ -38,7 +37,7 @@ class ModalBranding extends React.PureComponent {
           </div>
           <div className="pbg-modal-branding-powered-by-logo">
             <span>powered by</span>
-            <img src={powerByLogo} />
+            <i className="pbg-logo-powered-by" />
           </div>
         </div>
         {children ? this.renderFooter() : ''}
