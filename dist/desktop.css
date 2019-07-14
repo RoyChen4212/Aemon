@@ -18,6 +18,58 @@ div.pbg-avatar {
     padding-top: 6px; }
 
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -238,6 +290,58 @@ div.pbg-avatar {
     line-height: 21px;
     font-size: 14px;
     color: #8f98a3; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -478,6 +582,58 @@ div.pbg-avatar {
       color: #8f98a3;
       margin: 0; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -679,6 +835,58 @@ div.pbg-avatar {
     cursor: pointer;
     pointer-events: all; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -869,6 +1077,58 @@ div.pbg-avatar {
 
 .pbg-consumer-desktop.pbg-hint.pbg-hint-clickable, .pbg-consumer-desktop.pbg-hint.pbg-hint-link {
   cursor: pointer; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -1075,6 +1335,58 @@ div.pbg-avatar {
 
 .pbg-consumer-desktop.pbg-form-field.pbg-text-area.pbg-form-field-error textarea {
   border-color: #f76143 !important; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -1318,6 +1630,58 @@ div.pbg-avatar {
     .pbg-consumer-desktop.pbg-button.pbg-button-facebook span {
       float: left; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -1516,6 +1880,58 @@ div.pbg-avatar {
   .pbg-consumer-desktop.pbg-add-comment .pbg-hint {
     margin-top: 8px;
     display: block; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -1765,6 +2181,58 @@ div.pbg-avatar {
 .pbg-consumer-desktop .pbg-default-placeholder-icon {
   background: url(b692b4726ae8c251b0db26c899df2ccb.svg) no-repeat; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -1952,6 +2420,58 @@ div.pbg-avatar {
   background: #fff;
   border: 1px solid #8093A6;
   border-radius: 4px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -2217,6 +2737,58 @@ div.pbg-avatar {
       margin-bottom: 0;
       margin-left: 8px; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -2405,6 +2977,58 @@ div.pbg-avatar {
     background: #fff; }
   .pbg-consumer-desktop.pbg-container.pbg-container-stroked {
     border: 1px solid #D5DDE9; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -2606,6 +3230,58 @@ div.pbg-avatar {
       margin-bottom: 0;
       margin-left: 8px; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -2800,6 +3476,58 @@ div.pbg-avatar {
       color: #526679; }
     .pbg-consumer-desktop.pbg-claim-toggle.pbg-container.claim-toggle-disabled .pbg-paragraph {
       color: #526679; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -2999,6 +3727,58 @@ div.pbg-avatar {
       content: ' '; }
   .pbg-consumer-desktop.pbg-divider.has-label .pbg-divider--line {
     margin: 9px 0 11px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -3236,6 +4016,58 @@ div.pbg-avatar {
     max-width: 220px;
     margin: 0; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -3425,6 +4257,58 @@ div.pbg-avatar {
     top: 0;
     right: 0; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -3611,6 +4495,58 @@ div.pbg-avatar {
   display: initial; }
   .pbg-consumer-desktop.pbg-guest-password-field .pbg-checkbox .pbg-checkbox-label-hint-placeholder .pbg-label {
     margin-left: 2px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -3839,6 +4775,58 @@ div.pbg-avatar {
   100% {
     opacity: 0; } }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -4055,13 +5043,66 @@ div.pbg-avatar {
       .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo span {
         color: #526679;
         margin-right: 4px; }
-      .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo img {
-        margin-top: 2px; }
+      .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-header .pbg-modal-branding-powered-by-logo .pbg-logo-powered-by {
+        margin-top: 2px;
+        vertical-align: middle; }
   .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-footer {
     margin-top: 8px;
     height: 29px; }
     .pbg-consumer-desktop.pbg-modal-branding .pbg-modal-branding-footer .pbg-modal-branding-footer-content {
       margin-top: 8px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -4251,6 +5292,58 @@ div.pbg-avatar {
 
 .pbg-consumer-desktop.pbg-form-field.pbg-text-field input.pbg-money-field:invalid {
   box-shadow: none; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -4448,6 +5541,58 @@ div.pbg-avatar {
 .pbg-consumer-desktop.pbg-multi-select-field .pbg-checkbox .pbg-checkbox-label-hint-placeholder .pbg-label {
   margin-top: 1.5px;
   margin-bottom: 1.5px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -4659,6 +5804,58 @@ div.pbg-avatar {
     margin-left: 10px;
     font-size: 12px;
     line-height: 16px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -4889,6 +6086,58 @@ div.pbg-avatar {
     padding: 8px 15px; }
     .pbg-consumer-desktop.pbg-payment-method-selector .pbg-picker-menu .picker-menu-item.selected span {
       color: #006aff; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -5132,6 +6381,58 @@ div.pbg-avatar {
 .pbg-consumer-desktop.pbg-picker.pbg-picker-big .pbg-picker-container button {
   padding: 4px 25px 6px 7px; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -5326,6 +6627,58 @@ div.pbg-avatar {
 .pbg-consumer-desktop .pbg-popover-active {
   display: block;
   position: absolute; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -5522,6 +6875,58 @@ div.pbg-avatar {
   display: block;
   position: absolute; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -5706,6 +7111,58 @@ div.pbg-avatar {
 
 .pbg-consumer-desktop.pbg-modal-alert-stack {
   position: absolute; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -5933,6 +7390,58 @@ div.pbg-avatar {
     top: 12px;
     right: 12px; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -6143,6 +7652,58 @@ div.pbg-avatar {
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -6329,6 +7890,58 @@ div.pbg-avatar {
   width: 200px;
   height: 100px;
   border-radius: 4px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -6534,6 +8147,58 @@ div.pbg-avatar {
   content: url(7cf4e14eb66a0f83afcc0584a3c92ff4.svg);
   height: 48px;
   width: 48px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix, .pbg-consumer-desktop.pbg-simple-number-stepper {
   content: "";
@@ -6762,6 +8427,58 @@ div.pbg-avatar {
     .pbg-consumer-desktop.pbg-simple-number-stepper [type='number']:focus {
       outline: 0; }
 
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
+
 .pbg-clearfix {
   content: "";
   clear: both;
@@ -6963,6 +8680,58 @@ div.pbg-avatar {
   .pbg-consumer-desktop.pbg-split .pbg-simple-number-stepper {
     float: left;
     margin: 0 8px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
@@ -7173,10 +8942,60 @@ div.pbg-avatar {
     width: 40px;
     border: 1px solid #D5DDE9;
     border-radius: 50%; }
-    .pbg-status .pbg-status-icon-container img {
-      height: 18px;
-      width: 18px;
+    .pbg-status .pbg-status-icon-container [class^="pbg-icon-"] {
       margin-top: 10px; }
+
+.pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover; }
+
+.pbg-icon-lock-small {
+  background: url(5423b30c61514b6c2cf92ad1c3e49db7.svg); }
+
+.pbg-icon-unlock-small {
+  background: url(aa044a63601d1df18721aee61ba2d128.svg); }
+
+.pbg-icon-price-tag-small {
+  background: url(28d651a6b5b5ae6386c3df3aa8c8d353.svg); }
+
+.pbg-icon-transaction-small {
+  background: url(bdc086f0b4b13e1b6e2712156cec6514.svg); }
+
+.pbg-icon-credit-card-small {
+  background: url(752114092146297da667ac6e0714d7d7.svg); }
+
+.pbg-icon-credit-card-pending-small {
+  background: url(98f4add463411d84f91e5e78eb9d1ae1.svg); }
+
+.pbg-icon-credit-card-add-small {
+  background: url(ec6c1a4a44b9e1e8dcd809e4a05eca21.svg); }
+
+.pbg-icon-credit-card-subtract-small {
+  background: url(4fbeb2dd87d5ce87b3ce5f3b6ffc9f20.svg); }
+
+.pbg-icon-calendar-small {
+  background: url(6ba42f4d347f7076c091c2ec62aea099.svg); }
+
+.pbg-icon-calendar-start-small {
+  background: url(67e60cc394c464bb569a0a6b46592ec9.svg); }
+
+.pbg-icon-calendar-end-small {
+  background: url(ad2090fa928b01ed837dfc6194c96711.svg); }
+
+.pbg-icon-clock-small {
+  background: url(d14e68038d740cd094f787e8df4563be.svg); }
+
+.pbg-icon-hour-glass-small {
+  background: url(334adea84f813fa0167799fd6d7e5bf8.svg); }
+
+.pbg-logo-powered-by {
+  display: inline-block;
+  width: 65px;
+  height: 12px;
+  background-size: cover;
+  background: url(239f13a3b529925b30de88cdae6d310c.svg); }
 
 .pbg-clearfix {
   content: "";
