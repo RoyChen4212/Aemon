@@ -51,7 +51,7 @@ class Modal extends React.PureComponent {
       <div className={`pbg-consumer-desktop pbg-modal${onClose ? ' pbg-modal-with-overlay' : ''} ${className}`}>
         <div className="pbg-modal-dialog">
           {this.renderModalAlertStack()}
-          <Container solid shadow2>
+          <Container solid shadow2 className="pbg-modal-container">
             {children}
             {this.renderModalCloseButton()}
           </Container>
