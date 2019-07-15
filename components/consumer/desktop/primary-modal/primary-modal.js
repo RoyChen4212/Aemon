@@ -43,7 +43,7 @@ class PrimaryModal extends React.PureComponent {
     const { footerContent } = this.props;
     if (!footerContent) return null;
     return (
-      <div>
+      <div key="footer">
         <Divider />
         <div className="pbg-primary-modal-footer-content">{footerContent}</div>
       </div>
