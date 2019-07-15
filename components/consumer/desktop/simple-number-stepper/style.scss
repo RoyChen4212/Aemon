@@ -19,6 +19,7 @@
 
     input {
       @extend .pbg-desktop-heading-3;
+      -webkit-text-fill-color: currentcolor;
       background-color: $white;
       border: 0;
       float: left;
