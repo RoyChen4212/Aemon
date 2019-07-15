@@ -24,7 +24,7 @@ class Popover extends React.PureComponent {
   };
 
   get className() {
-    return `pbg-popover pbg-popover-${this.active ? 'active' : 'disactive'}`;
+    return `pbg-popover pbg-popover-${this.active ? 'active' : 'inactive'}`;
   }
 
   get active() {

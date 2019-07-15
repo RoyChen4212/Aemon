@@ -14,7 +14,7 @@ class PopoverTooltip extends Popover {
   }
 
   get className() {
-    return `pbg-popover-tooltip pbg-popover-${this.active ? 'active' : 'disactive'}`;
+    return `pbg-popover-tooltip pbg-popover-${this.active ? 'active' : 'inactive'}`;
   }
 
   renderTriggerComponent() {
