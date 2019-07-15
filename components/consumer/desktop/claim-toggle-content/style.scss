@@ -16,6 +16,7 @@
     .pbg-claim-toggle-content-label-explainer-placeholder {
       float: left;
       width: calc(100% - 16px);
+      white-space: pre;
 
       .pbg-label {
         @extend .pbg-desktop-heading-3;
