@@ -1,7 +1,7 @@
 // Color palette
 $almost-white: #f3f3f3;
-$pbg-blue: #2EAFFF;
-$pbg-blue-light: #2E3AA1;
+$pbg-blue: #2eafff;
+$pbg-blue-light: #2e3aa1;
 $cloudy-blue: #b4bfcc;
 $clear-blue: #2c81ff;
 $sapphire-blue: #384c9f;
@@ -17,43 +17,43 @@ $coral: #f86143;
 $coral-error: #f76143;
 $coral-light: #fbe9e5;
 $black: #000;
-$black-19: rgba(0, 0, 0, .19);
-$black-25: rgba(0, 0, 0, .25);
-$white-1: rgba(255, 255, 255, .1);
-$facebook-color: #4267B2;
+$black-19: rgba(0, 0, 0, 0.19);
+$black-25: rgba(0, 0, 0, 0.25);
+$white-1: rgba(255, 255, 255, 0.1);
+$facebook-color: #4267b2;
 $blue-gradient: linear-gradient(267deg, $pbg-blue-light, $pbg-blue);
 $blue-linear: linear-gradient(90deg, $pbg-blue 0%, $pbg-blue-light 196.67%);
 
 $cta-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.5);
 $cta-disabled-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.15);
 
-$grey-10: #F0F3F8;
-$grey-30: #D5DDE9;
-$grey-40: #BCC7D3;
-$grey-50: #8093A6;
+$grey-10: #f0f3f8;
+$grey-30: #d5dde9;
+$grey-40: #bcc7d3;
+$grey-50: #8093a6;
 $grey-60: #526679;
-$grey-80: #24313E;
+$grey-80: #24313e;
 
-$red-10: #F9DCDC;
-$red-60: #E02E2E;
+$red-10: #f9dcdc;
+$red-60: #e02e2e;
 
-$yellow-10: #FFF3DD;
-$yellow-60: #FFBB33;
+$yellow-10: #fff3dd;
+$yellow-60: #ffbb33;
 
-$blue-10: #ECF4FF;
-$blue-20: #D9E9FF;
-$blue-30: #BBD7FF;
-$blue-40: #7DB3FF;
-$blue-50: #3388FF;
-$blue-60: #006AFF;
-$blue-70: #0055CC;
-$blue-80: #0044A3;
+$blue-10: #ecf4ff;
+$blue-20: #d9e9ff;
+$blue-30: #bbd7ff;
+$blue-40: #7db3ff;
+$blue-50: #3388ff;
+$blue-60: #006aff;
+$blue-70: #0055cc;
+$blue-80: #0044a3;
 $blue-90: #003682;
-$blue-100: #002B68;
-$blue-facebook: #3B5998;
+$blue-100: #002b68;
+$blue-facebook: #3b5998;
 
-$green-10: #E2F4E6;
-$green-60: #53BC6A;
+$green-10: #e2f4e6;
+$green-60: #53bc6a;
 
 // Font families
 $roboto: 'Roboto', serif;
@@ -79,6 +79,14 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   width: 18px;
   height: 18px;
   background-size: cover;
+}
+
+.pbg-icon-big {
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .pbg-icon-lock-small {
@@ -142,6 +150,31 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-hour-glass-small.svg');
 }
 
+.pbg-icon-lock-pending-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-rocket-big.svg');
+}
+
+.pbg-icon-credit-cards-success-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-credit-cards-success-big.svg');
+}
+
+.pbg-icon-credit-cards-pending-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-credit-cards-pending-big.svg');
+}
+
+.pbg-icon-credit-cards-error-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-credit-cards-error-big.svg');
+}
+
+.pbg-icon-lock-pending-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-lock-pending-big.svg');
+}
+
 // Logos
 
 .pbg-logo-powered-by {
@@ -157,7 +190,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 // or used to compose a new component.
 
 .pbg-clearfix {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
