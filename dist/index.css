@@ -11965,15 +11965,14 @@ div.pbg-avatar {
 .pbg-consumer-desktop.pbg-popover-container {
   position: relative;
   display: inline-block; }
-
-.pbg-consumer-desktop .pbg-popover {
-  display: none;
-  padding: 24px;
-  min-width: 300px; }
-
-.pbg-consumer-desktop .pbg-popover-active {
-  display: block;
-  position: absolute; }
+  .pbg-consumer-desktop.pbg-popover-container .pbg-popover {
+    padding: 24px;
+    min-width: 300px; }
+  .pbg-consumer-desktop.pbg-popover-container .pbg-popover-inactive {
+    display: none !important; }
+  .pbg-consumer-desktop.pbg-popover-container .pbg-popover-active {
+    display: block;
+    position: absolute; }
 
 .pbg-icon-small, .pbg-icon-lock-small, .pbg-icon-unlock-small, .pbg-icon-price-tag-small, .pbg-icon-transaction-small, .pbg-icon-credit-card-small, .pbg-icon-credit-card-pending-small, .pbg-icon-credit-card-add-small, .pbg-icon-credit-card-subtract-small, .pbg-icon-calendar-small, .pbg-icon-calendar-start-small, .pbg-icon-calendar-end-small, .pbg-icon-clock-small, .pbg-icon-hour-glass-small {
   display: inline-block;
@@ -12214,9 +12213,11 @@ div.pbg-avatar {
   display: inline-block; }
 
 .pbg-consumer-desktop .pbg-popover-tooltip {
-  display: none;
   padding: 16px;
   width: 340px; }
+
+.pbg-consumer-desktop .pbg-popover-inactive {
+  display: none !important; }
 
 .pbg-consumer-desktop .pbg-popover-active {
   display: block;
@@ -12698,7 +12699,7 @@ div.pbg-avatar {
   box-orient: vertical;
   box-direction: normal;
   position: relative; }
-  .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-container {
+  .pbg-consumer-desktop.pbg-modal .pbg-modal-dialog .pbg-modal-container {
     content: '';
     clear: both;
     display: table;
