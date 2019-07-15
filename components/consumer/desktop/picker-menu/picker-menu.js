@@ -1,5 +1,6 @@
 import React from 'react';
 import get from 'lodash/get';
+import classnames from 'classnames';
 
 import Label, { labelTypes } from '../label';
 import Container from '../container';
@@ -47,10 +48,11 @@ class PickerMenu extends React.PureComponent {
   };
 
   render() {
-    const { active } = this.props;
+    const { active, fullWidth } = this.props;
     return (
       <div className={`${baseClassName} ${active ? 'active' : ''}`}>
-        <Container solid shadow2 stroked>
+        <div className={classnames('picker-blur-imitation', { 'hidden': !active })} onClick={this.props.onBlur} />
+        <Container solid shadow2 stroked fullWidth={fullWidth}>
           {this.options.map(this.renderOption)}
         </Container>
       </div>

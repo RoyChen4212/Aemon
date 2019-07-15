@@ -25,8 +25,10 @@
       }
 
       &:hover {
+        cursor: pointer;
         .pbg-label {
           color: $blue-60;
+          cursor: pointer;
         }
         background: $blue-10;
       }
@@ -44,6 +46,19 @@
       margin-left: 10px;
       font-size: 12px;
       line-height: 16px;
+    }
+
+    .picker-blur-imitation {
+      position: fixed;
+      width: 100%;
+      opacity: 0;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      .hidden {
+        display: none;
+      }
     }
   }
 }

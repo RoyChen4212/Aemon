@@ -17,6 +17,9 @@ const buildClassName = props => {
   if (props.shadow2) {
     className += ' pbg-container-shadow-2';
   }
+  if (props.fullWidth) {
+    className += ' pbg-container-full-width';
+  }
   return className;
 };
 
