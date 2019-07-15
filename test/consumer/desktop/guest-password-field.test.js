@@ -32,9 +32,7 @@ describe('password-field', () => {
 
   it('should disable the PasswordField when checkbox is checked', () => {
     const hint = 'a hint';
-    const wrapper = mount(<GuestPasswordField hint={hint} />);
-    const event = { target: { checked: true } };
-    wrapper.find({ type: 'checkbox' }).simulate('change', event);
+    const wrapper = mount(<GuestPasswordField hint={hint} value={{guest: true}} />);
     expect(wrapper.find({ type: 'password' }).prop('disabled')).to.equal(true);
   });
 
