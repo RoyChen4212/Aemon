@@ -1,5 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
+import sinon from 'sinon';
 import { mount, shallow } from 'enzyme';
 
 import Checkbox from '../../../components/consumer/desktop/checkbox';
@@ -46,6 +47,33 @@ describe('password-field', () => {
     const hint = 'a hint';
     const wrapper = mount(<GuestPasswordField hint={hint} value={{ guest: true }} />);
     expect(wrapper.find({ type: 'checkbox' }).prop('checked')).to.equal(true);
+  });
+
+  it('should update value with password', function test(done) {
+    const expected = 'some password';
+    const onChange = (ev) => {
+      expect(ev.target.value).to.eql({ guest: false, password: expected });
+      done();
+    }
+    const wrapper = mount(<GuestPasswordField value={{ guest: false }} onChange={onChange} />);
+    wrapper.find({ type: 'password'}).simulate('change', { target: {value: expected }});
+  });
+
+  it('should update value with checkbox', () => {
+    const hint = 'a hint';
+    const onChange = sinon.spy();
+    const wrapper = mount(
+      <GuestPasswordField hint={hint} value={{ guest: false }} onChange={onChange} />
+    );
+    const event = { target: { checked: true } };
+    wrapper.find({ type: 'checkbox' }).simulate('change', event);
+    expect(onChange.calledOnce).to.be.true;
+  })
+
+  it('should not render checkbox when error', () => {
+    const hint = 'a hint';
+    const wrapper = mount(<GuestPasswordField hint={hint} error="error" value={{ guest: true }} />);
+    expect(wrapper.find({ type: 'checkbox' })).to.have.lengthOf(0);
   });
 
   it('should preserve password afer blur event', () => {
