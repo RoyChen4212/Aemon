@@ -8,9 +8,12 @@
 
   .pbg-popover-tooltip {
     @extend .pbg-desktop-small-text;
-    display: none;
     padding: 16px;
     width: 340px;
+  }
+
+  .pbg-popover-disactive {
+    display: none!important;
   }
 
   .pbg-popover-active {
