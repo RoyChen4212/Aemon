@@ -1,6 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { mount, shallow } from 'enzyme';
+import sinon from 'sinon';
 
 import PrimaryModal from '../../../components/consumer/desktop/primary-modal';
 import ModalAlert from '../../../components/consumer/desktop/modal-alert';
@@ -46,6 +47,26 @@ describe('primary-modal', () => {
     const expected = <div>Sidebar content</div>;
     const wrapper = shallow(<PrimaryModal sidebarContent={expected} />);
     expect(wrapper.find(sidebarClass).contains(expected)).to.be.true;
+  });
+
+  it('should not contain a form if form is false', () => {
+    const wrapper = shallow(<PrimaryModal form={false} />);
+    expect(wrapper.find('form')).to.be.empty;
+  });
+
+  it('should render a form if form is true', () => {
+    const wrapper = shallow(<PrimaryModal form />);
+    expect(wrapper.find('form').hasClass('pbg-primary-modal-main-container')).to.be.true;
+  });
+
+  it('should pass formProps to form if given', () => {
+    const onSubmit = sinon.spy();
+    const wrapper = shallow(<PrimaryModal form formProps={{ onSubmit }} />);
+    const form = wrapper.find('form');
+
+    expect(form.prop('onSubmit')).to.equal(onSubmit);
+    form.simulate('submit');
+    expect(onSubmit.calledOnce).to.be.true;
   });
 
   it('should render given alerts', () => {
