@@ -11,7 +11,7 @@ storiesOf('Consumer/Mobile/activity-header', module)
   .addDecorator(withContainer)
   .add('add-comment/default', () => (
     <AddComment
-      hint="Only logged-in group members see comments."
+      hint="Only logged-in group members can see comments."
       ctaLabel="Post comment"
       textLabel="Write a comment..."
       avatarSrc="http://i.pravatar.cc/300"
@@ -20,7 +20,7 @@ storiesOf('Consumer/Mobile/activity-header', module)
   ))
   .add('add-comment/no-avatar', () => (
     <AddComment
-      hint="Only logged-in group members see comments."
+      hint="Only logged-in group members can see comments.."
       ctaLabel="Post comment"
       textLabel="Write a comment..."
       fullName="John Doe"

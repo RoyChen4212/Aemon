@@ -55,76 +55,114 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
       />
     </div>
   ))
+  .add('primary-modal/form', () => {
+    const onSubmit = action('on submit');
+    return (
+      <div className="p2">
+        <PrimaryModal
+          form
+          formProps={{ onSubmit }}
+          mainContent={
+            <div>
+              <h2>Main content</h2>
+              <p>This is the main content section, style it as you want.</p>
+            </div>
+          }
+          sidebarContent={
+            <div>
+              <h2>Sidebar</h2>
+              <p>This is the sidebar content section, style it as you want.</p>
+            </div>
+          }
+          footerContent={
+            <div className="container">
+              <div className="row">
+                <PrimaryButton onClick={onSubmit}>Call to action</PrimaryButton>
+              </div>
+            </div>
+          }
+        />
+      </div>
+    );
+  })
   .add('primary-modal/working-sample', () => <FullPrimaryModal />);
 
 class FullPrimaryModal extends React.Component {
   state = {
-    showingPrimaryModal: false,
+    visible: false,
     alerts: [],
   };
 
-  get showingPrimaryModal() {
-    const { showingPrimaryModal } = this.state;
-    return showingPrimaryModal;
-  }
-
-  get alerts() {
+  onSuccessAlert = () => {
     const { alerts } = this.state;
-    return alerts;
-  }
+    this.setState({ alerts: [...alerts, { type: 'success', title: 'New success.', text: 'Hey, you did it.' }] });
+  };
 
-  get modal() {
-    if (!this.showingPrimaryModal) return null;
+  onWarningAlert = () => {
+    const { alerts } = this.state;
+    this.setState({ alerts: [...alerts, { type: 'warning', title: 'New warning.', text: "I'm warning you!" }] });
+  };
+
+  onButtonClick = () => {
+    this.setState({ visible: true });
+  };
+
+  onCloseClick = () => {
+    this.setState({ visible: false });
+  };
+
+  onSubmit = event => {
+    action('submitted')(event);
+    event.preventDefault();
+  };
+
+  renderModal() {
+    const { visible, alerts } = this.state;
+    if (!visible) return null;
     return (
       <PrimaryModal
-        onClose={this.hidePrimaryModal}
+        onClose={this.onCloseClick}
+        form
+        formProps={{ onSubmit: this.onSubmit }}
         mainContent={
           <div>
             <h2>Main content</h2>
             <p>This is the main content section, style it as you want.</p>
-            <PrimaryButton onClick={this.addSuccessAlert}>Add success alert</PrimaryButton>
+            <p>
+              This content is wrapped with a form, so you can submit it hitting <code>enter</code>.
+            </p>
+            <p>
+              <input type="text" placeholder="Submit the form" />
+            </p>
+            <PrimaryButton onClick={this.onSuccessAlert}>Add success alert</PrimaryButton>
           </div>
         }
         sidebarContent={
           <div>
             <h2>Sidebar content</h2>
             <p>This is the sidebar content section, style it as you want.</p>
-            <PrimaryButton onClick={this.addWarningAlert}>Add warning alert</PrimaryButton>
+            <PrimaryButton onClick={this.onWarningAlert}>Add warning alert</PrimaryButton>
           </div>
         }
-        footerContent={<p style={{ textAlign: 'center' }}>This is the footer content section, style it as you want.</p>}
-        alerts={this.alerts}
+        footerContent={
+          <div className="container">
+            <div className="row">
+              <PrimaryButton onClick={this.onSubmit}>Call to action</PrimaryButton>
+            </div>
+          </div>
+        }
+        alerts={alerts}
       />
     );
   }
 
-  showPrimaryModal = () => {
-    this.setState({ showingPrimaryModal: true });
-  };
-
-  hidePrimaryModal = () => {
-    this.setState({ showingPrimaryModal: false });
-  };
-
-  addSuccessAlert = () => {
-    this.setState({
-      alerts: [...this.alerts, { type: 'success', title: 'New success.', text: 'Hey, you did it.' }],
-    });
-  };
-
-  addWarningAlert = () => {
-    this.setState({
-      alerts: [...this.alerts, { type: 'warning', title: 'New warning.', text: "I'm warning you!" }],
-    });
-  };
-
   render() {
     return (
       <div>
-        {this.modal}
+        {this.renderModal()}
         <div className="container">
           <div className="row">
-            <PrimaryButton onClick={this.showPrimaryModal}>Show modal</PrimaryButton>
+            <PrimaryButton onClick={this.onButtonClick}>Show modal</PrimaryButton>
           </div>
         </div>
       </div>
