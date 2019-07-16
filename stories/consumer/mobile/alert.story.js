@@ -11,7 +11,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Mobile/Alerts/alert', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .addDecorator(story => <div style={{ width: '500px' }}>{story()}</div>)
   .add('alert/success', () => (
     <Alert
       type={alertTypes.SUCCESS}
