@@ -17,8 +17,7 @@ class Divider extends React.PureComponent {
   render() {
     const { className } = this.props;
     return (
-      <div className={className ? `${baseClassName} ${className}` : baseClassName}>
-      </div>
+      <div className={className ? `${baseClassName} ${className}` : baseClassName} />
     )
   }
 };
