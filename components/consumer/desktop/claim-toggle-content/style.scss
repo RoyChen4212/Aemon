@@ -5,6 +5,7 @@
     content: '';
     clear: both;
     display: table;
+    width: 100%;
 
     input {
       width: 16px;
@@ -16,7 +17,6 @@
     .pbg-claim-toggle-content-label-explainer-placeholder {
       float: left;
       width: calc(100% - 16px);
-      white-space: pre-wrap;
 
       .pbg-label {
         @extend .pbg-desktop-heading-3;
