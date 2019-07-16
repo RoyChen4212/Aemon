@@ -6,8 +6,6 @@ import ModalBranding from '../../../components/consumer/desktop/modal-branding';
 import Divider from '../../../components/consumer/desktop/divider';
 
 describe('ModalBranding', () => {
-  const logo = 'https://myimage.com';
-
   it('should have correct class name', () => {
     const wrapper = shallow(<ModalBranding />);
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
@@ -21,15 +19,16 @@ describe('ModalBranding', () => {
   });
 
   it('should render an image inside a merchant-logo', () => {
+    const logo = 'https://myimage.com';
     const wrapper = shallow(<ModalBranding logo={logo} />);
     const img = wrapper.find('.pbg-modal-branding-merchant-logo').find('img');
     expect(img).to.have.lengthOf(1);
   });
 
-  it('should render an image inside a powered-by-logo', () => {
+  it('should render powered-by-logo', () => {
     const wrapper = shallow(<ModalBranding />);
-    const img = wrapper.find('.pbg-modal-branding-powered-by-logo').find('img');
-    expect(img).to.have.lengthOf(1);
+    const logo = wrapper.find('.pbg-modal-branding-powered-by-logo').find('.pbg-logo-powered-by');
+    expect(logo).to.have.lengthOf(1);
   });
 
   it('should render a "powered by" phrase inside a powered-by-logo', () => {

@@ -4,16 +4,19 @@
   &.pbg-popover-container {
     position: relative;
     display: inline-block;
-  }
 
-  .pbg-popover {
-    display: none;
-    padding: 24px;
-    min-width: 300px;
-  }
+    .pbg-popover {
+      padding: 24px;
+      min-width: 300px;
+    }
 
-  .pbg-popover-active {
-    display: block;
-    position: absolute;
+    .pbg-popover-inactive {
+      display: none!important;
+    }
+
+    .pbg-popover-active {
+      display: block;
+      position: absolute;
+    }
   }
 }

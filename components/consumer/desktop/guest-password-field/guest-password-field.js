@@ -1,6 +1,5 @@
 import React from 'react';
 
-import get from 'lodash/get';
 import FormField from '../form-field';
 import ComplexValueFormField from '../../shared/complex-value-form-field';
 import PasswordField from '../password-field';
@@ -14,18 +13,7 @@ const ComposedFormField = ComplexValueFormField(FormField);
 class GuestPasswordField extends ComposedFormField {
   baseClassName = 'pbg-consumer-desktop pbg-guest-password-field';
 
-  state = {
-    guest: false,
-  };
-
-  static getDerivedStateFromProps(props, state) {
-    const guest = get(props, 'value.guest', false);
-    if (guest !== state.guest) return { guest };
-    return null;
-  }
-
   onCheckboxChange = ev => {
-    this.setState({ guest: ev.target.value });
     this.updateValue({ guest: ev.target.value });
   };
 
@@ -48,11 +36,11 @@ class GuestPasswordField extends ComposedFormField {
     return (
       <div className={this.className}>
         <PasswordField
-          {...this.props}
+          label={this.adaptedProps.label}
           type={this.baseType}
           value={this.currentValue.password}
           hint={null}
-          disabled={this.state.guest}
+          disabled={this.currentValue.guest}
           onChange={this.onInputChange}
           onBlur={() => this.onBlur(makeEvent(this.currentValue))}
         />

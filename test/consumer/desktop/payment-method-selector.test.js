@@ -9,6 +9,7 @@ import { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker'
 import { cardTypes } from '../../../components/consumer/desktop/card-field/card-field-types';
 import Label from '../../../components/consumer/desktop/label';
 import PaymentMethodSelectorMenu from '../../../components/consumer/desktop/payment-method-selector/payment-method-selector-menu';
+import CardFormFields from '../../../components/consumer/desktop/card-form-fields/card-form-fields';
 
 const options = [
   { cardType: cardTypes[0], label: 'ending in XXXX (exp:mm/yy)', value: 'visa' },
@@ -125,5 +126,15 @@ describe('PaymentMethodSelector', () => {
       .find('button')
       .simulate('click');
     expect(onChange.calledOnce).to.be.true;
+  });
+
+  it('should show CardFormFields on new mode', () => {
+    const wrapper = shallow(<PaymentMethodSelector options={options} value={PICKER_EMPTY_VALUE} />);
+    expect(wrapper.find(CardFormFields).length).to.equal(1);
+  });
+
+  it('should show CardFormFields on other modes', () => {
+    const wrapper = shallow(<PaymentMethodSelector options={options} value="visa" />);
+    expect(wrapper.find(CardFormFields).length).to.equal(0);
   });
 });

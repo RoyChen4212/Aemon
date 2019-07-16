@@ -14,7 +14,7 @@
 
         .pbg-picker-button {
           min-width: 366px;
-          padding: 9px 30px 8px 7px;
+          padding: 8px 30px 9px 7px;
 
           .pbg-picker-arrow {
             right: 7px;
@@ -44,6 +44,9 @@
         }
       }
     }
+    .pbg-payment-method-selector-new-card-container {
+      margin-top: 16px;
+    }
 
     .pbg-payment-method-field {
       display: flex;
@@ -67,7 +70,7 @@
 
         &.selected {
           span {
-            color: #006AFF;
+            color: #006aff;
           }
         }
       }

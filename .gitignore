@@ -41,4 +41,3 @@ jspm_packages
 .cache
 config/development.js
 config/test.js
-dist
