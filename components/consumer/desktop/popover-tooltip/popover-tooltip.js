@@ -22,6 +22,8 @@ class PopoverTooltip extends Popover {
     if (!TriggerComponent) return null;
     return <TriggerComponent onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} />;
   };
+
+  renderClickOutsideElement = () => null;
 }
 
 export default PopoverTooltip;

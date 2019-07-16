@@ -90,10 +90,16 @@ class Popover extends React.PureComponent {
     return <TriggerComponent onClick={this.onClick} />;
   };
 
+  renderClickOutsideElement() {
+    const { active } = this.state;
+    return active ? <div className="pbg-click-outside-component" />  : null;
+  }
+
   render() {
     const { content } = this.props;
     return (
       <div className="pbg-consumer-desktop pbg-popover-container">
+        {this.renderClickOutsideElement()}
         {this.renderTriggerComponent()}
         <Container shadow2 stroked solid className={this.className} ref={this.popoverElementRef}>
           {content}
