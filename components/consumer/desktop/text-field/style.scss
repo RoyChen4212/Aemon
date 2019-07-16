@@ -25,6 +25,18 @@
           color: $grey-60;
         }
 
+        &:-moz-placeholder {
+          opacity: 1;
+        }
+
+        &::-moz-placeholder {
+          opacity: 1;
+        }
+
+        &::-ms-clear {
+          display: none;
+        }
+
         &:focus {
           outline: none;
           border-color: $blue-60;

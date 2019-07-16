@@ -63,7 +63,7 @@ storiesOf('Consumer/Desktop/Form Fields/text-field', module)
       name="field3"
       label="A text field"
       onChange={action('change')}
-      value="What you typed is wrong"
+      placeholder="What you typed is wrong"
       hint="this is a hint"
     />
   ));
