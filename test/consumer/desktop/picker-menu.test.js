@@ -99,14 +99,12 @@ describe('PickerMenu', () => {
     expect(onOptionClick.calledOnce).to.be.true;
   });
 
-  it('should call onBlur when outside clicked', (done) => {
-    const onBlur = () =>  {
-      done();
-    };
+  it('should call onBlur when outside clicked', done => {
+    const onBlur = () => done();
     const wrapper = mount(<PickerMenu active onBlur={onBlur} options={opts} />);
     wrapper
-    .find('.pbg-picker-menu')
-    .find('.picker-blur-imitation')
-    .simulate('click');
+      .find('.pbg-picker-menu')
+      .find('.picker-blur-imitation')
+      .simulate('click');
   });
 });

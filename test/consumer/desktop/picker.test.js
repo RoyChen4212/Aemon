@@ -26,8 +26,18 @@ describe('Picker', () => {
   it('Should render label with correct class name and correct text inside', () => {
     const pickerLabel = 'Picker Label';
     const wrapper = mount(<Picker label={pickerLabel} />);
-    expect(wrapper.find('.pbg-picker').find('.pbg-label').text()).to.equal(pickerLabel);
-    expect(wrapper.find('.pbg-picker').find('.pbg-label').exists());
+    expect(
+      wrapper
+        .find('.pbg-picker')
+        .find('.pbg-label')
+        .text()
+    ).to.equal(pickerLabel);
+    expect(
+      wrapper
+        .find('.pbg-picker')
+        .find('.pbg-label')
+        .exists()
+    );
   });
 
   it('should render a button with correct class name if button prop is false', () => {
@@ -205,7 +215,7 @@ describe('Picker', () => {
     expect(wrapper.hasClass('pbg-picker-big')).to.be.true;
   });
 
-  it('should change state when click outside picker button', (done) => {
+  it('should change state when click outside picker button', done => {
     const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }];
     const wrapper = shallow(<Picker options={opts} />);
     wrapper.find('button').simulate('click');
@@ -216,7 +226,7 @@ describe('Picker', () => {
     }, 200);
   });
 
-  it('should change state when click outside picker menu', (done) => {
+  it('should change state when click outside picker menu', done => {
     const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }];
     const wrapper = shallow(<Picker options={opts} />);
     wrapper.find(PickerMenu).simulate('blur');
