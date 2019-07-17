@@ -182,6 +182,61 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-lock-pending-big.svg');
 }
 
+.pbg-icon-arrow-down-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-arrow-down-small-blue.svg');
+}
+
+.pbg-icon-arrow-left-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-arrow-left-small-blue.svg');
+}
+
+.pbg-icon-arrow-right-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-arrow-right-small-blue.svg');
+}
+
+.pbg-icon-arrow-up-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-arrow-up-small-blue.svg');
+}
+
+.pbg-icon-back-arrow-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-back-arrow-small-blue.svg');
+}
+
+.pbg-icon-cross-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-cross-small-blue.svg');
+}
+
+.pbg-icon-dots-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-dots-small-blue.svg');
+}
+
+.pbg-icon-large-arrow-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-large-arrow-small-blue.svg');
+}
+
+.pbg-icon-menu-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-menu-small-blue.svg');
+}
+
+.pbg-icon-minus-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-minus-small-blue.svg');
+}
+
+.pbg-icon-plus-button {
+  @extend .pbg-icon-button;
+  background: url('../../shared/img/pbg-plus-small-blue.svg');
+}
+
 // Logos
 
 .pbg-logo-powered-by {
