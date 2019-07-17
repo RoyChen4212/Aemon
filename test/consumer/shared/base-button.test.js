@@ -1,9 +1,5 @@
-import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
 import sinon from 'sinon';
-
-import BaseButton from '../../../components/consumer/shared/base-button';
 
 export const shouldBehaveLikeButton = wrapper => {
   beforeEach(() => {
@@ -40,6 +36,16 @@ export const shouldBehaveLikeButton = wrapper => {
     expect(wrapper.find('button').hasClass('submitting')).to.be.true;
   });
 
+  it('should add icon class when iconType prop is present', () => {
+    wrapper.setProps({ iconType: 'cross' });
+    expect(
+      wrapper
+        .find('button')
+        .find('span')
+        .hasClass('pbg-button-icon')
+    ).to.be.true;
+  });
+
   it('should render correct text', () => {
     const expected = 'some text';
     wrapper.setProps({ children: expected });
@@ -62,6 +68,20 @@ export const shouldBehaveLikeButton = wrapper => {
     wrapper.setState({ active: true });
     expect(wrapper.state().active).to.be.true;
     wrapper.find('button').simulate('mouseup');
+    expect(wrapper.state().active).to.be.false;
+  });
+
+  it('should deactivate it when mouseout', () => {
+    wrapper.setState({ active: true });
+    expect(wrapper.state().active).to.be.true;
+    wrapper.find('button').simulate('mouseout');
+    expect(wrapper.state().active).to.be.false;
+  });
+
+  it('should deactivate it on blur', () => {
+    wrapper.setState({ active: true });
+    expect(wrapper.state().active).to.be.true;
+    wrapper.find('button').simulate('blur');
     expect(wrapper.state().active).to.be.false;
   });
 
@@ -113,4 +133,3 @@ export const shouldBehaveLikeButton = wrapper => {
     expect(wrapper.find('.pbg-button-hint-container')).to.have.lengthOf(0);
   });
 };
-

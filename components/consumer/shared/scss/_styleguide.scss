@@ -89,6 +89,13 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background-repeat: no-repeat;
 }
 
+.pbg-icon-button {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+}
+
 .pbg-icon-lock-small {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-lock-small.svg');

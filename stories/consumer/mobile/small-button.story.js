@@ -10,6 +10,11 @@ storiesOf('Consumer/Mobile/Atomic Components/small-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('small-button/default', () => <SmallButton onClick={action('clicked')}>Small Button</SmallButton>)
+  .add('small-button/icon', () => (
+    <SmallButton iconType="cross" onClick={action('clicked')}>
+      Small Button
+    </SmallButton>
+  ))
   .add('small-button/disabled', () => (
     <SmallButton disabled onClick={action('clicked')}>
       Small Button Disabled

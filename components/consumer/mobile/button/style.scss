@@ -12,6 +12,16 @@
     text-align: center;
     width: 100%;
 
+    .pbg-button-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        margin: 0 8px;
+      }
+    }
+
     &.pbg-button-primary {
       background: $blue-60;
       box-shadow: $cta-shadow;
@@ -57,13 +67,13 @@
     }
 
     &.pbg-button-small {
-      background: $pale-grey;
-      border: 0;
-      border-radius: 31px;
-      color: $clear-blue;
+      background: $grey-10;
+      border-radius: 4px;
+      color: $blue-60;
       font-size: $small-font;
-      line-height: $small-line-height;
+      line-height: 18px;
       height: 26px;
+      padding: 0;
     }
 
     &.pbg-button-link {
