@@ -21,9 +21,14 @@ describe('modal', () => {
     expect(wrapper.find(dialogClass)).to.have.lengthOf(1);
   });
 
-  it('should have modal overlay', () => {
-    const wrapper = shallow(<Modal />);
+  it('should have modal overlay when onClose is passed', () => {
+    const wrapper = shallow(<Modal onClose={() => {}} />);
     expect(wrapper.find('.pbg-modal-overlay')).to.have.lengthOf(1);
+  });
+
+  it('should not have modal overlay when onClose is not passed', () => {
+    const wrapper = shallow(<Modal />);
+    expect(wrapper.find('.pbg-modal-overlay')).to.have.lengthOf(0);
   });
 
   it('should call onClose upon clicking overlay', () => {
@@ -33,16 +38,14 @@ describe('modal', () => {
     expect(spy.calledOnce).to.be.true;
   });
 
-  it('should not break if no onClose is given', () => {
-    const wrapper = shallow(<Modal />);
-    expect(() => {
-      wrapper.find('.pbg-modal-overlay').simulate('click');
-    }).not.to.throw();
+  it('should have a close icon when onClose is given', () => {
+    const wrapper = shallow(<Modal onClose={() => {}} />);
+    expect(wrapper.find('.pbg-modal-close-button')).to.have.lengthOf(1);
   });
 
-  it('should have a close icon', () => {
+  it('should not have a close icon when onClose is not given', () => {
     const wrapper = shallow(<Modal />);
-    expect(wrapper.find('.pbg-modal-close-button')).to.have.lengthOf(1);
+    expect(wrapper.find('.pbg-modal-close-button')).to.have.lengthOf(0);
   });
 
   it('should call onClose upon clicking overlay close icon', () => {

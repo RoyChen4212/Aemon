@@ -11,12 +11,17 @@ storiesOf('Consumer/Mobile/Atomic Components/primary-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('primary-button/default', () => (
-    <PrimaryButton onClick={action('clicked')}>
-      Primary Button
+    <PrimaryButton hint="Hint" onClick={action('clicked')}>
+      Primary
+    </PrimaryButton>
+  ))
+  .add('primary-button/submitting', () => (
+    <PrimaryButton submitting hint="Hint" onClick={action('clicked')}>
+      Primary
     </PrimaryButton>
   ))
   .add('primary-button/disabled', () => (
-    <PrimaryButton disabled onClick={action('clicked')}>
-      Primary Button Disabled
+    <PrimaryButton disabled hint="Hint" onClick={action('clicked')}>
+      Primary
     </PrimaryButton>
   ));

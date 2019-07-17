@@ -1,0 +1,54 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    min-height: 100vh;
+    transition: right 0.3s ease-in-out;
+    background: $white;
+    overflow-x: auto;
+
+    &.open {
+      right: 0;
+    }
+
+    .pbg-overlay-inner {
+      padding: 16px 15px 69px 15px;
+      position: relative;
+      min-height: 100vh;
+      user-select: none;
+
+      .pbg-mobile-label-link {
+        .pbg-overlay-back-button {
+          &:before {
+            content: url('../img/pbg-back-arrow.svg');
+            margin-right: 7px;
+          }
+        }
+        text-transform: capitalize;
+      }
+
+      &--header {
+        margin-bottom: 6px;
+      }
+
+      &--content {
+      }
+
+      &--footer {
+        border-top: 1px solid $grey-30;
+        padding: 16px 0;
+        text-align: center;
+        position: absolute;
+        width: calc(100% - 30px);
+        left: 15px;
+        bottom: 0;
+      }
+    }
+  }
+}

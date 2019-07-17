@@ -10,7 +10,7 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const options = [
-  { label: 'Choose one', value: null },
+  { label: 'Choose option', value: null },
   { label: 'First option', value: 'first' },
   { label: 'Second option', value: 'second' },
   { label: 'Super long option text here', value: 'third' },
@@ -35,7 +35,7 @@ storiesOf('Consumer/Mobile/Form Fields/picker', module)
     name="picker"
     label="Label"
     hint="Hint"
-    error="You selection is terrible"
+    error="Hint"
     onChange={action('onChange')}
     options={options}
   />
@@ -47,7 +47,7 @@ storiesOf('Consumer/Mobile/Form Fields/picker', module)
     hint="Hint"
     value={options[1].value}
     onChange={action('onChange')}
-    disabled={true}
+    disabled
     options={options}
   />
 ))

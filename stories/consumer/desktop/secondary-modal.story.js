@@ -11,7 +11,7 @@ import '../../style.css';
 storiesOf('Consumer/Desktop/Modals & Popovers/secondary-modal', module)
   .addDecorator(withContainer)
   .add('secondary-modal/icon', () => (
-    <SecondaryModal title="Secondary Modal" iconType="rocket" onClose={action('click')}>
+    <SecondaryModal title="Secondary Modal" iconType="credit-cards-success" onClose={action('click')}>
       <p>This is the content section, style it as you want.</p>
     </SecondaryModal>
   ))

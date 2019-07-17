@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { values } from 'lodash';
 
+import { iconTypes } from '../../shared/icon-types';
 import PopoverTooltip from '../popover-tooltip';
 
 import './style.scss';
@@ -11,7 +13,7 @@ class Status extends React.PureComponent {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     hint: PropTypes.string.isRequired,
-    iconType: PropTypes.string.isRequired,
+    iconType: PropTypes.oneOf(values(iconTypes)).isRequired,
     tooltip: PropTypes.string,
   };
 
@@ -38,12 +40,11 @@ class Status extends React.PureComponent {
 
   render() {
     const { iconType, value, hint } = this.props;
-    // eslint-disable-next-line global-require, import/no-dynamic-require
-    const iconSource = require(`../img/pbg-${iconType}-small.svg`);
+    const iconClass = `pbg-icon-${iconType}-small`;
     return (
       <div className="pbg-consumer-desktop pbg-status">
         <div className="pbg-status-icon-container">
-          <img src={iconSource} />
+          <i className={iconClass} />
         </div>
 
         <div className="pbg-status-text">

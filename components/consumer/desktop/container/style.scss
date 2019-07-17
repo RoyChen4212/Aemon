@@ -3,6 +3,8 @@
 .pbg-consumer-desktop {
   &.pbg-container {
     border-radius: 4px;
+    position: absolute;
+    z-index: 1050;
 
     &.pbg-container-solid {
       background: $white;
@@ -15,6 +17,9 @@
     }
     &.pbg-container-shadow-2 {
       @extend .pbg-desktop-shadow-level-two;
+    }
+    &.pbg-container-full-width {
+      width: 100%;
     }
   }
 }

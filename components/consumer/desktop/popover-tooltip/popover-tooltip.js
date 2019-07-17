@@ -14,7 +14,7 @@ class PopoverTooltip extends Popover {
   }
 
   get className() {
-    return `pbg-popover-tooltip ${this.active ? 'pbg-popover-active' : ''}`;
+    return `pbg-popover-tooltip pbg-popover-${this.active ? 'active' : 'inactive'}`;
   }
 
   renderTriggerComponent() {
@@ -22,6 +22,8 @@ class PopoverTooltip extends Popover {
     if (!TriggerComponent) return null;
     return <TriggerComponent onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} />;
   };
+
+  renderClickOutsideElement = () => null;
 }
 
 export default PopoverTooltip;

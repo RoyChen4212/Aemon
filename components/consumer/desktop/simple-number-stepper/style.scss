@@ -5,6 +5,7 @@
     @extend .pbg-clearfix;
     border: 1px solid $grey-50;
     border-radius: 3px;
+    overflow: hidden;
 
     button {
       border: 0;
@@ -19,6 +20,7 @@
 
     input {
       @extend .pbg-desktop-heading-3;
+      -webkit-text-fill-color: currentcolor;
       background-color: $white;
       border: 0;
       float: left;
@@ -36,8 +38,6 @@
     }
 
     .decrement {
-      border-bottom-left-radius: 3px;
-      border-top-left-radius: 3px;
       background: $grey-10 url('../img/pbg-minus-small.svg') center no-repeat;
 
       &.disabled {
@@ -46,8 +46,6 @@
     }
 
     .increment {
-      border-bottom-right-radius: 3px;
-      border-top-right-radius: 3px;
       background: $grey-10 url('../img/pbg-plus-small.svg') center no-repeat;
 
       &.disabled {

@@ -12,15 +12,40 @@
     text-align: center;
     width: 100%;
 
-    > span {
-      padding: 16px;
-    }
-
     &.pbg-button-primary {
-      background: $blue-linear;
-      border-radius: 31px;
+      background: $blue-60;
+      box-shadow: $cta-shadow;
+      border-radius: 4px;
       color: $white;
       height: 47px;
+
+      &.pbg-button-active {
+        background-color: $blue-70;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &.disabled {
+        cursor: default;
+        background: $grey-10;
+        box-shadow: $cta-disabled-shadow;
+
+        > span {
+          color: $grey-60;
+        }
+      }
+    }
+
+    &.submitting {
+      background-color: $grey-10;
+      cursor: default;
+      box-shadow: none;
+
+      > span {
+        color: $grey-60;
+      }
     }
 
     &.pbg-button-secondary {
@@ -102,11 +127,17 @@
     }
 
     &.disabled {
-        opacity: 0.65;
-      }
+      opacity: 0.65;
+    }
   }
 }
 
 .pbg-button-hint-container {
   text-align: center;
+  margin-top: 4px;
+
+  .pbg-hint {
+    display: block;
+    color: $grey-60;
+  }
 }

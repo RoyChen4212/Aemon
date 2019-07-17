@@ -11,6 +11,8 @@ class PrimaryModal extends React.PureComponent {
     mainContent: PropTypes.node,
     sidebarContent: PropTypes.node,
     footerContent: PropTypes.node,
+    form: PropTypes.bool,
+    formProps: PropTypes.object,
     onClose: PropTypes.func,
     onHideAlert: PropTypes.func,
     alerts: PropTypes.arrayOf(PropTypes.object),
@@ -20,25 +22,46 @@ class PrimaryModal extends React.PureComponent {
     mainContent: null,
     sidebarContent: null,
     footerContent: null,
+    form: false,
+    formProps: {},
     onClose: null,
     onHideAlert: null,
     alerts: [],
   };
 
+  renderContent() {
+    const { mainContent } = this.props;
+    return [
+      <div key="main" className="pbg-primary-modal-main-content">
+        {mainContent}
+      </div>,
+      this.renderFooter(),
+    ];
+  }
+
+  renderFooter() {
+    const { footerContent } = this.props;
+    if (!footerContent) return null;
+    return (
+      <div key="footer">
+        <Divider />
+        <div className="pbg-primary-modal-footer-content">{footerContent}</div>
+      </div>
+    );
+  }
+
   render() {
-    const { onClose, alerts, onHideAlert, mainContent, footerContent, sidebarContent } = this.props;
+    const { sidebarContent, form, formProps, onClose, alerts, onHideAlert } = this.props;
+
     return (
       <Modal className="pbg-primary-modal" onClose={onClose} alerts={alerts} onHideAlert={onHideAlert}>
         <div className="pbg-primary-modal-content">
-          <div className="pbg-primary-modal-main-container">
-            <div className="pbg-primary-modal-main-content">{mainContent}</div>
-            {footerContent && (
-              <div>
-                <Divider />
-                <div className="pbg-primary-modal-footer-content">{footerContent}</div>
-              </div>
-            )}
-          </div>
+          {form && (
+            <form className="pbg-primary-modal-main-container" {...formProps}>
+              {this.renderContent()}
+            </form>
+          )}
+          {!form && <div className="pbg-primary-modal-main-container">{this.renderContent()}</div>}
           <div className="pbg-primary-modal-sidebar-content">{sidebarContent}</div>
         </div>
       </Modal>

@@ -17,7 +17,7 @@ class MultiSelectField extends FormField {
     label: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
     hint: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
     value: PropTypes.array, // eslint-disable-line react/no-unused-prop-types
-    options: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
+    options: PropTypes.array.isRequired, // eslint-disable-line react/no-unused-prop-types
     onChange: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   };
 

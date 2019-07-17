@@ -1,0 +1,15 @@
+export const iconTypes = {
+  LOCK: 'lock',
+  UNLOCK: 'unlock',
+  PRICE_TAG: 'price-tag',
+  TRANSACTION: 'transaction',
+  CREDIT_CARD: 'credit-card',
+  CREDIT_CARD_PENDING: 'credit-card-pending',
+  CREDIT_CARD_ADD: 'credit-card-add',
+  CREDIT_CARD_SUBTRACT: 'credit-card-subtract',
+  CALENDAR: 'calendar',
+  CALENDAR_START: 'calendar-start',
+  CALENDAR_END: 'calendar-end',
+  CLOCK: 'clock',
+  HOUR_GLASS: 'hour-glass',
+};

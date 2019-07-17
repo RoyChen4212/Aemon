@@ -20,6 +20,7 @@ import AddComment from './add-comment';
 import Avatar from './avatar';
 import Banner from './banner';
 import CardField from './card-field';
+import CardFormFields from './card-form-fields';
 import Checkbox from './checkbox';
 import ClaimToggle from './claim-toggle';
 import Container from './container';
@@ -28,9 +29,11 @@ import EmailPreview from './email-preview';
 import FacebookInput from './facebook-input';
 import GuestPasswordField from './guest-password-field';
 import ModalAlert from './modal-alert';
+import ModalBranding from './modal-branding';
 import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
 import PasswordField from './password-field';
+import PaymentMethodSelector from './payment-method-selector';
 import Picker, { PICKER_EMPTY_VALUE } from './picker';
 import Popover from './popover';
 import PopoverTooltip from './popover-tooltip';
@@ -53,6 +56,7 @@ const desktop = {
   Avatar,
   Banner,
   CardField,
+  CardFormFields,
   Checkbox,
   ClaimToggle,
   Container,
@@ -61,9 +65,11 @@ const desktop = {
   FacebookInput,
   GuestPasswordField,
   ModalAlert,
+  ModalBranding,
   MoneyField,
   MultiSelectField,
   PasswordField,
+  PaymentMethodSelector,
   Picker,
   Popover,
   PopoverTooltip,

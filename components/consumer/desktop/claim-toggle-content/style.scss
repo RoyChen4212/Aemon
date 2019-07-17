@@ -5,6 +5,7 @@
     content: '';
     clear: both;
     display: table;
+    width: 100%;
 
     input {
       width: 16px;
@@ -19,6 +20,10 @@
 
       .pbg-label {
         @extend .pbg-desktop-heading-3;
+
+        span {
+          line-height: unset;
+        }
 
         &.pbg-label-error {
           color: $red-60;

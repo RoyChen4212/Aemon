@@ -1,0 +1,79 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-payment-method-selector {
+    .pbg-payment-method-selector-label {
+      line-height: 21px;
+      margin-bottom: 4px;
+    }
+
+    .pbg-picker-container {
+      .pbg-payment-method-selector-button-container {
+        display: flex;
+        align-items: center;
+
+        .pbg-picker-button {
+          min-width: 366px;
+          padding: 8px 30px 9px 7px;
+
+          .pbg-picker-arrow {
+            right: 7px;
+            top: 10px;
+            bottom: 10px;
+          }
+        }
+
+        .pbg-payment-method-selector-add-container {
+          display: flex;
+          align-items: center;
+
+          p {
+            margin: 0 0 0 16px;
+          }
+
+          .pbg-button {
+            margin-left: 16px;
+            box-shadow: none;
+
+            > span {
+              padding: 0;
+              color: $blue-60;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+    .pbg-payment-method-selector-new-card-container {
+      margin-top: 16px;
+    }
+
+    .pbg-payment-method-field {
+      display: flex;
+      align-items: center;
+
+      .pbg-placeholder-icon {
+        width: 24px;
+        height: 18px;
+        margin-right: 10px;
+        border-radius: 2px;
+        background-size: cover;
+      }
+    }
+
+    .pbg-picker-menu {
+      min-width: 366px;
+      cursor: pointer;
+
+      .picker-menu-item {
+        padding: 8px 15px;
+
+        &.selected {
+          span {
+            color: #006aff;
+          }
+        }
+      }
+    }
+  }
+}

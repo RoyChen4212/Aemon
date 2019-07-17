@@ -45,8 +45,11 @@
           margin-right: 4px;
         }
 
-        img {
-          margin-top: 2px;
+        .pbg-logo-powered-by {
+          margin-top: 1px;
+          background-position-y: 1px;
+          vertical-align: middle;
+          background-repeat: no-repeat;
         }
       }
     }

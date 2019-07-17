@@ -78,6 +78,8 @@ class Picker extends FormField {
             active={this.state.active}
             selected={this.value}
             onOptionClick={this.onOptionClick}
+            onBlur={ev => this.onButtonBlur(ev, this.onBlur)}
+            fullWidth={!this.props.button}
           />
         </div>
         {this.renderHintOrError()}

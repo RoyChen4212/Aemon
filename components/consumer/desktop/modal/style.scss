@@ -2,6 +2,29 @@
 
 .pbg-consumer-desktop {
   &.pbg-modal {
+    .pbg-modal-dialog {
+      display: block;
+      box-orient: vertical;
+      box-direction: normal;
+      position: relative;
+
+      .pbg-modal-container {
+        content: '';
+        clear: both;
+        display: table;
+        position: relative;
+      }
+
+      .pbg-modal-alert-stack {
+        position: absolute;
+        width: 100%;
+        padding: 0 40px;
+        left: 0;
+      }
+    }
+  }
+
+  &.pbg-modal-with-overlay {
     position: fixed;
     top: 0;
     height: 100%;
@@ -19,42 +42,20 @@
     }
 
     .pbg-modal-dialog {
-      display: block;
-      box-orient: vertical;
-      box-direction: normal;
-      position: relative;
       z-index: 1050;
+    }
 
-      .pbg-container {
-        content: '';
-        clear: both;
-        display: table;
-        position: relative;
-      }
-
-      .pbg-modal-alert-stack {
-        position: absolute;
-        width: 100%;
-        padding: 0 40px;
-        left: 0;
-
-        &.pbg-modal-alert {
-          z-index: 1040;
-        }
-      }
-
-      .pbg-modal-close-button {
-        background: url('../img/pbg-modal-close-button.svg') no-repeat center;
-        background-color: transparent;
-        cursor: pointer;
-        border: none;
-        display: block;
-        width: 10px;
-        height: 10px;
-        position: absolute;
-        top: 12px;
-        right: 12px;
-      }
+    .pbg-modal-close-button {
+      background: url('../img/pbg-modal-close-button.svg') no-repeat center;
+      background-color: transparent;
+      cursor: pointer;
+      border: none;
+      display: block;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      top: 12px;
+      right: 12px;
     }
   }
 }

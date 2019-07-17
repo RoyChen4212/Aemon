@@ -24,7 +24,7 @@ class Popover extends React.PureComponent {
   };
 
   get className() {
-    return `pbg-popover ${this.active ? 'pbg-popover-active' : ''}`;
+    return `pbg-popover pbg-popover-${this.active ? 'active' : 'inactive'}`;
   }
 
   get active() {
@@ -71,8 +71,9 @@ class Popover extends React.PureComponent {
     if (clickedOutside) this.deactivate();
   };
 
-  onClick = () => {
+  onClick = ev => {
     this.activate();
+    ev.preventDefault();
   };
 
   onMouseEnter = () => {
@@ -89,10 +90,16 @@ class Popover extends React.PureComponent {
     return <TriggerComponent onClick={this.onClick} />;
   };
 
+  renderClickOutsideElement() {
+    const { active } = this.state;
+    return active ? <div className="pbg-click-outside-component" />  : null;
+  }
+
   render() {
     const { content } = this.props;
     return (
       <div className="pbg-consumer-desktop pbg-popover-container">
+        {this.renderClickOutsideElement()}
         {this.renderTriggerComponent()}
         <Container shadow2 stroked solid className={this.className} ref={this.popoverElementRef}>
           {content}

@@ -169,6 +169,13 @@ describe('TextField', () => {
       const wrapper = shallow(<TextField icon="/urlhere.dude" />);
       expect(wrapper.find('.pbg-text-field-icon')).to.have.lengthOf(1);
     });
+
+    it('should trigger icon click event when icon is clicked', () => {
+      const onIconClick = sinon.spy();
+      const wrapper = shallow(<TextField icon="/urlhere.dude" onIconClick={onIconClick} />);
+      wrapper.find('.pbg-text-field-icon').simulate('click');
+      expect(onIconClick.calledOnce).to.be.true;
+    });
   });
 
   describe('when its a simple field', () => {

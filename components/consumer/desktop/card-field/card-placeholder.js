@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { cardTypes } from './card-field-types';
 
 import './style.scss';
 
@@ -21,7 +22,7 @@ const CardPlaceholder = ({ cardType }) => {
 };
 
 CardPlaceholder.propTypes = {
-  cardType: PropTypes.oneOf(['visa', 'master', 'american_express', 'discover', 'diners_club']),
+  cardType: PropTypes.oneOf(cardTypes),
 };
 
 CardPlaceholder.defaultProps = {

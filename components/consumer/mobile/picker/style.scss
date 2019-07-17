@@ -3,22 +3,29 @@
 .pbg-picker {
   width: 100%;
 
+  .pbg-picker-select-label {
+    margin-bottom: 4px;
+    .pbg-label {
+      &.pbg-consumer-mobile {
+        color: $grey-80;
+      }
+    }
+  }
+
   .pbg-picker-select-container {
     background: $white;
     border: 1px solid $grey-50;
     box-sizing: border-box;
     border-radius: 4px;
     position: relative;
+    height: 40px;
 
     select {
       width: 100%;
       background: none;
       border: 0;
-      color: $grey-80;
-      line-height: $regular-line-height;
-      font-size: $regular-font;
       outline: 0;
-      padding: 8px 12px;
+      padding: 9px 8px 10px 8px;
       vertical-align: middle;
       -moz-appearance: none;
       -webkit-appearance: none;
@@ -31,10 +38,19 @@
       background: url('../img/pbg-picker-arrow.svg') no-repeat;
       position: absolute;
       pointer-events: none;
-      top: 18px;
+      top: 17px;
+      bottom: 18px;
       right: 12px;
-      width: 8px;
-      height: 4px;
+      width: 10px;
+      height: 6px;
+    }
+  }
+
+  .pbg-mobile-hint-normal,
+  .pbg-mobile-hint-error {
+    &.pbg-consumer-mobile {
+      display: block;
+      margin-top: 4px;
     }
   }
 
@@ -46,11 +62,13 @@
   }
 
   &.pbg-form-field-error {
+    .pbg-label {
+      &.pbg-consumer-mobile {
+        color: $red-60;
+      }
+    }
     .pbg-picker-select-container {
       border-color: $red-60;
-    }
-    .pbg-hint {
-      color: $red-60;
     }
   }
 

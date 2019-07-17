@@ -15,7 +15,7 @@ class ModalAlert extends React.PureComponent {
     warning: PropTypes.bool,
     success: PropTypes.bool,
     onTextClick: PropTypes.func,
-    hideAfter: PropTypes.func,
+    hideAfter: PropTypes.string,
   };
 
   static defaultProps = {
@@ -52,7 +52,7 @@ class ModalAlert extends React.PureComponent {
   renderText() {
     const { text, onTextClick } = this.props;
     return onTextClick ? <a onClick={onTextClick}>{text}</a> : text;
-  };
+  }
 
   render() {
     const { title } = this.props;
