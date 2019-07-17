@@ -137,4 +137,13 @@ describe('PaymentMethodSelector', () => {
     const wrapper = shallow(<PaymentMethodSelector options={options} value="visa" />);
     expect(wrapper.find(CardFormFields).length).to.equal(0);
   });
+
+  it('should change state when click outside payment method selector menu', done => {
+    const wrapper = shallow(<PaymentMethodSelector options={options} value="visa" />);
+    wrapper.find(PaymentMethodSelectorMenu).simulate('blur');
+    setTimeout(() => {
+      expect(wrapper.state().active).to.be.false;
+      done();
+    }, 200);
+  });
 });

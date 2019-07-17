@@ -96,6 +96,8 @@ class PaymentMethodSelector extends Picker {
             active={active}
             selected={this.value}
             onOptionClick={this.onOptionClick}
+            onBlur={ev => this.onButtonBlur(ev, this.onBlur)}
+            fullWidth
           />
           {this.value === PICKER_EMPTY_VALUE && (
             <div className="pbg-payment-method-selector-new-card-container">
