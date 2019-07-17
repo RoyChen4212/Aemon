@@ -23,6 +23,13 @@ describe('Picker', () => {
     expect(wrapper.find('button')).to.have.lengthOf(1);
   });
 
+  it('Should render label with correct class name and correct text inside', () => {
+    const pickerLabel = 'Picker Label';
+    const wrapper = mount(<Picker label={pickerLabel} />);
+    expect(wrapper.find('.pbg-picker').find('.pbg-label').text()).to.equal(pickerLabel);
+    expect(wrapper.find('.pbg-picker').find('.pbg-label').exists());
+  });
+
   it('should render a button with correct class name if button prop is false', () => {
     const wrapper = shallow(<Picker button={false} />);
     expect(wrapper.find('button').hasClass('pbg-picker-text')).to.be.true;
