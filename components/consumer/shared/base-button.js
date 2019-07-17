@@ -96,7 +96,7 @@ class BaseButton extends React.PureComponent {
         >
           <span className={classnames({ 'pbg-button-icon': iconType })}>
             {children}
-            {iconType && <i className={classnames({ [`pbg-icon-${iconType}-button`]: iconType })} />}
+            {iconType && <i className={classnames({ [`pbg-icon-${iconType}-small-blue`]: iconType })} />}
           </span>
         </button>
         {this.renderHint()}
