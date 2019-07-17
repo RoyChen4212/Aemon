@@ -204,4 +204,25 @@ describe('Picker', () => {
     const wrapper = shallow(<Picker big />);
     expect(wrapper.hasClass('pbg-picker-big')).to.be.true;
   });
+
+  it('should change state when click outside picker button', (done) => {
+    const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }];
+    const wrapper = shallow(<Picker options={opts} />);
+    wrapper.find('button').simulate('click');
+    wrapper.find('button').simulate('blur');
+    setTimeout(() => {
+      expect(wrapper.state().active).to.be.false;
+      done();
+    }, 200);
+  });
+
+  it('should change state when click outside picker menu', (done) => {
+    const opts = [{ label: { term: 'option 1' }, value: 'opt1' }, { label: { term: 'option 2' }, value: 'opt2' }];
+    const wrapper = shallow(<Picker options={opts} />);
+    wrapper.find(PickerMenu).simulate('blur');
+    setTimeout(() => {
+      expect(wrapper.state().active).to.be.false;
+      done();
+    }, 200);
+  });
 });

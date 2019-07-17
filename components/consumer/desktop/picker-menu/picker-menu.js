@@ -75,7 +75,7 @@ PickerMenu.propTypes = {
 PickerMenu.defaultProps = {
   active: false,
   fullWidth: false,
-  onBlur: () => null
+  onBlur: () => {}
 };
 
 export default PickerMenu;

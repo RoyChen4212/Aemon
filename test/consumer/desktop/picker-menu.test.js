@@ -1,6 +1,6 @@
 import React from 'react';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 import PickerMenu from '../../../components/consumer/desktop/picker-menu';
@@ -97,5 +97,16 @@ describe('PickerMenu', () => {
       .at(0)
       .simulate('click');
     expect(onOptionClick.calledOnce).to.be.true;
+  });
+
+  it('should call onBlur when outside clicked', (done) => {
+    const onBlur = () =>  {
+      done();
+    };
+    const wrapper = mount(<PickerMenu active onBlur={onBlur} options={opts} />);
+    wrapper
+    .find('.pbg-picker-menu')
+    .find('.picker-blur-imitation')
+    .simulate('click');
   });
 });
