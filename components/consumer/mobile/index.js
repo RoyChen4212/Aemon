@@ -14,6 +14,7 @@ import HistoricalPicker from './historical-picker';
 import Label, { labelTypes } from './label';
 import Modal from './modal';
 import MultiSelectField from './multi-select-field';
+import NavbarBrand from './navbar-brand';
 import NewAddressField from './new-address-field';
 import NoAccountWarning from './no-account-warning';
 import PasswordField from './password-field';
@@ -47,6 +48,7 @@ const mobile = {
   LinkButton,
   Modal,
   MultiSelectField,
+  NavbarBrand,
   NewAddressField,
   NoAccountWarning,
   PasswordField,

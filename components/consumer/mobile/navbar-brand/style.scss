@@ -1,0 +1,50 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-navbar-brand {
+    background-color: $white;
+    height: 42px;
+    border-bottom: 1px solid $grey-30;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 17px;
+
+    .pbg-navbar-brand-icon {
+      width: 39px;
+      height: 19px;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .pbg-navbar-brand-text {
+      @extend .pbg-mobile-hint-normal;
+      font-style: normal;
+    }
+
+    .pbg-navbar-text-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pbg-navbar-brand-pbg-icon {
+      background-image: url('../img/pbg-icon.svg');
+      width: 64px;
+      height: 12px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: 3px;
+      margin-top: 2px;
+    }
+
+    .pbg-navbar-brand-menu {
+      background: url('../img/menu-small.svg') no-repeat;
+      background-size: contain;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+  }
+}
