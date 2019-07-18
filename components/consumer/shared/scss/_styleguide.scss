@@ -303,6 +303,20 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $red-60;
 }
 
+.pbg-mobile-label-normal {
+  color: $grey-80;
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $regular-font;
+  line-height: 20px;
+}
+
+.pbg-mobile-label-error {
+  @extend .pbg-mobile-label-normal;
+  color: $red-60;
+}
+
 // Text
 .pbg-desktop-regular-text {
   @extend .pbg-desktop-label-normal;

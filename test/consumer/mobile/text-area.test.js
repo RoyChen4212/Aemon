@@ -44,14 +44,6 @@ describe('TextArea', () => {
     expect(instance.state.style.height).to.equal('0px');
   });
 
-  it('should return null on placeholder when focused', () => {
-    const labelText = 'some text';
-    const wrapper = shallow(<TextArea label={labelText} />);
-    expect(wrapper.instance().textAreaPlaceholder).to.equal(labelText);
-    wrapper.setProps({ focused: true });
-    expect(wrapper.instance().textAreaPlaceholder).to.equal(null);
-  });
-
   describe('With error', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';

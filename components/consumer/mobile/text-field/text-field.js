@@ -1,4 +1,5 @@
 import React from 'react';
+
 import FormField from '../form-field';
 import { labelTypes } from '../label';
 import './style.scss';
@@ -10,7 +11,7 @@ class TextField extends FormField {
 
   get labelType() {
     if (this.adaptedProps.error) return labelTypes.ERROR;
-    return labelTypes.ACTIVE;
+    return labelTypes.base;
   }
 
   get type() {
@@ -32,6 +33,7 @@ class TextField extends FormField {
         placeholder={this.placeholder}
         pattern={this.adaptedProps.pattern}
         type={this.type}
+        disabled={this.adaptedProps.disabled}
       />
     );
   }
