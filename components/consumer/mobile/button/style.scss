@@ -18,7 +18,7 @@
       align-items: center;
 
       i {
-        margin: 0 8px;
+        margin: 0 4px;
       }
     }
 
@@ -74,6 +74,7 @@
       line-height: 18px;
       height: 26px;
       padding: 0;
+      outline: none;
     }
 
     &.pbg-button-link {
