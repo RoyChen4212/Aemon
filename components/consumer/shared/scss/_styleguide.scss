@@ -477,8 +477,8 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-family: $roboto;
   font-style: italic;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: $small-font;
+  line-height: $small-line-height;
   color: $grey_60;
 }
 

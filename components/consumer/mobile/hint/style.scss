@@ -2,20 +2,14 @@
 
 .pbg-consumer-mobile {
   &.pbg-hint {
-    color: $cool-grey;
-    font-family: Roboto;
-    font-style: italic;
-    font-weight: normal;
-    line-height: 15px;
-    font-size: 12px;
+    @extend .pbg-mobile-hint-normal;
   }
 
   &.pbg-hint-error {
-    color: $coral-error;
+    @extend .pbg-mobile-hint-error;
   }
 
   &.pbg-hint-clickable {
-    color: $clear-blue;
-    cursor: pointer;
+    @extend .pbg-mobile-hint-clickable;
   }
 }

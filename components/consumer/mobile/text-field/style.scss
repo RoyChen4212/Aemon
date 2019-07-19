@@ -5,11 +5,23 @@
     &.pbg-text-field {
       .pbg-label {
         @extend .pbg-mobile-label-normal;
-        margin: 0 0 5px 2px;
+        margin: 0 0 4px;
 
         &.pbg-label-error {
           @extend .pbg-desktop-label-error;
         }
+      }
+
+      .pbg-hint {
+        display: flex;
+        margin-top: 4px;
+      }
+
+      input,
+      input[type='text'] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
       }
 
       input {
@@ -22,8 +34,7 @@
         padding: 8px;
 
         &::placeholder {
-          @extend .pbg-mobile-label-normal;
-          color: $grey-60;
+          @extend .pbg-mobile-label-secondary;
         }
 
         &:-moz-placeholder,
