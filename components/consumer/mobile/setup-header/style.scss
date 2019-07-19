@@ -1,0 +1,29 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-setup-header {
+    .pbg-setup-header-inner {
+      background-color: $white;
+      line-height: $mobile-regular-line-height;
+      height: 52px;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .pbg-setup-header-text {
+        display: flex;
+        flex-direction: column
+      }
+
+      .pbg-button {
+        padding-left: 8px;
+        margin-left: 2px;
+      }
+    }
+
+    .pbg-setup-header-content {
+      background-color: $white;
+    }
+  }
+}
