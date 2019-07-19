@@ -63,6 +63,7 @@ $large-font: 17px;
 $large-line-height: 25px;
 $regular-font: 14px;
 $regular-line-height: 21px;
+$mobile-regular-line-height: 20px;
 $small-line-height: 16px;
 $small-font: 12px;
 
@@ -303,20 +304,6 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $red-60;
 }
 
-.pbg-mobile-label-normal {
-  color: $grey-80;
-  font-family: $roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: $regular-font;
-  line-height: 20px;
-}
-
-.pbg-mobile-label-error {
-  @extend .pbg-mobile-label-normal;
-  color: $red-60;
-}
-
 // Text
 .pbg-desktop-regular-text {
   @extend .pbg-desktop-label-normal;
@@ -434,13 +421,37 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $grey-80;
 }
 
-.pbg-mobile-paragraph {
+.pbg-mobile-label-normal {
   font-family: $roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: $regular-font;
+  line-height: $mobile-regular-line-height;
   color: $grey-80;
+}
+
+.pbg-mobile-label-strong {
+  @extend .pbg-mobile-label-normal;
+  font-weight: bold;
+}
+
+.pbg-mobile-label-link {
+  @extend .pbg-mobile-label-normal;
+  color: $blue-60;
+}
+
+.pbg-mobile-label-error {
+  @extend .pbg-mobile-label-normal;
+  color: $red-60;
+}
+
+.pbg-mobile-label-secondary {
+  @extend .pbg-mobile-label-normal;
+  color: $grey-60;
+}
+
+.pbg-mobile-paragraph {
+  @extend .pbg-mobile-label-normal;
 }
 
 .pbg-mobile-paragraph-error {
@@ -448,58 +459,27 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $red-60;
 }
 
-.pbg-mobile-label-strong {
-  font-family: $roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 20px;
-  color: $grey-80;
-}
-
-.pbg-mobile-label-link {
-  font-family: $roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
-  color: $blue-60;
-}
-
-.pbg-mobile-label-secondary {
-  font-family: $roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
-  color: $grey-60;
-}
-
 .pbg-mobile-small-text {
   font-family: $roboto;
-  color: $grey-80;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 18px;
+  color: $grey-80;
 }
 
 .pbg-mobile-small-secondary {
-  font-family: $roboto;
+  @extend .pbg-mobile-small-text;
   color: $grey-60;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 18px;
 }
 
 .pbg-mobile-hint-normal {
   font-family: $roboto;
-  color: $grey_60;
   font-style: italic;
   font-weight: normal;
   font-size: 12px;
   line-height: 15px;
+  color: $grey_60;
 }
 
 .pbg-mobile-hint-error {
