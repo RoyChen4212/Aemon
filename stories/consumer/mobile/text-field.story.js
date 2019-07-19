@@ -15,22 +15,41 @@ storiesOf('Consumer/Mobile/Form Fields/text-field', module)
     <FieldStateProvider
       component={TextField}
       name="field1"
-      onChange={action('change')}
-      value="You typed this"
-      hint="with a hint"
-      label="A text field"
-      required
+      onChange={action('onChange')}
+      label="Label"
+      placeholder=""
+      hint="Hint"
+    />
+  ))
+  .add('text-field/placeholder', () => (
+    <FieldStateProvider
+      component={TextField}
+      name="field1"
+      onChange={action('onChange')}
+      label="Label"
+      placeholder="Placeholder"
+      hint="Hint"
     />
   ))
   .add('text-field/error', () => (
     <FieldStateProvider
       component={TextField}
       name="field1"
-      onChange={action('change')}
-      value="You typed this"
-      hint="with a hint"
-      label="A text field"
-      error="this is an error"
-      required
+      onChange={action('onChange')}
+      label="Label"
+      value="This is an erroneous field"
+      hint="Hint"
+      error="Error"
+    />
+  ))
+  .add('text-field/disabled', () => (
+    <FieldStateProvider
+      component={TextField}
+      name="field1"
+      onChange={action('onChange')}
+      label="Label"
+      value="Disabled"
+      hint="Hint"
+      disabled
     />
   ));

@@ -4,47 +4,52 @@
   &.pbg-form-field {
     &.pbg-text-field {
       .pbg-label {
-        visibility: hidden;
-      }
-  
-      input {
-        border: 0;
-        border-bottom: 1px solid;
-        border-color: $cool-grey;
-        line-height: 20px;
-        font-size: 14px;
-        outline: 0;
-        padding-bottom: 8px;
-        width: 100%;
-  
-        &::placeholder {
-          color: $cool-grey;
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: normal;
-          line-height: 20px;
-          font-size: 14px;
+        @extend .pbg-mobile-label-normal;
+        margin: 0 0 5px 2px;
+
+        &.pbg-label-error {
+          @extend .pbg-desktop-label-error;
         }
+      }
+
+      input {
+        @extend .pbg-mobile-label-normal;
+        border: 1px solid $grey-50;
+        border-radius: 4px;
+        height: 40px;
+        outline: none;
+        width: 100%;
+        padding: 8px;
+
+        &::placeholder {
+          @extend .pbg-mobile-label-normal;
+          color: $grey-60;
+        }
+
+        &:-moz-placeholder,
+        &::-moz-placeholder {
+          opacity: 1;
+        }
+
+        &::-ms-clear {
+          display: none;
+        }
+
         &:focus {
           outline: none;
+          border-color: $blue-60;
+        }
+
+        &:disabled {
+          background-color: $grey-10;
+          color: $grey-60;
         }
       }
     }
-  
-    &.pbg-form-field-focused {
-      .pbg-label {
-        visibility: visible;
-      }
-      input {
-        &::placeholder {
-          color: transparent;
-        }
-      }
-    }
-  
+
     &.pbg-form-field-error {
       input {
-        border-color: $coral-error;
+        border-color: $red-60;
       }
     }
   }
