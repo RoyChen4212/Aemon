@@ -21,6 +21,7 @@ import PasswordField from './password-field';
 import PhoneField from './phone-field';
 import Picker from './picker';
 import SegmentedControl from './segmented-control';
+import SectionCard from './section-card';
 import StepProgressBar from './step-progress-bar';
 import TextArea from './text-area';
 import TextField from './text-field';
@@ -56,6 +57,7 @@ const mobile = {
   Picker,
   PrimaryButton,
   SecondaryButton,
+  SectionCard,
   SegmentedControl,
   SmallButton,
   SmallFacebookButton,
