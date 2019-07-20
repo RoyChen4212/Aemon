@@ -92,7 +92,8 @@ class SectionCardFullWorkflow extends React.PureComponent {
         completedLabel="Completed"
         activateButtonText={activateButtonText}
       >
-        My Awesome Content
+        <div style={{ marginBottom: '8px' }}>My Awesome Content</div>
+        {<DivInput />}
       </SectionCard>
     );
   }
