@@ -10,9 +10,9 @@ const NavbarBrand = ({ merchantLogoUrl, poweredByText, menuIconVisible, onMenuCl
     <div className="pbg-navbar-brand-icon" style={{ backgroundImage: `url(${merchantLogoUrl})` }} />
     <div className="pbg-navbar-text-container">
       <span className="pbg-navbar-brand-text">{poweredByText}</span>
-      <div className="pbg-navbar-brand-pbg-icon" />
+      <div className="pbg-navbar-brand-pbg-icon pbg-logo-powered-by" />
     </div>
-    {menuIconVisible && <div className="pbg-navbar-brand-menu" onClick={onMenuClick} />}
+    {menuIconVisible && <div className="pbg-navbar-brand-menu pbg-icon-menu-small-blue" onClick={onMenuClick} />}
   </div>
 );
 

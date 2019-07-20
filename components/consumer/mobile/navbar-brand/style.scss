@@ -30,7 +30,6 @@
     }
 
     .pbg-navbar-brand-pbg-icon {
-      background-image: url('../img/pbg-icon.svg');
       width: 64px;
       height: 12px;
       background-repeat: no-repeat;
@@ -40,7 +39,7 @@
     }
 
     .pbg-navbar-brand-menu {
-      background: url('../img/menu-small.svg') no-repeat;
+      background: url('../../shared/img/pbg-menu-small-blue.svg') no-repeat;
       background-size: contain;
       width: 18px;
       height: 18px;
