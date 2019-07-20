@@ -10,6 +10,12 @@ class FormField extends BaseFormField {
     return labelTypes.base;
   }
 
+  get placeholder() {
+    const { disabled, placeholder, label } = this.adaptedProps;
+    const text = placeholder || placeholder === '' ? placeholder : label;
+    return disabled ? null : text;
+  }
+
   renderLabel() {
     return super.renderLabel(Label);
   }

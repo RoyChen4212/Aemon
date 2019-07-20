@@ -14,6 +14,7 @@ class BaseButton extends React.PureComponent {
     hint: PropTypes.string,
     children: PropTypes.node,
     onClick: PropTypes.func,
+    iconType: PropTypes.string,
   };
 
   static defaultProps = {
@@ -23,6 +24,7 @@ class BaseButton extends React.PureComponent {
     hint: null,
     children: null,
     onClick: null,
+    iconType: null,
   };
 
   state = {
@@ -78,7 +80,7 @@ class BaseButton extends React.PureComponent {
   }
 
   render() {
-    const { disabled, submitting, children } = this.props;
+    const { disabled, submitting, children, iconType } = this.props;
     return (
       <div>
         {/* eslint-disable-next-line react/button-has-type */}
@@ -92,7 +94,10 @@ class BaseButton extends React.PureComponent {
           onBlur={this.onBlur}
           disabled={disabled || submitting}
         >
-          <span>{children}</span>
+          <span className={classnames({ 'pbg-button-icon': iconType })}>
+            {children}
+            {iconType && <i className={classnames({ [`pbg-icon-${iconType}-small-blue`]: iconType })} />}
+          </span>
         </button>
         {this.renderHint()}
       </div>

@@ -63,6 +63,7 @@ $large-font: 17px;
 $large-line-height: 25px;
 $regular-font: 14px;
 $regular-line-height: 21px;
+$mobile-regular-line-height: 20px;
 $small-line-height: 16px;
 $small-font: 12px;
 
@@ -173,6 +174,61 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 .pbg-icon-lock-pending-big {
   @extend .pbg-icon-big;
   background: url('../../shared/img/pbg-lock-pending-big.svg');
+}
+
+.pbg-icon-arrow-down-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-down-small-blue.svg');
+}
+
+.pbg-icon-arrow-left-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-left-small-blue.svg');
+}
+
+.pbg-icon-arrow-right-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-right-small-blue.svg');
+}
+
+.pbg-icon-arrow-up-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-up-small-blue.svg');
+}
+
+.pbg-icon-back-arrow-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-back-arrow-small-blue.svg');
+}
+
+.pbg-icon-cross-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cross-small-blue.svg');
+}
+
+.pbg-icon-dots-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-dots-small-blue.svg');
+}
+
+.pbg-icon-large-arrow-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-large-arrow-small-blue.svg');
+}
+
+.pbg-icon-menu-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-menu-small-blue.svg');
+}
+
+.pbg-icon-minus-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-minus-small-blue.svg');
+}
+
+.pbg-icon-plus-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-plus-small-blue.svg');
 }
 
 // Logos
@@ -365,13 +421,37 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $grey-80;
 }
 
-.pbg-mobile-paragraph {
+.pbg-mobile-label-normal {
   font-family: $roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: $regular-font;
+  line-height: $mobile-regular-line-height;
   color: $grey-80;
+}
+
+.pbg-mobile-label-strong {
+  @extend .pbg-mobile-label-normal;
+  font-weight: bold;
+}
+
+.pbg-mobile-label-link {
+  @extend .pbg-mobile-label-normal;
+  color: $blue-60;
+}
+
+.pbg-mobile-label-error {
+  @extend .pbg-mobile-label-normal;
+  color: $red-60;
+}
+
+.pbg-mobile-label-secondary {
+  @extend .pbg-mobile-label-normal;
+  color: $grey-60;
+}
+
+.pbg-mobile-paragraph {
+  @extend .pbg-mobile-label-normal;
 }
 
 .pbg-mobile-paragraph-error {
@@ -379,58 +459,27 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   color: $red-60;
 }
 
-.pbg-mobile-label-strong {
-  font-family: $roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 20px;
-  color: $grey-80;
-}
-
-.pbg-mobile-label-link {
-  font-family: $roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
-  color: $blue-60;
-}
-
-.pbg-mobile-label-secondary {
-  font-family: $roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
-  color: $grey-60;
-}
-
 .pbg-mobile-small-text {
   font-family: $roboto;
-  color: $grey-80;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 18px;
+  color: $grey-80;
 }
 
 .pbg-mobile-small-secondary {
-  font-family: $roboto;
+  @extend .pbg-mobile-small-text;
   color: $grey-60;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 18px;
 }
 
 .pbg-mobile-hint-normal {
   font-family: $roboto;
-  color: $grey_60;
   font-style: italic;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: $small-font;
+  line-height: $small-line-height;
+  color: $grey_60;
 }
 
 .pbg-mobile-hint-error {
