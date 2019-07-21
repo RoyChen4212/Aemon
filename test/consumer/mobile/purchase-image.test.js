@@ -11,9 +11,9 @@ describe('purchase-image', () => {
   });
 
   it('should have correct image', () => {
-    const src = "src";
+    const src = 'src';
     const wrapper = shallow(<PurchaseImage src={src} />);
 
-    expect(wrapper.find("div").prop("style").backgroundImage).to.equal(`url(${src})`);
+    expect(wrapper.find('div').prop('style').backgroundImage).to.equal(`url(${src})`);
   });
 });
