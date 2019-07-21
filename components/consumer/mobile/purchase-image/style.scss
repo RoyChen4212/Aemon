@@ -1,0 +1,10 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-purchase-image {
+    height: 145px;
+    width: 290px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
