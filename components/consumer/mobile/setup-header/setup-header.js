@@ -10,7 +10,7 @@ const baseClassName = 'pbg-consumer-mobile pbg-setup-header';
 class SetupHeader extends React.Component {
   state = { expanded: false };
 
-  onButtonClick = event => {
+  onButtonClick = () => {
     const { expanded } = this.state;
     this.setState({ expanded: !expanded });
   };
@@ -28,11 +28,11 @@ class SetupHeader extends React.Component {
             <span className="pbg-mobile-label-normal">{label}</span>
             {hint && <span className="pbg-mobile-small-secondary">{hint}</span>}
           </div>
-          <SmallButton iconType={buttonIcon} onClick={this.onButtonClick}>
+          <SmallButton className="pbg-setup-header-button" iconType={buttonIcon} onClick={this.onButtonClick}>
             {buttonText}
           </SmallButton>
         </div>
-        <StepProgressBar stepCount={stepCount} progress={progress} />
+        {stepCount > 0 && <StepProgressBar stepCount={stepCount} progress={progress} />}
         {expanded && <div className="pbg-setup-header-content">{children}</div>}
       </div>
     );
