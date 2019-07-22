@@ -86,7 +86,7 @@ storiesOf('Consumer/Desktop/Payment Settings/split', module)
       locked
     />
   ))
-  .add('split/custom/dropdown', () => (
+  .add('split/custom/option', () => (
     <FieldStateProvider
       component={SplitCustom}
       value={{ splitType: 'custom' }}
