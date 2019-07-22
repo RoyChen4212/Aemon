@@ -22,7 +22,16 @@ const copyFixed = {
   shares: 'shares for purchase',
 };
 
-const options = [{ label: { term: 'even' }, value: 'even' }, { label: { term: 'custom' }, value: 'custom' }];
+const options = [
+  {
+    label: { term: 'evenly', desc: 'split total cost into even shares' },
+    value: 'even',
+  },
+  {
+    label: { term: 'custom', desc: 'vary share amounts per contributor' },
+    value: 'custom',
+  },
+];
 
 const sharesSingleValue = { minShares: 6 };
 const sharesRangeValue = { minShares: 6, maxShares: 10 };
