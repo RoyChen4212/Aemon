@@ -15,6 +15,7 @@ import HistoricalPicker from './historical-picker';
 import Label, { labelTypes } from './label';
 import Modal from './modal';
 import MultiSelectField from './multi-select-field';
+import NavbarBrand from './navbar-brand';
 import NewAddressField from './new-address-field';
 import NoAccountWarning from './no-account-warning';
 import PasswordField from './password-field';
@@ -22,6 +23,7 @@ import PhoneField from './phone-field';
 import Picker from './picker';
 import SegmentedControl from './segmented-control';
 import SectionCard from './section-card';
+import SetupHeader from './setup-header';
 import StepProgressBar from './step-progress-bar';
 import TextArea from './text-area';
 import TextField from './text-field';
@@ -50,6 +52,7 @@ const mobile = {
   LinkButton,
   Modal,
   MultiSelectField,
+  NavbarBrand,
   NewAddressField,
   NoAccountWarning,
   PasswordField,
@@ -59,6 +62,7 @@ const mobile = {
   SecondaryButton,
   SectionCard,
   SegmentedControl,
+  SetupHeader,
   SmallButton,
   SmallFacebookButton,
   StepProgressBar,
