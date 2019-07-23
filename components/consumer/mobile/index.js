@@ -28,6 +28,7 @@ import StepProgressBar from './step-progress-bar';
 import TextArea from './text-area';
 import TextField from './text-field';
 import TimePicker from './time-picker';
+import SectionSeparator from './section-separator';
 
 const mobile = {
   AddComment,
@@ -61,6 +62,7 @@ const mobile = {
   PrimaryButton,
   SecondaryButton,
   SectionCard,
+  SectionSeparator,
   SegmentedControl,
   SetupHeader,
   SmallButton,
