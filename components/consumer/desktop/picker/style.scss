@@ -2,6 +2,11 @@
 
 .pbg-consumer-desktop {
   &.pbg-picker {
+    .pbg-label {
+      display: block;
+      margin: 0 0 5px 2px;
+    }
+
     .pbg-picker-container {
       position: relative;
 
