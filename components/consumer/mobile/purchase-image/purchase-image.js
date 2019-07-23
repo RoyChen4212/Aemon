@@ -5,7 +5,7 @@ import './style.scss';
 
 const baseClassName = 'pbg-consumer-mobile pbg-purchase-image';
 
-const PurchaseImage = ({ src }) => <div className={baseClassName} style={{ backgroundImage: `url(${src})` }} />;
+const PurchaseImage = ({ src }) => <img className={baseClassName} src={src} />;
 
 PurchaseImage.propTypes = {
   src: PropTypes.string.isRequired,
