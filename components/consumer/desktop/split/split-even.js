@@ -78,6 +78,7 @@ class SplitEven extends ComposedFormField {
             onChange={ev => this.updateValue({ splitType: ev.target.value })}
             big
             simple
+            button
           />
         )}
       </React.Fragment>
