@@ -66,15 +66,9 @@ class BaseAvatar extends React.PureComponent {
     const { color } = this.getFallbackImageProps();
     const initials = this.getInitials();
 
-    let classNames = classnames('pbg-avatar', className);
-
-    if (initials.length === 1) {
-      classNames = classnames(classNames, 'single');
-    }
-
     return (
       <div
-        className={classNames}
+        className={classnames('pbg-avatar', className, `pbg-avatar-${size}`)}
         style={{
           backgroundColor: color,
           width: `${size}px`,
