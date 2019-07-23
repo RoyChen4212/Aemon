@@ -1,0 +1,23 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-claim-toggle {
+    .pbg-claim-toggle-content {
+      display: flex;
+      .pbg-claim-toggle-primary-text {
+        @extend .pbg-mobile-label-strong;
+        margin-left: 8px;
+        &.error {
+          color: $red-60;
+        }
+      }
+    }
+    .pbg-claim-toggle-secondary-text {
+      @extend .pbg-mobile-label-normal;
+      padding-left: 22px;
+    }
+    .pbg-checkbox {
+      line-height: 14px;
+    }
+  }
+}

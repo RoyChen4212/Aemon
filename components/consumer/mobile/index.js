@@ -25,6 +25,7 @@ import StepProgressBar from './step-progress-bar';
 import TextArea from './text-area';
 import TextField from './text-field';
 import TimePicker from './time-picker';
+import ClaimToggle from './claim-toggle';
 
 const mobile = {
   AddComment,
@@ -32,6 +33,7 @@ const mobile = {
   Alert,
   Checkbox,
   ContributorCard,
+  ClaimToggle,
   DatePicker,
   DatetimePicker,
   DivInput,
