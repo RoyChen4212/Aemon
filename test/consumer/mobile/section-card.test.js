@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import SectionCard from '../../../components/consumer/mobile/section-card';
-import { sectionCardStatus } from '../../../components/consumer/mobile/section-card/contants';
+import { sectionCardStatus } from '../../../components/consumer/mobile/section-card/constants';
 import { SmallFacebookButton } from '../../../components/consumer/mobile/button';
 
 describe('section-card', () => {

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withContainer, withMobileSizing, wrapStory, withGreyContainer } from '../../util/decorators';
 import SectionCard from '../../../components/consumer/mobile/section-card';
-import { sectionCardStatus } from '../../../components/consumer/mobile/section-card/contants';
+import { sectionCardStatus } from '../../../components/consumer/mobile/section-card/constants';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -59,15 +59,9 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
   .add('workflow', () => <SectionCardFullWorkflow />);
 
 class SectionCardFullWorkflow extends React.PureComponent {
-  constructor(props) {
-    super(props);
+  state = { status: sectionCardStatus.ACTIVE };
 
-    this.state = {
-      status: sectionCardStatus.ACTIVE,
-    };
-  }
-
-  handleActiveClick = () => {
+  onActiveClick = () => {
     const { status } = this.state;
 
     if (status === sectionCardStatus.ACTIVE) {
@@ -88,7 +82,7 @@ class SectionCardFullWorkflow extends React.PureComponent {
         title="Section"
         stepNumber={1}
         headerButton={headerButton}
-        onActivateButtonClick={this.handleActiveClick}
+        onActivateButtonClick={this.onActiveClick}
         completedLabel="Completed"
         activateButtonText={activateButtonText}
       >

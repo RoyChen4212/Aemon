@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { sectionCardStatus } from './contants';
+import { sectionCardStatus } from './constants';
 
 import './style.scss';
 
