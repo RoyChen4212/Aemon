@@ -29,6 +29,7 @@ import TextArea from './text-area';
 import TextField from './text-field';
 import TimePicker from './time-picker';
 import SectionSeparator from './section-separator';
+import PurchaseImage from './purchase-image/purchase-image';
 
 const mobile = {
   AddComment,
@@ -60,6 +61,7 @@ const mobile = {
   PhoneField,
   Picker,
   PrimaryButton,
+  PurchaseImage,
   SecondaryButton,
   SectionCard,
   SectionSeparator,
