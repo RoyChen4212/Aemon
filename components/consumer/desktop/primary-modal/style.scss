@@ -12,21 +12,20 @@
   .pbg-primary-modal-content {
     display: flex;
     height: 100%;
-    padding: 40px;
   }
 
   .pbg-primary-modal-main-container {
-    padding-right: 40px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    width: 568px;
   }
 
   .pbg-primary-modal-main-content {
     background: $white;
     min-height: 120px;
-    width: 538px;
     overflow: auto;
   }
 
@@ -42,5 +41,6 @@
     border-top-right-radius: 4px;
     overflow: auto;
     height: 100%;
+    padding: 40px;
   }
 }
