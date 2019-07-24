@@ -21,6 +21,7 @@
     .pbg-navbar-brand-text {
       @extend .pbg-mobile-hint-normal;
       font-style: normal;
+      margin-left: 8px;
     }
 
     .pbg-navbar-text-container {
@@ -35,7 +36,7 @@
       background-repeat: no-repeat;
       background-size: contain;
       margin-left: 3px;
-      margin-top: 2px;
+      margin-top: 5px;
     }
 
     .pbg-navbar-brand-menu {
