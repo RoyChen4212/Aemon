@@ -10,12 +10,12 @@ storiesOf('Consumer/Mobile/Atomic Components/secondary-button', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('secondary-button/default', () => (
-    <SecondaryButton onClick={action('clicked')}>
-      Secondary Button
+    <SecondaryButton hint="Hint" onClick={action('clicked')}>
+      Secondary
     </SecondaryButton>
   ))
   .add('secondary-button/disabled', () => (
-    <SecondaryButton disabled onClick={action('clicked')}>
-      Secondary Button Disabled
+    <SecondaryButton disabled onClick={action('clicked')} hint="Hint">
+      Secondary
     </SecondaryButton>
   ));

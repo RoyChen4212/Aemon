@@ -1,7 +1,10 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import find from 'lodash/find';
 import get from 'lodash/get';
+
+import { labelTypes } from '../label';
 import FormField from '../form-field';
 import PickerMenu from '../picker-menu';
 import makeEvent from '../../../lib/make-event';
@@ -10,13 +13,20 @@ import './style.scss';
 
 export const PICKER_EMPTY_VALUE = '__EmptyValue';
 
+/** @extends React.Component */
 class Picker extends FormField {
-  baseClassName = `pbg-consumer-desktop pbg-form-field pbg-picker
-    ${this.adaptedProps.big ? ' pbg-picker-big' : ''}`;
+  baseClassName = classnames('pbg-consumer-desktop', 'pbg-form-field', 'pbg-picker', {
+    'pbg-picker-big': this.adaptedProps.big,
+  });
 
   state = {
     active: false,
   };
+
+  get labelType() {
+    if (this.adaptedProps.error) return labelTypes.ERROR;
+    return labelTypes.base;
+  }
 
   get labelText() {
     const opt = find(this.options, op => op.value === this.value);
@@ -52,7 +62,8 @@ class Picker extends FormField {
   };
 
   renderPickerButton() {
-    const style = this.props.button ? 'pbg-picker-button' : 'pbg-picker-text';
+    const { button } = this.props;
+    const style = button ? 'pbg-picker-button' : 'pbg-picker-text';
     return (
       <button
         className={style}
@@ -68,6 +79,8 @@ class Picker extends FormField {
   }
 
   render() {
+    const { button } = this.props;
+    const { active } = this.state;
     return (
       <div className={this.className}>
         {this.renderLabel()}
@@ -75,11 +88,11 @@ class Picker extends FormField {
           {this.renderPickerButton()}
           <PickerMenu
             options={this.options}
-            active={this.state.active}
+            active={active}
             selected={this.value}
             onOptionClick={this.onOptionClick}
             onBlur={ev => this.onButtonBlur(ev, this.onBlur)}
-            fullWidth={!this.props.button}
+            fullWidth={!button}
           />
         </div>
         {this.renderHintOrError()}
@@ -87,5 +100,13 @@ class Picker extends FormField {
     );
   }
 }
+
+Picker.propTypes = {
+  button: PropTypes.bool,
+};
+
+Picker.defaultProps = {
+  button: false,
+};
 
 export default Picker;

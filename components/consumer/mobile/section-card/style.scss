@@ -1,0 +1,45 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-section-card {
+    background: $white;
+    padding: 16px 15px;
+    &.disabled {
+      opacity: 0.6;
+    }
+    @extend .pbg-desktop-shadow-level-one;
+    .pbg-section-card-header {
+      display: flex;
+      flex-direction: column;
+      .pbg-section-card-header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .pbg-section-card-header-text {
+          display: flex;
+          flex-grow: 1;
+          .pbg-section-card-title {
+            margin-left: 8px;
+          }
+        }
+        .pbg-section-card-header-button-wrapper {
+          flex-grow: 1;
+        }
+        .pbg-section-card-completed-icon {
+          background: url('../img/step-completed-check.svg') no-repeat;
+          width: 24px;
+          height: 24px;
+          background-size: contain;
+        }
+        .pbg-section-card-completed-label {
+          @extend .pbg-mobile-label-normal;
+          color: $grey-60;
+          margin-top: 2px;
+        }
+      }
+    }
+    .pbg-section-card-content {
+      margin-top: 6px;
+    }
+  }
+}
