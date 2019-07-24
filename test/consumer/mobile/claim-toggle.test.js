@@ -11,17 +11,17 @@ describe('div-input', () => {
   });
 
   it('should render secondaryText if its available', () => {
-    const secondaryText = "secondaryText";
+    const secondaryText = 'secondaryText';
     const wrapper = shallow(<ClaimToggle secondaryText={secondaryText} />);
-    const text = wrapper.find(".pbg-claim-toggle-secondary-text");
+    const text = wrapper.find('.pbg-claim-toggle-secondary-text');
     expect(text.length).to.equal(1);
     expect(text.text()).to.equal(secondaryText);
   });
 
   it('should render error on error state', () => {
-    const secondaryText = "secondaryText";
+    const secondaryText = 'secondaryText';
     const wrapper = shallow(<ClaimToggle secondaryText={secondaryText} error />);
-    const text = wrapper.find(".pbg-claim-toggle-primary-text");
-    expect(text.hasClass("error")).to.be.true;
+    const text = wrapper.find('.pbg-claim-toggle-primary-text');
+    expect(text.hasClass('error')).to.be.true;
   });
 });

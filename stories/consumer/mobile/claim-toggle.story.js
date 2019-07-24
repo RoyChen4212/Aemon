@@ -12,16 +12,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Mobile/Atomic Components/claim-toggle', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('default', () => <FieldStateProvider
-    component={ClaimToggle}
-    label="Primary Text"
-    secondaryText="Secondary Text "
-    onChange={action('change')}
-  />)
-  .add('error', () => <FieldStateProvider
-    component={ClaimToggle}
-    label="Primary Text"
-    secondaryText="Secondary Text "
-    error
-    onChange={action('change')}
-  />);
+  .add('default', () => (
+    <FieldStateProvider
+      component={ClaimToggle}
+      label="Primary Text"
+      secondaryText="Secondary Text "
+      onChange={action('change')}
+    />
+  ))
+  .add('error', () => (
+    <FieldStateProvider
+      component={ClaimToggle}
+      label="Primary Text"
+      secondaryText="Secondary Text "
+      error
+      onChange={action('change')}
+    />
+  ));
