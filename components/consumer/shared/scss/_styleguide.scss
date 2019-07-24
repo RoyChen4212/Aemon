@@ -240,9 +240,11 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   height: 12px;
   background-size: cover;
   background: url('../../shared/img/pbg-powered-by-logo.svg');
-  &.pbg-logo-powered-by-gray {
-    background: url('../../shared/img/pbg-powered-by-logo-gray.svg');
-  }
+}
+
+.pbg-logo-powered-by-gray {
+  @extend .pbg-logo-powered-by;
+  background: url('../../shared/img/pbg-powered-by-logo-gray.svg');
 }
 
 // Design System
