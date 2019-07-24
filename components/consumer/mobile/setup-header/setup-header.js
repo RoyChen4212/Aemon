@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { SmallButton } from '../button';
 import StepProgressBar from '../step-progress-bar';
 
@@ -22,10 +23,10 @@ class SetupHeader extends React.Component {
     const buttonIcon = expanded ? 'arrow-up' : 'arrow-down';
 
     return (
-      <div className={baseClassName}>
+      <div className={classnames(baseClassName, 'pbg-mobile-shadow-level-two')}>
         <div className="pbg-setup-header-inner">
           <div className="pbg-setup-header-text">
-            <span className="pbg-mobile-label-normal">{label}</span>
+            <span className="pbg-mobile-label-strong">{label}</span>
             {hint && <span className="pbg-mobile-small-secondary">{hint}</span>}
           </div>
           <SmallButton className="pbg-setup-header-button" iconType={buttonIcon} onClick={this.onButtonClick}>
@@ -33,7 +34,7 @@ class SetupHeader extends React.Component {
           </SmallButton>
         </div>
         {stepCount > 0 && <StepProgressBar stepCount={stepCount} progress={progress} />}
-        {expanded && <div className="pbg-setup-header-content">{children}</div>}
+        <div className={classnames('pbg-setup-header-content', { expanded })}>{children}</div>
       </div>
     );
   }
