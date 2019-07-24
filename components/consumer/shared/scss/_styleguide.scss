@@ -242,6 +242,11 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-powered-by-logo.svg');
 }
 
+.pbg-logo-powered-by-gray {
+  @extend .pbg-logo-powered-by;
+  background: url('../../shared/img/pbg-powered-by-logo-gray.svg');
+}
+
 // Design System
 // Not all "components" are really components, some can be styles that get extended
 // or used to compose a new component.
