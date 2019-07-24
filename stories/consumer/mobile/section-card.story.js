@@ -10,6 +10,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { SmallButton, SmallFacebookButton } from '../../../components/consumer/mobile/button';
 import DivInput from '../../../components/consumer/mobile/div-input/div-input';
 
+// eslint-disable-next-line react/prop-types
+const wrappedSmallButton = ({ children, ...rest }) => (
+  <div style={{ width: '37px' }}>
+    <SmallButton {...rest}>{children}</SmallButton>
+  </div>
+);
+
 storiesOf('Consumer/Mobile/Section Components/section-card', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
@@ -24,10 +31,7 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
       onActivateButtonClick={action('')}
       completedLabel="Completed"
       activateButtonText="Connect"
-    >
-      <div style={{ marginBottom: '8px' }}>My Awesome Content</div>
-      {<DivInput />}
-    </SectionCard>
+    />
   ))
   .add('disabled', () => (
     <SectionCard
@@ -38,23 +42,18 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
       onActivateButtonClick={action('')}
       completedLabel="Completed"
       activateButtonText="Connect"
-    >
-      <div style={{ marginBottom: '8px' }}>My Awesome Content</div>
-      {<DivInput />}
-    </SectionCard>
+    />
   ))
   .add('completed', () => (
     <SectionCard
       status={sectionCardStatus.COMPLETED}
       title="Section"
       stepNumber={1}
-      headerButton={SmallButton}
+      headerButton={wrappedSmallButton}
       onActivateButtonClick={action('')}
       completedLabel="Completed"
       activateButtonText="Edit"
-    >
-      My Awesome Content
-    </SectionCard>
+    />
   ))
   .add('workflow', () => <SectionCardFullWorkflow />);
 
@@ -74,7 +73,7 @@ class SectionCardFullWorkflow extends React.PureComponent {
   render() {
     const { status } = this.state;
 
-    const headerButton = status === sectionCardStatus.ACTIVE ? SmallFacebookButton : SmallButton;
+    const headerButton = status === sectionCardStatus.ACTIVE ? SmallFacebookButton : wrappedSmallButton;
     const activateButtonText = status === sectionCardStatus.ACTIVE ? 'Connect' : 'Edit';
     return (
       <SectionCard
