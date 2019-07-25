@@ -71,8 +71,10 @@ class TextField extends FormField {
     return (
       <div className={classnames(this.className, className)}>
         {this.renderLabel()}
-        {this.renderInput()}
-        {this.renderIcon()}
+        <div className="pbg-text-field-input-wrapper">
+          {this.renderInput()}
+          {this.renderIcon()}
+        </div>
         {this.renderHintOrError()}
       </div>
     );
