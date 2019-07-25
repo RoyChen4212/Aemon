@@ -10,7 +10,6 @@ class BaseButton extends React.PureComponent {
   static propTypes = {
     disabled: PropTypes.bool,
     submitting: PropTypes.bool,
-    pressed: PropTypes.bool,
     className: PropTypes.string,
     hint: PropTypes.string,
     children: PropTypes.node,
@@ -21,7 +20,6 @@ class BaseButton extends React.PureComponent {
   static defaultProps = {
     disabled: false,
     submitting: false,
-    pressed: false,
     className: null,
     hint: null,
     children: null,
@@ -39,12 +37,12 @@ class BaseButton extends React.PureComponent {
   }
 
   get className() {
-    const { disabled, className, submitting, pressed } = this.props;
+    const { disabled, className, submitting } = this.props;
     const { active } = this.state;
     return classnames(this.baseClassName, className, {
       disabled,
       submitting,
-      'pbg-button-active': pressed || active,
+      'pbg-button-active': active,
     });
   }
 
