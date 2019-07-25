@@ -3,7 +3,7 @@
 .pbg-consumer-desktop {
   &.pbg-simple-number-stepper {
     @extend .pbg-clearfix;
-    border: 1px solid $grey-50;
+    border: 1px solid $gray-50;
     border-radius: 3px;
     overflow: hidden;
 
@@ -38,18 +38,18 @@
     }
 
     .decrement {
-      background: $grey-10 url('../img/pbg-minus-small.svg') center no-repeat;
+      background: $gray-10 url('../img/pbg-minus-small.svg') center no-repeat;
 
       &.disabled {
-        background: $grey-10 url('../img/pbg-minus-small-grey.svg') center no-repeat;
+        background: $gray-10 url('../img/pbg-minus-small-grey.svg') center no-repeat;
       }
     }
 
     .increment {
-      background: $grey-10 url('../img/pbg-plus-small.svg') center no-repeat;
+      background: $gray-10 url('../img/pbg-plus-small.svg') center no-repeat;
 
       &.disabled {
-        background: $grey-10 url('../img/pbg-plus-small-grey.svg') center no-repeat;
+        background: $gray-10 url('../img/pbg-plus-small-grey.svg') center no-repeat;
       }
     }
 

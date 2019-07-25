@@ -7,14 +7,14 @@
     margin-bottom: 4px;
     .pbg-label {
       &.pbg-consumer-mobile {
-        color: $grey-80;
+        color: $gray-80;
       }
     }
   }
 
   .pbg-picker-select-container {
     background: $white;
-    border: 1px solid $grey-50;
+    border: 1px solid $gray-50;
     box-sizing: border-box;
     border-radius: 4px;
     position: relative;
@@ -74,10 +74,10 @@
 
   &.pbg-form-field-disabled {
     .pbg-picker-select-container {
-      border-color: $grey-50;
-      background: $grey-10;
+      border-color: $gray-50;
+      background: $gray-10;
       select {
-        color: $grey-60;
+        color: $gray-60;
       }
     }
   }
