@@ -42,7 +42,9 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
       onActivateButtonClick={action('')}
       completedLabel="Completed"
       activateButtonText="Connect"
-    />
+    >
+      My Awesome content
+    </SectionCard>
   ))
   .add('completed', () => (
     <SectionCard
@@ -53,7 +55,9 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
       onActivateButtonClick={action('')}
       completedLabel="Completed"
       activateButtonText="Edit"
-    />
+    >
+      My Awesome content
+    </SectionCard>
   ))
   .add('workflow', () => <SectionCardFullWorkflow />);
 
