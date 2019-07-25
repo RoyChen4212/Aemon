@@ -2,8 +2,9 @@
 
 .pbg-consumer-mobile {
   &.pbg-setup-header {
+    background-color: $white;
+
     .pbg-setup-header-inner {
-      background-color: $white;
       line-height: $mobile-regular-line-height;
       height: 52px;
       padding: 16px;
@@ -24,6 +25,15 @@
 
     .pbg-setup-header-content {
       background-color: $white;
+      opacity: 0;
+      max-height: 0;
+      transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+      &.expanded {
+        opacity: 1;
+        max-height: 100vh;
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      }
     }
   }
 }

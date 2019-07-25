@@ -12,4 +12,6 @@ export const iconTypes = {
   CALENDAR_END: 'calendar-end',
   CLOCK: 'clock',
   HOUR_GLASS: 'hour-glass',
+  ARROW_UP: 'arrow-up',
+  ARROW_DOWN: 'arrow-down',
 };
