@@ -8,7 +8,6 @@ import PaymentMethodSelector from '../../../components/consumer/desktop/payment-
 import { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
 import Label from '../../../components/consumer/desktop/label';
 import PaymentMethodSelectorMenu from '../../../components/consumer/desktop/payment-method-selector/payment-method-selector-menu';
-import CardFormFields from '../../../components/consumer/desktop/card-form-fields/card-form-fields';
 import { cardTypes } from '../../../components/consumer/shared/card-types';
 
 const options = [
@@ -116,26 +115,6 @@ describe('PaymentMethodSelector', () => {
   it('should not execute onButtonBlur code if disabled', () => {
     const wrapper = shallow(<PaymentMethodSelector options={options} value="visa" disabled />);
     expect(wrapper.instance().onButtonBlur()).to.be.false;
-  });
-
-  it('should select add_new item when "Add New" button is clicked', () => {
-    const onChange = sinon.spy();
-    const wrapper = shallow(<PaymentMethodSelector options={options} value="visa" onChange={onChange} />);
-    wrapper
-      .find('.pbg-payment-method-selector-add-container')
-      .find('button')
-      .simulate('click');
-    expect(onChange.calledOnce).to.be.true;
-  });
-
-  it('should show CardFormFields on new mode', () => {
-    const wrapper = shallow(<PaymentMethodSelector options={options} value={PICKER_EMPTY_VALUE} />);
-    expect(wrapper.find(CardFormFields).length).to.equal(1);
-  });
-
-  it('should show CardFormFields on other modes', () => {
-    const wrapper = shallow(<PaymentMethodSelector options={options} value="visa" />);
-    expect(wrapper.find(CardFormFields).length).to.equal(0);
   });
 
   it('should change state when click outside payment method selector menu', done => {

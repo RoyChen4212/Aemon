@@ -4,7 +4,7 @@ import find from 'lodash/find';
 
 import PaymentMethodSelectorMenu from './payment-method-selector-menu';
 import PaymentMethodField from './payment-method-field';
-import Picker, { PICKER_EMPTY_VALUE } from '../picker';
+import Picker from '../picker';
 
 import './style.scss';
 
@@ -17,13 +17,6 @@ class PaymentMethodSelector extends Picker {
     value: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
     options: PropTypes.array.isRequired, // eslint-disable-line react/no-unused-prop-types
     onChange: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
-    cardFormLabels: PropTypes.shape({
-      cardNumber: PropTypes.string,
-      expDate: PropTypes.string,
-      securityCode: PropTypes.string,
-      fullName: PropTypes.string,
-      postalCode: PropTypes.string,
-    }).isRequired,
   };
 
   static defaultProps = {
@@ -34,10 +27,6 @@ class PaymentMethodSelector extends Picker {
   get selectedItem() {
     return find(this.options, op => op.value === this.value);
   }
-
-  onAddNewClick = () => {
-    this.onChange({ target: { value: PICKER_EMPTY_VALUE } });
-  };
 
   renderPickerButton() {
     const { cardType, label } = this.selectedItem || {};
@@ -56,21 +45,6 @@ class PaymentMethodSelector extends Picker {
     );
   }
 
-  renderAddNewButton() {
-    if (this.value === PICKER_EMPTY_VALUE) {
-      return null;
-    }
-
-    return (
-      <div className="pbg-payment-method-selector-add-container">
-        <p className="pbg-desktop-label-normal">Or</p>
-        <button type="button" className="pbg-button pbg-consumer-desktop" onClick={this.onAddNewClick}>
-          <span>Add New</span>
-        </button>
-      </div>
-    );
-  }
-
   render() {
     const { active } = this.state;
 
@@ -78,10 +52,7 @@ class PaymentMethodSelector extends Picker {
       <div className={this.className}>
         <div className="pbg-payment-method-selector-label">{this.renderLabel()}</div>
         <div className="pbg-picker-container">
-          <div className="pbg-payment-method-selector-button-container">
-            {this.renderPickerButton()}
-            {this.renderAddNewButton()}
-          </div>
+          <div className="pbg-payment-method-selector-button-container">{this.renderPickerButton()}</div>
           <PaymentMethodSelectorMenu
             options={this.options}
             active={active}
