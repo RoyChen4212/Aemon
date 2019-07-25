@@ -66,6 +66,12 @@ class BaseButton extends React.PureComponent {
 
   onMouseOut = () => this.deactivate();
 
+  onTouchStart = () => this.activate();
+
+  onTouchEnd = () => this.deactivate();
+
+  onTouchMove = () => this.deactivate();
+
   onBlur = () => this.deactivate();
 
   renderHint(Hint) {
@@ -91,6 +97,9 @@ class BaseButton extends React.PureComponent {
           onMouseDown={this.onMouseDown}
           onMouseOut={this.onMouseOut}
           onMouseUp={this.onMouseUp}
+          onTouchStart={this.onTouchStart}
+          onTouchMove={this.onTouchMove}
+          onTouchEnd={this.onTouchEnd}
           onBlur={this.onBlur}
           disabled={disabled || submitting}
         >
