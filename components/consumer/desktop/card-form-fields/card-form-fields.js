@@ -4,7 +4,8 @@ import { includes } from 'lodash';
 
 import CardField from '../card-field/card-field';
 import TextField from '../text-field';
-import { cardTypes, defaultCardsConfig } from '../card-field/card-field-types';
+import { defaultCardsConfig } from '../card-field/card-field-types';
+import { cardTypes } from '../../shared/card-types';
 
 import './style.scss';
 import DivInput from '../div-input/div-input';

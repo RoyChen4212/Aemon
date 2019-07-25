@@ -4,9 +4,9 @@ import { action } from '@storybook/addon-actions';
 
 import PaymentMethodSelector from '../../../components/consumer/desktop/payment-method-selector';
 import { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
-import { cardTypes } from '../../../components/consumer/desktop/card-field/card-field-types';
 import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
+import { cardTypes } from '../../../components/consumer/shared/card-types';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';

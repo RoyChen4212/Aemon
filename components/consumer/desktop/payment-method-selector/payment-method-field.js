@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CardPlaceholder from '../card-field/card-placeholder';
-import { cardTypes } from '../card-field/card-field-types';
+import { cardTypes } from '../../shared/card-types';
 
 import './style.scss';
 

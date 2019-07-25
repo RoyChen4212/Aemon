@@ -6,10 +6,10 @@ import sinon from 'sinon';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import PaymentMethodSelector from '../../../components/consumer/desktop/payment-method-selector';
 import { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
-import { cardTypes } from '../../../components/consumer/desktop/card-field/card-field-types';
 import Label from '../../../components/consumer/desktop/label';
 import PaymentMethodSelectorMenu from '../../../components/consumer/desktop/payment-method-selector/payment-method-selector-menu';
 import CardFormFields from '../../../components/consumer/desktop/card-form-fields/card-form-fields';
+import { cardTypes } from '../../../components/consumer/shared/card-types';
 
 const options = [
   { cardType: cardTypes[0], label: 'ending in XXXX (exp:mm/yy)', value: 'visa' },
