@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { SmallButton } from '../button';
 import StepProgressBar from '../step-progress-bar';
+import { iconTypes } from '../../shared/icon-types';
 
 import './style.scss';
 
@@ -20,7 +21,7 @@ class SetupHeader extends React.Component {
     const { label, hint, viewInfoText, hideInfoText, stepCount, progress, children } = this.props;
     const { expanded } = this.state;
     const buttonText = expanded ? hideInfoText : viewInfoText;
-    const buttonIcon = expanded ? 'arrow-up' : 'arrow-down';
+    const buttonIcon = expanded ? iconTypes.ARROW_UP : iconTypes.ARROW_DOWN;
 
     return (
       <div className={classnames(baseClassName, 'pbg-mobile-shadow-level-two')}>
