@@ -121,14 +121,8 @@ describe('section-card', () => {
 
     const btn = wrapper.find(SmallFacebookButton);
 
-    btn
-      .dive()
-      .find('button')
-      .simulate('click');
-
-    expect(btn.length).to.equal(1);
-    expect(btn.prop('children')).to.equal(buttonText);
-    expect(btn.prop('disabled')).to.be.true;
+    expect(btn.length).to.equal(0);
+    expect(wrapper.find('.pbg-section-card-content').length).to.equal(0);
     expect(clickHandler.calledOnce).to.be.false;
   });
 });

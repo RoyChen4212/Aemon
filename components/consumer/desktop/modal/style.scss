@@ -2,11 +2,17 @@
 
 .pbg-consumer-desktop {
   &.pbg-modal {
+    position: relative;
+    .pbg-modal-alert-stack {
+      position: absolute;
+      width: 100%;
+      padding: 0 40px;
+      left: 0;
+    }
     .pbg-modal-dialog {
       display: block;
       box-orient: vertical;
       box-direction: normal;
-      position: relative;
 
       .pbg-modal-container {
         content: '';
@@ -16,12 +22,6 @@
         height: 100%;
       }
 
-      .pbg-modal-alert-stack {
-        position: absolute;
-        width: 100%;
-        padding: 0 40px;
-        left: 0;
-      }
     }
   }
 

@@ -1,5 +1,6 @@
 
 svg.pbg-avatar {
+  display: block;
   object-fit: cover;
 }
 
@@ -26,6 +27,11 @@ div.pbg-avatar {
     line-height: 12px;
   }
 
+  &.pbg-avatar-32 >div {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
   &.pbg-avatar-40 >div {
     font-size: 16.6667px;
     line-height: 20px;
@@ -33,7 +39,7 @@ div.pbg-avatar {
 
   &.pbg-avatar-48 >div {
     font-size: 20px;
-    line-height: 31px;
+    line-height: 30px;
   }
 
   &.pbg-avatar-80 >div {

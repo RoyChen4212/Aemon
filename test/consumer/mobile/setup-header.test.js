@@ -62,13 +62,13 @@ describe('SetupHeader', () => {
         <p>{content}</p>
       </SetupHeader>
     );
-    expect(wrapper.find('.pbg-setup-header-content')).to.have.lengthOf(0);
-
-    wrapper.find('.pbg-button').simulate('click');
     expect(wrapper.find('.pbg-setup-header-content')).to.have.lengthOf(1);
-    expect(wrapper.find('.pbg-setup-header-content').html()).to.contain(content);
+    expect(wrapper.find('.pbg-setup-header-content.expanded')).to.have.lengthOf(0);
 
     wrapper.find('.pbg-button').simulate('click');
-    expect(wrapper.find('.pbg-setup-header-content')).to.have.lengthOf(0);
+    expect(wrapper.find('.pbg-setup-header-content').hasClass('expanded')).to.be.true;
+
+    wrapper.find('.pbg-button').simulate('click');
+    expect(wrapper.find('.pbg-setup-header-content').hasClass('expanded')).to.be.false;
   });
 });

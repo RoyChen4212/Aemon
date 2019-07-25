@@ -9,7 +9,7 @@ import FieldStateProvider from '../../util/field-state-provider';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Atomic Components/claim-toggle', module)
+storiesOf('Consumer/Mobile/Onboarding/claim-toggle', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('default', () => (
