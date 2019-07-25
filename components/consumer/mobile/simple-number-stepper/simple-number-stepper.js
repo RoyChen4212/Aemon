@@ -9,7 +9,7 @@ const baseClassName = 'pbg-consumer-mobile pbg-simple-number-stepper';
 const SimpleNumberStepper = ({ range, ...rest }) => {
   const options = [];
   for (let i = range.min; i <= range.max; i += 1) {
-    options.push({label: i, value: i});
+    options.push({ label: i, value: i });
   }
 
   return (
