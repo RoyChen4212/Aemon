@@ -14,6 +14,11 @@ storiesOf('Consumer/Mobile/Atomic Components/secondary-button', module)
       Secondary
     </SecondaryButton>
   ))
+  .add('secondary-button/pressed', () => (
+    <SecondaryButton pressed hint="Hint" onClick={action('clicked')}>
+      Secondary
+    </SecondaryButton>
+  ))
   .add('secondary-button/disabled', () => (
     <SecondaryButton disabled onClick={action('clicked')} hint="Hint">
       Secondary
