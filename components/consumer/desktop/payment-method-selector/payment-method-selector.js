@@ -7,9 +7,6 @@ import PaymentMethodField from './payment-method-field';
 import Picker, { PICKER_EMPTY_VALUE } from '../picker';
 
 import './style.scss';
-import CardFormFields from '../card-form-fields/card-form-fields';
-import { defaultCardsConfig } from '../card-field/card-field-types';
-import { cardTypes } from '../../shared/card-types';
 
 /** @extends React.Component */
 class PaymentMethodSelector extends Picker {
@@ -27,17 +24,11 @@ class PaymentMethodSelector extends Picker {
       fullName: PropTypes.string,
       postalCode: PropTypes.string,
     }).isRequired,
-    allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
-    cardType: PropTypes.oneOf(cardTypes),
-    cardFormConfig: PropTypes.arrayOf(PropTypes.oneOf(defaultCardsConfig)),
   };
 
   static defaultProps = {
     label: null,
     onChange: () => {},
-    cardType: null,
-    allowedCardTypes: cardTypes,
-    cardFormConfig: defaultCardsConfig,
   };
 
   get selectedItem() {
@@ -82,7 +73,6 @@ class PaymentMethodSelector extends Picker {
 
   render() {
     const { active } = this.state;
-    const { cardFormLabels, allowedCardTypes, cardType, cardFormConfig } = this.props;
 
     return (
       <div className={this.className}>
@@ -100,16 +90,6 @@ class PaymentMethodSelector extends Picker {
             onBlur={ev => this.onButtonBlur(ev, this.onBlur)}
             fullWidth
           />
-          {this.value === PICKER_EMPTY_VALUE && (
-            <div className="pbg-payment-method-selector-new-card-container">
-              <CardFormFields
-                labels={cardFormLabels}
-                allowedCardTypes={allowedCardTypes}
-                cardType={cardType}
-                config={cardFormConfig}
-              />
-            </div>
-          )}
         </div>
       </div>
     );
