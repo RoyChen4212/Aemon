@@ -48,6 +48,9 @@
         &.pbg-form-field-disabled {
           textarea {
             @extend .pbg-desktop-form-field-disabled;
+
+            color: $grey-70;
+            line-height: 20px;
           }
         }
 

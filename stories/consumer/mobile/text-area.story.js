@@ -31,4 +31,7 @@ storiesOf('Consumer/Mobile/Form Fields/text-area', module)
       value="This is an erroneous field"
       error="Error"
     />
+  ))
+  .add('text-area/disabled', () => (
+    <FieldStateProvider component={TextArea} name="text4" label="Label" value="Disabled" hint="Hint" disabled />
   ));
