@@ -13,6 +13,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Mobile/Atomic Components/Inputs/simple-number-stepper', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .add('simple', () => (
+    <FieldStateProvider
+      component={SimpleNumberStepper}
+      name="simple-number-stepper"
+      value={null}
+      onChange={action('onChange')}
+      min={1}
+      max={100}
+    />
+  ))
   .add('default', () => (
     <FieldStateProvider
       component={SimpleNumberStepper}
@@ -21,7 +31,8 @@ storiesOf('Consumer/Mobile/Atomic Components/Inputs/simple-number-stepper', modu
       label="Label"
       hint="Hint"
       onChange={action('onChange')}
-      range={{ min: 1, max: 100 }}
+      min={1}
+      max={100}
     />
   ))
   .add('error', () => (
@@ -33,7 +44,8 @@ storiesOf('Consumer/Mobile/Atomic Components/Inputs/simple-number-stepper', modu
       hint="Hint"
       error="Error"
       onChange={action('onChange')}
-      range={{ min: 1, max: 100 }}
+      min={1}
+      max={100}
     />
   ))
   .add('disabled', () => (
@@ -45,6 +57,7 @@ storiesOf('Consumer/Mobile/Atomic Components/Inputs/simple-number-stepper', modu
       hint="Hint"
       disabled
       onChange={action('onChange')}
-      range={{ min: 1, max: 100 }}
+      min={1}
+      max={100}
     />
   ));

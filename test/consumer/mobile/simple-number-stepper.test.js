@@ -12,7 +12,7 @@ describe('simple-number-stepper', () => {
   });
 
   it('should render options based on range', () => {
-    const wrapper = shallow(<SimpleNumberStepper range={{ min: 1, max: 100 }} />);
+    const wrapper = shallow(<SimpleNumberStepper min={1} max={100} />);
 
     expect(
       wrapper
