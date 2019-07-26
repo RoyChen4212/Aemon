@@ -51,6 +51,8 @@
 
             color: $grey-70;
             line-height: 20px;
+            -webkit-text-fill-color: $grey-70;
+            opacity: 1; /* required on iOS */
           }
         }
 
