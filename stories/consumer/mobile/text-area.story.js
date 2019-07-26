@@ -26,9 +26,9 @@ storiesOf('Consumer/Mobile/Form Fields/text-area', module)
   .add('text-area/error', () => (
     <FieldStateProvider
       component={TextArea}
-      name="text4"
-      label="Type some large text"
-      value=""
-      error="this field has error"
+      name="text3"
+      label="Label"
+      value="This is an erroneous field"
+      error="Error"
     />
   ));
