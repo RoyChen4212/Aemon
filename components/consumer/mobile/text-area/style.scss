@@ -5,21 +5,22 @@
       &.pbg-text-area {
 
         textarea {
-          border: 0;
-          border-bottom: 1px solid;
-          border-color: $cool-grey;
+          display: block;
+          border: 1px solid $grey-50;
+          border-radius: 4px;
+          padding: 9px 7px;
+          color: $grey-80;
+          background: $white;
           line-height: 20px;
           font-size: 14px;
-          margin-bottom: -6px;
           outline: 0;
-          padding-bottom: 8px;
           resize: none;
           width: 100%;
           overflow: hidden;
           height: auto;
 
           &::placeholder {
-            color: $cool-grey;
+            color: $grey-60;
             font-family: Roboto;
             font-style: normal;
             font-weight: normal;
@@ -31,10 +32,26 @@
           }
         }
 
+        &.pbg-form-field-focused {
+          textarea {
+            border-color: $blue-60;
+          }
+        }
+
         &.pbg-form-field-error {
           textarea {
             border-color: $coral-error;
           }
+        }
+
+        &.pbg-form-field-disabled {
+          textarea {
+            @extend .pbg-desktop-form-field-disabled;
+          }
+        }
+
+        .pbg-hint {
+          font-style: normal;
         }
       }
     }
