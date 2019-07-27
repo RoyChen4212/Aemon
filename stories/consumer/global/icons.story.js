@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withContainer, wrapStory } from '../../util/decorators';
+import { withContainer, wrapStory, withGrey20Container } from '../../util/decorators';
 
 import Icons from '../../../components/consumer/global/icons';
 
@@ -10,12 +10,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Global/Icons/Small/Email & Messaging', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
   .add('envelope-closed-small', () => <Icons className="pbg-icon-envelope-closed-small" />)
   .add('speech-bubble-small', () => <Icons className="pbg-icon-speech-bubble-small" />);
 
 storiesOf('Consumer/Global/Icons/Small/Editing', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
   .add('edit-small', () => <Icons className="pbg-icon-edit-small" />)
   .add('org-controls-small-gray', () => <Icons className="pbg-icon-org-controls-small-gray" />)
   .add('org-controls-small-blue', () => <Icons className="pbg-icon-org-controls-small-blue" />)
@@ -25,17 +27,20 @@ storiesOf('Consumer/Global/Icons/Small/Editing', module)
 storiesOf('Consumer/Global/Icons/Small/Group Invites', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
   .add('envelope-open-small-gray', () => <Icons className="pbg-icon-envelope-open-small-gray" />)
   .add('envelope-open-small-blue', () => <Icons className="pbg-icon-envelope-open-small-blue" />);
 
 storiesOf('Consumer/Global/Icons/Small/Group Creation', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
   .add('rocket-small', () => <Icons className="pbg-icon-rocket-small" />);
 
 storiesOf('Consumer/Global/Icons/Small/Users', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
   .add('add-user-small-blue', () => <Icons className="pbg-icon-add-user-small-blue" />)
   .add('add-user-small-gray', () => <Icons className="pbg-icon-add-user-small-gray" />)
   .add('org-identifier-small', () => <Icons className="pbg-icon-org-identifier-small" />)
@@ -46,6 +51,7 @@ storiesOf('Consumer/Global/Icons/Small/Users', module)
 storiesOf('Consumer/Global/Icons/Small/Payment', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
   .add('credit-card-small', () => <Icons className="pbg-icon-credit-card-small" />)
   .add('lock-small', () => <Icons className="pbg-icon-lock-small" />)
   .add('unlock-small', () => <Icons className="pbg-icon-unlock-small" />)
@@ -59,13 +65,36 @@ storiesOf('Consumer/Global/Icons/Small/Payment', module)
 storiesOf('Consumer/Global/Icons/Small/Purchase', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
   .add('cart-small', () => <Icons className="pbg-icon-cart-small" />);
 
 storiesOf('Consumer/Global/Icons/Small/Date & Time', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
   .add('calendar-small', () => <Icons className="pbg-icon-calendar-small" />)
   .add('calendar-start-small', () => <Icons className="pbg-icon-calendar-start-small" />)
   .add('calendar-end-small', () => <Icons className="pbg-icon-calendar-end-small" />)
   .add('clock-small', () => <Icons className="pbg-icon-clock-small" />)
   .add('hour-glass-small', () => <Icons className="pbg-icon-hour-glass-small" />);
+
+storiesOf('Consumer/Global/Icons/Small/Information', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
+  .add('bell-small-gray', () => <Icons className="pbg-icon-bell-small-gray" />)
+  .add('bell-small-yellow', () => <Icons className="pbg-icon-bell-small-yellow" />)
+  .add('check-mark-circle-small-gray', () => <Icons className="pbg-icon-check-mark-circle-small-gray" />)
+  .add('check-mark-circle-small-green', () => <Icons className="pbg-icon-check-mark-circle-small-green" />)
+  .add('globe-small', () => <Icons className="pbg-icon-globe-small" />)
+  .add('hint-error-small', () => <Icons className="pbg-icon-hint-error-small" />)
+  .add('info-small-blue', () => <Icons className="pbg-icon-info-small-blue" />)
+  .add('info-small-gray', () => <Icons className="pbg-icon-info-small-gray" />)
+  .add('info-small-white', () => <Icons className="pbg-icon-info-small-white" />)
+  .add('link-question-mark-blue', () => <Icons className="pbg-icon-link-question-mark-blue" />)
+  .add('link-question-mark-gray', () => <Icons className="pbg-icon-link-question-mark-gray" />)
+  .add('link-small-gray', () => <Icons className="pbg-icon-link-small-gray" />)
+  .add('question-mark-small-blue', () => <Icons className="pbg-icon-question-mark-small-blue" />)
+  .add('question-mark-small-gray', () => <Icons className="pbg-icon-question-mark-small-gray" />)
+  .add('warning-small-gray', () => <Icons className="pbg-icon-warning-small-gray" />)
+  .add('warning-small-red', () => <Icons className="pbg-icon-warning-small-red" />)

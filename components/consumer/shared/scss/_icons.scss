@@ -6,6 +6,13 @@ $list-icon-white: url('../img/view-list-icon-white.svg');
 $pulse-icon-grey: url('../img/pulse-icon-grey.svg');
 $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
+.pbg-icon-tiny {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-size: cover;
+}
+
 .pbg-icon-small {
   display: inline-block;
   width: 18px;
@@ -195,6 +202,88 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 }
 
 // Information
+
+.pbg-icon-bell-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-bell-small-gray.svg');
+}
+
+.pbg-icon-bell-small-yellow {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-bell-small-yellow.svg');
+}
+
+.pbg-icon-check-mark-circle-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-check-mark-circle-small-gray.svg');
+}
+
+.pbg-icon-check-mark-circle-small-green {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-check-mark-circle-small-green.svg');
+}
+
+.pbg-icon-globe-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-globe-small.svg');
+}
+
+.pbg-icon-hint-error-small {
+  @extend .pbg-icon-tiny;
+  background: url('../../shared/img/pbg-hint-error-small.svg');
+}
+
+.pbg-icon-info-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-info-small-blue.svg');
+}
+
+.pbg-icon-info-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-info-small-gray.svg');
+}
+
+.pbg-icon-info-small-white {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-info-small-white.svg');
+}
+
+.pbg-icon-link-question-mark-blue {
+  @extend .pbg-icon-tiny;
+  background: url('../../shared/img/pbg-link-question-mark-blue.svg');
+}
+
+.pbg-icon-link-question-mark-gray {
+  @extend .pbg-icon-tiny;
+  background: url('../../shared/img/pbg-link-question-mark-gray.svg');
+}
+
+.pbg-icon-link-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-link-small-gray.svg');
+}
+
+.pbg-icon-question-mark-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-question-mark-small-blue.svg');
+}
+
+.pbg-icon-question-mark-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-question-mark-small-gray.svg');
+}
+
+.pbg-icon-warning-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-warning-small-gray.svg');
+}
+
+.pbg-icon-warning-small-red {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-warning-small-red.svg');
+}
+
+// UI Specific
 
 .pbg-icon-lock-pending-big {
   @extend .pbg-icon-big;

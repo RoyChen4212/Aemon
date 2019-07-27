@@ -27,6 +27,10 @@
   background: #f3f3f3;
 }
 
+.container-fluid.grey-20 {
+  background: #E4EBF2;
+}
+
 .mobile-size {
   width: 290px;
 }
