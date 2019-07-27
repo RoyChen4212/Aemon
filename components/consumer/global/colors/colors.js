@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import './style.scss';
-import { colorTypes } from '../../shared/color-types';
+import { colorCodes } from './constants';
 
 const baseClassName = 'pbg-global-assets-preview pbg-colors-preview';
 
@@ -20,7 +20,7 @@ const Colors = ({ color, label, labelGrade }) => {
         <div className={colClassName}>
           ${color}-{i}
         </div>
-        <div className={colClassName}>{colorTypes[`${colorTypePrefix}_${i}`]}</div>
+        <div className={colClassName}>{colorCodes[`${colorTypePrefix}_${i}`]}</div>
       </div>
     );
   }
