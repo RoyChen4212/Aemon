@@ -69,7 +69,6 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-envelope-open-small-gray.svg');
 }
 
-
 .pbg-icon-envelope-open-small-blue {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-envelope-open-small-blue.svg');
@@ -168,32 +167,34 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-cart-small.svg');
 }
 
-
-
-
-
-
+// Date/Time
 
 .pbg-icon-calendar-small {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-calendar-small.svg');
 }
+
 .pbg-icon-calendar-start-small {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-calendar-start-small.svg');
 }
+
 .pbg-icon-calendar-end-small {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-calendar-end-small.svg');
 }
+
 .pbg-icon-clock-small {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-clock-small.svg');
 }
+
 .pbg-icon-hour-glass-small {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-hour-glass-small.svg');
 }
+
+// Information
 
 .pbg-icon-lock-pending-big {
   @extend .pbg-icon-big;

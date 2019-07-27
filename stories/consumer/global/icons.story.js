@@ -60,3 +60,12 @@ storiesOf('Consumer/Global/Icons/Small/Purchase', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('cart-small', () => <Icons className="pbg-icon-cart-small" />);
+
+storiesOf('Consumer/Global/Icons/Small/Date & Time', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('calendar-small', () => <Icons className="pbg-icon-calendar-small" />)
+  .add('calendar-start-small', () => <Icons className="pbg-icon-calendar-start-small" />)
+  .add('calendar-end-small', () => <Icons className="pbg-icon-calendar-end-small" />)
+  .add('clock-small', () => <Icons className="pbg-icon-clock-small" />)
+  .add('hour-glass-small', () => <Icons className="pbg-icon-hour-glass-small" />);
