@@ -22,6 +22,12 @@ storiesOf('Consumer/Global/Icons/Small/Editing', module)
   .add('cog-small-gray', () => <Icons className="pbg-cog-small-gray" />)
   .add('cog-small-blue', () => <Icons className="pbg-cog-small-blue" />)
 
+storiesOf('Consumer/Global/Icons/Small/Group Invites', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('envelope-open-small-gray', () => <Icons className="pbg-envelope-open-small-gray" />)
+  .add('envelope-open-small-blue', () => <Icons className="pbg-envelope-open-small-blue" />)
+
 
 
 

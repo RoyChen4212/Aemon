@@ -21,4 +21,6 @@ export const iconTypes = {
   ORG_CONTROLS_SMALL_BLUE: "org-controls-small-blue",
   COG_SMALL_GRAY: "cog-small-gray",
   COG_SMALL_BLUE: "cog-small-blue",
+  PBG_ENVELOPE_OPEN_SMALL_GRAY: "pbg-envelope-open-small-gray",
+  PBG_ENVELOPE_OPEN_SMALL_BLUE: "pbg-envelope-open-small-blue"
 };
