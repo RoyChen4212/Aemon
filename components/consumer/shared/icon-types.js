@@ -14,4 +14,11 @@ export const iconTypes = {
   HOUR_GLASS: 'hour-glass',
   ARROW_UP: 'arrow-up',
   ARROW_DOWN: 'arrow-down',
+  ENVELOPE_CLOSED_SMALL: "envelope-closed-small",
+  SPEECH_BUBBLE_SMALL: "speech-bubble-small",
+  EDIT_SMALL: "edit-small",
+  ORG_CONTROLS_SMALL_GRAY: "org-controls-small-gray",
+  ORG_CONTROLS_SMALL_BLUE: "org-controls-small-blue",
+  COG_SMALL_GRAY: "cog-small-gray",
+  COG_SMALL_BLUE: "cog-small-blue",
 };

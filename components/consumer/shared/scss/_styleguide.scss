@@ -289,12 +289,6 @@ $colors: $dark_blue_colors, $blue_colors, $gray_colors, $yellow_colors, $teal_co
   }
 }
 
-//@each $name, $color in $dark_blue_colors  {
-//  .pbg-bg-color-#{$name} {
-//    background-color: $color;
-//  }
-//}
-
 $blue-facebook: #3b5998;
 
 // Font families
@@ -330,6 +324,41 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   width: 48px;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.pbg-envelope-closed-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-envelope-closed-small.svg');
+}
+
+.pbg-speech-bubble-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-speech-bubble-small.svg');
+}
+
+.pbg-edit-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-edit-small.svg');
+}
+
+.pbg-org-controls-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-org-controls-small-gray.svg');
+}
+
+.pbg-org-controls-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-org-controls-small-blue.svg');
+}
+
+.pbg-cog-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cog-small-blue.svg');
+}
+
+.pbg-cog-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cog-small-gray.svg');
 }
 
 .pbg-icon-lock-small {
