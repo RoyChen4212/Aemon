@@ -33,5 +33,15 @@ storiesOf('Consumer/Global/Icons/Small/Group Creation', module)
   .addDecorator(withContainer)
   .add('rocket-small', () => <Icons className="pbg-rocket-small" />)
 
+storiesOf('Consumer/Global/Icons/Small/Users', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('add-user-small-blue', () => <Icons className="pbg-add-user-small-blue" />)
+  .add('add-user-small-gray', () => <Icons className="pbg-add-user-small-gray" />)
+  .add('org-identifier-small', () => <Icons className="pbg-org-identifier-small" />)
+  .add('user-contribution-small', () => <Icons className="pbg-user-contribution-small" />)
+  .add('user-small', () => <Icons className="pbg-user-small" />)
+  .add('users-small', () => <Icons className="pbg-users-small" />)
+
 
 

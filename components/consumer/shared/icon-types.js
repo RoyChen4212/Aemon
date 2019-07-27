@@ -23,5 +23,11 @@ export const iconTypes = {
   COG_SMALL_BLUE: "cog-small-blue",
   ENVELOPE_OPEN_SMALL_GRAY: "envelope-open-small-gray",
   ENVELOPE_OPEN_SMALL_BLUE: "envelope-open-small-blue",
-  ROCKET_SMALL: "rocket-small"
+  ROCKET_SMALL: "rocket-small",
+  ADD_USER_SMALL_BLUE: "add-user-small-blue",
+  ADD_USER_SMALL_GRAY: "add-user-small-gray",
+  ORG_IDENTIFIER_SMALL: "org-identifier-small",
+  USER_CONTRIBUTION_SMALL: "user-contribution-small",
+  USER_SMALL: "user-small",
+  USERS_SMALL: "users-small",
 };

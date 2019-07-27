@@ -371,6 +371,36 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-rocket-small.svg');
 }
 
+.pbg-add-user-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-add-user-small-blue.svg');
+}
+
+.pbg-add-user-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-add-user-small-gray.svg');
+}
+
+.pbg-org-identifier-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-org-identifier-small.svg');
+}
+
+.pbg-user-contribution-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-user-contribution-small.svg');
+}
+
+.pbg-user-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-user-small.svg');
+}
+
+.pbg-users-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-users-small.svg');
+}
+
 .pbg-envelope-open-small-blue {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-envelope-open-small-blue.svg');
