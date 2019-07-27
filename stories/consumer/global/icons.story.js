@@ -28,6 +28,10 @@ storiesOf('Consumer/Global/Icons/Small/Group Invites', module)
   .add('envelope-open-small-gray', () => <Icons className="pbg-envelope-open-small-gray" />)
   .add('envelope-open-small-blue', () => <Icons className="pbg-envelope-open-small-blue" />)
 
+storiesOf('Consumer/Global/Icons/Small/Group Creation', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('rocket-small', () => <Icons className="pbg-rocket-small" />)
 
 
 

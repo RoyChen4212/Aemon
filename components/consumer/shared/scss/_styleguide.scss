@@ -366,6 +366,11 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-envelope-open-small-gray.svg');
 }
 
+.pbg-rocket-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-rocket-small.svg');
+}
+
 .pbg-envelope-open-small-blue {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-envelope-open-small-blue.svg');
