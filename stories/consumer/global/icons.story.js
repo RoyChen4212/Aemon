@@ -55,3 +55,8 @@ storiesOf('Consumer/Global/Icons/Small/Payment', module)
   .add('transaction-small', () => <Icons className="pbg-icon-transaction-small" />)
   .add('credit-card-add-small', () => <Icons className="pbg-icon-credit-card-add-small" />)
   .add('credit-card-subtract-small', () => <Icons className="pbg-icon-credit-card-subtract-small" />);
+
+storiesOf('Consumer/Global/Icons/Small/Purchase', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .add('cart-small', () => <Icons className="pbg-icon-cart-small" />);

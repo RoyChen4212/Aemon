@@ -27,4 +27,5 @@ export const iconTypes = {
   USER_CONTRIBUTION: 'user-contribution',
   USER: 'user',
   USERS: 'users',
+  CART_SMALL: 'cart-small',
 };

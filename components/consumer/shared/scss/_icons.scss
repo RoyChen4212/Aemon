@@ -163,6 +163,12 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
 // Purchase
 
+.pbg-icon-cart-small {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cart-small.svg');
+}
+
+
 
 
 
