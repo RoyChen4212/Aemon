@@ -57,4 +57,6 @@ export const iconTypes = {
   GMAIL: 'gmail',
   YAHOO: 'yahoo',
   OUTLOOK: 'outlook',
+  EMAIL_ALERT: 'email-alert',
+  INVITE: 'invite',
 };

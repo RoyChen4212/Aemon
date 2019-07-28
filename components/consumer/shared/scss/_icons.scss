@@ -45,8 +45,8 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
 .pbg-icon-big {
   display: inline-block;
-  height: 48px;
-  width: 48px;
+  height: 32px;
+  width: 32px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -508,28 +508,26 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-yahoo.svg');
 }
 
-.pbg-icon-lock-pending-big {
+// Big Icons
+
+// Email & Messaging
+
+.pbg-icon-edit-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-edit-big.svg');
+}
+
+.pbg-icon-email-alert-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-email-alert-big.svg');
+}
+
+.pbg-icon-invite-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-invite-big.svg');
+}
+
+.pbg-icon-rocket-big {
   @extend .pbg-icon-big;
   background: url('../../shared/img/pbg-rocket-big.svg');
 }
-
-.pbg-icon-credit-cards-success-big {
-  @extend .pbg-icon-big;
-  background: url('../../shared/img/pbg-credit-cards-success-big.svg');
-}
-
-.pbg-icon-credit-cards-pending-big {
-  @extend .pbg-icon-big;
-  background: url('../../shared/img/pbg-credit-cards-pending-big.svg');
-}
-
-.pbg-icon-credit-cards-error-big {
-  @extend .pbg-icon-big;
-  background: url('../../shared/img/pbg-credit-cards-error-big.svg');
-}
-
-.pbg-icon-lock-pending-big {
-  @extend .pbg-icon-big;
-  background: url('../../shared/img/pbg-lock-pending-big.svg');
-}
-

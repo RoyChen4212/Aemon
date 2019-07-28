@@ -152,3 +152,27 @@ storiesOf('Consumer/Global/Icons/Small/Contact Import Methods', module)
   .add('gmail', () => <Icons className="pbg-icon-gmail" />)
   .add('outlook', () => <Icons className="pbg-icon-outlook" />)
   .add('yahoo', () => <Icons className="pbg-icon-yahoo" />);
+
+storiesOf('Consumer/Global/Icons/Big/Email & Messaging', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
+  .add('email-alert-big', () => <Icons className="pbg-icon-email-alert-big" />)
+
+storiesOf('Consumer/Global/Icons/Big/Editing', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
+  .add('edit-big', () => <Icons className="pbg-icon-edit-big" />)
+
+storiesOf('Consumer/Global/Icons/Big/Group Invites', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
+  .add('invite-big', () => <Icons className="pbg-icon-invite-big" />)
+
+storiesOf('Consumer/Global/Icons/Big/Group Creation', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
+  .add('rocket-big', () => <Icons className="pbg-icon-rocket-big" />)
