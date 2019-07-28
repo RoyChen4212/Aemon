@@ -517,17 +517,79 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-edit-big.svg');
 }
 
+// Editing
+
 .pbg-icon-email-alert-big {
   @extend .pbg-icon-big;
   background: url('../../shared/img/pbg-email-alert-big.svg');
 }
+
+// Group Invites
 
 .pbg-icon-invite-big {
   @extend .pbg-icon-big;
   background: url('../../shared/img/pbg-invite-big.svg');
 }
 
+// Group Creation
+
 .pbg-icon-rocket-big {
   @extend .pbg-icon-big;
   background: url('../../shared/img/pbg-rocket-big.svg');
+}
+
+// Users
+
+.pbg-icon-users-complete-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-users-complete-big.svg');
+}
+
+.pbg-icon-user-remove-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-user-remove-big.svg');
+}
+
+.pbg-icon-users-missing-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-users-missing-big.svg');
+}
+
+.pbg-icon-user-add-2x {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-user-add-2x.svg');
+}
+
+// Payment
+
+.pbg-icon-credit-cards-success-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-credit-cards-success-big.svg');
+}
+
+.pbg-icon-credit-cards-error-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-credit-cards-error-big.svg');
+}
+
+.pbg-icon-credit-cards-pending-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-credit-cards-pending-big.svg');
+}
+
+.pbg-icon-lock-pending-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-lock-pending-big.svg');
+}
+
+// Purchase
+
+.pbg-icon-cart-success-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-cart-success-big.svg');
+}
+
+.pbg-icon-cart-pending-big {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-cart-pending-big.svg');
 }

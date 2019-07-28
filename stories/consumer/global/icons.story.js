@@ -157,22 +157,47 @@ storiesOf('Consumer/Global/Icons/Big/Email & Messaging', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('email-alert-big', () => <Icons className="pbg-icon-email-alert-big" />)
+  .add('email-alert-big', () => <Icons className="pbg-icon-email-alert-big" />);
 
 storiesOf('Consumer/Global/Icons/Big/Editing', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('edit-big', () => <Icons className="pbg-icon-edit-big" />)
+  .add('edit-big', () => <Icons className="pbg-icon-edit-big" />);
 
 storiesOf('Consumer/Global/Icons/Big/Group Invites', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('invite-big', () => <Icons className="pbg-icon-invite-big" />)
+  .add('invite-big', () => <Icons className="pbg-icon-invite-big" />);
 
 storiesOf('Consumer/Global/Icons/Big/Group Creation', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('rocket-big', () => <Icons className="pbg-icon-rocket-big" />)
+  .add('rocket-big', () => <Icons className="pbg-icon-rocket-big" />);
+
+storiesOf('Consumer/Global/Icons/Big/Users', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
+  .add('users-complete-big', () => <Icons className="pbg-icon-users-complete-big" />)
+  .add('user-remove-big', () => <Icons className="pbg-icon-user-remove-big" />)
+  .add('users-missing-big', () => <Icons className="pbg-icon-users-missing-big" />)
+  .add('user-add-2x', () => <Icons className="pbg-icon-user-add-2x" />);
+
+storiesOf('Consumer/Global/Icons/Big/Payment', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
+  .add('credit-cards-success-big', () => <Icons className="pbg-icon-credit-cards-success-big" />)
+  .add('credit-cards-error-big', () => <Icons className="pbg-icon-credit-cards-error-big" />)
+  .add('credit-cards-pending-big', () => <Icons className="pbg-icon-credit-cards-pending-big" />)
+  .add('lock-pending-big', () => <Icons className="pbg-icon-lock-pending-big" />);
+
+storiesOf('Consumer/Global/Icons/Big/Purchase', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
+  .add('cart-success-big', () => <Icons className="pbg-icon-cart-success-big" />)
+  .add('cart-pending-big', () => <Icons className="pbg-icon-cart-pending-big" />);
