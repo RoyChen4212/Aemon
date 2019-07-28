@@ -54,4 +54,7 @@ export const iconTypes = {
   DISCOVER: 'discover',
   MASTERCARD: 'mastercard',
   VISA: 'visa',
+  GMAIL: 'gmail',
+  YAHOO: 'yahoo',
+  OUTLOOK: 'outlook',
 };

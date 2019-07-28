@@ -144,3 +144,11 @@ storiesOf('Consumer/Global/Icons/Small/Credit Cards', module)
   .add('mastercard-small', () => <Icons className="pbg-icon-mastercard-small" />)
   .add('visa-big', () => <Icons className="pbg-icon-visa-big" />)
   .add('visa-small', () => <Icons className="pbg-icon-visa-small" />);
+
+storiesOf('Consumer/Global/Icons/Small/Contact Import Methods', module)
+  .addDecorator(wrapStory)
+  .addDecorator(withContainer)
+  .addDecorator(withGrey20Container)
+  .add('gmail', () => <Icons className="pbg-icon-gmail" />)
+  .add('outlook', () => <Icons className="pbg-icon-outlook" />)
+  .add('yahoo', () => <Icons className="pbg-icon-yahoo" />);
