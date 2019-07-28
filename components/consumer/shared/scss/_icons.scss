@@ -20,6 +20,21 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background-size: cover;
 }
 
+.pbg-icon-card-small {
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+  background-size: cover;
+}
+
+.pbg-icon-card-big {
+  display: inline-block;
+  width: 24px;
+  height: 18px;
+  background-size: cover;
+}
+
+
 .pbg-icon-big {
   display: inline-block;
   height: 48px;
@@ -407,7 +422,67 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-plus-small-gray.svg');
 }
 
-//
+// Credit Cards
+
+.pbg-icon-amex-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-amex-big.svg');
+}
+
+.pbg-icon-amex-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-amex-small.svg');
+}
+
+.pbg-icon-card-placeholder-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-card-placeholder-big.svg');
+}
+
+.pbg-icon-card-placeholder-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-card-placeholder-small.svg');
+}
+
+.pbg-icon-diners-club-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-diners-club-big.svg');
+}
+
+.pbg-icon-diners-club-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-diners-club-small.svg');
+}
+
+.pbg-icon-discover-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-discover-big.svg');
+}
+
+.pbg-icon-discover-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-discover-small.svg');
+}
+
+.pbg-icon-mastercard-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-mastercard-big.svg');
+}
+
+.pbg-icon-mastercard-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-mastercard-small.svg');
+}
+
+.pbg-icon-visa-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-visa-big.svg');
+}
+
+.pbg-icon-visa-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-visa-small.svg');
+}
 
 .pbg-icon-lock-pending-big {
   @extend .pbg-icon-big;

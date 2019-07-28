@@ -48,4 +48,10 @@ export const iconTypes = {
   LINK: 'link',
   QUESTION_MARK: 'question-mark',
   WARNING: 'warning',
+  AMEX: 'amex',
+  CARD_PLACEHOLDER: 'card-placeholder',
+  DINERS_CLUB: 'diners-club',
+  DISCOVER: 'discover',
+  MASTERCARD: 'mastercard',
+  VISA: 'visa',
 };
