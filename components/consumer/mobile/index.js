@@ -32,6 +32,7 @@ import TimePicker from './time-picker';
 import ClaimToggle from './claim-toggle';
 import SectionSeparator from './section-separator';
 import PurchaseImage from './purchase-image/purchase-image';
+import Switcher from './switcher';
 
 const mobile = {
   AddComment,
@@ -78,6 +79,7 @@ const mobile = {
   TextField,
   TimePicker,
   UserCommentCard,
+  Switcher,
 };
 
 export default mobile;
