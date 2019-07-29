@@ -4,9 +4,9 @@ import { action } from '@storybook/addon-actions';
 
 import PaymentMethodSelector from '../../../components/consumer/desktop/payment-method-selector';
 import { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
-import { cardTypes } from '../../../components/consumer/desktop/card-field/card-field-types';
 import { withContainer, wrapStory } from '../../util/decorators';
 import FieldStateProvider from '../../util/field-state-provider';
+import { cardTypes } from '../../../components/consumer/shared/card-types';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -20,14 +20,6 @@ const options = [
   { cardType: null, label: 'Add new [term]', value: PICKER_EMPTY_VALUE },
 ];
 
-const labels = {
-  cardNumber: 'Card Number',
-  expDate: 'Expiration date',
-  securityCode: 'Security code',
-  fullName: 'Full name',
-  postalCode: 'Postal code',
-};
-
 storiesOf('Consumer/Desktop/Form Fields/payment-method-selector', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
@@ -36,7 +28,6 @@ storiesOf('Consumer/Desktop/Form Fields/payment-method-selector', module)
       component={PaymentMethodSelector}
       name="payment-method-selector"
       label="Select saved payment method"
-      cardFormLabels={labels}
       value="visa"
       onChange={action('onChange')}
       options={options}
@@ -47,7 +38,6 @@ storiesOf('Consumer/Desktop/Form Fields/payment-method-selector', module)
       component={PaymentMethodSelector}
       name="payment-method-selector"
       label="Select stored payment method"
-      cardFormLabels={labels}
       hint="Select one awesome value"
       value={PICKER_EMPTY_VALUE}
       onChange={action('onChange')}
