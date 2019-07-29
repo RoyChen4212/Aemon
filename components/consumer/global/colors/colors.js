@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import './style.scss';
-import { colorCodes } from './constants';
+import colorCodes from '../../shared/scss/_styleguide.scss';
 
 const baseClassName = 'pbg-global-assets-preview pbg-colors-preview';
 
 const Colors = ({ color, label, labelGrade }) => {
   const colors = [];
-  const colorTypePrefix = color.toUpperCase().replace('-', '_');
   for (let i = 10; i <= 100; i += 10) {
     const colClassName = cx('pbg-colors-preview-col', { 'pbg-dark': i < 60 });
     colors.push(
@@ -20,7 +19,7 @@ const Colors = ({ color, label, labelGrade }) => {
         <div className={colClassName}>
           ${color}-{i}
         </div>
-        <div className={colClassName}>{colorCodes[`${colorTypePrefix}_${i}`]}</div>
+        <div className={colClassName}>{colorCodes[`${color}-${i}`]}</div>
       </div>
     );
   }
