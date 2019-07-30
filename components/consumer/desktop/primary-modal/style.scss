@@ -24,7 +24,6 @@ $modal_width: 848px;
     }
 
     .pbg-primary-modal-main-container {
-      padding: 40px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -36,11 +35,17 @@ $modal_width: 848px;
       background: $white;
       min-height: 120px;
       overflow: auto;
+      padding: 40px;
     }
 
     .pbg-primary-modal-footer-content {
-      padding-top: 16px;
+      padding: 16px 40px 40px;
       width: 538px;
+    }
+
+    .pbg-divider {
+      padding-left: 40px;
+      padding-right: 40px;
     }
 
     .pbg-primary-modal-sidebar-content {
