@@ -51,4 +51,17 @@ storiesOf('Consumer/Desktop/address-field', module)
       countryOptions={countries}
       onChange={action('onChange')}
     />
+  ))
+  .add('template-field/default', () => (
+    <FieldStateProvider
+      validate={validate}
+      component={NewAddressField}
+      name="new-address-field"
+      label="Shipping Address"
+      hint="Optional description text determined by Merchant"
+      labels={labels}
+      value={{ country: PICKER_EMPTY_VALUE }}
+      countryOptions={countries}
+      onChange={action('onChange')}
+    />
   ));

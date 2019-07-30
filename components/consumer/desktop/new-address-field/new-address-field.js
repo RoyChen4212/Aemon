@@ -91,7 +91,7 @@ class AddressField extends FormField {
     return (
       <div>
         <div className="pbg-desktop-label-normal">{label}</div>
-        {hint && <div className="pbg-desktop-small-text">{hint}</div>}
+        {hint && <div className="pbg-desktop-small-text pbg-desktop-secondary-text">{hint}</div>}
       </div>
     );
   }
