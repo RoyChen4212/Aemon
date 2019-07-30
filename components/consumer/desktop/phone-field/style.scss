@@ -23,6 +23,11 @@
         .pbg-button {
           margin-left: 16px;
           box-shadow: none;
+          background-color: transparent;
+
+          &:focus {
+            outline:0;
+          }
 
           > span {
             padding: 0;
@@ -30,6 +35,12 @@
             font-weight: normal;
           }
         }
+      }
+
+      .pbg-text-field {
+        margin-top: 16px;
+        padding-left: 14px;
+        border-left: 2px solid $gray-30;
       }
     }
   }

@@ -61,7 +61,11 @@ class PhoneField extends FormField {
   onChangePicker = event => {
     const selectedPicker = event.target.value;
 
-    this.setState({ selectedPicker });
+    if (selectedPicker) {
+      this.setState({ selectedPicker });
+    } else {
+      this.setState({ selectedPicker, touched: false });
+    }
     this.onChange({ ...event, target: { value: !selectedPicker ? '' : selectedPicker } });
   };
 
@@ -106,7 +110,6 @@ class PhoneField extends FormField {
         error={this.error}
         onChange={this.onChange}
         onBlur={this.onBlur}
-        onF
       />
     );
   };
