@@ -24,7 +24,7 @@ export const iconTypes = {
   MENU: 'menu',
   MINUS: 'minus',
   PLUS: 'plus',
-  external_LINK: 'external-link',
+  EXTERNAL_LINK: 'external-link',
   LARGE_ARROW: 'large-arrow',
   ENVELOPE_CLOSED: 'envelope-closed',
   SPEECH_BUBBLE: 'speech-bubble',
