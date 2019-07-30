@@ -613,18 +613,6 @@ describe('NewAddressField', () => {
       });
 
       describe('Country', () => {
-        it('should call onBlur', done => {
-          const onBlur = () => {
-            done();
-          };
-
-          const wrapper = mount(<NewAddressField countryOptions={countries} onBlur={onBlur} />);
-          wrapper
-            .find(Picker)
-            .find('button')
-            .simulate('blur');
-        });
-
         it('should be touched when focused', done => {
           const touchState = `${addressFields.COUNTRY}Touched`;
 
