@@ -7,7 +7,7 @@ import Picker from '../picker';
 import FormField from '../form-field';
 import TextField from '../text-field';
 import makeEvent from '../../../lib/make-event';
-import { fieldNames } from '../../mobile/new-address-field/new-address-field';
+import { addressFields } from '../../mobile/new-address-field';
 
 import './style.scss';
 
@@ -16,11 +16,11 @@ class AddressField extends FormField {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-new-address-field';
 
   state = {
-    [`${fieldNames.STREET_ADDRESS}Touched`]: false,
-    [`${fieldNames.CITY}Touched`]: false,
-    [`${fieldNames.STATE}Touched`]: false,
-    [`${fieldNames.POSTAL_CODE}Touched`]: false,
-    [`${fieldNames.COUNTRY}Touched`]: false,
+    [`${addressFields.STREET_ADDRESS}Touched`]: false,
+    [`${addressFields.CITY}Touched`]: false,
+    [`${addressFields.STATE}Touched`]: false,
+    [`${addressFields.POSTAL_CODE}Touched`]: false,
+    [`${addressFields.COUNTRY}Touched`]: false,
   };
 
   static propTypes = {
@@ -101,18 +101,18 @@ class AddressField extends FormField {
       <div className={this.className}>
         {this.renderLabel()}
         <div className="pbg-new-address-field-container">
-          {this.renderTextFieldFor(fieldNames.STREET_ADDRESS, true)}
-          {this.renderTextFieldFor(fieldNames.CITY)}
-          {this.renderTextFieldFor(fieldNames.STATE)}
-          {this.renderTextFieldFor(fieldNames.POSTAL_CODE)}
+          {this.renderTextFieldFor(addressFields.STREET_ADDRESS, true)}
+          {this.renderTextFieldFor(addressFields.CITY)}
+          {this.renderTextFieldFor(addressFields.STATE)}
+          {this.renderTextFieldFor(addressFields.POSTAL_CODE)}
           <Picker
-            name={fieldNames.COUNTRY}
+            name={addressFields.COUNTRY}
             options={this.countryOptions}
-            value={this.currentValue[fieldNames.COUNTRY]}
-            label={this.extractLabel(fieldNames.COUNTRY)}
-            error={this.extractError(fieldNames.COUNTRY)}
-            onChange={ev => this.updateValue({ [fieldNames.COUNTRY]: ev.target.value })}
-            onBlur={() => this.onBlur(makeEvent(this.currentValue), fieldNames.COUNTRY)}
+            value={this.currentValue[addressFields.COUNTRY]}
+            label={this.extractLabel(addressFields.COUNTRY)}
+            error={this.extractError(addressFields.COUNTRY)}
+            onChange={ev => this.updateValue({ [addressFields.COUNTRY]: ev.target.value })}
+            onBlur={() => this.onBlur(makeEvent(this.currentValue), addressFields.COUNTRY)}
             button
           />
         </div>
