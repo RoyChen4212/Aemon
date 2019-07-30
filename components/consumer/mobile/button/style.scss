@@ -39,47 +39,47 @@
 
       &.disabled {
         cursor: default;
-        background: $grey-10;
+        background: $gray-10;
         box-shadow: $cta-disabled-shadow;
 
         > span {
-          color: $grey-60;
+          color: $gray-60;
         }
       }
     }
 
     &.submitting {
-      background-color: $grey-10;
+      background-color: $gray-10;
       cursor: default;
       box-shadow: none;
 
       > span {
-        color: $grey-60;
+        color: $gray-60;
       }
     }
 
     &.pbg-button-secondary {
-      background: $grey-10;
+      background: $gray-10;
       border-radius: 4px;
       color: $blue-60;
       height: 47px;
 
       &.pbg-button-active {
-        background-color: $grey-20;
+        background-color: $gray-20;
       }
 
       &.disabled {
         cursor: default;
-        background: $grey-10;
+        background: $gray-10;
 
         > span {
-          color: $grey-60;
+          color: $gray-60;
         }
       }
     }
 
     &.pbg-button-small {
-      background: $grey-10;
+      background: $gray-10;
       border-radius: 4px;
       color: $blue-60;
       font-size: $small-font;
@@ -161,7 +161,7 @@
 
   .pbg-hint {
     display: block;
-    color: $grey-60;
+    color: $gray-60;
     font-style: normal;
   }
 }

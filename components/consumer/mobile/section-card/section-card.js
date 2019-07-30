@@ -23,19 +23,21 @@ const SectionCard = ({
         <div className="pbg-section-card-header-row">
           <div className="pbg-section-card-header-text">
             {status !== sectionCardStatus.COMPLETED ? (
-              <div className="pbg-section-card-step-number pbg-mobile-heading-2">{stepNumber}.</div>
+              stepNumber && <div className="pbg-section-card-step-number pbg-mobile-heading-2">{stepNumber}.</div>
             ) : (
               <div className="pbg-section-card-completed-icon" />
             )}
             <div className="pbg-section-card-title pbg-mobile-heading-2">{title}</div>
           </div>
-          <div className="pbg-section-card-header-button-wrapper">
-            {Button && (
-              <Button onClick={onActivateButtonClick} disabled={status === sectionCardStatus.DISABLED}>
-                {activateButtonText}
-              </Button>
-            )}
-          </div>
+          {status !== sectionCardStatus.DISABLED && (
+            <div className="pbg-section-card-header-button-wrapper">
+              {Button && (
+                <Button onClick={onActivateButtonClick} disabled={status === sectionCardStatus.DISABLED}>
+                  {activateButtonText}
+                </Button>
+              )}
+            </div>
+          )}
         </div>
         <div className="pbg-section-card-header-row">
           {status === sectionCardStatus.COMPLETED && (
@@ -43,7 +45,7 @@ const SectionCard = ({
           )}
         </div>
       </div>
-      {status !== sectionCardStatus.COMPLETED && <div className="pbg-section-card-content">{children}</div>}
+      {status === sectionCardStatus.ACTIVE && <div className="pbg-section-card-content">{children}</div>}
     </div>
   );
 };

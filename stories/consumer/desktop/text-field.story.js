@@ -66,4 +66,15 @@ storiesOf('Consumer/Desktop/Form Fields/text-field', module)
       placeholder="What you typed is wrong"
       hint="this is a hint"
     />
+  ))
+  .add('text-field/facebook', () => (
+    <FieldStateProvider
+      component={TextField}
+      name="field3"
+      label="A text field"
+      plaholder="Placeholder"
+      hint="hint"
+      icon="https://assets.paybygroup.com/images/icons/facebook.svg"
+      onIconClick={action('onIconClick')}
+    />
   ));

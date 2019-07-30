@@ -13,11 +13,17 @@
       }
     }
     .pbg-claim-toggle-secondary-text {
+      .hidden-checkbox {
+        visibility: hidden;
+        margin-right: 8px;
+        width: 14px;
+      }
       @extend .pbg-mobile-label-normal;
-      padding-left: 22px;
+      padding-top: 4px;
     }
     .pbg-checkbox {
       line-height: 14px;
+      width: 14px;
     }
   }
 }

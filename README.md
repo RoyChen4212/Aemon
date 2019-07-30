@@ -282,7 +282,7 @@ Some style guidelines not covered by our quality code tools that you should take
 
 The general CSS styles are defined in the [styleguide](components/consumer/shared/scss/_styleguide.scss) file. This file contains:
 
-* Color palette variables (i.e. `$grey-10`, `$red-60`)
+* Color palette variables (i.e. `$gray-10`, `$red-60`)
 * Font family variables (i.e. `$roboto`)
 * Font size variables (i.e. `$large-font`, `$small-font`)
 * Desktop and mobile typography styles (i.e. `.pbg-desktop-heading-1`)

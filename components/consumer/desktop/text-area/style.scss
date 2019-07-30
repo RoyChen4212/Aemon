@@ -1,12 +1,12 @@
 @import '../../shared/scss/styleguide';
 
 .pbg-consumer-desktop {
-  &.pbg-form-field {    
+  &.pbg-form-field {
     &.pbg-text-area {
       textarea {
         @extend .pbg-desktop-regular-text;
         background: $white;
-        border: 1px solid $grey-50;
+        border: 1px solid $gray-50;
         margin-bottom: -6px;
         outline: 0;
         padding: 8px;
@@ -14,7 +14,7 @@
         border-radius: 3px;
 
         &::placeholder {
-          color: $grey-60;
+          color: $gray-60;
           font-family: Roboto;
           font-style: normal;
           font-weight: normal;
@@ -29,7 +29,7 @@
       &.pbg-form-field-focused {
         textarea {
           border-color: $blue-60;
-        } 
+        }
       }
 
       &.pbg-form-field-error {
@@ -44,6 +44,6 @@
         }
       }
 
-    } 
+    }
   }
 }
