@@ -31,7 +31,8 @@ import TextField from './text-field';
 import TimePicker from './time-picker';
 import ClaimToggle from './claim-toggle';
 import SectionSeparator from './section-separator';
-import PurchaseImage from './purchase-image/purchase-image';
+import PurchaseImage from './purchase-image';
+import SimpleNumberStepper from './simple-number-stepper';
 
 const mobile = {
   AddComment,
@@ -74,6 +75,7 @@ const mobile = {
   SmallButton,
   SmallFacebookButton,
   StepProgressBar,
+  SimpleNumberStepper,
   TextArea,
   TextField,
   TimePicker,
