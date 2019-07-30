@@ -105,16 +105,17 @@ class AddressField extends FormField {
           {this.renderTextFieldFor(fieldNames.CITY)}
           {this.renderTextFieldFor(fieldNames.STATE)}
           {this.renderTextFieldFor(fieldNames.POSTAL_CODE)}
+          <Picker
+            name={fieldNames.COUNTRY}
+            options={this.countryOptions}
+            value={this.currentValue[fieldNames.COUNTRY]}
+            label={this.extractLabel(fieldNames.COUNTRY)}
+            error={this.extractError(fieldNames.COUNTRY)}
+            onChange={ev => this.updateValue({ [fieldNames.COUNTRY]: ev.target.value })}
+            onBlur={() => this.onBlur(makeEvent(this.currentValue), fieldNames.COUNTRY)}
+            button
+          />
         </div>
-        {/* <Picker */}
-        {/*  name={fieldNames.COUNTRY} */}
-        {/*  options={this.countryOptions} */}
-        {/*  value={this.currentValue[fieldNames.COUNTRY]} */}
-        {/*  label={this.extractLabel(fieldNames.COUNTRY)} */}
-        {/*  error={this.extractError(fieldNames.COUNTRY)} */}
-        {/*  onChange={ev => this.updateValue({ [fieldNames.COUNTRY]: ev.target.value })} */}
-        {/*  onBlur={() => this.onBlur(makeEvent(this.currentValue), fieldNames.COUNTRY)} */}
-        {/* /> */}
       </div>
     );
   }

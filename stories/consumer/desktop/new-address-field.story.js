@@ -4,15 +4,17 @@ import { action } from '@storybook/addon-actions';
 
 import FieldStateProvider from '../../util/field-state-provider';
 import NewAddressField from '../../../components/consumer/desktop/new-address-field';
+import { PICKER_EMPTY_VALUE } from '../../../components/consumer/desktop/picker';
 import { withContainer, wrapStory } from '../../util/decorators';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const countries = [
-  { label: 'United States', value: 'us' },
-  { label: 'Mexico', value: 'mx' },
-  { label: 'Denmark', value: 'dk' },
+  { label: { term: 'Choose...' }, value: PICKER_EMPTY_VALUE },
+  { label: { term: 'United States' }, value: 'us' },
+  { label: { term: 'Mexico' }, value: 'mx' },
+  { label: { term: 'Denmark' }, value: 'dk' },
 ];
 
 const validate = value => {
@@ -45,7 +47,7 @@ storiesOf('Consumer/Desktop/address-field', module)
       name="new-address-field"
       label="Shipping Address"
       labels={labels}
-      value={{ streetAddress: '' }}
+      value={{ country: PICKER_EMPTY_VALUE }}
       countryOptions={countries}
       onChange={action('onChange')}
     />
