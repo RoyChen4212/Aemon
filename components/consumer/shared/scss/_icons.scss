@@ -1,0 +1,594 @@
+// Icons
+$facebook-icon: url('../img/facebook-icon.svg');
+$facebook-logo: url('../img/facebook-logo.svg');
+$pulse-icon-white: url('../img/pulse-icon-white.svg');
+$list-icon-white: url('../img/view-list-icon-white.svg');
+$pulse-icon-grey: url('../img/pulse-icon-grey.svg');
+$list-icon-grey: url('../img/view-list-icon-grey.svg');
+
+.pbg-icon-tiny {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-size: cover;
+}
+
+.pbg-icon-small {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-size: cover;
+}
+
+.pbg-icon-middle {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}
+
+.pbg-icon-big {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pbg-icon-card-small {
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+  background-size: cover;
+}
+
+.pbg-icon-card-big {
+  display: inline-block;
+  width: 24px;
+  height: 18px;
+  background-size: cover;
+}
+
+// Small icons
+
+// Email & Messaging
+
+.pbg-icon-envelope-closed-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-envelope-closed-small-gray.svg');
+}
+
+.pbg-icon-speech-bubble-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-speech-bubble-small-gray.svg');
+}
+
+// Editing
+
+.pbg-icon-edit-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-edit-small-gray.svg');
+}
+
+.pbg-icon-org-controls-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-org-controls-small-gray.svg');
+}
+
+.pbg-icon-org-controls-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-org-controls-small-blue.svg');
+}
+
+.pbg-icon-cog-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cog-small-blue.svg');
+}
+
+.pbg-icon-cog-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cog-small-gray.svg');
+}
+
+// Group Invites
+
+.pbg-icon-envelope-open-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-envelope-open-small-gray.svg');
+}
+
+.pbg-icon-envelope-open-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-envelope-open-small-blue.svg');
+}
+
+// Group Creation
+
+.pbg-icon-rocket-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-rocket-small-gray.svg');
+}
+
+// Users
+
+.pbg-icon-add-user-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-add-user-small-blue.svg');
+}
+
+.pbg-icon-add-user-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-add-user-small-gray.svg');
+}
+
+.pbg-icon-org-identifier-small-green {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-org-identifier-small-green.svg');
+}
+
+.pbg-icon-user-contribution-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-user-contribution-small-gray.svg');
+}
+
+.pbg-icon-user-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-user-small-gray.svg');
+}
+
+.pbg-icon-users-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-users-small-gray.svg');
+}
+
+// Payment
+
+.pbg-icon-credit-card-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-credit-card-small-gray.svg');
+}
+
+.pbg-icon-lock-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-lock-small-gray.svg');
+}
+
+.pbg-icon-unlock-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-unlock-small-gray.svg');
+}
+
+.pbg-icon-price-tag-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-price-tag-small-gray.svg');
+}
+
+.pbg-icon-credit-card-error-small-red {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-credit-card-error-small-red.svg');
+}
+
+.pbg-icon-credit-card-pending-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-credit-card-pending-small-gray.svg');
+}
+
+.pbg-icon-transaction-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-transaction-small-gray.svg');
+}
+
+.pbg-icon-credit-card-add-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-credit-card-add-small-gray.svg');
+}
+
+.pbg-icon-credit-card-subtract-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-credit-card-subtract-small-gray.svg');
+}
+
+// Purchase
+
+.pbg-icon-cart-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cart-small-gray.svg');
+}
+
+// Date/Time
+
+.pbg-icon-calendar-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-calendar-small-gray.svg');
+}
+
+.pbg-icon-calendar-start-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-calendar-start-small-gray.svg');
+}
+
+.pbg-icon-calendar-end-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-calendar-end-small-gray.svg');
+}
+
+.pbg-icon-clock-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-clock-small-gray.svg');
+}
+
+.pbg-icon-hour-glass-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-hour-glass-small-gray.svg');
+}
+
+// Information
+
+.pbg-icon-bell-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-bell-small-gray.svg');
+}
+
+.pbg-icon-bell-small-yellow {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-bell-small-yellow.svg');
+}
+
+.pbg-icon-check-mark-circle-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-check-mark-circle-small-gray.svg');
+}
+
+.pbg-icon-check-mark-circle-small-green {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-check-mark-circle-small-green.svg');
+}
+
+.pbg-icon-globe-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-globe-small-gray.svg');
+}
+
+.pbg-icon-hint-error-small-red {
+  @extend .pbg-icon-tiny;
+  background: url('../../shared/img/pbg-hint-error-small-red.svg');
+}
+
+.pbg-icon-info-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-info-small-blue.svg');
+}
+
+.pbg-icon-info-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-info-small-gray.svg');
+}
+
+.pbg-icon-info-small-white {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-info-small-white.svg');
+}
+
+.pbg-icon-link-question-mark-blue {
+  @extend .pbg-icon-tiny;
+  background: url('../../shared/img/pbg-link-question-mark-blue.svg');
+}
+
+.pbg-icon-link-question-mark-gray {
+  @extend .pbg-icon-tiny;
+  background: url('../../shared/img/pbg-link-question-mark-gray.svg');
+}
+
+.pbg-icon-link-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-link-small-gray.svg');
+}
+
+.pbg-icon-question-mark-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-question-mark-small-blue.svg');
+}
+
+.pbg-icon-question-mark-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-question-mark-small-gray.svg');
+}
+
+.pbg-icon-warning-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-warning-small-gray.svg');
+}
+
+.pbg-icon-warning-small-red {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-warning-small-red.svg');
+}
+
+// UI Specific
+
+.pbg-icon-arrow-down-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-down-small-blue.svg');
+}
+
+.pbg-icon-arrow-down-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-down-small-gray.svg');
+}
+
+.pbg-icon-arrow-left-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-left-small-blue.svg');
+}
+
+.pbg-icon-arrow-left-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-left-small-gray.svg');
+}
+
+.pbg-icon-arrow-right-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-right-small-blue.svg');
+}
+
+.pbg-icon-arrow-right-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-right-small-gray.svg');
+}
+
+.pbg-icon-arrow-up-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-up-small-blue.svg');
+}
+
+.pbg-icon-arrow-up-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-up-small-gray.svg');
+}
+
+.pbg-icon-back-arrow-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-back-arrow-gray.svg');
+}
+
+.pbg-icon-back-arrow-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-back-arrow-small-blue.svg');
+}
+
+.pbg-icon-check-mark-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-check-mark-small-gray.svg');
+}
+
+.pbg-icon-check-mark-small-white {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-check-mark-small-white.svg');
+}
+
+.pbg-icon-cross-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cross-small-blue.svg');
+}
+
+.pbg-icon-cross-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cross-small-gray.svg');
+}
+
+.pbg-icon-cross-small-white {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-cross-small-white.svg');
+}
+
+.pbg-icon-dots-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-dots-small-blue.svg');
+}
+
+.pbg-icon-external-link-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-external-link-small-blue.svg');
+  width: 12px;
+  height: 12px;
+}
+
+.pbg-icon-large-arrow-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-large-arrow-small-blue.svg');
+}
+
+.pbg-icon-menu-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-menu-small-blue.svg');
+}
+
+.pbg-icon-menu-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-menu-small-gray.svg');
+}
+
+.pbg-icon-minus-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-minus-small-blue.svg');
+}
+
+.pbg-icon-minus-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-minus-small-gray.svg');
+}
+
+.pbg-icon-plus-small-blue {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-plus-small-blue.svg');
+}
+
+.pbg-icon-plus-small-gray {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-plus-small-gray.svg');
+}
+
+// Credit Cards
+
+.pbg-icon-amex-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-amex-big.svg');
+}
+
+.pbg-icon-amex-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-amex-small.svg');
+}
+
+.pbg-icon-card-placeholder-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-card-placeholder-big.svg');
+}
+
+.pbg-icon-card-placeholder-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-card-placeholder-small.svg');
+}
+
+.pbg-icon-diners-club-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-diners-club-big.svg');
+}
+
+.pbg-icon-diners-club-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-diners-club-small.svg');
+}
+
+.pbg-icon-discover-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-discover-big.svg');
+}
+
+.pbg-icon-discover-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-discover-small.svg');
+}
+
+.pbg-icon-mastercard-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-mastercard-big.svg');
+}
+
+.pbg-icon-mastercard-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-mastercard-small.svg');
+}
+
+.pbg-icon-visa-big {
+  @extend .pbg-icon-card-big;
+  background: url('../../shared/img/pbg-visa-big.svg');
+}
+
+.pbg-icon-visa-small {
+  @extend .pbg-icon-card-small;
+  background: url('../../shared/img/pbg-visa-small.svg');
+}
+
+// Contact Import Methods
+.pbg-icon-gmail {
+  @extend .pbg-icon-middle;
+  background: url('../../shared/img/pbg-gmail.svg');
+}
+
+.pbg-icon-outlook {
+  @extend .pbg-icon-middle;
+  background: url('../../shared/img/pbg-outlook.svg');
+}
+
+.pbg-icon-yahoo {
+  @extend .pbg-icon-middle;
+  background: url('../../shared/img/pbg-yahoo.svg');
+}
+
+// Big Icons
+
+// Email & Messaging
+
+.pbg-icon-email-alert-big-blue {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-email-alert-big-blue.svg');
+}
+
+// Editing
+
+.pbg-icon-edit-big-blue {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-edit-big-blue.svg');
+}
+
+
+// Group Invites
+
+.pbg-icon-invite-big-blue {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-invite-big-blue.svg');
+}
+
+// Group Creation
+
+.pbg-icon-rocket-big-blue {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-rocket-big-blue.svg');
+}
+
+// Users
+
+.pbg-icon-users-complete-big-green {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-users-complete-big-green.svg');
+}
+
+.pbg-icon-user-remove-big-red {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-user-remove-big-red.svg');
+}
+
+.pbg-icon-users-missing-big-red {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-users-missing-big-red.svg');
+}
+
+.pbg-icon-user-add-2x-green {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-user-add-2x-green.svg');
+}
+
+// Payment
+
+.pbg-icon-credit-cards-success-big-green {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-credit-cards-success-big-green.svg');
+}
+
+.pbg-icon-credit-cards-error-big-red {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-credit-cards-error-big-red.svg');
+}
+
+.pbg-icon-credit-cards-pending-big-blue {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-credit-cards-pending-big-blue.svg');
+}
+
+.pbg-icon-lock-pending-big-blue {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-lock-pending-big-blue.svg');
+}
+
+// Purchase
+
+.pbg-icon-cart-success-big-green {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-cart-success-big-green.svg');
+}
+
+.pbg-icon-cart-pending-big-blue {
+  @extend .pbg-icon-big;
+  background: url('../../shared/img/pbg-cart-pending-big-blue.svg');
+}
