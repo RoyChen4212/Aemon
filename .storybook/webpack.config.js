@@ -4,7 +4,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(svg|png)$/,
+        test: /\.svg$/,
         loader: 'file-loader',
       },
       {
