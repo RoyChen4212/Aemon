@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { get } from 'lodash';
 
 import Picker from '../picker';
-import Label, { labelTypes } from '../label';
-import Hint from '../hint';
 import FormField from '../form-field';
 import TextField from '../text-field';
 import makeEvent from '../../../lib/make-event';
@@ -21,6 +21,16 @@ class AddressField extends FormField {
     [`${fieldNames.STATE}Touched`]: false,
     [`${fieldNames.POSTAL_CODE}Touched`]: false,
     [`${fieldNames.COUNTRY}Touched`]: false,
+  };
+
+  static propTypes = {
+    label: PropTypes.string,
+    hint: PropTypes.string,
+  };
+
+  static defaultProps = {
+    label: null,
+    hint: null,
   };
 
   get className() {
@@ -60,9 +70,10 @@ class AddressField extends FormField {
     });
   };
 
-  renderTextFieldFor(fieldName) {
+  renderTextFieldFor(fieldName, isFullWidth) {
     return (
       <TextField
+        className={classnames('pbg-new-address-text-field', { 'pbg-new-address-field-full': isFullWidth })}
         name={fieldName}
         value={this.currentValue[fieldName] || ''}
         label={this.extractLabel(fieldName)}
@@ -73,40 +84,37 @@ class AddressField extends FormField {
     );
   }
 
-  // renderLabel() {
-  //   if (!this.props.label) return null;
-  //   return (
-  //     <div className="pbg-new-address-field-label-and-hint">
-  //       <Label type={labelTypes.STRONG} required={this.props.required}>
-  //         {this.props.label}
-  //       </Label>
-  //       {this.props.hint ? (
-  //         <React.Fragment>
-  //           <br />
-  //           <Hint>{this.props.hint}</Hint>
-  //         </React.Fragment>
-  //       ) : null}
-  //     </div>
-  //   );
-  // }
+  renderLabel() {
+    const { label, hint } = this.props;
+    if (!label) return null;
+
+    return (
+      <div>
+        <div className="pbg-desktop-label-normal">{label}</div>
+        {hint && <div className="pbg-desktop-small-text">{hint}</div>}
+      </div>
+    );
+  }
 
   render() {
     return (
       <div className={this.className}>
         {this.renderLabel()}
-        {this.renderTextFieldFor(fieldNames.STREET_ADDRESS)}
-        {this.renderTextFieldFor(fieldNames.CITY)}
-        {this.renderTextFieldFor(fieldNames.STATE)}
-        {this.renderTextFieldFor(fieldNames.POSTAL_CODE)}
-        <Picker
-          name={fieldNames.COUNTRY}
-          options={this.countryOptions}
-          value={this.currentValue[fieldNames.COUNTRY]}
-          label={this.extractLabel(fieldNames.COUNTRY)}
-          error={this.extractError(fieldNames.COUNTRY)}
-          onChange={ev => this.updateValue({ [fieldNames.COUNTRY]: ev.target.value })}
-          onBlur={() => this.onBlur(makeEvent(this.currentValue), fieldNames.COUNTRY)}
-        />
+        <div className="pbg-new-address-field-container">
+          {this.renderTextFieldFor(fieldNames.STREET_ADDRESS, true)}
+          {this.renderTextFieldFor(fieldNames.CITY)}
+          {this.renderTextFieldFor(fieldNames.STATE)}
+          {this.renderTextFieldFor(fieldNames.POSTAL_CODE)}
+        </div>
+        {/* <Picker */}
+        {/*  name={fieldNames.COUNTRY} */}
+        {/*  options={this.countryOptions} */}
+        {/*  value={this.currentValue[fieldNames.COUNTRY]} */}
+        {/*  label={this.extractLabel(fieldNames.COUNTRY)} */}
+        {/*  error={this.extractError(fieldNames.COUNTRY)} */}
+        {/*  onChange={ev => this.updateValue({ [fieldNames.COUNTRY]: ev.target.value })} */}
+        {/*  onBlur={() => this.onBlur(makeEvent(this.currentValue), fieldNames.COUNTRY)} */}
+        {/* /> */}
       </div>
     );
   }
