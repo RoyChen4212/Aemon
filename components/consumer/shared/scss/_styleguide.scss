@@ -9,7 +9,7 @@ $emerald-green: #5ad17c;
 $dark-green: #226134;
 $bluish: #2568d0;
 $pale-grey: #f5f8fb;
-$greyish-brown: #4c4c4c;
+$grayish-brown: #4c4c4c;
 $white: #fff;
 $cool-grey: #8f98a3;
 $pinkish-grey: #cfcfcf;
@@ -27,20 +27,19 @@ $blue-linear: linear-gradient(90deg, $pbg-blue 0%, $pbg-blue-light 196.67%);
 $cta-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.5);
 $cta-disabled-shadow: inset 0px -1px 0px rgba(17, 24, 30, 0.15);
 
-$grey-10: #f0f3f8;
-$grey-20: #e4ebf2;
-$grey-30: #d5dde9;
-$grey-40: #bcc7d3;
-$grey-50: #8093a6;
-$grey-60: #526679;
-$grey-80: #24313e;
+// dark-blue
+$dark-blue-10: #757ea5;
+$dark-blue-20: #66709b;
+$dark-blue-30: #556090;
+$dark-blue-40: #424e84;
+$dark-blue-50: #2d3a77;
+$dark-blue-60: #162468;
+$dark-blue-70: #121d53;
+$dark-blue-80: #0e1742;
+$dark-blue-90: #0b1235;
+$dark-blue-100: #090e2a;
 
-$red-10: #f9dcdc;
-$red-60: #e02e2e;
-
-$yellow-10: #fff3dd;
-$yellow-60: #ffbb33;
-
+// blue
 $blue-10: #ecf4ff;
 $blue-20: #d9e9ff;
 $blue-30: #bbd7ff;
@@ -51,10 +50,349 @@ $blue-70: #0055cc;
 $blue-80: #0044a3;
 $blue-90: #003682;
 $blue-100: #002b68;
-$blue-facebook: #3b5998;
 
+// gray
+$gray-10: #f0f3f8;
+$gray-20: #e4ebf2;
+$gray-30: #d5dde9;
+$gray-40: #bcc7d3;
+$gray-50: #8093a6;
+$gray-60: #526679;
+$gray-70: #334658;
+$gray-80: #24313e;
+$gray-90: #19222b;
+$gray-100: #11181e;
+
+// yellow
+$yellow-10: #fff3dd;
+$yellow-20: #ffeece;
+$yellow-30: #ffe7b9;
+$yellow-40: #ffdd9b;
+$yellow-50: #ffcf70;
+$yellow-60: #ffbb33;
+$yellow-70: #cc9629;
+$yellow-80: #a37821;
+$yellow-90: #956d1d;
+$yellow-100: #82601a;
+
+// teal
+$teal-10: #d4f6f6;
+$teal-20: #c1f2f2;
+$teal-30: #a7eded;
+$teal-40: #82e6e6;
+$teal-50: #4cdcdc;
+$teal-60: #00cdcd;
+$teal-70: #00a4a4;
+$teal-80: #008383;
+$teal-90: #006969;
+$teal-100: #005454;
+
+// purple
+$purple-10: #e4defd;
+$purple-20: #d8d0fc;
+$purple-30: #c7bcfb;
+$purple-40: #afa0fa;
+$purple-50: #8d77f8;
+$purple-60: #5c3df5;
+$purple-70: #4a31c4;
+$purple-80: #3b279d;
+$purple-90: #2f1f7e;
+$purple-100: #261965;
+
+// green
 $green-10: #e2f4e6;
+$green-20: #d6efdb;
+$green-30: #c4e8cc;
+$green-40: #abdeb6;
+$green-50: #87d097;
 $green-60: #53bc6a;
+$green-70: #429655;
+$green-80: #357844;
+$green-90: #2a6036;
+$green-100: #224d2b;
+
+// red
+$red-10: #f9dcdc;
+$red-20: #f7cdcd;
+$red-30: #f4b8b8;
+$red-40: #f09999;
+$red-50: #e96d6d;
+$red-60: #e02e2e;
+$red-70: #b32525;
+$red-80: #8f1e1e;
+$red-90: #721818;
+$red-100: #5b1313;
+
+// pink
+$pink-10: #f7def9;
+$pink-20: #f4d0f6;
+$pink-30: #f0bcf2;
+$pink-40: #e99fed;
+$pink-50: #e076e6;
+$pink-60: #d33bdc;
+$pink-70: #b71bbe;
+$pink-80: #87268d;
+$pink-90: #6c1e71;
+$pink-100: #56185a;
+
+// orange
+$orange-10: #fde4d6;
+$orange-20: #fcd8c4;
+$orange-30: #fbc8ab;
+$orange-40: #f9b087;
+$orange-50: #f78e54;
+$orange-60: #f35d0b;
+$orange-70: #c24a09;
+$orange-80: #9b3b07;
+$orange-90: #7c2f06;
+$orange-100: #632605;
+
+//generating background color classes
+$dark_blue_colors: (
+  dark-blue-10: $dark-blue-10,
+  dark-blue-20: $dark-blue-20,
+  dark-blue-30: $dark-blue-30,
+  dark-blue-40: $dark-blue-40,
+  dark-blue-50: $dark-blue-50,
+  dark-blue-60: $dark-blue-60,
+  dark-blue-70: $dark-blue-70,
+  dark-blue-80: $dark-blue-80,
+  dark-blue-90: $dark-blue-90,
+  dark-blue-100: $dark-blue-100,
+);
+
+$blue_colors: (
+  blue-10: $blue-10,
+  blue-20: $blue-20,
+  blue-30: $blue-30,
+  blue-40: $blue-40,
+  blue-50: $blue-50,
+  blue-60: $blue-60,
+  blue-70: $blue-70,
+  blue-80: $blue-80,
+  blue-90: $blue-90,
+  blue-100: $blue-100,
+);
+
+$gray_colors: (
+  gray-10: $gray-10,
+  gray-20: $gray-20,
+  gray-30: $gray-30,
+  gray-40: $gray-40,
+  gray-50: $gray-50,
+  gray-60: $gray-60,
+  gray-70: $gray-70,
+  gray-80: $gray-80,
+  gray-90: $gray-90,
+  gray-100: $gray-100,
+);
+
+$yellow_colors: (
+  yellow-10: $yellow-10,
+  yellow-20: $yellow-20,
+  yellow-30: $yellow-30,
+  yellow-40: $yellow-40,
+  yellow-50: $yellow-50,
+  yellow-60: $yellow-60,
+  yellow-70: $yellow-70,
+  yellow-80: $yellow-80,
+  yellow-90: $yellow-90,
+  yellow-100: $yellow-100,
+);
+
+$teal_colors: (
+  teal-10: $teal-10,
+  teal-20: $teal-20,
+  teal-30: $teal-30,
+  teal-40: $teal-40,
+  teal-50: $teal-50,
+  teal-60: $teal-60,
+  teal-70: $teal-70,
+  teal-80: $teal-80,
+  teal-90: $teal-90,
+  teal-100: $teal-100,
+);
+
+$purple_colors: (
+  purple-10: $purple-10,
+  purple-20: $purple-20,
+  purple-30: $purple-30,
+  purple-40: $purple-40,
+  purple-50: $purple-50,
+  purple-60: $purple-60,
+  purple-70: $purple-70,
+  purple-80: $purple-80,
+  purple-90: $purple-90,
+  purple-100: $purple-100,
+);
+
+$green_colors: (
+  green-10: $green-10,
+  green-20: $green-20,
+  green-30: $green-30,
+  green-40: $green-40,
+  green-50: $green-50,
+  green-60: $green-60,
+  green-70: $green-70,
+  green-80: $green-80,
+  green-90: $green-90,
+  green-100: $green-100,
+);
+
+$red_colors: (
+  red-10: $red-10,
+  red-20: $red-20,
+  red-30: $red-30,
+  red-40: $red-40,
+  red-50: $red-50,
+  red-60: $red-60,
+  red-70: $red-70,
+  red-80: $red-80,
+  red-90: $red-90,
+  red-100: $red-100,
+);
+
+$pink_colors: (
+  pink-10: $pink-10,
+  pink-20: $pink-20,
+  pink-30: $pink-30,
+  pink-40: $pink-40,
+  pink-50: $pink-50,
+  pink-60: $pink-60,
+  pink-70: $pink-70,
+  pink-80: $pink-80,
+  pink-90: $pink-90,
+  pink-100: $pink-100,
+);
+
+$orange_colors: (
+  orange-10: $orange-10,
+  orange-20: $orange-20,
+  orange-30: $orange-30,
+  orange-40: $orange-40,
+  orange-50: $orange-50,
+  orange-60: $orange-60,
+  orange-70: $orange-70,
+  orange-80: $orange-80,
+  orange-90: $orange-90,
+  orange-100: $orange-100,
+);
+
+:export {
+  dark-blue-10: $dark-blue-10;
+  dark-blue-20: $dark-blue-20;
+  dark-blue-30: $dark-blue-30;
+  dark-blue-40: $dark-blue-40;
+  dark-blue-50: $dark-blue-50;
+  dark-blue-60: $dark-blue-60;
+  dark-blue-70: $dark-blue-70;
+  dark-blue-80: $dark-blue-80;
+  dark-blue-90: $dark-blue-90;
+  dark-blue-100: $dark-blue-100;
+  blue-10: $blue-10;
+  blue-20: $blue-20;
+  blue-30: $blue-30;
+  blue-40: $blue-40;
+  blue-50: $blue-50;
+  blue-60: $blue-60;
+  blue-70: $blue-70;
+  blue-80: $blue-80;
+  blue-90: $blue-90;
+  blue-100: $blue-100;
+  gray-10: $gray-10;
+  gray-20: $gray-20;
+  gray-30: $gray-30;
+  gray-40: $gray-40;
+  gray-50: $gray-50;
+  gray-60: $gray-60;
+  gray-70: $gray-70;
+  gray-80: $gray-80;
+  gray-90: $gray-90;
+  gray-100: $gray-100;
+  yellow-10: $yellow-10;
+  yellow-20: $yellow-20;
+  yellow-30: $yellow-30;
+  yellow-40: $yellow-40;
+  yellow-50: $yellow-50;
+  yellow-60: $yellow-60;
+  yellow-70: $yellow-70;
+  yellow-80: $yellow-80;
+  yellow-90: $yellow-90;
+  yellow-100: $yellow-100;
+  teal-10: $teal-10;
+  teal-20: $teal-20;
+  teal-30: $teal-30;
+  teal-40: $teal-40;
+  teal-50: $teal-50;
+  teal-60: $teal-60;
+  teal-70: $teal-70;
+  teal-80: $teal-80;
+  teal-90: $teal-90;
+  teal-100: $teal-100;
+  purple-10: $purple-10;
+  purple-20: $purple-20;
+  purple-30: $purple-30;
+  purple-40: $purple-40;
+  purple-50: $purple-50;
+  purple-60: $purple-60;
+  purple-70: $purple-70;
+  purple-80: $purple-80;
+  purple-90: $purple-90;
+  purple-100: $purple-100;
+  green-10: $green-10;
+  green-20: $green-20;
+  green-30: $green-30;
+  green-40: $green-40;
+  green-50: $green-50;
+  green-60: $green-60;
+  green-70: $green-70;
+  green-80: $green-80;
+  green-90: $green-90;
+  green-100: $green-100;
+  red-10: $red-10;
+  red-20: $red-20;
+  red-30: $red-30;
+  red-40: $red-40;
+  red-50: $red-50;
+  red-60: $red-60;
+  red-70: $red-70;
+  red-80: $red-80;
+  red-90: $red-90;
+  red-100: $red-100;
+  pink-10: $pink-10;
+  pink-20: $pink-20;
+  pink-30: $pink-30;
+  pink-40: $pink-40;
+  pink-50: $pink-50;
+  pink-60: $pink-60;
+  pink-70: $pink-70;
+  pink-80: $pink-80;
+  pink-90: $pink-90;
+  pink-100: $pink-100;
+  orange-10: $orange-10;
+  orange-20: $orange-20;
+  orange-30: $orange-30;
+  orange-40: $orange-40;
+  orange-50: $orange-50;
+  orange-60: $orange-60;
+  orange-70: $orange-70;
+  orange-80: $orange-80;
+  orange-90: $orange-90;
+  orange-100: $orange-100;
+}
+
+$colors: $dark_blue_colors, $blue_colors, $gray_colors, $yellow_colors, $teal_colors, $purple_colors, $green_colors,
+  $red_colors, $pink_colors, $orange_colors;
+
+@each $c in $colors {
+  @each $name, $color in $c {
+    .pbg-bg-color-#{$name} {
+      background-color: $color;
+    }
+  }
+}
+
+$blue-facebook: #3b5998;
 
 // Font families
 $roboto: 'Roboto', serif;
@@ -262,7 +600,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-family: $roboto;
   font-style: normal;
   font-weight: 300;
-  color: $grey-80;
+  color: $gray-80;
   font-size: 38px;
   line-height: 48px;
 }
@@ -271,7 +609,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-family: $roboto;
   font-style: normal;
   font-weight: 300;
-  color: $grey-80;
+  color: $gray-80;
   font-size: 28px;
   line-height: 38px;
 }
@@ -279,7 +617,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 .pbg-desktop-heading-3 {
   font-family: $roboto;
   font-style: normal;
-  color: $grey-80;
+  color: $gray-80;
   font-weight: normal;
   font-size: 18px;
   line-height: 28px;
@@ -287,7 +625,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
 // Labels
 .pbg-desktop-label-normal {
-  color: $grey-80;
+  color: $gray-80;
   font-family: $roboto;
   font-style: normal;
   font-weight: normal;
@@ -317,7 +655,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
 .pbg-desktop-secondary-text {
   @extend .pbg-desktop-regular-text;
-  color: $grey-60;
+  color: $gray-60;
 }
 
 .pbg-desktop-upcase-text {
@@ -377,7 +715,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 }
 
 .regular-text {
-  color: $greyish-brown;
+  color: $gray-80;
   font-family: $roboto;
   font-style: normal;
   font-weight: normal;
@@ -404,7 +742,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
 .pbg-desktop-form-field-disabled {
   @extend .pbg-desktop-secondary-text;
-  background: $grey-10;
+  background: $gray-10;
 }
 
 // Mobile Text Styles
@@ -415,7 +753,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-weight: normal;
   font-size: 22px;
   line-height: 26px;
-  color: $grey-80;
+  color: $gray-80;
 }
 
 .pbg-mobile-heading-2 {
@@ -424,7 +762,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-weight: 300;
   font-size: 19px;
   line-height: 28px;
-  color: $grey-80;
+  color: $gray-80;
 }
 
 .pbg-mobile-label-normal {
@@ -433,7 +771,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-weight: normal;
   font-size: $regular-font;
   line-height: $mobile-regular-line-height;
-  color: $grey-80;
+  color: $gray-80;
 }
 
 .pbg-mobile-label-strong {
@@ -453,7 +791,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
 
 .pbg-mobile-label-secondary {
   @extend .pbg-mobile-label-normal;
-  color: $grey-60;
+  color: $gray-60;
 }
 
 .pbg-mobile-paragraph {
@@ -471,12 +809,12 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-weight: normal;
   font-size: 12px;
   line-height: 18px;
-  color: $grey-80;
+  color: $gray-80;
 }
 
 .pbg-mobile-small-secondary {
   @extend .pbg-mobile-small-text;
-  color: $grey-60;
+  color: $gray-60;
 }
 
 .pbg-mobile-hint-normal {
@@ -485,7 +823,7 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   font-weight: normal;
   font-size: $small-font;
   line-height: $small-line-height;
-  color: $grey_60;
+  color: $gray-60;
 }
 
 .pbg-mobile-hint-error {
@@ -497,4 +835,13 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   @extend .pbg-mobile-hint-normal;
   color: $blue-60;
   cursor: pointer;
+}
+
+// Shadows
+.pbg-mobile-shadow-level-one {
+  box-shadow: 0px 3px 5px rgba(17, 24, 30, 0.05);
+}
+
+.pbg-mobile-shadow-level-two {
+  box-shadow: 0px 5px 10px rgba(17, 24, 30, 0.06);
 }

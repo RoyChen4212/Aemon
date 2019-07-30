@@ -1,0 +1,31 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-global-assets-preview {
+  &.pbg-colors-preview {
+    .pbg-colors-preview-header {
+      width: 400px;
+      height: 100px;
+      color: white;
+      display: flex;
+      align-items: center;
+      h2 {
+        margin: auto;
+      }
+    }
+    .pbg-colors-preview-row {
+      width: 400px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 30px;
+      padding-right: 30px;
+      .pbg-colors-preview-col {
+        &.pbg-dark {
+          color: $black;
+        }
+        color: $white;
+      }
+    }
+  }
+}

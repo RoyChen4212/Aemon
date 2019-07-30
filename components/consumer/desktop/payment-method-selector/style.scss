@@ -22,30 +22,7 @@
             bottom: 10px;
           }
         }
-
-        .pbg-payment-method-selector-add-container {
-          display: flex;
-          align-items: center;
-
-          p {
-            margin: 0 0 0 16px;
-          }
-
-          .pbg-button {
-            margin-left: 16px;
-            box-shadow: none;
-
-            > span {
-              padding: 0;
-              color: $blue-60;
-              font-weight: normal;
-            }
-          }
-        }
       }
-    }
-    .pbg-payment-method-selector-new-card-container {
-      margin-top: 16px;
     }
 
     .pbg-payment-method-field {

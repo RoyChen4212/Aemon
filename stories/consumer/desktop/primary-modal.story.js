@@ -34,7 +34,6 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
             </div>
           </div>
         }
-        onClose={action('close')}
       />
     </div>
   ))
@@ -120,7 +119,6 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
             </div>
           </div>
         }
-        onClose={action('close')}
       />
     </div>
   ))
@@ -253,7 +251,7 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
       </div>
     );
   })
-  .add('primary-modal/working-sample', () => <FullPrimaryModal />);
+  .add('primary-modal/working-sample', () => <div className="my-5"><FullPrimaryModal /></div>);
 
 class FullPrimaryModal extends React.Component {
   state = {
@@ -286,10 +284,9 @@ class FullPrimaryModal extends React.Component {
 
   renderModal() {
     const { visible, alerts } = this.state;
-    if (!visible) return null;
+    // if (!visible) return null;
     return (
       <PrimaryModal
-        onClose={this.onCloseClick}
         form
         formProps={{ onSubmit: this.onSubmit }}
         mainContent={
@@ -320,6 +317,7 @@ class FullPrimaryModal extends React.Component {
           </div>
         }
         alerts={alerts}
+        onClose={this.onCloseClick}
       />
     );
   }

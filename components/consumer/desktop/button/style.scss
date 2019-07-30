@@ -45,31 +45,31 @@
     }
 
     &.submitting {
-      background-color: $grey-10;
+      background-color: $gray-10;
       box-shadow: none;
       cursor: default;
       height: 39px;
       margin-top: 1px;
       padding-top: 1px;
       &.pbg-button-active, &:hover {
-        background-color: $grey-10;
+        background-color: $gray-10;
       }
 
       span {
-        color: $grey-60;
+        color: $gray-60;
       }
     }
 
     &.disabled {
-      background-color: $grey-10;
+      background-color: $gray-10;
       box-shadow: $cta-disabled-shadow;
       cursor: default;
       &.pbg-button-active, &:hover {
-        background-color: $grey-10;
+        background-color: $gray-10;
       }
 
       span {
-        color: $grey-50;
+        color: $gray-50;
       }
     }
 

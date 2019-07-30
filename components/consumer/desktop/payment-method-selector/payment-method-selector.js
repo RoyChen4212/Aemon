@@ -4,11 +4,9 @@ import find from 'lodash/find';
 
 import PaymentMethodSelectorMenu from './payment-method-selector-menu';
 import PaymentMethodField from './payment-method-field';
-import Picker, { PICKER_EMPTY_VALUE } from '../picker';
+import Picker from '../picker';
 
 import './style.scss';
-import CardFormFields from '../card-form-fields/card-form-fields';
-import { cardTypes, defaultCardsConfig } from '../card-field/card-field-types';
 
 /** @extends React.Component */
 class PaymentMethodSelector extends Picker {
@@ -19,33 +17,16 @@ class PaymentMethodSelector extends Picker {
     value: PropTypes.string.isRequired, // eslint-disable-line react/no-unused-prop-types
     options: PropTypes.array.isRequired, // eslint-disable-line react/no-unused-prop-types
     onChange: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
-    cardFormLabels: PropTypes.shape({
-      cardNumber: PropTypes.string,
-      expDate: PropTypes.string,
-      securityCode: PropTypes.string,
-      fullName: PropTypes.string,
-      postalCode: PropTypes.string,
-    }).isRequired,
-    allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
-    cardType: PropTypes.oneOf(cardTypes),
-    cardFormConfig: PropTypes.arrayOf(PropTypes.oneOf(defaultCardsConfig)),
   };
 
   static defaultProps = {
     label: null,
     onChange: () => {},
-    cardType: null,
-    allowedCardTypes: cardTypes,
-    cardFormConfig: defaultCardsConfig,
   };
 
   get selectedItem() {
     return find(this.options, op => op.value === this.value);
   }
-
-  onAddNewClick = () => {
-    this.onChange({ target: { value: PICKER_EMPTY_VALUE } });
-  };
 
   renderPickerButton() {
     const { cardType, label } = this.selectedItem || {};
@@ -64,33 +45,14 @@ class PaymentMethodSelector extends Picker {
     );
   }
 
-  renderAddNewButton() {
-    if (this.value === PICKER_EMPTY_VALUE) {
-      return null;
-    }
-
-    return (
-      <div className="pbg-payment-method-selector-add-container">
-        <p className="pbg-desktop-label-normal">Or</p>
-        <button type="button" className="pbg-button pbg-consumer-desktop" onClick={this.onAddNewClick}>
-          <span>Add New</span>
-        </button>
-      </div>
-    );
-  }
-
   render() {
     const { active } = this.state;
-    const { cardFormLabels, allowedCardTypes, cardType, cardFormConfig } = this.props;
 
     return (
       <div className={this.className}>
         <div className="pbg-payment-method-selector-label">{this.renderLabel()}</div>
         <div className="pbg-picker-container">
-          <div className="pbg-payment-method-selector-button-container">
-            {this.renderPickerButton()}
-            {this.renderAddNewButton()}
-          </div>
+          <div className="pbg-payment-method-selector-button-container">{this.renderPickerButton()}</div>
           <PaymentMethodSelectorMenu
             options={this.options}
             active={active}
@@ -99,16 +61,6 @@ class PaymentMethodSelector extends Picker {
             onBlur={ev => this.onButtonBlur(ev, this.onBlur)}
             fullWidth
           />
-          {this.value === PICKER_EMPTY_VALUE && (
-            <div className="pbg-payment-method-selector-new-card-container">
-              <CardFormFields
-                labels={cardFormLabels}
-                allowedCardTypes={allowedCardTypes}
-                cardType={cardType}
-                config={cardFormConfig}
-              />
-            </div>
-          )}
         </div>
       </div>
     );

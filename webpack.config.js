@@ -14,7 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     library: 'aemon',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   },
   externals: [nodeExternals()],
   plugins: [

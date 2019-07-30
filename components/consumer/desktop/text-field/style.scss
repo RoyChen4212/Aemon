@@ -9,21 +9,25 @@
         display: block;
         margin: 0 0 5px 2px;
       }
+      
+      .pbg-text-field-input-wrapper {
+        position: relative;
+      }
 
       input {
         @extend .pbg-desktop-label-normal;
         background-color: $white;
-        border: 1px solid $grey-50;
+        border: 1px solid $gray-50;
         border-radius: 4px;
         padding: 8px 8px 9px;
-        color: $grey-80;
+        color: $gray-80;
         width: 100%;
         height: 40px;
         font-size: $regular-font;
 
         &::placeholder {
           @extend .pbg-desktop-label-normal;
-          color: $grey-60;
+          color: $gray-60;
         }
 
         &:-moz-placeholder {
@@ -44,8 +48,8 @@
         }
 
         &:disabled {
-          background-color: $grey-10;
-          color: $grey-60;
+          background-color: $gray-10;
+          color: $gray-60;
         }
       }
 
