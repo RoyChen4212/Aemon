@@ -4,9 +4,9 @@ import { get } from 'lodash';
 
 import FormField from '../form-field';
 import Picker from '../picker';
+import TextField from '../text-field';
 
 import './style.scss';
-import TextField from '../../mobile/text-field';
 
 /** @extends React.Component */
 class PhoneField extends FormField {
@@ -32,7 +32,11 @@ class PhoneField extends FormField {
 
   get error() {
     const { touched } = this.state;
-    return touched && get(this.adaptedProps, 'error.phone');
+    const forceDisplay = get(this.adaptedProps, 'forceErrorDisplay', false);
+    const message = get(this.adaptedProps, 'error.phone');
+    if (message && forceDisplay) return message;
+    if (message && touched) return message;
+    return null;
   }
 
   constructor(props) {
