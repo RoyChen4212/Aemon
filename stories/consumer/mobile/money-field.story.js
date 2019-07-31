@@ -10,6 +10,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Mobile/Form Fields/money-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('price-input/default', () => <FieldStateProvider component={MoneyField} />)
-  .add('price-input/with-currency-sign', () => <FieldStateProvider component={MoneyField} currency="GBP" />)
-  .add('price-input/with-currency-abbreviation', () => <FieldStateProvider component={MoneyField} currency="CHF" />);
+  .add('money-field/default', () => <FieldStateProvider component={MoneyField} />)
+  .add('money-field/with-currency-sign', () => <FieldStateProvider component={MoneyField} currency="GBP" />)
+  .add('money-field/with-currency-abbreviation', () => <FieldStateProvider component={MoneyField} currency="CHF" />);

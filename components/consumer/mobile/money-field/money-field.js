@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import money, { USD, format } from '@paybygroup/baelish';
+import { USD } from '@paybygroup/baelish';
 
 import TextField from '../text-field';
-import './style.scss';
+import { formatCurrency } from '../../desktop/money-field/money-field';
 
-const formatCurrency = (value, currency) =>
-  format(money(value, currency), { format: { pos: '%s %v', zero: '%s 0.00' } });
+import './style.scss';
 
 /** @extends React.Component */
 class MoneyField extends TextField {
@@ -18,24 +17,35 @@ class MoneyField extends TextField {
   };
 
   static defaultProps = {
+    value: null,
+    defaultValue: null,
     currency: USD,
     name: 'money-field',
   };
 
-  state = {
-    value: formatCurrency(this.props.defaultValue, this.props.currency),
-  };
-
-  onChange = event => {
-    this.setState({ value: formatCurrency(event.target.value, this.props.currency) });
-  };
-
   get value() {
-    return this.props.value || this.state.value;
+    const { value } = this.props;
+    const { value: stateValue } = this.state;
+    return value || stateValue;
   }
 
+  constructor(props) {
+    super(props);
+
+    const { defaultValue, currency } = props;
+    this.state = {
+      value: formatCurrency(defaultValue, currency),
+    };
+  }
+
+  onChange = event => {
+    const { currency } = this.props;
+
+    this.setState({ value: formatCurrency(event.target.value, currency) });
+  };
+
   renderInput() {
-    const { name } = this.props;
+    const { name, currency } = this.props;
     return (
       <input
         className="pbg-money-field"
@@ -43,7 +53,7 @@ class MoneyField extends TextField {
         name={name}
         value={this.value}
         onChange={this.onChange}
-        placeholder={formatCurrency(0, this.props.currency)}
+        placeholder={formatCurrency(0, currency)}
       />
     );
   }
