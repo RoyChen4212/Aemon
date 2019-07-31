@@ -40,6 +40,7 @@ import { PrimaryButton } from './button';
 import PrimaryModal from './primary-modal';
 import PurchaseImage from './purchase-image';
 import SecondaryModal from './secondary-modal';
+import ShareRow from './share-row';
 import SimpleNumberStepper from './simple-number-stepper';
 import { SplitCustom, SplitEven, SplitFixed } from './split';
 import Status from './status';
@@ -75,6 +76,7 @@ const desktop = {
   PrimaryModal,
   PurchaseImage,
   SecondaryModal,
+  ShareRow,
   SimpleNumberStepper,
   SplitCustom,
   SplitEven,

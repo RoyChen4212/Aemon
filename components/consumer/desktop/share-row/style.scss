@@ -1,0 +1,10 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-form-field {
+    &.pbg-share-row {
+      padding-left: 8px;
+      border-left: 4px solid #006AFF;
+    }
+  }
+}
