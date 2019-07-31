@@ -9,7 +9,7 @@ import { colorTypes } from '../../../components/consumer/shared/color-types';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop', module)
+storiesOf('Consumer/Desktop/share-row', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('share-row/default', () => (
@@ -20,5 +20,17 @@ storiesOf('Consumer/Desktop', module)
       hint="Hint text."
       amount="$00.00"
       color={colorTypes.BLUE_60}
+    />
+  ))
+  .add('share-row/details', () => (
+    <FieldStateProvider
+      component={ShareRow}
+      name="shareRow"
+      label="Heading"
+      hint="Hint text."
+      amount="$00.00"
+      color={colorTypes.BLUE_60}
+      detailsText="Details"
+      detailsContent={<div>Details Content</div>}
     />
   ));

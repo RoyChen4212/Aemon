@@ -27,25 +27,29 @@ class ShareRow extends FormField {
     isDetailHidden: true,
   };
 
+  onDetailClick = () => {
+    this.setState({ isDetailHidden: false });
+  };
+
   renderAmount = () => {
-    const { amount, detailsText, detailsContent } = this.props;
+    const { amount, detailsText } = this.props;
     const { isDetailHidden } = this.state;
 
     return (
       <div className="pbg-share-row-amount-wrapper">
         <div className="pbg-desktop-label-strong">{amount}</div>
-        {detailsText && (
-          <button type="button" className="pbg-button pbg-consumer-desktop" onClick={this.onDetailClick}>
-            <span>{detailsText}</span>
-          </button>
+        {isDetailHidden && detailsText && (
+          <div className="pbg-desktop-small-link" onClick={this.onDetailClick}>
+            {detailsText}
+          </div>
         )}
-        {!isDetailHidden && detailsContent}
       </div>
     );
   };
 
   render() {
-    const { label, hint, color } = this.props;
+    const { label, hint, color, detailsContent } = this.props;
+    const { isDetailHidden } = this.state;
 
     const borderStyle = { borderColor: color };
 
@@ -54,6 +58,7 @@ class ShareRow extends FormField {
         <div className="pbg-desktop-label-normal">{label}</div>
         <div className="pbg-desktop-secondary-text pbg-desktop-small-text">{hint}</div>
         {this.renderAmount()}
+        {!isDetailHidden && detailsContent}
       </div>
     );
   }
