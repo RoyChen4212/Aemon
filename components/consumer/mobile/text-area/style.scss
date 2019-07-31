@@ -52,7 +52,7 @@
         }
 
         .pbg-hint {
-          font-style: normal;
+          @extend .pbg-mobile-small-normal;
         }
       }
     }
