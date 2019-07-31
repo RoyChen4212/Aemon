@@ -26,8 +26,6 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
     <SectionCard
       status={sectionCardStatus.ACTIVE}
       title="Section"
-      stepNumber={1}
-      headerButton={SmallFacebookButton}
       onActivateButtonClick={action('')}
       completedLabel="Completed"
       activateButtonText="Connect"

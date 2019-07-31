@@ -45,7 +45,7 @@ const SectionCard = ({
           )}
         </div>
       </div>
-      {status === sectionCardStatus.ACTIVE && <div className="pbg-section-card-content">{children}</div>}
+      {status === sectionCardStatus.ACTIVE && children && <div className="pbg-section-card-content">{children}</div>}
     </div>
   );
 };
