@@ -500,6 +500,11 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   cursor: pointer;
 }
 
+.pbg-mobile-form-field-disabled {
+  @extend .pbg-mobile-label-secondary;
+  background: $grey-10;
+}
+
 // Shadows
 .pbg-mobile-shadow-level-one {
   box-shadow: 0px 3px 5px rgba(17, 24, 30, 0.05);
