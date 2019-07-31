@@ -1,0 +1,14 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop.pbg-form-field.pbg-text-field {
+  input.pbg-money-field {
+    &::placeholder {
+      color: $gray-80;
+      opacity: 1;
+    }
+
+    &:invalid {
+      box-shadow: none;
+    }
+  }
+}
