@@ -36,9 +36,11 @@
     "moment": "^2.23.0",
     "moment-timezone": "^0.5.23",
     "npm": "^6.9.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prop-types": "^15.6.2",
     "react": "~16.3.0",
-    "react-dom": "~16.3.0"
+    "react-dom": "~16.3.0",
+    "terser-webpack-plugin": "^1.4.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
