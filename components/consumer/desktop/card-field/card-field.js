@@ -5,7 +5,7 @@ import './style.scss';
 import Cards from './cards';
 import DivInput from '../div-input';
 import CardPlaceholder from './card-placeholder';
-import { cardTypes } from './card-field-types';
+import { cardTypes } from '../../shared/card-types';
 
 class CardField extends React.Component {
   baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-text-field pbg-card-field';

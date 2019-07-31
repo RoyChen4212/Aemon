@@ -14,7 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     library: 'aemon',
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
   },
   externals: [nodeExternals()],
   plugins: [
@@ -38,7 +38,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.svg$/,
+        test: /\.(png|svg)$/,
         loader: 'file-loader',
       },
     ],

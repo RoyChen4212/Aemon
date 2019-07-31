@@ -11,14 +11,14 @@ storiesOf('Consumer/Global/Icons/Small/Email & Messaging', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('envelope-closed-small', () => <Icons className="pbg-icon-envelope-closed-small" />)
-  .add('speech-bubble-small', () => <Icons className="pbg-icon-speech-bubble-small" />);
+  .add('envelope-closed-small-gray', () => <Icons className="pbg-icon-envelope-closed-small-gray" />)
+  .add('speech-bubble-small-gray', () => <Icons className="pbg-icon-speech-bubble-small-gray" />);
 
 storiesOf('Consumer/Global/Icons/Small/Editing', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('edit-small', () => <Icons className="pbg-icon-edit-small" />)
+  .add('edit-small-gray', () => <Icons className="pbg-icon-edit-small-gray" />)
   .add('org-controls-small-gray', () => <Icons className="pbg-icon-org-controls-small-gray" />)
   .add('org-controls-small-blue', () => <Icons className="pbg-icon-org-controls-small-blue" />)
   .add('cog-small-gray', () => <Icons className="pbg-icon-cog-small-gray" />)
@@ -35,7 +35,7 @@ storiesOf('Consumer/Global/Icons/Small/Group Creation', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('rocket-small', () => <Icons className="pbg-icon-rocket-small" />);
+  .add('rocket-small-gray', () => <Icons className="pbg-icon-rocket-small-gray" />);
 
 storiesOf('Consumer/Global/Icons/Small/Users', module)
   .addDecorator(wrapStory)
@@ -43,40 +43,40 @@ storiesOf('Consumer/Global/Icons/Small/Users', module)
   .addDecorator(withGrey20Container)
   .add('add-user-small-blue', () => <Icons className="pbg-icon-add-user-small-blue" />)
   .add('add-user-small-gray', () => <Icons className="pbg-icon-add-user-small-gray" />)
-  .add('org-identifier-small', () => <Icons className="pbg-icon-org-identifier-small" />)
-  .add('user-contribution-small', () => <Icons className="pbg-icon-user-contribution-small" />)
-  .add('user-small', () => <Icons className="pbg-icon-user-small" />)
-  .add('users-small', () => <Icons className="pbg-icon-users-small" />);
+  .add('org-identifier-small-green', () => <Icons className="pbg-icon-org-identifier-small-green" />)
+  .add('user-contribution-small-gray', () => <Icons className="pbg-icon-user-contribution-small-gray" />)
+  .add('user-small-gray', () => <Icons className="pbg-icon-user-small-gray" />)
+  .add('users-small-gray', () => <Icons className="pbg-icon-users-small-gray" />);
 
 storiesOf('Consumer/Global/Icons/Small/Payment', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('credit-card-small', () => <Icons className="pbg-icon-credit-card-small" />)
-  .add('lock-small', () => <Icons className="pbg-icon-lock-small" />)
-  .add('unlock-small', () => <Icons className="pbg-icon-unlock-small" />)
-  .add('price-tag-small', () => <Icons className="pbg-icon-price-tag-small" />)
-  .add('credit-card-error-small', () => <Icons className="pbg-icon-credit-card-error-small" />)
-  .add('credit-card-pending-small', () => <Icons className="pbg-icon-credit-card-pending-small" />)
-  .add('transaction-small', () => <Icons className="pbg-icon-transaction-small" />)
-  .add('credit-card-add-small', () => <Icons className="pbg-icon-credit-card-add-small" />)
-  .add('credit-card-subtract-small', () => <Icons className="pbg-icon-credit-card-subtract-small" />);
+  .add('credit-card-small-gray', () => <Icons className="pbg-icon-credit-card-small-gray" />)
+  .add('lock-small-gray', () => <Icons className="pbg-icon-lock-small-gray" />)
+  .add('unlock-small-gray', () => <Icons className="pbg-icon-unlock-small-gray" />)
+  .add('price-tag-small-gray', () => <Icons className="pbg-icon-price-tag-small-gray" />)
+  .add('credit-card-error-small-red', () => <Icons className="pbg-icon-credit-card-error-small-red" />)
+  .add('credit-card-pending-small-gray', () => <Icons className="pbg-icon-credit-card-pending-small-gray" />)
+  .add('transaction-small-gray', () => <Icons className="pbg-icon-transaction-small-gray" />)
+  .add('credit-card-add-small-gray', () => <Icons className="pbg-icon-credit-card-add-small-gray" />)
+  .add('credit-card-subtract-small-gray', () => <Icons className="pbg-icon-credit-card-subtract-small-gray" />);
 
 storiesOf('Consumer/Global/Icons/Small/Purchase', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('cart-small', () => <Icons className="pbg-icon-cart-small" />);
+  .add('cart-small-gray', () => <Icons className="pbg-icon-cart-small-gray" />);
 
 storiesOf('Consumer/Global/Icons/Small/Date & Time', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('calendar-small', () => <Icons className="pbg-icon-calendar-small" />)
-  .add('calendar-start-small', () => <Icons className="pbg-icon-calendar-start-small" />)
-  .add('calendar-end-small', () => <Icons className="pbg-icon-calendar-end-small" />)
-  .add('clock-small', () => <Icons className="pbg-icon-clock-small" />)
-  .add('hour-glass-small', () => <Icons className="pbg-icon-hour-glass-small" />);
+  .add('calendar-small-gray', () => <Icons className="pbg-icon-calendar-small-gray" />)
+  .add('calendar-start-small-gray', () => <Icons className="pbg-icon-calendar-start-small-gray" />)
+  .add('calendar-end-small-gray', () => <Icons className="pbg-icon-calendar-end-small-gray" />)
+  .add('clock-small-gray', () => <Icons className="pbg-icon-clock-small-gray" />)
+  .add('hour-glass-small-gray', () => <Icons className="pbg-icon-hour-glass-small-gray" />);
 
 storiesOf('Consumer/Global/Icons/Small/Information', module)
   .addDecorator(wrapStory)
@@ -86,8 +86,8 @@ storiesOf('Consumer/Global/Icons/Small/Information', module)
   .add('bell-small-yellow', () => <Icons className="pbg-icon-bell-small-yellow" />)
   .add('check-mark-circle-small-gray', () => <Icons className="pbg-icon-check-mark-circle-small-gray" />)
   .add('check-mark-circle-small-green', () => <Icons className="pbg-icon-check-mark-circle-small-green" />)
-  .add('globe-small', () => <Icons className="pbg-icon-globe-small" />)
-  .add('hint-error-small', () => <Icons className="pbg-icon-hint-error-small" />)
+  .add('globe-small-gray', () => <Icons className="pbg-icon-globe-small-gray" />)
+  .add('hint-error-small-red', () => <Icons className="pbg-icon-hint-error-small-red" />)
   .add('info-small-blue', () => <Icons className="pbg-icon-info-small-blue" />)
   .add('info-small-gray', () => <Icons className="pbg-icon-info-small-gray" />)
   .add('info-small-white', () => <Icons className="pbg-icon-info-small-white" />)
@@ -119,7 +119,7 @@ storiesOf('Consumer/Global/Icons/Small/UI Specific', module)
   .add('cross-small-gray', () => <Icons className="pbg-icon-cross-small-gray" />)
   .add('cross-small-white', () => <Icons className="pbg-icon-cross-small-white" />)
   .add('dots-small-blue', () => <Icons className="pbg-icon-dots-small-blue" />)
-  .add('external-link-small', () => <Icons className="pbg-icon-external-link-small" />)
+  .add('external-link-small-blue', () => <Icons className="pbg-icon-external-link-small-blue" />)
   .add('large-arrow-small-blue', () => <Icons className="pbg-icon-large-arrow-small-blue" />)
   .add('menu-small-blue', () => <Icons className="pbg-icon-menu-small-blue" />)
   .add('menu-small-gray', () => <Icons className="pbg-icon-menu-small-gray" />)
@@ -157,47 +157,47 @@ storiesOf('Consumer/Global/Icons/Big/Email & Messaging', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('email-alert-big', () => <Icons className="pbg-icon-email-alert-big" />);
+  .add('email-alert-big-blue', () => <Icons className="pbg-icon-email-alert-big-blue" />);
 
 storiesOf('Consumer/Global/Icons/Big/Editing', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('edit-big', () => <Icons className="pbg-icon-edit-big" />);
+  .add('edit-big-blue', () => <Icons className="pbg-icon-edit-big-blue" />);
 
 storiesOf('Consumer/Global/Icons/Big/Group Invites', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('invite-big', () => <Icons className="pbg-icon-invite-big" />);
+  .add('invite-big-blue', () => <Icons className="pbg-icon-invite-big-blue" />);
 
 storiesOf('Consumer/Global/Icons/Big/Group Creation', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('rocket-big', () => <Icons className="pbg-icon-rocket-big" />);
+  .add('rocket-big-blue', () => <Icons className="pbg-icon-rocket-big-blue" />);
 
 storiesOf('Consumer/Global/Icons/Big/Users', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('users-complete-big', () => <Icons className="pbg-icon-users-complete-big" />)
-  .add('user-remove-big', () => <Icons className="pbg-icon-user-remove-big" />)
-  .add('users-missing-big', () => <Icons className="pbg-icon-users-missing-big" />)
-  .add('user-add-2x', () => <Icons className="pbg-icon-user-add-2x" />);
+  .add('users-complete-big-green', () => <Icons className="pbg-icon-users-complete-big-green" />)
+  .add('user-remove-big-red', () => <Icons className="pbg-icon-user-remove-big-red" />)
+  .add('users-missing-big-red', () => <Icons className="pbg-icon-users-missing-big-red" />)
+  .add('user-add-2x-green', () => <Icons className="pbg-icon-user-add-2x-green" />);
 
 storiesOf('Consumer/Global/Icons/Big/Payment', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('credit-cards-success-big', () => <Icons className="pbg-icon-credit-cards-success-big" />)
-  .add('credit-cards-error-big', () => <Icons className="pbg-icon-credit-cards-error-big" />)
-  .add('credit-cards-pending-big', () => <Icons className="pbg-icon-credit-cards-pending-big" />)
-  .add('lock-pending-big', () => <Icons className="pbg-icon-lock-pending-big" />);
+  .add('credit-cards-success-big-green', () => <Icons className="pbg-icon-credit-cards-success-big-green" />)
+  .add('credit-cards-error-big-red', () => <Icons className="pbg-icon-credit-cards-error-big-red" />)
+  .add('credit-cards-pending-big-blue', () => <Icons className="pbg-icon-credit-cards-pending-big-blue" />)
+  .add('lock-pending-big-blue', () => <Icons className="pbg-icon-lock-pending-big-blue" />);
 
 storiesOf('Consumer/Global/Icons/Big/Purchase', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
-  .add('cart-success-big', () => <Icons className="pbg-icon-cart-success-big" />)
-  .add('cart-pending-big', () => <Icons className="pbg-icon-cart-pending-big" />);
+  .add('cart-success-big-green', () => <Icons className="pbg-icon-cart-success-big-green" />)
+  .add('cart-pending-big-blue', () => <Icons className="pbg-icon-cart-pending-big-blue" />);

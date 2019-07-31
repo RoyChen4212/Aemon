@@ -78,6 +78,25 @@ export const shouldBehaveLikeButton = wrapper => {
     expect(wrapper.state().active).to.be.false;
   });
 
+  it('should activate it when touchstart', () => {
+    wrapper.find('button').simulate('touchstart');
+    expect(wrapper.state().active).to.be.true;
+  });
+
+  it('should deactivate it when touchend', () => {
+    wrapper.setState({ active: true });
+    expect(wrapper.state().active).to.be.true;
+    wrapper.find('button').simulate('touchend');
+    expect(wrapper.state().active).to.be.false;
+  });
+
+  it('should deactivate it when touchmove', () => {
+    wrapper.setState({ active: true });
+    expect(wrapper.state().active).to.be.true;
+    wrapper.find('button').simulate('touchmove');
+    expect(wrapper.state().active).to.be.false;
+  });
+
   it('should deactivate it on blur', () => {
     wrapper.setState({ active: true });
     expect(wrapper.state().active).to.be.true;
