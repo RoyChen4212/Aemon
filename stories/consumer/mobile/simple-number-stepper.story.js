@@ -10,7 +10,7 @@ import FieldStateProvider from '../../util/field-state-provider';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Atomic Components/Inputs/simple-number-stepper', module)
+storiesOf('Consumer/Mobile/Form Fields/number-picker', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('simple', () => (
