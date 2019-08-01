@@ -10,10 +10,10 @@ import FieldStateProvider from '../../util/field-state-provider';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Form Fields/number-picker', module)
+storiesOf('Consumer/Mobile/Form Fields/number-stepper', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('simple', () => (
+  .add('number-stepper/simple', () => (
     <FieldStateProvider
       component={SimpleNumberStepper}
       name="simple-number-stepper"
@@ -23,7 +23,7 @@ storiesOf('Consumer/Mobile/Form Fields/number-picker', module)
       max={100}
     />
   ))
-  .add('default', () => (
+  .add('number-stepper/default', () => (
     <FieldStateProvider
       component={SimpleNumberStepper}
       name="simple-number-stepper"
@@ -35,7 +35,7 @@ storiesOf('Consumer/Mobile/Form Fields/number-picker', module)
       max={100}
     />
   ))
-  .add('error', () => (
+  .add('number-stepper/error', () => (
     <FieldStateProvider
       component={SimpleNumberStepper}
       name="simple-number-stepper"
@@ -48,7 +48,7 @@ storiesOf('Consumer/Mobile/Form Fields/number-picker', module)
       max={100}
     />
   ))
-  .add('disabled', () => (
+  .add('number-stepper/disabled', () => (
     <FieldStateProvider
       component={SimpleNumberStepper}
       name="simple-number-stepper"
