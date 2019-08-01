@@ -46,7 +46,7 @@ describe('section-card', () => {
 
   it('should show children when not completed', () => {
     const label = 'label';
-    const wrapper = shallow(<SectionCard status={sectionCardStatus.ACTIVE} completedLabel={label} />);
+    const wrapper = shallow(<SectionCard status={sectionCardStatus.ACTIVE} completedLabel={label}>something</SectionCard>);
     expect(wrapper.find('.pbg-section-card-content').length).to.equal(1);
   });
 

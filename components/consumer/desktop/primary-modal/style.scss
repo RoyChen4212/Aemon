@@ -1,7 +1,5 @@
 @import '../../shared/scss/styleguide';
 
-$modal_width: 848px;
-
 .pbg-consumer-desktop {
   &.pbg-primary-modal {
     overflow-y: visible;
@@ -10,11 +8,11 @@ $modal_width: 848px;
       position: relative;
       margin: auto;
       height: 658px;
-      width: $modal_width;
+      width: 848px;
 
       .pbg-modal-alert-stack {
-        width: $modal_width;
-        left: calc((100% - $modal_width) / 2);
+        width: 848px;
+        left: calc((100% - 848px) / 2);
       }
     }
 
