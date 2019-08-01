@@ -253,21 +253,10 @@ describe('NewAddressField', () => {
       };
 
       describe('Street Address', () => {
-        it('should execute onChange when streetAddress TextField changes', () => {
-          const onChange = sinon.spy();
-          const event = { target: { value: '742 Evergreen Terrace' } };
-          const wrapper = mount(<NewAddressField onChange={onChange} />);
-          wrapper.find({ type: 'text', name: addressFields.STREET_ADDRESS }).simulate('change', event);
-          expect(onChange.calledOnce).to.be.true;
-        });
-
         it('should report correct value when streetAddress TextField changes', done => {
+          const expected = { ...initialValue, streetAddress: '742 Evergreen Terrace' };
           const event = { target: { value: '742 Evergreen Terrace' } };
           const onChange = ev => {
-            const expected = {
-              ...initialValue,
-              streetAddress: '742 Evergreen Terrace',
-            };
             expect(ev.target.value).to.eql(expected);
             done();
           };
@@ -275,54 +264,28 @@ describe('NewAddressField', () => {
           wrapper.find({ type: 'text', name: addressFields.STREET_ADDRESS }).simulate('change', event);
         });
 
-        it('should report correct value when streetAddress TextField changes', done => {
-          const expected = { streetAddress: '742 Evergreen Terrace' };
-          const event = { target: { value: expected.streetAddress } };
-          const onChange = ev => {
-            expect(ev.target.value).to.eql(expected);
-            done();
-          };
-          const wrapper = mount(<NewAddressField onChange={onChange} />);
-          wrapper.find({ type: 'text', name: addressFields.STREET_ADDRESS }).simulate('change', event);
-        });
-
         it('should pass streetAddress value to text input when given', () => {
-          const value = {
-            streetAddress: '742 Evergreen Terrace',
-          };
-          const wrapper = mount(<NewAddressField value={value} />);
+          const wrapper = mount(<NewAddressField value={initialValue} />);
           expect(wrapper.find({ type: 'text', name: addressFields.STREET_ADDRESS }).prop('value')).to.equal(
-            value.streetAddress
+            initialValue.streetAddress
           );
         });
 
         it('should execute onBlur with current value when streetAddress is blurred', done => {
-          const value = {
-            streetAddress: '742 Evergreen Terrace',
-            city: 'Springfield',
-          };
           const onBlur = ev => {
-            expect(ev.target.value).to.eql(value);
+            expect(ev.target.value).to.eql(initialValue);
             done();
           };
-          const wrapper = mount(<NewAddressField value={value} onBlur={onBlur} />);
+          const wrapper = mount(<NewAddressField value={initialValue} onBlur={onBlur} />);
           wrapper.find({ type: 'text', name: addressFields.STREET_ADDRESS }).simulate('blur');
         });
       });
 
       describe('City', () => {
-        it('should execute onChange when city TextField changes', () => {
-          const onChange = sinon.spy();
-          const event = { target: { value: 'Springfield' } };
-          const wrapper = mount(<NewAddressField onChange={onChange} />);
-          wrapper.find({ type: 'text', name: addressFields.CITY }).simulate('change', event);
-          expect(onChange.calledOnce).to.be.true;
-        });
-
         it('should report correct value when city TextField changes', done => {
+          const expected = { ...initialValue, city: 'Springfield' };
           const event = { target: { value: 'Springfield' } };
           const onChange = ev => {
-            const expected = { ...initialValue, city: 'Springfield' };
             expect(ev.target.value).to.eql(expected);
             done();
           };
@@ -330,52 +293,26 @@ describe('NewAddressField', () => {
           wrapper.find({ type: 'text', name: addressFields.CITY }).simulate('change', event);
         });
 
-        it('should report correct value when city TextField changes', done => {
-          const expected = { city: 'Springfield' };
-          const event = { target: { value: expected.city } };
-          const onChange = ev => {
-            expect(ev.target.value).to.eql(expected);
-            done();
-          };
-          const wrapper = mount(<NewAddressField onChange={onChange} />);
-          wrapper.find({ type: 'text', name: addressFields.CITY }).simulate('change', event);
-        });
-
         it('should pass city value to text input when given', () => {
-          const value = {
-            city: 'Springfield',
-          };
-          const wrapper = mount(<NewAddressField value={value} />);
-          expect(wrapper.find({ type: 'text', name: addressFields.CITY }).prop('value')).to.equal(value.city);
+          const wrapper = mount(<NewAddressField value={initialValue} />);
+          expect(wrapper.find({ type: 'text', name: addressFields.CITY }).prop('value')).to.equal(initialValue.city);
         });
 
         it('should execute onBlur with current value when city is blurred', done => {
-          const value = {
-            streetAddress: '742 Evergreen Terrace',
-            city: 'Springfield',
-          };
           const onBlur = ev => {
-            expect(ev.target.value).to.eql(value);
+            expect(ev.target.value).to.eql(initialValue);
             done();
           };
-          const wrapper = mount(<NewAddressField value={value} onBlur={onBlur} />);
+          const wrapper = mount(<NewAddressField value={initialValue} onBlur={onBlur} />);
           wrapper.find({ type: 'text', name: addressFields.CITY }).simulate('blur');
         });
       });
 
       describe('State', () => {
-        it('should execute onChange when state TextField changes', () => {
-          const onChange = sinon.spy();
-          const event = { target: { value: 'Oregon' } };
-          const wrapper = mount(<NewAddressField onChange={onChange} />);
-          wrapper.find({ type: 'text', name: addressFields.STATE }).simulate('change', event);
-          expect(onChange.calledOnce).to.be.true;
-        });
-
         it('should report correct value when state TextField changes', done => {
+          const expected = { ...initialValue, state: 'Oregon' };
           const event = { target: { value: 'Oregon' } };
           const onChange = ev => {
-            const expected = { ...initialValue, state: 'Oregon' };
             expect(ev.target.value).to.eql(expected);
             done();
           };
@@ -383,52 +320,26 @@ describe('NewAddressField', () => {
           wrapper.find({ type: 'text', name: addressFields.STATE }).simulate('change', event);
         });
 
-        it('should report correct value when state TextField changes', done => {
-          const expected = { state: 'Oregon' };
-          const event = { target: { value: expected.state } };
-          const onChange = ev => {
-            expect(ev.target.value).to.eql(expected);
-            done();
-          };
-          const wrapper = mount(<NewAddressField onChange={onChange} />);
-          wrapper.find({ type: 'text', name: addressFields.STATE }).simulate('change', event);
-        });
-
         it('should pass state value to text input when given', () => {
-          const value = {
-            state: 'Ohio',
-          };
-          const wrapper = mount(<NewAddressField value={value} />);
-          expect(wrapper.find({ type: 'text', name: addressFields.STATE }).prop('value')).to.equal(value.state);
+          const wrapper = mount(<NewAddressField value={initialValue} />);
+          expect(wrapper.find({ type: 'text', name: addressFields.STATE }).prop('value')).to.equal(initialValue.state);
         });
 
         it('should execute onBlur with current value when state is blurred', done => {
-          const value = {
-            streetAddress: '742 Evergreen Terrace',
-            city: 'Springfield',
-          };
           const onBlur = ev => {
-            expect(ev.target.value).to.eql(value);
+            expect(ev.target.value).to.eql(initialValue);
             done();
           };
-          const wrapper = mount(<NewAddressField value={value} onBlur={onBlur} />);
+          const wrapper = mount(<NewAddressField value={initialValue} onBlur={onBlur} />);
           wrapper.find({ type: 'text', name: addressFields.STATE }).simulate('blur');
         });
       });
 
       describe('Postal Code', () => {
-        it('should execute onChange when postalCode TextField changes', () => {
-          const onChange = sinon.spy();
-          const event = { target: { value: '555636' } };
-          const wrapper = mount(<NewAddressField onChange={onChange} />);
-          wrapper.find({ type: 'text', name: addressFields.POSTAL_CODE }).simulate('change', event);
-          expect(onChange.calledOnce).to.be.true;
-        });
-
         it('should report correct value when postalCode TextField changes', done => {
-          const event = { target: { value: '555636' } };
+          const expected = { ...initialValue, postalCode: '55555' };
+          const event = { target: { value: '55555' } };
           const onChange = ev => {
-            const expected = { ...initialValue, postalCode: '555636' };
             expect(ev.target.value).to.eql(expected);
             done();
           };
@@ -436,56 +347,27 @@ describe('NewAddressField', () => {
           wrapper.find({ type: 'text', name: addressFields.POSTAL_CODE }).simulate('change', event);
         });
 
-        it('should report correct value when postalCode TextField changes', done => {
-          const expected = { postalCode: '555636' };
-          const event = { target: { value: expected.postalCode } };
-          const onChange = ev => {
-            expect(ev.target.value).to.eql(expected);
-            done();
-          };
-          const wrapper = mount(<NewAddressField onChange={onChange} />);
-          wrapper.find({ type: 'text', name: addressFields.POSTAL_CODE }).simulate('change', event);
-        });
-
         it('should pass postalCode value to text input when given', () => {
-          const value = {
-            postalCode: 'Springfield',
-          };
-          const wrapper = mount(<NewAddressField value={value} />);
+          const wrapper = mount(<NewAddressField value={initialValue} />);
           expect(wrapper.find({ type: 'text', name: addressFields.POSTAL_CODE }).prop('value')).to.equal(
-            value.postalCode
+            initialValue.postalCode
           );
         });
 
         it('should execute onBlur with current value when postalCode is blurred', done => {
-          const value = {
-            streetAddress: '742 Evergreen Terrace',
-            city: 'Springfield',
-          };
           const onBlur = ev => {
-            expect(ev.target.value).to.eql(value);
+            expect(ev.target.value).to.eql(initialValue);
             done();
           };
-          const wrapper = mount(<NewAddressField value={value} onBlur={onBlur} />);
+          const wrapper = mount(<NewAddressField value={initialValue} onBlur={onBlur} />);
           wrapper.find({ type: 'text', name: addressFields.POSTAL_CODE }).simulate('blur');
         });
       });
 
       describe('Country', () => {
-        it('should execute onChange when country TextField changes', () => {
-          const onChange = sinon.spy();
-          const wrapper = mount(<NewAddressField countryOptions={countries} onChange={onChange} />);
-          wrapper
-            .find('.pbg-picker-menu')
-            .find('.picker-menu-item')
-            .at(0)
-            .simulate('click');
-          expect(onChange.calledOnce).to.be.true;
-        });
-
         it('should report correct value when country TextField changes', done => {
+          const expected = { ...initialValue, country: 'us' };
           const onChange = ev => {
-            const expected = { ...initialValue, country: 'us' };
             expect(ev.target.value).to.eql(expected);
             done();
           };
@@ -501,9 +383,7 @@ describe('NewAddressField', () => {
 
         it('should pass country value to picker when given', () => {
           const options = [{ label: 'MX', value: 'mx' }, { label: 'US', value: 'us' }];
-          const value = {
-            country: 'us',
-          };
+          const value = { country: 'us' };
           const wrapper = mount(<NewAddressField countryOptions={options} value={value} />);
           expect(wrapper.find(Picker).prop('value')).to.equal(value.country);
         });
