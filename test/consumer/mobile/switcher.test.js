@@ -1,9 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import Switcher from '../../../components/consumer/mobile/switcher';
 import SwitcherItem from '../../../components/consumer/mobile/switcher/switcher-item';
+import CornerCheckmark from '../../../components/consumer/mobile/switcher/corner-checkmark';
 
 describe('switcher', () => {
   const switcherOptions = [
@@ -28,6 +29,12 @@ describe('switcher', () => {
   it('should have correct number of options', () => {
     const wrapper = shallow(<Switcher options={switcherOptions} />);
     expect(wrapper.find(SwitcherItem).length).to.equal(2);
+  });
+
+  it('should display active item', () => {
+    const wrapper = mount(<Switcher options={switcherOptions} value="option1" />);
+    expect(wrapper.find('.pbg-switcher-item-label').find('.pbg-mobile-label-strong')).have.lengthOf(1);
+    expect(wrapper.find(CornerCheckmark)).have.lengthOf(1);
   });
 
   it('should react onChange correctly', () => {
