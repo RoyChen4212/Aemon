@@ -48,14 +48,15 @@ class Picker extends FormField {
   }
 
   render() {
+    const { hint, error, label } = this.adaptedProps;
     return (
       <div className={this.className}>
-        {this.renderLabel()}
+        {label && this.renderLabel()}
         <div className="pbg-picker-select-container">
           {this.renderSelect()}
           <i className="pbg-picker-arrow" />
         </div>
-        {this.renderHintOrError()}
+        {(hint || error) && this.renderHintOrError()}
       </div>
     );
   }
