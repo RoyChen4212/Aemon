@@ -1,0 +1,44 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-form-field {
+    &.pbg-new-address-field {
+      .pbg-new-address-field-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 16px;
+        padding-left: 15px;
+        border-left: 2px solid $gray-30;
+      }
+
+      .pbg-new-address-text-field {
+        margin-top: 17px;
+        width: calc(50% - 9px);
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .pbg-new-address-field-full {
+        width: 100%;
+      }
+
+      .pbg-picker {
+        margin-top: 17px;
+        width: calc(50% - 9px);
+
+        .pbg-picker-button {
+          width: 100%;
+        }
+
+        .pbg-picker-menu {
+          .pbg-container {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

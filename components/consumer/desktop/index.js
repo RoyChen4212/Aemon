@@ -31,6 +31,7 @@ import ModalAlert from './modal-alert';
 import ModalBranding from './modal-branding';
 import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
+import NewAddressField from './new-address-field';
 import PasswordField from './password-field';
 import PaymentMethodSelector from './payment-method-selector';
 import Picker, { PICKER_EMPTY_VALUE } from './picker';
@@ -66,6 +67,7 @@ const desktop = {
   ModalBranding,
   MoneyField,
   MultiSelectField,
+  NewAddressField,
   PasswordField,
   PaymentMethodSelector,
   Picker,
