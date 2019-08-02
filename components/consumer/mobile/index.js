@@ -34,6 +34,7 @@ import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
 import SimpleNumberStepper from './simple-number-stepper';
+import PieChart from './pie-chart';
 
 const mobile = {
   AddComment,
@@ -82,6 +83,7 @@ const mobile = {
   TimePicker,
   UserCommentCard,
   Switcher,
+  PieChart,
 };
 
 export default mobile;
