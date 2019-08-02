@@ -5,29 +5,33 @@
       &.pbg-text-area {
 
         textarea {
-          border: 0;
-          border-bottom: 1px solid;
-          border-color: $cool-grey;
+          display: block;
+          border: 1px solid $grey-50;
+          border-radius: 4px;
+          padding: 9px 7px;
+          color: $grey-80;
+          background: $white;
           line-height: 20px;
           font-size: 14px;
-          margin-bottom: -6px;
           outline: 0;
-          padding-bottom: 8px;
           resize: none;
           width: 100%;
           overflow: hidden;
           height: auto;
+          -webkit-appearance: none;
 
           &::placeholder {
-            color: $cool-grey;
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            line-height: 20px;
-            font-size: 14px;
+            @extend .pbg-mobile-label-secondary;
+            opacity: 1;
           }
           &:focus {
             outline: none;
+          }
+        }
+
+        &.pbg-form-field-focused {
+          textarea {
+            border-color: $blue-60;
           }
         }
 
@@ -35,6 +39,22 @@
           textarea {
             border-color: $coral-error;
           }
+        }
+
+        &.pbg-form-field-disabled {
+          textarea {
+            @extend .pbg-mobile-form-field-disabled;
+
+            color: $grey-70;
+            -webkit-text-fill-color: $grey-70;
+            opacity: 1; /* required on iOS */
+          }
+        }
+
+        .pbg-hint {
+          display: inline;
+          font-style: normal;
+          line-height: 15px;
         }
       }
     }

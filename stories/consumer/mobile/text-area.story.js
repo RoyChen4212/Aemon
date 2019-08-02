@@ -11,21 +11,27 @@ storiesOf('Consumer/Mobile/Form Fields/text-area', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('text-area/default', () => (
+    <FieldStateProvider component={TextArea} name="text1" label="Label" value="" hint="Hint" />
+  ))
+  .add('text-area/placeholder', () => (
     <FieldStateProvider
       component={TextArea}
-      name="text3"
-      label="Type some large text"
+      name="text2"
+      label="Label"
+      placeholder="Placeholder"
       value=""
-      hint="a poem maybe?"
-      required
+      hint="Hint"
     />
   ))
   .add('text-area/error', () => (
     <FieldStateProvider
       component={TextArea}
-      name="text4"
-      label="Type some large text"
-      value=""
-      error="this field has error"
+      name="text3"
+      label="Label"
+      value="This is an erroneous field"
+      error="Error"
     />
+  ))
+  .add('text-area/disabled', () => (
+    <FieldStateProvider component={TextArea} name="text4" label="Label" value="Disabled" hint="Hint" disabled />
   ));
