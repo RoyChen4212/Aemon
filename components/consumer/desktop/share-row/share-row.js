@@ -7,6 +7,8 @@ import './style.scss';
 
 /** @extends React.Component */
 class ShareRow extends React.Component {
+  baseClassName = 'pbg-consumer-desktop pbg-share-row';
+
   static propTypes = {
     label: PropTypes.string.isRequired,
     hint: PropTypes.string.isRequired,
@@ -47,7 +49,7 @@ class ShareRow extends React.Component {
     const borderStyle = { borderColor: color };
 
     return (
-      <div className="pbg-consumer-desktop pbg-share-row" style={borderStyle}>
+      <div className={this.baseClassName} style={borderStyle}>
         <div className="pbg-desktop-label-normal">{label}</div>
         <div className="pbg-desktop-secondary-text pbg-desktop-small-text">{hint}</div>
         {this.renderAmount()}
