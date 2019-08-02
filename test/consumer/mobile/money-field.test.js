@@ -4,32 +4,7 @@ import { shallow } from 'enzyme';
 
 import MoneyField from '../../../components/consumer/mobile/money-field';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
-
-export const shouldBehaveLikeTextField = wrapper => {
-  it('should have class pbg-form-field', () => {
-    expect(wrapper.hasClass('pbg-form-field')).to.be.true;
-  });
-
-  it('should have class pbg-text-field', () => {
-    expect(wrapper.hasClass('pbg-text-field')).to.be.true;
-  });
-
-  it('should add pbg-form-field-focused class when focused', done => {
-    wrapper.setProps({ focused: true }, () => {
-      expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
-      done();
-    });
-  });
-
-  it('should remove pbg-form-field-focused class when not focused', done => {
-    wrapper.setProps({ focused: true }, () => {
-      wrapper.setProps({ focused: false }, () => {
-        expect(wrapper.hasClass('pbg-form-field-focused')).to.be.false;
-        done();
-      });
-    });
-  });
-};
+import { shouldBehaveLikeTextField } from './text-field.test';
 
 describe('money-field', () => {
   it('should have correct class', () => {
