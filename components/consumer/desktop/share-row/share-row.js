@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import FormField from '../form-field';
+import Popover from '../popover';
 
 import './style.scss';
 
@@ -23,33 +24,28 @@ class ShareRow extends FormField {
     detailsContent: null,
   };
 
-  state = {
-    isDetailHidden: true,
-  };
-
-  onDetailClick = () => {
-    this.setState({ isDetailHidden: false });
-  };
-
   renderAmount = () => {
-    const { amount, detailsText } = this.props;
-    const { isDetailHidden } = this.state;
+    const { amount, detailsText, detailsContent } = this.props;
 
     return (
       <div className="pbg-share-row-amount-wrapper">
         <div className="pbg-desktop-label-strong">{amount}</div>
-        {isDetailHidden && detailsText && (
-          <div className="pbg-desktop-small-link" onClick={this.onDetailClick}>
-            {detailsText}
-          </div>
+        {detailsContent && (
+          <Popover
+            trigger={props => (
+              <div className="pbg-desktop-small-link" onClick={props.onClick}>
+                {detailsText}
+              </div>
+            )}
+            content={detailsContent}
+          />
         )}
       </div>
     );
   };
 
   render() {
-    const { label, hint, color, detailsContent } = this.props;
-    const { isDetailHidden } = this.state;
+    const { label, hint, color } = this.props;
 
     const borderStyle = { borderColor: color };
 
@@ -58,7 +54,6 @@ class ShareRow extends FormField {
         <div className="pbg-desktop-label-normal">{label}</div>
         <div className="pbg-desktop-secondary-text pbg-desktop-small-text">{hint}</div>
         {this.renderAmount()}
-        {!isDetailHidden && detailsContent}
       </div>
     );
   }

@@ -15,5 +15,34 @@
         }
       }
     }
+
+    &.pbg-share-details-popover {
+      .pbg-share-details-popover-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 8px 0;
+      }
+
+      .pbg-share-details-popover-row {
+        .pbg-desktop-secondary-text {
+          margin-bottom: 4px;
+        }
+
+        .pbg-desktop-regular-text:last-child {
+          margin-top: 8px;
+        }
+      }
+
+      .pbg-share-details-popover-total {
+        @extend .pbg-share-details-popover-content;
+        justify-content: flex-end;
+        margin-bottom: 0;
+
+        .pbg-desktop-regular-text + .pbg-desktop-regular-text {
+          margin-left: 8px;
+        }
+      }
+    }
   }
 }
