@@ -52,7 +52,9 @@
         }
 
         .pbg-hint {
-          @extend .pbg-mobile-small-normal;
+          display: inline;
+          font-style: normal;
+          line-height: 15px;
         }
       }
     }
