@@ -17,6 +17,8 @@ class PhoneField extends FormField {
     phoneLabel: PropTypes.string,
     value: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
     options: PropTypes.array, // eslint-disable-line react/no-unused-prop-types
+    orLabel: PropTypes.string,
+    addLabel: PropTypes.string,
   };
 
   static defaultProps = {
@@ -24,6 +26,8 @@ class PhoneField extends FormField {
     phoneLabel: null,
     value: '',
     options: [],
+    orLabel: 'Or',
+    addLabel: 'Add New',
   };
 
   get options() {
@@ -88,11 +92,13 @@ class PhoneField extends FormField {
       return null;
     }
 
+    const { orLabel, addLabel } = this.props;
+
     return (
       <div className="pbg-phone-field-add-container">
-        <p className="pbg-desktop-label-normal">Or</p>
+        <p className="pbg-desktop-label-normal">{orLabel}</p>
         <button type="button" className="pbg-consumer-desktop pbg-button" onClick={this.onAddNewClick}>
-          <span>Add New</span>
+          <span>{addLabel}</span>
         </button>
       </div>
     );

@@ -148,4 +148,22 @@ describe('Phone Field', () => {
       .simulate('click');
     expect(onChange.calledOnce).to.be.true;
   });
+
+  it('should define default orLabel and addLabel without passing props', () => {
+    const wrapper = mount(<PhoneField options={options} />);
+    expect(wrapper.prop('orLabel')).to.equal('Or');
+    expect(wrapper.prop('addLabel')).to.equal('Add New');
+  });
+
+  it('should pass orLabel and addLabel props exactly', () => {
+    const wrapper = mount(<PhoneField options={options} value="123456789" orLabel="OR" addLabel="ADD" />);
+    const addContainer = wrapper.find('.pbg-phone-field-add-container');
+    expect(addContainer.find('.pbg-desktop-label-normal').text()).to.equal('OR');
+    expect(
+      addContainer
+        .find('button')
+        .find('span')
+        .text()
+    ).to.equal('ADD');
+  });
 });

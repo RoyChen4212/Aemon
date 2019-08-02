@@ -39,6 +39,8 @@ storiesOf('Consumer/Desktop/Form Fields/phone-field', module)
       phoneLabel="Phone number"
       onChange={action('onChange')}
       value="123456789"
+      orLabel="Or"
+      addLabel="Add New"
     />
   ))
   .add('stored-phone-number/add-new', () => (
