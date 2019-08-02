@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FormField from '../form-field';
 import Popover from '../popover';
 
 import './style.scss';
 
 /** @extends React.Component */
-class ShareRow extends FormField {
-  baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-share-row';
-
+class ShareRow extends React.Component {
   static propTypes = {
     label: PropTypes.string.isRequired,
     hint: PropTypes.string.isRequired,
@@ -50,7 +47,7 @@ class ShareRow extends FormField {
     const borderStyle = { borderColor: color };
 
     return (
-      <div className={this.className} style={borderStyle}>
+      <div className="pbg-consumer-desktop pbg-share-row" style={borderStyle}>
         <div className="pbg-desktop-label-normal">{label}</div>
         <div className="pbg-desktop-secondary-text pbg-desktop-small-text">{hint}</div>
         {this.renderAmount()}
