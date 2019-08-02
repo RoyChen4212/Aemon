@@ -15,6 +15,7 @@ import Hint, { hintTypes } from './hint';
 import HistoricalPicker from './historical-picker';
 import Label, { labelTypes } from './label';
 import Modal from './modal';
+import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
 import NavbarBrand from './navbar-brand';
 import NewAddressField from './new-address-field';
@@ -59,6 +60,7 @@ const mobile = {
   labelTypes,
   LinkButton,
   Modal,
+  MoneyField,
   MultiSelectField,
   NavbarBrand,
   NewAddressField,
