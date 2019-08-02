@@ -6,10 +6,10 @@
 
         textarea {
           display: block;
-          border: 1px solid $grey-50;
+          border: 1px solid $gray-50;
           border-radius: 4px;
           padding: 9px 7px;
-          color: $grey-80;
+          color: $gray-80;
           background: $white;
           line-height: 20px;
           font-size: 14px;
@@ -45,8 +45,8 @@
           textarea {
             @extend .pbg-mobile-form-field-disabled;
 
-            color: $grey-70;
-            -webkit-text-fill-color: $grey-70;
+            color: $gray-70;
+            -webkit-text-fill-color: $gray-70;
             opacity: 1; /* required on iOS */
           }
         }
