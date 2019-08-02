@@ -1,0 +1,14 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-section-content {
+    .pbg-section-content-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      .pbg-button-small {
+        padding: 0 8px;
+      }
+    }
+  }
+}

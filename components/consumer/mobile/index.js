@@ -34,6 +34,7 @@ import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
 import SimpleNumberStepper from './simple-number-stepper';
+import SectionContent from './section-content';
 
 const mobile = {
   AddComment,
@@ -77,6 +78,7 @@ const mobile = {
   SmallFacebookButton,
   StepProgressBar,
   SimpleNumberStepper,
+  SectionContent,
   TextArea,
   TextField,
   TimePicker,
