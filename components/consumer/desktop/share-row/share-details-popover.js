@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FormField from '../form-field';
-
-import './style.scss';
 import Divider from '../divider';
 
+import './style.scss';
+
 /** @extends React.Component */
-class ShareDetailsPopover extends FormField {
-  baseClassName = 'pbg-consumer-desktop pbg-form-field pbg-share-details-popover';
+class ShareDetailsPopover extends React.Component {
+  baseClassName = 'pbg-consumer-desktop pbg-share-details-popover';
 
   static propTypes = {
     title: PropTypes.string,
@@ -35,7 +34,7 @@ class ShareDetailsPopover extends FormField {
     const { title, descriptionLabel, maxAmountLabel, shareLabel, feeLabel, totalLabel, share, fee, total } = this.props;
 
     return (
-      <div className={this.className}>
+      <div className={this.baseClassName}>
         <div className="pbg-desktop-heading-3">{title}</div>
         <div className="pbg-share-details-popover-content">
           <div className="pbg-share-details-popover-row">
