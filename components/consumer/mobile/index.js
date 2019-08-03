@@ -35,11 +35,13 @@ import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
 import SimpleNumberStepper from './simple-number-stepper';
+import CardField from './card-field';
 
 const mobile = {
   AddComment,
   AddressField,
   Alert,
+  CardField,
   Checkbox,
   ContributorCard,
   ClaimToggle,
