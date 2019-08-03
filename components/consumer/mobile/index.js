@@ -34,7 +34,7 @@ import ClaimToggle from './claim-toggle';
 import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
-import SimpleNumberStepper from './simple-number-stepper';
+import NumberStepper from './number-stepper';
 
 const mobile = {
   AddComment,
@@ -78,7 +78,7 @@ const mobile = {
   SmallButton,
   SmallFacebookButton,
   StepProgressBar,
-  SimpleNumberStepper,
+  NumberStepper,
   TextArea,
   TextField,
   TimePicker,
