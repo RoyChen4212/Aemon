@@ -1,0 +1,30 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-status {
+    display: flex;
+    justify-content: space-between;
+    .pbg-status-wrapper {
+      display: flex;
+      .pbg-status-icon-container {
+        display: flex;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        border: 1px solid $gray-30;
+        border-radius: 50%;
+        align-items: center;
+        margin-right: 8px;
+      }
+      .pbg-status-texts-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+      }
+    }
+    .pbg-icon-question-mark-small-blue {
+      margin-top: 5px;
+    }
+  }
+}

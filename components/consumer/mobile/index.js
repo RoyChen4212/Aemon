@@ -35,6 +35,7 @@ import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
 import SimpleNumberStepper from './simple-number-stepper';
+import Status from './status';
 
 const mobile = {
   AddComment,
@@ -84,6 +85,7 @@ const mobile = {
   TimePicker,
   UserCommentCard,
   Switcher,
+  Status,
 };
 
 export default mobile;
