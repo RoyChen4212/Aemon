@@ -48,6 +48,7 @@ import Status from './status';
 import Subheader from './subheader';
 import TextArea from './text-area';
 import TextField from './text-field';
+import ContactImportInput from './contact-import-input';
 
 const desktop = {
   ActivityCard,
@@ -60,6 +61,7 @@ const desktop = {
   Checkbox,
   ClaimToggle,
   Container,
+  ContactImportInput,
   Divider,
   EmailPreview,
   FacebookInput,

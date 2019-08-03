@@ -22,4 +22,10 @@ export const withGrey20Container = story => (
   </div>
 );
 
+export const withGrey20BoxContainer = story => (
+  <div className="container-fluid h-100 grey-20-box">
+    <div className="row">{story()}</div>
+  </div>
+);
+
 export const wrapStory = story => <div className="col-12 story-wrapper">{story()}</div>;
