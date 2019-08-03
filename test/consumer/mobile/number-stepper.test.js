@@ -8,7 +8,7 @@ describe('simple-number-stepper', () => {
   it('should have correct class names', () => {
     const wrapper = shallow(<NumberStepper />);
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
-    expect(wrapper.hasClass('pbg-simple-number-stepper')).to.be.true;
+    expect(wrapper.hasClass('pbg-number-stepper')).to.be.true;
   });
 
   it('should render options based on range', () => {
