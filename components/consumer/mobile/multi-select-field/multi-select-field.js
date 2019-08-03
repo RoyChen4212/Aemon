@@ -4,9 +4,10 @@ import includes from 'lodash/includes';
 import Checkbox from '../checkbox';
 import FormField from '../form-field';
 import makeEvent from '../../../lib/make-event';
+import './style.scss';
 
 class MultiSelectField extends FormField {
-  baseClassName = 'pbg-form-field pbg-multi-select-field';
+  baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-multi-select-field';
 
   get value() {
     return get(this, 'adaptedProps.value', []);

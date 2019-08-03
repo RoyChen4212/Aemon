@@ -15,7 +15,6 @@ const ClaimToggle = ({ label, secondaryText, onChange, value, error }) => (
     </div>
     {secondaryText && (
       <div className="pbg-claim-toggle-secondary-text">
-        <input type="checkbox" className="hidden-checkbox" />
         {secondaryText}
       </div>
     )}

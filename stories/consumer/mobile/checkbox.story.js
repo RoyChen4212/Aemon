@@ -3,8 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import Checkbox from '../../../components/consumer/mobile/checkbox';
-import FieldStateProvider from '../../util/field-state-provider';
-import { withContainer, wrapStory } from '../../util/decorators';
+import { withContainer, wrapStory, withGrey20Container } from '../../util/decorators';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -12,15 +11,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Mobile/Form Fields/checkbox', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('checkbox/simple', () => <FieldStateProvider component={Checkbox} name="field1" onChange={action('change')} />)
-  .add('checkbox/default', () => (
-    <FieldStateProvider
-      component={Checkbox}
-      label="A checked checkbox field"
-      value="true"
-      onChange={action('change')}
-    />
+  .addDecorator(withGrey20Container)
+  .add('checkbox/simple', () => <Checkbox name="field1" onChange={action('check')} />)
+  .add('checkbox/defaultChecked', () => <Checkbox name="field1" onChange={action('check')} value />)
+  .add('checkbox/default', () => <Checkbox name="field2" label="A checkbox field" onChange={action('check')} />)
+  .add('checkbox/disabled', () => (
+    <Checkbox name="field3" label="A checkbox field" disabled onChange={action('check')} />
+  ))
+  .add('checkbox/disabled-checked', () => (
+    <Checkbox name="field3" label="A checkbox field" onChange={action('check')} value disabled />
   ))
   .add('checkbox/error', () => (
-    <FieldStateProvider component={Checkbox} label="A checkbox field" error="An error" onChange={action('change')} />
+    <Checkbox name="field4" label="A checkbox field" error="An error" onChange={action('check')} />
   ));
