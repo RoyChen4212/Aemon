@@ -45,8 +45,7 @@
           textarea {
             @extend .pbg-mobile-form-field-disabled;
 
-            color: $gray-70;
-            -webkit-text-fill-color: $gray-70;
+            -webkit-text-fill-color: $gray-60;
             opacity: 1; /* required on iOS */
           }
         }
