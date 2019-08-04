@@ -9,6 +9,8 @@ import './style.scss';
 
 /** @extends React.Component */
 class MoneyField extends TextField {
+  baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-text-field pbg-money-field';
+
   static propTypes = {
     value: PropTypes.string,
     name: PropTypes.string,
@@ -48,7 +50,6 @@ class MoneyField extends TextField {
     const { name, currency } = this.props;
     return (
       <input
-        className="pbg-money-field"
         pattern="\d*"
         name={name}
         value={this.value}
