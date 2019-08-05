@@ -2,11 +2,11 @@
 
 .pbg-consumer-mobile {
   &.pbg-hint {
-    @extend .pbg-mobile-hint-normal;
+    @extend .pbg-mobile-small-normal;
   }
 
   &.pbg-hint-error {
-    @extend .pbg-mobile-hint-error;
+    @extend .pbg-mobile-small-error;
     &:before {
       content: url('../img/small-error-icon.svg');
       margin-right: 4px;
@@ -16,6 +16,6 @@
   }
 
   &.pbg-hint-clickable {
-    @extend .pbg-mobile-hint-clickable;
+    @extend .pbg-mobile-small-link;
   }
 }
