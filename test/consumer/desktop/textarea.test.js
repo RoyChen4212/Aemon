@@ -4,7 +4,6 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 import TextArea from '../../../components/consumer/desktop/text-area';
-import Hint, { hintTypes } from '../../../components/consumer/desktop/hint';
 
 describe('TextArea', () => {
   it('should have class pbg-form-field', () => {
@@ -17,12 +16,11 @@ describe('TextArea', () => {
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
   });
 
-  it('should add pbg-form-field-focused class when focused', done => {
+  it('should add pbg-form-field-focused class when focused', () => {
     const wrapper = shallow(<TextArea />);
-    wrapper.setProps({ focused: true }, () => {
-      expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
-      done();
-    });
+    wrapper.find('textarea').simulate('focus', { target: '' });
+    wrapper.update();
+    expect(wrapper.hasClass('pbg-form-field-focused')).to.be.true;
   });
 
   it('should remove pbg-form-field-focused class when not focused', done => {
@@ -43,7 +41,7 @@ describe('TextArea', () => {
   it('should show a hint when given', () => {
     const expected = 'a hint';
     const wrapper = shallow(<TextArea hint={expected} />);
-    expect(wrapper.contains(<Hint>{expected}</Hint>)).to.be.true;
+    expect(wrapper.find('.pbg-hint').text()).to.equal(expected);
   });
 
   it('should execute onBlur when clicked out of textarea', () => {
@@ -56,27 +54,27 @@ describe('TextArea', () => {
 
   it('should provide correct rows when empty', () => {
     const wrapper = shallow(<TextArea />);
-    expect(wrapper.instance().rows).to.equal(3);
+    expect(wrapper.find('textarea').prop('rows')).to.equal(3);
   });
 
   it('should provide correct rows when value is larger than 100', () => {
     const value =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ornare orci dolor, scelerisque posuere.';
     const wrapper = shallow(<TextArea value={value} />);
-    expect(wrapper.instance().rows).to.equal(3);
+    expect(wrapper.find('textarea').prop('rows')).to.equal(3);
   });
 
   it('should not show hint when simple is given', () => {
     const hint = 'nope';
     const wrapper = shallow(<TextArea hint={hint} simple />);
-    expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
+    expect(wrapper.find('.pbg-hint').length).to.equal(0);
   });
 
   describe('With error', () => {
     it('should show an error hint when error is given', () => {
       const expected = 'a horrible error';
       const wrapper = shallow(<TextArea error={expected} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
+      expect(wrapper.find('.pbg-hint-error').text()).to.equal(expected);
     });
 
     it('should have correct class when error is given', () => {
@@ -88,8 +86,7 @@ describe('TextArea', () => {
       const expected = 'a horrible error';
       const hint = 'nope';
       const wrapper = shallow(<TextArea error={expected} hint={hint} />);
-      expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
-      expect(wrapper.contains(<Hint>{hint}</Hint>)).to.be.false;
+      expect(wrapper.find('.pbg-hint-error').text()).to.equal(expected);
     });
   });
 });
