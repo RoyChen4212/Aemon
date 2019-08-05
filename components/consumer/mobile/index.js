@@ -36,6 +36,7 @@ import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
 import SimpleNumberStepper from './simple-number-stepper';
 import CardField from './card-field';
+import NumberStepper from './number-stepper';
 
 const mobile = {
   AddComment,
@@ -80,7 +81,7 @@ const mobile = {
   SmallButton,
   SmallFacebookButton,
   StepProgressBar,
-  SimpleNumberStepper,
+  NumberStepper,
   TextArea,
   TextField,
   TimePicker,

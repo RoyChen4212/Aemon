@@ -23,7 +23,7 @@ const SectionCard = ({
         <div className="pbg-section-card-header-row">
           <div className="pbg-section-card-header-text">
             {status !== sectionCardStatus.COMPLETED ? (
-              stepNumber && <div className="pbg-section-card-step-number pbg-mobile-heading-2">{stepNumber}.</div>
+              stepNumber && status !== sectionCardStatus.DISABLED && <div className="pbg-section-card-step-number pbg-mobile-heading-2">{stepNumber}.</div>
             ) : (
               <div className="pbg-section-card-completed-icon" />
             )}
