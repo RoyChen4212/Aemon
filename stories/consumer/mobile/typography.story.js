@@ -21,11 +21,6 @@ storiesOf('Consumer/Mobile/Atomic Components/Typography', module)
   .add('pbg-mobile-small-normal', () => <div className="pbg-mobile-small-normal">Small Normal</div>)
   .add('pbg-mobile-small-error', () => <div className="pbg-mobile-small-error">Small Error</div>)
   .add('pbg-mobile-small-link', () => <div className="pbg-mobile-small-link">Small Link</div>)
-  .add('pbg-mobile-small-text', () => <div className="pbg-mobile-small-text">Small Text</div>)
-  .add('pbg-mobile-small-secondary', () => <div className="pbg-mobile-small-secondary">Small Secondary Text</div>)
-  .add('pbg-mobile-hint-normal', () => <div className="pbg-mobile-hint-normal">Hint Normal</div>)
-  .add('pbg-mobile-hint-error', () => <div className="pbg-mobile-hint-error">Hint Error</div>)
-  .add('pbg-mobile-hint-clickable', () => <div className="pbg-mobile-hint-clickable">Hint Clickable</div>)
   .add('pbg-mobile-list-unordered', () => (
     <ul className="pbg-consumer-mobile pbg-mobile-list-unordered">
       <li>Label</li>

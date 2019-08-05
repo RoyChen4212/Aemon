@@ -261,39 +261,6 @@
 .pbg-mobile-small-link {
   @extend .pbg-mobile-small-normal;
   color: $blue-60;
-}
-
-.pbg-mobile-small-text {
-  font-family: $roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 18px;
-  color: $gray-80;
-}
-
-.pbg-mobile-small-secondary {
-  @extend .pbg-mobile-small-text;
-  color: $gray-60;
-}
-
-.pbg-mobile-hint-normal {
-  font-family: $roboto;
-  font-style: italic;
-  font-weight: normal;
-  font-size: $small-font;
-  line-height: $small-line-height;
-  color: $gray-60;
-}
-
-.pbg-mobile-hint-error {
-  @extend .pbg-mobile-hint-normal;
-  color: $red-60;
-}
-
-.pbg-mobile-hint-clickable {
-  @extend .pbg-mobile-hint-normal;
-  color: $blue-60;
   cursor: pointer;
 }
 
