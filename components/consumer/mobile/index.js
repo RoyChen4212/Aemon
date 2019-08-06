@@ -36,6 +36,7 @@ import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
+import ShareLink from './share-link';
 
 const mobile = {
   AddComment,
@@ -73,6 +74,7 @@ const mobile = {
   PrimaryButton,
   PurchaseImage,
   SecondaryButton,
+  ShareLink,
   SectionCard,
   SectionSeparator,
   SegmentedControl,
