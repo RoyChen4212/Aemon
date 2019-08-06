@@ -36,6 +36,7 @@ import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
+import NavbarMenuUserItem from './navbar-menu-user-item';
 
 const mobile = {
   AddComment,
@@ -65,6 +66,7 @@ const mobile = {
   MoneyField,
   MultiSelectField,
   NavbarBrand,
+  NavbarMenuUserItem,
   NewAddressField,
   NoAccountWarning,
   PasswordField,
