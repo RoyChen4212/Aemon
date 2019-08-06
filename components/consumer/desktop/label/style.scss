@@ -39,7 +39,6 @@
 
     &.pbg-label-clickable {
       @extend .pbg-desktop-label-link;
-      cursor: pointer;
       pointer-events: all;
     }
 
