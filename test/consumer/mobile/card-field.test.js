@@ -2,14 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import CardField from '../../../components/consumer/desktop/card-field';
-import Cards from '../../../components/consumer/desktop/card-field/cards';
-import CardPlaceholder from '../../../components/consumer/desktop/card-field/card-placeholder';
+import CardField from '../../../components/consumer/mobile/card-field';
+import Cards from '../../../components/consumer/mobile/card-field/cards';
+import CardPlaceholder from '../../../components/consumer/mobile/card-field/card-placeholder';
 
 describe('card field', () => {
   it('should have correct class names', () => {
     const wrapper = shallow(<CardField />);
-    expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
+    expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-card-field')).to.be.true;
   });
 

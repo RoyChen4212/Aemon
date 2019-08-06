@@ -15,6 +15,7 @@ import Hint, { hintTypes } from './hint';
 import HistoricalPicker from './historical-picker';
 import Label, { labelTypes } from './label';
 import Modal from './modal';
+import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
 import NavbarBrand from './navbar-brand';
 import NewAddressField from './new-address-field';
@@ -33,13 +34,15 @@ import ClaimToggle from './claim-toggle';
 import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
-import SimpleNumberStepper from './simple-number-stepper';
 import PieChart from './pie-chart';
+import NumberStepper from './number-stepper';
+import CardField from './card-field';
 
 const mobile = {
   AddComment,
   AddressField,
   Alert,
+  CardField,
   Checkbox,
   ContributorCard,
   ClaimToggle,
@@ -60,6 +63,7 @@ const mobile = {
   labelTypes,
   LinkButton,
   Modal,
+  MoneyField,
   MultiSelectField,
   NavbarBrand,
   NewAddressField,
@@ -77,7 +81,7 @@ const mobile = {
   SmallButton,
   SmallFacebookButton,
   StepProgressBar,
-  SimpleNumberStepper,
+  NumberStepper,
   TextArea,
   TextField,
   TimePicker,

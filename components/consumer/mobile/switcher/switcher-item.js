@@ -38,7 +38,7 @@ class SwitcherItem extends PureComponent {
         <div className={cx('pbg-switcher-item-label', active ? 'pbg-mobile-label-strong' : 'pbg-mobile-label-normal')}>
           {label}
         </div>
-        {hint && <div className="pbg-switcher-item-hint pbg-mobile-hint-normal">{hint}</div>}
+        {hint && <div className="pbg-switcher-item-hint pbg-mobile-small-normal">{hint}</div>}
       </div>
     );
   }
