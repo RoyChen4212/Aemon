@@ -5,6 +5,7 @@ import PieChart from '../../../components/consumer/mobile/pie-chart';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import { colorTypes } from '../../../components/consumer/shared/color-types';
 
 storiesOf('Consumer/Mobile/Info', module)
   .addDecorator(wrapStory)
@@ -17,11 +18,11 @@ storiesOf('Consumer/Mobile/Info', module)
       dataPoints={[
         {
           percentage: 68,
-          color: '#53BC6A',
+          color: colorTypes.GREEN_60,
         },
         {
           percentage: 20,
-          color: '#FFBB33',
+          color: colorTypes.YELLOW_60,
         },
       ]}
     />
