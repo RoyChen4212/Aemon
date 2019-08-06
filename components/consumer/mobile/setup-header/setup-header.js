@@ -28,7 +28,7 @@ class SetupHeader extends React.Component {
         <div className="pbg-setup-header-inner">
           <div className="pbg-setup-header-text">
             <span className="pbg-mobile-label-strong">{label}</span>
-            {hint && <span className="pbg-mobile-small-secondary">{hint}</span>}
+            {hint && <span className="pbg-mobile-small-normal">{hint}</span>}
           </div>
           <SmallButton className="pbg-setup-header-button" iconType={buttonIcon} onClick={this.onButtonClick}>
             {buttonText}
