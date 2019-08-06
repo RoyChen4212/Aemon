@@ -18,8 +18,11 @@
         .pbg-section-card-header-text {
           display: flex;
           flex-grow: 1;
-          .pbg-section-card-title {
-            margin-left: 8px;
+          .pbg-section-card-step-number {
+            margin-right: 8px;
+          }
+          .pbg-section-card-completed-icon {
+            margin-right: 8px;
           }
         }
         .pbg-section-card-completed-icon {

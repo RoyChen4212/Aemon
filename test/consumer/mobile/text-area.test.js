@@ -41,7 +41,7 @@ describe('TextArea', () => {
     };
 
     wrapper.find('textarea').simulate('change');
-    expect(instance.state.style.height).to.equal('0px');
+    expect(instance.state.style.height).to.equal('2px');
   });
 
   describe('With error', () => {

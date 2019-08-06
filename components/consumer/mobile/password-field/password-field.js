@@ -26,7 +26,7 @@ class PasswordField extends TextField {
   renderHintFeedback() {
     return (
       <div className="pbg-forgot-password-container">
-        <span className="pbg-mobile-hint-normal">{this.hint}</span>
+        <span className="pbg-mobile-small-normal">{this.hint}</span>
         {this.renderForgotPassword()}
       </div>
     );
@@ -35,7 +35,7 @@ class PasswordField extends TextField {
   renderErrorFeedback() {
     return (
       <div className="pbg-forgot-password-container">
-        <span className="pbg-mobile-hint-error">{this.error}</span>
+        <span className="pbg-mobile-small-error">{this.error}</span>
         {this.renderForgotPassword()}
       </div>
     );
@@ -46,7 +46,7 @@ class PasswordField extends TextField {
       return null;
     }
     return (
-      <span className="pbg-mobile-hint-clickable" onClick={this.adaptedProps.onForgotPassword}>
+      <span className="pbg-mobile-small-link" onClick={this.adaptedProps.onForgotPassword}>
         {this.adaptedProps.forgotPasswordText || '[FORGOT PASSWROD]'}
       </span>
     );
