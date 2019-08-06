@@ -11,6 +11,11 @@
     align-items: center;
     .pbg-icon-link-small-gray {
       margin-right: 8px;
+      flex-shrink: 0;
+    }
+    a {
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }
