@@ -5,22 +5,22 @@ import './style.scss';
 import { SmallButton } from '../button';
 import { iconTypes } from '../../shared/icon-types';
 
-const baseClassName = 'pbg-consumer-mobile pbg-section-content';
+const baseClassName = 'pbg-consumer-mobile pbg-expandable-section';
 
-const SectionContent = ({ title, secondaryText, showText, hideText, children, expanded, onClick }) => (
+const ExpandableSection = ({ title, secondaryText, showText, hideText, children, expanded, onClick }) => (
   <div className={baseClassName}>
-    <div className="pbg-section-content-row">
+    <div className="pbg-expandable-section-row">
       <div className="pbg-mobile-heading-2">{title}</div>
       <SmallButton iconType={expanded ? iconTypes.ARROW_UP : iconTypes.ARROW_DOWN} onClick={onClick}>
         {expanded ? hideText : showText}
       </SmallButton>
     </div>
     <div className="pbg-mobile-label-secondary">{secondaryText}</div>
-    {expanded && <div className="pbg-section-content-children">{children}</div>}
+    {expanded && <div className="pbg-expandable-section-children">{children}</div>}
   </div>
 );
 
-SectionContent.propTypes = {
+ExpandableSection.propTypes = {
   title: PropTypes.string.isRequired,
   secondaryText: PropTypes.string.isRequired,
   showText: PropTypes.string.isRequired,
@@ -30,8 +30,8 @@ SectionContent.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-SectionContent.defaultProps = {
+ExpandableSection.defaultProps = {
   expanded: false,
 };
 
-export default SectionContent;
+export default ExpandableSection;

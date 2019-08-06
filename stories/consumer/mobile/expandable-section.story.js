@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { withContainer, wrapStory, withMiddleSizing } from '../../util/decorators';
-import SectionContent from '../../../components/consumer/mobile/section-content';
+import ExpandableSection from '../../../components/consumer/mobile/expandable-section';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -13,7 +13,7 @@ storiesOf('Consumer/Mobile/Section Components/expandable-section', module)
   .addDecorator(withContainer)
   .addDecorator(withMiddleSizing)
   .add('compact', () => (
-    <SectionContent
+    <ExpandableSection
       title="Label"
       secondaryText="Secondary Text"
       showText="Show more"
@@ -21,10 +21,10 @@ storiesOf('Consumer/Mobile/Section Components/expandable-section', module)
       onClick={action('Click')}
     >
       My Awesome Content
-    </SectionContent>
+    </ExpandableSection>
   ))
   .add('expanded', () => (
-    <SectionContent
+    <ExpandableSection
       expanded
       title="Label"
       secondaryText="Secondary Text"
@@ -33,11 +33,11 @@ storiesOf('Consumer/Mobile/Section Components/expandable-section', module)
       onClick={action('Click')}
     >
       My Awesome Content
-    </SectionContent>
+    </ExpandableSection>
   ))
-  .add('full-preview', () => <SectionContentPreview />);
+  .add('full-preview', () => <ExpandableSectionPreview />);
 
-class SectionContentPreview extends React.PureComponent {
+class ExpandableSectionPreview extends React.PureComponent {
   state = { expanded: false };
 
   onClick = () => {
@@ -48,7 +48,7 @@ class SectionContentPreview extends React.PureComponent {
   render() {
     const { expanded } = this.state;
     return (
-      <SectionContent
+      <ExpandableSection
         expanded={expanded}
         title="Label"
         secondaryText="Secondary Text"
@@ -57,7 +57,7 @@ class SectionContentPreview extends React.PureComponent {
         onClick={this.onClick}
       >
         My Awesome Content
-      </SectionContent>
+      </ExpandableSection>
     );
   }
 }

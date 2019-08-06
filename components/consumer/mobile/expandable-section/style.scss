@@ -1,8 +1,8 @@
 @import '../../shared/scss/styleguide';
 
 .pbg-consumer-mobile {
-  &.pbg-section-content {
-    .pbg-section-content-row {
+  &.pbg-expandable-section {
+    .pbg-expandable-section-row {
       display: flex;
       justify-content: space-between;
       margin-bottom: 4px;
