@@ -36,7 +36,9 @@ class AnimationOverlay extends React.Component {
         <button type="button" onClick={this.onClick}>
           Show overlay
         </button>
-        <Overlay title="Title" backText="back" opened={overlayOpened} onBackButtonClick={this.onBackButtonClick} />
+        <Overlay title="Title" backText="back" opened={overlayOpened} onBackButtonClick={this.onBackButtonClick}>
+          <p>This is the overlay content.</p>
+        </Overlay>
       </React.Fragment>
     );
   }
