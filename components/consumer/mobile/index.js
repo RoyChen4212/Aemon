@@ -34,6 +34,7 @@ import ClaimToggle from './claim-toggle';
 import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
+import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
 
@@ -86,6 +87,7 @@ const mobile = {
   TimePicker,
   UserCommentCard,
   Switcher,
+  PieChart,
 };
 
 export default mobile;
