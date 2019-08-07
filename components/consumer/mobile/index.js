@@ -35,6 +35,7 @@ import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
 import Status from './status';
+import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
 
@@ -88,6 +89,7 @@ const mobile = {
   UserCommentCard,
   Switcher,
   Status,
+  PieChart,
 };
 
 export default mobile;
