@@ -22,7 +22,7 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
   .addDecorator(withContainer)
   .addDecorator(withMobileSizing)
   .addDecorator(withGreyContainer)
-  .add('default', () => (
+  .add('section-card/default', () => (
     <SectionCard
       status={sectionCardStatus.ACTIVE}
       title="Section"
@@ -31,7 +31,7 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
       activateButtonText="Connect"
     />
   ))
-  .add('disabled', () => (
+  .add('section-card/disabled', () => (
     <SectionCard
       status={sectionCardStatus.DISABLED}
       title="Section"
@@ -44,7 +44,7 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
       My Awesome content
     </SectionCard>
   ))
-  .add('completed', () => (
+  .add('section-card/completed', () => (
     <SectionCard
       status={sectionCardStatus.COMPLETED}
       title="Section"
@@ -57,7 +57,7 @@ storiesOf('Consumer/Mobile/Section Components/section-card', module)
       My Awesome content
     </SectionCard>
   ))
-  .add('workflow', () => <SectionCardFullWorkflow />);
+  .add('section-card/workflow', () => <SectionCardFullWorkflow />);
 
 class SectionCardFullWorkflow extends React.PureComponent {
   state = { status: sectionCardStatus.ACTIVE };
@@ -81,7 +81,6 @@ class SectionCardFullWorkflow extends React.PureComponent {
       <SectionCard
         status={status}
         title="Section"
-        stepNumber={1}
         headerButton={headerButton}
         onActivateButtonClick={this.onActiveClick}
         completedLabel="Completed"

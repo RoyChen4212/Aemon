@@ -30,17 +30,20 @@ import StepProgressBar from './step-progress-bar';
 import TextArea from './text-area';
 import TextField from './text-field';
 import TimePicker from './time-picker';
+import TipBlock from './tip-block';
 import ClaimToggle from './claim-toggle';
 import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
-import SimpleNumberStepper from './simple-number-stepper';
-import TipBlock from './tip-block';
+import PieChart from './pie-chart';
+import NumberStepper from './number-stepper';
+import CardField from './card-field';
 
 const mobile = {
   AddComment,
   AddressField,
   Alert,
+  CardField,
   Checkbox,
   ContributorCard,
   ClaimToggle,
@@ -79,13 +82,14 @@ const mobile = {
   SmallButton,
   SmallFacebookButton,
   StepProgressBar,
-  SimpleNumberStepper,
+  NumberStepper,
   TextArea,
   TextField,
   TimePicker,
+  TipBlock,
   UserCommentCard,
   Switcher,
-  TipBlock,
+  PieChart,
 };
 
 export default mobile;
