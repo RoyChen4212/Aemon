@@ -10,7 +10,7 @@ import { colorTypes } from '../../../components/consumer/shared/color-types';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Desktop/share-row', module)
+storiesOf('Consumer/Desktop/Info/share-row', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('share-row/default', () => (
