@@ -1,6 +1,6 @@
-@import "colors";
-@import "fonts";
-@import "icons";
+@import 'colors';
+@import 'fonts';
+@import 'icons';
 
 // Logos
 
@@ -73,6 +73,7 @@
 .pbg-desktop-label-link {
   @extend .pbg-desktop-label-normal;
   color: $blue-60;
+  cursor: pointer;
 }
 
 .pbg-desktop-label-error {
@@ -122,6 +123,7 @@
   @extend .pbg-desktop-label-link;
   font-size: $small-font;
   line-height: $small-line-height;
+  cursor: pointer;
 }
 
 .pbg-desktop-small-error {
@@ -197,6 +199,15 @@
   color: $gray-80;
 }
 
+.pbg-mobile-heading-3 {
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: $gray-80;
+}
+
 .pbg-mobile-label-normal {
   font-family: $roboto;
   font-style: normal;
@@ -235,38 +246,38 @@
   color: $red-60;
 }
 
-.pbg-mobile-small-text {
+.pbg-mobile-small-normal {
   font-family: $roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
-  line-height: 18px;
-  color: $gray-80;
-}
-
-.pbg-mobile-small-secondary {
-  @extend .pbg-mobile-small-text;
+  line-height: 15px;
   color: $gray-60;
 }
 
-.pbg-mobile-hint-normal {
-  font-family: $roboto;
-  font-style: italic;
-  font-weight: normal;
-  font-size: $small-font;
-  line-height: $small-line-height;
-  color: $gray-60;
-}
-
-.pbg-mobile-hint-error {
-  @extend .pbg-mobile-hint-normal;
+.pbg-mobile-small-error {
+  @extend .pbg-mobile-small-normal;
   color: $red-60;
 }
 
-.pbg-mobile-hint-clickable {
-  @extend .pbg-mobile-hint-normal;
+.pbg-mobile-small-link {
+  @extend .pbg-mobile-small-normal;
   color: $blue-60;
   cursor: pointer;
+}
+
+.pbg-mobile-form-field-disabled {
+  @extend .pbg-mobile-label-secondary;
+  background: $gray-10;
+}
+
+.pbg-mobile-list-unordered {
+  @extend .pbg-mobile-label-normal;
+  list-style-image: url('../../mobile/img/pbg-list-bullet.svg');
+}
+
+.pbg-mobile-list-ordered {
+  @extend .pbg-mobile-label-normal;
 }
 
 // Shadows

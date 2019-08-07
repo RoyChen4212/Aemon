@@ -1,0 +1,20 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile.pbg-form-field.pbg-text-field {
+  &.pbg-money-field {
+    input {
+      &::placeholder {
+        color: $blue-60;
+        opacity: 1;
+      }
+
+      &:invalid {
+        box-shadow: none;
+      }
+
+      padding: 9px 7px;
+      text-align: center;
+      color: $blue-60;
+    }
+  }
+}

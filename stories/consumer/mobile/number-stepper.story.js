@@ -3,19 +3,19 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import { withContainer, wrapStory } from '../../util/decorators';
-import SimpleNumberStepper from '../../../components/consumer/mobile/simple-number-stepper';
+import NumberStepper from '../../../components/consumer/mobile/number-stepper';
 
 import FieldStateProvider from '../../util/field-state-provider';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/Atomic Components/Inputs/simple-number-stepper', module)
+storiesOf('Consumer/Mobile/Form Fields/number-stepper', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('simple', () => (
+  .add('number-stepper/simple', () => (
     <FieldStateProvider
-      component={SimpleNumberStepper}
+      component={NumberStepper}
       name="simple-number-stepper"
       value={null}
       onChange={action('onChange')}
@@ -23,9 +23,9 @@ storiesOf('Consumer/Mobile/Atomic Components/Inputs/simple-number-stepper', modu
       max={100}
     />
   ))
-  .add('default', () => (
+  .add('number-stepper/default', () => (
     <FieldStateProvider
-      component={SimpleNumberStepper}
+      component={NumberStepper}
       name="simple-number-stepper"
       value={null}
       label="Label"
@@ -35,9 +35,9 @@ storiesOf('Consumer/Mobile/Atomic Components/Inputs/simple-number-stepper', modu
       max={100}
     />
   ))
-  .add('error', () => (
+  .add('number-stepper/error', () => (
     <FieldStateProvider
-      component={SimpleNumberStepper}
+      component={NumberStepper}
       name="simple-number-stepper"
       value={null}
       label="Label"
@@ -48,9 +48,9 @@ storiesOf('Consumer/Mobile/Atomic Components/Inputs/simple-number-stepper', modu
       max={100}
     />
   ))
-  .add('disabled', () => (
+  .add('number-stepper/disabled', () => (
     <FieldStateProvider
-      component={SimpleNumberStepper}
+      component={NumberStepper}
       name="simple-number-stepper"
       value={null}
       label="Label"
