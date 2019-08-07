@@ -35,8 +35,9 @@ import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
 import ExpandableSection from './expandable-section';
-import CardField from './card-field';
+import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
+import CardField from './card-field';
 
 const mobile = {
   AddComment,
@@ -88,6 +89,7 @@ const mobile = {
   TimePicker,
   UserCommentCard,
   Switcher,
+  PieChart,
 };
 
 export default mobile;
