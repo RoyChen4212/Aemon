@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
-import sinon from 'sinon';
 import ExpandableSection from '../../../components/consumer/mobile/expandable-section';
 import { SmallButton } from '../../../components/consumer/mobile/button';
 
@@ -12,15 +11,13 @@ describe('expandable-section', () => {
   const hideText = 'hideText';
 
   it('should have correct class names', () => {
-    const onClick = sinon.spy();
     const wrapper = shallow(
       <ExpandableSection
         title={title}
-        secondaryText={secondaryText}
+        hint={secondaryText}
         showText={showText}
         hideText={hideText}
-        expanded={false}
-        onClick={onClick}
+        defaultExpanded={false}
       >
         Awesome Content
       </ExpandableSection>
@@ -30,15 +27,13 @@ describe('expandable-section', () => {
   });
 
   it('should have correct title and secondary Text', () => {
-    const onClick = sinon.spy();
     const wrapper = shallow(
       <ExpandableSection
         title={title}
-        secondaryText={secondaryText}
+        hint={secondaryText}
         showText={showText}
         hideText={hideText}
-        expanded={false}
-        onClick={onClick}
+        defaultExpanded={false}
       >
         Awesome Content
       </ExpandableSection>
@@ -48,15 +43,13 @@ describe('expandable-section', () => {
   });
 
   it('should not have children when not expanded and show showText', () => {
-    const onClick = sinon.spy();
     const wrapper = shallow(
       <ExpandableSection
         title={title}
-        secondaryText={secondaryText}
+        hint={secondaryText}
         showText={showText}
         hideText={hideText}
-        expanded={false}
-        onClick={onClick}
+        defaultExpanded={false}
       >
         Awesome Content
       </ExpandableSection>
@@ -66,15 +59,13 @@ describe('expandable-section', () => {
   });
 
   it('should have children when expanded and show hideText', () => {
-    const onClick = sinon.spy();
     const wrapper = shallow(
       <ExpandableSection
         title={title}
-        secondaryText={secondaryText}
+        hint={secondaryText}
         showText={showText}
         hideText={hideText}
-        expanded
-        onClick={onClick}
+        defaultExpanded
       >
         Awesome Content
       </ExpandableSection>
@@ -84,22 +75,22 @@ describe('expandable-section', () => {
   });
 
   it('should react onClick', () => {
-    const onClick = sinon.spy();
     const wrapper = shallow(
       <ExpandableSection
         title={title}
-        secondaryText={secondaryText}
+        hint={secondaryText}
         showText={showText}
         hideText={hideText}
-        expanded
-        onClick={onClick}
+        defaultExpanded
       >
         Awesome Content
       </ExpandableSection>
     );
+    expect(wrapper.state().expanded).to.be.true;
 
     wrapper.find(SmallButton).simulate('click');
+    wrapper.update();
 
-    expect(onClick.calledOnce).to.be.true;
+    expect(wrapper.state().expanded).to.be.false;
   });
 });
