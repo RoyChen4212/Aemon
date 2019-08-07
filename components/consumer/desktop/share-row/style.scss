@@ -3,14 +3,13 @@
 .pbg-consumer-desktop {
   &.pbg-share-row {
     padding-left: 8px;
-    border-left: 4px solid #006AFF;
+    border-left: 4px solid;
 
     .pbg-share-row-amount-wrapper {
       display: flex;
 
       .pbg-desktop-small-link {
         margin: 2px 0 0 8px;
-        cursor: pointer;
       }
     }
   }

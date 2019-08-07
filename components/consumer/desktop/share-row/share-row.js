@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Popover from '../popover';
+import colorCodes from '../../shared/scss/_styleguide.scss';
 
 import './style.scss';
 
@@ -45,7 +46,7 @@ class ShareRow extends React.Component {
   render() {
     const { label, hint, color } = this.props;
 
-    const borderStyle = { borderColor: color };
+    const borderStyle = { borderColor: colorCodes[color] };
 
     return (
       <div className={this.baseClassName} style={borderStyle}>
