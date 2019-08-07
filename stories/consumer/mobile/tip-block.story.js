@@ -9,7 +9,7 @@ import { colorTypes } from '../../../components/consumer/shared/color-types';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
-storiesOf('Consumer/Mobile/tip-block', module)
+storiesOf('Consumer/Mobile/Info', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('tip-block', () => (
