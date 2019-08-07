@@ -63,6 +63,15 @@ describe('Overlay', () => {
     expect(wrapper.find('.pbg-overlay').contains(<div className="pbg-mobile-heading-1">{title}</div>)).to.be.true;
   });
 
+  it('should render children if given', () => {
+    const wrapper = shallow(
+      <Overlay title="Title" opened onBackButtonClick={() => null}>
+        <p>Content</p>
+      </Overlay>
+    );
+    expect(wrapper.find('.pbg-overlay-content').contains(<p>Content</p>)).to.be.true;
+  });
+
   it('Should render the back button in header with default text', () => {
     const onBackButtonClick = () => null;
     const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={onBackButtonClick} />);

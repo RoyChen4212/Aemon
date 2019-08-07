@@ -34,8 +34,11 @@ import ClaimToggle from './claim-toggle';
 import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
+import GroupMember from './group-member';
+import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
+import Overlay from './overlay';
 
 const mobile = {
   AddComment,
@@ -52,6 +55,7 @@ const mobile = {
   ExternalLink,
   FacebookButton,
   GroupActivityCard,
+  GroupMember,
   H1,
   H2,
   H3,
@@ -86,6 +90,8 @@ const mobile = {
   TimePicker,
   UserCommentCard,
   Switcher,
+  PieChart,
+  Overlay,
 };
 
 export default mobile;
