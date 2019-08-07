@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Mobile/Onboarding/invite-contributors-link', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('share-link', () => <ShareLink href="http://paybygroup.com/dshjahghfd" />);
+  .add('share-link/default', () => <ShareLink href="http://paybygroup.com/dshjahghfd" />);
 
 storiesOf('Consumer/Mobile/Onboarding/invite-contributors-link', module)
   .addDecorator(wrapStory)

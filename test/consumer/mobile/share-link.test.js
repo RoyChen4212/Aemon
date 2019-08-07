@@ -10,4 +10,11 @@ describe('share-link', () => {
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-share-link')).to.be.true;
   });
+
+  it('should have correct link', () => {
+    const href = 'href';
+    const wrapper = shallow(<ShareLink href={href} />);
+    expect(wrapper.find('a').text()).to.equal(href);
+    expect(wrapper.find('a').prop('href')).to.equal(href);
+  });
 });
