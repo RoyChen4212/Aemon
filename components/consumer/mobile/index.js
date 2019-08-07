@@ -37,6 +37,7 @@ import PurchaseImage from './purchase-image';
 import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
+import Overlay from './overlay';
 
 const mobile = {
   AddComment,
@@ -88,6 +89,7 @@ const mobile = {
   UserCommentCard,
   Switcher,
   PieChart,
+  Overlay,
 };
 
 export default mobile;
