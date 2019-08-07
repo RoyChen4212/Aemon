@@ -5,7 +5,6 @@ import Divider from '../divider';
 
 import './style.scss';
 
-/** @extends React.Component */
 class ShareDetailsPopover extends React.Component {
   baseClassName = 'pbg-consumer-desktop pbg-share-details-popover';
 

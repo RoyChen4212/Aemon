@@ -5,7 +5,6 @@ import Popover from '../popover';
 
 import './style.scss';
 
-/** @extends React.Component */
 class ShareRow extends React.Component {
   baseClassName = 'pbg-consumer-desktop pbg-share-row';
 
