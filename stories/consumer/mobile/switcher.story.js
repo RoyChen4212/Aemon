@@ -19,7 +19,7 @@ storiesOf('Consumer/Mobile/Onboarding/switcher', module)
   .add('corner-checkmark', () => <CornerCheckmark />)
   .add('switcher-item/active', () => <SwitcherItem label="Label" hint="Text expanding on the label" active />)
   .add('switcher-item/inactive', () => <SwitcherItem label="Label" hint="Text expanding on the label" />)
-  .add('default', () => (
+  .add('switcher/default', () => (
     <SwitcherWorkflow
       options={[
         {
@@ -35,7 +35,7 @@ storiesOf('Consumer/Mobile/Onboarding/switcher', module)
       ]}
     />
   ))
-  .add('long-hint', () => (
+  .add('switcher/long-hint', () => (
     <SwitcherWorkflow
       options={[
         {
@@ -57,7 +57,7 @@ storiesOf('Consumer/Mobile/Onboarding/switcher', module)
   .addDecorator(withContainer)
   .addDecorator(withMiddleSizing)
   .addDecorator(withGreyContainer)
-  .add('middle size', () => (
+  .add('switcher/middle-size', () => (
     <SwitcherWorkflow
       options={[
         {

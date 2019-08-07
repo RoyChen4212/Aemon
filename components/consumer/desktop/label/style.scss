@@ -24,9 +24,6 @@
 
     &.pbg-label-active {
       @extend .pbg-desktop-label-link;
-      > a {
-        cursor: pointer;
-      }
     }
 
     &.pbg-label-secondary {
@@ -39,7 +36,6 @@
 
     &.pbg-label-clickable {
       @extend .pbg-desktop-label-link;
-      cursor: pointer;
       pointer-events: all;
     }
 
