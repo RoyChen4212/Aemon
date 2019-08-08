@@ -38,6 +38,7 @@ import GroupMember from './group-member';
 import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
+import ShareLink from './share-link';
 import Overlay from './overlay';
 
 const mobile = {
@@ -77,6 +78,7 @@ const mobile = {
   PrimaryButton,
   PurchaseImage,
   SecondaryButton,
+  ShareLink,
   SectionCard,
   SectionSeparator,
   SegmentedControl,
