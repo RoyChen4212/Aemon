@@ -41,4 +41,18 @@ describe('card field', () => {
     expect(icons.at(1).hasClass('pbg-icon-mastercard-small')).to.be.true;
   });
 
+  it('should render all allowed types', () => {
+    const wrapper = shallow(
+      <CardField label="Label" allowedCardTypes={['visa', 'master', 'american_express', 'discover', 'diners_club']} />
+    );
+    const cards = wrapper.find(Cards);
+    const icons = cards.dive().find('.pbg-card');
+
+    expect(icons.length).to.equal(5);
+    expect(cards.html()).to.include('pbg-icon-visa-small');
+    expect(cards.html()).to.include('pbg-icon-mastercard-small');
+    expect(cards.html()).to.include('pbg-icon-amex-small');
+    expect(cards.html()).to.include('pbg-icon-discover-small');
+    expect(cards.html()).to.include('pbg-icon-diners-club-small');
+  });
 });
