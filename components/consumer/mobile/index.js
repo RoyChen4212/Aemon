@@ -18,6 +18,7 @@ import Modal from './modal';
 import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
 import NavbarBrand from './navbar-brand';
+import NavbarMenuUserItem from './navbar-menu-user-item';
 import NewAddressField from './new-address-field';
 import NoAccountWarning from './no-account-warning';
 import PasswordField from './password-field';
@@ -70,6 +71,7 @@ const mobile = {
   MoneyField,
   MultiSelectField,
   NavbarBrand,
+  NavbarMenuUserItem,
   NewAddressField,
   NoAccountWarning,
   PasswordField,
