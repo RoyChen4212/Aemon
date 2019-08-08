@@ -2,20 +2,14 @@
 
 .pbg-consumer-mobile {
   &.pbg-hint {
-    @extend .pbg-mobile-hint-normal;
+    @extend .pbg-mobile-small-normal;
   }
 
   &.pbg-hint-error {
-    @extend .pbg-mobile-hint-error;
-    &:before {
-      content: url('../img/small-error-icon.svg');
-      margin-right: 4px;
-      top: 3px;
-      position: relative;
-    }
+    @extend .pbg-mobile-small-error;
   }
 
   &.pbg-hint-clickable {
-    @extend .pbg-mobile-hint-clickable;
+    @extend .pbg-mobile-small-link;
   }
 }

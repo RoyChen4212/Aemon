@@ -46,8 +46,8 @@ describe('card field', () => {
 
     expect(cards.length).to.equal(1);
     expect(icons.length).to.equal(2);
-    expect(icons.first().hasClass('pbg-visa-card')).to.be.true;
-    expect(icons.at(1).hasClass('pbg-master-card')).to.be.true;
+    expect(icons.first().hasClass('pbg-icon-visa-small')).to.be.true;
+    expect(icons.at(1).hasClass('pbg-icon-mastercard-small')).to.be.true;
   });
 
   it('should show visa card type', () => {
@@ -57,7 +57,7 @@ describe('card field', () => {
     const placeholder = wrapper.find(CardPlaceholder);
     const icon = placeholder.dive().find('.pbg-placeholder-icon');
 
-    expect(icon.hasClass('pbg-visa-card')).to.be.true;
+    expect(icon.hasClass('pbg-icon-visa-big')).to.be.true;
   });
 
   it('should show master card type', () => {
@@ -67,7 +67,7 @@ describe('card field', () => {
     const placeholder = wrapper.find(CardPlaceholder);
     const icon = placeholder.dive().find('.pbg-placeholder-icon');
 
-    expect(icon.hasClass('pbg-master-card')).to.be.true;
+    expect(icon.hasClass('pbg-icon-mastercard-big')).to.be.true;
   });
 
   it('should show american_express card type', () => {
@@ -77,7 +77,7 @@ describe('card field', () => {
     const placeholder = wrapper.find(CardPlaceholder);
     const icon = placeholder.dive().find('.pbg-placeholder-icon');
 
-    expect(icon.hasClass('pbg-amex-card')).to.be.true;
+    expect(icon.hasClass('pbg-icon-amex-big')).to.be.true;
   });
 
   it('should show discover card type', () => {
@@ -87,7 +87,7 @@ describe('card field', () => {
     const placeholder = wrapper.find(CardPlaceholder);
     const icon = placeholder.dive().find('.pbg-placeholder-icon');
 
-    expect(icon.hasClass('pbg-discover-card')).to.be.true;
+    expect(icon.hasClass('pbg-icon-discover-big')).to.be.true;
   });
 
   it('should show diners_club card type', () => {
@@ -97,7 +97,7 @@ describe('card field', () => {
     const placeholder = wrapper.find(CardPlaceholder);
     const icon = placeholder.dive().find('.pbg-placeholder-icon');
 
-    expect(icon.hasClass('pbg-dinners-club-card')).to.be.true;
+    expect(icon.hasClass('pbg-icon-diners-club-big')).to.be.true;
   });
 
   it('should show default card type', () => {
@@ -107,6 +107,6 @@ describe('card field', () => {
     const placeholder = wrapper.find(CardPlaceholder);
     const icon = placeholder.dive().find('.pbg-placeholder-icon');
 
-    expect(icon.hasClass('pbg-default-placeholder-icon')).to.be.true;
+    expect(icon.hasClass('pbg-icon-card-placeholder-big')).to.be.true;
   });
 });
