@@ -48,7 +48,7 @@ describe('navbar-menu-language-item', () => {
     ).to.equal(languages[1].label);
   });
 
-  it('should have correct label and options', () => {
+  it('should fire onChange on option select', () => {
     const languages = [{ label: 'English', value: 'en' }, { label: 'Español', value: 'es' }];
     const label = 'label';
     const onChange = sinon.spy();
