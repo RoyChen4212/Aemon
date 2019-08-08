@@ -10,6 +10,7 @@ import DatePicker from './date-picker';
 import DatetimePicker from './datetime-picker';
 import Divider from './divider';
 import DivInput from './div-input';
+import ExpandableSection from './expandable-section';
 import ExternalLink from './external-link';
 import Hint, { hintTypes } from './hint';
 import HistoricalPicker from './historical-picker';
@@ -54,6 +55,7 @@ const mobile = {
   DatetimePicker,
   Divider,
   DivInput,
+  ExpandableSection,
   ExternalLink,
   FacebookButton,
   GroupActivityCard,
