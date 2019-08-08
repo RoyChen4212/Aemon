@@ -78,7 +78,7 @@ describe('Stored Value Selector', () => {
     expect(wrapper.instance().value).to.eql('new');
   });
 
-  it('should return correct value when clicking add new button', done => {
+  it('should return correct value when clicking the option', done => {
     const event = { target: { value: 'first' } };
     const onChange = ev => {
       expect(ev.target.value).to.eql('first');
