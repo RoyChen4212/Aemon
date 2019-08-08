@@ -32,7 +32,8 @@ class StoredValueSelector extends FormField {
   };
 
   get value() {
-    return get(this, 'adaptedProps.value', 'defaultOption');
+    const { defaultOption } = this.props;
+    return get(this, 'adaptedProps.value') || defaultOption;
   }
 
   updateValue = value => {
@@ -48,12 +49,15 @@ class StoredValueSelector extends FormField {
   renderPicker() {
     const { picker: PickerComponent, options } = this.props;
 
+    if (options.length === 0) {
+      return null;
+    }
     return <PickerComponent options={options} value={this.value} onChange={ev => this.updateValue(ev.target.value)} />;
   }
 
   renderAddNewButton() {
-    const { defaultOption, addNewText } = this.props;
-    if (this.value === defaultOption) return null;
+    const { defaultOption, addNewText, options } = this.props;
+    if (options.length === 0 || this.value === defaultOption) return null;
     return <SmallButton onClick={() => this.updateValue(defaultOption)}>{addNewText}</SmallButton>;
   }
 
