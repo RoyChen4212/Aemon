@@ -5,9 +5,7 @@ import './style.scss';
 
 const baseClassName = 'pbg-consumer-mobile pbg-status';
 
-const Status = ({label, value, iconType, tooltip}) => {
-
-
+const Status = ({ label, value, iconType, tooltip }) => {
   const iconClassName = `pbg-icon-${iconType}-small-gray`;
 
   return (
@@ -35,6 +33,6 @@ Status.propTypes = {
 
 Status.defaultProps = {
   tooltip: null,
-}
+};
 
 export default Status;

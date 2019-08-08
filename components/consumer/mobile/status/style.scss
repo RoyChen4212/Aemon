@@ -4,8 +4,10 @@
   &.pbg-status {
     display: flex;
     justify-content: space-between;
+
     .pbg-status-wrapper {
       display: flex;
+
       .pbg-status-icon-container {
         display: flex;
         justify-content: center;
@@ -16,6 +18,7 @@
         align-items: center;
         margin-right: 8px;
       }
+
       .pbg-status-texts-wrapper {
         display: flex;
         flex-direction: column;
@@ -23,6 +26,7 @@
         justify-content: center;
       }
     }
+
     .pbg-icon-question-mark-small-blue {
       margin-top: 5px;
     }
