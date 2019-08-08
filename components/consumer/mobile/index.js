@@ -10,6 +10,7 @@ import DatePicker from './date-picker';
 import DatetimePicker from './datetime-picker';
 import Divider from './divider';
 import DivInput from './div-input';
+import ExpandableSection from './expandable-section';
 import ExternalLink from './external-link';
 import Hint, { hintTypes } from './hint';
 import HistoricalPicker from './historical-picker';
@@ -18,6 +19,8 @@ import Modal from './modal';
 import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
 import NavbarBrand from './navbar-brand';
+import NavbarMenuLinkItem from './navbar-menu-link-item';
+import NavbarMenuUserItem from './navbar-menu-user-item';
 import NewAddressField from './new-address-field';
 import NoAccountWarning from './no-account-warning';
 import PasswordField from './password-field';
@@ -34,9 +37,12 @@ import ClaimToggle from './claim-toggle';
 import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
+import GroupMember from './group-member';
 import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
+import ShareLink from './share-link';
+import Overlay from './overlay';
 import NavbarMenuLanguageItem from './navbar-menu-language-item';
 
 const mobile = {
@@ -51,9 +57,11 @@ const mobile = {
   DatetimePicker,
   Divider,
   DivInput,
+  ExpandableSection,
   ExternalLink,
   FacebookButton,
   GroupActivityCard,
+  GroupMember,
   H1,
   H2,
   H3,
@@ -67,6 +75,8 @@ const mobile = {
   MoneyField,
   MultiSelectField,
   NavbarBrand,
+  NavbarMenuLinkItem,
+  NavbarMenuUserItem,
   NewAddressField,
   NavbarMenuLanguageItem,
   NoAccountWarning,
@@ -76,6 +86,7 @@ const mobile = {
   PrimaryButton,
   PurchaseImage,
   SecondaryButton,
+  ShareLink,
   SectionCard,
   SectionSeparator,
   SegmentedControl,
@@ -90,6 +101,7 @@ const mobile = {
   UserCommentCard,
   Switcher,
   PieChart,
+  Overlay,
 };
 
 export default mobile;
