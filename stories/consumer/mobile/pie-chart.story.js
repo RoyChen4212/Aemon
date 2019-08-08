@@ -17,12 +17,12 @@ storiesOf('Consumer/Mobile/Info', module)
       hint="Payment X/N"
       dataPoints={[
         {
-          percentage: 68,
-          color: colorTypes.GREEN_60,
-        },
-        {
           percentage: 20,
           color: colorTypes.YELLOW_60,
+        },
+        {
+          percentage: 68,
+          color: colorTypes.GREEN_60,
         },
       ]}
     />

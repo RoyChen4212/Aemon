@@ -81,6 +81,7 @@ class SectionCardFullWorkflow extends React.PureComponent {
       <SectionCard
         status={status}
         title="Section"
+        stepNumber={1}
         headerButton={headerButton}
         onActivateButtonClick={this.onActiveClick}
         completedLabel="Completed"
