@@ -14,10 +14,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 const options = [
   { label: { term: 'First option' }, value: 'first' },
   { label: { term: 'Second option' }, value: 'second' },
-  {
-    label: { term: 'Extremely long text here, this should expand menu' },
-    value: 'third',
-  },
+  { label: { term: 'Extremely long text here, this should expand menu' }, value: 'third' },
   { label: { term: 'Add new item' }, value: 'new' },
 ];
 
