@@ -1,0 +1,16 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-navbar-menu-user-item {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    background: $white;
+    padding-left: 15px;
+    .pbg-navbar-menu-user-item-text-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
