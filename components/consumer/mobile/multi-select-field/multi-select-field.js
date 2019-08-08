@@ -30,7 +30,7 @@ class MultiSelectField extends FormField {
           label={opt.label}
           value={this.valueForOption(opt)}
           name={`checkbox_${index}`}
-          onChange={({ target }) => this.updateValue(target.value, opt.value)}
+          onChange={({ target }) => this.updateValue(target.checked, opt.value)}
         />
       );
     });
