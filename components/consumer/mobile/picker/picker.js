@@ -44,7 +44,7 @@ class Picker extends FormField {
 
   renderHintOrError() {
     const { hint, error } = this.adaptedProps;
-    return <span className={classnames('pbg-consumer-mobile', {'pbg-mobile-hint-error': error, 'pbg-mobile-hint-normal': !error})}>{error || hint}</span>
+    return <span className={classnames('pbg-consumer-mobile', {'pbg-mobile-small-error': error, 'pbg-mobile-small-normal': !error})}>{error || hint}</span>
   }
 
   render() {

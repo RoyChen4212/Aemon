@@ -1,0 +1,44 @@
+.pbg-consumer-mobile {
+  &.pbg-card-field {
+    .pbg-label {
+      & > span {
+        width: 100%;
+      }
+    }
+
+    .pbg-card-field-label-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      .pbg-label-with-cards {
+        display: block;
+      }
+    }
+    .pbg-card-field-wrapper {
+      position: relative;
+      .pbg-placeholder-icon {
+        width: 24px;
+        height: 18px;
+        border-radius: 2px;
+        position: absolute;
+        top: 11px;
+        left: 8px;
+        background-size: contain;
+      }
+    }
+  }
+
+  &.pbg-cards-wrapper {
+    display: inline-flex;
+    height: 21px;
+    align-items: center;
+
+    .pbg-card {
+      width: 20px;
+      height: 15px;
+      margin-left: 6px;
+      border-radius: 2px;
+      background-size: contain;
+    }
+  }
+}

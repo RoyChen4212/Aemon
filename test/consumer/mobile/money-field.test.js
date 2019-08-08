@@ -7,13 +7,13 @@ import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import { shouldBehaveLikeTextField } from './text-field.test';
 
 describe('money-field', () => {
-  it('should have correct class', () => {
-    const wrapper = shallow(<MoneyField />);
-    expect(wrapper.hasClass('pbg-form-field')).to.be.true;
-  });
-
   shouldBehaveLikeTextField(shallow(<MoneyField />));
   shouldBehaveLikeFormField(shallow(<MoneyField error="some error" />));
+
+  it('should have correct class', () => {
+    const wrapper = shallow(<MoneyField />);
+    expect(wrapper.hasClass('pbg-money-field')).to.be.true;
+  });
 
   it('should render placeholder', () => {
     const wrapper = shallow(<MoneyField />);

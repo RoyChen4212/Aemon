@@ -1,0 +1,12 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-group-member {
+    display: flex;
+    align-items: center;
+    .pbg-group-member-labels {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
