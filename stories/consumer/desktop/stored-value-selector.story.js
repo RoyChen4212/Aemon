@@ -35,7 +35,7 @@ storiesOf('Consumer/Desktop/Form Fields/Composed', module)
       name="stored-value-selector"
       label="Label"
       picker={Picker}
-      value="123456789"
+      value="first"
       options={options}
       defaultOption="new"
       orText="Or"
