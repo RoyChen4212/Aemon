@@ -40,7 +40,7 @@ class Status extends React.PureComponent {
 
   render() {
     const { iconType, value, hint } = this.props;
-    const iconClass = `pbg-icon-${iconType}-small`;
+    const iconClass = `pbg-icon-${iconType}-small-gray`;
     return (
       <div className="pbg-consumer-desktop pbg-status">
         <div className="pbg-status-icon-container">
