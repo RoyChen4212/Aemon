@@ -11,7 +11,7 @@
     .pbg-card-field-label-wrapper {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
       .pbg-label-with-cards {
         display: block;
       }
@@ -40,7 +40,7 @@
       height: 15px;
       margin-left: 6px;
       border-radius: 2px;
-      background-size: contain;
+      background-size: cover;
     }
   }
 }
