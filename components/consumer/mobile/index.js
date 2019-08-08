@@ -33,10 +33,12 @@ import StepProgressBar from './step-progress-bar';
 import TextArea from './text-area';
 import TextField from './text-field';
 import TimePicker from './time-picker';
+import TipBlock from './tip-block';
 import ClaimToggle from './claim-toggle';
 import SectionSeparator from './section-separator';
 import Switcher from './switcher';
 import PurchaseImage from './purchase-image';
+import Status from './status';
 import GroupMember from './group-member';
 import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
@@ -98,8 +100,10 @@ const mobile = {
   TextArea,
   TextField,
   TimePicker,
+  TipBlock,
   UserCommentCard,
   Switcher,
+  Status,
   PieChart,
   Overlay,
 };
