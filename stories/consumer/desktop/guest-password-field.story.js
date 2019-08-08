@@ -33,6 +33,18 @@ storiesOf('Consumer/Desktop/Form Fields/guest-password-field', module)
       required
     />
   ))
+  .add('guest-password-field/locked', () => (
+    <FieldStateProvider
+      component={GuestPasswordField}
+      name="password"
+      label="Create password"
+      value={{ guest: false }}
+      hint="Don't create an account, just contribute."
+      onChange={action('change')}
+      locked
+      required
+    />
+  ))
   .add('guest-password-field/error', () => (
     <FieldStateProvider
       component={GuestPasswordField}
