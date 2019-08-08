@@ -73,6 +73,7 @@
 .pbg-desktop-label-link {
   @extend .pbg-desktop-label-normal;
   color: $blue-60;
+  cursor: pointer;
 }
 
 .pbg-desktop-label-error {
@@ -122,6 +123,7 @@
   @extend .pbg-desktop-label-link;
   font-size: $small-font;
   line-height: $small-line-height;
+  cursor: pointer;
 }
 
 .pbg-desktop-small-error {
