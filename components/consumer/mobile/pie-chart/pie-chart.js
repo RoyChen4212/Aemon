@@ -16,7 +16,8 @@ const PieChart = ({ label, hint, dataPoints }) => (
     <PieChartComponent
       data={dataPoints.map(data => ({ value: data.percentage, color: colorCodes[data.color] }))}
       lineWidth={8}
-      paddingAngle={5}
+      paddingAngle={2}
+      startAngle={-90}
     />
   </div>
 );
