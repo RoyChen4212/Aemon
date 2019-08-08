@@ -74,11 +74,10 @@ describe('password-field', () => {
     expect(wrapper.find({ type: 'checkbox' })).to.have.lengthOf(0);
   });
 
-  it('should render checkbox checked and disabled and field disabled when locked', () => {
+  it('should render checkbox checked and disabled and field disabled when disabled', () => {
     const hint = 'a hint';
-    const wrapper = mount(<GuestPasswordField hint={hint} value={{ guest: false }} locked />);
+    const wrapper = mount(<GuestPasswordField hint={hint} value={{ guest: false }} disabled />);
     expect(wrapper.find({ type: 'checkbox' }).prop('disabled')).to.be.true;
-    expect(wrapper.find({ type: 'checkbox' }).prop('checked')).to.be.true;
     expect(wrapper.find({ type: 'password' }).prop('disabled')).to.equal(true);
   });
 

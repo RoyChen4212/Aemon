@@ -38,10 +38,10 @@ storiesOf('Consumer/Desktop/Form Fields/guest-password-field', module)
       component={GuestPasswordField}
       name="password"
       label="Create password"
-      value={{ guest: false }}
+      value={{ guest: true }}
       hint="Don't create an account, just contribute."
       onChange={action('change')}
-      locked
+      disabled
       required
     />
   ))

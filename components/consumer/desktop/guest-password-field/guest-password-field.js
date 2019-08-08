@@ -29,8 +29,8 @@ class GuestPasswordField extends ComposedFormField {
       <div>
         <Checkbox
           label={this.hint}
-          value={this.props.locked ? true : this.currentValue.guest}
-          disabled={this.props.locked}
+          value={this.currentValue.guest}
+          disabled={this.props.disabled}
           onChange={this.onCheckboxChange}
         />
       </div>
@@ -45,7 +45,7 @@ class GuestPasswordField extends ComposedFormField {
           type={this.baseType}
           value={this.currentValue.password}
           hint={null}
-          disabled={this.currentValue.guest || this.adaptedProps.locked}
+          disabled={this.currentValue.guest || this.adaptedProps.disabled}
           onChange={this.onInputChange}
           onBlur={() => this.onBlur(makeEvent(this.currentValue))}
         />
