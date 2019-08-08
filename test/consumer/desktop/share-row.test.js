@@ -7,6 +7,7 @@ import ShareDetailsPopover from '../../../components/consumer/desktop/share-row/
 import { colorTypes } from '../../../components/consumer/shared/color-types';
 import Popover from '../../../components/consumer/desktop/popover';
 import Divider from '../../../components/consumer/desktop/divider';
+import colorCodes from '../../../components/consumer/shared/scss/_styleguide.scss';
 
 describe('ShareRow', () => {
   it('should have correct class names', () => {
@@ -43,7 +44,7 @@ describe('ShareRow', () => {
     const color = colorTypes.RED_10;
     const wrapper = shallow(<ShareRow label="label" hint="hint" amount="amount" color={color} />);
     const container = wrapper.find('.pbg-share-row');
-    expect(container.prop('style')).to.eql({ borderColor: color });
+    expect(container.prop('style')).to.eql({ borderColor: colorCodes[color] });
   });
 
   it('should not render detail content when prop is not passed', () => {
