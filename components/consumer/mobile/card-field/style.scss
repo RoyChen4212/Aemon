@@ -26,19 +26,18 @@
         background-size: contain;
       }
     }
-  }
+    .pbg-cards-wrapper {
+      display: inline-flex;
+      height: 20px;
+      align-items: center;
 
-  &.pbg-cards-wrapper {
-    display: inline-flex;
-    height: 21px;
-    align-items: center;
-
-    .pbg-card {
-      width: 20px;
-      height: 15px;
-      margin-left: 6px;
-      border-radius: 2px;
-      background-size: cover;
+      .pbg-card {
+        width: 20px;
+        height: 15px;
+        margin-left: 6px;
+        border-radius: 2px;
+        background-size: cover;
+      }
     }
   }
 }
