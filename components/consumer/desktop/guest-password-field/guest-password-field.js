@@ -22,15 +22,14 @@ class GuestPasswordField extends ComposedFormField {
   };
 
   renderHintWithCheckbox() {
-    if (this.error) return null;
-    if (!this.hint) return null;
+    if (this.error || !this.hint) return null;
 
     return (
       <div>
         <Checkbox
           label={this.hint}
           value={this.currentValue.guest}
-          disabled={this.props.disabled}
+          disabled={this.adaptedProps.disabled}
           onChange={this.onCheckboxChange}
         />
       </div>
