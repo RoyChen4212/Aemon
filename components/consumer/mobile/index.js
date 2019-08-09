@@ -46,6 +46,7 @@ import NumberStepper from './number-stepper';
 import CardField from './card-field';
 import ShareLink from './share-link';
 import Overlay from './overlay';
+import NavbarMenuLanguageItem from './navbar-menu-language-item';
 
 const mobile = {
   AddComment,
@@ -81,6 +82,7 @@ const mobile = {
   NavbarMenuLinkItem,
   NavbarMenuUserItem,
   NewAddressField,
+  NavbarMenuLanguageItem,
   NoAccountWarning,
   PasswordField,
   PhoneField,

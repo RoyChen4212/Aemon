@@ -1,0 +1,48 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-navbar-menu-language-item {
+    position: relative;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    padding: 0 14px 0 16px;
+    justify-content: space-between;
+    .pbg-navbar-menu-language-item-wrapper {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      z-index: 2;
+      .pbg-icon-globe-small-gray {
+        margin-right: 4px;
+      }
+    }
+    .pbg-navbar-menu-language-item-select {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 1;
+      background: $white;
+      border: 1px solid $gray-50;
+      padding: 9px 8px;
+      outline: none;
+      vertical-align: middle;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      text-align: right;
+      text-align-last: right;
+      select::-ms-expand {
+        display: none;
+      }
+      &:focus {
+        background: $blue-10;
+      }
+      &:active {
+        background: $gray-10;
+      }
+    }
+  }
+}
