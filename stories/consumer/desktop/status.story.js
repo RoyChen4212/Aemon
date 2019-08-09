@@ -8,6 +8,40 @@ import { withContainer, wrapStory } from '../../util/decorators';
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+// Excluding non gray icons
+const excludedIcons = [
+  iconTypes.CREDIT_CARD_ERROR,
+  iconTypes.BACK_ARROW,
+  iconTypes.DOTS,
+  iconTypes.EXTERNAL_LINK,
+  iconTypes.LARGE_ARROW,
+  iconTypes.ADD_USER,
+  iconTypes.ORG_IDENTIFIER,
+  iconTypes.HINT_ERROR,
+  iconTypes.LINK_QUESTION_MARK,
+  iconTypes.AMEX,
+  iconTypes.CARD_PLACEHOLDER,
+  iconTypes.DINERS_CLUB,
+  iconTypes.DISCOVER,
+  iconTypes.MASTERCARD,
+  iconTypes.VISA,
+  iconTypes.GMAIL,
+  iconTypes.YAHOO,
+  iconTypes.OUTLOOK,
+  iconTypes.EMAIL_ALERT,
+  iconTypes.INVITE,
+  iconTypes.USERS_COMPLETE,
+  iconTypes.USER_REMOVE,
+  iconTypes.USERS_MISSING,
+  iconTypes.USER_ADD_2X,
+  iconTypes.CREDIT_CARDS_SUCCESS,
+  iconTypes.CREDIT_CARDS_ERROR,
+  iconTypes.CREDIT_CARDS_PENDING,
+  iconTypes.LOCK_PENDING,
+  iconTypes.CART_SUCCESS,
+  iconTypes.CART_PENDING,
+];
+
 storiesOf('Consumer/Desktop/Info/status', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
@@ -24,9 +58,13 @@ storiesOf('Consumer/Desktop/Info/status', module)
     />
   ))
   .add('status/available-icons', () =>
-    values(iconTypes).map(iconType => (
-      <p key={iconType}>
-        <Status label={iconType} iconType={iconType} />
-      </p>
-    ))
+    values(iconTypes)
+      .filter(iconType => excludedIcons.indexOf(iconType) === -1)
+      .map(iconType => {
+        return (
+          <p key={iconType}>
+            <Status label={iconType} iconType={iconType} />
+          </p>
+        );
+      })
   );
