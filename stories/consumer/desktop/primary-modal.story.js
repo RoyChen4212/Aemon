@@ -122,6 +122,101 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
       />
     </div>
   ))
+  .add('primary-modal/long footer/long-content', () => (
+    <div className="p2">
+      <PrimaryModal
+        mainContent={
+          <div>
+            <h2>Main content</h2>
+            <p>This is the main content section, style it as you want.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+          </div>
+        }
+        sidebarContent={
+          <div>
+            <h2>Sidebar</h2>
+            <p>This is the sidebar content section, style it as you want.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+          </div>
+        }
+        footerContent={
+          <div className="container">
+            <div className="row">
+              <PrimaryButton onClick={action('clicked')}>Call to action</PrimaryButton>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi consequatur, facilis mollitia
+              nemo, odio odit officia officiis perferendis perspiciatis quas quasi qui, quibusdam sed sit soluta tempore
+              temporibus vitae?
+            </p>
+          </div>
+        }
+      />
+    </div>
+  ))
   .add('primary-modal/no-footer/long-content', () => (
     <div className="p2">
       <PrimaryModal
