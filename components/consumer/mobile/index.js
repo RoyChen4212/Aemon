@@ -4,6 +4,7 @@ import { UserCommentCard, GroupActivityCard } from './activity-card';
 import AddComment from './add-comment';
 import AddressField from './address-field';
 import Alert from './alert';
+import BackLink from './back-link';
 import Checkbox from './checkbox';
 import ContributorCard from './contributor-card';
 import DatePicker from './date-picker';
@@ -51,6 +52,7 @@ const mobile = {
   AddComment,
   AddressField,
   Alert,
+  BackLink,
   CardField,
   Checkbox,
   ContributorCard,
