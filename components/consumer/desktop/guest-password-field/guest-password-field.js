@@ -22,15 +22,19 @@ class GuestPasswordField extends ComposedFormField {
   };
 
   renderHintWithCheckbox() {
-    if (this.error) return null;
-    if (!this.hint) return null;
+    if (this.error || !this.hint) return null;
 
     return (
       <div>
-        <Checkbox label={this.hint} value={this.currentValue.guest} onChange={this.onCheckboxChange} />
+        <Checkbox
+          label={this.hint}
+          value={this.currentValue.guest}
+          disabled={this.adaptedProps.disabled}
+          onChange={this.onCheckboxChange}
+        />
       </div>
     );
-  };
+  }
 
   render() {
     return (
@@ -40,14 +44,14 @@ class GuestPasswordField extends ComposedFormField {
           type={this.baseType}
           value={this.currentValue.password}
           hint={null}
-          disabled={this.currentValue.guest}
+          disabled={this.currentValue.guest || this.adaptedProps.disabled}
           onChange={this.onInputChange}
           onBlur={() => this.onBlur(makeEvent(this.currentValue))}
         />
         {this.renderHintWithCheckbox()}
       </div>
     );
-  };
+  }
 }
 
 export default GuestPasswordField;
