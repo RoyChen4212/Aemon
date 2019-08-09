@@ -52,25 +52,25 @@ describe('MultiSelectField', () => {
     expect(wrapper.contains(<Hint type={hintTypes.ERROR}>{expected}</Hint>)).to.be.true;
   });
 
-  it('should return value with a list of all selected values', done => {
+  it('should return selected values', done => {
     const onChange = ev => {
-      expect(ev.target.value).to.eql(['opt1']);
+      expect(ev.target.value).to.eql([options[0].value]);
       done();
     };
     const wrapper = mount(<MultiSelectField onChange={onChange} options={options} />);
     const event = { target: { checked: true } };
-    wrapper.find({ type: 'checkbox', name: 'checkbox_0' }).simulate('change', event);
+    wrapper.find({ type: 'checkbox', id: 'checkbox_0' }).simulate('change', event);
   });
 
-  it('should return value with a list of all selected values', done => {
+  it('should return selected values based on given values', done => {
     const onChange = ev => {
       expect(ev.target.value).to.eql([options[1].value]);
       done();
     };
-    const value = [options[1].value, options[0].value];
+    const value = options.map(option => option.value);
     const wrapper = mount(<MultiSelectField onChange={onChange} options={options} value={value} />);
     const event = { target: { checked: false } };
-    wrapper.find({ type: 'checkbox', name: 'checkbox_0' }).simulate('change', event);
+    wrapper.find({ type: 'checkbox', id: 'checkbox_0' }).simulate('change', event);
   });
 
   it('should pass value to checkboxes', () => {
