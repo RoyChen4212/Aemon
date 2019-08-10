@@ -4,6 +4,7 @@ import { UserCommentCard, GroupActivityCard } from './activity-card';
 import AddComment from './add-comment';
 import AddressField from './address-field';
 import Alert from './alert';
+import BackLink from './back-link';
 import Checkbox from './checkbox';
 import ContributorCard from './contributor-card';
 import DatePicker from './date-picker';
@@ -15,6 +16,7 @@ import ExternalLink from './external-link';
 import Hint, { hintTypes } from './hint';
 import HistoricalPicker from './historical-picker';
 import Label, { labelTypes } from './label';
+import LoginSeparator from './login-separator';
 import Modal from './modal';
 import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
@@ -51,6 +53,7 @@ const mobile = {
   AddComment,
   AddressField,
   Alert,
+  BackLink,
   CardField,
   Checkbox,
   ContributorCard,
@@ -71,6 +74,7 @@ const mobile = {
   hintTypes,
   HistoricalPicker,
   Label,
+  LoginSeparator,
   labelTypes,
   LinkButton,
   Modal,
