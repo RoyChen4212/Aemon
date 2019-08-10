@@ -1,0 +1,18 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-login-separator {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    .pbg-mobile-label-normal {
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+    .pbg-login-separator-line {
+      flex-grow: 1;
+      border: 1px solid $gray-30;
+      height: 0;
+    }
+  }
+}
