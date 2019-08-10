@@ -15,6 +15,7 @@ import ExternalLink from './external-link';
 import Hint, { hintTypes } from './hint';
 import HistoricalPicker from './historical-picker';
 import Label, { labelTypes } from './label';
+import LoginSeparator from './login-separator';
 import Modal from './modal';
 import MoneyField from './money-field';
 import MultiSelectField from './multi-select-field';
@@ -71,6 +72,7 @@ const mobile = {
   hintTypes,
   HistoricalPicker,
   Label,
+  LoginSeparator,
   labelTypes,
   LinkButton,
   Modal,
