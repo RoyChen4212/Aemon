@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import './style.scss';
+import BackLink from '../back-link';
 
 class Overlay extends React.PureComponent {
   static propTypes = {
@@ -27,18 +28,14 @@ class Overlay extends React.PureComponent {
       <div className={classnames('pbg-consumer-mobile pbg-desktop-shadow-level-two pbg-overlay', { open: opened })}>
         <div className="pbg-overlay-inner">
           <div className="pbg-overlay-inner--header">
-            <div className="pbg-mobile-label-link" onClick={onBackButtonClick}>
-              <span className="pbg-overlay-back-button">{backText}</span>
-            </div>
+            <BackLink label={backText} onClick={onBackButtonClick} />
           </div>
           <div className="pbg-mobile-heading-1">{title}</div>
 
           <div className="pbg-overlay-content">{children}</div>
 
           <div className="pbg-overlay-inner--footer">
-            <div className="pbg-mobile-label-link" onClick={onBackButtonClick}>
-              <span className="pbg-overlay-back-button">{backText}</span>
-            </div>
+            <BackLink label={backText} onClick={onBackButtonClick} />
           </div>
         </div>
       </div>
