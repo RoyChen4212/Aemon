@@ -3,7 +3,6 @@
 .pbg-consumer-mobile {
   &.pbg-status {
     display: flex;
-    justify-content: space-between;
 
     .pbg-status-wrapper {
       display: flex;
@@ -27,8 +26,8 @@
       }
     }
 
-    .pbg-icon-question-mark-small-blue {
-      margin-top: 5px;
+    .pbg-icon-link-question-mark-blue {
+      margin-left: 4px;
     }
   }
 }
