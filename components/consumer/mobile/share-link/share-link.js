@@ -8,7 +8,9 @@ const baseClassName = 'pbg-consumer-mobile pbg-share-link';
 const ShareLink = ({ href }) => (
   <div className={baseClassName}>
     <span className="pbg-icon-link-small-gray" />
-    <a href={href}>{href}</a>
+    <a href={href} className="pbg-mobile-label-link">
+      {href}
+    </a>
   </div>
 );
 
