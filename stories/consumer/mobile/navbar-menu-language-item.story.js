@@ -18,12 +18,4 @@ storiesOf('Consumer/Mobile/Info/Navbar', module)
       onChange={action('onChange')}
       label="Language"
     />
-  ))
-  .add('navbar-menu-language-item/full-flow', () => (
-    <FieldStateProvider
-      component={NavbarMenuLanguageItem}
-      languages={[{ label: 'English', value: 'en' }, { label: 'Español', value: 'es' }]}
-      label="Language"
-      name="flow"
-    />
   ));

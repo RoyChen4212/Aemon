@@ -11,7 +11,7 @@ const NavbarMenuLanguageItem = ({ label, languages, value, onChange }) => (
       <div className="pbg-icon-globe-small-gray" />
       <div className="pbg-mobile-label-normal">{label}</div>
     </div>
-    <select className="pbg-navbar-menu-language-item-select pbg-mobile-label-link" onChange={onChange} value={value}>
+    <select className="pbg-navbar-menu-language-item-select pbg-mobile-label-link" onChange={onChange} value={value} onTouchStart="">
       {languages.map(lang => (
         <option value={lang.value} key={lang.value}>
           {lang.label}
