@@ -6,7 +6,7 @@
     height: 52px;
     display: flex;
     align-items: center;
-    padding: 0 14px 0 16px;
+    padding: 0 15px 0 16px;
     justify-content: space-between;
     .pbg-navbar-menu-language-item-wrapper {
       display: flex;
@@ -26,14 +26,14 @@
       width: 100%;
       z-index: 1;
       background: $white;
-      border: 1px solid $gray-50;
-      padding: 9px 8px;
+      border: none;
+      border-radius: 0;
+      padding: 9px 15px;
       outline: none;
       vertical-align: middle;
       -moz-appearance: none;
       -webkit-appearance: none;
-      text-align: right;
-      text-align-last: right;
+      direction: rtl;
       select::-ms-expand {
         display: none;
       }
