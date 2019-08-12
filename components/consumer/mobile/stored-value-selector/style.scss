@@ -1,0 +1,15 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-mobile {
+  &.pbg-form-field {
+    &.pbg-stored-value-selector {
+      .pbg-mobile-label-normal {
+        margin-bottom: 4px;
+      }
+
+      .pbg-stored-value-selector-add {
+        margin-top: 16px;
+      }
+    }
+  }
+}
