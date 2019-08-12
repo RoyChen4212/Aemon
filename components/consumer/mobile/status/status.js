@@ -15,11 +15,13 @@ const Status = ({ label, value, iconType, tooltip }) => {
           <div className={iconClassName} />
         </div>
         <div className="pbg-status-texts-wrapper">
-          <div className="pbg-mobile-small-normal">{label}</div>
+          <div className="pbg-mobile-small-normal">
+            {label}
+            {tooltip && <div className="pbg-icon-link-question-mark-blue" />}
+          </div>
           <div className="pbg-mobile-label-normal">{value}</div>
         </div>
       </div>
-      {tooltip && <div className="pbg-icon-question-mark-small-blue" />}
     </div>
   );
 };

@@ -19,13 +19,13 @@ describe('status', () => {
     const wrapper = shallow(<Status label={label} value={value} iconType={iconTypes.PRICE_TAG} tooltip={tooltip} />);
     expect(wrapper.find('.pbg-mobile-small-normal').text()).to.equal(label);
     expect(wrapper.find('.pbg-mobile-label-normal').text()).to.equal(value);
-    expect(wrapper.find('.pbg-icon-question-mark-small-blue').length).to.equal(1);
+    expect(wrapper.find('.pbg-icon-link-question-mark-blue').length).to.equal(1);
   });
 
   it('should not have tooltip when its not provided', () => {
     const wrapper = shallow(<Status label={label} value={value} iconType={iconTypes.PRICE_TAG} />);
     expect(wrapper.find('.pbg-mobile-small-normal').text()).to.equal(label);
     expect(wrapper.find('.pbg-mobile-label-normal').text()).to.equal(value);
-    expect(wrapper.find('.pbg-icon-question-mark-small-blue').length).to.equal(0);
+    expect(wrapper.find('.pbg-icon-link-question-mark-blue').length).to.equal(0);
   });
 });
