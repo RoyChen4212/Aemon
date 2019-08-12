@@ -19,7 +19,7 @@ class StoredValueSelector extends FormField {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]), // eslint-disable-line react/no-unused-prop-types
     children: PropTypes.node,
     options: PropTypes.arrayOf(PropTypes.object),
-    defaultOption: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    addNewValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     addNewText: PropTypes.string.isRequired,
   };
 
@@ -32,8 +32,8 @@ class StoredValueSelector extends FormField {
   };
 
   get value() {
-    const { defaultOption } = this.props;
-    return get(this, 'adaptedProps.value') || defaultOption;
+    const { addNewValue } = this.props;
+    return get(this, 'adaptedProps.value') || addNewValue;
   }
 
   updateValue = value => {
@@ -56,14 +56,14 @@ class StoredValueSelector extends FormField {
   }
 
   renderAddNewButton() {
-    const { defaultOption, addNewText, options } = this.props;
-    if (options.length === 0 || this.value === defaultOption) return null;
-    return <SmallButton onClick={() => this.updateValue(defaultOption)}>{addNewText}</SmallButton>;
+    const { addNewValue, addNewText, options } = this.props;
+    if (options.length === 0 || this.value === addNewValue) return null;
+    return <SmallButton onClick={() => this.updateValue(addNewValue)}>{addNewText}</SmallButton>;
   }
 
   renderChildren() {
-    const { defaultOption, children } = this.props;
-    if (this.value !== defaultOption) return null;
+    const { addNewValue, children } = this.props;
+    if (this.value !== addNewValue) return null;
     return children;
   }
 

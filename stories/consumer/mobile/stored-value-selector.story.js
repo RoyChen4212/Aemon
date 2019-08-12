@@ -37,7 +37,7 @@ storiesOf('Consumer/Mobile/Form Fields/stored-value-selector', module)
       picker={Picker}
       value="first"
       options={options}
-      defaultOption="new"
+      addNewValue="new"
       addNewText="Add new item"
       onChange={action('onChange')}
     >
@@ -52,7 +52,7 @@ storiesOf('Consumer/Mobile/Form Fields/stored-value-selector', module)
       picker={Picker}
       value="new"
       options={options}
-      defaultOption="new"
+      addNewValue="new"
       addNewText="Add new item"
       onChange={action('onChange')}
     >

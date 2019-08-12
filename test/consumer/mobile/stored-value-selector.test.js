@@ -16,65 +16,65 @@ describe('Stored Value Selector', () => {
     { label: 'Add new item', value: 'new' },
   ];
 
-  shouldBehaveLikeFormField(shallow(<StoredValueSelector defaultOption="new" addNewText="add" />));
+  shouldBehaveLikeFormField(shallow(<StoredValueSelector addNewValue="new" addNewText="add" />));
 
   it('should have correct class', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" />);
     expect(wrapper.hasClass('pbg-stored-value-selector')).to.be.true;
   });
 
   it('should not render label when no label prop', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" />);
     expect(wrapper.find('.pbg-mobile-label-normal')).to.have.lengthOf(0);
   });
 
   it('should render label', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" label="label" />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" label="label" />);
     expect(wrapper.find('.pbg-mobile-label-normal').text()).to.eql('label');
   });
 
   it('should not show picker when no options are passed', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" />);
     expect(wrapper.find(Picker)).to.have.lengthOf(0);
   });
 
   it('should render a picker when options are pased', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" options={options} />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" options={options} />);
     expect(wrapper.find(Picker)).to.have.lengthOf(1);
   });
 
   it('should pass options to Picker', () => {
-    const wrapper = mount(<StoredValueSelector defaultOption="new" addNewText="add" options={options} />);
+    const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" options={options} />);
     expect(wrapper.find(Picker).prop('options')).to.eql(options);
   });
 
   it('should pass selected value to Picker', () => {
-    const wrapper = mount(<StoredValueSelector defaultOption="new" addNewText="add" value="first" options={options} />);
+    const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" value="first" options={options} />);
     expect(wrapper.find(Picker).prop('value')).to.equal('first');
   });
 
   it('should show add new button when other value than new is selected', () => {
-    const wrapper = mount(<StoredValueSelector defaultOption="new" addNewText="add" options={options} value="first" />);
+    const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" options={options} value="first" />);
     expect(wrapper.find(SmallButton)).to.have.lengthOf(1);
   });
 
   it('should not show add new button when no options are passed', () => {
-    const wrapper = mount(<StoredValueSelector defaultOption="new" addNewText="add" />);
+    const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" />);
     expect(wrapper.find(SmallButton)).to.have.lengthOf(0);
   });
 
   it('should not show add new button when new value is selected', () => {
-    const wrapper = mount(<StoredValueSelector defaultOption="new" addNewText="add" value="new" />);
+    const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" value="new" />);
     expect(wrapper.find(SmallButton)).to.have.lengthOf(0);
   });
 
   it('should pass addNewButtonLabel to small button', () => {
-    const wrapper = mount(<StoredValueSelector defaultOption="new" addNewText="add" options={options} value="first" />);
+    const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" options={options} value="first" />);
     expect(wrapper.find(SmallButton).text()).to.equal('add');
   });
 
   it('should select default option when no value is given', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" options={options} />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" options={options} />);
     expect(wrapper.instance().value).to.eql('new');
   });
 
@@ -85,7 +85,7 @@ describe('Stored Value Selector', () => {
       done();
     };
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add" onChange={onChange} options={options} />
+      <StoredValueSelector addNewValue="new" addNewText="add" onChange={onChange} options={options} />
     );
     wrapper
       .find(Picker)
@@ -99,14 +99,14 @@ describe('Stored Value Selector', () => {
       done();
     };
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add" value="first" onChange={onChange} options={options} />
+      <StoredValueSelector addNewValue="new" addNewText="add" value="first" onChange={onChange} options={options} />
     );
     wrapper.find('button').simulate('click');
   });
 
   it('should show TextField when new value is selected', () => {
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add" options={options}>
+      <StoredValueSelector addNewValue="new" addNewText="add" options={options}>
         <TextField />
       </StoredValueSelector>
     );
@@ -115,7 +115,7 @@ describe('Stored Value Selector', () => {
 
   it('should show TextField when no options are passed', () => {
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add">
+      <StoredValueSelector addNewValue="new" addNewText="add">
         <TextField />
       </StoredValueSelector>
     );
