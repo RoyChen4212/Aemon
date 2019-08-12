@@ -15,65 +15,65 @@ describe('Stored Value Selector', () => {
     { label: { term: 'Add new item' }, value: 'new' },
   ];
 
-  shouldBehaveLikeFormField(shallow(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" />));
+  shouldBehaveLikeFormField(shallow(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" />));
 
   it('should have correct class', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" />);
     expect(wrapper.hasClass('pbg-stored-value-selector')).to.be.true;
   });
 
   it('should not render label when no label prop', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" />);
     expect(wrapper.find('.pbg-desktop-label-normal')).to.have.lengthOf(0);
   });
 
   it('should render label', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" label="label" />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" label="label" />);
     expect(wrapper.find('.pbg-desktop-label-normal').text()).to.eql('label');
   });
 
   it('should not show picker when no options are passed', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" />);
     expect(wrapper.find(Picker)).to.have.lengthOf(0);
   });
 
   it('should render a picker when options are pased', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" options={options} />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" options={options} />);
     expect(wrapper.find(Picker)).to.have.lengthOf(1);
   });
 
   it('should pass options to Picker', () => {
-    const wrapper = mount(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" options={options} />);
+    const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" options={options} />);
     expect(wrapper.find(Picker).prop('options')).to.eql(options);
   });
 
   it('should pass selected value to Picker', () => {
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add" orText="or" value="first" options={options} />
+      <StoredValueSelector addNewValue="new" addNewText="add" orText="or" value="first" options={options} />
     );
     expect(wrapper.find(Picker).prop('value')).to.equal('first');
   });
 
   it('should show add new button when other value than new is selected', () => {
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add" orText="or" options={options} value="first" />
+      <StoredValueSelector addNewValue="new" addNewText="add" orText="or" options={options} value="first" />
     );
     expect(wrapper.find('.pbg-stored-value-selector-add-container')).to.have.lengthOf(1);
   });
 
   it('should not show add new button when no options are passed', () => {
-    const wrapper = mount(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" />);
+    const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" />);
     expect(wrapper.find('.pbg-stored-value-selector-add-container')).to.have.lengthOf(0);
   });
 
   it('should not show add new button when new value is selected', () => {
-    const wrapper = mount(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" value="new" />);
+    const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" value="new" />);
     expect(wrapper.find('.pbg-stored-value-selector-add-container')).to.have.lengthOf(0);
   });
 
   it('should pass orText to orLabel', () => {
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add" orText="or" options={options} value="first" />
+      <StoredValueSelector addNewValue="new" addNewText="add" orText="or" options={options} value="first" />
     );
     expect(
       wrapper
@@ -85,7 +85,7 @@ describe('Stored Value Selector', () => {
 
   it('should pass addNewText to add button', () => {
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add" orText="or" options={options} value="first" />
+      <StoredValueSelector addNewValue="new" addNewText="add" orText="or" options={options} value="first" />
     );
     expect(
       wrapper
@@ -96,7 +96,7 @@ describe('Stored Value Selector', () => {
   });
 
   it('should select default option when no value is given', () => {
-    const wrapper = shallow(<StoredValueSelector defaultOption="new" addNewText="add" orText="or" options={options} />);
+    const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" options={options} />);
     expect(wrapper.instance().value).to.eql('new');
   });
 
@@ -106,7 +106,7 @@ describe('Stored Value Selector', () => {
       done();
     };
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add" onChange={onChange} orText="or" options={options} />
+      <StoredValueSelector addNewValue="new" addNewText="add" onChange={onChange} orText="or" options={options} />
     );
     wrapper
       .find('.pbg-picker-menu')
@@ -122,7 +122,7 @@ describe('Stored Value Selector', () => {
     };
     const wrapper = mount(
       <StoredValueSelector
-        defaultOption="new"
+        addNewValue="new"
         addNewText="add"
         value="first"
         orText="or"
@@ -138,7 +138,7 @@ describe('Stored Value Selector', () => {
 
   it('should show TextField when new value is selected', () => {
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" addNewText="add" orText="or" options={options}>
+      <StoredValueSelector addNewValue="new" addNewText="add" orText="or" options={options}>
         <TextField />
       </StoredValueSelector>
     );
@@ -147,7 +147,7 @@ describe('Stored Value Selector', () => {
 
   it('should show TextField when no options are passed', () => {
     const wrapper = mount(
-      <StoredValueSelector defaultOption="new" orText="or" addNewText="add">
+      <StoredValueSelector addNewValue="new" orText="or" addNewText="add">
         <TextField />
       </StoredValueSelector>
     );

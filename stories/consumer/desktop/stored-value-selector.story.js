@@ -37,7 +37,7 @@ storiesOf('Consumer/Desktop/Form Fields/Composed', module)
       picker={Picker}
       value="first"
       options={options}
-      defaultOption="new"
+      addNewValue="new"
       orText="Or"
       addNewText="Add New"
       onChange={action('onChange')}
@@ -53,7 +53,7 @@ storiesOf('Consumer/Desktop/Form Fields/Composed', module)
       picker={Picker}
       value="new"
       options={options}
-      defaultOption="new"
+      addNewValue="new"
       orText="Or"
       addNewText="Add New"
       onChange={action('onChange')}
