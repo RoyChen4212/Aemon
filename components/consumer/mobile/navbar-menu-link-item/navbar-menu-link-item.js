@@ -6,7 +6,7 @@ import './style.scss';
 const baseClassName = 'pbg-consumer-mobile pbg-navbar-menu-link-item';
 
 const NavbarMenuLinkItem = ({ label, href }) => (
-  <div className={baseClassName}>
+  <div className={baseClassName} onTouchStart="">
     <a href={href} className="pbg-mobile-label-link">
       <span>{label}</span>
       <div className="pbg-icon-arrow-right-small-blue" />

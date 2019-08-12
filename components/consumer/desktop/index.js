@@ -46,6 +46,7 @@ import ShareRow from './share-row';
 import SimpleNumberStepper from './simple-number-stepper';
 import { SplitCustom, SplitEven, SplitFixed } from './split';
 import Status from './status';
+import StoredValueSelector from './stored-value-selector';
 import Subheader from './subheader';
 import TextArea from './text-area';
 import TextField from './text-field';
@@ -88,6 +89,7 @@ const desktop = {
   SplitEven,
   SplitFixed,
   Status,
+  StoredValueSelector,
   Subheader,
   TextArea,
   TextField,

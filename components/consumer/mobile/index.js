@@ -32,6 +32,7 @@ import SegmentedControl from './segmented-control';
 import SectionCard from './section-card';
 import SetupHeader from './setup-header';
 import StepProgressBar from './step-progress-bar';
+import StoredValueSelector from './stored-value-selector';
 import TextArea from './text-area';
 import TextField from './text-field';
 import TimePicker from './time-picker';
@@ -100,6 +101,7 @@ const mobile = {
   SmallButton,
   SmallFacebookButton,
   StepProgressBar,
+  StoredValueSelector,
   NumberStepper,
   TextArea,
   TextField,
