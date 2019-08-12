@@ -46,6 +46,7 @@ import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
 import ShareLink from './share-link';
+import ShareRow from './share-row';
 import Overlay from './overlay';
 import NavbarMenuLanguageItem from './navbar-menu-language-item';
 
@@ -93,6 +94,7 @@ const mobile = {
   PurchaseImage,
   SecondaryButton,
   ShareLink,
+  ShareRow,
   SectionCard,
   SectionSeparator,
   SegmentedControl,
