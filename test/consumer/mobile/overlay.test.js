@@ -2,6 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import Overlay from '../../../components/consumer/mobile/overlay';
+import BackLink from '../../../components/consumer/mobile/back-link';
 
 class OverlayWrapper extends React.Component {
   state = {
@@ -75,27 +76,55 @@ describe('Overlay', () => {
   it('Should render the back button in header with default text', () => {
     const onBackButtonClick = () => null;
     const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={onBackButtonClick} />);
-    expect(wrapper.find('.pbg-overlay-inner--header').text()).to.equal(defaultBackButtonText);
+    expect(
+      wrapper
+        .find('.pbg-overlay-inner--header')
+        .find(BackLink)
+        .dive()
+        .find('.pbg-mobile-label-link')
+        .text()
+    ).to.equal(defaultBackButtonText);
   });
 
   it('Should render Back button in footer with default text', () => {
     const onBackButtonClick = () => null;
     const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={onBackButtonClick} />);
-    expect(wrapper.find('.pbg-overlay-inner--footer').text()).to.equal(defaultBackButtonText);
+    expect(
+      wrapper
+        .find('.pbg-overlay-inner--footer')
+        .find(BackLink)
+        .dive()
+        .find('.pbg-mobile-label-link')
+        .text()
+    ).to.equal(defaultBackButtonText);
   });
 
   it('Should render header Back button with presented text', () => {
     const onBackButtonClick = () => null;
     const backText = 'Previous Screen';
     const wrapper = shallow(<Overlay opened backText={backText} onBackButtonClick={onBackButtonClick} />);
-    expect(wrapper.find('.pbg-overlay-inner--header').text()).to.equal(backText);
+    expect(
+      wrapper
+        .find('.pbg-overlay-inner--header')
+        .find(BackLink)
+        .dive()
+        .find('.pbg-mobile-label-link')
+        .text()
+    ).to.equal(backText);
   });
 
   it('Should render footer Back button with presented text', () => {
     const onBackButtonClick = () => null;
     const backText = 'Previous Screen';
     const wrapper = shallow(<Overlay opened backText={backText} onBackButtonClick={onBackButtonClick} />);
-    expect(wrapper.find('.pbg-overlay-inner--footer').text()).to.equal(backText);
+    expect(
+      wrapper
+        .find('.pbg-overlay-inner--footer')
+        .find(BackLink)
+        .dive()
+        .find('.pbg-mobile-label-link')
+        .text()
+    ).to.equal(backText);
   });
 
   it('"onBackButtonClick" event should be triggered when header back button clicked', done => {
@@ -105,6 +134,8 @@ describe('Overlay', () => {
     const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={onBackButtonClick} />);
     wrapper
       .find('.pbg-overlay-inner--header')
+      .find(BackLink)
+      .dive()
       .find('.pbg-mobile-label-link')
       .simulate('click');
   });
@@ -116,6 +147,8 @@ describe('Overlay', () => {
     const wrapper = shallow(<Overlay title="Title" opened onBackButtonClick={onBackButtonClick} />);
     wrapper
       .find('.pbg-overlay-inner--footer')
+      .find(BackLink)
+      .dive()
       .find('.pbg-mobile-label-link')
       .simulate('click');
   });

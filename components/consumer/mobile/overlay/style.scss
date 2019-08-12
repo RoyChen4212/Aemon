@@ -24,12 +24,6 @@
       user-select: none;
 
       .pbg-mobile-label-link {
-        .pbg-overlay-back-button {
-          &:before {
-            content: url('../img/pbg-back-arrow.svg');
-            margin-right: 7px;
-          }
-        }
         text-transform: capitalize;
       }
 
@@ -43,7 +37,8 @@
       &--footer {
         border-top: 1px solid $gray-30;
         padding: 16px 0;
-        text-align: center;
+        display: flex;
+        justify-content: center;
         position: absolute;
         width: calc(100% - 30px);
         left: 15px;
