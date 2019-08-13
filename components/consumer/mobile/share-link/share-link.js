@@ -5,17 +5,15 @@ import './style.scss';
 
 const baseClassName = 'pbg-consumer-mobile pbg-share-link';
 
-const ShareLink = ({ href }) => (
+const ShareLink = ({ label }) => (
   <div className={baseClassName}>
     <span className="pbg-icon-link-small-gray" />
-    <a href={href} className="pbg-mobile-label-link">
-      {href}
-    </a>
+    <span className="pbg-mobile-label-link">{label}</span>
   </div>
 );
 
 ShareLink.propTypes = {
-  href: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default ShareLink;
