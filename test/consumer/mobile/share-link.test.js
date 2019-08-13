@@ -14,6 +14,6 @@ describe('share-link', () => {
   it('should have correct link', () => {
     const label = 'label';
     const wrapper = shallow(<ShareLink label={label} />);
-    expect(wrapper.find('.pbg-mobile-label-link').text()).to.equal(label);
+    expect(wrapper.find('.pbg-mobile-label-normal').text()).to.equal(label);
   });
 });

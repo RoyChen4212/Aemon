@@ -13,12 +13,10 @@
       margin-right: 8px;
       flex-shrink: 0;
     }
-    a {
+    .pbg-mobile-label-normal {
+      color: $gray-80;
       overflow: hidden;
       text-overflow: ellipsis;
-      &.pbg-mobile-label-link {
-        color: $gray-80;
-      }
     }
   }
 }
