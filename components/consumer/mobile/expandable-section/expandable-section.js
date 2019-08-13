@@ -31,7 +31,7 @@ class ExpandableSection extends PureComponent {
             {expanded ? hideText : showText}
           </SmallButton>
         </div>
-        <div className="pbg-mobile-label-secondary">{hint}</div>
+        {!expanded && <div className="pbg-mobile-label-secondary">{hint}</div>}
         {expanded && <div className="pbg-expandable-section-children">{children}</div>}
       </div>
     );

@@ -1,0 +1,31 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-form-field {
+    &.pbg-stored-value-selector {
+      .pbg-stored-value-selector-container {
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+        margin-bottom: 16px;
+
+        .pbg-picker {
+          width: unset;
+        }
+      }
+
+      .pbg-stored-value-selector-add-container {
+        display: flex;
+        align-items: center;
+
+        p {
+          margin: 0 0 0 16px;
+        }
+
+        span {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+}

@@ -32,6 +32,7 @@ import SegmentedControl from './segmented-control';
 import SectionCard from './section-card';
 import SetupHeader from './setup-header';
 import StepProgressBar from './step-progress-bar';
+import StoredValueSelector from './stored-value-selector';
 import TextArea from './text-area';
 import TextField from './text-field';
 import TimePicker from './time-picker';
@@ -46,6 +47,7 @@ import PieChart from './pie-chart';
 import NumberStepper from './number-stepper';
 import CardField from './card-field';
 import ShareLink from './share-link';
+import ShareRow from './share-row';
 import Overlay from './overlay';
 import NavbarMenuLanguageItem from './navbar-menu-language-item';
 
@@ -93,6 +95,7 @@ const mobile = {
   PurchaseImage,
   SecondaryButton,
   ShareLink,
+  ShareRow,
   SectionCard,
   SectionSeparator,
   SegmentedControl,
@@ -100,6 +103,7 @@ const mobile = {
   SmallButton,
   SmallFacebookButton,
   StepProgressBar,
+  StoredValueSelector,
   NumberStepper,
   TextArea,
   TextField,
