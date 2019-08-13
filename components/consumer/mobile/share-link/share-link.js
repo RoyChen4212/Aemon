@@ -21,7 +21,6 @@ class ShareLink extends PureComponent {
       range.moveToElementText(e.target);
       range.select();
     }
-    e.target.select();
   };
 
   render() {
