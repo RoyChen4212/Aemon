@@ -10,6 +10,8 @@
         margin-bottom: 16px;
 
         .pbg-picker {
+          width: unset;
+          flex: 1;
           .pbg-container {
             width: 100%;
           }
