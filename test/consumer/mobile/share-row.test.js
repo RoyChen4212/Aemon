@@ -9,6 +9,7 @@ import Overlay from '../../../components/consumer/mobile/overlay';
 import { SmallButton } from '../../../components/consumer/mobile/button';
 import Divider from '../../../components/consumer/mobile/divider';
 import colorCodes from '../../../components/consumer/shared/scss/_styleguide.scss';
+import BackLink from '../../../components/consumer/mobile/back-link';
 
 describe('ShareRow', () => {
   it('should have correct class names', () => {
@@ -102,8 +103,10 @@ describe('ShareRow', () => {
     wrapper.find(SmallButton).simulate('click');
     expect(wrapper.state().overlayOpened).to.be.true;
     overlay
+      .find('.pbg-overlay-inner--header')
+      .find(BackLink)
+      .dive()
       .find('.pbg-mobile-label-link')
-      .first()
       .simulate('click');
     expect(wrapper.state().overlayOpened).to.be.false;
   });
