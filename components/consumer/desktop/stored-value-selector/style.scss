@@ -10,7 +10,17 @@
         margin-bottom: 16px;
 
         .pbg-picker {
-          width: unset;
+          .pbg-container {
+            width: 100%;
+          }
+
+          .pbg-picker-button {
+            width: 100%;
+          }
+
+          .picker-menu-item {
+            width: 100%;
+          }
         }
       }
 
@@ -24,6 +34,7 @@
 
         span {
           margin-left: 16px;
+          white-space: nowrap;
         }
       }
     }
