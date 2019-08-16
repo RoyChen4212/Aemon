@@ -10,6 +10,7 @@
     align-items: center;
     padding-left: 15px;
     padding-right: 17px;
+    position: relative;
 
     .pbg-navbar-brand-icon {
       width: 39px;
@@ -41,6 +42,13 @@
 
     .pbg-navbar-brand-menu {
       cursor: pointer;
+    }
+
+    .pbg-navbar-brand-menu-items {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
     }
   }
 }
