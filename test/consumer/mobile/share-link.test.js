@@ -18,7 +18,10 @@ describe('share-link', () => {
     expect(wrapper.find('.pbg-mobile-label-normal').text()).to.equal(label);
   });
 
-  it('should autoselect link on click on browsers with window.getSelection and document.createRange support', () => {
+  describe('autoselect with window.getSelection and document.createRange support', () => {
+    let window;
+    let document;
+
     const simpleMocks = {
       selectNodeContents: sinon.spy(),
       removeAllRanges: sinon.spy(),
@@ -43,25 +46,40 @@ describe('share-link', () => {
       createRange: sinon.spy(createRangeMock, 'method'),
     };
 
-    global.window = {
-      getSelection: mocks.getSelection,
-    };
+    beforeEach(() => {
+      window = global.window;
+      document = global.document;
 
-    global.document = {
-      createRange: mocks.createRange,
-    };
-    const label = 'label';
-    const wrapper = shallow(<ShareLink label={label} />);
-    wrapper.find('.pbg-mobile-label-normal').simulate('click', { target: '' });
+      global.window = {
+        getSelection: mocks.getSelection,
+      };
 
-    expect(mocks.createRange.calledOnce).to.be.true;
-    expect(mocks.getSelection.calledOnce).to.be.true;
-    expect(simpleMocks.selectNodeContents.calledOnce).to.be.true;
-    expect(simpleMocks.removeAllRanges.calledOnce).to.be.true;
-    expect(simpleMocks.addRange.calledOnce).to.be.true;
+      global.document = {
+        createRange: mocks.createRange,
+      };
+    });
+
+    afterEach(() => {
+      global.window = window;
+      global.document = document;
+    });
+
+    it('should autoselect link on click on browsers with window.getSelection and document.createRange support', () => {
+      const label = 'label';
+      const wrapper = shallow(<ShareLink label={label} />);
+      wrapper.find('.pbg-mobile-label-normal').simulate('click', { target: '' });
+
+      expect(mocks.createRange.calledOnce).to.be.true;
+      expect(mocks.getSelection.calledOnce).to.be.true;
+      expect(simpleMocks.selectNodeContents.calledOnce).to.be.true;
+      expect(simpleMocks.removeAllRanges.calledOnce).to.be.true;
+      expect(simpleMocks.addRange.calledOnce).to.be.true;
+    });
   });
 
-  it('should autoselect link on click on browsers with document.selection && document.body.createTextRange support', () => {
+  describe('autoselect with window.getSelection and document.createRange support', () => {
+    let document;
+
     const simpleMocks = {
       moveToElementText: sinon.spy(),
       select: sinon.spy(),
@@ -78,19 +96,29 @@ describe('share-link', () => {
       createTextRange: sinon.spy(createTextRangeMock, 'method'),
     };
 
-    global.document = {
-      selection: 'something',
-      body: {
-        createTextRange: mocks.createTextRange,
-      },
-    };
+    beforeEach(() => {
+      document = global.document;
 
-    const label = 'label';
-    const wrapper = shallow(<ShareLink label={label} />);
-    wrapper.find('.pbg-mobile-label-normal').simulate('click', { target: '' });
+      global.document = {
+        selection: 'something',
+        body: {
+          createTextRange: mocks.createTextRange,
+        },
+      };
+    });
 
-    expect(mocks.createTextRange.calledOnce).to.be.true;
-    expect(simpleMocks.moveToElementText.calledOnce).to.be.true;
-    expect(simpleMocks.select.calledOnce).to.be.true;
+    afterEach(() => {
+      global.document = document;
+    });
+
+    it('should autoselect link on click on browsers with document.selection && document.body.createTextRange support', () => {
+      const label = 'label';
+      const wrapper = shallow(<ShareLink label={label} />);
+      wrapper.find('.pbg-mobile-label-normal').simulate('click', { target: '' });
+
+      expect(mocks.createTextRange.calledOnce).to.be.true;
+      expect(simpleMocks.moveToElementText.calledOnce).to.be.true;
+      expect(simpleMocks.select.calledOnce).to.be.true;
+    });
   });
 });
