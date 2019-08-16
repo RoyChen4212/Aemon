@@ -16,6 +16,12 @@ export const withGreyContainer = story => (
   </div>
 );
 
+export const withConfigurableGreyContainer = (minHeight = 'initiial') => story => (
+  <div className="container-fluid h-100 grey" style={{ minHeight }}>
+    <div className="row">{story()}</div>
+  </div>
+);
+
 export const withGrey20Container = story => (
   <div className="container-fluid h-100 grey-20">
     <div className="row">{story()}</div>

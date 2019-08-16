@@ -13,5 +13,5 @@ storiesOf('Consumer/Mobile/Info/Status', module)
   .addDecorator(withContainer)
   .addDecorator(withGrey20Container)
   .addDecorator(withMobileSizing)
-  .add('default', () => <Status label="Label" value="Body" iconType={iconTypes.PRICE_TAG} />)
-  .add('tooltip', () => <Status label="Label" value="Body" iconType={iconTypes.PRICE_TAG} tooltip="Help message" />);
+  .add('status/default', () => <Status label="Label" value="Body" iconType={iconTypes.PRICE_TAG} />)
+  .add('status/tooltip', () => <Status label="Label" value="Body" iconType={iconTypes.PRICE_TAG} tooltip="Help message" />);
