@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import FormField from '../form-field';
 
 import './style.scss';
 
-class TextArea extends PureComponent {
+class TextArea extends FormField {
   static propTypes = {
     name: PropTypes.string.isRequired,
     rows: PropTypes.number,
@@ -46,7 +46,6 @@ class TextArea extends PureComponent {
 
     this.state = {
       textAreaHeight: 'initial',
-      focused: false,
     };
   }
 
@@ -81,9 +80,6 @@ class TextArea extends PureComponent {
 
   onFocus = e => {
     const { onFocus } = this.props;
-    this.setState({
-      focused: true,
-    });
 
     if (typeof onFocus === 'function') {
       onFocus(e);
@@ -93,38 +89,17 @@ class TextArea extends PureComponent {
   onBlur = e => {
     const { onBlur } = this.props;
 
-    this.setState({
-      focused: false,
-    });
-
     if (typeof onBlur === 'function') {
       onBlur(e);
     }
   };
 
   render() {
-    const {
-      rows,
-      onChange,
-      name,
-      value,
-      label,
-      placeholder,
-      disabled,
-      simple,
-      hint,
-      error,
-    } = this.props;
+    const { rows, onChange, name, value, label, placeholder, disabled } = this.props;
 
-    const { focused, textAreaHeight } = this.state;
+    const { textAreaHeight } = this.state;
     return (
-      <div
-        className={cx(this.baseClassName, {
-          'pbg-form-field-error': error,
-          'pbg-form-field-disabled': disabled,
-          'pbg-form-field-focused': focused,
-        })}
-      >
+      <div className={this.className}>
         <div className="pbg-text-area-wrapper">
           <textarea
             rows={rows}
@@ -142,17 +117,7 @@ class TextArea extends PureComponent {
             <div className="pbg-text-area-handle" onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} />
           )}
         </div>
-        {!simple && (
-          <div>
-            <span
-              className={cx('pbg-hint pbg-consumer-desktop', {
-                'pbg-hint-error ': error,
-              })}
-            >
-              {error || hint}
-            </span>
-          </div>
-        )}
+        {this.renderHintOrError()}
       </div>
     );
   }
