@@ -73,7 +73,12 @@ class Picker extends FormField {
         onBlur={ev => this.onButtonBlur(ev, this.onBlur)}
       >
         <span>{this.labelText}</span>
-        <i className="pbg-picker-arrow" />
+        <i
+          className={classnames('pbg-picker-arrow', {
+            'pbg-icon-arrow-down-small-blue': !this.disabled,
+            'pbg-icon-arrow-down-small-gray': this.disabled,
+          })}
+        />
       </button>
     );
   }

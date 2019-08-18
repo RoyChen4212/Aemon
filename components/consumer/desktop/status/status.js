@@ -32,6 +32,7 @@ class Status extends React.PureComponent {
     const trigger = ({ onMouseEnter, onMouseLeave }) => (
       <p className={labelClassName} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         {label}
+        <i className="pbg-icon-question-mark-small-gray" />
       </p>
     );
 

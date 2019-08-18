@@ -37,20 +37,9 @@
       }
     }
 
-    .decrement {
-      background: $gray-10 url('../img/pbg-minus-small.svg') center no-repeat;
-
-      &.disabled {
-        background: $gray-10 url('../img/pbg-minus-small-grey.svg') center no-repeat;
-      }
-    }
-
-    .increment {
-      background: $gray-10 url('../img/pbg-plus-small.svg') center no-repeat;
-
-      &.disabled {
-        background: $gray-10 url('../img/pbg-plus-small-grey.svg') center no-repeat;
-      }
+    .pbg-simple-number-stepper-icon {
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     [type='number']::-webkit-outer-spin-button,

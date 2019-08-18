@@ -36,7 +36,9 @@ class Modal extends React.PureComponent {
   renderModalCloseButton() {
     const { onClose } = this.props;
     if (!onClose) return null;
-    return <button type="button" className="pbg-modal-close-button" onClick={this.onCloseClick} />;
+    return (
+      <button type="button" className="pbg-modal-close-button pbg-icon-cross-small-gray" onClick={this.onCloseClick} />
+    );
   }
 
   renderOverlay() {
