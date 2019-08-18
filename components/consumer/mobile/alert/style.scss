@@ -50,14 +50,16 @@
       padding: 0;
     }
 
-    .pbg-alert-close-button {
+    .pbg-icon-cross-small-blue {
       position: absolute;
       top: 8px;
       right: 8px;
       width: 32px;
       height: 32px;
       padding: 11px;
-      background: transparent url('../img/pbg-alert-close-button.svg') no-repeat center;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
       border: none;
     }
   }
