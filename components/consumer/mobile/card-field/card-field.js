@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import Cards from './cards';
 import DivInput from '../div-input';
@@ -12,19 +13,21 @@ class CardField extends React.Component {
 
   static propTypes = {
     label: PropTypes.string,
+    className: PropTypes.string,
     allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
   };
 
   static defaultProps = {
     label: null,
+    className: null,
     allowedCardTypes: cardTypes,
   };
 
   render() {
-    const { label, allowedCardTypes } = this.props;
+    const { label, allowedCardTypes, className } = this.props;
 
     return (
-      <div className={this.baseClassName}>
+      <div className={cx(this.baseClassName, className)}>
         {label && (
           <div className="pbg-card-field-label-wrapper">
             <div className="pbg-mobile-label-normal pbg-label-with-cards">{label}</div>

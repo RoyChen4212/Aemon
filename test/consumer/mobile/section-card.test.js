@@ -12,6 +12,14 @@ describe('section-card', () => {
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-section-card')).to.be.true;
   });
+
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<SectionCard className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should show step number when not completed', () => {
     const wrapper = shallow(<SectionCard status={sectionCardStatus.ACTIVE} stepNumber={1} />);
     expect(wrapper.find('.pbg-section-card-step-number').length).to.equal(1);

@@ -42,6 +42,13 @@ describe('Overlay', () => {
     expect(wrapper.hasClass('pbg-overlay')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Overlay className={className} onBackButtonClick={() => null} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('Should have "open" class when Overlay opened', () => {
     const wrapper = shallow(<Overlay opened onBackButtonClick={() => null} />);
     expect(wrapper.hasClass('open')).to.be.true;

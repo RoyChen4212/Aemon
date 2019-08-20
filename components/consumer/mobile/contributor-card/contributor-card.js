@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import { H2 } from '../heading';
 import { LinkButton } from '../button';
@@ -18,17 +19,20 @@ class ContributorCard extends React.PureComponent {
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     content: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     cta: PropTypes.array,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     type: null,
     title: null,
     content: null,
+    className: null,
     cta: [],
   };
 
   get className() {
-    return `pbg-consumer-mobile pbg-contributor-card ${this.typeClassName}`;
+    const { className } = this.props;
+    return cx('pbg-consumer-mobile pbg-contributor-card', this.typeClassName, className);
   }
 
   get typeClassName() {

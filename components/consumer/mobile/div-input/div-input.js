@@ -6,8 +6,8 @@ import './style.scss';
 
 const baseClassName = 'pbg-consumer-mobile pbg-div-input';
 
-const DivInput = ({ label, error }) => (
-  <div className={baseClassName}>
+const DivInput = ({ label, error, className }) => (
+  <div className={cx(baseClassName, className)}>
     {label && (
       <label className={cx('pbg-mobile-label-normal', { 'pbg-mobile-label-error': error })}>
         <span>{label}</span>
@@ -21,11 +21,13 @@ const DivInput = ({ label, error }) => (
 DivInput.propTypes = {
   label: PropTypes.string,
   error: PropTypes.string,
+  className: PropTypes.string,
 };
 
 DivInput.defaultProps = {
   label: null,
   error: null,
+  className: null,
 };
 
 export default DivInput;

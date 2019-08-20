@@ -10,6 +10,13 @@ describe('div-input', () => {
     expect(wrapper.hasClass('pbg-div-input')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<DivInput className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render a label if given', () => {
     const labelText = 'Label';
     const wrapper = shallow(<DivInput label={labelText} />);

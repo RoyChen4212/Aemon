@@ -15,6 +15,13 @@ describe('back-link', () => {
     expect(wrapper.find('.pbg-mobile-label-link').text()).to.equal(label);
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<BackLink className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct anchor when href is given and no react onClick', () => {
     const label = 'label';
     const href = 'href';

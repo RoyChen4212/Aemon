@@ -1,5 +1,6 @@
 import React from 'react';
 import { get } from 'lodash';
+import cx from 'classnames';
 import Picker from '../picker';
 import Label, { labelTypes } from '../label';
 import Hint from '../hint';
@@ -26,7 +27,8 @@ class NewAddressField extends FormField {
   };
 
   get className() {
-    return this.baseClassName;
+    const { className } = this.props;
+    return cx(this.baseClassName, className);
   }
 
   get countryOptions() {

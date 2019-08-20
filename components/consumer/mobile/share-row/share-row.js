@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import cx from 'classnames';
 import Overlay from '../overlay';
 import { SmallButton } from '../button';
 import colorCodes from '../../shared/scss/_styleguide.scss';
@@ -16,12 +16,14 @@ class ShareRow extends React.Component {
     amount: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     detailsText: PropTypes.string,
+    className: PropTypes.string,
     detailsContent: PropTypes.node,
   };
 
   static defaultProps = {
     detailsText: null,
     detailsContent: null,
+    className: null,
   };
 
   state = { overlayOpened: false };
@@ -62,12 +64,12 @@ class ShareRow extends React.Component {
   };
 
   render() {
-    const { label, hint, color, amount } = this.props;
+    const { label, hint, color, amount, className } = this.props;
 
     const borderStyle = { borderColor: colorCodes[color] };
 
     return (
-      <div className={this.baseClassName} style={borderStyle}>
+      <div className={cx(this.baseClassName, className)} style={borderStyle}>
         <div className="pbg-share-row-label-container">
           <div className="pbg-mobile-label-normal">{label}</div>
           <div className="pbg-mobile-label-secondary">{amount}</div>

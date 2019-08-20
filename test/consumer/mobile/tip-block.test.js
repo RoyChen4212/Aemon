@@ -18,6 +18,13 @@ describe('TipBlock', () => {
     expect(wrapper.find('i').hasClass(`pbg-icon-${iconTypes.QUESTION_MARK}-small-gray`)).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<TipBlock className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render the icon exactly', () => {
     const icon = iconTypes.ADD_USER;
     const wrapper = shallow(<TipBlock title="title" description="description" icon={icon} />);

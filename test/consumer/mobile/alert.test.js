@@ -16,6 +16,13 @@ describe('Alert', () => {
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Alert className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have class pbg-alert', () => {
     const wrapper = shallow(<Alert />);
     expect(wrapper.hasClass('pbg-alert')).to.be.true;

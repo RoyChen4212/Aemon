@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import './style.scss';
 
@@ -24,9 +25,9 @@ class ShareLink extends PureComponent {
   };
 
   render() {
-    const { label } = this.props;
+    const { label, className } = this.props;
     return (
-      <div className={ShareLink.baseClassName}>
+      <div className={cx(ShareLink.baseClassName, className)}>
         <span className="pbg-icon-link-small-gray" />
         <span className="pbg-mobile-label-normal" onClick={this.onClick}>
           {label}
@@ -38,6 +39,11 @@ class ShareLink extends PureComponent {
 
 ShareLink.propTypes = {
   label: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+ShareLink.defaultProps = {
+  className: null,
 };
 
 export default ShareLink;

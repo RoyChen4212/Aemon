@@ -11,6 +11,13 @@ describe('simple-number-stepper', () => {
     expect(wrapper.hasClass('pbg-number-stepper')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<NumberStepper className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render options based on range', () => {
     const wrapper = shallow(<NumberStepper min={1} max={100} />);
 

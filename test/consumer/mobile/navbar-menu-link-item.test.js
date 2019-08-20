@@ -12,6 +12,13 @@ describe('navbar-menu-link-item', () => {
     expect(wrapper.hasClass('pbg-navbar-menu-link-item')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<NavbarMenuLinkItem className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct label and href', () => {
     const label = 'label';
     const href = 'href';

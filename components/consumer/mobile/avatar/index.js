@@ -1,7 +1,17 @@
 import React from 'react';
+import cx from 'classnames';
 import BaseAvatar from '../../shared/base-avatar';
 
-export default props => {
-  const { size } = props;
-  return <BaseAvatar {...props} className="pbg-consumer-mobile" size={size || 32} />;
+const Avatar = ({ size, className, ...restProps }) => (
+  <BaseAvatar {...restProps} className={cx('pbg-consumer-mobile', className)} size={size || 32} />
+);
+
+Avatar.propTypes = {
+  ...BaseAvatar.propTypes,
 };
+
+Avatar.defaultProps = {
+  ...BaseAvatar.defaultProps,
+};
+
+export default Avatar;

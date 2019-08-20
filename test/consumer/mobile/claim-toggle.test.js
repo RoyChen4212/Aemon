@@ -3,11 +3,18 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import ClaimToggle from '../../../components/consumer/mobile/claim-toggle';
 
-describe('div-input', () => {
+describe('claim-toggle', () => {
   it('should have correct class names', () => {
     const wrapper = shallow(<ClaimToggle />);
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-claim-toggle')).to.be.true;
+  });
+
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ClaimToggle className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
   });
 
   it('should render secondaryText if its available', () => {

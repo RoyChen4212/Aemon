@@ -10,6 +10,7 @@ class Overlay extends React.PureComponent {
     title: PropTypes.string,
     opened: PropTypes.bool,
     backText: PropTypes.string,
+    className: PropTypes.string,
     onBackButtonClick: PropTypes.func.isRequired,
     children: PropTypes.node,
   };
@@ -19,13 +20,18 @@ class Overlay extends React.PureComponent {
     backText: '',
     opened: false,
     children: null,
+    className: null,
   };
 
   render() {
-    const { title, opened, backText, onBackButtonClick, children } = this.props;
+    const { title, opened, backText, onBackButtonClick, children, className } = this.props;
     if (!onBackButtonClick) return null;
     return (
-      <div className={classnames('pbg-consumer-mobile pbg-desktop-shadow-level-two pbg-overlay', { open: opened })}>
+      <div
+        className={classnames('pbg-consumer-mobile pbg-desktop-shadow-level-two pbg-overlay', className, {
+          open: opened,
+        })}
+      >
         <div className="pbg-overlay-inner">
           <div className="pbg-overlay-inner--header">
             <BackLink label={backText} onClick={onBackButtonClick} />
