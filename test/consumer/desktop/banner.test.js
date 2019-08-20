@@ -15,6 +15,12 @@ describe('Banner', () => {
     expect(wrapper.hasClass('pbg-banner')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Banner className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should pass "dark-blue" as default color prop and render correct background class', () => {
     const expectedColor = Banner.COLORS.DARK_BLUE;
     const wrapper = mount(<Banner text="Any" />);

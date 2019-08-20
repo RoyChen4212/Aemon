@@ -14,6 +14,12 @@ describe('password-field', () => {
     expect(wrapper.hasClass('pbg-guest-password-field')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<GuestPasswordField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render PasswordField component', () => {
     const wrapper = shallow(<GuestPasswordField />);
     expect(wrapper.find(PasswordField)).to.have.lengthOf(1);

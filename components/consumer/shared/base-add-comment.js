@@ -1,7 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 import BaseFormField from './base-form-field';
 
 class BaseAddComment extends BaseFormField {
+  static propTypes = {
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    className: null,
+  };
+
   get className() {
     return this.baseClassName;
   }
@@ -20,8 +30,9 @@ class BaseAddComment extends BaseFormField {
   }
 
   render() {
+    const { className } = this.props;
     return (
-      <div className={this.className}>
+      <div className={cx(this.className, className)}>
         <div className="pbg-add-comment-avatar-placeholder">{this.renderAvatar()}</div>
         <div className="pbg-add-comment-form-placeholder">
           {this.renderTextArea()}

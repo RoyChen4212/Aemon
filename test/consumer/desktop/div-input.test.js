@@ -9,4 +9,10 @@ describe('facebook-input', () => {
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
     expect(wrapper.hasClass('pbg-div-input')).to.be.true;
   });
+
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<DivInput className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
 });

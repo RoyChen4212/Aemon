@@ -45,6 +45,12 @@ describe('money-field', () => {
     expect(wrapper.find('input').prop('placeholder')).to.equal('$ 0.00');
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<MoneyField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render default value', () => {
     const wrapper = shallow(<MoneyField defaultValue={1234} />);
     expect(wrapper.find('input').prop('value')).to.equal('$ 12.34');

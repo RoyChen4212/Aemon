@@ -16,6 +16,12 @@ describe('password-field', () => {
     expect(wrapper.hasClass('pbg-password-field')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PasswordField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have type password on input element', () => {
     const wrapper = shallow(<PasswordField />);
     expect(wrapper.find('input').html()).to.include(`type="password"`);

@@ -39,6 +39,12 @@ describe('ModalAlert', () => {
     expect(wrapper.hasClass('pbg-modal-alert')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ModalAlert className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should add title in label strong', () => {
     const wrapper = shallow(<ModalAlert title="some title" />);
     expect(

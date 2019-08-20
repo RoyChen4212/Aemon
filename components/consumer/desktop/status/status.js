@@ -15,10 +15,12 @@ class Status extends React.PureComponent {
     hint: PropTypes.string.isRequired,
     iconType: PropTypes.oneOf(values(iconTypes)).isRequired,
     tooltip: PropTypes.string,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     tooltip: null,
+    className: null,
   };
 
   renderLabel = () => {
@@ -39,10 +41,10 @@ class Status extends React.PureComponent {
   };
 
   render() {
-    const { iconType, value, hint } = this.props;
+    const { iconType, value, hint, className } = this.props;
     const iconClass = `pbg-icon-${iconType}-small-gray`;
     return (
-      <div className="pbg-consumer-desktop pbg-status">
+      <div className={classnames("pbg-consumer-desktop pbg-status", className)}>
         <div className="pbg-status-icon-container">
           <i className={iconClass} />
         </div>

@@ -12,6 +12,12 @@ describe('Subheader', () => {
     expect(wrapper.html()).to.include(anchor);
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Subheader className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render correct classes for wrapper, text and line elements', () => {
     const wrapper = shallow(<Subheader text="" />);
     const text = wrapper.childAt(0);

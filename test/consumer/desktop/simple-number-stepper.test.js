@@ -21,6 +21,12 @@ describe('SimpleNumberStepper', () => {
     expect(wrapper.find('button')).to.have.length(2);
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<SimpleNumberStepper className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render one disabled <input /> element', () => {
     const wrapper = shallow(<SimpleNumberStepper />);
     expect(wrapper.find('input')).to.have.length(1);

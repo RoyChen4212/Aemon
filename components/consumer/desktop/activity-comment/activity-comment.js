@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import moment from 'moment';
 
 import ActivityThumbnail, { PURCHASE_COMMENT_CREATED } from '../activity-thumbnail';
@@ -7,6 +8,8 @@ import ActivityThumbnail, { PURCHASE_COMMENT_CREATED } from '../activity-thumbna
 import './style.scss';
 
 class ActivityComment extends React.PureComponent {
+  static baseClassName = 'pbg-consumer-desktop pbg-activity-comment';
+
   static propTypes = {
     src: PropTypes.string,
     fullName: PropTypes.string,
@@ -14,12 +17,14 @@ class ActivityComment extends React.PureComponent {
     title: PropTypes.string.isRequired,
     comment: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     src: null,
     fullName: null,
     userId: null,
+    className: null,
   };
 
   get time() {
@@ -28,9 +33,9 @@ class ActivityComment extends React.PureComponent {
   }
 
   render() {
-    const { src, userId, fullName, title, comment } = this.props;
+    const { src, userId, fullName, title, comment, className } = this.props;
     return (
-      <div className="activity-comment d-flex">
+      <div className={cx(ActivityComment.baseClassName, 'd-flex', className)}>
         <ActivityThumbnail type={PURCHASE_COMMENT_CREATED} src={src} userId={userId} fullName={fullName} />
         <div className="activity-comment-text">
           <div className="activity-comment-bubbletip" />

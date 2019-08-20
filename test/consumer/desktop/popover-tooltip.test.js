@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import PopoverTooltip from '../../../components/consumer/desktop/popover-tooltip';
+import { expect } from 'chai';
 
 describe('PopoverTooltip', () => {
   it('should render trigger', () => {
@@ -11,6 +12,12 @@ describe('PopoverTooltip', () => {
   it('should render popover element', () => {
     const wrapper = shallow(<PopoverTooltip />);
     expect(wrapper.find('.pbg-popover-tooltip')).to.have.lengthOf(1);
+  });
+
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PopoverTooltip className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
   });
 
   it('should render popover content inside of popover element', () => {

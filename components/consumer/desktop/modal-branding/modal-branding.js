@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import Divider from '../divider';
@@ -10,11 +11,13 @@ class ModalBranding extends React.PureComponent {
 
   static propTypes = {
     logo: PropTypes.string.isRequired,
+    className: PropTypes.string,
     children: PropTypes.node,
   };
 
   static defaultProps = {
     children: null,
+    className: null,
   };
 
   renderFooter() {
@@ -28,9 +31,9 @@ class ModalBranding extends React.PureComponent {
   }
 
   render() {
-    const { logo, children } = this.props;
+    const { logo, children, className } = this.props;
     return (
-      <div className={this.baseClass}>
+      <div className={cx(this.baseClass, className)}>
         <div className="pbg-modal-branding-header">
           <div className="pbg-modal-branding-merchant-logo">
             <img src={logo} />

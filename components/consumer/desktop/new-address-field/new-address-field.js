@@ -34,7 +34,8 @@ class AddressField extends FormField {
   };
 
   get className() {
-    return this.baseClassName;
+    const { className } = this.props;
+    return classnames(this.baseClassName, className);
   }
 
   get countryOptions() {

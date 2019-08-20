@@ -16,6 +16,12 @@ describe('Checkbox', () => {
     expect(wrapper.hasClass('pbg-checkbox')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Checkbox className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('render a checkbox element', () => {
     const wrapper = shallow(<Checkbox />);
     expect(wrapper.find('input[type="checkbox"]')).to.have.lengthOf(1);
