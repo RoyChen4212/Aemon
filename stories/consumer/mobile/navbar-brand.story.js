@@ -8,7 +8,7 @@ import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import NavbarMenuLinkItem from '../../../components/consumer/mobile/navbar-menu-link-item';
 import NavbarMenuLanguageItem from '../../../components/consumer/mobile/navbar-menu-language-item';
-import NavbarMenuUserItem from '../../../components/consumer/mobile/navbar-menu-user-item/navbar-menu-user-item';
+import NavbarMenuUserItem from '../../../components/consumer/mobile/navbar-menu-user-item';
 
 storiesOf('Consumer/Mobile/Info/Navbar', module)
   .addDecorator(wrapStory)
