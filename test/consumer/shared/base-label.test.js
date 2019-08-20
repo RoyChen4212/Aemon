@@ -17,6 +17,13 @@ describe('BaseLabel', () => {
     expect(wrapper.find('label > span').text()).to.equal(expected);
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<BaseLabel className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have base class when no type is given', () => {
     const wrapper = shallow(<BaseLabel>some text</BaseLabel>);
     expect(wrapper.find('label').hasClass(labelClassNames.base)).to.be.true;
