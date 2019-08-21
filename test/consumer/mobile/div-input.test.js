@@ -18,6 +18,12 @@ describe('div-input', () => {
     expect(label.text()).to.equal(labelText);
   });
 
+  it('should set htmlId if given', () => {
+    const wrapper = shallow(<DivInput htmlId="card-field" />);
+    const label = wrapper.find('#card-field');
+    expect(label).to.have.lengthOf(1);
+  });
+
   it('should not render a label if not given', () => {
     const wrapper = shallow(<DivInput />);
     const label = wrapper.find('.pbg-mobile-label-normal');
