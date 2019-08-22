@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { expect } from 'chai';
 
 import CardField from '../../../components/consumer/mobile/card-field';
@@ -18,6 +18,12 @@ describe('card field', () => {
     const label = wrapper.find('.pbg-mobile-label-normal');
     expect(label.length).to.equal(1);
     expect(label.text()).to.equal(labelText);
+  });
+
+  it('should set htmlId if given', () => {
+    const wrapper = mount(<CardField htmlId="card-field" />);
+    const element = wrapper.find('#card-field');
+    expect(element).to.have.lengthOf(1);
   });
 
   it('should render cards', () => {

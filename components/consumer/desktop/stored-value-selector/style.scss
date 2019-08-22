@@ -29,6 +29,7 @@
       .pbg-stored-value-selector-add-container {
         display: flex;
         align-items: center;
+        width: 102px;
 
         p {
           margin: 0 0 0 16px;
@@ -38,6 +39,10 @@
           margin-left: 16px;
           white-space: nowrap;
         }
+      }
+
+      .pbg-stored-value-selector-children {
+        margin-right: 102px;
       }
     }
   }
