@@ -2,7 +2,10 @@
 
 .pbg-consumer-mobile {
   &.pbg-share-row {
-    padding: 3px 0 3px 16px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 3px;
+    padding-left: 16px;
     border-left: 4px solid;
 
     .pbg-share-row-label-container {
@@ -16,12 +19,13 @@
 
     > .pbg-mobile-small-normal {
       margin-top: 4px;
+      margin-bottom: 3px;
     }
 
     .pbg-share-row-details-wrapper {
       display: flex;
       justify-content: flex-end;
-      margin-top: 4px;
+      margin-top: 1px;
 
       .pbg-button-small {
         display: block;
