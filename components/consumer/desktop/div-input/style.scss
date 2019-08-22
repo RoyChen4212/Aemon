@@ -2,9 +2,24 @@
 
 .pbg-consumer-desktop {
   &.pbg-div-input {
-    height: 40px;
-    background: $white;
-    border: 1px solid $gray-50;
-    border-radius: 4px;
+    .pbg-div-input-field {
+      height: 40px;
+      background: $white;
+      border: 1px solid $gray-50;
+      border-radius: 4px;
+
+      &.pbg-div-input-field-error {
+        border-color: $red-60;
+      }
+    }
+
+    label {
+      margin: 0 0 4px;
+      display: flex;
+    }
+
+    .pbg-desktop-small-error {
+      margin-top: 4px;
+    }
   }
 }
