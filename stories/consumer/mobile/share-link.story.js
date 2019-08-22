@@ -9,11 +9,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Mobile/Onboarding/invite-contributors-link', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('share-link/default', () => <ShareLink href="http://paybygroup.com/dshjahghfd" />);
+  .add('share-link/default', () => <ShareLink label="http://paybygroup.com/dshjahghfd" />);
 
 storiesOf('Consumer/Mobile/Onboarding/invite-contributors-link', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .addDecorator(withMobileSizing)
-  .add('share-link/long-link', () => <ShareLink href="http://paybygroup.com/dshjahghfdadsasdsaasdasadaadsadsadasdasdasdasdasdasdasda" />);
-
+  .add('share-link/long-link', () => (
+    <ShareLink label="http://paybygroup.com/dshjahghfdadsasdsaasdasadaadsadsadasdasdasdasdasdasdasda" />
+  ));
