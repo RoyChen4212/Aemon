@@ -8,7 +8,7 @@ const baseClassName = 'pbg-consumer-mobile pbg-external-link';
 const ExternalLink = ({ label, onClick }) => (
   <div className={baseClassName} onClick={onClick}>
     <span className="pbg-consumer-mobile pbg-label pbg-label-clickable">{label}</span>
-    <div className="pbg-external-link-icon" />
+    <i className="pbg-icon-external-link-small-blue" />
   </div>
 );
 

@@ -31,16 +31,28 @@ class SimpleNumberStepper extends FormField {
 
   renderDecrement() {
     if (this.canDecrement()) {
-      return <button type="button" className="decrement" onClick={this.onDecrementClicked} />;
+      return (
+        <button
+          type="button"
+          className="pbg-icon-minus-small-blue pbg-simple-number-stepper-icon"
+          onClick={this.onDecrementClicked}
+        />
+      );
     }
-    return <button disabled type="button" className="decrement disabled" />;
+    return <button disabled type="button" className="pbg-icon-minus-small-gray pbg-simple-number-stepper-icon" />;
   }
 
   renderIncrement() {
     if (this.canIncrement()) {
-      return <button type="button" className="increment" onClick={this.onIncrementClicked} />;
+      return (
+        <button
+          type="button"
+          className="pbg-icon-plus-small-blue pbg-simple-number-stepper-icon"
+          onClick={this.onIncrementClicked}
+        />
+      );
     }
-    return <button disabled type="button" className="increment disabled" />;
+    return <button disabled type="button" className="pbg-icon-plus-small-gray pbg-simple-number-stepper-icon" />;
   }
 
   render() {
