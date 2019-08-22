@@ -83,14 +83,14 @@ describe('Alert', () => {
   it('should render close button', () => {
     const wrapper = shallow(<Alert />);
 
-    expect(wrapper.find('.pbg-alert-close-button')).to.have.lengthOf(1);
+    expect(wrapper.find('.pbg-icon-cross-small-blue')).to.have.lengthOf(1);
   });
 
   it('should trigger onCloseClick', () => {
     const spy = sinon.spy();
     const wrapper = shallow(<Alert onCloseClick={spy} />);
 
-    wrapper.find('.pbg-alert-close-button').simulate('click');
+    wrapper.find('.pbg-icon-cross-small-blue').simulate('click');
 
     expect(spy.calledOnce).to.be.true;
   });

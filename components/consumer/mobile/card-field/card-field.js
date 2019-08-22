@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import Cards from './cards';
 import DivInput from '../div-input';
@@ -13,28 +14,38 @@ class CardField extends React.Component {
   static propTypes = {
     htmlId: PropTypes.string,
     label: PropTypes.string,
+    error: PropTypes.string,
+    focused: PropTypes.bool,
     allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
   };
 
   static defaultProps = {
     htmlId: null,
     label: null,
+    error: null,
+    focused: false,
     allowedCardTypes: cardTypes,
   };
 
   render() {
-    const { label, allowedCardTypes, htmlId } = this.props;
+    const { label, error, focused, allowedCardTypes, htmlId } = this.props;
 
     return (
       <div className={this.baseClassName}>
         {label && (
           <div className="pbg-card-field-label-wrapper">
-            <div className="pbg-mobile-label-normal pbg-label-with-cards">{label}</div>
+            <div
+              className={cx('pbg-mobile-label-normal', 'pbg-label-with-cards', {
+                'pbg-mobile-label-error': error,
+              })}
+            >
+              {label}
+            </div>
             <Cards allowedCardTypes={allowedCardTypes} />
           </div>
         )}
         <div className="pbg-card-field-wrapper">
-          <DivInput htmlId={htmlId} />
+          <DivInput error={error} focused={focused} htmlId={htmlId} />
         </div>
       </div>
     );

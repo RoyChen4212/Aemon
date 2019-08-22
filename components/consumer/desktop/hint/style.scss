@@ -7,7 +7,8 @@
     &.pbg-hint-error {
       @extend .pbg-desktop-small-error;
       &:before {
-        content: url('../img/small-error-icon.svg');
+        @extend .pbg-icon-hint-error-small-red;
+        content: '';
         margin-right: 4px;
         position: relative;
         top: 3px;
@@ -22,5 +23,4 @@
       @extend .pbg-desktop-small-strong;
     }
   }
-
 }
