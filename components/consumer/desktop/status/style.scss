@@ -17,16 +17,16 @@
       @extend .pbg-desktop-secondary-text;
       margin-bottom: 4px;
       display: flex;
+      align-items: center;
       height: 16px;
-    }
-
-    .pbg-status-question-mark:after {
-      content: url('../img/link-question-mark.svg');
-      position: relative;
-      margin-left: 5px;
-      height: 14px;
-      width: 14px;
-      top: 2px;
+      .pbg-icon-question-mark-small-gray {
+        margin-left: 5px;
+        height: 14px;
+        width: 14px;
+        background-size: contain;
+        position: relative;
+        top: 2px;
+      }
     }
 
     .pbg-status-value {

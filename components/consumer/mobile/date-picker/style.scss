@@ -13,7 +13,8 @@
           border: 1px solid $coral-error;
 
           .pbg-picker-arrow {
-            background: url('../img/pbg-picker-arrow-error.svg') no-repeat;
+            @extend .pbg-icon-arrow-down-small-red;
+            background-repeat: no-repeat;
           }
         }
       }
@@ -41,12 +42,13 @@
         }
 
         .pbg-picker-arrow {
-          background: url('../img/pbg-picker-arrow.svg') no-repeat;
+          @extend .pbg-icon-arrow-down-small-blue;
+          background-repeat: no-repeat;
           position: absolute;
           right: 7px;
-          width: 7px;
-          height: 7px;
-          top: 13px;
+          width: 18px;
+          height: 18px;
+          top: 7px;
         }
       }
 
