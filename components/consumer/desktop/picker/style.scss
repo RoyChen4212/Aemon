@@ -28,7 +28,8 @@
         }
 
         .pbg-picker-arrow {
-          background: url('../img/pbg-picker-arrow.svg') no-repeat center;
+          background-repeat: no-repeat;
+          background-position: center;
           display: block;
           pointer-events: none;
         }
@@ -78,10 +79,6 @@
       .pbg-picker-button,
       .pbg-picker-text {
         color: $gray-60;
-
-        .pbg-picker-arrow {
-          background: url('../img/pbg-picker-disabled-arrow.svg') no-repeat center;
-        }
       }
 
       .pbg-picker-button {
