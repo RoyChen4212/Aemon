@@ -59,7 +59,7 @@ SectionCard.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   stepNumber: PropTypes.number,
-  headerButton: PropTypes.node,
+  headerButton: PropTypes.func,
   activateButtonText: PropTypes.string.isRequired,
   onActivateButtonClick: PropTypes.func,
   completedLabel: PropTypes.string,

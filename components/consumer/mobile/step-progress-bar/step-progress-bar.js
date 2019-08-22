@@ -10,7 +10,7 @@ const baseClassName = 'pbg-consumer-mobile pbg-step-progress-bar';
 const StepProgressBar = ({ stepCount, progress, className }) => {
   const steps = [];
   for (let i = 1; i <= stepCount; i += 1) {
-    steps.push(<StepProgressBarStep isComplete={i <= progress} />);
+    steps.push(<StepProgressBarStep key={i} isComplete={i <= progress} />);
   }
 
   return <div className={cx(baseClassName, className)}>{steps}</div>;

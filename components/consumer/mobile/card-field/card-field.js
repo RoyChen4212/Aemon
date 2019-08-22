@@ -12,19 +12,21 @@ class CardField extends React.Component {
   baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-text-field pbg-card-field';
 
   static propTypes = {
+    htmlId: PropTypes.string,
     label: PropTypes.string,
     className: PropTypes.string,
     allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
   };
 
   static defaultProps = {
+    htmlId: null,
     label: null,
     className: null,
     allowedCardTypes: cardTypes,
   };
 
   render() {
-    const { label, allowedCardTypes, className } = this.props;
+    const { label, allowedCardTypes, htmlId, className } = this.props;
 
     return (
       <div className={cx(this.baseClassName, className)}>
@@ -35,7 +37,7 @@ class CardField extends React.Component {
           </div>
         )}
         <div className="pbg-card-field-wrapper">
-          <DivInput />
+          <DivInput htmlId={htmlId} />
         </div>
       </div>
     );

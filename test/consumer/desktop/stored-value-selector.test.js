@@ -67,14 +67,14 @@ describe('Stored Value Selector', () => {
     expect(wrapper.find('.pbg-stored-value-selector-add-container')).to.have.lengthOf(1);
   });
 
-  it('should not show add new button when no options are passed', () => {
+  it('should not include children of add new button container when no options are passed', () => {
     const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" />);
-    expect(wrapper.find('.pbg-stored-value-selector-add-container')).to.have.lengthOf(0);
+    expect(wrapper.find('.pbg-stored-value-selector-add-container').children()).to.have.lengthOf(0);
   });
 
-  it('should not show add new button when new value is selected', () => {
+  it('should not include children of add new button when new value is selected', () => {
     const wrapper = mount(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" value="new" />);
-    expect(wrapper.find('.pbg-stored-value-selector-add-container')).to.have.lengthOf(0);
+    expect(wrapper.find('.pbg-stored-value-selector-add-container').children()).to.have.lengthOf(0);
   });
 
   it('should pass orText to orLabel', () => {
@@ -148,6 +148,7 @@ describe('Stored Value Selector', () => {
         <TextField />
       </StoredValueSelector>
     );
+    expect(wrapper.find('.pbg-stored-value-selector-children')).to.have.lengthOf(1);
     expect(wrapper.find(TextField)).to.have.lengthOf(1);
   });
 
