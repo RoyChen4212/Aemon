@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 class ContactImportInputOption extends PureComponent {
   static propTypes = {
     icon: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
+    selected: PropTypes.bool.isRequired,
     onSelect: PropTypes.func.isRequired,
   };
 
@@ -15,10 +17,10 @@ class ContactImportInputOption extends PureComponent {
   };
 
   render() {
-    const { icon, label } = this.props;
+    const { icon, label, selected } = this.props;
     const iconClass = `pbg-icon-${icon}`;
     return (
-      <div className="pbg-contact-import-input-option" onClick={this.onClick}>
+      <div className={cx('pbg-contact-import-input-option', { 'pbg-selected': selected })} onClick={this.onClick}>
         <div className={iconClass} />
         <div className="pbg-desktop-label-normal">{label}</div>
       </div>

@@ -63,9 +63,10 @@ describe('contact-import-input', () => {
     expect(textField.prop('value')).to.equal(value);
   });
 
-  it('should open options on select', () => {
+  it('should open options on select and attach event', () => {
     const onSelect = sinon.spy();
     const onChange = sinon.spy();
+    const addEventListener = sinon.spy();
     const wrapper = shallow(
       <ContactImportInput
         options={options}
@@ -81,16 +82,19 @@ describe('contact-import-input', () => {
     textField
       .dive()
       .find('input')
-      .simulate('focus');
+      .simulate('focus', { target: { addEventListener } });
     wrapper.update();
 
     expect(wrapper.find('.pbg-contact-import-input-options').length).to.equal(1);
     expect(wrapper.find(ContactImportInputOption).length).to.equal(3);
+    expect(addEventListener.calledOnce).to.be.true;
   });
 
-  it('should close options on blur', done => {
+  it('should close options and stop event listening to event on blur', done => {
     const onSelect = sinon.spy();
     const onChange = sinon.spy();
+    const addEventListener = sinon.spy();
+    const removeEventListener = sinon.spy();
     const wrapper = shallow(
       <ContactImportInput
         options={options}
@@ -106,7 +110,7 @@ describe('contact-import-input', () => {
     textField
       .dive()
       .find('input')
-      .simulate('focus');
+      .simulate('focus', { target: { addEventListener } });
     wrapper.update();
 
     expect(wrapper.find('.pbg-contact-import-input-options').length).to.equal(1);
@@ -114,10 +118,11 @@ describe('contact-import-input', () => {
     textField
       .dive()
       .find('input')
-      .simulate('blur');
+      .simulate('blur', { target: { removeEventListener } });
 
     setTimeout(() => {
       expect(wrapper.find('.pbg-contact-import-input-options').length).to.equal(0);
+      expect(removeEventListener.calledOnce).to.be.true;
       done();
     }, 120);
   });
@@ -125,12 +130,14 @@ describe('contact-import-input', () => {
   it('should filter options by value', () => {
     const onSelect = sinon.spy();
     const onChange = sinon.spy();
+    const addEventListener = sinon.spy();
+
     const wrapper = shallow(
       <ContactImportInput
         options={options}
         onSelect={onSelect}
         onChange={onChange}
-        value={'3'}
+        value="3"
         placeholder={placeholder}
       />
     );
@@ -140,7 +147,7 @@ describe('contact-import-input', () => {
     textField
       .dive()
       .find('input')
-      .simulate('focus');
+      .simulate('focus', { target: { addEventListener } });
     wrapper.update();
 
     expect(wrapper.find('.pbg-contact-import-input-options').length).to.equal(1);
@@ -176,6 +183,7 @@ describe('contact-import-input', () => {
   it('should react on option click', () => {
     const onSelect = sinon.spy();
     const onChange = sinon.spy();
+    const addEventListener = sinon.spy();
     const wrapper = shallow(
       <ContactImportInput
         options={options}
@@ -191,7 +199,7 @@ describe('contact-import-input', () => {
     textField
       .dive()
       .find('input')
-      .simulate('focus');
+      .simulate('focus', { target: { addEventListener } });
     wrapper.update();
 
     const ops = wrapper.find(ContactImportInputOption);
