@@ -36,6 +36,9 @@
   }
 
   &.pbg-share-details-overlay {
+    display: flex;
+    flex-direction: column;
+
     .pbg-mobile-heading-1 {
       margin-bottom: 16px;
     }
