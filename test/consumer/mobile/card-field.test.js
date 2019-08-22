@@ -4,6 +4,7 @@ import { expect } from 'chai';
 
 import CardField from '../../../components/consumer/mobile/card-field';
 import Cards from '../../../components/consumer/mobile/card-field/cards';
+import DivInput from '../../../components/consumer/mobile/div-input';
 
 describe('card field', () => {
   it('should have correct class names', () => {
@@ -20,10 +21,19 @@ describe('card field', () => {
     expect(label.text()).to.equal(labelText);
   });
 
-  it('should set htmlId if given', () => {
-    const wrapper = mount(<CardField htmlId="card-field" />);
-    const element = wrapper.find('#card-field');
-    expect(element).to.have.lengthOf(1);
+  it('should have error label class if error', () => {
+    const wrapper = shallow(<CardField label="Card number" error="Invalid card" />);
+    const errorLabel = wrapper.find('.pbg-mobile-label-error');
+    expect(errorLabel).to.have.lengthOf(1);
+  });
+
+  it('should pass props to DivInput', () => {
+    const error = 'Invalid card';
+    const htmlId = 'card-field';
+    const wrapper = mount(<DivInput error={error} htmlId={htmlId} focused />);
+    expect(wrapper.find(DivInput).props().error).to.equal(error);
+    expect(wrapper.find(DivInput).props().htmlId).to.equal(htmlId);
+    expect(wrapper.find(DivInput).props().focused).to.equal(true);
   });
 
   it('should render cards', () => {
