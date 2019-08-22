@@ -61,7 +61,7 @@ class StoredValueSelector extends FormField {
   renderAddNewButton = () => {
     const { orText, addNewText, addNewValue } = this.props;
     if (this.value === addNewValue) {
-      return null;
+      return <div className="pbg-stored-value-selector-add-container" />;
     }
 
     return (
@@ -79,7 +79,7 @@ class StoredValueSelector extends FormField {
     if (this.value !== addNewValue) {
       return null;
     }
-    return children;
+    return <div className="pbg-stored-value-selector-children">{children}</div>;
   };
 
   render() {

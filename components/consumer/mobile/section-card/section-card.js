@@ -23,7 +23,10 @@ const SectionCard = ({
         <div className="pbg-section-card-header-row">
           <div className="pbg-section-card-header-text">
             {status !== sectionCardStatus.COMPLETED ? (
-              stepNumber && status !== sectionCardStatus.DISABLED && <div className="pbg-section-card-step-number pbg-mobile-heading-2">{stepNumber}.</div>
+              stepNumber &&
+              status !== sectionCardStatus.DISABLED && (
+                <div className="pbg-section-card-step-number pbg-mobile-heading-2">{stepNumber}.</div>
+              )
             ) : (
               <div className="pbg-section-card-completed-icon" />
             )}
@@ -55,7 +58,7 @@ SectionCard.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   stepNumber: PropTypes.number,
-  headerButton: PropTypes.node,
+  headerButton: PropTypes.func,
   activateButtonText: PropTypes.string.isRequired,
   onActivateButtonClick: PropTypes.func,
   completedLabel: PropTypes.string,
