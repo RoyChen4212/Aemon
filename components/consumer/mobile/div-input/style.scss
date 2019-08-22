@@ -16,6 +16,10 @@
       &.pbg-div-input-field-error {
         border-color: $red-60;
       }
+
+      &.pbg-div-input-field-focused {
+        border-color: $blue-60;
+      }
     }
 
     .pbg-mobile-small-error {

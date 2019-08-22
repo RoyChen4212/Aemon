@@ -27,14 +27,22 @@ describe('div-input', () => {
 
   it('should set htmlId if given', () => {
     const wrapper = shallow(<DivInput htmlId="card-field" />);
-    const label = wrapper.find('#card-field');
-    expect(label).to.have.lengthOf(1);
+    expect(wrapper.find('#card-field')).to.have.lengthOf(1);
+  });
+
+  it('should have focused class if focused', () => {
+    const wrapper = shallow(<DivInput focused />);
+    expect(wrapper.find('.pbg-div-input-field-focused')).to.have.lengthOf(1);
+  });
+
+  it('should not have focused class if not focused', () => {
+    const wrapper = shallow(<DivInput focused={false} />);
+    expect(wrapper.find('.pbg-div-input-field-focused')).to.have.lengthOf(0);
   });
 
   it('should not render a label if not given', () => {
     const wrapper = shallow(<DivInput />);
-    const label = wrapper.find('.pbg-mobile-label-normal');
-    expect(label).to.have.lengthOf(0);
+    expect(wrapper.find('.pbg-mobile-label-normal')).to.have.lengthOf(0);
   });
 
   it('should render error if given', () => {

@@ -36,7 +36,7 @@ describe('SimpleNumberStepper', () => {
   it('should not update value when a boundary is met', () => {
     const onChange = sinon.spy();
     const wrapper = shallow(<SimpleNumberStepper value={0} min={0} onChange={onChange} />);
-    wrapper.find('.decrement').simulate('click');
+    wrapper.find('.pbg-icon-minus-small-gray').simulate('click');
     expect(onChange.calledOnce).to.be.false;
   });
 
@@ -44,7 +44,7 @@ describe('SimpleNumberStepper', () => {
     const onChange = sinon.spy();
     const props = { ...baseProps, value: 5, onChange };
     const wrapper = mount(<SimpleNumberStepper {...props} />);
-    wrapper.find('.decrement').simulate('click');
+    wrapper.find('.pbg-icon-minus-small-blue').simulate('click');
     expect(onChange.calledOnce).to.be.true;
     expect(onChange.calledWith(makeEvent(props.value - 1)));
   });
@@ -53,7 +53,7 @@ describe('SimpleNumberStepper', () => {
     const onChange = sinon.spy();
     const props = { ...baseProps, value: 5, onChange };
     const wrapper = mount(<SimpleNumberStepper {...props} />);
-    wrapper.find('.increment').simulate('click');
+    wrapper.find('.pbg-icon-minus-small-blue').simulate('click');
     expect(onChange.calledOnce).to.be.true;
     expect(onChange.calledWith(makeEvent(props.value + 1)));
   });

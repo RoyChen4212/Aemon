@@ -44,7 +44,7 @@ class Alert extends React.PureComponent {
 
     return (
       <div className={this.className}>
-        <button type="button" className="pbg-button pbg-alert-close-button" onClick={onCloseClick} />
+        <button type="button" className="pbg-button pbg-icon-cross-small-blue" onClick={onCloseClick} />
 
         <div className="pbg-mobile-label-strong">
           <span>{title}</span>

@@ -193,7 +193,7 @@ describe('SplitEven', () => {
       wrapper
         .find(NumberStepper)
         .at(0)
-        .find('.increment')
+        .find('.pbg-icon-plus-small-blue')
         .simulate('click');
     });
 
@@ -208,7 +208,7 @@ describe('SplitEven', () => {
       wrapper
         .find(NumberStepper)
         .at(1)
-        .find('.decrement')
+        .find('.pbg-icon-minus-small-blue')
         .simulate('click');
     });
 
@@ -218,7 +218,7 @@ describe('SplitEven', () => {
         wrapper
           .find(NumberStepper)
           .at(0)
-          .find('.increment')
+          .find('.pbg-icon-plus-small-gray')
           .props().disabled
       ).to.be.true;
     });
@@ -229,7 +229,7 @@ describe('SplitEven', () => {
         wrapper
           .find(NumberStepper)
           .at(1)
-          .find('.decrement')
+          .find('.pbg-icon-minus-small-gray')
           .props().disabled
       ).to.be.true;
     });

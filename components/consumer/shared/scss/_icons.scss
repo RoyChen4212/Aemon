@@ -311,6 +311,11 @@ $list-icon-grey: url('../img/view-list-icon-grey.svg');
   background: url('../../shared/img/pbg-arrow-down-small-blue.svg');
 }
 
+.pbg-icon-arrow-down-small-red {
+  @extend .pbg-icon-small;
+  background: url('../../shared/img/pbg-arrow-down-small-red.svg');
+}
+
 .pbg-icon-arrow-down-small-gray {
   @extend .pbg-icon-small;
   background: url('../../shared/img/pbg-arrow-down-small-gray.svg');

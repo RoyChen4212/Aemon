@@ -15,6 +15,8 @@ class CardField extends React.Component {
     htmlId: PropTypes.string,
     label: PropTypes.string,
     className: PropTypes.string,
+    error: PropTypes.string,
+    focused: PropTypes.bool,
     allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
   };
 
@@ -22,22 +24,30 @@ class CardField extends React.Component {
     htmlId: null,
     label: null,
     className: null,
+    error: null,
+    focused: false,
     allowedCardTypes: cardTypes,
   };
 
   render() {
-    const { label, allowedCardTypes, htmlId, className } = this.props;
+    const { label, allowedCardTypes, htmlId, className, error, focused, } = this.props;
 
     return (
       <div className={cx(this.baseClassName, className)}>
         {label && (
           <div className="pbg-card-field-label-wrapper">
-            <div className="pbg-mobile-label-normal pbg-label-with-cards">{label}</div>
+            <div
+              className={cx('pbg-mobile-label-normal', 'pbg-label-with-cards', {
+                'pbg-mobile-label-error': error,
+              })}
+            >
+              {label}
+            </div>
             <Cards allowedCardTypes={allowedCardTypes} />
           </div>
         )}
         <div className="pbg-card-field-wrapper">
-          <DivInput htmlId={htmlId} />
+          <DivInput error={error} focused={focused} htmlId={htmlId} />
         </div>
       </div>
     );
