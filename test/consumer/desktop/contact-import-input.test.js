@@ -44,6 +44,23 @@ describe('contact-import-input', () => {
     expect(wrapper.hasClass('pbg-contact-import-input')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const onSelect = sinon.spy();
+    const onChange = sinon.spy();
+    const className = 'className';
+    const wrapper = shallow(
+      <ContactImportInput
+        options={options}
+        onSelect={onSelect}
+        onChange={onChange}
+        value={value}
+        placeholder={placeholder}
+        className={className}
+      />
+    );
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct text field', () => {
     const onSelect = sinon.spy();
     const onChange = sinon.spy();

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import './style.scss';
 import TextField from '../text-field';
 import ContactImportInputOption from './contact-import-input-option';
 import FormField from '../form-field';
 
-const baseClassName = 'pbg-consumer-desktop pbg-contact-import-input';
-
 class ContactImportInput extends FormField {
+  static baseClassName = 'pbg-consumer-desktop pbg-contact-import-input';
+
   static propTypes = {
     placeholder: PropTypes.string,
     options: PropTypes.arrayOf(
@@ -21,11 +22,13 @@ class ContactImportInput extends FormField {
     onSelect: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     placeholder: null,
     value: null,
+    className: null,
   };
 
   state = { isOpen: false, selected: 0 };
@@ -78,10 +81,10 @@ class ContactImportInput extends FormField {
 
   render() {
     const { isOpen, selected } = this.state;
-    const { placeholder, value, onChange } = this.props;
+    const { placeholder, value, onChange, className } = this.props;
     const filteredOptions = this.filteredOptions();
     return (
-      <div className={baseClassName}>
+      <div className={cx(ContactImportInput.baseClassName, className)}>
         {this.renderLabel()}
         <TextField
           value={value}
