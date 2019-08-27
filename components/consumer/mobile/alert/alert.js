@@ -12,7 +12,7 @@ export const alertTypes = {
 
 /** @extends React.Component */
 class Alert extends React.PureComponent {
-  baseClass = 'pbg-consumer-mobile pbg-alert';
+  baseClassName = 'pbg-consumer-mobile pbg-alert';
 
   static propTypes = {
     title: PropTypes.string,
@@ -36,7 +36,7 @@ class Alert extends React.PureComponent {
 
   get className() {
     const { type, className } = this.props;
-    return classnames(this.baseClass, `pbg-alert-${type}`, className);
+    return classnames(this.baseClassName, `pbg-alert-${type}`, className);
   }
 
   render() {

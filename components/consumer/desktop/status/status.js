@@ -45,7 +45,7 @@ class Status extends React.PureComponent {
     const { iconType, value, hint, className } = this.props;
     const iconClass = `pbg-icon-${iconType}-small-gray`;
     return (
-      <div className={classnames("pbg-consumer-desktop pbg-status", className)}>
+      <div className={classnames('pbg-consumer-desktop pbg-status', className)}>
         <div className="pbg-status-icon-container">
           <i className={iconClass} />
         </div>

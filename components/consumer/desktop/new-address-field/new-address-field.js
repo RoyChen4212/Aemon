@@ -26,11 +26,13 @@ class AddressField extends FormField {
   static propTypes = {
     label: PropTypes.string,
     hint: PropTypes.string,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     label: null,
     hint: null,
+    className: null,
   };
 
   get className() {

@@ -6,7 +6,7 @@ import Label, { labelTypes } from '../label';
 import './style.scss';
 
 class ModalAlert extends React.PureComponent {
-  baseClass = 'pbg-consumer-desktop pbg-modal-alert';
+  baseClassName = 'pbg-consumer-desktop pbg-modal-alert';
 
   static propTypes = {
     title: PropTypes.string,
@@ -36,7 +36,7 @@ class ModalAlert extends React.PureComponent {
     const { error, warning, success, className } = this.props;
     const { hide } = this.state;
 
-    return classnames(this.baseClass, className, {
+    return classnames(this.baseClassName, className, {
       'pbg-fade-out': hide,
       'pbg-modal-alert-error': error,
       'pbg-modal-alert-warning': warning,

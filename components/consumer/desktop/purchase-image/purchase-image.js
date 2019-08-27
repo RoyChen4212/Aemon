@@ -12,7 +12,7 @@ PurchaseImage.propTypes = {
   className: PropTypes.string,
 };
 
-PurchaseImage.propTypes = {
+PurchaseImage.defaultProps = {
   className: null,
 };
 

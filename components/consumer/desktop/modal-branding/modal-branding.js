@@ -7,7 +7,7 @@ import Divider from '../divider';
 import './style.scss';
 
 class ModalBranding extends React.PureComponent {
-  baseClass = 'pbg-consumer-desktop pbg-modal-branding';
+  baseClassName = 'pbg-consumer-desktop pbg-modal-branding';
 
   static propTypes = {
     logo: PropTypes.string.isRequired,
@@ -33,7 +33,7 @@ class ModalBranding extends React.PureComponent {
   render() {
     const { logo, children, className } = this.props;
     return (
-      <div className={cx(this.baseClass, className)}>
+      <div className={cx(this.baseClassName, className)}>
         <div className="pbg-modal-branding-header">
           <div className="pbg-modal-branding-merchant-logo">
             <img src={logo} />

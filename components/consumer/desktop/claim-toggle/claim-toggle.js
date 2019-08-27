@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import Container from '../container';
@@ -9,6 +10,18 @@ import './style.scss';
 
 class ClaimToggle extends FormField {
   baseClassName = 'pbg-claim-toggle';
+
+  static propTypes = {
+    className: PropTypes.string,
+    required: PropTypes.bool,
+    disabled: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    className: null,
+    required: false,
+    disabled: false,
+  };
 
   get isRequiredOrDisabled() {
     return this.props.required || this.props.disabled;

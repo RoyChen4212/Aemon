@@ -6,7 +6,7 @@ import truncate from 'lodash/truncate';
 import './style.scss';
 
 class EmailPreview extends Component {
-  baseClass = 'pbg-consumer-desktop pbg-email-preview';
+  baseClassName = 'pbg-consumer-desktop pbg-email-preview';
 
   static propTypes = {
     logo: PropTypes.string.isRequired,
@@ -26,7 +26,7 @@ class EmailPreview extends Component {
     const { borderColor, logo, title, content, className } = this.props;
     const borderStyle = { borderTopColor: borderColor };
     return (
-      <div className={cx(this.baseClass, className)}>
+      <div className={cx(this.baseClassName, className)}>
         <div className="pbg-email-preview-envelope-back" />
         <div className="pbg-email-preview-inner" style={borderStyle}>
           <div className="pbg-email-preview-merchant-logo">

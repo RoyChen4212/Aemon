@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import FormField from '../form-field';
 import ComplexValueFormField from '../../shared/complex-value-form-field';
@@ -13,6 +14,14 @@ const ComposedFormField = ComplexValueFormField(FormField);
 /** @extends React.Component */
 class GuestPasswordField extends ComposedFormField {
   baseClassName = 'pbg-consumer-desktop pbg-guest-password-field';
+
+  static propTypes = {
+    className: PropTypes.string,
+  }
+
+  static defaultProps = {
+    className: null,
+  }
 
   onCheckboxChange = ev => {
     this.updateValue({ guest: ev.target.value });
