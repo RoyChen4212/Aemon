@@ -51,7 +51,7 @@ storiesOf('Consumer/Desktop/Form Fields/guest-password-field', module)
       name="password"
       label="Create password"
       hint="Don't create an account, just contribute."
-      error="Something went wrong!"
+      error="Password must be at least 8 characters."
       onChange={action('change')}
       required
     />
