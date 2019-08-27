@@ -10,6 +10,7 @@ import './style.scss';
 
 const ComposedFormField = ComplexValueFormField(FormField);
 
+/** @extends React.Component */
 class GuestPasswordField extends ComposedFormField {
   baseClassName = 'pbg-consumer-desktop pbg-guest-password-field';
 
@@ -48,6 +49,7 @@ class GuestPasswordField extends ComposedFormField {
           disabled={this.currentValue.guest || this.adaptedProps.disabled}
           onChange={this.onInputChange}
           onBlur={() => this.onBlur(makeEvent(this.currentValue))}
+          error={this.adaptedProps.error}
         />
         {this.renderHintWithCheckbox()}
       </div>
