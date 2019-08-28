@@ -12,6 +12,13 @@ describe('ExternalLink', () => {
     expect(wrapper.hasClass('pbg-external-link')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ExternalLink className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct label', () => {
     const labelText = 'test';
     const wrapper = shallow(<ExternalLink label={labelText} />);

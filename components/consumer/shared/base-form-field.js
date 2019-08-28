@@ -6,6 +6,7 @@ class BaseFormField extends React.Component {
 
   get className() {
     let resultingClassName = this.baseClassName;
+    const { className } = this.props;
 
     if (this.error && !this.focused) {
       resultingClassName += ' pbg-form-field-error';
@@ -17,6 +18,10 @@ class BaseFormField extends React.Component {
 
     if (this.disabled) {
       resultingClassName += ' pbg-form-field-disabled';
+    }
+
+    if (className) {
+      resultingClassName += ` ${className}`;
     }
 
     return resultingClassName;

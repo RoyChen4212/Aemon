@@ -7,10 +7,18 @@ import ActivityComment from '../../../components/consumer/desktop/activity-comme
 
 describe('ActivityComment', () => {
   describe('rendering', () => {
-    it('should have a correct wrapper element', () => {
+    it('should have a correct class', () => {
       const wrapper = shallow(<ActivityComment />);
 
-      expect(wrapper.hasClass('activity-comment')).to.be.equal(true);
+      expect(wrapper.hasClass('pbg-activity-comment')).to.be.true;
+      expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
+    });
+
+    it('should have a correct className when provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<ActivityComment className={className} />);
+
+      expect(wrapper.hasClass(className)).to.be.true;
     });
 
     it('should render an ActivityThumbnail with an img src', () => {

@@ -14,6 +14,12 @@ describe('ModalAlertStack', () => {
     expect(wrapper.find('div')).to.have.lengthOf(1);
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ModalAlertStack className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have class pbg-consumer-desktop', () => {
     const wrapper = shallow(<ModalAlertStack />);
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;

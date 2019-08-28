@@ -11,4 +11,11 @@ describe('login-separator', () => {
     expect(wrapper.hasClass('pbg-login-separator')).to.be.true;
     expect(wrapper.find('.pbg-mobile-label-normal').text()).to.equal(label);
   });
+
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<LoginSeparator className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
 });

@@ -12,6 +12,12 @@ describe('secondary-modal', () => {
     expect(wrapper.hasClass('pbg-secondary-modal')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<SecondaryModal className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have a title if it is given', () => {
     const title = 'Modal title';
     const wrapper = shallow(<SecondaryModal title={title} />);

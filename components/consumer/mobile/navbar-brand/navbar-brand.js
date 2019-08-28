@@ -1,11 +1,24 @@
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import './style.scss';
 import Divider from '../divider';
 
 class NavbarBrand extends PureComponent {
   static baseClassName = 'pbg-consumer-mobile pbg-navbar-brand';
+
+  static propTypes = {
+    merchantLogoUrl: PropTypes.string.isRequired,
+    poweredByText: PropTypes.string.isRequired,
+    children: PropTypes.arrayOf(PropTypes.node),
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    children: null,
+    className: null,
+  };
 
   state = { expanded: false };
 
@@ -18,14 +31,14 @@ class NavbarBrand extends PureComponent {
       <Divider />
       {child}
     </Fragment>
-  )
+  );
 
   render() {
-    const { merchantLogoUrl, poweredByText, children } = this.props;
+    const { merchantLogoUrl, poweredByText, children, className } = this.props;
     const { expanded } = this.state;
 
     return (
-      <div className={NavbarBrand.baseClassName}>
+      <div className={cx(NavbarBrand.baseClassName, className)}>
         <div className="pbg-navbar-text-container">
           <div className="pbg-navbar-brand-icon" style={{ backgroundImage: `url(${merchantLogoUrl})` }} />
           <span className="pbg-navbar-brand-text">{poweredByText}</span>
@@ -46,15 +59,5 @@ class NavbarBrand extends PureComponent {
     );
   }
 }
-
-NavbarBrand.propTypes = {
-  merchantLogoUrl: PropTypes.string.isRequired,
-  poweredByText: PropTypes.string.isRequired,
-  children: PropTypes.arrayOf(PropTypes.node),
-};
-
-NavbarBrand.defaultProps = {
-  children: null,
-};
 
 export default NavbarBrand;

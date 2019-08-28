@@ -1,11 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 import BaseLabel from '../../shared/base-label';
 
 import './style.scss';
 
 export * from '../../shared/base-label';
 
-export default props => {
+const Label = props => {
   const { className } = props;
-  return <BaseLabel {...props} className={`${className} pbg-consumer-desktop`} />;
+  return <BaseLabel {...props} className={cx('pbg-consumer-desktop', className)} />;
 };
+
+Label.propTypes = {
+  className: PropTypes.string,
+};
+
+Label.defaultProps = {
+  className: null,
+};
+
+export default Label;

@@ -13,6 +13,7 @@ class TipBlock extends React.Component {
   static propTypes = {
     icon: PropTypes.string,
     color: PropTypes.string,
+    className: PropTypes.string,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
   };
@@ -20,13 +21,14 @@ class TipBlock extends React.Component {
   static defaultProps = {
     icon: iconTypes.QUESTION_MARK,
     color: colorTypes.GRAY_10,
+    className: null,
   };
 
   render() {
-    const { icon, color, title, description } = this.props;
+    const { icon, color, title, description, className } = this.props;
 
     return (
-      <div className={classnames(this.className, `pbg-bg-color-${color}`)}>
+      <div className={classnames(this.className, className, `pbg-bg-color-${color}`)}>
         <div className="pbg-tip-block-title-wrapper">
           {<i className={classnames({ [`pbg-icon-${icon}-small-gray`]: icon })} />}
           <div className="pbg-mobile-label-strong">{title}</div>

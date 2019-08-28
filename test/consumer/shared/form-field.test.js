@@ -35,4 +35,11 @@ describe('BaseFormField', () => {
     expect(adapter.called).to.be.true;
     expect(onChange.called).to.be.true;
   });
+
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<BaseFormField className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
 });

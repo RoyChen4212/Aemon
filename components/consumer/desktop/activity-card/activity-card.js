@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import moment from 'moment';
 
 import ActivityThumbnail from '../activity-thumbnail';
@@ -7,11 +8,18 @@ import ActivityThumbnail from '../activity-thumbnail';
 import './style.scss';
 
 class ActivityCard extends React.PureComponent {
+  static baseClassName = 'pbg-consumer-desktop pbg-activity-card';
+
   static propTypes = {
     type: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     time: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    className: null,
   };
 
   get time() {
@@ -20,9 +28,9 @@ class ActivityCard extends React.PureComponent {
   }
 
   render() {
-    const { type, title, children } = this.props;
+    const { type, title, children, className } = this.props;
     return (
-      <div className="activity-card d-flex">
+      <div className={cx(ActivityCard.baseClassName, 'd-flex', className)}>
         <ActivityThumbnail type={type} />
 
         <div className="activity-card-text">

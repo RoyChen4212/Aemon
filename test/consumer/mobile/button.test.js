@@ -22,6 +22,13 @@ describe('Button', () => {
       expect(wrapper.find('button').hasClass('pbg-button-primary')).to.be.true;
     });
 
+    it('should have a className if provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<PrimaryButton className={className} />);
+
+      expect(wrapper.find('button').hasClass(className)).to.be.true;
+    });
+
     it('should have correct class name for mobile', () => {
       const wrapper = shallow(<PrimaryButton />);
       expect(wrapper.find('button').hasClass('pbg-consumer-mobile')).to.be.true;
@@ -34,6 +41,13 @@ describe('Button', () => {
     it('should have correct class name', () => {
       const wrapper = shallow(<SecondaryButton />);
       expect(wrapper.find('button').hasClass('pbg-button-secondary')).to.be.true;
+    });
+
+    it('should have a className if provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<SecondaryButton className={className} />);
+
+      expect(wrapper.find('button').hasClass(className)).to.be.true;
     });
 
     it('should have correct class name for mobile', () => {
@@ -50,6 +64,13 @@ describe('Button', () => {
       expect(wrapper.find('button').hasClass('pbg-button-small')).to.be.true;
     });
 
+    it('should have a className if provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<SmallButton className={className} />);
+
+      expect(wrapper.find('button').hasClass(className)).to.be.true;
+    });
+
     it('should have correct class name for mobile', () => {
       const wrapper = shallow(<SmallButton />);
       expect(wrapper.find('button').hasClass('pbg-consumer-mobile')).to.be.true;
@@ -61,6 +82,13 @@ describe('Button', () => {
     it('should have correct class name', () => {
       const wrapper = shallow(<LinkButton />);
       expect(wrapper.find('button').hasClass('pbg-button-link')).to.be.true;
+    });
+
+    it('should have a className if provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<LinkButton className={className} />);
+
+      expect(wrapper.find('button').hasClass(className)).to.be.true;
     });
 
     it('should have correct class name for mobile', () => {
@@ -77,6 +105,13 @@ describe('Button', () => {
       expect(wrapper.find('button').hasClass('pbg-button-facebook')).to.be.true;
     });
 
+    it('should have a className if provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<FacebookButton className={className} />);
+
+      expect(wrapper.find('button').hasClass(className)).to.be.true;
+    });
+
     it('should have correct class name for mobile', () => {
       const wrapper = shallow(<FacebookButton />);
       expect(wrapper.find('button').hasClass('pbg-consumer-mobile')).to.be.true;
@@ -89,6 +124,13 @@ describe('Button', () => {
     it('should have correct class name', () => {
       const wrapper = shallow(<SmallFacebookButton />);
       expect(wrapper.find('button').hasClass('pbg-button-facebook-small')).to.be.true;
+    });
+
+    it('should have a className if provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<SmallFacebookButton className={className} />);
+
+      expect(wrapper.find('button').hasClass(className)).to.be.true;
     });
 
     it('should have correct class name for mobile', () => {

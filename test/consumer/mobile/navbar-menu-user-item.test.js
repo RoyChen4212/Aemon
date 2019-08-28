@@ -14,6 +14,13 @@ describe('navbar-menu-user-item', () => {
     expect(wrapper.hasClass('pbg-navbar-menu-user-item')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<NavbarMenuUserItem className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct avatar, hint and fullName', () => {
     const avatar = 'avatar';
     const fullName = 'avatar';
