@@ -116,6 +116,12 @@
 }
 
 // Small
+.pbg-desktop-small-normal {
+  @extend .pbg-desktop-secondary-text;
+  font-size: $small-font;
+  line-height: $small-line-height;
+}
+
 .pbg-desktop-small-text {
   @extend .pbg-desktop-regular-text;
   font-size: $small-font;
