@@ -21,6 +21,12 @@ describe('Phone Field', () => {
     expect(wrapper.hasClass('pbg-phone-field')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PhoneField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should display label', () => {
     const label = 'label';
     const wrapper = shallow(<PhoneField label={label} />);

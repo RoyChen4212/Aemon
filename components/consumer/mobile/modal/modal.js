@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { H2 } from '../heading';
 import { LinkButton, PrimaryButton, SecondaryButton, types as buttonTypes } from '../button';
 
@@ -38,9 +39,9 @@ class Modal extends React.PureComponent {
   }
 
   render() {
-    const { title, children, onBackClick, backButtonCaption } = this.props;
+    const { title, children, onBackClick, backButtonCaption, className } = this.props;
     return (
-      <div className="pbg-consumer-mobile pbg-modal">
+      <div className={cx('pbg-consumer-mobile pbg-modal', className)}>
         <div className="pbg-modal-dialog">
           <div className="pbg-modal-heading">
             <LinkButton onClick={this.onBackClick}>{backButtonCaption}</LinkButton>

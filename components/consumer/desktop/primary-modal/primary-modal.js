@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import cx from 'classnames';
 import Divider from '../divider';
 import Modal from '../modal';
 
@@ -16,6 +16,7 @@ class PrimaryModal extends React.PureComponent {
     onClose: PropTypes.func,
     onHideAlert: PropTypes.func,
     alerts: PropTypes.arrayOf(PropTypes.object),
+    className: PropTypes.string,
   };
 
   static defaultProps = {
@@ -26,6 +27,7 @@ class PrimaryModal extends React.PureComponent {
     formProps: {},
     onClose: null,
     onHideAlert: null,
+    className: null,
     alerts: [],
   };
 
@@ -51,10 +53,10 @@ class PrimaryModal extends React.PureComponent {
   }
 
   render() {
-    const { sidebarContent, form, formProps, onClose, alerts, onHideAlert } = this.props;
+    const { sidebarContent, form, formProps, onClose, alerts, onHideAlert, className } = this.props;
 
     return (
-      <Modal className="pbg-primary-modal" onClose={onClose} alerts={alerts} onHideAlert={onHideAlert}>
+      <Modal className={cx('pbg-primary-modal', className)} onClose={onClose} alerts={alerts} onHideAlert={onHideAlert}>
         <div className="pbg-primary-modal-content">
           {form && (
             <form className="pbg-primary-modal-main-container" {...formProps}>

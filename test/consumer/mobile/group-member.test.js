@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import GroupMember from '../../../components/consumer/mobile/group-member';
 import Avatar from '../../../components/consumer/mobile/avatar';
 
-describe('div-input', () => {
+describe('group-member', () => {
   const myAvatar = 'myAvatar';
   const hint = 'hint';
   const fullName = 'fullName';
@@ -13,6 +13,13 @@ describe('div-input', () => {
     const wrapper = shallow(<GroupMember avatar={myAvatar} fullName={fullName} hint={hint} />);
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-group-member')).to.be.true;
+  });
+
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<GroupMember className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
   });
 
   it('should have correct avatar', () => {

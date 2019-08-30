@@ -7,4 +7,10 @@ describe('Desktop Avatar', () => {
     const wrapper = shallow(<Avatar />);
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
   });
+
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Avatar className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
 });

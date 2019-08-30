@@ -18,6 +18,12 @@ describe('TextArea', () => {
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<TextArea className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should add pbg-form-field-focused class when focused', done => {
     const wrapper = shallow(<TextArea />);
     wrapper.setProps({ focused: true }, () => {

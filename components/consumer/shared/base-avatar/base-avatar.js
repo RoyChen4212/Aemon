@@ -17,7 +17,7 @@ class BaseAvatar extends React.PureComponent {
   };
 
   static defaultProps = {
-    className: '',
+    className: null,
     size: BaseAvatar.DEFAULT_SIZE,
     src: null,
     fullName: null,

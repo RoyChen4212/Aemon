@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import jQuery from 'jquery';
 
 import Container from '../container';
@@ -12,11 +13,13 @@ class Popover extends React.PureComponent {
   static propTypes = {
     trigger: PropTypes.node,
     content: PropTypes.node,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     trigger: null,
     content: null,
+    className: null,
   };
 
   state = {
@@ -88,17 +91,17 @@ class Popover extends React.PureComponent {
     const { trigger: TriggerComponent } = this.props;
     if (!TriggerComponent) return null;
     return <TriggerComponent onClick={this.onClick} />;
-  };
+  }
 
   renderClickOutsideElement() {
     const { active } = this.state;
-    return active ? <div className="pbg-click-outside-component" />  : null;
+    return active ? <div className="pbg-click-outside-component" /> : null;
   }
 
   render() {
-    const { content } = this.props;
+    const { content, className } = this.props;
     return (
-      <div className="pbg-consumer-desktop pbg-popover-container">
+      <div className={cx('pbg-consumer-desktop pbg-popover-container', className)}>
         {this.renderClickOutsideElement()}
         {this.renderTriggerComponent()}
         <Container shadow2 stroked solid className={this.className} ref={this.popoverElementRef}>

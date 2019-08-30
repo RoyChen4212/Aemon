@@ -9,6 +9,12 @@ describe('Status', () => {
   const valueText = 'Reservation status';
   const hintText = 'This is a hint';
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Status className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have a correct wrapper element', () => {
     const wrapper = shallow(<Status label={labelText} value={valueText} hint={hintText} iconType="lock" />);
     expect(wrapper.hasClass('pbg-status')).to.be.equal(true);

@@ -11,6 +11,13 @@ describe('StepProgressBar', () => {
     expect(wrapper.hasClass('pbg-step-progress-bar')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<StepProgressBar className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should be able to have 3 steps', () => {
     const wrapper = shallow(<StepProgressBar stepCount={3} progress={0} />);
     const steps = wrapper.find(StepProgressBarStep);

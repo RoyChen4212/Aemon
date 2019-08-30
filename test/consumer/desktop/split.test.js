@@ -12,6 +12,12 @@ describe('SplitEven', () => {
   const options = [{ label: { term: 'even' }, value: 'even' }, { label: { term: 'custom' }, value: 'custom' }];
   const copy = { split: 'Split', across: 'across', to: 'to', shares: 'shares' };
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<SplitEven className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   describe('Even/Min', () => {
     it('should determine correctly it is a min split even with min', () => {
       const wrapper = shallow(<SplitEven value={{ splitType: 'even' }} min />);

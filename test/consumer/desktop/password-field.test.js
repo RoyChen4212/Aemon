@@ -16,6 +16,12 @@ describe('password-field', () => {
     expect(wrapper.hasClass('pbg-password-field')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PasswordField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have type password on input element', () => {
     const wrapper = shallow(<PasswordField />);
     expect(wrapper.find('input').html()).to.include(`type="password"`);
@@ -23,7 +29,7 @@ describe('password-field', () => {
 
   it('should have forgot password label', () => {
     const wrapper = shallow(<PasswordField forgotPasswordText="Forgot?" />);
-    expect(wrapper.find('.pbg-password-field-header').find(Hint)).to.have.lengthOf(1);
+    expect(wrapper.find('.pbg-password-field-footer').find(Hint)).to.have.lengthOf(1);
   });
 
   it('should show a hint when given', () => {
@@ -36,7 +42,7 @@ describe('password-field', () => {
     const onForgotPassword = sinon.spy();
     const wrapper = shallow(<PasswordField forgotPasswordText="Forgot?" onForgotPassword={onForgotPassword} />);
     wrapper
-      .find('.pbg-password-field-header')
+      .find('.pbg-password-field-footer')
       .find(Hint)
       .simulate('click');
     expect(onForgotPassword.calledOnce).to.be.true;

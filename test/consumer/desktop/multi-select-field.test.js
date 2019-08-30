@@ -18,6 +18,12 @@ describe('MultiSelectField', () => {
     expect(wrapper.hasClass('pbg-multi-select-field')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<MultiSelectField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have a checkbox for each option provided', () => {
     const wrapper = shallow(<MultiSelectField options={options} />);
     expect(wrapper.find(Checkbox)).to.have.lengthOf(2);

@@ -6,9 +6,9 @@ import './style.scss';
 
 const baseClassName = 'pbg-consumer-mobile pbg-form-field pbg-checkbox';
 
-const Checkbox = ({ name, onChange, value, label, error, disabled }) => {
+const Checkbox = ({ name, onChange, value, label, error, disabled, className }) => {
   return (
-    <div className={cx(baseClassName, { 'pbg-form-field-error': error, 'pbg-form-field-disabled': disabled })}>
+    <div className={cx(baseClassName, className, { 'pbg-form-field-error': error, 'pbg-form-field-disabled': disabled })}>
       <label htmlFor={name} className="pbg-checkbox-label">
         <input type="checkbox" id={name} defaultChecked={value} onChange={onChange} disabled={disabled} />
         <span className="pbg-checkbox-custom" />
@@ -22,6 +22,7 @@ Checkbox.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   error: PropTypes.string,
+  className: PropTypes.string,
   disabled: PropTypes.bool,
   value: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
@@ -30,6 +31,7 @@ Checkbox.propTypes = {
 Checkbox.defaultProps = {
   value: false,
   error: null,
+  className: null,
   disabled: false,
 };
 

@@ -12,6 +12,12 @@ describe('ModalBranding', () => {
     expect(wrapper.hasClass('pbg-modal-branding')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ModalBranding className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render a header', () => {
     const wrapper = shallow(<ModalBranding />);
     const header = wrapper.find('.pbg-modal-branding-header');

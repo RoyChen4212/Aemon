@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import get from 'lodash/get';
 import first from 'lodash/first';
 import isString from 'lodash/isString';
@@ -23,7 +24,8 @@ class AddOrSelectField extends FormField {
   }
 
   get className() {
-    return this.baseClassName;
+    const { className } = this.props;
+    return cx(this.baseClassName, className);
   }
 
   get addingNew() {

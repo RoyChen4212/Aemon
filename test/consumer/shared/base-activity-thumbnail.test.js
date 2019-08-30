@@ -22,6 +22,13 @@ describe('BaseActivityThumbnail', () => {
     expect(wrapper.hasClass('pbg-activity-thumbnail')).to.equal(true);
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ActivityThumbnail className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   describe('Props', () => {
     it('should not throw if bad type is given', () => {
       expect(() => shallow(<ActivityThumbnail type="some bad type" />)).not.to.throw();

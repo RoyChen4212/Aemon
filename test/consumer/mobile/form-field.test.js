@@ -23,6 +23,13 @@ describe('Mobile: FormField', () => {
     }).to.not.throw;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<FormField className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should return labelType.ERROR  when error', () => {
     const wrapper = shallow(<FormField error="this is an error" />);
     const instance = wrapper.instance();

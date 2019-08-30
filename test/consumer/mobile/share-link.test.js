@@ -12,6 +12,13 @@ describe('share-link', () => {
     expect(wrapper.hasClass('pbg-share-link')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ShareLink className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct link', () => {
     const label = 'label';
     const wrapper = shallow(<ShareLink label={label} />);

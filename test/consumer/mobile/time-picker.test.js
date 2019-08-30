@@ -21,6 +21,13 @@ describe('Date picker', () => {
     expect(wrapper.find('input').html()).to.include('type="time"');
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<TimePicker className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should call onChange event when date input changes', () => {
     const onChange = sinon.spy();
     const event = { target: { value: 'expected value' } };

@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Container from '../../../components/consumer/desktop/container';
+import { expect } from 'chai';
 
 describe('Container', () => {
   it('should render div', () => {
@@ -17,6 +18,12 @@ describe('Container', () => {
   it('should have class pbg-container', () => {
     const wrapper = shallow(<Container />);
     expect(wrapper.hasClass('pbg-container')).to.be.true;
+  });
+
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Container className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
   });
 
   it('should add pbg-container-solid className', () => {

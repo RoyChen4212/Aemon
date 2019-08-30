@@ -20,6 +20,12 @@ describe('NewAddressField', () => {
     expect(wrapper.hasClass('pbg-new-address-field')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<NewAddressField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have label if given', () => {
     const label = 'a label';
     const wrapper = shallow(<NewAddressField label={label} />);

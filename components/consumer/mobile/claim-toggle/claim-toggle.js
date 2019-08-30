@@ -7,17 +7,13 @@ import Checkbox from '../checkbox';
 
 const baseClassName = 'pbg-consumer-mobile pbg-claim-toggle';
 
-const ClaimToggle = ({ label, secondaryText, onChange, value, error }) => (
-  <div className={baseClassName}>
+const ClaimToggle = ({ label, secondaryText, onChange, value, error, className }) => (
+  <div className={cx(baseClassName, className)}>
     <div className="pbg-claim-toggle-content">
       <Checkbox onChange={onChange} value={value} />
       {<div className={cx('pbg-claim-toggle-primary-text', { error })}>{label}</div>}
     </div>
-    {secondaryText && (
-      <div className="pbg-claim-toggle-secondary-text">
-        {secondaryText}
-      </div>
-    )}
+    {secondaryText && <div className="pbg-claim-toggle-secondary-text">{secondaryText}</div>}
   </div>
 );
 
@@ -26,11 +22,13 @@ ClaimToggle.propTypes = {
   onChange: PropTypes.func.isRequired,
   value: PropTypes.bool,
   secondaryText: PropTypes.string,
+  className: PropTypes.string,
   error: PropTypes.bool,
 };
 
 ClaimToggle.defaultProps = {
   secondaryText: null,
+  className: null,
   value: false,
   error: false,
 };

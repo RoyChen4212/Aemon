@@ -13,6 +13,12 @@ describe('email-preview', () => {
     expect(wrapper.hasClass('pbg-email-preview')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<EmailPreview className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render an image inside a merchant-logo', () => {
     const wrapper = shallow(<EmailPreview logo={logo} title={title} />);
     const img = wrapper.find('.pbg-email-preview-merchant-logo').find('img');

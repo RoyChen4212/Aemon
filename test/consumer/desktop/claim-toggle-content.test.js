@@ -11,6 +11,12 @@ describe('ClaimToggleContext', () => {
     expect(wrapper.hasClass('pbg-claim-toggle-content')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ClaimToggleContent className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('renders explainer when the prop is provided', () => {
     const text = 'A explainer';
     const wrapper = shallow(<ClaimToggleContent explainer={text} />);

@@ -16,6 +16,12 @@ describe('ShareRow', () => {
     expect(wrapper.hasClass('pbg-share-row')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ShareRow className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have label', () => {
     const labelText = 'label';
     const wrapper = shallow(<ShareRow label={labelText} hint="hint" amount="amount" color={colorTypes.BLUE_60} />);

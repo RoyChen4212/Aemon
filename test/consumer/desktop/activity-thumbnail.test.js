@@ -15,6 +15,13 @@ describe('Desktop ActivityThumbnail', () => {
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
   });
 
+  it('should have className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ActivityThumbnail type={PURCHASE_UPDATED} className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render a user avatar if type is purchase_comment_created and src are passed as props', () => {
     const wrapper = shallow(<ActivityThumbnail type={PURCHASE_COMMENT_CREATED} src="https://myimage.com" />);
     expect(wrapper.find(Avatar).prop('src')).to.include('https://myimage.com');

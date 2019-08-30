@@ -18,6 +18,12 @@ describe('Picker', () => {
     expect(wrapper.hasClass('pbg-picker')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Picker className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render a button', () => {
     const wrapper = shallow(<Picker />);
     expect(wrapper.find('button')).to.have.lengthOf(1);

@@ -16,6 +16,13 @@ describe('TextArea', () => {
     expect(wrapper.hasClass('pbg-text-area')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<TextArea className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should show a hint when given', () => {
     const expected = 'a hint';
     const wrapper = shallow(<TextArea hint={expected} />);

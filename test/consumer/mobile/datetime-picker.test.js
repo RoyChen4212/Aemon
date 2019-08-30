@@ -169,6 +169,13 @@ describe('Datetime picker', () => {
     expect(adapter.called).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<DatetimePicker className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have class pbg-datetime-picker', () => {
     const wrapper = shallow(<DatetimePicker timezone={timezone} />);
     expect(wrapper.hasClass('pbg-datetime-picker')).to.be.true;

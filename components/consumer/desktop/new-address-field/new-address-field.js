@@ -26,15 +26,18 @@ class AddressField extends FormField {
   static propTypes = {
     label: PropTypes.string,
     hint: PropTypes.string,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     label: null,
     hint: null,
+    className: null,
   };
 
   get className() {
-    return this.baseClassName;
+    const { className } = this.props;
+    return classnames(this.baseClassName, className);
   }
 
   get countryOptions() {

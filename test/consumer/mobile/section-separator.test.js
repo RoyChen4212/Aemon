@@ -9,4 +9,11 @@ describe('section-separator', () => {
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
     expect(wrapper.hasClass('pbg-section-separator')).to.be.true;
   });
+
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<SectionSeparator className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
 });

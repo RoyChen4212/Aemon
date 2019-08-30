@@ -14,6 +14,13 @@ describe('Modal', () => {
     expect(wrapper.hasClass('pbg-modal')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Modal className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   describe('Heading', () => {
     it('should have a heading', () => {
       const wrapper = shallow(<Modal />);
