@@ -39,23 +39,6 @@ class PasswordField extends TextField {
       </div>
     );
   }
-
-  // renderLabel() {
-  //   const { label, simple, required } = this.adaptedProps;
-  //
-  //   if (simple) return null;
-  //
-  //   const { forgotPasswordText } = this.props;
-  //   const header = (
-  //     <div className="pbg-password-field-header">
-  //       <Label type={this.labelType} required={required}>
-  //         {label}
-  //       </Label>
-  //       {this.renderForgotPassword()}
-  //     </div>
-  //   );
-  //   return label || forgotPasswordText ? header : null;
-  // }
 }
 
 export default PasswordField;
