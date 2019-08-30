@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import Modal from '../modal';
 
@@ -9,6 +10,7 @@ class SecondaryModal extends React.PureComponent {
   static propTypes = {
     title: PropTypes.string,
     iconType: PropTypes.string,
+    className: PropTypes.string,
     children: PropTypes.node,
     onClose: PropTypes.func,
   };
@@ -18,12 +20,13 @@ class SecondaryModal extends React.PureComponent {
     iconType: null,
     children: null,
     onClose: null,
+    className: null,
   };
 
   render() {
-    const { onClose, iconType, title, children } = this.props;
+    const { onClose, iconType, title, children, className } = this.props;
     return (
-      <Modal className="pbg-secondary-modal" onClose={onClose}>
+      <Modal className={cx('pbg-secondary-modal', className)} onClose={onClose}>
         <div className="pbg-modal-content">
           <div className="pbg-modal-header">
             {iconType && <i className={`pbg-modal-icon pbg-icon-${iconType}-big`} />}

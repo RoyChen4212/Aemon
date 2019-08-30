@@ -44,6 +44,13 @@ describe('TextField', () => {
     expect(wrapper.find('input').html()).to.include(`name="${expected}"`);
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<TextField className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should contain one input type text element', () => {
     const wrapper = shallow(<TextField />);
     expect(wrapper.find('input').html()).to.include(`type="text"`);

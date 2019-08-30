@@ -6,8 +6,8 @@ import './style.scss';
 
 const baseClassName = 'pbg-consumer-desktop pbg-div-input';
 
-const DivInput = ({ label, error, htmlId }) => (
-  <div className={baseClassName}>
+const DivInput = ({ label, error, htmlId, className }) => (
+  <div className={cx(baseClassName, className)}>
     {label && (
       <label className={cx('pbg-desktop-label-normal', { 'pbg-desktop-label-error': error })}>
         <span>{label}</span>
@@ -22,12 +22,14 @@ DivInput.propTypes = {
   htmlId: PropTypes.string,
   label: PropTypes.string,
   error: PropTypes.string,
+  className: PropTypes.string,
 };
 
 DivInput.defaultProps = {
   htmlId: null,
   label: null,
   error: null,
+  className: null,
 };
 
 export default DivInput;

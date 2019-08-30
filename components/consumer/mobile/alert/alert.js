@@ -12,13 +12,14 @@ export const alertTypes = {
 
 /** @extends React.Component */
 class Alert extends React.PureComponent {
-  baseClass = 'pbg-consumer-mobile pbg-alert';
+  baseClassName = 'pbg-consumer-mobile pbg-alert';
 
   static propTypes = {
     title: PropTypes.string,
     text: PropTypes.string,
     type: PropTypes.oneOf([alertTypes.SUCCESS, alertTypes.WARNING, alertTypes.ERROR]),
     ctaLabel: PropTypes.string,
+    className: PropTypes.string,
     onCallToAction: PropTypes.func,
     onCloseClick: PropTypes.func,
   };
@@ -26,6 +27,7 @@ class Alert extends React.PureComponent {
   static defaultProps = {
     title: null,
     text: null,
+    className: null,
     type: alertTypes.SUCCESS,
     ctaLabel: 'Call to action',
     onCallToAction: () => {},
@@ -33,8 +35,8 @@ class Alert extends React.PureComponent {
   };
 
   get className() {
-    const { type } = this.props;
-    return classnames(this.baseClass, `pbg-alert-${type}`);
+    const { type, className } = this.props;
+    return classnames(this.baseClassName, `pbg-alert-${type}`, className);
   }
 
   render() {

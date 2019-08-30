@@ -9,7 +9,15 @@ describe('ActivityCard', () => {
     it('should have a correct wrapper element', () => {
       const wrapper = shallow(<ActivityCard />);
 
-      expect(wrapper.hasClass('activity-card')).to.be.equal(true);
+      expect(wrapper.hasClass('pbg-activity-card')).to.be.true;
+      expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
+    });
+
+    it('should have a className if provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<ActivityCard className={className} />);
+
+      expect(wrapper.hasClass(className)).to.be.true;
     });
 
     it('should render an ActivityThumbnail', () => {

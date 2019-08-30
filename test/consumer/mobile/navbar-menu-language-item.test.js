@@ -13,6 +13,15 @@ describe('navbar-menu-language-item', () => {
     expect(wrapper.hasClass('pbg-navbar-menu-language-item')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const languages = [{ label: 'English', value: 'en' }, { label: 'Español', value: 'es' }];
+
+    const wrapper = shallow(<NavbarMenuLanguageItem languages={languages} className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct label and options', () => {
     const languages = [{ label: 'English', value: 'en' }, { label: 'Español', value: 'es' }];
     const label = 'label';

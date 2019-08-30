@@ -22,6 +22,12 @@ describe('Stored Value Selector', () => {
     expect(wrapper.hasClass('pbg-stored-value-selector')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<StoredValueSelector className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should not render label when no label prop', () => {
     const wrapper = shallow(<StoredValueSelector addNewValue="new" addNewText="add" orText="or" />);
     expect(wrapper.find('.pbg-desktop-label-normal')).to.have.lengthOf(0);

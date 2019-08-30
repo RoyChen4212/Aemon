@@ -5,7 +5,6 @@ import { shallow } from 'enzyme';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
 import HistoricalPicker from '../../../components/consumer/mobile/historical-picker';
 import Label from '../../../components/consumer/mobile/label';
-import Hint, { hintTypes } from '../../../components/consumer/mobile/hint';
 
 describe('Historical Picker', () => {
   shouldBehaveLikeFormField(shallow(<HistoricalPicker error="some error" />));
@@ -13,6 +12,13 @@ describe('Historical Picker', () => {
   it('should have correct class name', () => {
     const wrapper = shallow(<HistoricalPicker />);
     expect(wrapper.hasClass('pbg-historical-picker')).to.be.true;
+  });
+
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<HistoricalPicker className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
   });
 
   it('should contain a select element', () => {

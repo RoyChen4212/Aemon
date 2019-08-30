@@ -3,6 +3,7 @@ import { mount, shallow } from 'enzyme';
 import times from 'lodash/times';
 import BaseAvatar from '../../../components/consumer/shared/base-avatar';
 import defaults from '../../../components/consumer/shared/base-avatar/defaults';
+import { expect } from 'chai';
 
 describe('BaseAvatar', () => {
   const src = 'https://myimage.com';
@@ -12,6 +13,13 @@ describe('BaseAvatar', () => {
       const wrapper = shallow(<BaseAvatar src={src} />);
 
       expect(wrapper.find('img').prop('src')).to.equal(src);
+    });
+
+    it('should have a className if provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<BaseAvatar className={className} />);
+
+      expect(wrapper.hasClass(className)).to.be.true;
     });
 
     it('should set "size" prop as width and height', () => {

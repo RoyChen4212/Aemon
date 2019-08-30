@@ -6,12 +6,20 @@ import ActivityThumbnail, {
   PURCHASE_UPDATED,
 } from '../../../components/consumer/mobile/activity-thumbnail';
 import Avatar from '../../../components/consumer/mobile/avatar';
+import { expect } from 'chai';
 
 describe('Mobile ActivityThumbnail', () => {
   it('should have the bg-activity-thumbnail and pbg-consumer-mobile classNames', () => {
     const wrapper = shallow(<ActivityThumbnail type={PURCHASE_UPDATED} />);
     expect(wrapper.hasClass('pbg-activity-thumbnail')).to.be.true;
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
+  });
+
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ActivityThumbnail className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
   });
 
   it('should render a user avatar if type is purchase_comment_created and src are passed as props', () => {

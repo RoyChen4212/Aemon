@@ -16,6 +16,13 @@ describe('SetupHeader', () => {
     expect(wrapper.hasClass('pbg-setup-header')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<SetupHeader className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should display label', () => {
     const wrapper = shallow(<SetupHeader label={label} viewInfoText={viewInfoText} hideInfoText={hideInfoText} />);
     expect(wrapper.find('.pbg-setup-header-text').html()).to.contain(label);

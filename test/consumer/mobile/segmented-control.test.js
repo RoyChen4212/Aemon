@@ -10,6 +10,13 @@ describe('Segmented Control', () => {
     expect(wrapper.hasClass('pbg-consumer-mobile')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<SegmentedControl className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have pbg-segmented-control class', () => {
     const wrapper = shallow(<SegmentedControl />);
     expect(wrapper.hasClass('pbg-segmented-control')).to.be.true;

@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { get } from 'lodash';
+import cx from 'classnames';
 import Picker from '../picker';
 import Label, { labelTypes } from '../label';
 import Hint from '../hint';
@@ -17,6 +19,14 @@ const COUNTRY = 'country';
 class NewAddressField extends FormField {
   baseClassName = 'pbg-form-field pbg-new-address-field';
 
+  static propTypes = {
+    className: PropTypes.string,
+  }
+
+  static defaultProps = {
+    className: null,
+  }
+
   state = {
     [`${STREET_ADDRESS}Touched`]: false,
     [`${CITY}Touched`]: false,
@@ -26,7 +36,8 @@ class NewAddressField extends FormField {
   };
 
   get className() {
-    return this.baseClassName;
+    const { className } = this.props;
+    return cx(this.baseClassName, className);
   }
 
   get countryOptions() {

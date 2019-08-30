@@ -15,6 +15,13 @@ describe('money-field', () => {
     expect(wrapper.hasClass('pbg-money-field')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<MoneyField className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render placeholder', () => {
     const wrapper = shallow(<MoneyField />);
     expect(wrapper.find('input').prop('placeholder')).to.equal('$ 0.00');

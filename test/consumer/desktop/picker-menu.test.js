@@ -21,6 +21,12 @@ describe('PickerMenu', () => {
     expect(wrapper.hasClass('pbg-picker-menu')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PickerMenu className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render given options', () => {
     const wrapper = shallow(<PickerMenu options={opts} />);
     expect(wrapper.find('.picker-menu-item')).to.have.lengthOf(2);

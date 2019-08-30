@@ -17,6 +17,13 @@ describe('Picker', () => {
     expect(wrapper.hasClass('pbg-picker')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Picker className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render a select element', () => {
     const wrapper = shallow(<Picker />);
     expect(wrapper.find('select')).to.have.lengthOf(1);

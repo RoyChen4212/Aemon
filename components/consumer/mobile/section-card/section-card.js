@@ -16,9 +16,10 @@ const SectionCard = ({
   activateButtonText,
   onActivateButtonClick,
   completedLabel,
+  className,
 }) => {
   return (
-    <div className={cx(baseClassName, { disabled: status === sectionCardStatus.DISABLED })}>
+    <div className={cx(baseClassName, className, { disabled: status === sectionCardStatus.DISABLED })}>
       <div className="pbg-section-card-header">
         <div className="pbg-section-card-header-row">
           <div className="pbg-section-card-header-text">
@@ -62,6 +63,7 @@ SectionCard.propTypes = {
   activateButtonText: PropTypes.string.isRequired,
   onActivateButtonClick: PropTypes.func,
   completedLabel: PropTypes.string,
+  className: PropTypes.string,
 };
 
 SectionCard.defaultProps = {
@@ -70,6 +72,7 @@ SectionCard.defaultProps = {
   headerButton: null,
   onActivateButtonClick: null,
   completedLabel: null,
+  className: null,
 };
 
 export default SectionCard;

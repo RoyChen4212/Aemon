@@ -12,19 +12,25 @@ class Banner extends React.PureComponent {
   static propTypes = {
     text: PropTypes.string.isRequired,
     color: PropTypes.oneOf([Banner.COLORS.DARK_BLUE]),
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     color: Banner.COLORS.DARK_BLUE,
+    className: null,
   };
 
   render() {
-    const { text, color } = this.props;
-    const className = classnames('pbg-banner', {
-      'pbg-banner-dark-blue': color === Banner.COLORS.DARK_BLUE,
-    });
+    const { text, color, className } = this.props;
+    const classNameTotal = classnames(
+      'pbg-banner',
+      {
+        'pbg-banner-dark-blue': color === Banner.COLORS.DARK_BLUE,
+      },
+      className
+    );
 
-    return <div className={className}>{text}</div>;
+    return <div className={classNameTotal}>{text}</div>;
   }
 }
 

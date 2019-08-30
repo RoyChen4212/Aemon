@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import Popover from '../../../components/consumer/desktop/popover';
+import { expect } from 'chai';
 
 describe('Popover', () => {
   it('should render trigger', () => {
@@ -17,6 +18,12 @@ describe('Popover', () => {
     const content = <div>I am content</div>;
     const wrapper = shallow(<Popover content={content} />);
     expect(wrapper.find('.pbg-popover').contains(content)).to.be.true;
+  });
+
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Popover className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
   });
 
   it('should add class pbg-popover-active to popover element on click', done => {

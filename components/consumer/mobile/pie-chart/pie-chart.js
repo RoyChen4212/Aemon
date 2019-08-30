@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import PieChartComponent from 'react-minimal-pie-chart';
 import colorCodes from '../../shared/scss/_styleguide.scss';
 
@@ -7,8 +8,8 @@ import './style.scss';
 
 const baseClassName = 'pbg-consumer-mobile pbg-pie-chart';
 
-const PieChart = ({ label, hint, dataPoints }) => (
-  <div className={baseClassName}>
+const PieChart = ({ label, hint, dataPoints, className }) => (
+  <div className={cx(baseClassName, className)}>
     <div className="pbg-pie-chart-text-wrapper">
       <div className="pbg-mobile-heading-2">{label}</div>
       <div className="pbg-mobile-small-normal">{hint}</div>
@@ -25,6 +26,7 @@ const PieChart = ({ label, hint, dataPoints }) => (
 PieChart.propTypes = {
   label: PropTypes.string.isRequired,
   hint: PropTypes.string.isRequired,
+  className: PropTypes.string,
   dataPoints: PropTypes.arrayOf(
     PropTypes.shape({
       percentage: PropTypes.number.isRequired,
@@ -35,6 +37,7 @@ PieChart.propTypes = {
 
 PieChart.defaultProps = {
   dataPoints: [],
+  className: null,
 };
 
 export default PieChart;

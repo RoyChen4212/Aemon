@@ -30,7 +30,7 @@ storiesOf('Consumer/Desktop/Form Fields/password-field', module)
       label="Password"
       hint="Please login with your password."
       forgotPasswordText="Forgot?"
-      error="Something went wrong!"
+      error="Incorrect password."
       onChange={action('change')}
       onForgotPassword={action('click')}
       required

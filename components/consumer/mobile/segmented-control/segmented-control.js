@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { isObject, findIndex, first, last } from 'lodash';
 import makeEvent from '../../../lib/make-event';
 
@@ -14,11 +15,13 @@ class SegmentedControl extends React.Component {
       }
     }),
     onChange: PropTypes.func,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     segments: [],
     onChange: () => {},
+    className: null,
   };
 
   static types = {
@@ -69,8 +72,9 @@ class SegmentedControl extends React.Component {
   }
 
   render() {
+    const { className } = this.props;
     return (
-      <div className="pbg-consumer-mobile pbg-segmented-control">
+      <div className={cx('pbg-consumer-mobile pbg-segmented-control', className)}>
         {this.renderFirstControl()}
         {this.renderSecondControl()}
       </div>

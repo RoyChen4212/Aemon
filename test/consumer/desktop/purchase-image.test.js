@@ -11,6 +11,12 @@ describe('purchase-image', () => {
     expect(wrapper.hasClass('pbg-purchase-image')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PurchaseImage className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should contain one img element', () => {
     const wrapper = shallow(<PurchaseImage />);
     expect(wrapper.find('img')).to.have.lengthOf(1);

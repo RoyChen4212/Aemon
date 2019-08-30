@@ -15,6 +15,13 @@ describe('ContributorCard Card', () => {
     expect(wrapper.hasClass('pbg-contributor-card')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ContributorCard className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should accept a type and give it a class for it', () => {
     const wrapper = shallow(<ContributorCard type={ContributorCard.types.error} />);
     expect(wrapper.hasClass('pbg-contributor-card-type-error')).to.be.true;

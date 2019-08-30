@@ -16,6 +16,12 @@ describe('primary-modal', () => {
     expect(wrapper.hasClass('pbg-primary-modal')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PrimaryModal className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have main content section', () => {
     const wrapper = shallow(<PrimaryModal />);
     expect(wrapper.find(contentClass)).to.have.lengthOf(1);

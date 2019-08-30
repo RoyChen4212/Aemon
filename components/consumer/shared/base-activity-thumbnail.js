@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { includes } from 'lodash';
 
 export const URL_PREFIX = 'https://assets.paybygroup.com/images/activity-icons/';
@@ -46,6 +47,7 @@ class ActivityThumbnail extends React.PureComponent {
     userId: PropTypes.string,
     src: PropTypes.string,
     fullName: PropTypes.string,
+    className: PropTypes.string,
     type(props, propName) {
       if (!includes(types, props[propName])) {
         return new Error(`Invalid prop ${propName} supplied to ActivityThumbnail. Validation failed.`);
@@ -60,6 +62,7 @@ class ActivityThumbnail extends React.PureComponent {
     userId: null,
     src: null,
     fullName: null,
+    className: null,
   };
 
   static icons = {
@@ -100,11 +103,11 @@ class ActivityThumbnail extends React.PureComponent {
   }
 
   render() {
-    const { type, size } = this.props;
+    const { type, size, className } = this.props;
     if (this.shouldRenderAvatar) return this.renderAvatar();
     const url = ActivityThumbnail.icons[type];
     return (
-      <div className={this.baseClassName}>
+      <div className={cx(this.baseClassName, className)}>
         <img src={url} width={size} height={size} />
       </div>
     );

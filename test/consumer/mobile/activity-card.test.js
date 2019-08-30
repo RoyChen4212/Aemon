@@ -16,6 +16,14 @@ describe('Activity Card', () => {
       expect(wrapper.hasClass('pbg-activity-card')).to.be.true;
     });
 
+    it('should have a className if provided', () => {
+      const className = 'className';
+      const wrapper = shallow(<ActivityCard className={className} />);
+
+      expect(wrapper.hasClass(className)).to.be.true;
+    });
+
+
     it('should have date hint', () => {
       const wrapper = mount(<ActivityCard />);
       expect(wrapper.find('.pbg-hint')).to.have.lengthOf(1);

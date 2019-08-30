@@ -26,6 +26,13 @@ describe('expandable-section', () => {
     expect(wrapper.hasClass('pbg-expandable-section')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ExpandableSection className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct title and secondary Text', () => {
     const wrapper = shallow(
       <ExpandableSection

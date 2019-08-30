@@ -19,6 +19,13 @@ describe('NoAccountWarning', () => {
     expect(wrapper.hasClass('bar')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<NoAccountWarning className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should accept a title prop', () => {
     const title = 'A title';
     const wrapper = shallow(<NoAccountWarning title={title} />);

@@ -46,6 +46,12 @@ describe('TextField', () => {
   shouldBehaveLikeTextField(shallow(<TextField />));
   shouldBehaveLikeFormField(shallow(<TextField error="some error" />));
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<TextField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should pass name prop to input element', () => {
     const expected = 'text-field-name';
     const wrapper = shallow(<TextField name={expected} />);
