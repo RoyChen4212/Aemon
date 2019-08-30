@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import './style.scss';
 import TextField from '../text-field';
 import ContactImportInputOption from './contact-import-input-option';
 import FormField from '../form-field';
+
+import { ARROW_DOWN_KEYCODE, ARROW_UP_KEYCODE, RETURN_KEYCODE } from '../../global/constants/keyCodes';
+import './style.scss';
 
 class ContactImportInput extends FormField {
   static baseClassName = 'pbg-consumer-desktop pbg-contact-import-input';
@@ -33,25 +35,48 @@ class ContactImportInput extends FormField {
 
   state = { isOpen: false, selected: 0 };
 
+  componentDidMount() {
+    window.addEventListener('keydown', this.onKeyDown);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.onKeyDown);
+  }
+
   onKeyDown = e => {
-    if (e.keyCode === 40) {
-      const { selected } = this.state;
-      const filteredOptionsLength = this.filteredOptions().length - 1;
-      const newSelected = selected === filteredOptionsLength ? 0 : selected + 1;
-      this.setState({ selected: newSelected });
+    switch (e.keyCode) {
+      case ARROW_DOWN_KEYCODE:
+        this.onArrowDownPress();
+        break;
+      case ARROW_UP_KEYCODE:
+        this.onArrowUpPress();
+        break;
+      case RETURN_KEYCODE:
+        this.onReturnPress();
+        break;
+      default:
     }
-    if (e.keyCode === 38) {
-      const { selected } = this.state;
-      const filteredOptionsLength = this.filteredOptions().length - 1;
-      const newSelected = selected === 0 ? filteredOptionsLength : selected - 1;
-      this.setState({ selected: newSelected });
-    }
-    if (e.keyCode === 13) {
-      const { selected } = this.state;
-      const filteredOptions = this.filteredOptions();
-      this.onSelect(filteredOptions[selected].value);
-      this.closeDropDown();
-    }
+  };
+
+  onArrowDownPress = () => {
+    const { selected } = this.state;
+    const filteredOptionsLength = this.filteredOptionsByUserInput().length - 1;
+    const newSelected = selected === filteredOptionsLength ? 0 : selected + 1;
+    this.setState({ selected: newSelected });
+  };
+
+  onArrowUpPress = () => {
+    const { selected } = this.state;
+    const filteredOptionsLength = this.filteredOptionsByUserInput().length - 1;
+    const newSelected = selected === 0 ? filteredOptionsLength : selected - 1;
+    this.setState({ selected: newSelected });
+  };
+
+  onReturnPress = () => {
+    const { selected } = this.state;
+    const filteredOptions = this.filteredOptionsByUserInput();
+    this.onSelect(filteredOptions[selected].value);
+    this.closeDropDown();
   };
 
   onSelect = value => {
@@ -60,19 +85,17 @@ class ContactImportInput extends FormField {
     onChange({ target: { value: null } });
   };
 
-  onFocus = e => {
-    e.target.addEventListener('keydown', this.onKeyDown);
+  onFocus = () => {
     this.setState({ isOpen: true, selected: 0 });
   };
 
-  onBlur = e => {
-    e.target.removeEventListener('keydown', this.onKeyDown);
+  onBlur = () => {
     this.closeDropDown();
   };
 
   closeDropDown = () => setTimeout(() => this.setState({ isOpen: false, selected: 0 }), 100);
 
-  filteredOptions = () => {
+  filteredOptionsByUserInput = () => {
     const { options, value } = this.props;
 
     const valueLowerCase = value ? value.toLowerCase() : '';
@@ -82,7 +105,7 @@ class ContactImportInput extends FormField {
   render() {
     const { isOpen, selected } = this.state;
     const { placeholder, value, onChange, className } = this.props;
-    const filteredOptions = this.filteredOptions();
+    const filteredOptions = this.filteredOptionsByUserInput();
     return (
       <div className={cx(ContactImportInput.baseClassName, className)}>
         {this.renderLabel()}

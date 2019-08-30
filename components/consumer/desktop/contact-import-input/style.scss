@@ -2,7 +2,7 @@
 
 .pbg-consumer-desktop {
   &.pbg-contact-import-input {
-    width: 234px;
+    width: 100%;
     position: relative;
     .pbg-contact-import-input-error {
       position: absolute;
@@ -11,7 +11,8 @@
     .pbg-contact-import-input-options {
       position: absolute;
       top: 100%;
-      width: 474px;
+      width: 100%;
+      min-width: 474px;
       background-color: $white;
       border: 1px solid $gray-30;
       border-radius: 4px;

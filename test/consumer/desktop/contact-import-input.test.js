@@ -6,6 +6,11 @@ import sinon from 'sinon';
 import ContactImportInput from '../../../components/consumer/desktop/contact-import-input';
 import TextField from '../../../components/consumer/desktop/text-field/text-field';
 import ContactImportInputOption from '../../../components/consumer/desktop/contact-import-input/contact-import-input-option';
+import {
+  ARROW_DOWN_KEYCODE,
+  ARROW_UP_KEYCODE,
+  RETURN_KEYCODE,
+} from '../../../components/consumer/global/constants/keyCodes';
 
 describe('contact-import-input', () => {
   const options = [
@@ -80,10 +85,9 @@ describe('contact-import-input', () => {
     expect(textField.prop('value')).to.equal(value);
   });
 
-  it('should open options on select and attach event', () => {
+  it('should open options on select', () => {
     const onSelect = sinon.spy();
     const onChange = sinon.spy();
-    const addEventListener = sinon.spy();
     const wrapper = shallow(
       <ContactImportInput
         options={options}
@@ -99,19 +103,16 @@ describe('contact-import-input', () => {
     textField
       .dive()
       .find('input')
-      .simulate('focus', { target: { addEventListener } });
+      .simulate('focus', { target: {} });
     wrapper.update();
 
     expect(wrapper.find('.pbg-contact-import-input-options').length).to.equal(1);
     expect(wrapper.find(ContactImportInputOption).length).to.equal(3);
-    expect(addEventListener.calledOnce).to.be.true;
   });
 
   it('should close options and stop event listening to event on blur', done => {
     const onSelect = sinon.spy();
     const onChange = sinon.spy();
-    const addEventListener = sinon.spy();
-    const removeEventListener = sinon.spy();
     const wrapper = shallow(
       <ContactImportInput
         options={options}
@@ -127,7 +128,7 @@ describe('contact-import-input', () => {
     textField
       .dive()
       .find('input')
-      .simulate('focus', { target: { addEventListener } });
+      .simulate('focus', { target: {} });
     wrapper.update();
 
     expect(wrapper.find('.pbg-contact-import-input-options').length).to.equal(1);
@@ -135,11 +136,10 @@ describe('contact-import-input', () => {
     textField
       .dive()
       .find('input')
-      .simulate('blur', { target: { removeEventListener } });
+      .simulate('blur', { target: {} });
 
     setTimeout(() => {
       expect(wrapper.find('.pbg-contact-import-input-options').length).to.equal(0);
-      expect(removeEventListener.calledOnce).to.be.true;
       done();
     }, 120);
   });
@@ -228,5 +228,110 @@ describe('contact-import-input', () => {
 
     expect(onSelect.calledOnce).to.be.true;
     expect(onChange.calledOnce).to.be.true;
+  });
+
+  describe('keyBoard itaractions', () => {
+    let defaultAddListener;
+    let defaultRemoveListener;
+    const map = {};
+
+    const eventListener = {
+      addEventListener: (event, cb) => {
+        map[event] = cb;
+      },
+    };
+
+    before(() => {
+      defaultAddListener = window.addEventListener;
+      defaultRemoveListener = window.removeEventListener;
+      window.addEventListener = sinon.spy(eventListener, 'addEventListener');
+      window.removeEventListener = sinon.spy();
+    });
+
+    after(() => {
+      window.addEventListener = defaultAddListener;
+      window.removeEventListener = defaultRemoveListener;
+    });
+
+    it('should react on arrow down', () => {
+      const onSelect = sinon.spy();
+      const onChange = sinon.spy();
+
+      const wrapper = shallow(
+        <ContactImportInput
+          options={options}
+          onSelect={onSelect}
+          onChange={onChange}
+          value={value}
+          placeholder={placeholder}
+        />
+      );
+
+      expect(wrapper.state('selected')).to.equal(0);
+
+      map.keydown({ keyCode: ARROW_DOWN_KEYCODE });
+
+      expect(wrapper.state('selected')).to.equal(1);
+    });
+
+    it('should react on arrow up', () => {
+      const onSelect = sinon.spy();
+      const onChange = sinon.spy();
+
+      const wrapper = shallow(
+        <ContactImportInput
+          options={options}
+          onSelect={onSelect}
+          onChange={onChange}
+          value={value}
+          placeholder={placeholder}
+        />
+      );
+
+      expect(wrapper.state('selected')).to.equal(0);
+
+      map.keydown({ keyCode: ARROW_UP_KEYCODE });
+
+      expect(wrapper.state('selected')).to.equal(2);
+    });
+
+    it('should react on return', () => {
+      const onSelect = sinon.spy();
+      const onChange = sinon.spy();
+
+      const wrapper = shallow(
+        <ContactImportInput
+          options={options}
+          onSelect={onSelect}
+          onChange={onChange}
+          value={value}
+          placeholder={placeholder}
+        />
+      );
+
+      expect(wrapper.state('selected')).to.equal(0);
+
+      map.keydown({ keyCode: RETURN_KEYCODE });
+
+      expect(onSelect.calledWith(options[0].value)).to.be.true;
+    });
+
+    it('should remove events after unMount', () => {
+      const onSelect = sinon.spy();
+      const onChange = sinon.spy();
+
+      const wrapper = shallow(
+        <ContactImportInput
+          options={options}
+          onSelect={onSelect}
+          onChange={onChange}
+          value={value}
+          placeholder={placeholder}
+        />
+      );
+      wrapper.unmount();
+
+      expect(window.removeEventListener.calledOnce).to.be.true;
+    });
   });
 });
