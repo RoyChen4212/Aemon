@@ -89,12 +89,6 @@ describe('TextField', () => {
     expect(onBlur.calledOnce).to.be.true;
   });
 
-  it('should pass label prop as placeholder by default', () => {
-    const expected = 'Label';
-    const wrapper = shallow(<TextField label="Label" />);
-    expect(wrapper.find('input').prop('placeholder')).to.equal(expected);
-  });
-
   it('should set placeholder prop if given', () => {
     const expected = 'Placeholder';
     const wrapper = shallow(<TextField label="Label" placeholder="Placeholder" />);
@@ -102,9 +96,8 @@ describe('TextField', () => {
   });
 
   it('should hide placeholder if empty string is passed', () => {
-    const expected = '';
     const wrapper = shallow(<TextField label="Label" placeholder="" />);
-    expect(wrapper.find('input').prop('placeholder')).to.equal(expected);
+    expect(wrapper.find('input').prop('placeholder')).to.equal(null);
   });
 
   it('should include label element with passed label along with input', () => {

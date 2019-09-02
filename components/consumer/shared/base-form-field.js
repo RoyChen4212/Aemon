@@ -16,7 +16,7 @@ class BaseFormField extends React.Component {
   static defaultProps = {
     className: null,
     label: null,
-    required: false,
+    required: undefined,
     adapter: null,
   };
 
