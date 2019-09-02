@@ -13,6 +13,12 @@ describe('card field', () => {
     expect(wrapper.hasClass('pbg-card-field')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<CardField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have label', () => {
     const labelText = 'text';
     const wrapper = shallow(<CardField label={labelText} />);

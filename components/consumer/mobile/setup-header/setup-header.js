@@ -10,6 +10,25 @@ import './style.scss';
 const baseClassName = 'pbg-consumer-mobile pbg-setup-header';
 
 class SetupHeader extends React.Component {
+  static propTypes = {
+    label: PropTypes.string.isRequired,
+    viewInfoText: PropTypes.string.isRequired,
+    hideInfoText: PropTypes.string.isRequired,
+    hint: PropTypes.string,
+    className: PropTypes.string,
+    children: PropTypes.node,
+    stepCount: PropTypes.number,
+    progress: PropTypes.number,
+  };
+
+  static defaultProps = {
+    hint: null,
+    children: null,
+    className: null,
+    stepCount: 0,
+    progress: 0,
+  };
+
   state = { expanded: false };
 
   onButtonClick = () => {
@@ -18,13 +37,13 @@ class SetupHeader extends React.Component {
   };
 
   render() {
-    const { label, hint, viewInfoText, hideInfoText, stepCount, progress, children } = this.props;
+    const { label, hint, viewInfoText, hideInfoText, stepCount, progress, children, className } = this.props;
     const { expanded } = this.state;
     const buttonText = expanded ? hideInfoText : viewInfoText;
     const buttonIcon = expanded ? iconTypes.ARROW_UP : iconTypes.ARROW_DOWN;
 
     return (
-      <div className={classnames(baseClassName, 'pbg-mobile-shadow-level-two')}>
+      <div className={classnames(baseClassName, className, 'pbg-mobile-shadow-level-two')}>
         <div className="pbg-setup-header-inner">
           <div className="pbg-setup-header-text">
             <span className="pbg-mobile-label-strong">{label}</span>
@@ -40,22 +59,5 @@ class SetupHeader extends React.Component {
     );
   }
 }
-
-SetupHeader.propTypes = {
-  label: PropTypes.string.isRequired,
-  viewInfoText: PropTypes.string.isRequired,
-  hideInfoText: PropTypes.string.isRequired,
-  hint: PropTypes.string,
-  children: PropTypes.node,
-  stepCount: PropTypes.number,
-  progress: PropTypes.number,
-};
-
-SetupHeader.defaultProps = {
-  hint: null,
-  children: null,
-  stepCount: 0,
-  progress: 0,
-};
 
 export default SetupHeader;

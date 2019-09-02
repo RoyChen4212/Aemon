@@ -1,5 +1,6 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
+import cx from 'classnames';
 import FormField from '../form-field';
 import ComplexValueFormField from '../../shared/complex-value-form-field';
 import PasswordField from '../password-field';
@@ -10,8 +11,17 @@ import './style.scss';
 
 const ComposedFormField = ComplexValueFormField(FormField);
 
+/** @extends React.Component */
 class GuestPasswordField extends ComposedFormField {
   baseClassName = 'pbg-consumer-desktop pbg-guest-password-field';
+
+  static propTypes = {
+    className: PropTypes.string,
+  }
+
+  static defaultProps = {
+    className: null,
+  }
 
   onCheckboxChange = ev => {
     this.updateValue({ guest: ev.target.value });
@@ -37,8 +47,9 @@ class GuestPasswordField extends ComposedFormField {
   }
 
   render() {
+    const { className } = this.props;
     return (
-      <div className={this.className}>
+      <div className={cx(this.className, className)}>
         <PasswordField
           label={this.adaptedProps.label}
           type={this.baseType}
@@ -47,6 +58,7 @@ class GuestPasswordField extends ComposedFormField {
           disabled={this.currentValue.guest || this.adaptedProps.disabled}
           onChange={this.onInputChange}
           onBlur={() => this.onBlur(makeEvent(this.currentValue))}
+          error={this.adaptedProps.error}
         />
         {this.renderHintWithCheckbox()}
       </div>

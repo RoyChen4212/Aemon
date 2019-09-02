@@ -9,4 +9,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 storiesOf('Consumer/Desktop/Atomic Components/Inputs', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('div-input', () => <DivInput />);
+  .add('div-input/default', () => <DivInput label="Security code" />)
+  .add('div-input/error', () => <DivInput label="Security code" error="Error" />)
+  .add('div-input/simple', () => <DivInput />);

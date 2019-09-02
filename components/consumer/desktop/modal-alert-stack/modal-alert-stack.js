@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import last from 'lodash/last';
 import jQuery from 'jquery';
 
@@ -13,11 +14,13 @@ class ModalAlertStack extends React.PureComponent {
   static propTypes = {
     alerts: PropTypes.array,
     onHideAlert: PropTypes.func,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     alerts: [],
     onHideAlert: null,
+    className: null,
   };
 
   componentDidUpdate(prevProps) {
@@ -61,9 +64,9 @@ class ModalAlertStack extends React.PureComponent {
   };
 
   render() {
-    const { alerts } = this.props;
+    const { alerts, className } = this.props;
     return (
-      <div className="pbg-consumer-desktop pbg-modal-alert-stack" ref={this.stackElementRef}>
+      <div className={cx('pbg-consumer-desktop pbg-modal-alert-stack', className)} ref={this.stackElementRef}>
         {alerts.map(this.renderAlert)}
       </div>
     );

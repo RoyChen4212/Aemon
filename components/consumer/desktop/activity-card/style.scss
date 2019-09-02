@@ -1,50 +1,52 @@
 @import '../../shared/scss/styleguide';
 
-.activity-card {
-  .pbg-activity-thumbnail {
-    display: block;
-    width: 35px;
-    height: 100%;
-    float: left;
-    margin-right: 15px;
-    padding-top: 5px;
-  }
-
-  .activity-card-text {
-    float: left;
-    position: relative;
-    width: 100%;
-
-    p.activity-card-title {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: bold;
-      line-height: 21px;
-      font-size: 14px;
-      color: $grayish-brown;
-      margin-bottom: 5px;
+.pbg-consumer-desktop {
+  &.pbg-activity-card {
+    .pbg-activity-thumbnail {
+      display: block;
+      width: 35px;
+      height: 100%;
+      float: left;
+      margin-right: 15px;
+      padding-top: 5px;
     }
 
-    p.activity-card-time {
-      font-family: 'Roboto Condensed';
-      font-style: normal;
-      font-weight: normal;
-      line-height: 16px;
-      font-size: 12px;
-      position: absolute;
-      top: 0;
-      right: 15px;
-      color: $cool-grey;
-      text-transform: lowercase;
-    }
+    .activity-card-text {
+      float: left;
+      position: relative;
+      width: 100%;
 
-    div.activity-card-description {
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 21px;
-      font-size: 14px;
-      color: $cool-grey;
+      p.activity-card-title {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 21px;
+        font-size: 14px;
+        color: $grayish-brown;
+        margin-bottom: 5px;
+      }
+
+      p.activity-card-time {
+        font-family: 'Roboto Condensed';
+        font-style: normal;
+        font-weight: normal;
+        line-height: 16px;
+        font-size: 12px;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        color: $cool-grey;
+        text-transform: lowercase;
+      }
+
+      div.activity-card-description {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 21px;
+        font-size: 14px;
+        color: $cool-grey;
+      }
     }
   }
 }

@@ -15,6 +15,13 @@ describe('status', () => {
     expect(wrapper.hasClass('pbg-status')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Status className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct label, value and tooltip when they provided', () => {
     const wrapper = shallow(<Status label={label} value={value} iconType={iconTypes.PRICE_TAG} tooltip={tooltip} />);
     expect(wrapper.find('.pbg-mobile-small-normal').text()).to.equal(label);

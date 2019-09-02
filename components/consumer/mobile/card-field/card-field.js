@@ -14,6 +14,7 @@ class CardField extends React.Component {
   static propTypes = {
     htmlId: PropTypes.string,
     label: PropTypes.string,
+    className: PropTypes.string,
     error: PropTypes.string,
     focused: PropTypes.bool,
     allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
@@ -22,16 +23,17 @@ class CardField extends React.Component {
   static defaultProps = {
     htmlId: null,
     label: null,
+    className: null,
     error: null,
     focused: false,
     allowedCardTypes: cardTypes,
   };
 
   render() {
-    const { label, error, focused, allowedCardTypes, htmlId } = this.props;
+    const { label, allowedCardTypes, htmlId, className, error, focused, } = this.props;
 
     return (
-      <div className={this.baseClassName}>
+      <div className={cx(this.baseClassName, className)}>
         {label && (
           <div className="pbg-card-field-label-wrapper">
             <div

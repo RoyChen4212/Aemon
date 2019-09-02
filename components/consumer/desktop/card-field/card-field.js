@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import './style.scss';
 import Cards from './cards';
@@ -14,19 +15,21 @@ class CardField extends React.Component {
     label: PropTypes.string,
     allowedCardTypes: PropTypes.arrayOf(PropTypes.string),
     cardType: PropTypes.oneOf(cardTypes),
+    className: PropTypes.string,
   };
 
   static defaultProps = {
     label: null,
     cardType: null,
+    className: null,
     allowedCardTypes: cardTypes,
   };
 
   render() {
-    const { label, allowedCardTypes, cardType } = this.props;
+    const { label, allowedCardTypes, cardType, className } = this.props;
 
     return (
-      <div className={this.baseClassName}>
+      <div className={cx(this.baseClassName, className)}>
         {label && (
           <div className="pbg-card-field-label-wrapper">
             <div className="pbg-desktop-label-normal pbg-label-with-cards">{label}</div>

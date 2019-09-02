@@ -12,6 +12,12 @@ describe('ClaimToggle', () => {
     expect(wrapper.hasClass('pbg-claim-toggle')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<ClaimToggle className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render a stroked Container when is non-required and non-disabled', () => {
     const wrapper = shallow(<ClaimToggle required={false} disabled={false} />);
     expect(wrapper.find(Container).prop('stroked')).to.be.equal(true);
@@ -72,7 +78,7 @@ describe('ClaimToggle', () => {
     expect(wrapper.find(ClaimToggleContent).prop('error')).to.be.equal(error);
   });
 
-  it('reports the value as true upon checking the checkbox', (done) => {
+  it('reports the value as true upon checking the checkbox', done => {
     const onChange = ev => {
       expect(ev.target.value).to.be.true;
       done();

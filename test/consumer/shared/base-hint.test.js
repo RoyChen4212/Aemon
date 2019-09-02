@@ -11,6 +11,13 @@ describe('BaseHint', () => {
     expect(wrapper.find('span')).to.have.lengthOf(1);
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<BaseHint className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render with text', () => {
     const expected = 'Some text';
     const wrapper = shallow(<BaseHint>{expected}</BaseHint>);

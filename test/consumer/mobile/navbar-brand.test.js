@@ -15,6 +15,13 @@ describe('NavbarBrand', () => {
     expect(wrapper.hasClass('pbg-navbar-brand')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<NavbarBrand className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have icon with given URL', () => {
     const wrapper = shallow(<NavbarBrand merchantLogoUrl={url} poweredByText={poweredByText} />);
 

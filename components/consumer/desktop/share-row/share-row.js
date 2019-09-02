@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import cx from 'classnames';
 import Popover from '../popover';
 import colorCodes from '../../shared/scss/_styleguide.scss';
 
@@ -15,12 +15,14 @@ class ShareRow extends React.Component {
     amount: PropTypes.string.isRequired,
     color: PropTypes.string.isRequired,
     detailsText: PropTypes.string,
+    className: PropTypes.string,
     detailsContent: PropTypes.node,
   };
 
   static defaultProps = {
     detailsText: null,
     detailsContent: null,
+    className: null,
   };
 
   renderAmount = () => {
@@ -44,12 +46,12 @@ class ShareRow extends React.Component {
   };
 
   render() {
-    const { label, hint, color } = this.props;
+    const { label, hint, color, className } = this.props;
 
     const borderStyle = { borderColor: colorCodes[color] };
 
     return (
-      <div className={this.baseClassName} style={borderStyle}>
+      <div className={cx(this.baseClassName, className)} style={borderStyle}>
         <div className="pbg-desktop-label-normal">{label}</div>
         <div className="pbg-desktop-secondary-text pbg-desktop-small-text">{hint}</div>
         {this.renderAmount()}

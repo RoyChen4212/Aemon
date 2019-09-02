@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import makeEvent from '../../lib/make-event';
 
 const ComposeCheckbox = (FormField, Label, _baseClassName) =>
@@ -22,8 +23,9 @@ const ComposeCheckbox = (FormField, Label, _baseClassName) =>
     onChange = ev => this.adaptedProps.onChange(makeEvent(ev.target.checked));
 
     render() {
+      const { className } = this.props;
       return (
-        <div className={this.className}>
+        <div className={cx(this.className, className)}>
           <input
             type="checkbox"
             checked={this.checked}

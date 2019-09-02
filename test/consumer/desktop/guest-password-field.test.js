@@ -7,11 +7,17 @@ import Checkbox from '../../../components/consumer/desktop/checkbox';
 import PasswordField from '../../../components/consumer/desktop/password-field';
 import GuestPasswordField from '../../../components/consumer/desktop/guest-password-field';
 
-describe('password-field', () => {
+describe('guest-password-field', () => {
   it('should have correct class name', () => {
     const wrapper = shallow(<GuestPasswordField />);
     expect(wrapper.hasClass('pbg-consumer-desktop')).to.be.true;
     expect(wrapper.hasClass('pbg-guest-password-field')).to.be.true;
+  });
+
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<GuestPasswordField className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
   });
 
   it('should render PasswordField component', () => {

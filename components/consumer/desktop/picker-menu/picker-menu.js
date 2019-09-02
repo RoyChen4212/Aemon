@@ -50,14 +50,14 @@ class PickerMenu extends React.PureComponent {
 
   renderBlurImitation = () => {
     const { active, onBlur } = this.props;
-    return <div className={classnames('picker-blur-imitation', { 'hidden': !active })} onClick={onBlur} />
+    return <div className={classnames('picker-blur-imitation', { hidden: !active })} onClick={onBlur} />;
   };
 
   render() {
-    const { active, fullWidth } = this.props;
+    const { active, fullWidth, className } = this.props;
     return (
-      <div className={`${baseClassName} ${active ? 'active' : ''}`}>
-        { this.renderBlurImitation() }
+      <div className={classnames(baseClassName, { active }, className)}>
+        {this.renderBlurImitation()}
         <Container solid shadow2 stroked fullWidth={fullWidth}>
           {this.options.map(this.renderOption)}
         </Container>
@@ -70,12 +70,14 @@ PickerMenu.propTypes = {
   active: PropTypes.bool,
   fullWidth: PropTypes.bool,
   onBlur: PropTypes.func,
+  className: PropTypes.string,
 };
 
 PickerMenu.defaultProps = {
   active: false,
   fullWidth: false,
-  onBlur: () => {}
+  className: null,
+  onBlur: () => {},
 };
 
 export default PickerMenu;

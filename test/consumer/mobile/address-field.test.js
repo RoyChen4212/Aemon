@@ -27,6 +27,13 @@ describe('Address Field', () => {
     expect(wrapper.hasClass('pbg-address-field')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<AddressField className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should not show picker when no options are passed', () => {
     const wrapper = shallow(<AddressField />);
     expect(wrapper.find(HistoricalPicker)).to.have.lengthOf(0);

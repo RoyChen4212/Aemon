@@ -55,6 +55,10 @@
           background-color: $gray-10;
           color: $gray-60;
         }
+
+        &:invalid {
+          box-shadow: none;
+        }
       }
     }
 

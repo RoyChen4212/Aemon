@@ -16,6 +16,13 @@ describe('Date picker', () => {
     expect(wrapper.hasClass('pbg-date-picker')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<DatePicker className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should render an input with type date', () => {
     const wrapper = shallow(<DatePicker />);
     expect(wrapper.find('input').html()).to.include('type="date"');

@@ -6,7 +6,7 @@ import Label, { labelTypes } from '../label';
 import './style.scss';
 
 class ModalAlert extends React.PureComponent {
-  baseClass = 'pbg-consumer-desktop pbg-modal-alert';
+  baseClassName = 'pbg-consumer-desktop pbg-modal-alert';
 
   static propTypes = {
     title: PropTypes.string,
@@ -16,6 +16,7 @@ class ModalAlert extends React.PureComponent {
     success: PropTypes.bool,
     onTextClick: PropTypes.func,
     hideAfter: PropTypes.string,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
@@ -26,15 +27,16 @@ class ModalAlert extends React.PureComponent {
     success: false,
     onTextClick: null,
     hideAfter: null,
+    className: null,
   };
 
   state = { hide: false };
 
   get className() {
-    const { error, warning, success } = this.props;
+    const { error, warning, success, className } = this.props;
     const { hide } = this.state;
 
-    return classnames(this.baseClass, {
+    return classnames(this.baseClassName, className, {
       'pbg-fade-out': hide,
       'pbg-modal-alert-error': error,
       'pbg-modal-alert-warning': warning,

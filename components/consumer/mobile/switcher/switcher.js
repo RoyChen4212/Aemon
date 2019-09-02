@@ -7,8 +7,8 @@ import SwitcherItem from './switcher-item';
 
 const baseClassName = 'pbg-consumer-mobile pbg-switcher';
 
-const Switcher = ({ options, value, onChange }) => (
-  <div className={baseClassName}>
+const Switcher = ({ options, value, onChange, className }) => (
+  <div className={cx(baseClassName, className)}>
     {options.map((option, index) => (
       <SwitcherItem
         key={option.value}
@@ -31,12 +31,14 @@ Switcher.propTypes = {
     PropTypes.shape({ label: PropTypes.string.isRequired, hint: PropTypes.string, value: PropTypes.string.isRequired })
   ).isRequired,
   value: PropTypes.string,
+  className: PropTypes.string,
   onChange: PropTypes.func,
 };
 
 Switcher.defaultProps = {
   value: null,
   onChange: null,
+  className: null,
 };
 
 export default Switcher;

@@ -10,39 +10,30 @@ const sampleText = 'Pay By Group Rules';
 storiesOf('Consumer/Desktop/Atomic Components/Typography', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
-  .add('pbg-desktop-heading-1', () => (
-    <h1 className="pbg-consumer-desktop pbg-desktop-heading-1">{sampleText}</h1>
-  ))
-  .add('pbg-desktop-heading-2', () => (
-    <h2 className="pbg-consumer-desktop pbg-desktop-heading-2">{sampleText}</h2>
-  ))
-  .add('pbg-desktop-heading-3', () => (
-    <h3 className="pbg-consumer-desktop pbg-desktop-heading-3">{sampleText}</h3>
-  ))
+  .add('pbg-desktop-heading-1', () => <h1 className="pbg-consumer-desktop pbg-desktop-heading-1">{sampleText}</h1>)
+  .add('pbg-desktop-heading-2', () => <h2 className="pbg-consumer-desktop pbg-desktop-heading-2">{sampleText}</h2>)
+  .add('pbg-desktop-heading-3', () => <h3 className="pbg-consumer-desktop pbg-desktop-heading-3">{sampleText}</h3>)
   .add('pbg-desktop-label-normal', () => (
     <span className="pbg-consumer-desktop pbg-desktop-label-normal">normal label</span>
   ))
   .add('pbg-desktop-label-strong', () => (
     <span className="pbg-consumer-desktop pbg-desktop-label-strong">strong label</span>
   ))
-  .add('pbg-desktop-label-link', () => (
-    <span className="pbg-consumer-desktop pbg-desktop-label-link">link label</span>
-  ))
+  .add('pbg-desktop-label-link', () => <span className="pbg-consumer-desktop pbg-desktop-label-link">link label</span>)
   .add('pbg-desktop-label-error', () => (
     <span className="pbg-consumer-desktop pbg-desktop-label-error">error label</span>
   ))
-  .add('pbg-desktop-paragraph', () => (
-    <p className="pbg-consumer-desktop pbg-desktop-paragraph">paragraph</p>
-  ))
+  .add('pbg-desktop-paragraph', () => <p className="pbg-consumer-desktop pbg-desktop-paragraph">paragraph</p>)
   .add('pbg-desktop-paragraph-secondary', () => (
     <p className="pbg-consumer-desktop pbg-desktop-paragraph-secondary">paragraph secondary</p>
+  ))
+  .add('pbg-desktop-small-normal', () => (
+    <span className="pbg-consumer-desktop pbg-desktop-small-normal">small normal</span>
   ))
   .add('pbg-desktop-small-text', () => (
     <span className="pbg-consumer-desktop pbg-desktop-small-text">small normal</span>
   ))
-  .add('pbg-desktop-small-link', () => (
-    <span className="pbg-consumer-desktop pbg-desktop-small-link">small link</span>
-  ))
+  .add('pbg-desktop-small-link', () => <span className="pbg-consumer-desktop pbg-desktop-small-link">small link</span>)
   .add('pbg-desktop-small-error', () => (
     <span className="pbg-consumer-desktop pbg-desktop-small-error">small error</span>
   ))

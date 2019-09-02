@@ -26,6 +26,13 @@ describe('pie-chart', () => {
     expect(wrapper.hasClass('pbg-pie-chart')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PieChart className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have label and hint', () => {
     const dataPoints = [
       {

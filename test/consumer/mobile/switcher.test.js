@@ -26,6 +26,13 @@ describe('switcher', () => {
     expect(wrapper.hasClass('pbg-switcher')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<Switcher options={switcherOptions} className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have correct number of options', () => {
     const wrapper = shallow(<Switcher options={switcherOptions} />);
     expect(wrapper.find(SwitcherItem).length).to.equal(2);

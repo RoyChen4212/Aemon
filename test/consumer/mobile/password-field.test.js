@@ -14,6 +14,13 @@ describe('PasswordField', () => {
     expect(wrapper.hasClass('pbg-password-field')).to.be.true;
   });
 
+  it('should have a className if provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PasswordField className={className} />);
+
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
   it('should have forgot password label', () => {
     const wrapper = shallow(<PasswordField forgotPasswordText="Forget?" />);
     expect(wrapper.find('.pbg-forgot-password-container').find('.pbg-mobile-small-link')).to.have.lengthOf(1);

@@ -30,6 +30,13 @@ describe('PaymentMethodSelector', () => {
     expect(wrapper.hasClass('pbg-payment-method-selector')).to.be.true;
   });
 
+  it('should have correct className when provided', () => {
+    const className = 'className';
+    const wrapper = shallow(<PaymentMethodSelector className={className} />);
+    expect(wrapper.hasClass(className)).to.be.true;
+  });
+
+
   it('should render a button container', () => {
     const wrapper = shallow(<PaymentMethodSelector options={options} value="visa" />);
     expect(wrapper.find('.pbg-payment-method-selector-button-container')).to.have.lengthOf(1);
