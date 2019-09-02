@@ -100,6 +100,7 @@ class TextArea extends FormField {
     const { textAreaHeight } = this.state;
     return (
       <div className={this.className}>
+        {this.renderLabel()}
         <div className="pbg-text-area-wrapper">
           <textarea
             rows={rows}
