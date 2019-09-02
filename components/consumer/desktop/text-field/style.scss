@@ -9,7 +9,7 @@
         display: block;
         margin: 0 0 5px 2px;
       }
-      
+
       .pbg-text-field-input-wrapper {
         position: relative;
       }
@@ -50,6 +50,10 @@
         &:disabled {
           background-color: $gray-10;
           color: $gray-60;
+        }
+
+        &:invalid {
+          box-shadow: none;
         }
       }
 
