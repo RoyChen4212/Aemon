@@ -1,6 +1,6 @@
 {
   "name": "aemon",
-  "version": "1.7.5",
+  "version": "1.7.6",
   "engines": {
     "node": "10.14.x",
     "npm": "6.x"
