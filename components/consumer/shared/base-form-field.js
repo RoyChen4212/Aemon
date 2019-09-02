@@ -54,8 +54,8 @@ class BaseFormField extends React.Component {
   }
 
   get placeholder() {
-    const { required, label } = this.adaptedProps;
-    return !required ? label : `${label}*`;
+    const { placeholder } = this.adaptedProps;
+    return placeholder || null;
   }
 
   onFocus = ev => {
