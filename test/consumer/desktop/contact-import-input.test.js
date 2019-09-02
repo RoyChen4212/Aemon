@@ -10,7 +10,7 @@ import {
   ARROW_DOWN_KEYCODE,
   ARROW_UP_KEYCODE,
   RETURN_KEYCODE,
-} from '../../../components/consumer/global/constants/keyCodes';
+} from '../../../components/consumer/global/constants/key-codes';
 
 describe('contact-import-input', () => {
   const options = [

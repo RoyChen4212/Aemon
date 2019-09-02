@@ -6,7 +6,7 @@ import TextField from '../text-field';
 import ContactImportInputOption from './contact-import-input-option';
 import FormField from '../form-field';
 
-import { ARROW_DOWN_KEYCODE, ARROW_UP_KEYCODE, RETURN_KEYCODE } from '../../global/constants/keyCodes';
+import { ARROW_DOWN_KEYCODE, ARROW_UP_KEYCODE, RETURN_KEYCODE } from '../../global/constants/key-codes';
 import './style.scss';
 
 class ContactImportInput extends FormField {
@@ -102,34 +102,46 @@ class ContactImportInput extends FormField {
     return options.filter(option => (option.label ? option.label.toLowerCase().indexOf(valueLowerCase) !== -1 : true));
   };
 
+  renderTextField = () => {
+    const { placeholder, value, onChange } = this.props;
+
+    return (
+      <TextField
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+        autoComplete="off"
+      />
+    );
+  };
+
+  renderOption = ({ label, icon, value: val }, index) => {
+    const { selected } = this.state;
+
+    return (
+      <ContactImportInputOption
+        key={label}
+        label={label}
+        selected={index === selected}
+        value={val}
+        icon={icon}
+        onSelect={this.onSelect}
+      />
+    );
+  };
+
   render() {
-    const { isOpen, selected } = this.state;
-    const { placeholder, value, onChange, className } = this.props;
+    const { isOpen } = this.state;
+    const { className } = this.props;
     const filteredOptions = this.filteredOptionsByUserInput();
     return (
       <div className={cx(ContactImportInput.baseClassName, className)}>
         {this.renderLabel()}
-        <TextField
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          autoComplete="off"
-        />
+        {this.renderTextField()}
         {isOpen && filteredOptions.length !== 0 && (
-          <div className="pbg-contact-import-input-options">
-            {filteredOptions.map(({ label, icon, value: val }, index) => (
-              <ContactImportInputOption
-                key={label}
-                label={label}
-                selected={index === selected}
-                value={val}
-                icon={icon}
-                onSelect={this.onSelect}
-              />
-            ))}
-          </div>
+          <div className="pbg-contact-import-input-options">{filteredOptions.map(this.renderOption)}</div>
         )}
         <div className="pbg-contact-import-input-error">{this.renderHintOrError()}</div>
       </div>
