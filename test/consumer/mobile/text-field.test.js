@@ -154,7 +154,13 @@ describe('TextField', () => {
     it('should show an error label when error is given', () => {
       const expected = 'A label';
       const wrapper = shallow(<TextField error="and error" label={expected} />);
-      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
+      expect(
+        wrapper.contains(
+          <Label type={labelTypes.ERROR} required={false}>
+            {expected}
+          </Label>
+        )
+      ).to.be.true;
     });
   });
 });

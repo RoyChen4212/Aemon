@@ -89,7 +89,7 @@ describe('Date picker', () => {
 
   it('should add a label with given text', () => {
     const wrapper = shallow(<TimePicker label="A label" />);
-    const expected = <Label>A label</Label>;
+    const expected = <Label required={false}>A label</Label>;
     expect(wrapper.find('.pbg-time-picker').contains(expected)).to.be.true;
   });
 
@@ -116,7 +116,13 @@ describe('Date picker', () => {
     it('should show an error label when error is given', () => {
       const expected = 'A label';
       const wrapper = shallow(<TimePicker error="and error" label={expected} />);
-      expect(wrapper.contains(<Label type={labelTypes.ERROR}>{expected}</Label>)).to.be.true;
+      expect(
+        wrapper.contains(
+          <Label type={labelTypes.ERROR} required={false}>
+            {expected}
+          </Label>
+        )
+      ).to.be.true;
     });
   });
 });

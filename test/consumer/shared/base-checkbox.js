@@ -32,7 +32,7 @@ describe('BaseCheckbox', () => {
   it('render a label component when label prop is provided', () => {
     const text = 'A label';
     const wrapper = shallow(<Checkbox label={text} />);
-    const expected = <Label>{text}</Label>;
+    const expected = <Label required={false}>{text}</Label>;
     expect(wrapper.contains(expected)).to.be.true;
   });
 
