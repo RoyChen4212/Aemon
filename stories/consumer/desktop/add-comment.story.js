@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import AddComment from '../../../components/consumer/desktop/add-comment';
 import { withContainer, wrapStory } from '../../util/decorators';
+import FieldStateProvider from '../../util/field-state-provider';
 
 import '../../style.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -10,7 +11,8 @@ storiesOf('Consumer/Desktop/add-comment', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('add-comment/default', () => (
-    <AddComment
+    <FieldStateProvider
+      component={AddComment}
       hint="Only logged-in group members see comments."
       ctaLabel="Post comment"
       textLabel="Write a comment..."
@@ -18,7 +20,8 @@ storiesOf('Consumer/Desktop/add-comment', module)
     />
   ))
   .add('add-comment/error', () => (
-    <AddComment
+    <FieldStateProvider
+      component={AddComment}
       hint="Only logged-in group members see comments."
       ctaLabel="Post comment"
       textLabel="Write a comment..."

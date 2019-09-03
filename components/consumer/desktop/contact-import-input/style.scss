@@ -1,0 +1,52 @@
+@import '../../shared/scss/styleguide';
+
+.pbg-consumer-desktop {
+  &.pbg-contact-import-input {
+    width: 100%;
+    position: relative;
+    .pbg-contact-import-input-error {
+      position: absolute;
+      top: 100%;
+    }
+    .pbg-contact-import-input-options {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      min-width: 474px;
+      background-color: $white;
+      border: 1px solid $gray-30;
+      border-radius: 4px;
+      padding: 16px 0;
+      z-index: 2;
+      .pbg-contact-import-input-option {
+        height: 32px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 16px;
+        margin-bottom: 4px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .pbg-desktop-label-normal {
+          margin-left: 8px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        &.pbg-selected {
+          background-color: $blue-10;
+          .pbg-desktop-label-normal {
+            color: $blue-60;
+          }
+        }
+        &:hover {
+          background-color: $blue-10;
+          .pbg-desktop-label-normal {
+            color: $blue-60;
+          }
+        }
+      }
+    }
+  }
+}

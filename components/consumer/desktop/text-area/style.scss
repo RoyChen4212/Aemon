@@ -3,32 +3,44 @@
 .pbg-consumer-desktop {
   &.pbg-form-field {
     &.pbg-text-area {
-      textarea {
-        @extend .pbg-desktop-regular-text;
-        background: $white;
-        border: 1px solid $gray-50;
-        margin-bottom: -6px;
-        outline: 0;
-        padding: 8px;
-        width: 100%;
-        border-radius: 3px;
-
-        &::placeholder {
-          color: $gray-60;
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: normal;
-          line-height: 21px;
-          font-size: 14px;
-        }
-        &:focus {
-          outline: none;
-        }
-      }
-
-      &.pbg-form-field-focused {
+      .pbg-text-area-wrapper {
+        position: relative;
         textarea {
-          border-color: $blue-60;
+          @extend .pbg-desktop-regular-text;
+          background: $white;
+          border: 1px solid $gray-50;
+          margin-bottom: -6px;
+          outline: 0;
+          padding: 8px;
+          width: 100%;
+          border-radius: 3px;
+          resize: none;
+
+          &::placeholder {
+            color: $gray-60;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 21px;
+            font-size: 14px;
+          }
+          &:focus {
+            outline: none;
+            border-color: $blue-60;
+          }
+        }
+        .pbg-text-area-handle {
+          background: url("../../shared/img/pbg-textarea-resize-handle.svg");
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 12px;
+          height: 12px;
+          background-size: contain;
+          cursor: pointer;
+          &:active {
+            cursor: row-resize;
+          }
         }
       }
 
