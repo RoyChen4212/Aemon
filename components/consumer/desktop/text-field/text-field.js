@@ -50,6 +50,7 @@ class TextField extends FormField {
         pattern={this.adaptedProps.pattern}
         type={this.type}
         disabled={this.adaptedProps.disabled}
+        autoComplete={this.adaptedProps.autoComplete}
       />
     );
   }
