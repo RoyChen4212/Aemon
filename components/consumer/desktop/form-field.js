@@ -16,12 +16,6 @@ class FormField extends BaseFormField {
     if (this.adaptedProps.simple) return null;
     return super.renderHintOrError(Hint);
   }
-
-  get placeholder() {
-    const { disabled, label } = this.adaptedProps;
-    const placeholder = this.adaptedProps.placeholder || label;
-    return !disabled ? placeholder : null;
-  }
 }
 
 export default FormField;

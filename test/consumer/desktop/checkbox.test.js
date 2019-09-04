@@ -30,7 +30,7 @@ describe('Checkbox', () => {
   it('render a label component when label prop is provided', () => {
     const text = 'A label';
     const wrapper = shallow(<Checkbox label={text} />);
-    const expected = <Label>{text}</Label>;
+    const expected = <Label required={false}>{text}</Label>;
     expect(wrapper.contains(expected)).to.be.true;
   });
 
@@ -44,7 +44,11 @@ describe('Checkbox', () => {
   it('render an error label component when error prop is provided', () => {
     const text = 'error';
     const wrapper = shallow(<Checkbox label={text} error="some error" />);
-    const expected = <Label type={labelTypes.ERROR}>{text}</Label>;
+    const expected = (
+      <Label type={labelTypes.ERROR} required={false}>
+        {text}
+      </Label>
+    );
     expect(wrapper.contains(expected)).to.be.true;
   });
 

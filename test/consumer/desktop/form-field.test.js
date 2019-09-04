@@ -51,11 +51,4 @@ describe('Desktop: FormField', () => {
 
     expect(instance.placeholder).to.equal('this is a placeholder');
   });
-
-  it('should not render a placeholder if specified in props', () => {
-    const wrapper = shallow(<FormField placeholder="this is a placeholder" disabled />);
-    const instance = wrapper.instance();
-
-    expect(instance.placeholder).not.to.equal('this is a placeholder');
-  });
 });

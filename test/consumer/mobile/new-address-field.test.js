@@ -47,10 +47,10 @@ describe('NewAddressField', () => {
       const expected = 'expected label';
       const wrapper = mount(<NewAddressField labels={{ [addressFields.STREET_ADDRESS]: expected }} />);
       const streetAddress = wrapper.find({
-        type: 'text',
         name: addressFields.STREET_ADDRESS,
+        label: expected,
       });
-      expect(streetAddress.prop('placeholder')).to.be.equal(expected);
+      expect(streetAddress).to.have.lengthOf(1);
     });
 
     it('should pass the error to streetAddress TextField', () => {
@@ -87,8 +87,8 @@ describe('NewAddressField', () => {
     it('should have an city TextField with correct label', () => {
       const expected = 'expected label';
       const wrapper = mount(<NewAddressField labels={{ [addressFields.CITY]: expected }} />);
-      const city = wrapper.find({ type: 'text', name: addressFields.CITY });
-      expect(city.prop('placeholder')).to.be.equal(expected);
+      const city = wrapper.find({ name: addressFields.CITY, label: expected });
+      expect(city).to.have.lengthOf(1);
     });
 
     it('should pass the error to city TextField', () => {
@@ -125,8 +125,8 @@ describe('NewAddressField', () => {
     it('should have an state TextField with correct label', () => {
       const expected = 'expected label';
       const wrapper = mount(<NewAddressField labels={{ [addressFields.STATE]: expected }} />);
-      const state = wrapper.find({ type: 'text', name: addressFields.STATE });
-      expect(state.prop('placeholder')).to.be.equal(expected);
+      const state = wrapper.find({ name: addressFields.STATE, label: expected });
+      expect(state).to.have.lengthOf(1);
     });
 
     it('should pass the error to state TextField', () => {
@@ -167,10 +167,10 @@ describe('NewAddressField', () => {
       const expected = 'expected label';
       const wrapper = mount(<NewAddressField labels={{ [addressFields.POSTAL_CODE]: expected }} />);
       const postalCode = wrapper.find({
-        type: 'text',
         name: addressFields.POSTAL_CODE,
+        label: expected,
       });
-      expect(postalCode.prop('placeholder')).to.be.equal(expected);
+      expect(postalCode).to.have.lengthOf(1);
     });
 
     it('should pass the error to postal code TextField', () => {

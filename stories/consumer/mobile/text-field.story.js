@@ -12,14 +12,7 @@ storiesOf('Consumer/Mobile/Form Fields/text-field', module)
   .addDecorator(wrapStory)
   .addDecorator(withContainer)
   .add('text-field/default', () => (
-    <FieldStateProvider
-      component={TextField}
-      name="field1"
-      onChange={action('onChange')}
-      label="Label"
-      placeholder=""
-      hint="Hint"
-    />
+    <FieldStateProvider component={TextField} name="field1" onChange={action('onChange')} label="Label" hint="Hint" />
   ))
   .add('text-field/placeholder', () => (
     <FieldStateProvider
