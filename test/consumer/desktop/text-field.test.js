@@ -96,9 +96,9 @@ describe('TextField', () => {
     expect(onBlur.calledOnce).to.be.true;
   });
 
-  it('should pass label prop as placeholder to input element', () => {
+  it('should pass placeholder prop to input element', () => {
     const expected = 'a placeholder';
-    const wrapper = shallow(<TextField label={expected} />);
+    const wrapper = shallow(<TextField placeholder={expected} />);
     expect(wrapper.find('input').prop('placeholder')).to.equal(expected);
   });
 

@@ -39,7 +39,7 @@ describe('MultiSelectField', () => {
   it('should have a label if given', () => {
     const expected = 'Pick one or more';
     const wrapper = shallow(<MultiSelectField label={expected} />);
-    expect(wrapper.contains(<Label>{expected}</Label>)).to.be.true;
+    expect(wrapper.contains(<Label required={false}>{expected}</Label>)).to.be.true;
   });
 
   it('should not have a label if not given', () => {

@@ -42,7 +42,13 @@ describe('Address Field', () => {
   it('should show a label if given', () => {
     const label = 'Some text';
     const wrapper = shallow(<AddressField label={label} />);
-    expect(wrapper.contains(<Label type={labelTypes.STRONG}>{label}</Label>)).to.be.true;
+    expect(
+      wrapper.contains(
+        <Label type={labelTypes.STRONG} required={false}>
+          {label}
+        </Label>
+      )
+    ).to.be.true;
   });
 
   it('should show a hint if given', () => {
@@ -91,7 +97,7 @@ describe('Address Field', () => {
         expect(ev.target.value).to.eql(expected);
         done();
       }
-      runs++;
+      runs++; // eslint-disable-line no-plusplus
     };
     const wrapper = mount(<AddressField addressOptions={addressOptions} onChange={onChange} />);
     wrapper.find('select').simulate('change', event);
@@ -146,7 +152,7 @@ describe('Address Field', () => {
         expect(ev.target.value).to.eql(expected);
         done();
       }
-      runs++;
+      runs++; // eslint-disable-line no-plusplus
     };
     const wrapper = mount(<AddressField value={value} onChange={onChange} addressOptions={addressOptions} />);
     wrapper.find('button').simulate('click');

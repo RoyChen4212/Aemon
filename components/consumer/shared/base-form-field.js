@@ -1,8 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { hintTypes } from './base-hint';
 
 class BaseFormField extends React.Component {
   baseClassName = 'pbg-form-field';
+
+  static propTypes = {
+    className: PropTypes.string,
+    label: PropTypes.string,
+    required: PropTypes.bool,
+    adapter: PropTypes.func,
+  };
+
+  static defaultProps = {
+    className: null,
+    label: null,
+    required: false,
+    adapter: null,
+  };
 
   get className() {
     let resultingClassName = this.baseClassName;
@@ -54,8 +70,8 @@ class BaseFormField extends React.Component {
   }
 
   get placeholder() {
-    const { required, label } = this.adaptedProps;
-    return !required ? label : `${label}*`;
+    const { placeholder } = this.adaptedProps;
+    return placeholder || null;
   }
 
   onFocus = ev => {
