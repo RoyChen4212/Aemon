@@ -1,29 +1,43 @@
-import React from 'react';
-import cx from 'classnames';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+
+import copy from 'copy-to-clipboard';
 
 import './style.scss';
 
 const baseClassName = 'pbg-consumer-desktop pbg-share-link';
 
-const ShareLink = ({ label, className, href }) => {
-  return (
-    <div className={cx(baseClassName, className)}>
-      <a className="pbg-desktop-label-link" href={href}>
-        {label}
-      </a>
-    </div>
-  );
-};
+class ShareLink extends PureComponent {
+  static propTypes = {
+    label: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    onClick: PropTypes.func,
+  };
 
-ShareLink.propTypes = {
-  label: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  className: PropTypes.string,
-};
+  static defaultProps = {
+    className: null,
+    onClick: null,
+  };
 
-ShareLink.defaultProps = {
-  className: null,
-};
+  onClick = e => {
+    const { href, onClick } = this.props;
+    copy(href);
+
+    if (typeof onClick === 'function') {
+      onClick(e);
+    }
+  };
+
+  render() {
+    const { label, className } = this.props;
+    return (
+      <div className={cx(baseClassName, className)} onClick={this.onClick}>
+        <span className="pbg-desktop-label-link">{label}</span>
+      </div>
+    );
+  }
+}
 
 export default ShareLink;
