@@ -31,6 +31,7 @@
     "@paybygroup/baelish": "^1.2.0",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
+    "copy-to-clipboard": "^3.2.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.11",
     "moment": "^2.23.0",

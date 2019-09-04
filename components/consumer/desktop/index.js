@@ -41,6 +41,7 @@ import PopoverTooltip from './popover-tooltip';
 import { PrimaryButton } from './button';
 import PrimaryModal from './primary-modal';
 import PurchaseImage from './purchase-image';
+import ShareLink from './share-link';
 import SecondaryModal from './secondary-modal';
 import ShareRow from './share-row';
 import SimpleNumberStepper from './simple-number-stepper';
@@ -82,6 +83,7 @@ const desktop = {
   PrimaryButton,
   PrimaryModal,
   PurchaseImage,
+  ShareLink,
   SecondaryModal,
   ShareRow,
   SimpleNumberStepper,
