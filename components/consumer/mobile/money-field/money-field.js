@@ -4,6 +4,7 @@ import { USD } from '@paybygroup/baelish';
 
 import TextField from '../text-field';
 import { formatCurrency } from '../../desktop/money-field/money-field';
+import makeEvent from '../../../lib/make-event';
 
 import './style.scss';
 
@@ -41,9 +42,12 @@ class MoneyField extends TextField {
   }
 
   onChange = event => {
+    const { onChange } = this.adaptedProps;
     const { currency } = this.props;
+    const value = formatCurrency(event.target.value, currency);
 
-    this.setState({ value: formatCurrency(event.target.value, currency) });
+    this.setState({ value });
+    onChange(makeEvent(value));
   };
 
   renderInput() {
