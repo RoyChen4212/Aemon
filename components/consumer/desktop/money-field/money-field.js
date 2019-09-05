@@ -59,6 +59,7 @@ class MoneyField extends TextField {
         value={this.value}
         onChange={this.onChange}
         onBlur={this.onBlur}
+        onFocus={this.onFocus}
         placeholder={formatCurrency(0, currency)}
       />
     );
