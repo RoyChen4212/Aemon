@@ -1,6 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
 
 import MoneyField from '../../../components/consumer/mobile/money-field';
 import { shouldBehaveLikeFormField } from '../shared/form-field.test';
@@ -55,5 +56,27 @@ describe('money-field', () => {
     expect(wrapper.find('input').prop('value')).to.equal('$ 12.34');
     input.simulate('change', { target: { value: '12345' } });
     expect(wrapper.find('input').prop('value')).to.equal('$ 123.45');
+  });
+
+  it('should pass onChange prop to input element', () => {
+    const onChange = sinon.spy();
+    const wrapper = shallow(<MoneyField onChange={onChange} />);
+    wrapper.find('input').simulate('change', { target: { value: '1' } });
+    expect(onChange.calledOnce).to.be.true;
+  });
+
+  it('should execute onBlur when clicked out of input', () => {
+    const onBlur = sinon.spy();
+    const wrapper = shallow(<MoneyField onBlur={onBlur} />);
+    wrapper.find('input').simulate('focus');
+    wrapper.find('input').simulate('blur');
+    expect(onBlur.calledOnce).to.be.true;
+  });
+
+  it('should execute onFocus if given', () => {
+    const onFocus = sinon.spy();
+    const wrapper = shallow(<MoneyField onFocus={onFocus} />);
+    wrapper.find('input').simulate('focus');
+    expect(onFocus.calledOnce).to.be.true;
   });
 });
