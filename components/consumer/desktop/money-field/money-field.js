@@ -46,7 +46,9 @@ class MoneyField extends TextField {
     const value = formatCurrency(event.target.value, currency);
 
     this.setState({ value });
-    onChange(makeEvent(value));
+    if (onChange) {
+      onChange(makeEvent(value));
+    }
   };
 
   renderInput() {
