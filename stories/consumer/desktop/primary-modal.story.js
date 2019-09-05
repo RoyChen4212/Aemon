@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import PrimaryModal from '../../../components/consumer/desktop/primary-modal';
+import Divider from '../../../components/consumer/desktop/divider';
 import { PrimaryButton } from '../../../components/consumer/desktop/button';
 import { withGreyContainer, wrapStory } from '../../util/decorators';
 
@@ -19,6 +20,36 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
           <div>
             <h2>Main content</h2>
             <p>This is the main content section, style it as you want.</p>
+          </div>
+        }
+        sidebarContent={
+          <div>
+            <h2>Sidebar</h2>
+            <p>This is the sidebar content section, style it as you want.</p>
+          </div>
+        }
+        footerContent={
+          <div className="container">
+            <div className="row">
+              <PrimaryButton onClick={action('clicked')}>Call to action</PrimaryButton>
+            </div>
+          </div>
+        }
+      />
+    </div>
+  ))
+  .add('primary-modal/dividers in content', () => (
+    <div className="p2">
+      <PrimaryModal
+        mainContent={
+          <div>
+            <span>Something</span>
+            <Divider />
+            <span>Something else</span>
+            <Divider />
+            <span>Something more</span>
+            <Divider />
+            <span>Something more else</span>
           </div>
         }
         sidebarContent={
@@ -346,7 +377,11 @@ storiesOf('Consumer/Desktop/Modals & Popovers/primary-modal', module)
       </div>
     );
   })
-  .add('primary-modal/working-sample', () => <div className="my-5"><FullPrimaryModal /></div>);
+  .add('primary-modal/working-sample', () => (
+    <div className="my-5">
+      <FullPrimaryModal />
+    </div>
+  ));
 
 class FullPrimaryModal extends React.Component {
   state = {
